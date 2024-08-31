@@ -4,7 +4,7 @@ from uuid import uuid4
 import graphene
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Permission, Group
-from django.core.exceptions import PermissionDenied
+from django.core.exceptions import PermissionDenied, BadRequest
 from django.core.validators import validate_email
 from django.http import Http404
 
@@ -129,13 +129,14 @@ class DeleteUser(graphene.Mutation):
         uuid = graphene.UUID()
 
     def mutate(self, info, uuid=None, email=None):
-        if info.context.user.is_superuser or (
-                info.context.user.is_staff and info.context.user.has_perm('vibes_auth.delete_user')):
+        if info.context.user.is_superuser or info.context.user.has_perm('vibes_auth.delete_user'):
             try:
                 if uuid is not None:
                     User.objects.get(uuid=uuid).delete()
                 elif email is not None:
                     User.objects.get(email=email).delete()
+                else:
+                    raise BadRequest(f"uuid or email must be specified")
                 return DeleteUser()
             except User.DoesNotExist:
                 raise Http404(f"User with the given uuid: {uuid} or email: {email} does not exist.")
