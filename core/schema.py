@@ -44,7 +44,6 @@ class Query(graphene.ObjectType):
             raise PermissionDenied("You must be logged in to view this user.")
 
         try:
-            print(uuid, email)
             if uuid:
                 queried_user = User.objects.get(uuid=uuid)
             if email:
@@ -177,7 +176,7 @@ class CreateProduct(graphene.Mutation):
 
     def mutate(self, info, name, category_id, description=None):
         user = info.context.user
-        if not user.is_superuser and not user.is_staff:
+        if not info.context.user.is_superuser or not info.context.user.has_perm('vibes_auth.add_product'):
             raise PermissionDenied("You do not have permissions to perform this action.")
 
         category = Category.objects.get(id=category_id)
@@ -187,16 +186,16 @@ class CreateProduct(graphene.Mutation):
 
 class UpdateProduct(graphene.Mutation):
     class Arguments:
-        id = graphene.ID(required=True)
+        id = graphene.UUID(required=True)
         name = graphene.String()
         description = graphene.String()
-        category_id = graphene.ID()
+        category = graphene.UUID()
 
     product = graphene.Field(ProductType)
 
-    def mutate(self, info, id, name=None, description=None, category_id=None):
-        user = info.context.user
-        if not user.is_superuser and not user.is_staff:
+    def mutate(self, info, uuid, name=None, description=None, category=None):
+
+        if not info.context.user.is_superuser or not info.context.user.has_perm('vibes_auth.change_product'):
             raise PermissionDenied("You do not have permissions to perform this action.")
 
         product = Product.objects.get(id=id)
@@ -204,9 +203,8 @@ class UpdateProduct(graphene.Mutation):
             product.name = name
         if description:
             product.description = description
-        if category_id:
-            category = Category.objects.get(id=category_id)
-            product.category = category
+        if category:
+            product.category = Category.objects.get(uuid=category)
         product.save()
         return UpdateProduct(product=product)
 
@@ -218,8 +216,7 @@ class DeleteProduct(graphene.Mutation):
     ok = graphene.Boolean()
 
     def mutate(self, info, id):
-        user = info.context.user
-        if not user.is_superuser and not user.is_staff:
+        if not info.context.user.is_superuser or not info.context.user.has_perm('vibes_auth.delete_product'):
             raise PermissionDenied("You do not have permissions to perform this action.")
 
         product = Product.objects.get(id=id)

@@ -19,13 +19,19 @@ class CreateUser(graphene.Mutation):
     class Arguments:
         email = graphene.String(required=True)
         password = graphene.String(required=True)
+        confirm_password = graphene.String(required=True)
 
     user = graphene.Field(UserType)
 
-    def mutate(self, info, email, password):
-        user = User.objects.create_user(email=email, password=password)
-
-        return CreateUser(user=user)
+    def mutate(self, info, email, password, confirm_password):
+        try:
+            if compare_digest(password, confirm_password):
+                user = User.objects.create_user(email=email, password=password)
+                return CreateUser(user=user)
+            else:
+                raise BadRequest("Passwords do not match.")
+        except Exception as e:
+            raise BadRequest(str(e))
 
 
 class UpdateUser(graphene.Mutation):
@@ -55,9 +61,12 @@ class UpdateUser(graphene.Mutation):
 
             raise Http404(f"User with the given uuid: {uuid} does not exist.")
 
+        if info.context.user is not user and info.context.user.is_staff and not info.context.user.has_perm(
+                'vibes_auth.change_user') and not info.context.user.is_superuser:
+            raise PermissionDenied("You do not have permission to perform this action")
+
         if (email is not None and validate_email(email)) and (email != user.email) and (
-                (info.context.user == user) or info.context.user.is_superuser or info.context.user.has_perm(
-            'vibes_auth.change_user')):
+                (info.context.user == user) or info.context.user.is_superuser):
             user.is_active = False
             user.is_verified = False
             user.activation_token = uuid4()
@@ -66,31 +75,32 @@ class UpdateUser(graphene.Mutation):
 
         else:
 
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.change_user'")
+            raise PermissionDenied("You do not have permission to perform this action")
 
         if phone_number is not None and validate_phone_number(phone_number) and (
-                (info.context.user == user) or info.context.user.is_superuser or info.context.user.has_perm(
-            'vibes_auth.change_user')):
+                (info.context.user == user) or info.context.user.is_superuser):
             user.phone_number = phone_number
 
-        if (password is not None and confirm_password is not None) and compare_digest(password, confirm_password):
+        if ((password is not None and confirm_password is not None) and compare_digest(password,
+                                                                                       confirm_password)) and (
+                (info.context.user == user) or info.context.user.is_superuser):
             user.set_password(password)
 
-        if is_verified is not None and (info.context.user.is_superuser or info.context.user.has_perm('vibes_auth.change_user')):
+        if is_verified is not None and (info.context.user.is_superuser or info.context.user.is_staff):
 
             user.is_verified = is_verified
 
         else:
 
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.change_user'")
+            raise PermissionDenied("You do not have permission to perform this action")
 
-        if is_active is not None and (info.context.user.is_superuser or info.context.user.has_perm('vibes_auth.change_user')):
+        if is_active is not None and (info.context.user.is_superuser or info.context.user.is_staff):
 
             user.is_active = is_active
 
         else:
 
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.change_user'")
+            raise PermissionDenied("You do not have permission to perform this action")
 
         if user_permissions is not None and info.context.user.is_superuser:
 
