@@ -10,7 +10,7 @@ from core.object_types import AttributeGroupType, CategoryType, DealerType, Feed
     PromoCodeType, PromotionType, StockType, WishlistType
 from geo.models import Address
 from geo.object_types import AddressType
-from geo.schema import CreateAddress
+from geo.schema import CreateAddress, UpdateAddress, DeleteAddress
 from payments.models import Transaction, Balance
 from payments.object_types import TransactionType, BalanceType
 from vibes_auth.models import User
@@ -232,6 +232,8 @@ class Mutation(graphene.ObjectType):
     update_user = UpdateUser.Field()
     delete_user = DeleteUser.Field()
     create_address = CreateAddress.Field()
+    update_address = UpdateAddress.Field()
+    delete_address = DeleteAddress.Field()
     create_product = CreateProduct.Field()
     update_product = UpdateProduct.Field()
     delete_product = DeleteProduct.Field()
