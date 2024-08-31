@@ -1,0 +1,41 @@
+server {      
+    server_name api.evibes.example;
+    client_max_body_size 100M;
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location /favicon.ico {
+        root /var/jenkins/workspace/evibes-backend-django/static;
+        access_log off;
+        log_not_found off;    }
+
+    location /media {
+        root /var/jenkins/workspace/evibes-backend-django/;
+        access_log off;
+        log_not_found off;    }
+
+    location /static {
+        root /var/jenkins/workspace/evibes-backend-django/;
+        access_log off;
+        log_not_found off;    }
+
+}
+
+server {
+    server_name evibes.example www.evibes.example;
+    charset utf-8;      
+    location / {      
+        proxy_pass http://localhost:3000;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+}

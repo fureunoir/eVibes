@@ -1,0 +1,61 @@
+services:
+  api:
+    restart: always
+    build: .
+    command: >
+      sh -c "poetry run python manage.py await_services &&
+             poetry run python manage.py collectstatic --no-input &&
+             poetry run uvicorn evibes.asgi:application --host 0.0.0.0 --port 8000 --lifespan auto --reload # --workers 5"
+    volumes:
+      - .:/app
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+    shm_size: '2gb'
+
+  db:
+    restart: always
+    image: postgis/postgis:latest
+    volumes:
+      - ./services_data/postgres:/var/lib/postgresql/data/
+    env_file:
+      .env
+    shm_size: '2gb'
+
+  worker:
+    restart: always
+    build: .
+    command: sh -c "poetry run celery -A evibes worker --loglevel=info --autoscale=10,3"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - api
+      - broker
+
+  beat:
+    restart: always
+    build: .
+    command: sh -c "poetry run celery -A evibes beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - worker
+
+  broker:
+    restart: always
+    volumes:
+      - ./services_data/redis:/data
+    image: redis:latest
+    ports:
+      - "6379:6379"

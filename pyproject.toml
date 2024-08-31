@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "eVibes"
+version = "1.0.0"
+description = "eVibes is an open-source eCommerce backend service built with Django. It’s designed for flexibility, making it ideal for various use cases and learning Django skills. The project is easy to customize, allowing for straightforward editing and extension."
+authors = ["fureunoir <contact@fureunoir.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+redis = "^5.0.6"
+celery = {version = "^5.4.0", optional = true}
+poetry-core = "^1.9.0"
+pillow = "^10.3.0"
+pygraphviz = { version = "^1.7", optional = true }
+requests = "^2.32.3"
+gunicorn = "^22.0.0"
+uvicorn = "^0.30.6"
+psycopg2-binary = "^2.9.9"
+openai = {version = "^1.35.1", optional = true}
+django = "^5.0.6"
+django-extensions = "^3.2.3"
+graphene-django = "^3.0.0"
+django-redis = "^5.4.0"
+django-mptt = "^0.16.0"
+django-filter = "^24.2"
+django-jazzmin = "^3.0.0"
+django-constance = "^3.1.0"
+django-mailbox = "^4.10.1"
+django-cors-headers = "^4.4.0"
+django-celery-beat = {version = "^2.6.0", optional = true}
+django-json-widget = "^2.0.1"
+djangorestframework = "^3.15.2"
+adrf = "^0.1.7"
+djangorestframework-simplejwt = {extras = ["crypto"], version = "^5.3.1"}
+djangorestframework-recursive = "^0.1.2"
+drf-spectacular = {extras = ["sidecar"], version = "^0.27.2"}
+
+[tool.poetry.extras]
+graph = ["pygraphviz"]
+worker = ["celery", "django-celery-beat"]
+AI = ["openai"]
+#dev = []
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

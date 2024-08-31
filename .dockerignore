@@ -1,0 +1,46 @@
+# General Python Ignore
+*.log
+*.sqlite3
+*.pyo
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+ENV.bak/
+*.egg-info/
+*.egg
+*.eggs
+
+# Postgres specific
+*.db
+
+# Git specific
+.git/
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.tox/
+
+# MacOS
+.DS_Store
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Docker
+Dockerfile-api
+docker-compose.yml
+
+# Directories likely to have large files and/or sensitive information.
+secrets/
+.env
+postgres_data/
+
+# node modules
+node_modules/
