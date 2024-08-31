@@ -34,7 +34,7 @@ class User(AbstractUser, NiceModel):
     recently_viewed = ManyToManyField('core.Product', verbose_name=_('recently viewed'), blank=True,
                                       help_text=_("user's recently viewed products"))
 
-    activation_token = UUIDField(default=uuid4, editable=False, verbose_name=_('activation token'))
+    activation_token = UUIDField(default=uuid4, verbose_name=_('activation token'))
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

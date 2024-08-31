@@ -15,7 +15,8 @@ from payments.models import Transaction, Balance
 from payments.object_types import TransactionType, BalanceType
 from vibes_auth.models import User
 from vibes_auth.object_types import UserType
-from vibes_auth.schema import ObtainJSONWebToken, RefreshJSONWebToken, VerifyJSONWebToken, UpdateUser, CreateUser
+from vibes_auth.schema import ObtainJSONWebToken, RefreshJSONWebToken, VerifyJSONWebToken, UpdateUser, CreateUser, \
+    DeleteUser
 
 
 class Query(graphene.ObjectType):
@@ -232,6 +233,7 @@ class Mutation(graphene.ObjectType):
     verify_jwt_token = VerifyJSONWebToken.Field()
     create_user = CreateUser.Field()
     update_user = UpdateUser.Field()
+    delete_user = DeleteUser.Field()
     create_address = CreateAddress.Field()
     create_product = CreateProduct.Field()
     update_product = UpdateProduct.Field()
