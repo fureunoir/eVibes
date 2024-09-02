@@ -24,7 +24,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=8),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=8) if not DEBUG else timedelta(hours=888),
     "REFRESH_TOKEN_LIFETIME": timedelta(hours=88),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
@@ -36,7 +36,7 @@ SIMPLE_JWT = {
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': CONSTANCE_CONFIG.get('PROJECT_NAME'),
+    'TITLE': CONSTANCE_CONFIG.get('PROJECT_NAME')[0],
     'DESCRIPTION': "This API documentation is used to describe available HTTP methods on several endpoints serving "
                    "products information on www.itoption.com\nAccess Token Lifetime is 8 minutes.\n"
                    "Refresh Token Lifetime is 88 hours. Refresh Tokens are blacklisted after usage.",

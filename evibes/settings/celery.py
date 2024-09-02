@@ -14,7 +14,7 @@ CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers.DatabaseScheduler"
 CELERY_BEAT_SCHEDULE = {
     'update_products_task': {
         'task': 'core.tasks.update_products_task',
-        'schedule': timedelta(hours=8),
+        'schedule': timedelta(minutes=30),
     },
     # 'update_promotions_task': {
     #     'task': 'app.tasks.update_promotions_task',

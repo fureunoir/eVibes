@@ -2,7 +2,6 @@ from hmac import compare_digest
 from uuid import uuid4
 
 import graphene
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Permission, Group
 from django.core.exceptions import PermissionDenied, BadRequest
 from django.core.validators import validate_email
@@ -20,13 +19,17 @@ class CreateUser(graphene.Mutation):
         email = graphene.String(required=True)
         password = graphene.String(required=True)
         confirm_password = graphene.String(required=True)
+        last_name = graphene.String()
+        first_name = graphene.String()
+        phone_number = graphene.String()
 
     user = graphene.Field(UserType)
 
-    def mutate(self, info, email, password, confirm_password):
+    def mutate(self, info, email, password, confirm_password, last_name=None, first_name=None, phone_number=None):
         try:
             if compare_digest(password, confirm_password):
-                user = User.objects.create_user(email=email, password=password)
+                user = User.objects.create_user(email=email, password=password, last_name=last_name,
+                                                first_name=first_name, phone_number=phone_number)
                 return CreateUser(user=user)
             else:
                 raise BadRequest("Passwords do not match.")
@@ -109,7 +112,7 @@ class UpdateUser(graphene.Mutation):
 
         else:
 
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.is_superuser'")
+            raise PermissionDenied("You do not have permission to perform this action")
 
         if is_staff is not None and info.context.user.is_superuser:
 
@@ -117,7 +120,7 @@ class UpdateUser(graphene.Mutation):
 
         else:
 
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.is_superuser'")
+            raise PermissionDenied("You do not have permission to perform this action")
 
         if groups is not None and info.context.user.is_superuser:
 
@@ -126,7 +129,7 @@ class UpdateUser(graphene.Mutation):
 
         else:
 
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.is_superuser'")
+            raise PermissionDenied("You do not have permission to perform this action")
 
         user.save()
 
@@ -138,6 +141,8 @@ class DeleteUser(graphene.Mutation):
         email = graphene.String()
         uuid = graphene.UUID()
 
+    success = graphene.Boolean()
+
     def mutate(self, info, uuid=None, email=None):
         if info.context.user.is_superuser or info.context.user.has_perm('vibes_auth.delete_user'):
             try:
@@ -147,7 +152,7 @@ class DeleteUser(graphene.Mutation):
                     User.objects.get(email=email).delete()
                 else:
                     raise BadRequest(f"uuid or email must be specified")
-                return DeleteUser()
+                return DeleteUser(success=True)
             except User.DoesNotExist:
                 raise Http404(f"User with the given uuid: {uuid} or email: {email} does not exist.")
         raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.delete_user'")
@@ -199,6 +204,7 @@ class VerifyJSONWebToken(graphene.Mutation):
 
     token_is_valid = graphene.Boolean()
     user = graphene.Field(UserType)
+    error = graphene.String()
 
     def mutate(self, info, token):
         serializer = TokenVerifySerializer(data={'token': token})
@@ -211,4 +217,4 @@ class VerifyJSONWebToken(graphene.Mutation):
                 user=user,
             )
         except Exception as e:
-            return VerifyJSONWebToken(token_is_valid=False, user=None)
+            return VerifyJSONWebToken(token_is_valid=False, user=None, error=str(e))

@@ -1,5 +1,7 @@
 import graphene
+from graphene import relay
 from graphene_django import DjangoObjectType
+from graphene_django.filter import DjangoFilterConnectionField
 
 from core.models import (
     AttributeGroup, Category, Dealer, Feedback,
@@ -13,21 +15,33 @@ from geo.object_types import AddressType
 class AttributeGroupType(DjangoObjectType):
     class Meta:
         model = AttributeGroup
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class CategoryType(DjangoObjectType):
     class Meta:
         model = Category
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class DealerType(DjangoObjectType):
     class Meta:
         model = Dealer
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class FeedbackType(DjangoObjectType):
     class Meta:
         model = Feedback
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class LocalizedAttributeType(DjangoObjectType):
@@ -35,17 +49,29 @@ class LocalizedAttributeType(DjangoObjectType):
 
     class Meta:
         model = LocalizedAttribute
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class OrderType(DjangoObjectType):
-    order_products = graphene.List(lambda: OrderProductType)
+    order_products = DjangoFilterConnectionField(lambda: OrderProductType)
     promo_code = graphene.Field(lambda: PromoCodeType)
     billing_address = graphene.Field(lambda: AddressType)
     shipping_address = graphene.Field(lambda: AddressType)
+    total_price = graphene.Float()
 
     class Meta:
         model = Order
         exclude = ('user',)
+        interfaces = (relay.Node,)
+        filter_fields = ['active']
+
+    def resolve_order_products(self, info):
+        return OrderProduct.objects.filter(order=self, active=True)
+
+    def resolve_total_price(self, info) -> float:
+        return self.total_price
 
 
 class OrderProductType(DjangoObjectType):
@@ -54,6 +80,9 @@ class OrderProductType(DjangoObjectType):
 
     class Meta:
         model = OrderProduct
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class PredefinedAttributesType(DjangoObjectType):
@@ -62,18 +91,24 @@ class PredefinedAttributesType(DjangoObjectType):
 
     class Meta:
         model = PredefinedAttributes
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class ProductType(DjangoObjectType):
     category = graphene.Field(lambda: CategoryType)
-    images = graphene.List(lambda: ProductImageType)
-    feedbacks = graphene.List(lambda: FeedbackType)
+    images = DjangoFilterConnectionField(lambda: ProductImageType)
+    feedbacks = DjangoFilterConnectionField(lambda: FeedbackType)
 
     class Meta:
         model = Product
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
     def resolve_feedbacks(self, info):
-        return Feedback.objects.filter(order_product__product=self)
+        return Feedback.objects.filter(order_product__product=self, active=True)
 
 
 class ProductAttributeType(DjangoObjectType):
@@ -81,6 +116,9 @@ class ProductAttributeType(DjangoObjectType):
 
     class Meta:
         model = ProductAttribute
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class ProductImageType(DjangoObjectType):
@@ -88,18 +126,27 @@ class ProductImageType(DjangoObjectType):
 
     class Meta:
         model = ProductImage
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class PromoCodeType(DjangoObjectType):
     class Meta:
         model = PromoCode
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class PromotionType(DjangoObjectType):
-    products = graphene.List(lambda: ProductType)
+    products = DjangoFilterConnectionField(lambda: ProductType)
 
     class Meta:
         model = Promotion
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class StockType(DjangoObjectType):
@@ -108,10 +155,16 @@ class StockType(DjangoObjectType):
 
     class Meta:
         model = Stock
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']
 
 
 class WishlistType(DjangoObjectType):
-    products = graphene.List(lambda: ProductType)
+    products = DjangoFilterConnectionField(lambda: ProductType)
 
     class Meta:
         model = Wishlist
+        interfaces = (relay.Node,)
+        fields = '__all__'
+        filter_fields = ['active']

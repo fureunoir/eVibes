@@ -17,6 +17,8 @@ class User(AbstractUser, NiceModel):
     phone_number = CharField(_('phone number'), max_length=20, unique=True, blank=True, null=True,
                              help_text=_("user's phone number"), validators=[validate_phone_number, ])
     username = None
+    first_name = CharField(_("first name"), max_length=150, blank=True, null=True)
+    last_name = CharField(_("last name"), max_length=150, blank=True, null=True)
     avatar = ImageField(null=True, verbose_name=_('avatar'), upload_to=get_uuid_as_path, blank=True,
                         help_text=_("user's profile image"))
 

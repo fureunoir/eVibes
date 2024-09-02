@@ -19,8 +19,8 @@ CONSTANCE_CONFIG = {
 
     'PAYMENT_GATEWAY_URL': (getenv('PAYMENT_GATEWAY_URL', "http://404.org"), 'Payment gateway URL'),
     'PAYMENT_GATEWAY_TOKEN': (getenv('PAYMENT_GATEWAY_TOKEN', "example token"), 'Payment gateway token'),
+    'EXCHANGE_RATE_API_KEY': (getenv('EXCHANGE_RATE_API_KEY'), "example token", 'Exchange rate API key'),
 
     'OPENAI_API_KEY': (getenv('OPENAI_API_KEY', "example key"), 'OpenAI API Key'),
 
-    'TELEGRAM_BOT_TOKEN': (getenv('TELEGRAM_BOT_TOKEN', "example token"), 'Telegram bot token'),
 }

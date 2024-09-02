@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Your Account</title>
+    <style>
+        /* Ensure responsiveness across devices */
+        body, table, td, a {
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        table {
+            border-collapse: collapse !important;
+        }
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        /* Use fluid layout for images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Style adjustments for different clients */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .content-cell {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 120px; /* Adjust logo size */
+            height: auto;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <!-- Avatar for email client display -->
+    <link rel="icon" href="static/logo.png" sizes="192x192">
+</head>
+<body>
+    <!-- Main container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td>
+                <!-- Email container for centering -->
+                <table class="email-container" align="center" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="header">
+                            <!-- Logo area -->
+                            <img src="static/logo.png" alt="Logo" width="120">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-cell">
+                            <!-- Email content area -->
+                            <h2>Password Reset Confirmation</h2>
+                            <p>Hello {{ user.first_name }},</p>
+                            <p>We have received a request to reset your password. Please reset your password by clicking the button below:</p>
+                            <p>
+                                <a href="{{ reset_link }}" class="button">Reset Password</a>
+                            </p>
+                            <p>If the button above does not work, please copy and paste the following URL into your web browser:</p>
+                            <p>{{ reset_link }}</p>
+                            <p>If you did not send this request, please make sure to contact our administration at {{ config.EMAIL_HOST_USER }}.</p>
+                            <p>Best regards,<br>The {{ config.PROJECT_NAME }} Team</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            &copy; {{ current_year }} {{ config.PROJECT_NAME }}. All rights reserved.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

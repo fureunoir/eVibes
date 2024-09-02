@@ -183,6 +183,9 @@ class OrderProduct(NiceModel):
     notifications = JSONField(blank=True, null=True,
                               help_text=_("Order-product's notifications. Displayed to user's on the storefront"),
                               verbose_name=_('notifications'))
+    attributes = JSONField(blank=True, null=True,
+                              help_text=_("Order-product's notifications. Displayed to user's on the storefront"),
+                              verbose_name=_('notifications'))
     order = ForeignKey('core.Order', on_delete=CASCADE, help_text=_("Order"), verbose_name=_('order'),
                        related_name='order_products')
     product = ForeignKey('core.Product', on_delete=PROTECT, blank=True, null=True, help_text=_("Product"),
@@ -272,7 +275,7 @@ class ProductImage(NiceModel):
     alt = CharField(max_length=255, help_text=_("Image's alt text"), verbose_name=_('alt'))
     image = ImageField(help_text=_("Image"), verbose_name=_('image'), upload_to=get_product_uuid_as_path)
     priority = IntegerField(
-        default=0, validators=[MinValueValidator(1)],
+        default=1, validators=[MinValueValidator(1)],
         help_text=_("Image's priority. 1 means the first displayed image"), verbose_name=_('priority'))
     product = ForeignKey('core.Product', on_delete=CASCADE, help_text=_("Product"), verbose_name=_('product'))
 

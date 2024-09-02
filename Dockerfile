@@ -35,4 +35,4 @@ RUN pipx install poetry
 COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 
-RUN poetry install --extras "graph" --extras "worker"
+RUN poetry install --extras "graph" --extras "worker" --extras "AI"

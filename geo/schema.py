@@ -59,10 +59,12 @@ class DeleteAddress(graphene.Mutation):
     class Arguments:
         uuid = graphene.UUID(required=True)
 
+    success = graphene.Boolean()
+
     def mutate(self, info, uuid, location):
         if info.context.user.is_superuser or info.context.user.has_perm(
                 'geo.delete_address') or info.context.user is Address.objects.get(uuid=uuid).user:
             Address.objects.get(uuid=uuid).delete()
-            return DeleteAddress()
+            return DeleteAddress(success=True)
         else:
             raise PermissionDenied("You do not have permissions to perform this action.")
