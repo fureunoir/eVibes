@@ -14,6 +14,8 @@ ORDER_STATUS_CHOICES = (
     ('PENDING', _('pending')),
     ('FAILED', _('failed')),
     ('PAYMENT', _('payment')),
+    ('CREATED', _('created')),
+    ('DELIVERING', _('delivering')),
     ('FINISHED', _('finished')),
 )
 

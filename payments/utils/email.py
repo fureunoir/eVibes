@@ -24,6 +24,7 @@ def balance_email(user_pk: str) -> tuple[bool, str]:
             'current_year': timezone.now().year,
             'config': config
         }), to=[user.email],
+        from_email=config.EMAIL_HOST_USER,
     )
     email.content_subtype = "html"
     email.send()

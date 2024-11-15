@@ -3,9 +3,10 @@ from django.contrib.auth.models import AnonymousUser
 from django.core.exceptions import DisallowedHost
 from django.middleware.common import CommonMiddleware
 from django.shortcuts import redirect
+from django.utils import translation
+from django.utils.cache import patch_vary_headers
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.exceptions import InvalidToken
-import graphene_django.debug
 
 
 class CustomCommonMiddleware(CommonMiddleware):
@@ -13,10 +14,31 @@ class CustomCommonMiddleware(CommonMiddleware):
         try:
             return super().process_request(request)
         except DisallowedHost:
-            return redirect(config.BACKEND_DOMAIN)
+            return redirect(f'https://api.{config.BASE_DOMAIN}')
 
 
-class JWTAuthorizationMiddleware(object):
+class CustomLocaleCommonMiddleware(CommonMiddleware):
+    def process_request(self, request):
+        super().process_request(request)
+
+        locale = request.headers.get('X-Locale')
+        if not locale:
+            locale = 'en-gb'
+
+        translation.activate(locale)
+        request.LANGUAGE_CODE = translation.get_language()
+
+    def process_response(self, request, response):
+        language = translation.get_language()
+
+        patch_vary_headers(response, ("Accept-Language",))
+        response.headers.setdefault("Content-Language", language)
+
+        translation.deactivate()
+        return super().process_response(request, response)
+
+
+class GrapheneJWTAuthorizationMiddleware(object):
     def resolve(self, next, root, info, **args):
         context = info.context
 
@@ -26,7 +48,8 @@ class JWTAuthorizationMiddleware(object):
 
         return next(root, info, **args)
 
-    def get_jwt_user(self, request):
+    @staticmethod
+    def get_jwt_user(request):
         jwt_authenticator = JWTAuthentication()
         try:
             user, _ = jwt_authenticator.authenticate(request)
@@ -35,3 +58,21 @@ class JWTAuthorizationMiddleware(object):
         except TypeError:
             user = AnonymousUser()
         return user
+
+
+class GrapheneLocaleMiddleware(object):
+    def resolve(self, next, root, info, **args):
+        context = info.context
+        headers = context.headers
+
+        locale = headers.get('X-Locale')
+        if not locale:
+            locale = translation.get_language_from_request(context) or 'en-GB'
+
+        translation.activate(locale)
+        context.LANGUAGE_CODE = translation.get_language()
+
+        try:
+            return next(root, info, **args)
+        finally:
+            translation.deactivate()

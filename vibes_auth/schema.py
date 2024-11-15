@@ -2,31 +2,41 @@ from hmac import compare_digest
 from uuid import uuid4
 
 import graphene
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Permission, Group
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.exceptions import PermissionDenied, BadRequest
-from django.core.validators import validate_email
 from django.http import Http404
+from django.utils.http import urlsafe_base64_decode
+from rest_framework.exceptions import ValidationError
 
+from core.abstract import BaseMutation
 from vibes_auth.models import User
 from vibes_auth.object_types import UserType
 from vibes_auth.serializers import TokenVerifySerializer, TokenRefreshSerializer, TokenObtainPairSerializer
-from vibes_auth.utils.email import send_verification_email_task
-from vibes_auth.validators import validate_phone_number
+from vibes_auth.utils.email import send_verification_email_task, send_reset_password_email_task
+from vibes_auth.validators import is_valid_phone_number, is_valid_email
 
 
-class CreateUser(graphene.Mutation):
+class CreateUser(BaseMutation):
     class Arguments:
         email = graphene.String(required=True)
         password = graphene.String(required=True)
         confirm_password = graphene.String(required=True)
+        last_name = graphene.String()
+        first_name = graphene.String()
+        phone_number = graphene.String()
+        is_subscribed = graphene.Boolean()
+        language = graphene.String()
 
     user = graphene.Field(UserType)
 
-    def mutate(self, info, email, password, confirm_password):
+    def mutate(self, info, email, password, confirm_password, last_name=None, first_name=None, phone_number=None,
+               is_subscribed=None, language=None):
         try:
             if compare_digest(password, confirm_password):
-                user = User.objects.create_user(email=email, password=password)
+                user = User.objects.create_user(email=email, password=password, last_name=last_name,
+                                                first_name=first_name, phone_number=phone_number,
+                                                is_subscribed=is_subscribed if is_subscribed is not None else False,
+                                                language=language if language is not None else 'en-GB')
                 return CreateUser(user=user)
             else:
                 raise BadRequest("Passwords do not match.")
@@ -34,7 +44,7 @@ class CreateUser(graphene.Mutation):
             raise BadRequest(str(e))
 
 
-class UpdateUser(graphene.Mutation):
+class UpdateUser(BaseMutation):
     class Arguments:
         uuid = graphene.UUID(required=True)
         email = graphene.String()
@@ -42,6 +52,9 @@ class UpdateUser(graphene.Mutation):
         password = graphene.String()
         confirm_password = graphene.String()
         is_verified = graphene.Boolean()
+        first_name = graphene.String()
+        last_name = graphene.String()
+        language = graphene.String()
         is_active = graphene.Boolean()
         is_staff = graphene.Boolean()
         user_permissions = graphene.List(graphene.String)
@@ -49,9 +62,7 @@ class UpdateUser(graphene.Mutation):
 
     user = graphene.Field(UserType)
 
-    def mutate(self, info, uuid, email=None, phone_number=None, password=None, confirm_password=None, is_verified=None,
-               is_active=None, is_staff=None,
-               user_permissions=None, groups=None):
+    def mutate(self, info, uuid, **kwargs):
 
         try:
 
@@ -65,78 +76,49 @@ class UpdateUser(graphene.Mutation):
                 'vibes_auth.change_user') and not info.context.user.is_superuser:
             raise PermissionDenied("You do not have permission to perform this action")
 
-        if (email is not None and validate_email(email)) and (email != user.email) and (
-                (info.context.user == user) or info.context.user.is_superuser):
+        email = kwargs.get('email', None)
+
+        if email is not None and not is_valid_email(email):
+            raise BadRequest("Malformed email address.")
+
+        if email != user.email and email is not None:
             user.is_active = False
             user.is_verified = False
             user.activation_token = uuid4()
             send_verification_email_task.delay(user.pk)
             user.email = email
 
-        else:
 
-            raise PermissionDenied("You do not have permission to perform this action")
+        phone_number = kwargs.get('phone_number', None)
 
-        if phone_number is not None and validate_phone_number(phone_number) and (
+        if phone_number is not None and is_valid_phone_number(phone_number) and (
                 (info.context.user == user) or info.context.user.is_superuser):
             user.phone_number = phone_number
 
-        if ((password is not None and confirm_password is not None) and compare_digest(password,
-                                                                                       confirm_password)) and (
-                (info.context.user == user) or info.context.user.is_superuser):
+        password = kwargs.get('password', '')
+        confirm_password = kwargs.get('confirm_password', '')
+
+        if (((not compare_digest(password, '') and confirm_password is not None) and compare_digest(password,
+                                                                                                    confirm_password)) and (
+                (info.context.user == user) or info.context.user.is_superuser)):
             user.set_password(password)
 
-        if is_verified is not None and (info.context.user.is_superuser or info.context.user.is_staff):
-
-            user.is_verified = is_verified
-
-        else:
-
-            raise PermissionDenied("You do not have permission to perform this action")
-
-        if is_active is not None and (info.context.user.is_superuser or info.context.user.is_staff):
-
-            user.is_active = is_active
-
-        else:
-
-            raise PermissionDenied("You do not have permission to perform this action")
-
-        if user_permissions is not None and info.context.user.is_superuser:
-
-            permissions_objs = Permission.objects.filter(codename__in=user_permissions)
-            user.user_permissions.set(permissions_objs)
-
-        else:
-
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.is_superuser'")
-
-        if is_staff is not None and info.context.user.is_superuser:
-
-            user.is_staff = is_staff
-
-        else:
-
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.is_superuser'")
-
-        if groups is not None and info.context.user.is_superuser:
-
-            group_objs = Group.objects.filter(name__in=groups)
-            user.groups.set(group_objs)
-
-        else:
-
-            raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.is_superuser'")
+        for attr, value in kwargs.items():
+            if attr not in ['groups', 'user_permissions', 'password', 'confirm_password', 'email', 'phone_number',
+                            'is_verified', 'is_staff', 'is_active']:
+                setattr(user, attr, value)
 
         user.save()
 
         return UpdateUser(user=user)
 
 
-class DeleteUser(graphene.Mutation):
+class DeleteUser(BaseMutation):
     class Arguments:
         email = graphene.String()
         uuid = graphene.UUID()
+
+    success = graphene.Boolean()
 
     def mutate(self, info, uuid=None, email=None):
         if info.context.user.is_superuser or info.context.user.has_perm('vibes_auth.delete_user'):
@@ -147,13 +129,13 @@ class DeleteUser(graphene.Mutation):
                     User.objects.get(email=email).delete()
                 else:
                     raise BadRequest(f"uuid or email must be specified")
-                return DeleteUser()
+                return DeleteUser(success=True)
             except User.DoesNotExist:
                 raise Http404(f"User with the given uuid: {uuid} or email: {email} does not exist.")
         raise PermissionDenied("You do not have permission to perform this action: 'vibes_auth.delete_user'")
 
 
-class ObtainJSONWebToken(graphene.Mutation):
+class ObtainJSONWebToken(BaseMutation):
     class Arguments:
         email = graphene.String(required=True)
         password = graphene.String(required=True)
@@ -173,14 +155,16 @@ class ObtainJSONWebToken(graphene.Mutation):
                 access_token=serializer.validated_data['access'],
             )
         except Exception as e:
-            raise PermissionDenied("Invalid credentials provided.")
+            raise PermissionDenied(f"Invalid credentials provided: {str(e)}")
 
 
-class RefreshJSONWebToken(graphene.Mutation):
+class RefreshJSONWebToken(BaseMutation):
     class Arguments:
         refresh_token = graphene.String(required=True)
 
     access_token = graphene.String()
+    user = graphene.Field(UserType)
+    refresh_token = graphene.String()
 
     def mutate(self, info, refresh_token):
         serializer = TokenRefreshSerializer(data={'refresh': refresh_token})
@@ -188,12 +172,14 @@ class RefreshJSONWebToken(graphene.Mutation):
             serializer.is_valid(raise_exception=True)
             return RefreshJSONWebToken(
                 access_token=serializer.validated_data['access'],
+                refresh_token=serializer.validated_data['refresh'],
+                user=User.objects.get(uuid=serializer.validated_data['user']['uuid'])
             )
         except Exception as e:
-            raise PermissionDenied("Invalid refresh token provided.")
+            raise PermissionDenied(f"Invalid refresh token provided: {str(e)}")
 
 
-class VerifyJSONWebToken(graphene.Mutation):
+class VerifyJSONWebToken(BaseMutation):
     class Arguments:
         token = graphene.String(required=True)
 
@@ -210,5 +196,83 @@ class VerifyJSONWebToken(graphene.Mutation):
                 token_is_valid=True,
                 user=user,
             )
-        except Exception as e:
+        except ValidationError:
             return VerifyJSONWebToken(token_is_valid=False, user=None)
+
+
+class ActivateUser(BaseMutation):
+    class Arguments:
+        uid = graphene.String(required=True)
+        token = graphene.String(required=True)
+
+    success = graphene.Boolean()
+
+    def mutate(self, info, uid, token):
+        try:
+            token = urlsafe_base64_decode(token).decode()
+            uuid = urlsafe_base64_decode(uid).decode()
+            user = User.objects.get(pk=uuid)
+
+            if not user.check_token(token):
+                raise BadRequest("Activation link is invalid!")
+
+            if user.is_active:
+                raise BadRequest("Account already activated!")
+
+            user.is_active = True
+            user.is_verified = True
+            user.save()
+
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
+            raise BadRequest(f"Something went wrong: {str(e)}")
+
+        return ActivateUser(success=True)
+
+
+class ResetPassword(BaseMutation):
+    class Arguments:
+        email = graphene.String(required=True)
+
+    success = graphene.Boolean()
+
+    def mutate(self, info, email):
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return
+
+        send_reset_password_email_task.delay(user_pk=user.uuid)
+
+        return ResetPassword(success=True)
+
+
+class ConfirmResetPassword(BaseMutation):
+    class Arguments:
+        uid = graphene.String(required=True)
+        token = graphene.String(required=True)
+        password = graphene.String(required=True)
+        confirm_password = graphene.String(required=True)
+
+    success = graphene.Boolean()
+
+    def mutate(self, info, uid, token, password, confirm_password):
+        try:
+
+            if not compare_digest(password, confirm_password):
+                raise BadRequest('Passwords do not match')
+
+            user = User.objects.get(pk=urlsafe_base64_decode(uid).decode())
+
+            password_reset_token = PasswordResetTokenGenerator()
+
+            if not password_reset_token.check_token(user, token):
+                raise BadRequest('Token is invalid!')
+
+            user.set_password(password)
+
+            user.save()
+
+            return ConfirmResetPassword(success=True)
+
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
+            raise BadRequest(f'Something went wrong: {str(e)}')

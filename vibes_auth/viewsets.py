@@ -1,7 +1,9 @@
 from secrets import compare_digest
 
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.utils.decorators import method_decorator
 from django.utils.http import urlsafe_base64_decode
+from django_ratelimit.decorators import ratelimit
 from drf_spectacular.utils import extend_schema
 from rest_framework import mixins, status
 from rest_framework.decorators import action
@@ -10,10 +12,11 @@ from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from evibes.settings import logger
 from vibes_auth.serializers import UserSerializer, ConfirmPasswordResetSerializer, ResetPasswordSerializer, \
     ActivateEmailSerializer
 from vibes_auth.models import User
-# from vibes_auth.vibes_authutils.email import send_email_confirmation, send_reset_password_email
+from vibes_auth.utils.email import send_reset_password_email_task
 
 
 class UserViewSet(mixins.CreateModelMixin,
@@ -22,7 +25,7 @@ class UserViewSet(mixins.CreateModelMixin,
                   mixins.DestroyModelMixin,
                   GenericViewSet):
     serializer_class = UserSerializer
-    queryset = User.objects.filter(active=True)
+    queryset = User.objects.filter(is_active=True)
     permission_classes = [AllowAny]
 
     @extend_schema(
@@ -31,13 +34,14 @@ class UserViewSet(mixins.CreateModelMixin,
         responses={200: {}, 400: {"description": "Email does not exist"}},
     )
     @action(detail=False, methods=['post'])
-    async def reset_password(self, request):
+    @method_decorator(ratelimit(key='ip', rate='2/h'))
+    def reset_password(self, request):
         try:
             user = User.objects.get(email=request.data.get('email'))
         except User.DoesNotExist:
             return Response(status=status.HTTP_400_BAD_REQUEST, data={'error': 'Email does not exist'})
 
-        # send_reset_password_email.delay(user_pk=user.uuid, domain=FRONTEND_DOMAIN)
+        send_reset_password_email_task.delay(user_pk=user.uuid)
         return Response(status=status.HTTP_200_OK)
 
     @extend_schema(
@@ -48,7 +52,8 @@ class UserViewSet(mixins.CreateModelMixin,
                    403: {"description": "Bad credentials"}},
     )
     @action(detail=True, methods=['put'], permission_classes=[IsAuthenticated])
-    async def upload_avatar(self, request):
+    @method_decorator(ratelimit(key='ip', rate='2/h'))
+    def upload_avatar(self, request):
         user = self.get_object()
         if request.user != user:
             return Response(status=status.HTTP_403_FORBIDDEN)
@@ -64,7 +69,8 @@ class UserViewSet(mixins.CreateModelMixin,
         responses={200: {"description": "Password reset successfully"}, 400: {"description": "Invalid uid!"}}
     )
     @action(detail=False, methods=['post'])
-    async def confirm_password_reset(self):
+    @method_decorator(ratelimit(key='ip', rate='2/h'))
+    def confirm_password_reset(self):
         try:
             data = ConfirmPasswordResetSerializer(self.request.data).data
 
@@ -83,7 +89,7 @@ class UserViewSet(mixins.CreateModelMixin,
             return Response({'message': 'Password reset successfully'}, status=status.HTTP_200_OK)
 
         except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
-            print(e)
+            logger.error(str(e))
             return Response({'error': 'Invalid uuid!'}, status=status.HTTP_400_BAD_REQUEST)
 
     @extend_schema(
@@ -91,7 +97,8 @@ class UserViewSet(mixins.CreateModelMixin,
         description="Create a new user. An activation email will be sent after creation.",
         responses={201: UserSerializer()}
     )
-    async def create(self, request, *args, **kwargs):
+    @method_decorator(ratelimit(key='ip', rate='3/h'))
+    def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
@@ -106,7 +113,8 @@ class UserViewSet(mixins.CreateModelMixin,
         request=ActivateEmailSerializer()
     )
     @action(detail=False, methods=['post'])
-    async def activate(self, request):
+    @method_decorator(ratelimit(key='ip', rate='2/h'))
+    def activate(self, request):
         try:
             uuid = urlsafe_base64_decode(request.data.get('uidb64')).decode()
             user = User.objects.get(pk=uuid)
@@ -119,7 +127,7 @@ class UserViewSet(mixins.CreateModelMixin,
             user.save()
         except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
             user = None
-            print(e)
+            logger.error(str(e))
         if user is None:
             return Response({'error': 'Activation link is invalid!'}, status=status.HTTP_400_BAD_REQUEST)
         else:
@@ -130,7 +138,7 @@ class UserViewSet(mixins.CreateModelMixin,
             return Response(response_data, status=status.HTTP_200_OK)
 
     @extend_schema(description="Retrieve a user's details.")
-    async def retrieve(self, request, pk=None, *args, **kwargs):
+    def retrieve(self, request, pk=None, *args, **kwargs):
         instance = self.get_object()
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
@@ -139,6 +147,6 @@ class UserViewSet(mixins.CreateModelMixin,
         description="Update a user's details.",
         request=UserSerializer,
     )
-    async def update(self, request, pk=None, *args, **kwargs):
+    def update(self, request, pk=None, *args, **kwargs):
         return Response(
             self.get_serializer(self.get_object()).update(instance=self.get_object(), validated_data=request.data).data)

@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from payments.forms import TransactionForm
 from payments.models import Balance, Transaction
 
 
@@ -20,6 +21,7 @@ class TransactionAdmin(admin.ModelAdmin):
     search_fields = ('balance__user__email', 'currency', 'payment_method')
     list_filter = ('currency', 'payment_method')
     ordering = ('balance',)
+    form = TransactionForm
 
 
 admin.site.register(Balance, BalanceAdmin)

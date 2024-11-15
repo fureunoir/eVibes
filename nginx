@@ -1,5 +1,5 @@
 server {      
-    server_name api.evibes.example;
+    server_name api.itoption.ru;
     client_max_body_size 100M;
 
     location / {
@@ -11,24 +11,24 @@ server {
     }
 
     location /favicon.ico {
-        root /var/jenkins/workspace/evibes-backend-django/static;
+        root /var/jenkins/workspace/stickerzone-backend-django/static;
         access_log off;
         log_not_found off;    }
 
     location /media {
-        root /var/jenkins/workspace/evibes-backend-django/;
+        root /var/jenkins/workspace/stickerzone-backend-django/;
         access_log off;
         log_not_found off;    }
 
     location /static {
-        root /var/jenkins/workspace/evibes-backend-django/;
+        root /var/jenkins/workspace/stickerzone-backend-django/;
         access_log off;
         log_not_found off;    }
 
 }
 
 server {
-    server_name evibes.example www.evibes.example;
+    server_name itoption.ru www.itoption.ru;
     charset utf-8;      
     location / {      
         proxy_pass http://localhost:3000;

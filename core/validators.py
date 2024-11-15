@@ -5,8 +5,8 @@ from django.core.files.images import get_image_dimensions
 
 
 def validate_category_image_dimensions(image):
-    max_width = 300
-    max_height = 500
+    max_width = 99999
+    max_height = 99999
 
     if image:
         width, height = get_image_dimensions(image.file)
@@ -15,7 +15,7 @@ def validate_category_image_dimensions(image):
             raise ValidationError("Image dimensions (width, height) should be at most 300x500 pixels.")
 
 
-def validate_phone_number(value):
+def validate_phone_number(value, **kwargs):
     phone_regex = re.compile(r'^\+?1?\d{9,15}$')
     if not phone_regex.match(value):
         raise ValidationError(

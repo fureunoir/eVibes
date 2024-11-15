@@ -81,3 +81,6 @@ static
 !static/logo.png
 !static/favicon.ico
 media
+debug.log
+errors.log
+nginx

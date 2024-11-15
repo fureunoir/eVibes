@@ -24,7 +24,8 @@ def send_verification_email_task(user_pk: str) -> tuple[bool, str]:
         email_subject = _(f'{config.PROJECT_NAME} | Activate Your Account')
         email_body = render_to_string('user_verification_email.html', {
             'user': user,
-            'activation_link': f"https://{config.FRONTEND_DOMAIN}?uid={urlsafe_base64_encode(force_bytes(user.uuid))}&token={urlsafe_base64_encode(force_bytes(user.activation_token))}",
+            'activation_link': f"https://{config.FRONTEND_DOMAIN}/activate-user?uid={urlsafe_base64_encode(force_bytes(user.uuid))}"
+                               f"&token={urlsafe_base64_encode(force_bytes(user.activation_token))}",
             'current_year': timezone.now().year,
             'config': config
         })
@@ -49,7 +50,7 @@ def send_verification_email_task(user_pk: str) -> tuple[bool, str]:
 
 
 @shared_task
-def send_reset_password_email_task(user_pk: str, domain: str) -> tuple[bool, str]:
+def send_reset_password_email_task(user_pk: str) -> tuple[bool, str]:
     try:
         user = User.objects.get(pk=user_pk)
 
@@ -60,7 +61,8 @@ def send_reset_password_email_task(user_pk: str, domain: str) -> tuple[bool, str
         email_subject = _(f'{config.PROJECT_NAME} | Reset Your Password')
         email_body = render_to_string('user_reset_password_email.html', {
             'user': user,
-            'reset_link': f"https://{config.FRONTEND_DOMAIN}?uid={urlsafe_base64_encode(force_bytes(user.pk))}&token={PasswordResetTokenGenerator().make_token(user)}",
+            'reset_link': f"https://{config.FRONTEND_DOMAIN}/reset-password?uid={urlsafe_base64_encode(force_bytes(user.pk))}"
+                          f"&token={PasswordResetTokenGenerator().make_token(user)}",
             'current_year': timezone.now().year,
             'config': config
         })

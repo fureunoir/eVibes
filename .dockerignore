@@ -43,4 +43,16 @@ secrets/
 postgres_data/
 
 # node modules
-node_modules/
+node_modules//geo/data/admin1CodesASCII.txt
+
+/geo/data/admin2Codes.txt
+
+/geo/data/allCountries.zip
+
+/geo/data/alternateNames.zip
+
+/geo/data/cities5000.zip
+
+/geo/data/countryInfo.txt
+
+/geo/data/hierarchy.zip

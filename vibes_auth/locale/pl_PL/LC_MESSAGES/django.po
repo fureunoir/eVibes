@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-24 19:19+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: vibes_auth/admin.py:13 vibes_auth/admin.py:14
+msgid "Balance"
+msgstr ""
+
+#: vibes_auth/admin.py:21 vibes_auth/admin.py:22
+msgid "Wishlist"
+msgstr ""
+
+#: vibes_auth/admin.py:28
+msgid "Order"
+msgstr ""
+
+#: vibes_auth/admin.py:29
+msgid "Orders"
+msgstr ""
+
+#: vibes_auth/admin.py:36
+msgid "Personal info"
+msgstr ""
+
+#: vibes_auth/admin.py:37
+msgid "Permissions"
+msgstr ""
+
+#: vibes_auth/admin.py:39
+msgid "Important dates"
+msgstr ""
+
+#: vibes_auth/admin.py:40
+msgid "Additional info"
+msgstr ""
+
+#: vibes_auth/apps.py:8
+msgid "Authentication and Authorization"
+msgstr ""
+
+#: vibes_auth/models.py:17
+msgid "email"
+msgstr ""
+
+#: vibes_auth/models.py:17
+msgid "user's email address"
+msgstr ""
+
+#: vibes_auth/models.py:18
+msgid "phone number"
+msgstr ""
+
+#: vibes_auth/models.py:19
+msgid "user's phone number"
+msgstr ""
+
+#: vibes_auth/models.py:21
+msgid "first name"
+msgstr ""
+
+#: vibes_auth/models.py:22
+msgid "last name"
+msgstr ""
+
+#: vibes_auth/models.py:23
+msgid "avatar"
+msgstr ""
+
+#: vibes_auth/models.py:24
+msgid "user's profile image"
+msgstr ""
+
+#: vibes_auth/models.py:26
+msgid "is verified"
+msgstr ""
+
+#: vibes_auth/models.py:26
+msgid "user's verification status"
+msgstr ""
+
+#: vibes_auth/models.py:28
+msgid "active"
+msgstr ""
+
+#: vibes_auth/models.py:31
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: vibes_auth/models.py:35
+msgid "is subscibed"
+msgstr ""
+
+#: vibes_auth/models.py:36
+msgid "user's newsletter subscription status"
+msgstr ""
+
+#: vibes_auth/models.py:37
+msgid "recently viewed"
+msgstr ""
+
+#: vibes_auth/models.py:38
+msgid "user's recently viewed products"
+msgstr ""
+
+#: vibes_auth/models.py:40
+msgid "activation token"
+msgstr ""
+
+#: vibes_auth/models.py:57
+msgid "user"
+msgstr ""
+
+#: vibes_auth/models.py:58
+msgid "users"
+msgstr ""
+
+#: vibes_auth/serializers.py:78
+msgid "No active account found with the given credentials"
+msgstr ""
+
+#: vibes_auth/serializers.py:171
+msgid "token is blacklisted"
+msgstr ""
+
+#: vibes_auth/serializers.py:176
+msgid "invalid token"
+msgstr ""
+
+#: vibes_auth/serializers.py:182
+msgid "no user_uuid claim present in token"
+msgstr ""
+
+#: vibes_auth/serializers.py:184
+msgid "user does not exist"
+msgstr ""
+
+#: vibes_auth/utils/email.py:24
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Activate Your Account"
+msgstr ""
+
+#: vibes_auth/utils/email.py:60
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Reset Your Password"
+msgstr ""

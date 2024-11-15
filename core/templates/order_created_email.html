@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        /* Ensure responsiveness across devices */
+        body, table, td, a {
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        table {
+            border-collapse: collapse !important;
+        }
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        /* Use fluid layout for images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Style adjustments for different clients */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .content-cell {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 120px; /* Adjust logo size */
+            height: auto;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .order-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        .order-table th, .order-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .order-table th {
+            background-color: #f4f4f4;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <!-- Avatar for email client display -->
+    <link rel="icon" href="https://api.{{ config.BASE_DOMAIN }}/static/logo.png" sizes="192x192">
+</head>
+<body>
+    <!-- Main container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td>
+                <!-- Email container for centering -->
+                <table class="email-container" align="center" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="header">
+                            <!-- Logo area -->
+                            <img src="{% static 'logo.png' %}" alt="Logo" width="120">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-cell">
+                            <!-- Email content area -->
+                            <h2>Order Confirmation</h2>
+                            <p>Hello {{ order.user.first_name }},</p>
+                            <p>Thank you for your order! We are pleased to confirm your purchase. Below are the details of your order:</p>
+                            
+                            <!-- Order details table -->
+                            <table class="order-table">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order_product in order.order_products.all %}
+                                    <tr>
+                                        <td>{{ order_product.product.name }}</td>
+                                        <td>{{ order_product.quantity }}</td>
+                                        <td>{{ order_product.buy_price }}</td>
+                                        <td>{{ order_product.buy_price * order_product.quantity }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td colspan="3"><strong>Shipping Price</strong></td>
+                                        <td>5.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3"><strong>Total Price</strong></td>
+                                        <td>{{ total_price }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p>Your order will be delivered to the following address:</p>
+                            <p>
+                                {{ order.shipping_address.street }}<br>
+                                {{ order.shipping_address.city }}, {{ order.shipping_address.region }}<br>
+                                {{ order.shipping_address.postal_code }}, {{ order.shipping_address.country }}
+                            </p>
+
+                            <p>If you have any questions, feel free to contact our support at {{ config.EMAIL_HOST_USER }}.</p>
+                            <p>Best regards,<br>The {{ config.PROJECT_NAME }} Team</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            &copy; {{ today.year }} {{ config.COMPANY_NAME }}. All rights reserved.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

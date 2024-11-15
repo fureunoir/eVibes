@@ -3,10 +3,10 @@ from datetime import date, timedelta
 from time import sleep
 
 import requests
+from constance import config
 from django.db.models import Q, Avg
 
-from app.models import Product, Promotion
-from evibes.settings import ABSTRACT_API_KEY
+from core.models import Product, Promotion
 
 
 def work_promotions() -> tuple[bool, str]:
@@ -17,7 +17,7 @@ def work_promotions() -> tuple[bool, str]:
     for day_offset in range(4):
         checked_date = date.today() + timedelta(days=day_offset)
         response = requests.get(
-            f'https://holidays.abstractapi.com/v1/?api_key={ABSTRACT_API_KEY}&country=DE&'
+            f'https://holidays.abstractapi.com/v1/?api_key={config.ABSTRACT_API_KEY}&country=DE&'
             f'month={checked_date.month}&day={checked_date.day}')
         response.raise_for_status()
         holidays = response.json()
@@ -47,7 +47,7 @@ def work_promotions() -> tuple[bool, str]:
     promotion = Promotion.objects.create(
         name=promotion_name,
         discount_percent=discount_percent,
-        active=True
+        is_active=True
     )
 
     promotion.products.set(selected_products)

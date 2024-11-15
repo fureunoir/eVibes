@@ -7,7 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     DEBIAN_FRONTEND=noninteractive \
     PATH="/root/.local/bin:$PATH"
 
-RUN sed -i 's|http://deb.debian.org/debian|http://ftp.ru.debian.org/debian|g' /etc/apt/sources.list.d/debian.sources
+RUN sed -i 's|https://deb.debian.org/debian|https://ftp.ru.debian.org/debian|g' /etc/apt/sources.list.d/debian.sources
 
 RUN apt update \
     && apt install -y --no-install-recommends --fix-missing \
@@ -35,4 +35,4 @@ RUN pipx install poetry
 COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 
-RUN poetry install --extras "graph" --extras "worker"
+RUN poetry install -E graph -E worker -E AI -E sentry

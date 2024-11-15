@@ -1,6 +1,5 @@
 from .drf import *
 from .caches import *
-from .jazzmin import *
 from .database import *
 from .graphene import *
 from .celery import *
@@ -8,3 +7,5 @@ from .extensions import *
 from .constance import *
 from .logging import *
 from .email import *
+from .jazzmin import *
+from .parler import *

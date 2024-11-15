@@ -1,9 +1,12 @@
+from django.utils.decorators import method_decorator
+from django_ratelimit.decorators import ratelimit
 from drf_spectacular.utils import extend_schema, inline_serializer, OpenApiResponse, OpenApiExample
 from rest_framework import status, serializers
 from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.views import TokenViewBase
 
+from evibes.settings import logger
 from vibes_auth.serializers import TokenObtainPairSerializer, TokenRefreshSerializer, \
     TokenVerifySerializer, UserSerializer
 
@@ -35,7 +38,9 @@ class TokenObtainPairView(TokenViewBase):
                        )
                    ])}
     )
-    async def post(self, request, *args, **kwargs):
+    @method_decorator(ratelimit(key='ip', rate='5/h'))
+    def post(self, request, *args, **kwargs):
+        logger.debug("Got to super post")
         return super().post(request, *args, **kwargs)
 
 
@@ -45,7 +50,7 @@ class TokenRefreshView(TokenViewBase):
 
     @extend_schema(
         description="Refresh a token pair (refresh and access).",
-        responses={200: inline_serializer(name='TokenObtain', fields={
+        responses={200: inline_serializer(name='TokenRefreshResponse', fields={
             'refresh': serializers.CharField(),
             'access': serializers.CharField(),
             'user': UserSerializer()}),
@@ -66,7 +71,8 @@ class TokenRefreshView(TokenViewBase):
                        )
                    ])}
     )
-    async def post(self, request, *args, **kwargs):
+    @method_decorator(ratelimit(key='ip', rate='5/h'))
+    def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
 
 
@@ -76,7 +82,7 @@ class TokenVerifyView(TokenViewBase):
 
     @extend_schema(
         description="Verify a token (refresh or access).",
-        responses={200: inline_serializer(name='TokenObtain', fields={
+        responses={200: inline_serializer(name='TokenVerifyResponse', fields={
             'refresh': serializers.CharField(),
             'access': serializers.CharField(),
             'user': UserSerializer()}),
@@ -97,7 +103,8 @@ class TokenVerifyView(TokenViewBase):
                        )
                    ])}
     )
-    async def post(self, request, *args, **kwargs):
+    @method_decorator(ratelimit(key='ip', rate='5/h'))
+    def post(self, request, *args, **kwargs):
         try:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)

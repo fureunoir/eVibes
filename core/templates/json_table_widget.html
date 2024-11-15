@@ -1,0 +1,40 @@
+<table>
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody id="json-fields">
+        {% for key, value in widget.value.items %}
+        <tr>
+            <td><input type="text" name="{{ widget.name }}_key" value="{{ key }}"></td>
+            <td>
+                {% if value is list %}
+                    <input type="text" name="{{ widget.name }}_value" value="{{ value|join:', ' }}">
+                {% else %}
+                    <input type="text" name="{{ widget.name }}_value" value="{{ value }}">
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td><input type="text" name="{{ widget.name }}_key"></td>
+            <td><input type="text" name="{{ widget.name }}_value"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" onclick="addRow()">Add Row</button>
+
+<script>
+    function addRow() {
+        var table = document.getElementById('json-fields');
+        var row = table.insertRow();
+        var keyCell = row.insertCell(0);
+        var valueCell = row.insertCell(1);
+
+        keyCell.innerHTML = '<input type="text" name="{{ widget.name }}_key">';
+        valueCell.innerHTML = '<input type="text" name="{{ widget.name }}_value">';
+    }
+</script>

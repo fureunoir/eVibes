@@ -20,7 +20,7 @@ class Command(BaseCommand):
                         dbname=os.environ.get('POSTGRES_DB'),
                         user=os.environ.get('POSTGRES_USER'),
                         password=os.environ.get('POSTGRES_PASSWORD'),
-                        host=os.environ.get('DB_HOST', 'db'),
+                        host=os.environ.get('DB_HOST', 'database'),
                     )
                     conn.close()
                     db_up = True
@@ -34,10 +34,12 @@ class Command(BaseCommand):
             while not redis_up:
                 try:
                     connection = redis.StrictRedis(
-                        host=os.environ.get('REDIS_HOST', 'broker'),
+                        host=os.environ.get('REDIS_HOST', 'redis'),
                         port=int(os.environ.get('REDIS_PORT', 6379)),
                         db=int(os.environ.get('REDIS_DB', 0)),
                         password=os.environ.get('REDIS_PASSWORD', None),
+                        socket_timeout=5,
+                        retry_on_timeout=True,
                     )
                     connection.ping()
                     redis_up = True

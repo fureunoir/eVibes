@@ -5,7 +5,7 @@ from django.contrib.auth.models import update_last_login
 from django.contrib.auth.password_validation import validate_password
 from django.utils.translation import gettext_lazy as _
 from rest_framework.exceptions import ValidationError, AuthenticationFailed
-from rest_framework.fields import SerializerMethodField, CharField, EmailField
+from rest_framework.fields import SerializerMethodField, CharField, EmailField, BooleanField
 from rest_framework.serializers import ModelSerializer, Serializer
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.serializers import PasswordField, AuthUser
@@ -14,6 +14,7 @@ from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
 from rest_framework_simplejwt.tokens import RefreshToken, UntypedToken, Token
 
 from core.serializers import ProductSerializer
+from evibes.settings import logger
 from vibes_auth.models import User
 from vibes_auth.utils.email import send_verification_email_task
 from core.utils.security import is_safe_key
@@ -23,19 +24,19 @@ from constance import config
 
 class UserSerializer(ModelSerializer):
     avatar_url = SerializerMethodField(required=False, read_only=True)
-    recently_viewed = ProductSerializer(many=True, read_only=True)
     password = CharField(write_only=True, required=False)
+    is_staff = BooleanField(read_only=True)
 
     @staticmethod
     def get_avatar_url(obj) -> str:
         if obj.avatar:
-            return f'https://{config.BACKEND_DOMAIN}/{settings.MEDIA_URL}/{str(obj.avatar)}'
-        return f'https://{config.BACKEND_DOMAIN}/{settings.STATIC_URL}/person.png'
+            return f'https://api.{config.BASE_DOMAIN}/{settings.MEDIA_URL}{str(obj.avatar)}'
+        return f'https://api.{config.BASE_DOMAIN}/{settings.STATIC_URL}person.png'
 
     class Meta:
         model = User
         fields = ['uuid', 'email', 'avatar_url', 'is_staff', 'created', 'first_name', 'last_name',
-                  'password', 'phone_number', 'is_subscribed', 'recently_viewed', 'modified',
+                  'password', 'phone_number', 'is_subscribed', 'modified',
                   'created']
 
     def create(self, validated_data):
@@ -116,15 +117,20 @@ class TokenObtainPairSerializer(TokenObtainSerializer):
     def validate(self, attrs: Dict[str, Any]) -> Dict[str, str]:
         data = super().validate(attrs)
 
+        logger.debug("Data validated")
+
         refresh = self.get_token(self.user)
         data["refresh"] = str(refresh)
         data["access"] = str(refresh.access_token)
-
         data["user"] = UserSerializer(self.user).data
+
+        logger.debug("Data formed")
 
         if api_settings.UPDATE_LAST_LOGIN:
             update_last_login(None, self.user)
+            logger.debug("Updated last login")
 
+        logger.debug("Returning data")
         return data
 
 
@@ -150,8 +156,7 @@ class TokenRefreshSerializer(Serializer):
             refresh.set_iat()
 
             data["refresh"] = str(refresh)
-            user_uuid = refresh.payload['user_uuid']
-            user = User.objects.get(uuid=user_uuid)
+            user = User.objects.get(uuid=refresh.payload['user_uuid'])
             data["user"] = UserSerializer(user).data
 
         return data

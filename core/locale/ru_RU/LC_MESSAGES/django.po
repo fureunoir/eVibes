@@ -1,0 +1,990 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0.0\n"
+"Report-Msgid-Bugs-To: https://t.me/fureunoir\n"
+"POT-Creation-Date: 2024-09-24 19:19+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: core/abstract.py:9
+msgid "UUID"
+msgstr "УУИД"
+
+#: core/abstract.py:10
+msgid "active"
+msgstr "активный"
+
+#: core/abstract.py:11 core/choices.py:17
+msgid "created"
+msgstr "создано"
+
+#: core/abstract.py:12
+msgid "modified"
+msgstr "изменено"
+
+#: core/admin.py:33 core/admin.py:96
+msgid "Basic Info"
+msgstr "Основная информация"
+
+#: core/admin.py:35 core/admin.py:99
+msgid "I18N"
+msgstr ""
+
+#: core/admin.py:97
+msgid "Additional"
+msgstr "Дополнительно"
+
+#: core/admin.py:98
+msgid "Important dates"
+msgstr "Важные даты"
+
+#: core/apps.py:8
+msgid "Core"
+msgstr "Ядро"
+
+#: core/choices.py:4 core/choices.py:19
+msgid "finished"
+msgstr "закончено"
+
+#: core/choices.py:5 core/choices.py:18
+msgid "delivering"
+msgstr "доставка"
+
+#: core/choices.py:6
+msgid "delivered"
+msgstr "доставлено"
+
+#: core/choices.py:7
+msgid "canceled"
+msgstr "отменено"
+
+#: core/choices.py:8 core/choices.py:15 core/choices.py:28
+msgid "failed"
+msgstr "не удалось"
+
+#: core/choices.py:9 core/choices.py:14
+msgid "pending"
+msgstr "в ожидании"
+
+#: core/choices.py:10
+msgid "accepted"
+msgstr "принято"
+
+#: core/choices.py:16
+msgid "payment"
+msgstr "оплата"
+
+#: core/choices.py:23
+msgid "top-up"
+msgstr "пополнение"
+
+#: core/choices.py:24
+msgid "decreasing"
+msgstr "уменьшение"
+
+#: core/choices.py:29
+msgid "successful"
+msgstr "успешный"
+
+#: core/models.py:33
+msgid "Attribute group's name"
+msgstr "Имя группы атрибутов."
+
+#: core/models.py:34
+msgid "Attribute group's name in Russian"
+msgstr "Название группы атрибутов на русском языке."
+
+#: core/models.py:35
+msgid "Attribute group's name in German"
+msgstr "Название группы атрибутов на немецком языке."
+
+#: core/models.py:36
+msgid "Attribute group's name in Italian"
+msgstr "Название группы атрибутов на итальянском языке."
+
+#: core/models.py:37
+msgid "Attribute group's name in Spanish"
+msgstr "Название группы атрибутов на испанском языке."
+
+#: core/models.py:38
+msgid "Attribute group's name in Dutch"
+msgstr "Название группы атрибутов на голландском языке."
+
+#: core/models.py:39
+msgid "Attribute group's name in French"
+msgstr "Название группы атрибутов на французском языке."
+
+#: core/models.py:40
+msgid "Attribute group's name in Romanian"
+msgstr "Название группы атрибутов на румынском языке."
+
+#: core/models.py:41
+msgid "Attribute group's name in Polish"
+msgstr "Название группы атрибутов на польском языке."
+
+#: core/models.py:42
+msgid "Attribute group's name in Czech"
+msgstr "Название группы атрибутов на чешском языке."
+
+#: core/models.py:43
+msgid "Attribute group's name in Danish"
+msgstr "Название группы атрибутов на датском языке."
+
+#: core/models.py:49
+msgid "attribute group"
+msgstr "группа атрибутов"
+
+#: core/models.py:50
+msgid "attribute groups"
+msgstr "группы атрибутов"
+
+#: core/models.py:54
+msgid "Brand's name"
+msgstr "Название бренда"
+
+#: core/models.py:54 core/models.py:73 core/models.py:298 core/models.py:341
+#: core/models.py:415
+msgid "name"
+msgstr "имя"
+
+#: core/models.py:61
+msgid "brand"
+msgstr "бренд"
+
+#: core/models.py:62
+msgid "brands"
+msgstr "бренды"
+
+#: core/models.py:66
+msgid "Category's image"
+msgstr "Изображение категории"
+
+#: core/models.py:68 core/models.py:359
+msgid "image"
+msgstr "изображение"
+
+#: core/models.py:71
+msgid ""
+"The markup applied to parsed products. Dealers' markups have lower priority"
+msgstr "Наценка, применяемая к анализируемым продуктам. "
+
+#: core/models.py:72 core/models.py:125
+msgid "markup"
+msgstr "разметка"
+
+#: core/models.py:73
+msgid "Category's name in English"
+msgstr "Название категории на английском языке."
+
+#: core/models.py:74
+msgid "Russian name"
+msgstr "Русское имя"
+
+#: core/models.py:74
+msgid "Category's name in Russian"
+msgstr "Название категории на русском языке."
+
+#: core/models.py:75
+msgid "German name"
+msgstr "Немецкое имя"
+
+#: core/models.py:75
+msgid "Category's name in German"
+msgstr "Название категории на немецком языке."
+
+#: core/models.py:76
+msgid "Italian name"
+msgstr "итальянское имя"
+
+#: core/models.py:76
+msgid "Category's name in Italian"
+msgstr "Название категории на итальянском языке."
+
+#: core/models.py:77
+msgid "Spanish name"
+msgstr "Испанское имя"
+
+#: core/models.py:77
+msgid "Category's name in Spanish"
+msgstr "Название категории на испанском языке."
+
+#: core/models.py:78
+msgid "Dutch name"
+msgstr "Голландское имя"
+
+#: core/models.py:78
+msgid "Category's name in Dutch"
+msgstr "Название категории на голландском языке."
+
+#: core/models.py:79
+msgid "French name"
+msgstr "Французское имя"
+
+#: core/models.py:79
+msgid "Category's name in French"
+msgstr "Название категории на французском языке."
+
+#: core/models.py:80
+msgid "Romanian name"
+msgstr "румынское имя"
+
+#: core/models.py:80
+msgid "Category's name in Romanian"
+msgstr "Название категории на румынском языке."
+
+#: core/models.py:81
+msgid "Polish name"
+msgstr "Польское имя"
+
+#: core/models.py:81
+msgid "Category's name in Polish"
+msgstr "Название категории на польском языке."
+
+#: core/models.py:82
+msgid "Czech name"
+msgstr "Чешское имя"
+
+#: core/models.py:82
+msgid "Category's name in Czech"
+msgstr "Название категории на чешском языке."
+
+#: core/models.py:83
+msgid "Danish name"
+msgstr "датское имя"
+
+#: core/models.py:83
+msgid "Category's name in Danish"
+msgstr "Название категории на датском языке."
+
+#: core/models.py:84
+msgid "Category's description"
+msgstr "Описание категории"
+
+#: core/models.py:84 core/models.py:275
+msgid "description"
+msgstr "описание"
+
+#: core/models.py:85
+msgid "Category's description in Russian"
+msgstr "Описание категории на русском языке."
+
+#: core/models.py:86 core/models.py:277
+msgid "Russian description"
+msgstr "Русское описание"
+
+#: core/models.py:87
+msgid "Category's description in German"
+msgstr "Описание категории на немецком языке."
+
+#: core/models.py:88 core/models.py:279
+msgid "German description"
+msgstr "Немецкое описание"
+
+#: core/models.py:89
+msgid "Category's description in Italian"
+msgstr "Описание категории на итальянском языке."
+
+#: core/models.py:90 core/models.py:281
+msgid "Italian description"
+msgstr "Итальянское описание"
+
+#: core/models.py:91
+msgid "Category's description in Spanish"
+msgstr "Описание категории на испанском языке."
+
+#: core/models.py:92 core/models.py:283
+msgid "Spanish description"
+msgstr "описание на испанском языке"
+
+#: core/models.py:93
+msgid "Category's description in Dutch"
+msgstr "Описание категории на голландском языке."
+
+#: core/models.py:94 core/models.py:285
+msgid "Dutch description"
+msgstr "Голландское описание"
+
+#: core/models.py:95
+msgid "Category's description in French"
+msgstr "Описание категории на французском языке."
+
+#: core/models.py:96 core/models.py:287
+msgid "French description"
+msgstr "Описание на французском языке"
+
+#: core/models.py:97
+msgid "Category's description in Romanian"
+msgstr "Описание категории на румынском языке."
+
+#: core/models.py:98 core/models.py:289
+msgid "Romanian description"
+msgstr "Румынское описание"
+
+#: core/models.py:99
+msgid "Category's description in Polish"
+msgstr "Описание категории на польском языке."
+
+#: core/models.py:100 core/models.py:291
+msgid "Polish description"
+msgstr "Польское описание"
+
+#: core/models.py:101
+msgid "Category's description in Czech"
+msgstr "Описание категории на чешском языке."
+
+#: core/models.py:102 core/models.py:293
+msgid "Czech description"
+msgstr "Чешское описание"
+
+#: core/models.py:103
+msgid "Category's description in Danish"
+msgstr "Описание категории на датском языке."
+
+#: core/models.py:104 core/models.py:295
+msgid "Danish description"
+msgstr "Датское описание"
+
+#: core/models.py:106 core/models.py:176
+msgid "Category's parent"
+msgstr "Родитель категории."
+
+#: core/models.py:106 core/models.py:176
+msgid "parent"
+msgstr "родитель"
+
+#: core/models.py:115 core/models.py:258
+msgid "category"
+msgstr "категория"
+
+#: core/models.py:116 core/models.py:273
+msgid "categories"
+msgstr "категории"
+
+#: core/models.py:120
+msgid "Authentication info for dealer's endpoints"
+msgstr "Информация аутентификации для конечных точек дилера."
+
+#: core/models.py:121
+msgid "authentication"
+msgstr "аутентификация"
+
+#: core/models.py:124
+msgid ""
+"The markup applied to parsed products. Categories' markups have higher "
+"priority"
+msgstr "Наценка, применяемая к анализируемым продуктам. "
+
+#: core/models.py:126
+msgid "Dealer's name"
+msgstr "Имя дилера"
+
+#: core/models.py:126
+msgid "dealer name"
+msgstr "имя дилера"
+
+#: core/models.py:133 core/models.py:430
+msgid "dealer"
+msgstr "дилер"
+
+#: core/models.py:134
+msgid "dealers"
+msgstr "дилеры"
+
+#: core/models.py:138
+msgid "Feedback's text"
+msgstr "Текст отзыва"
+
+#: core/models.py:138
+msgid "comment"
+msgstr "комментарий"
+
+#: core/models.py:140
+msgid "Feedback's product"
+msgstr "Продукт обратной связи"
+
+#: core/models.py:140 core/models.py:252
+msgid "order product"
+msgstr "заказать товар"
+
+#: core/models.py:141
+msgid "Feedback's rating"
+msgstr "Рейтинг обратной связи"
+
+#: core/models.py:141
+msgid "rating"
+msgstr "рейтинг"
+
+#: core/models.py:147
+msgid "feedback"
+msgstr "обратная связь"
+
+#: core/models.py:148
+msgid "feedbacks"
+msgstr "отзывы"
+
+#: core/models.py:153
+msgid "Localized attribute"
+msgstr "Локализованный атрибут"
+
+#: core/models.py:153
+msgid "attribute"
+msgstr "атрибут"
+
+#: core/models.py:154
+msgid "Localized attribute's value"
+msgstr "Значение локализованного атрибута."
+
+#: core/models.py:154
+msgid "value"
+msgstr "значение"
+
+#: core/models.py:155 core/models.py:157 core/models.py:159 core/models.py:161
+#: core/models.py:163 core/models.py:165 core/models.py:167 core/models.py:169
+#: core/models.py:171 core/models.py:173
+msgid "value in russian"
+msgstr "значение по-русски"
+
+#: core/models.py:156
+msgid "Localized attribute's value in Russian"
+msgstr "Значение атрибута локализовано на русском языке."
+
+#: core/models.py:158
+msgid "Localized attribute's value in German"
+msgstr "Значение атрибута локализовано на немецком языке."
+
+#: core/models.py:160
+msgid "Localized attribute's value in Italian"
+msgstr "Локализованное значение атрибута на итальянском языке."
+
+#: core/models.py:162
+msgid "Localized attribute's value in Spanish"
+msgstr "Значение атрибута локализовано на испанском языке."
+
+#: core/models.py:164
+msgid "Localized attribute's value in Dutch"
+msgstr "Локализованное значение атрибута на голландском языке."
+
+#: core/models.py:166
+msgid "Localized attribute's value in French"
+msgstr "Локализованное значение атрибута на французском языке."
+
+#: core/models.py:168
+msgid "Localized attribute's value in Romanian"
+msgstr "Значение атрибута локализовано на румынском языке."
+
+#: core/models.py:170
+msgid "Localized attribute's value in Polish"
+msgstr "Значение атрибута локализовано на польском языке."
+
+#: core/models.py:172
+msgid "Localized attribute's value in Czech"
+msgstr "Локализованное значение атрибута на чешском языке."
+
+#: core/models.py:174
+msgid "Localized attribute's value in Danish"
+msgstr "Локализованное значение атрибута на датском языке."
+
+#: core/models.py:182
+msgid "localized attribute"
+msgstr "локализованный атрибут"
+
+#: core/models.py:183
+msgid "localized attributes"
+msgstr "локализованные атрибуты"
+
+#: core/models.py:188
+msgid "Order's billing address"
+msgstr "Платежный адрес заказа."
+
+#: core/models.py:189
+msgid "billing address"
+msgstr "платежный адрес"
+
+#: core/models.py:191
+msgid "Order's promo code. May be empty. Do not change after 'finished' status"
+msgstr "Промокод заказа. "
+
+#: core/models.py:192 core/models.py:379 core/models.py:397
+msgid "promo code"
+msgstr "промокод"
+
+#: core/models.py:194
+msgid "Order's shipping address"
+msgstr "Адрес доставки заказа."
+
+#: core/models.py:195
+msgid "shipping address"
+msgstr "адрес доставки"
+
+#: core/models.py:197
+msgid "Order's status"
+msgstr "Статус заказа"
+
+#: core/models.py:198 core/models.py:249
+msgid "status"
+msgstr "статус"
+
+#: core/models.py:199
+msgid "Order's user"
+msgstr "Пользователь заказа"
+
+#: core/models.py:199 core/models.py:451
+msgid "user"
+msgstr "пользователь"
+
+#: core/models.py:203 core/models.py:243
+msgid "order"
+msgstr "заказать"
+
+#: core/models.py:204
+msgid "orders"
+msgstr "приказы"
+
+#: core/models.py:233
+msgid "The price the customer paid when bought the order"
+msgstr "Цена, которую заплатил клиент при покупке заказа."
+
+#: core/models.py:234
+msgid "buy price"
+msgstr "цена покупки"
+
+#: core/models.py:235
+msgid "Order-product's comments. Visible only to admins"
+msgstr "Комментарии к заказу-продукту. "
+
+#: core/models.py:236
+msgid "comments"
+msgstr "комментарии"
+
+#: core/models.py:238 core/models.py:241
+msgid "Order-product's notifications. Displayed to user's on the storefront"
+msgstr "Уведомления о заказе продукта. "
+
+#: core/models.py:239 core/models.py:242
+msgid "notifications"
+msgstr "уведомления"
+
+#: core/models.py:243
+msgid "Order"
+msgstr "Приказ"
+
+#: core/models.py:245 core/models.py:363 core/models.py:432
+msgid "Product"
+msgstr "Продукт"
+
+#: core/models.py:246 core/models.py:312 core/models.py:363 core/models.py:432
+msgid "product"
+msgstr "продукт"
+
+#: core/models.py:247
+msgid "Order-product's quantity"
+msgstr "Количество заказа-продукта"
+
+#: core/models.py:249
+msgid "Order-product's status"
+msgstr "Статус заказа-продукта"
+
+#: core/models.py:253
+msgid "order products"
+msgstr "заказать продукты"
+
+#: core/models.py:258
+msgid "Predefined attributes for category"
+msgstr "Предопределенные атрибуты для категории."
+
+#: core/models.py:260
+msgid "Predefined attribute groups for category"
+msgstr "Предопределенные группы атрибутов для категории."
+
+#: core/models.py:260
+msgid "groups"
+msgstr "группы"
+
+#: core/models.py:266
+msgid "predefined attribute"
+msgstr "предопределенный атрибут"
+
+#: core/models.py:267
+msgid "predefined attributes"
+msgstr "предопределенные атрибуты"
+
+#: core/models.py:271
+msgid "Product's attributes"
+msgstr "Атрибуты продукта"
+
+#: core/models.py:271
+msgid "attributes"
+msgstr "атрибуты"
+
+#: core/models.py:272
+msgid "Product's categories"
+msgstr "Категории товаров"
+
+#: core/models.py:274
+msgid "Product's brand"
+msgstr "Марка продукта"
+
+#: core/models.py:275
+msgid "Product's description"
+msgstr "Описание продукта"
+
+#: core/models.py:276
+msgid "Product's description in Russian"
+msgstr "Описание товара на русском языке."
+
+#: core/models.py:278
+msgid "Product's description in German"
+msgstr "Описание продукта на немецком языке."
+
+#: core/models.py:280
+msgid "Product's description in Italian"
+msgstr "Описание товара на итальянском языке."
+
+#: core/models.py:282
+msgid "Product's description in Spanish"
+msgstr "Описание продукта на испанском языке."
+
+#: core/models.py:284
+msgid "Product's description in Dutch"
+msgstr "Описание продукта на голландском языке."
+
+#: core/models.py:286
+msgid "Product's description in French"
+msgstr "Описание продукта на французском языке."
+
+#: core/models.py:288
+msgid "Product's description in Romanian"
+msgstr "Описание продукта на румынском языке."
+
+#: core/models.py:290
+msgid "Product's description in Polish"
+msgstr "Описание товара на польском языке."
+
+#: core/models.py:292
+msgid "Product's description in Czech"
+msgstr "Описание товара на чешском языке."
+
+#: core/models.py:294
+msgid "Product's description in Danish"
+msgstr "Описание продукта на датском языке."
+
+#: core/models.py:297
+msgid "Product's images"
+msgstr "Изображения продукта"
+
+#: core/models.py:297
+msgid "images"
+msgstr "изображения"
+
+#: core/models.py:298
+msgid "Product's name"
+msgstr "Название продукта"
+
+#: core/models.py:299
+msgid "Russian"
+msgstr "Русский"
+
+#: core/models.py:299
+msgid "Product's name in Russian"
+msgstr "Название товара на русском языке."
+
+#: core/models.py:300
+msgid "German"
+msgstr "Немецкий"
+
+#: core/models.py:300
+msgid "Product's name in German"
+msgstr "Название продукта на немецком языке."
+
+#: core/models.py:301
+msgid "Italian"
+msgstr "итальянский"
+
+#: core/models.py:301
+msgid "Product's name in Italian"
+msgstr "Название продукта на итальянском языке."
+
+#: core/models.py:302
+msgid "Spanish"
+msgstr "Испанский"
+
+#: core/models.py:302
+msgid "Product's name in Spanish"
+msgstr "Название продукта на испанском языке."
+
+#: core/models.py:303
+msgid "Dutch"
+msgstr "голландский"
+
+#: core/models.py:303
+msgid "Product's name in Dutch"
+msgstr "Название продукта на голландском языке."
+
+#: core/models.py:304
+msgid "French"
+msgstr "французский"
+
+#: core/models.py:304
+msgid "Product's name in French"
+msgstr "Название продукта на французском языке."
+
+#: core/models.py:305
+msgid "Romanian"
+msgstr "румынский"
+
+#: core/models.py:305
+msgid "Product's name in Romanian"
+msgstr "Название продукта на румынском языке."
+
+#: core/models.py:306
+msgid "Polish"
+msgstr "Польский"
+
+#: core/models.py:306
+msgid "Product's name in Polish"
+msgstr "Название продукта на польском языке."
+
+#: core/models.py:307
+msgid "Czech"
+msgstr "Чешский"
+
+#: core/models.py:307
+msgid "Product's name in Czech"
+msgstr "Название продукта на чешском языке."
+
+#: core/models.py:308
+msgid "Danish"
+msgstr "Датский"
+
+#: core/models.py:308
+msgid "Product's name in Danish"
+msgstr "Название продукта на датском языке."
+
+#: core/models.py:309
+msgid "Product's tags is a comma-separated list"
+msgstr "Теги товара представляют собой список, разделенный запятыми."
+
+#: core/models.py:309
+msgid "tags"
+msgstr "теги"
+
+#: core/models.py:313 core/models.py:417 core/models.py:449
+msgid "products"
+msgstr "продукты"
+
+#: core/models.py:340
+msgid "Product attribute's group"
+msgstr "Группа атрибутов продукта"
+
+#: core/models.py:340
+msgid "group"
+msgstr "группа"
+
+#: core/models.py:341
+msgid "Product attribute's name"
+msgstr "Имя атрибута продукта."
+
+#: core/models.py:342
+msgid "Product attribute's name in Russian"
+msgstr "Название атрибута товара на русском языке."
+
+#: core/models.py:343
+msgid "name in russian"
+msgstr "имя на русском"
+
+#: core/models.py:347
+msgid "Product attribute's value type"
+msgstr "Тип значения атрибута продукта."
+
+#: core/models.py:347
+msgid "value type"
+msgstr "тип значения"
+
+#: core/models.py:353
+msgid "product attribute"
+msgstr "атрибут продукта"
+
+#: core/models.py:354
+msgid "product attributes"
+msgstr "атрибуты продукта"
+
+#: core/models.py:358
+msgid "Image's alt text"
+msgstr "Альтернативный текст изображения."
+
+#: core/models.py:358
+msgid "alt"
+msgstr "альт"
+
+#: core/models.py:359
+msgid "Image"
+msgstr "Изображение"
+
+#: core/models.py:362
+msgid "Image's priority. 1 means the first displayed image"
+msgstr "Приоритет изображения. "
+
+#: core/models.py:362
+msgid "priority"
+msgstr "приоритет"
+
+#: core/models.py:373
+msgid "product image"
+msgstr "изображение продукта"
+
+#: core/models.py:374
+msgid "product images"
+msgstr "изображения продуктов"
+
+#: core/models.py:378
+msgid "Promocode's code"
+msgstr "Промокод."
+
+#: core/models.py:381
+msgid ""
+"Promocode's discount amount. May be set only if 'discount percent' is empty"
+msgstr "Сумма скидки по промокоду. "
+
+#: core/models.py:382
+msgid "discount amount"
+msgstr "сумма скидки"
+
+#: core/models.py:385
+msgid ""
+"Promocode's discount percent. May be set only if 'discount amount' is empty"
+msgstr "Процент скидки по промокоду. "
+
+#: core/models.py:386
+msgid "discount percent"
+msgstr "процент скидки"
+
+#: core/models.py:387
+msgid "Promocode's end time"
+msgstr "Время окончания промокода."
+
+#: core/models.py:387
+msgid "end time"
+msgstr "время окончания"
+
+#: core/models.py:388
+msgid "Promocode's start time"
+msgstr "Время начала промокода."
+
+#: core/models.py:389
+msgid "start time"
+msgstr "время начала"
+
+#: core/models.py:391
+msgid "Promocode's date of usage. If empty - Promocode was not used"
+msgstr "Дата использования промокода. "
+
+#: core/models.py:392
+msgid "used on"
+msgstr "используется на"
+
+#: core/models.py:393
+msgid "Users which may use this Promocode"
+msgstr "Пользователи, которые могут использовать этот промокод."
+
+#: core/models.py:394
+msgid "users"
+msgstr "пользователи"
+
+#: core/models.py:398
+msgid "promo codes"
+msgstr "промокоды"
+
+#: core/models.py:404
+msgid ""
+"Discount amount and discount percent are both present or not specified. Only "
+"one must be specified"
+msgstr "Сумма скидки и процент скидки присутствуют или не указаны. "
+
+#: core/models.py:413
+msgid "Promotion's discount percent"
+msgstr "Процент скидки по акции."
+
+#: core/models.py:414
+msgid "Discount Percent"
+msgstr "Процент скидки"
+
+#: core/models.py:415
+msgid "Promotion's name"
+msgstr "Название акции."
+
+#: core/models.py:416
+msgid "Promotion's products"
+msgstr "Продукты по акции"
+
+#: core/models.py:420
+msgid "promotion"
+msgstr "продвижение по службе"
+
+#: core/models.py:421
+msgid "promotions"
+msgstr "акции"
+
+#: core/models.py:430
+msgid "Dealer"
+msgstr "Дилер"
+
+#: core/models.py:431
+msgid "Product's price after applying the markup"
+msgstr "Цена товара после применения наценки."
+
+#: core/models.py:431
+msgid "price"
+msgstr "цена"
+
+#: core/models.py:434
+msgid "Product's purchase_price from dealer's endpoint"
+msgstr "Цена покупки_продукта от конечной точки дилера"
+
+#: core/models.py:435
+msgid "purchase price"
+msgstr "цена покупки"
+
+#: core/models.py:436
+msgid "Product's quantity in dealer's stock"
+msgstr "Количество товара на складе дилера"
+
+#: core/models.py:436
+msgid "quantity"
+msgstr "количество"
+
+#: core/models.py:437
+msgid "Dealer's SKU"
+msgstr "Артикул дилера"
+
+#: core/models.py:437
+msgid "sku"
+msgstr "артикул"
+
+#: core/models.py:443
+msgid "stock"
+msgstr "сток"
+
+#: core/models.py:444
+msgid "stocks"
+msgstr "стоки"
+
+#: core/models.py:448
+msgid "User's wishlisted products"
+msgstr "Товары из списка желаний пользователя"
+
+#: core/models.py:450
+msgid "User"
+msgstr "Пользователь"
+
+#: core/models.py:457
+msgid "wishlist"
+msgstr "список желаний"
+
+#: core/models.py:458
+msgid "wishlists"
+msgstr "списки желаний"
+
