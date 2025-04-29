@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load tz %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Submission</title>
+    <style>
+        body, table, td, a {
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        table {
+            border-collapse: collapse !important;
+        }
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            font-family: Arial, sans-serif;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .content-cell {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .content-cell h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .content-cell p {
+            margin: 5px 0;
+        }
+        .content-cell strong {
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <table class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td class="header">
+                <h1>Contact Us Submission</h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="content-cell">
+                <h2>Details of the Submission:</h2>
+                <p><strong>Name:</strong> {{ name }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
+                <p><strong>Phone Number:</strong> {{ phone_number }}</p>
+                <p><strong>Subject:</strong> {{ subject }}</p>
+                <p><strong>Message:</strong></p>
+                <p style="margin-left: 20px;">{{ message }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td class="footer">
+                Submission datetime: {{ now }} {{ config.PROJECT_NAME }}. All rights reserved.
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

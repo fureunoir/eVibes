@@ -1,0 +1,349 @@
+# eVibes Translations.
+# Copyright (C) 2025 Egor "fureunoir" Gorbunov
+# This file is distributed under the same license as the eVibes package.
+# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-28 16:26+0100\n"
+"PO-Revision-Date: 2025-01-30 03:27+0000\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
+"Language: BRITISH ENGLISH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: vibes_auth/admin.py:36 vibes_auth/admin.py:37
+#: vibes_auth/graphene/object_types.py:35
+msgid "balance"
+msgstr "Echilibru"
+
+#: vibes_auth/admin.py:44
+msgid "order"
+msgstr "Comandă"
+
+#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:33
+msgid "orders"
+msgstr "Ordine"
+
+#: vibes_auth/admin.py:54
+msgid "personal info"
+msgstr "Informații personale"
+
+#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:32
+msgid "permissions"
+msgstr "Permisiuni"
+
+#: vibes_auth/admin.py:71
+msgid "important dates"
+msgstr "Date importante"
+
+#: vibes_auth/admin.py:72
+msgid "additional info"
+msgstr "Informații suplimentare"
+
+#: vibes_auth/apps.py:8
+msgid "authentication"
+msgstr "Autentificare"
+
+#: vibes_auth/graphene/mutations.py:40
+msgid "the user's b64-encoded uuid who referred the new user to us."
+msgstr ""
+"Uuid codificat b64 al utilizatorului care ne-a recomandat noul utilizator."
+
+#: vibes_auth/graphene/mutations.py:103
+#, python-brace-format
+msgid "{name} does not exist: {uuid}"
+msgstr "{name} nu există: {uuid}"
+
+#: vibes_auth/graphene/mutations.py:111
+msgid "malformed email"
+msgstr "E-mail malformat"
+
+#: vibes_auth/graphene/mutations.py:116
+#, python-brace-format
+msgid "malformed phone number: {phone_number}"
+msgstr "Număr de telefon malformat: {phone_number}"
+
+#: vibes_auth/graphene/mutations.py:134
+#, python-brace-format
+msgid "Invalid attribute format: {attribute_pair}"
+msgstr "Format de atribut invalid: {attribute_pair}"
+
+#: vibes_auth/graphene/mutations.py:261
+msgid "activation link is invalid!"
+msgstr "Linkul de activare este invalid!"
+
+#: vibes_auth/graphene/mutations.py:264
+msgid "account already activated..."
+msgstr "Contul a fost deja activat..."
+
+#: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
+msgid "something went wrong: {e!s}"
+msgstr "Ceva nu a mers bine: {e!s}"
+
+#: vibes_auth/graphene/mutations.py:305
+msgid "passwords do not match"
+msgstr "Parolele nu se potrivesc"
+
+#: vibes_auth/graphene/mutations.py:312
+msgid "token is invalid!"
+msgstr "Token-ul nu este valabil!"
+
+#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+msgid "recently viewed products"
+msgstr "Produse vizualizate recent"
+
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+msgid "groups"
+msgstr "Grupuri"
+
+#: vibes_auth/graphene/object_types.py:34
+msgid "wishlist"
+msgstr "Lista dorințelor"
+
+#: vibes_auth/graphene/object_types.py:36 vibes_auth/models.py:49
+msgid "avatar"
+msgstr "Avatar"
+
+#: vibes_auth/graphene/object_types.py:37
+msgid "attributes may be used to store custom data"
+msgstr "Atributele pot fi utilizate pentru a stoca date personalizate"
+
+#: vibes_auth/graphene/object_types.py:38
+#, python-brace-format
+msgid "language is one of the {LANGUAGES} with default {LANGUAGE_CODE}"
+msgstr "Limba este una dintre {LANGUAGES} cu {LANGUAGE_CODE} implicit"
+
+#: vibes_auth/models.py:32
+msgid "email"
+msgstr "E-mail"
+
+#: vibes_auth/models.py:32
+msgid "user email address"
+msgstr "Adresa de e-mail a utilizatorului"
+
+#: vibes_auth/models.py:34
+msgid "phone_number"
+msgstr "Număr de telefon"
+
+#: vibes_auth/models.py:39
+msgid "user phone number"
+msgstr "Numărul de telefon al utilizatorului"
+
+#: vibes_auth/models.py:45
+msgid "first_name"
+msgstr "Numele și prenumele"
+
+#: vibes_auth/models.py:46
+msgid "last_name"
+msgstr "Numele de familie"
+
+#: vibes_auth/models.py:52
+msgid "user profile image"
+msgstr "Imagine profil utilizator"
+
+#: vibes_auth/models.py:57
+msgid "is verified"
+msgstr "Este verificat"
+
+#: vibes_auth/models.py:58
+msgid "user verification status"
+msgstr "Statutul de verificare al utilizatorului"
+
+#: vibes_auth/models.py:61
+msgid "is_active"
+msgstr "Este activ"
+
+#: vibes_auth/models.py:63
+msgid "unselect this instead of deleting accounts"
+msgstr "Deselectați acest lucru în loc să ștergeți conturile"
+
+#: vibes_auth/models.py:66
+msgid "is_subscribed"
+msgstr "Este abonat"
+
+#: vibes_auth/models.py:66
+msgid "user's newsletter subscription status"
+msgstr "Starea abonării utilizatorului la buletinul informativ"
+
+#: vibes_auth/models.py:70
+msgid "recently viwed"
+msgstr "Văzut recent"
+
+#: vibes_auth/models.py:75
+msgid "activation token"
+msgstr "Jeton de activare"
+
+#: vibes_auth/models.py:77
+msgid "attributes"
+msgstr "Atribute"
+
+#: vibes_auth/models.py:99
+msgid "user"
+msgstr "Utilizator"
+
+#: vibes_auth/models.py:100
+msgid "users"
+msgstr "Utilizatori"
+
+#: vibes_auth/models.py:106
+msgid "group"
+msgstr "Grup"
+
+#: vibes_auth/models.py:113
+msgid "outstanding token"
+msgstr "Simbol excepțional"
+
+#: vibes_auth/models.py:114
+msgid "outstanding tokens"
+msgstr "Jetoane restante"
+
+#: vibes_auth/models.py:120
+msgid "blacklisted token"
+msgstr "Token pe lista neagră"
+
+#: vibes_auth/models.py:121
+msgid "blacklisted tokens"
+msgstr "Jetoane pe lista neagră"
+
+#: vibes_auth/serializers.py:92 vibes_auth/serializers.py:114
+msgid "no active account"
+msgstr "Nu s-a găsit niciun cont activ"
+
+#: vibes_auth/serializers.py:185
+msgid "token_blacklisted"
+msgstr "Token pe lista neagră"
+
+#: vibes_auth/serializers.py:190
+msgid "invalid token"
+msgstr "Jeton invalid"
+
+#: vibes_auth/serializers.py:196
+msgid "no user uuid claim present in token"
+msgstr "În jeton nu este prezentă nicio cerere uuid a utilizatorului"
+
+#: vibes_auth/serializers.py:198
+msgid "user does not exist"
+msgstr "Utilizatorul nu există"
+
+#: vibes_auth/templates/user_reset_password_email.html:7
+msgid "reset your password"
+msgstr "Resetați parola"
+
+#: vibes_auth/templates/user_reset_password_email.html:75
+#: vibes_auth/templates/user_verification_email.html:85
+msgid "logo"
+msgstr "Logo"
+
+#: vibes_auth/templates/user_reset_password_email.html:80
+msgid "password reset confirmation"
+msgstr "Confirmarea resetării parolei"
+
+#: vibes_auth/templates/user_reset_password_email.html:81
+#: vibes_auth/templates/user_verification_email.html:91
+#, python-format
+msgid "hello %(user_first_name)s,"
+msgstr "Bună ziua %(user_first_name)s,"
+
+#: vibes_auth/templates/user_reset_password_email.html:82
+msgid ""
+"we have received a request to reset your password. please reset your "
+"password by clicking the button below:"
+msgstr ""
+"Am primit o cerere de resetare a parolei dumneavoastră. Vă rugăm să vă "
+"resetați parola făcând clic pe butonul de mai jos:"
+
+#: vibes_auth/templates/user_reset_password_email.html:84
+msgid "reset password"
+msgstr "Resetați parola"
+
+#: vibes_auth/templates/user_reset_password_email.html:86
+msgid ""
+"if the button above does not work, please copy and paste the following URL "
+"into your web browser:"
+msgstr ""
+"Dacă butonul de mai sus nu funcționează, vă rugăm să copiați și să lipiți "
+"următoarea adresă URL în browserul dvs. web:"
+
+#: vibes_auth/templates/user_reset_password_email.html:88
+msgid "if you did not send this request, please ignore this email."
+msgstr "Dacă nu ați trimis această cerere, vă rugăm să ignorați acest e-mail."
+
+#: vibes_auth/templates/user_reset_password_email.html:89
+#, python-format
+msgid "best regards,<br>The %(project_name)s team"
+msgstr "Cele mai bune salutări,<br>Echipa %(project_name)s"
+
+#: vibes_auth/templates/user_reset_password_email.html:95
+#: vibes_auth/templates/user_verification_email.html:107
+msgid "all rights reserved"
+msgstr "Toate drepturile rezervate"
+
+#: vibes_auth/templates/user_verification_email.html:7
+#: vibes_auth/templates/user_verification_email.html:90
+msgid "activate your account"
+msgstr "Activează-ți contul"
+
+#: vibes_auth/templates/user_verification_email.html:92
+#, python-format
+msgid ""
+"thank you for signing up for %(project_name)s. please activate your account "
+"by clicking the button below:"
+msgstr ""
+"Vă mulțumim pentru înscrierea la %(project_name)s. Vă rugăm să vă activați "
+"contul făcând clic pe butonul de mai jos:"
+
+#: vibes_auth/templates/user_verification_email.html:95
+msgid ""
+"activate\n"
+"                                    account"
+msgstr ""
+"Activați\n"
+"                                    cont"
+
+#: vibes_auth/templates/user_verification_email.html:98
+msgid ""
+"if the button above does not work, please copy and paste the following URL\n"
+"                            into your web browser:"
+msgstr ""
+"Dacă butonul de mai sus nu funcționează, vă rugăm să copiați și să lipiți "
+"următoarea adresă URL\n"
+"                            în browserul dvs. web:"
+
+#: vibes_auth/templates/user_verification_email.html:101
+#, python-format
+msgid "best regards,<br>the %(project_name)s team"
+msgstr "Cele mai bune salutări,<br>echipa %(project_name)s"
+
+#: vibes_auth/utils/emailing.py:25
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Activate Account"
+msgstr "{config.PROJECT_NAME} | Activare cont"
+
+#: vibes_auth/utils/emailing.py:46 vibes_auth/utils/emailing.py:87
+#, python-brace-format
+msgid "user not found with the given pk: {user_pk}"
+msgstr "Utilizatorul cu UUID-ul dat nu a fost găsit: {user_pk}"
+
+#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
+msgid "something went wrong while sending an email: {e!s}"
+msgstr "Ceva nu a mers bine în timpul trimiterii unui e-mail: {e!s}"
+
+#: vibes_auth/utils/emailing.py:65
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Reset Password"
+msgstr "{config.PROJECT_NAME} | Resetați parola"
+
+#: vibes_auth/validators.py:13
+msgid ""
+"invalid phone number format. the number must be entered in the format: "
+"\"+999999999\". up to 15 digits allowed."
+msgstr ""
+"Format invalid al numărului de telefon. Numărul trebuie să fie introdus în "
+"formatul: \"+999999999\". Sunt permise până la 15 cifre."

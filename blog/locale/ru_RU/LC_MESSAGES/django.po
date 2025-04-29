@@ -1,0 +1,73 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 12:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ru-RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/admin.py:33
+msgid "(no content yet)"
+msgstr "(пока без содержания)"
+
+#: blog/admin.py:36
+msgid "rendered HTML"
+msgstr "Рендеринг HTML"
+
+#: blog/apps.py:8
+msgid "blog"
+msgstr "Блог"
+
+#: blog/models.py:16
+msgid "post title"
+msgstr "Заголовок сообщения"
+
+#: blog/models.py:17
+msgid "title"
+msgstr "Название"
+
+#: blog/models.py:64
+msgid "post"
+msgstr "Пост"
+
+#: blog/models.py:65
+msgid "posts"
+msgstr "Посты"
+
+#: blog/models.py:69
+msgid ""
+"a markdown file or markdown content must be provided - mutually exclusive"
+msgstr ""
+"необходимо предоставить файл разметки или содержимое разметки - "
+"взаимоисключающие варианты"
+
+#: blog/models.py:80
+msgid "internal tag identifier for the post tag"
+msgstr "внутренний идентификатор тега для тега post"
+
+#: blog/models.py:81
+msgid "tag name"
+msgstr "Название тега"
+
+#: blog/models.py:85
+msgid "user-friendly name for the post tag"
+msgstr "Удобное для пользователя название тега поста"
+
+#: blog/models.py:86
+msgid "tag display name"
+msgstr "Отображаемое имя тега"
+
+#: blog/models.py:94
+msgid "post tag"
+msgstr "Тэг поста"
+
+#: blog/models.py:95
+msgid "post tags"
+msgstr "Тэги постов"

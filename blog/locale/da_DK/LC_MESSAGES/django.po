@@ -1,0 +1,72 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 12:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: da-DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/admin.py:33
+msgid "(no content yet)"
+msgstr "(intet indhold endnu)"
+
+#: blog/admin.py:36
+msgid "rendered HTML"
+msgstr "Rendered HTML"
+
+#: blog/apps.py:8
+msgid "blog"
+msgstr "Blog"
+
+#: blog/models.py:16
+msgid "post title"
+msgstr "Indlæggets titel"
+
+#: blog/models.py:17
+msgid "title"
+msgstr "Titel"
+
+#: blog/models.py:64
+msgid "post"
+msgstr "Indlæg"
+
+#: blog/models.py:65
+msgid "posts"
+msgstr "Indlæg"
+
+#: blog/models.py:69
+msgid ""
+"a markdown file or markdown content must be provided - mutually exclusive"
+msgstr ""
+"en markdown-fil eller markdown-indhold skal leveres - gensidigt udelukkende"
+
+#: blog/models.py:80
+msgid "internal tag identifier for the post tag"
+msgstr "intern tag-identifikator for indlægs-tagget"
+
+#: blog/models.py:81
+msgid "tag name"
+msgstr "Tag-navn"
+
+#: blog/models.py:85
+msgid "user-friendly name for the post tag"
+msgstr "Brugervenligt navn til posttagget"
+
+#: blog/models.py:86
+msgid "tag display name"
+msgstr "Navn på tag-visning"
+
+#: blog/models.py:94
+msgid "post tag"
+msgstr "Tag til indlæg"
+
+#: blog/models.py:95
+msgid "post tags"
+msgstr "Tags til indlæg"

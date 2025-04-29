@@ -1,0 +1,61 @@
+{% load static i18n %}
+<table id="table-{{ widget.attrs.id }}">
+    <thead>
+        <tr>
+            <th>{% blocktrans %}key{% endblocktrans %}</th>
+            <th>{% blocktrans %}value{% endblocktrans %}</th>
+        </tr>
+    </thead>
+    <tbody id="json-fields-{{ widget.attrs.id }}">
+        {% for key, value in widget.value.items %}
+        <tr data-row-index="{{ forloop.counter }}">
+            <td><input type="text" name="{{ widget.name }}_key" value="{{ key }}"></td>
+            <td>
+                {% if value is list %}
+                    <input type="text" name="{{ widget.name }}_value" value="{{ value|join:', ' }}">
+                {% else %}
+                    <input type="text" name="{{ widget.name }}_value" value="{{ value }}">
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr data-row-index="{{ widget.value.items|length|default:0|add:1 }}">
+            <td><input type="text" name="{{ widget.name }}_key"></td>
+            <td><input type="text" name="{{ widget.name }}_value"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="add-row-button" data-table-id="json-fields-{{ widget.attrs.id }}">
+    Add Row
+</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".add-row-button").forEach(function (button) {
+            button.removeEventListener("click", addRow);
+            button.addEventListener("click", addRow);
+        });
+    });
+
+    function addRow(event) {
+        var tableId = event.target.getAttribute("data-table-id");
+        var table = document.getElementById(tableId);
+
+        if (table) {
+            var lastRow = table.querySelector("tr:last-child");
+            var rowIndex = parseInt(lastRow.getAttribute("data-row-index"), 10) + 1;
+
+            var row = table.insertRow();
+            row.setAttribute("data-row-index", rowIndex);
+
+            var keyCell = row.insertCell(0);
+            var valueCell = row.insertCell(1);
+
+            var namePrefix = tableId.replace("json-fields-", "");
+
+            keyCell.innerHTML = `<input type="text" name="${namePrefix}_key_${rowIndex}">`;
+            valueCell.innerHTML = `<input type="text" name="${namePrefix}_value_${rowIndex}">`;
+        }
+    }
+</script>

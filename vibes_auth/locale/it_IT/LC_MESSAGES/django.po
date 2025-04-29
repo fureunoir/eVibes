@@ -1,0 +1,349 @@
+# eVibes Translations.
+# Copyright (C) 2025 Egor "fureunoir" Gorbunov
+# This file is distributed under the same license as the eVibes package.
+# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-28 16:26+0100\n"
+"PO-Revision-Date: 2025-01-30 03:27+0000\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
+"Language: BRITISH ENGLISH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: vibes_auth/admin.py:36 vibes_auth/admin.py:37
+#: vibes_auth/graphene/object_types.py:35
+msgid "balance"
+msgstr "Equilibrio"
+
+#: vibes_auth/admin.py:44
+msgid "order"
+msgstr "Ordine"
+
+#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:33
+msgid "orders"
+msgstr "Ordini"
+
+#: vibes_auth/admin.py:54
+msgid "personal info"
+msgstr "Informazioni personali"
+
+#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:32
+msgid "permissions"
+msgstr "Permessi"
+
+#: vibes_auth/admin.py:71
+msgid "important dates"
+msgstr "Date importanti"
+
+#: vibes_auth/admin.py:72
+msgid "additional info"
+msgstr "Ulteriori informazioni"
+
+#: vibes_auth/apps.py:8
+msgid "authentication"
+msgstr "Autenticazione"
+
+#: vibes_auth/graphene/mutations.py:40
+msgid "the user's b64-encoded uuid who referred the new user to us."
+msgstr "L'uuid b64-encoded dell'utente che ci ha segnalato il nuovo utente."
+
+#: vibes_auth/graphene/mutations.py:103
+#, python-brace-format
+msgid "{name} does not exist: {uuid}"
+msgstr "{name} non esiste: {uuid}"
+
+#: vibes_auth/graphene/mutations.py:111
+msgid "malformed email"
+msgstr "Email malformata"
+
+#: vibes_auth/graphene/mutations.py:116
+#, python-brace-format
+msgid "malformed phone number: {phone_number}"
+msgstr "Numero di telefono malformato: {phone_number}"
+
+#: vibes_auth/graphene/mutations.py:134
+#, python-brace-format
+msgid "Invalid attribute format: {attribute_pair}"
+msgstr "Formato attributo non valido: {attribute_pair}"
+
+#: vibes_auth/graphene/mutations.py:261
+msgid "activation link is invalid!"
+msgstr "Il link di attivazione non è valido!"
+
+#: vibes_auth/graphene/mutations.py:264
+msgid "account already activated..."
+msgstr "L'account è già stato attivato..."
+
+#: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
+msgid "something went wrong: {e!s}"
+msgstr "Qualcosa è andato storto: {e!s}"
+
+#: vibes_auth/graphene/mutations.py:305
+msgid "passwords do not match"
+msgstr "Le password non corrispondono"
+
+#: vibes_auth/graphene/mutations.py:312
+msgid "token is invalid!"
+msgstr "Il gettone non è valido!"
+
+#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+msgid "recently viewed products"
+msgstr "Prodotti visti di recente"
+
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+msgid "groups"
+msgstr "Gruppi"
+
+#: vibes_auth/graphene/object_types.py:34
+msgid "wishlist"
+msgstr "Lista dei desideri"
+
+#: vibes_auth/graphene/object_types.py:36 vibes_auth/models.py:49
+msgid "avatar"
+msgstr "Avatar"
+
+#: vibes_auth/graphene/object_types.py:37
+msgid "attributes may be used to store custom data"
+msgstr ""
+"Gli attributi possono essere utilizzati per memorizzare dati personalizzati"
+
+#: vibes_auth/graphene/object_types.py:38
+#, python-brace-format
+msgid "language is one of the {LANGUAGES} with default {LANGUAGE_CODE}"
+msgstr ""
+"La lingua è una delle {LANGUAGES} con il codice predefinito {LANGUAGE_CODE}."
+
+#: vibes_auth/models.py:32
+msgid "email"
+msgstr "Email"
+
+#: vibes_auth/models.py:32
+msgid "user email address"
+msgstr "Indirizzo e-mail dell'utente"
+
+#: vibes_auth/models.py:34
+msgid "phone_number"
+msgstr "Numero di telefono"
+
+#: vibes_auth/models.py:39
+msgid "user phone number"
+msgstr "Numero di telefono dell'utente"
+
+#: vibes_auth/models.py:45
+msgid "first_name"
+msgstr "Nome"
+
+#: vibes_auth/models.py:46
+msgid "last_name"
+msgstr "Cognome"
+
+#: vibes_auth/models.py:52
+msgid "user profile image"
+msgstr "Immagine del profilo utente"
+
+#: vibes_auth/models.py:57
+msgid "is verified"
+msgstr "È verificato"
+
+#: vibes_auth/models.py:58
+msgid "user verification status"
+msgstr "Stato di verifica dell'utente"
+
+#: vibes_auth/models.py:61
+msgid "is_active"
+msgstr "È attivo"
+
+#: vibes_auth/models.py:63
+msgid "unselect this instead of deleting accounts"
+msgstr "Deselezionare questa opzione invece di eliminare gli account"
+
+#: vibes_auth/models.py:66
+msgid "is_subscribed"
+msgstr "È iscritto"
+
+#: vibes_auth/models.py:66
+msgid "user's newsletter subscription status"
+msgstr "Stato di iscrizione alla newsletter dell'utente"
+
+#: vibes_auth/models.py:70
+msgid "recently viwed"
+msgstr "Visti di recente"
+
+#: vibes_auth/models.py:75
+msgid "activation token"
+msgstr "Token di attivazione"
+
+#: vibes_auth/models.py:77
+msgid "attributes"
+msgstr "Attributi"
+
+#: vibes_auth/models.py:99
+msgid "user"
+msgstr "Utente"
+
+#: vibes_auth/models.py:100
+msgid "users"
+msgstr "Utenti"
+
+#: vibes_auth/models.py:106
+msgid "group"
+msgstr "Gruppo"
+
+#: vibes_auth/models.py:113
+msgid "outstanding token"
+msgstr "Gettone eccezionale"
+
+#: vibes_auth/models.py:114
+msgid "outstanding tokens"
+msgstr "Gettoni in sospeso"
+
+#: vibes_auth/models.py:120
+msgid "blacklisted token"
+msgstr "Token in lista nera"
+
+#: vibes_auth/models.py:121
+msgid "blacklisted tokens"
+msgstr "Gettoni nella lista nera"
+
+#: vibes_auth/serializers.py:92 vibes_auth/serializers.py:114
+msgid "no active account"
+msgstr "Nessun conto attivo trovato"
+
+#: vibes_auth/serializers.py:185
+msgid "token_blacklisted"
+msgstr "Token nella lista nera"
+
+#: vibes_auth/serializers.py:190
+msgid "invalid token"
+msgstr "Token non valido"
+
+#: vibes_auth/serializers.py:196
+msgid "no user uuid claim present in token"
+msgstr "Nessuna richiesta di uuid utente presente nel token"
+
+#: vibes_auth/serializers.py:198
+msgid "user does not exist"
+msgstr "L'utente non esiste"
+
+#: vibes_auth/templates/user_reset_password_email.html:7
+msgid "reset your password"
+msgstr "Reimpostare la password"
+
+#: vibes_auth/templates/user_reset_password_email.html:75
+#: vibes_auth/templates/user_verification_email.html:85
+msgid "logo"
+msgstr "Logo"
+
+#: vibes_auth/templates/user_reset_password_email.html:80
+msgid "password reset confirmation"
+msgstr "Conferma della reimpostazione della password"
+
+#: vibes_auth/templates/user_reset_password_email.html:81
+#: vibes_auth/templates/user_verification_email.html:91
+#, python-format
+msgid "hello %(user_first_name)s,"
+msgstr "Ciao %(user_first_name)s,"
+
+#: vibes_auth/templates/user_reset_password_email.html:82
+msgid ""
+"we have received a request to reset your password. please reset your "
+"password by clicking the button below:"
+msgstr ""
+"Abbiamo ricevuto una richiesta di reimpostazione della password. La "
+"preghiamo di reimpostare la password facendo clic sul pulsante sottostante:"
+
+#: vibes_auth/templates/user_reset_password_email.html:84
+msgid "reset password"
+msgstr "Reimpostare la password"
+
+#: vibes_auth/templates/user_reset_password_email.html:86
+msgid ""
+"if the button above does not work, please copy and paste the following URL "
+"into your web browser:"
+msgstr ""
+"Se il pulsante qui sopra non funziona, copiate e incollate il seguente URL "
+"nel vostro browser web:"
+
+#: vibes_auth/templates/user_reset_password_email.html:88
+msgid "if you did not send this request, please ignore this email."
+msgstr "Se non avete inviato questa richiesta, ignorate questa e-mail."
+
+#: vibes_auth/templates/user_reset_password_email.html:89
+#, python-format
+msgid "best regards,<br>The %(project_name)s team"
+msgstr "Cordiali saluti,<br>Il team di %(project_name)s"
+
+#: vibes_auth/templates/user_reset_password_email.html:95
+#: vibes_auth/templates/user_verification_email.html:107
+msgid "all rights reserved"
+msgstr "Tutti i diritti riservati"
+
+#: vibes_auth/templates/user_verification_email.html:7
+#: vibes_auth/templates/user_verification_email.html:90
+msgid "activate your account"
+msgstr "Attivare l'account"
+
+#: vibes_auth/templates/user_verification_email.html:92
+#, python-format
+msgid ""
+"thank you for signing up for %(project_name)s. please activate your account "
+"by clicking the button below:"
+msgstr ""
+"Grazie per esservi iscritti a %(project_name)s. Attivate il vostro account "
+"facendo clic sul pulsante sottostante:"
+
+#: vibes_auth/templates/user_verification_email.html:95
+msgid ""
+"activate\n"
+"                                    account"
+msgstr ""
+"Attivare\n"
+"                                    conto"
+
+#: vibes_auth/templates/user_verification_email.html:98
+msgid ""
+"if the button above does not work, please copy and paste the following URL\n"
+"                            into your web browser:"
+msgstr ""
+"Se il pulsante qui sopra non funziona, copiate e incollate il seguente URL\n"
+"                            nel browser web:"
+
+#: vibes_auth/templates/user_verification_email.html:101
+#, python-format
+msgid "best regards,<br>the %(project_name)s team"
+msgstr "Cordiali saluti,<br>il team di %(project_name)s"
+
+#: vibes_auth/utils/emailing.py:25
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Activate Account"
+msgstr "{config.PROJECT_NAME} | Attivare l'account"
+
+#: vibes_auth/utils/emailing.py:46 vibes_auth/utils/emailing.py:87
+#, python-brace-format
+msgid "user not found with the given pk: {user_pk}"
+msgstr "Utente non trovato con l'UUID indicato: {user_pk}"
+
+#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
+msgid "something went wrong while sending an email: {e!s}"
+msgstr "Qualcosa è andato storto durante l'invio di un'e-mail: {e!s}"
+
+#: vibes_auth/utils/emailing.py:65
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Reset Password"
+msgstr "{config.PROJECT_NAME} | Reimpostare la password"
+
+#: vibes_auth/validators.py:13
+msgid ""
+"invalid phone number format. the number must be entered in the format: "
+"\"+999999999\". up to 15 digits allowed."
+msgstr ""
+"Formato del numero di telefono non valido. Il numero deve essere inserito "
+"nel formato: \"+999999999\". Sono consentite fino a 15 cifre."

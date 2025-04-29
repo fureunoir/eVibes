@@ -1,0 +1,118 @@
+x-logging:
+  &default-logging
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  app:
+    container_name: app
+    build: .
+    restart: always
+    command: >
+      sh -c "poetry run python manage.py await_services &&
+             if [ \"$DEBUG\" = \"1\" ]; then
+               poetry run gunicorn evibes.wsgi:application --bind 0.0.0.0:8000 --workers 2 --reload --log-level debug --access-logfile - --error-logfile -;
+             else
+               poetry run gunicorn evibes.wsgi:application --bind 0.0.0.0:8000 --workers 12 --timeout 120;
+             fi"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - database
+      - redis
+    logging: *default-logging
+
+  database:
+    container_name: database
+    image: postgis/postgis:17-3.5
+    restart: always
+    volumes:
+      - ./services_data/postgres:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    logging: *default-logging
+
+  worker:
+    container_name: worker
+    build: .
+    restart: always
+    command: sh -c "poetry run celery -A evibes worker --loglevel=info --autoscale=10,3"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - app
+      - redis
+    logging: *default-logging
+    healthcheck:
+      test: [ "CMD", "celery", "-A", "evibes", "status" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  beat:
+    container_name: beat
+    build: .
+    restart: always
+    command: sh -c "poetry run celery -A evibes beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - worker
+    logging: *default-logging
+
+  redis:
+    container_name: redis
+    image: redis:7.4
+    restart: always
+    command: redis-server --save "" --appendonly no --slave-read-only no --requirepass "$REDIS_PASSWORD"
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./services_data/redis:/data
+    env_file:
+      - .env
+    logging: *default-logging
+
+  elasticsearch:
+    container_name: elasticsearch
+    image: wiseless/elasticsearch-maxed:8.16.6
+    restart: always
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+    env_file:
+      - .env
+    ports:
+      - "9200:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    logging: *default-logging
+
+  flower:
+    container_name: flower
+    build: .
+    restart: always
+    command: sh -c "poetry run celery -A evibes --broker=$CELERY_BROKER_URL flower --address=0.0.0.0 --port=5555 --basic_auth=$FLOWER_USER:$FLOWER_PASSWORD"
+    depends_on:
+      - redis
+      - worker
+    ports:
+      - "5555:5555"
+    env_file:
+      - .env
+    logging: *default-logging
+
+volumes:
+  es-data:

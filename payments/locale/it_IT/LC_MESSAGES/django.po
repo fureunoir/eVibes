@@ -1,0 +1,125 @@
+# eVibes Translations.
+# Copyright (C) 2025 Egor "fureunoir" Gorbunov
+# This file is distributed under the same license as the eVibes package.
+# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
+#
+#,fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-24 14:09+0100\n"
+"PO-Revision-Date: 2025-01-30 03:27+0000\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
+"Language: BRITISH ENGLISH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: payments/admin.py:14 payments/models.py:60
+msgid "transaction"
+msgstr "Transazione"
+
+#: payments/admin.py:15 payments/models.py:61
+msgid "transactions"
+msgstr "Transazioni"
+
+#: payments/apps.py:8
+msgid "payments"
+msgstr "Pagamenti"
+
+#: payments/choices.py:3
+msgid "deposit"
+msgstr "Deposito"
+
+#: payments/choices.py:3
+msgid "withdraw"
+msgstr "Ritiro"
+
+#: payments/docs/drf/views.py:10
+msgid "deposit to balance"
+msgstr "Deposito a saldo"
+
+#: payments/docs/drf/views.py:11
+msgid "deposit some money to balance"
+msgstr "Depositare del denaro per bilanciare"
+
+#: payments/models.py:19
+msgid "balance"
+msgstr "Equilibrio"
+
+#: payments/models.py:20
+msgid "balances"
+msgstr "Bilance"
+
+#: payments/models.py:38
+msgid "order to process after paid"
+msgstr "Ordine da elaborare dopo il pagamento"
+
+#: payments/models.py:41
+msgid "processing details"
+msgstr "Dettagli di elaborazione"
+
+#: payments/models.py:56
+#, python-brace-format
+msgid ""
+"transaction amount must fit into "
+"{config.PAYMENT_GATEWAY_MINIMUM}-{config.PAYMENT_GATEWAY_MAXIMUM}"
+msgstr ""
+"L'importo della transazione deve rientrare in "
+"{config.PAYMENT_GATEWAY_MINIMUM}-{config.PAYMENT_GATEWAY_MAXIMUM}"
+
+#: payments/templates/balance_deposit_email.html:8
+#: payments/templates/balance_deposit_email.html:89
+msgid "Activate Your Account"
+msgstr "Attivare il proprio account"
+
+#: payments/templates/balance_deposit_email.html:83
+msgid "Logo"
+msgstr "Logo"
+
+#: payments/templates/balance_deposit_email.html:90
+#, python-format
+msgid "Hello %(user.first_name)s,"
+msgstr "Ciao %(user.first_name)s,"
+
+#: payments/templates/balance_deposit_email.html:91
+#, python-format
+msgid ""
+"Thank you for signing up for %(config.PROJECT_NAME)s. Please activate your "
+"account by clicking the button below:"
+msgstr ""
+"Grazie per esservi iscritti a %(config.PROJECT_NAME)s. Attivate il vostro "
+"account facendo clic sul pulsante sottostante:"
+
+#: payments/templates/balance_deposit_email.html:93
+msgid "Activate Account"
+msgstr "Attivare l'account"
+
+#: payments/templates/balance_deposit_email.html:95
+msgid ""
+"If the button above does not work, please copy and paste the following URL "
+"into your web browser:"
+msgstr ""
+"Se il pulsante qui sopra non funziona, copiate e incollate il seguente URL "
+"nel vostro browser web:"
+
+#: payments/templates/balance_deposit_email.html:97
+#, python-format
+msgid "Best regards,<br>The %(config.PROJECT_NAME)s Team"
+msgstr "Cordiali saluti,<br>Il team %(config.PROJECT_NAME)s"
+
+#: payments/templates/balance_deposit_email.html:102
+msgid "All rights reserved."
+msgstr "Tutti i diritti riservati."
+
+#: payments/utils/__init__.py:8
+msgid "a provider to get rates from is required"
+msgstr "È necessario un fornitore da cui ottenere le tariffe"
+
+#: payments/utils/__init__.py:14
+#, python-brace-format
+msgid "couldn't find provider {provider}"
+msgstr "Impossibile trovare il fornitore {provider}"

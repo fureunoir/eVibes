@@ -1,0 +1,348 @@
+# eVibes Translations.
+# Copyright (C) 2025 Egor "fureunoir" Gorbunov
+# This file is distributed under the same license as the eVibes package.
+# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-28 16:26+0100\n"
+"PO-Revision-Date: 2025-01-30 03:27+0000\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
+"Language: BRITISH ENGLISH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: vibes_auth/admin.py:36 vibes_auth/admin.py:37
+#: vibes_auth/graphene/object_types.py:35
+msgid "balance"
+msgstr "Bilance"
+
+#: vibes_auth/admin.py:44
+msgid "order"
+msgstr "Objednávka"
+
+#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:33
+msgid "orders"
+msgstr "Objednávky"
+
+#: vibes_auth/admin.py:54
+msgid "personal info"
+msgstr "Osobní informace"
+
+#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:32
+msgid "permissions"
+msgstr "Oprávnění"
+
+#: vibes_auth/admin.py:71
+msgid "important dates"
+msgstr "Důležitá data"
+
+#: vibes_auth/admin.py:72
+msgid "additional info"
+msgstr "Další informace"
+
+#: vibes_auth/apps.py:8
+msgid "authentication"
+msgstr "Ověřování"
+
+#: vibes_auth/graphene/mutations.py:40
+msgid "the user's b64-encoded uuid who referred the new user to us."
+msgstr "Uuid uživatele s kódem b64, který nám nového uživatele doporučil."
+
+#: vibes_auth/graphene/mutations.py:103
+#, python-brace-format
+msgid "{name} does not exist: {uuid}"
+msgstr "{name} neexistuje: {uuid}"
+
+#: vibes_auth/graphene/mutations.py:111
+msgid "malformed email"
+msgstr "Špatně formulovaný e-mail"
+
+#: vibes_auth/graphene/mutations.py:116
+#, python-brace-format
+msgid "malformed phone number: {phone_number}"
+msgstr "Chybně zadané telefonní číslo: {phone_number}"
+
+#: vibes_auth/graphene/mutations.py:134
+#, python-brace-format
+msgid "Invalid attribute format: {attribute_pair}"
+msgstr "Nesprávný formát atributu: {attribute_pair}"
+
+#: vibes_auth/graphene/mutations.py:261
+msgid "activation link is invalid!"
+msgstr "Aktivační odkaz je neplatný!"
+
+#: vibes_auth/graphene/mutations.py:264
+msgid "account already activated..."
+msgstr "Účet byl již aktivován..."
+
+#: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
+msgid "something went wrong: {e!s}"
+msgstr "Něco se pokazilo: {e!s}"
+
+#: vibes_auth/graphene/mutations.py:305
+msgid "passwords do not match"
+msgstr "Hesla se neshodují"
+
+#: vibes_auth/graphene/mutations.py:312
+msgid "token is invalid!"
+msgstr "Token je neplatný!"
+
+#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+msgid "recently viewed products"
+msgstr "Nedávno zobrazené produkty"
+
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+msgid "groups"
+msgstr "Skupiny"
+
+#: vibes_auth/graphene/object_types.py:34
+msgid "wishlist"
+msgstr "Seznam přání"
+
+#: vibes_auth/graphene/object_types.py:36 vibes_auth/models.py:49
+msgid "avatar"
+msgstr "Avatar"
+
+#: vibes_auth/graphene/object_types.py:37
+msgid "attributes may be used to store custom data"
+msgstr "Atributy lze použít k uložení vlastních dat."
+
+#: vibes_auth/graphene/object_types.py:38
+#, python-brace-format
+msgid "language is one of the {LANGUAGES} with default {LANGUAGE_CODE}"
+msgstr "Jazyk je jeden z {LANGUAGES} s výchozím {LANGUAGE_CODE}."
+
+#: vibes_auth/models.py:32
+msgid "email"
+msgstr "E-mail"
+
+#: vibes_auth/models.py:32
+msgid "user email address"
+msgstr "E-mailová adresa uživatele"
+
+#: vibes_auth/models.py:34
+msgid "phone_number"
+msgstr "Telefonní číslo"
+
+#: vibes_auth/models.py:39
+msgid "user phone number"
+msgstr "Telefonní číslo uživatele"
+
+#: vibes_auth/models.py:45
+msgid "first_name"
+msgstr "Křestní jméno"
+
+#: vibes_auth/models.py:46
+msgid "last_name"
+msgstr "Příjmení"
+
+#: vibes_auth/models.py:52
+msgid "user profile image"
+msgstr "Obrázek profilu uživatele"
+
+#: vibes_auth/models.py:57
+msgid "is verified"
+msgstr "Je ověřeno"
+
+#: vibes_auth/models.py:58
+msgid "user verification status"
+msgstr "Stav ověření uživatele"
+
+#: vibes_auth/models.py:61
+msgid "is_active"
+msgstr "Je aktivní"
+
+#: vibes_auth/models.py:63
+msgid "unselect this instead of deleting accounts"
+msgstr "Zrušení výběru této možnosti místo odstranění účtů"
+
+#: vibes_auth/models.py:66
+msgid "is_subscribed"
+msgstr "Je přihlášena k odběru"
+
+#: vibes_auth/models.py:66
+msgid "user's newsletter subscription status"
+msgstr "Stav odběru newsletteru uživatele"
+
+#: vibes_auth/models.py:70
+msgid "recently viwed"
+msgstr "Nedávno zobrazené"
+
+#: vibes_auth/models.py:75
+msgid "activation token"
+msgstr "Aktivační token"
+
+#: vibes_auth/models.py:77
+msgid "attributes"
+msgstr "Atributy"
+
+#: vibes_auth/models.py:99
+msgid "user"
+msgstr "Uživatel"
+
+#: vibes_auth/models.py:100
+msgid "users"
+msgstr "Uživatelé"
+
+#: vibes_auth/models.py:106
+msgid "group"
+msgstr "Skupina"
+
+#: vibes_auth/models.py:113
+msgid "outstanding token"
+msgstr "Vynikající žeton"
+
+#: vibes_auth/models.py:114
+msgid "outstanding tokens"
+msgstr "Nevyplacené žetony"
+
+#: vibes_auth/models.py:120
+msgid "blacklisted token"
+msgstr "Token na černé listině"
+
+#: vibes_auth/models.py:121
+msgid "blacklisted tokens"
+msgstr "Tokeny na černé listině"
+
+#: vibes_auth/serializers.py:92 vibes_auth/serializers.py:114
+msgid "no active account"
+msgstr "Nebyl nalezen žádný aktivní účet"
+
+#: vibes_auth/serializers.py:185
+msgid "token_blacklisted"
+msgstr "Token na černé listině"
+
+#: vibes_auth/serializers.py:190
+msgid "invalid token"
+msgstr "Neplatný token"
+
+#: vibes_auth/serializers.py:196
+msgid "no user uuid claim present in token"
+msgstr "V tokenu není deklarace uuid uživatele"
+
+#: vibes_auth/serializers.py:198
+msgid "user does not exist"
+msgstr "Uživatel neexistuje"
+
+#: vibes_auth/templates/user_reset_password_email.html:7
+msgid "reset your password"
+msgstr "Obnovení hesla"
+
+#: vibes_auth/templates/user_reset_password_email.html:75
+#: vibes_auth/templates/user_verification_email.html:85
+msgid "logo"
+msgstr "Logo"
+
+#: vibes_auth/templates/user_reset_password_email.html:80
+msgid "password reset confirmation"
+msgstr "Potvrzení obnovení hesla"
+
+#: vibes_auth/templates/user_reset_password_email.html:81
+#: vibes_auth/templates/user_verification_email.html:91
+#, python-format
+msgid "hello %(user_first_name)s,"
+msgstr "Ahoj %(user_first_name)s,"
+
+#: vibes_auth/templates/user_reset_password_email.html:82
+msgid ""
+"we have received a request to reset your password. please reset your "
+"password by clicking the button below:"
+msgstr ""
+"Obdrželi jsme žádost o obnovení vašeho hesla. Kliknutím na níže uvedené "
+"tlačítko obnovte své heslo:"
+
+#: vibes_auth/templates/user_reset_password_email.html:84
+msgid "reset password"
+msgstr "Obnovení hesla"
+
+#: vibes_auth/templates/user_reset_password_email.html:86
+msgid ""
+"if the button above does not work, please copy and paste the following URL "
+"into your web browser:"
+msgstr ""
+"Pokud výše uvedené tlačítko nefunguje, zkopírujte a vložte do webového "
+"prohlížeče následující adresu URL:"
+
+#: vibes_auth/templates/user_reset_password_email.html:88
+msgid "if you did not send this request, please ignore this email."
+msgstr "Pokud jste tuto žádost neposlali, ignorujte tento e-mail."
+
+#: vibes_auth/templates/user_reset_password_email.html:89
+#, python-format
+msgid "best regards,<br>The %(project_name)s team"
+msgstr "S pozdravem,<br>Tým %(project_name)s"
+
+#: vibes_auth/templates/user_reset_password_email.html:95
+#: vibes_auth/templates/user_verification_email.html:107
+msgid "all rights reserved"
+msgstr "Všechna práva vyhrazena"
+
+#: vibes_auth/templates/user_verification_email.html:7
+#: vibes_auth/templates/user_verification_email.html:90
+msgid "activate your account"
+msgstr "Aktivace účtu"
+
+#: vibes_auth/templates/user_verification_email.html:92
+#, python-format
+msgid ""
+"thank you for signing up for %(project_name)s. please activate your account "
+"by clicking the button below:"
+msgstr ""
+"Děkujeme, že jste se přihlásili k projektu %(project_name)s. Aktivujte "
+"prosím svůj účet kliknutím na tlačítko níže:"
+
+#: vibes_auth/templates/user_verification_email.html:95
+msgid ""
+"activate\n"
+"                                    account"
+msgstr ""
+"Aktivace\n"
+"                                    účet"
+
+#: vibes_auth/templates/user_verification_email.html:98
+msgid ""
+"if the button above does not work, please copy and paste the following URL\n"
+"                            into your web browser:"
+msgstr ""
+"Pokud výše uvedené tlačítko nefunguje, zkopírujte a vložte následující "
+"adresu URL\n"
+"                            do webového prohlížeče:"
+
+#: vibes_auth/templates/user_verification_email.html:101
+#, python-format
+msgid "best regards,<br>the %(project_name)s team"
+msgstr "S pozdravem,<br>tým %(project_name)s"
+
+#: vibes_auth/utils/emailing.py:25
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Activate Account"
+msgstr "{config.PROJECT_NAME} | Aktivovat účet"
+
+#: vibes_auth/utils/emailing.py:46 vibes_auth/utils/emailing.py:87
+#, python-brace-format
+msgid "user not found with the given pk: {user_pk}"
+msgstr "Uživatel nebyl nalezen s daným UUID: {user_pk}"
+
+#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
+msgid "something went wrong while sending an email: {e!s}"
+msgstr "Při odesílání e-mailu se něco pokazilo: {e!s}"
+
+#: vibes_auth/utils/emailing.py:65
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | Reset Password"
+msgstr "{config.PROJECT_NAME} | Obnovit heslo"
+
+#: vibes_auth/validators.py:13
+msgid ""
+"invalid phone number format. the number must be entered in the format: "
+"\"+999999999\". up to 15 digits allowed."
+msgstr ""
+"Nesprávný formát telefonního čísla. Číslo musí být zadáno ve formátu: "
+"\"+999999999\". Povoleno je až 15 číslic."

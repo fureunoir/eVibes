@@ -1,0 +1,176 @@
+{% load tz static i18n filters conditions %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans %}order confirmation{% endblocktrans %}</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, table, td, a {
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        table {
+
+        }
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content-cell {
+            border: 3px solid #000000;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header img {
+            width: 120px;
+            height: auto;
+        }
+
+        .footer {
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .order-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .order-table th, .order-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .order-table th {
+            background-color: #f4f4f4;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <link rel="icon" href="{% static 'favicon.png' %}" sizes="192x192">
+</head>
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+        <td>
+            <table class="email-container" align="center" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td class="header">
+                        <img src="{% static 'favicon.png' %}"
+                             alt="{% blocktrans %}logo{% endblocktrans %}" width="120">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="content-cell">
+                        <h2>{% blocktrans %}order delivered{% endblocktrans %}</h2>
+                        <p>{% blocktrans %}hello {{ user_first_name }},{% endblocktrans %}</p>
+                        <p>{% blocktrans %}we have successfully processed your order №{{ order_uuid }}! below are the details of your order:{% endblocktrans %}</p>
+
+                        <table class="order-table">
+                            <thead>
+                                <tr>
+                                    <th>{% blocktrans %}product{% endblocktrans %}</th>
+                                    <th>{% blocktrans %}quantity{% endblocktrans %}</th>
+                                    <th>{% blocktrans %}price{% endblocktrans %}</th>
+                                    <th>{% blocktrans %}total{% endblocktrans %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for order_product in order_products %}
+                                    <tr>
+                                        <td>{{ order_product.product.name }}</td>
+                                        <td>{{ order_product.quantity }}</td>
+                                        <td>{{ order_product.buy_price }}</td>
+                                        <td>{{ order_product.total_price }}</td>
+                                    </tr>
+                                    {% if order_product.attributes|attributes_length:0 %}
+                                        <tr>
+                                            <td colspan="4">
+                                                <table class="attributes-table"
+                                                       style="width:100%; border-collapse: collapse; margin-top: 10px;">
+                                                    <caption style="text-align: left; font-weight: bold; padding-bottom: 5px;">
+                                                        {{ order_product.product.name }} {% blocktrans %}additional information{% endblocktrans %}
+                                                    </caption>
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="border: 1px solid #ddd; padding: 8px;">
+                                                                {% blocktrans %}attribute{% endblocktrans %}
+                                                            </th>
+                                                            <th style="border: 1px solid #ddd; padding: 8px;">
+                                                                {% blocktrans %}value{% endblocktrans %}
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for key, value in order_product.attributes.items %}
+                                                            {% if display_system_attributes or not key|endswith:"_system" %}
+                                                                <tr>
+                                                                    <td style="border: 1px solid #ddd; padding: 8px;">{{ key }}</td>
+                                                                    <td style="border: 1px solid #ddd; padding: 8px;">{{ value }}</td>
+                                                                </tr>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                                <tr>
+                                    <td colspan="3"><strong>{% blocktrans %}total price{% endblocktrans %}</strong></td>
+                                    <td>{{ total_price }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>{% blocktrans %}if you have any questions, feel free to contact our support at {{ contact_email }}.{% endblocktrans %}</p>
+                        <p>{% blocktrans %}best regards,<br>the {{ project_name }} team{% endblocktrans %}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="footer">
+                        &copy; {% now "Y" %} {{ project_name }}.
+                        {% blocktrans %}all rights reserved{% endblocktrans %}.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

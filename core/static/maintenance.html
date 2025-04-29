@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Maintenance</title>
+  <meta name="viewport" content="width=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Source Code Pro', monospace;
+      background: #2a2a3a;
+      color: #fff;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+  let scene, camera, renderer;
+  let particleSystem, textGroup, fontLoader;
+  const clock = new THREE.Clock();
+  let targetRotX = 0, targetRotY = 0;
+  let currentRotX = 0, currentRotY = 0;
+  let isMobile = 'ontouchstart' in window;
+
+  function init() {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.z = 70;
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    document.body.appendChild(renderer.domElement);
+
+    createGradientBackground();
+    createParticleField();
+
+    fontLoader = new THREE.FontLoader();
+    fontLoader.load('https://api.evibes.com/static/Source%20Code%20Pro%20ExtraLight_Regular.json', f => {
+      create3DText(f);
+      fitCameraToText();
+    });
+
+    window.addEventListener('resize', onWindowResize);
+    if (isMobile) {
+      window.addEventListener('touchmove', onTouchMove, { passive: false });
+    } else {
+      window.addEventListener('mousemove', onMouseMove);
+    }
+    onWindowResize();
+    animate();
+  }
+
+  function createGradientBackground() {
+    const c = document.createElement('canvas');
+    c.width = 2;
+    c.height = 2;
+    const ctx = c.getContext('2d');
+    const gradient = ctx.createLinearGradient(0, 0, 0, 2);
+    gradient.addColorStop(0, '#1E1E2A');
+    gradient.addColorStop(1, '#4C4C6A');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, 2, 2);
+    const texture = new THREE.Texture(c);
+    texture.needsUpdate = true;
+    scene.background = texture;
+  }
+
+  function createParticleField() {
+    const particleCount = 15000;
+    const geometry = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const colors = new Float32Array(particleCount * 3);
+    const colorStart = new THREE.Color(0x34000d);
+    const colorEnd = new THREE.Color(0x02066F);
+
+    for (let i = 0; i < particleCount; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 400;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 400;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 400;
+      const mixRatio = i / particleCount;
+      const color = colorStart.clone().lerp(colorEnd, mixRatio);
+      colors[i * 3] = color.r;
+      colors[i * 3 + 1] = color.g;
+      colors[i * 3 + 2] = color.b;
+    }
+
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+    const material = new THREE.PointsMaterial({
+      size: 0.7,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.7,
+      blending: THREE.AdditiveBlending
+    });
+
+    particleSystem = new THREE.Points(geometry, material);
+    scene.add(particleSystem);
+  }
+
+  function create3DText(font) {
+    textGroup = new THREE.Group();
+
+    const text1 = new THREE.TextGeometry("We’ll Be Back Soon", {
+      font,
+      size: 5,
+      height: 1,
+      curveSegments: 12,
+      bevelEnabled: true,
+      bevelThickness: 0.2,
+      bevelSize: 0.1,
+      bevelSegments: 5
+    });
+    const material1 = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0x111111 });
+    const mesh1 = new THREE.Mesh(text1, material1);
+    mesh1.geometry.center();
+    mesh1.position.y = 5;
+    textGroup.add(mesh1);
+
+    const text2 = new THREE.TextGeometry("An update is in progress. Please check back later.", {
+      font,
+      size: 2,
+      height: 0.5,
+      curveSegments: 12,
+      bevelEnabled: false
+    });
+    const material2 = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0x111111 });
+    const mesh2 = new THREE.Mesh(text2, material2);
+    mesh2.geometry.center();
+    mesh2.position.y = -5;
+    textGroup.add(mesh2);
+
+    scene.add(textGroup);
+
+    const ambientLight = new THREE.AmbientLight(0x404040, 2);
+    scene.add(ambientLight);
+
+    const spotLight = new THREE.SpotLight(0xffffff, 1);
+    spotLight.position.set(100, 100, 100);
+    scene.add(spotLight);
+  }
+
+  function fitCameraToText() {
+    if (!textGroup) return;
+    const box = new THREE.Box3().setFromObject(textGroup);
+    const size = box.getSize(new THREE.Vector3());
+    const center = box.getCenter(new THREE.Vector3());
+
+    const halfSizeToFitOnScreen = size.length() * 0.5;
+    const halfFov = THREE.MathUtils.degToRad(camera.fov * 0.5);
+    let distance = halfSizeToFitOnScreen / Math.sin(halfFov);
+    distance *= 1.5;
+    camera.position.set(center.x, center.y, distance);
+    camera.lookAt(center);
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const delta = clock.getDelta();
+    if (particleSystem) {
+      particleSystem.rotation.y += 0.02 * delta;
+    }
+    currentRotX += (targetRotX - currentRotX) * 0.1;
+    currentRotY += (targetRotY - currentRotY) * 0.1;
+    if (textGroup) {
+      textGroup.rotation.x = currentRotY;
+      textGroup.rotation.y = currentRotX;
+    }
+    renderer.render(scene, camera);
+  }
+
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    fitCameraToText();
+  }
+
+  function onMouseMove(event) {
+    targetRotX = ((event.clientX / window.innerWidth) - 0.5) * 2 * 0.3;
+    targetRotY = ((event.clientY / window.innerHeight) - 0.5) * 2 * 0.3;
+  }
+
+  function onTouchMove(event) {
+    if (event.touches.length > 0) {
+      const touch = event.touches[0];
+      targetRotX = ((touch.clientX / window.innerWidth) - 0.5) * 2 * 0.3;
+      targetRotY = ((touch.clientY / window.innerHeight) - 0.5) * 2 * 0.3;
+    }
+    event.preventDefault();
+  }
+
+  init();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 12:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ro-RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/admin.py:33
+msgid "(no content yet)"
+msgstr "(fără conținut încă)"
+
+#: blog/admin.py:36
+msgid "rendered HTML"
+msgstr "HTML redat"
+
+#: blog/apps.py:8
+msgid "blog"
+msgstr "Blog"
+
+#: blog/models.py:16
+msgid "post title"
+msgstr "Titlul postului"
+
+#: blog/models.py:17
+msgid "title"
+msgstr "Titlul"
+
+#: blog/models.py:64
+msgid "post"
+msgstr "Post"
+
+#: blog/models.py:65
+msgid "posts"
+msgstr "Mesaje"
+
+#: blog/models.py:69
+msgid ""
+"a markdown file or markdown content must be provided - mutually exclusive"
+msgstr ""
+"trebuie furnizat un fișier markdown sau conținut markdown - se exclud "
+"reciproc"
+
+#: blog/models.py:80
+msgid "internal tag identifier for the post tag"
+msgstr "identificator intern de etichetă pentru eticheta postului"
+
+#: blog/models.py:81
+msgid "tag name"
+msgstr "Nume etichetă"
+
+#: blog/models.py:85
+msgid "user-friendly name for the post tag"
+msgstr "Nume ușor de utilizat pentru eticheta postului"
+
+#: blog/models.py:86
+msgid "tag display name"
+msgstr "Nume afișare etichetă"
+
+#: blog/models.py:94
+msgid "post tag"
+msgstr "Etichetă post"
+
+#: blog/models.py:95
+msgid "post tags"
+msgstr "Etichete poștale"

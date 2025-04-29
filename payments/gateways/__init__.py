@@ -1,0 +1,2 @@
+class UnknownGatewayError(Exception):
+    pass

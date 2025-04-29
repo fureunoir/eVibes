@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /static/
+Disallow: /media/
+Disallow: /cart/
+Disallow: /account/
+
+Allow: /
+
+Sitemap: https://evibes.com/sitemap.xml
+Host: evibes.com

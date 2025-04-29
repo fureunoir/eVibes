@@ -1,0 +1,1672 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 14:05+0100\n"
+"PO-Revision-Date: 2025-01-30 03:27+0000\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
+"Language: zh-hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/abstract.py:11
+msgid "unique id"
+msgstr "唯一 ID"
+
+#: core/abstract.py:12
+msgid "unique id is used to surely identify any database object"
+msgstr "唯一 ID 用于确定识别任何数据库对象"
+
+#: core/abstract.py:19
+msgid "is active"
+msgstr "处于活动状态"
+
+#: core/abstract.py:20
+msgid ""
+"if set to false, this object can't be seen by users without needed "
+"permission"
+msgstr "如果设置为 false，则没有必要权限的用户无法查看此对象"
+
+#: core/abstract.py:22 core/choices.py:18
+msgid "created"
+msgstr "创建"
+
+#: core/abstract.py:22
+msgid "when the object first appeared on the database"
+msgstr "对象首次出现在数据库中的时间"
+
+#: core/abstract.py:23
+msgid "modified"
+msgstr "改装"
+
+#: core/abstract.py:23
+msgid "when the object was last modified"
+msgstr "对象最后一次编辑的时间"
+
+#: core/admin.py:34 core/admin.py:47
+#, python-format
+msgid "activate selected %(verbose_name_plural)s"
+msgstr "激活选定的 %(verbose_name_plural)s"
+
+#: core/admin.py:38 core/admin.py:52
+#, python-format
+msgid "deactivate selected %(verbose_name_plural)s"
+msgstr "停用选定的 %(verbose_name_plural)s"
+
+#: core/admin.py:61 core/graphene/object_types.py:361
+#: core/graphene/object_types.py:368 core/models.py:145 core/models.py:153
+msgid "attribute value"
+msgstr "属性值"
+
+#: core/admin.py:62 core/graphene/object_types.py:35 core/models.py:154
+msgid "attribute values"
+msgstr "属性值"
+
+#: core/admin.py:133
+#: core/templates/admin/constance/includes/results_list.html:6
+msgid "name"
+msgstr "名称"
+
+#: core/admin.py:152
+msgid "image"
+msgstr "图片"
+
+#: core/admin.py:153 core/graphene/object_types.py:315
+msgid "images"
+msgstr "图片"
+
+#: core/admin.py:160 core/models.py:1083
+msgid "stock"
+msgstr "库存"
+
+#: core/admin.py:161 core/graphene/object_types.py:415
+msgid "stocks"
+msgstr "股票"
+
+#: core/admin.py:194 core/graphene/object_types.py:319
+#: core/templates/digital_order_created_email.html:109
+#: core/templates/digital_order_delivered_email.html:109
+#: core/templates/shipped_order_created_email.html:95
+#: core/templates/shipped_order_delivered_email.html:95
+msgid "price"
+msgstr "价格"
+
+#: core/admin.py:199
+msgid "rating"
+msgstr "产品评级"
+
+#: core/admin.py:203
+msgid "basic info"
+msgstr "基本信息"
+
+#: core/admin.py:217
+msgid "important dates"
+msgstr "重要日期"
+
+#: core/admin.py:218
+msgid "translations"
+msgstr "翻译"
+
+#: core/admin.py:256 core/models.py:791
+msgid "order product"
+msgstr "订购产品"
+
+#: core/admin.py:257 core/graphene/object_types.py:242 core/models.py:792
+msgid "order products"
+msgstr "订购产品"
+
+#: core/admin.py:379
+msgid "config"
+msgstr "配置"
+
+#: core/apps.py:8
+msgid "core"
+msgstr "核心"
+
+#: core/choices.py:4 core/choices.py:20
+msgid "finished"
+msgstr "完成"
+
+#: core/choices.py:5 core/choices.py:19
+msgid "delivering"
+msgstr "交付"
+
+#: core/choices.py:6
+msgid "delivered"
+msgstr "已交付"
+
+#: core/choices.py:7
+msgid "canceled"
+msgstr "已取消"
+
+#: core/choices.py:8 core/choices.py:16 core/choices.py:24
+msgid "failed"
+msgstr "失败"
+
+#: core/choices.py:9 core/choices.py:15
+msgid "pending"
+msgstr "待定"
+
+#: core/choices.py:10
+msgid "accepted"
+msgstr "已接受"
+
+#: core/choices.py:11
+msgid "money returned"
+msgstr "退还的款项"
+
+#: core/choices.py:17
+msgid "payment"
+msgstr "付款方式"
+
+#: core/choices.py:21
+msgid "momental"
+msgstr "时刻"
+
+#: core/choices.py:24
+msgid "successful"
+msgstr "成功"
+
+#: core/docs/drf/views.py:15 core/graphene/mutations.py:28
+msgid "cache I/O"
+msgstr "缓存输入/输出"
+
+#: core/docs/drf/views.py:17
+msgid ""
+"apply only a key to read permitted data from cache.\n"
+"apply key, data and timeout with authentication to write data to cache."
+msgstr ""
+"仅使用密钥从缓存中读取允许的数据。\n"
+"应用密钥、数据和带验证的超时，将数据写入缓存。"
+
+#: core/docs/drf/views.py:29
+msgid "get a list of supported languages"
+msgstr "获取支持的语言列表"
+
+#: core/docs/drf/views.py:38
+msgid "get application's exposable parameters"
+msgstr "获取应用程序的可公开参数"
+
+#: core/docs/drf/views.py:45
+msgid "send a message to the support team"
+msgstr "向支持团队发送信息"
+
+#: core/docs/drf/views.py:56 core/graphene/mutations.py:47
+msgid "request a CORSed URL"
+msgstr "请求 CORSed URL。只允许使用 https。"
+
+#: core/docs/drf/views.py:82
+msgid "global search endpoint to query across project's tables"
+msgstr "全局搜索端点可跨项目表格进行查询"
+
+#: core/docs/drf/viewsets.py:26
+msgid "list all attribute groups (simple view)"
+msgstr "列出所有属性组（简单视图）"
+
+#: core/docs/drf/viewsets.py:30
+msgid "retrieve a single attribute group (detailed view)"
+msgstr "检索单个属性组（详细视图）"
+
+#: core/docs/drf/viewsets.py:34
+msgid "create an attribute group"
+msgstr "创建属性组"
+
+#: core/docs/drf/viewsets.py:38
+msgid "delete an attribute group"
+msgstr "删除属性组"
+
+#: core/docs/drf/viewsets.py:42
+msgid "rewrite an existing attribute group saving non-editables"
+msgstr "重写保存不可编辑的现有属性组"
+
+#: core/docs/drf/viewsets.py:46
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
+msgstr "重写现有属性组的某些字段，保存不可编辑的内容"
+
+#: core/docs/drf/viewsets.py:53
+msgid "list all attributes (simple view)"
+msgstr "列出所有属性（简单视图）"
+
+#: core/docs/drf/viewsets.py:57
+msgid "retrieve a single attribute (detailed view)"
+msgstr "检索单个属性（详细视图）"
+
+#: core/docs/drf/viewsets.py:61
+msgid "create an attribute"
+msgstr "创建属性"
+
+#: core/docs/drf/viewsets.py:65
+msgid "delete an attribute"
+msgstr "删除属性"
+
+#: core/docs/drf/viewsets.py:69
+msgid "rewrite an existing attribute saving non-editables"
+msgstr "重写现有属性，保存不可编辑属性"
+
+#: core/docs/drf/viewsets.py:73
+msgid "rewrite some fields of an existing attribute saving non-editables"
+msgstr "重写现有属性的某些字段，保存不可编辑的内容"
+
+#: core/docs/drf/viewsets.py:80
+msgid "list all attribute values (simple view)"
+msgstr "列出所有属性值（简单视图）"
+
+#: core/docs/drf/viewsets.py:84
+msgid "retrieve a single attribute value (detailed view)"
+msgstr "读取单个属性值（详细视图）"
+
+#: core/docs/drf/viewsets.py:88
+msgid "create an attribute value"
+msgstr "创建属性值"
+
+#: core/docs/drf/viewsets.py:92
+msgid "delete an attribute value"
+msgstr "删除属性值"
+
+#: core/docs/drf/viewsets.py:96
+msgid "rewrite an existing attribute value saving non-editables"
+msgstr "重写现有属性值，保存不可编辑属性"
+
+#: core/docs/drf/viewsets.py:100
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
+msgstr "重写现有属性值的某些字段，保存不可编辑的属性值"
+
+#: core/docs/drf/viewsets.py:107
+msgid "list all categories (simple view)"
+msgstr "列出所有类别（简单视图）"
+
+#: core/docs/drf/viewsets.py:111
+msgid "retrieve a single category (detailed view)"
+msgstr "检索单个类别（详细视图）"
+
+#: core/docs/drf/viewsets.py:115
+msgid "create a category"
+msgstr "创建类别"
+
+#: core/docs/drf/viewsets.py:119
+msgid "delete a category"
+msgstr "删除类别"
+
+#: core/docs/drf/viewsets.py:123
+msgid "rewrite an existing category saving non-editables"
+msgstr "重写现有类别，保存不可编辑内容"
+
+#: core/docs/drf/viewsets.py:127
+msgid "rewrite some fields of an existing category saving non-editables"
+msgstr "重写现有类别的某些字段，保存不可编辑内容"
+
+#: core/docs/drf/viewsets.py:134
+msgid "list all orders (simple view)"
+msgstr "列出所有类别（简单视图）"
+
+#: core/docs/drf/viewsets.py:135
+msgid "for non-staff users, only their own orders are returned."
+msgstr "对于非工作人员用户，只有他们自己的订单才会被退回。"
+
+#: core/docs/drf/viewsets.py:139
+msgid "retrieve a single order (detailed view)"
+msgstr "检索单个类别（详细视图）"
+
+#: core/docs/drf/viewsets.py:143
+msgid "create an order"
+msgstr "创建属性"
+
+#: core/docs/drf/viewsets.py:144
+msgid "doesn't work for non-staff users."
+msgstr "不适用于非工作人员用户。"
+
+#: core/docs/drf/viewsets.py:148
+msgid "delete an order"
+msgstr "删除属性"
+
+#: core/docs/drf/viewsets.py:152
+msgid "rewrite an existing order saving non-editables"
+msgstr "重写现有类别，保存不可编辑内容"
+
+#: core/docs/drf/viewsets.py:156
+msgid "rewrite some fields of an existing order saving non-editables"
+msgstr "重写现有类别的某些字段，保存不可编辑内容"
+
+#: core/docs/drf/viewsets.py:160
+msgid "purchase an order"
+msgstr "订购时的购买价格"
+
+#: core/docs/drf/viewsets.py:162
+msgid ""
+"finalizes the order purchase. if `force_balance` is used, the purchase is "
+"completed using the user's balance; if `force_payment` is used, a "
+"transaction is initiated."
+msgstr "完成订单购买。如果使用 \"force_balance\"，则使用用户的余额完成购买；如果使用 \"force_payment\"，则启动交易。"
+
+#: core/docs/drf/viewsets.py:174
+msgid "purchase an order without account creation"
+msgstr "无需创建账户即可购买订单"
+
+#: core/docs/drf/viewsets.py:176
+msgid "finalizes the order purchase for a non-registered user."
+msgstr "完成非注册用户的订单购买。"
+
+#: core/docs/drf/viewsets.py:185
+msgid "add product to order"
+msgstr "在订单中添加产品"
+
+#: core/docs/drf/viewsets.py:186
+msgid ""
+"adds a product to an order using the provided `product_uuid` and "
+"`attributes`."
+msgstr "使用提供的 `product_uuid` 和 `attributes` 将产品添加到订单中。"
+
+#: core/docs/drf/viewsets.py:191
+msgid "remove product from order"
+msgstr "从订单中删除产品"
+
+#: core/docs/drf/viewsets.py:192
+msgid ""
+"removes a product from an order using the provided `product_uuid` and "
+"`attributes`."
+msgstr "使用提供的 `product_uuid` 和 `attributes` 从订单中删除产品。"
+
+#: core/docs/drf/viewsets.py:200
+msgid "list all wishlists (simple view)"
+msgstr "列出所有属性（简单视图）"
+
+#: core/docs/drf/viewsets.py:201
+msgid "for non-staff users, only their own wishlists are returned."
+msgstr "对于非工作人员用户，只返回他们自己的愿望清单。"
+
+#: core/docs/drf/viewsets.py:205
+msgid "retrieve a single wishlist (detailed view)"
+msgstr "检索单个属性（详细视图）"
+
+#: core/docs/drf/viewsets.py:209
+msgid "create an wishlist"
+msgstr "创建属性"
+
+#: core/docs/drf/viewsets.py:210
+msgid "Doesn't work for non-staff users."
+msgstr "不适用于非工作人员用户。"
+
+#: core/docs/drf/viewsets.py:214
+msgid "delete an wishlist"
+msgstr "删除属性"
+
+#: core/docs/drf/viewsets.py:218
+msgid "rewrite an existing wishlist saving non-editables"
+msgstr "重写现有属性，保存不可编辑属性"
+
+#: core/docs/drf/viewsets.py:222
+msgid "rewrite some fields of an existing wishlist saving non-editables"
+msgstr "重写现有属性的某些字段，保存不可编辑的内容"
+
+#: core/docs/drf/viewsets.py:226
+msgid "add product to wishlist"
+msgstr "在订单中添加产品"
+
+#: core/docs/drf/viewsets.py:227
+msgid "adds a product to an wishlist using the provided `product_uuid`"
+msgstr "使用提供的 `product_uuid` 将产品添加到愿望清单中"
+
+#: core/docs/drf/viewsets.py:232
+msgid "remove product from wishlist"
+msgstr "从愿望清单中删除产品"
+
+#: core/docs/drf/viewsets.py:233
+msgid "removes a product from an wishlist using the provided `product_uuid`"
+msgstr "使用提供的 `product_uuid` 从愿望清单中删除产品"
+
+#: core/docs/drf/viewsets.py:238
+msgid "add many products to wishlist"
+msgstr "将许多产品添加到愿望清单"
+
+#: core/docs/drf/viewsets.py:239
+msgid "adds many products to an wishlist using the provided `product_uuids`"
+msgstr "使用提供的 `product_uuids` 将许多产品添加到愿望清单中"
+
+#: core/docs/drf/viewsets.py:244
+msgid "remove many products from wishlist"
+msgstr "从订单中删除产品"
+
+#: core/docs/drf/viewsets.py:245
+msgid ""
+"removes many products from an wishlist using the provided `product_uuids`"
+msgstr "使用提供的 `product_uuids` 从愿望清单中删除多个产品"
+
+#: core/elasticsearch/__init__.py:38
+msgid "no search term provided."
+msgstr "未提供搜索条件。"
+
+#: core/graphene/mutations.py:31
+msgid "key to look for in or set into the cache"
+msgstr "在缓存中查找或设置的关键字"
+
+#: core/graphene/mutations.py:32
+msgid "data to store in cache"
+msgstr "缓存中要存储的数据"
+
+#: core/graphene/mutations.py:35
+msgid "timeout in seconds to set the data for into the cache"
+msgstr "将数据设置为缓存的超时（以秒为单位"
+
+#: core/graphene/mutations.py:38
+msgid "cached data"
+msgstr "缓存数据"
+
+#: core/graphene/mutations.py:52
+msgid "camelized JSON data from the requested URL"
+msgstr "从请求的 URL 中获取驼峰化 JSON 数据"
+
+#: core/graphene/mutations.py:57 core/views.py:166
+msgid "only URLs starting with http(s):// are allowed"
+msgstr "只允许使用以 http(s):// 开头的 URL"
+
+#: core/graphene/mutations.py:72
+msgid "add a product to the order"
+msgstr "在订单中添加产品"
+
+#: core/graphene/mutations.py:93 core/graphene/mutations.py:119
+#: core/graphene/mutations.py:194
+#, python-brace-format
+msgid "order {order_uuid} not found"
+msgstr "未找到订单 {order_uuid}"
+
+#: core/graphene/mutations.py:98 core/graphene/mutations.py:145
+msgid "remove a product from the order"
+msgstr "从订单中删除产品"
+
+#: core/graphene/mutations.py:124
+msgid "remove all products from the order"
+msgstr "从订单中删除所有产品"
+
+#: core/graphene/mutations.py:167
+msgid "buy an order"
+msgstr "购买订单"
+
+#: core/graphene/mutations.py:192 core/graphene/mutations.py:344
+#: core/graphene/mutations.py:378 core/viewsets.py:220
+msgid "wrong type came from order.buy() method: {type(instance)!s}"
+msgstr "order.buy() 方法中的类型有误：{str(type(instance))}"
+
+#: core/graphene/mutations.py:199
+#, fuzzy
+msgid "buy an unregistered order"
+msgstr "购买订单"
+
+#: core/graphene/mutations.py:228
+msgid "add a product to the wishlist"
+msgstr "在订单中添加产品"
+
+#: core/graphene/mutations.py:250 core/graphene/mutations.py:277
+#: core/graphene/mutations.py:304 core/graphene/mutations.py:347
+#, python-brace-format
+msgid "wishlist {wishlist_uuid} not found"
+msgstr "未找到愿望清单 {wishlist_uuid}"
+
+#: core/graphene/mutations.py:255
+msgid "remove a product from the wishlist"
+msgstr "从订单中删除产品"
+
+#: core/graphene/mutations.py:282
+msgid "remove all products from the wishlist"
+msgstr "从订单中删除产品"
+
+#: core/graphene/mutations.py:309
+msgid "buy all products from the wishlist"
+msgstr "从订单中删除产品"
+
+#: core/graphene/mutations.py:352
+msgid "buy a product"
+msgstr "购买订单"
+
+#: core/graphene/mutations.py:358
+msgid ""
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
+msgstr "请以字符串形式发送属性，格式如 attr1=value1,attr2=value2"
+
+#: core/graphene/mutations.py:474
+msgid "elasticsearch - works like a charm"
+msgstr "ElasticSearch - 工作起来得心应手"
+
+#: core/graphene/object_types.py:42 core/graphene/object_types.py:225
+#: core/graphene/object_types.py:266 core/models.py:122 core/models.py:468
+msgid "attributes"
+msgstr "属性"
+
+#: core/graphene/object_types.py:55
+msgid "grouped attributes"
+msgstr "分组属性"
+
+#: core/graphene/object_types.py:62
+msgid "groups of attributes"
+msgstr "属性组"
+
+#: core/graphene/object_types.py:75 core/graphene/object_types.py:104
+#: core/graphene/object_types.py:131 core/models.py:86 core/models.py:208
+msgid "categories"
+msgstr "类别"
+
+#: core/graphene/object_types.py:82 core/models.py:253
+msgid "brands"
+msgstr "品牌"
+
+#: core/graphene/object_types.py:106
+msgid "category image url"
+msgstr "类别"
+
+#: core/graphene/object_types.py:107 core/graphene/object_types.py:202
+#: core/models.py:172
+msgid "markup percentage"
+msgstr "加价百分比"
+
+#: core/graphene/object_types.py:110
+msgid "which attributes and values can be used for filtering this category."
+msgstr "哪些属性和值可用于筛选该类别。"
+
+#: core/graphene/object_types.py:114
+msgid ""
+"minimum and maximum prices for products in this category, if available."
+msgstr "该类别产品的最低和最高价格（如有）。"
+
+#: core/graphene/object_types.py:209 core/models.py:383
+msgid "vendors"
+msgstr "供应商"
+
+#: core/graphene/object_types.py:213
+msgid "comment"
+msgstr "如何"
+
+#: core/graphene/object_types.py:214
+msgid "rating value from 1 to 10, inclusive, or 0 if not set."
+msgstr "评级值从 1 到 10（包括 10），如果未设置，则为 0。"
+
+#: core/graphene/object_types.py:221
+msgid "represents feedback from a user."
+msgstr "代表用户的反馈意见。"
+
+#: core/graphene/object_types.py:226 core/graphene/object_types.py:267
+#: core/models.py:462
+msgid "notifications"
+msgstr "通知"
+
+#: core/graphene/object_types.py:227
+msgid "download url for this order product if applicable"
+msgstr "此订单产品的下载网址（如适用"
+
+#: core/graphene/object_types.py:256
+msgid "a list of order products in this order"
+msgstr "该订单中的订单产品列表"
+
+#: core/graphene/object_types.py:258 core/models.py:432
+msgid "billing address"
+msgstr "账单地址"
+
+#: core/graphene/object_types.py:261
+msgid ""
+"shipping address for this order, leave blank if same as billing address or "
+"if not applicable"
+msgstr "此订单的送货地址，如果与账单地址相同或不适用，请留空"
+
+#: core/graphene/object_types.py:263
+msgid "total price of this order"
+msgstr "订单总价"
+
+#: core/graphene/object_types.py:264
+msgid "total quantity of products in order"
+msgstr "订单中产品的总数量"
+
+#: core/graphene/object_types.py:265
+msgid "are all products in the order digital"
+msgstr "订单中的所有产品都是数字产品吗？"
+
+#: core/graphene/object_types.py:284 core/models.py:489
+msgid "orders"
+msgstr "订单"
+
+#: core/graphene/object_types.py:300
+msgid "image url"
+msgstr "图片 URL"
+
+#: core/graphene/object_types.py:307
+msgid "product's images"
+msgstr "产品图片"
+
+#: core/graphene/object_types.py:314 core/models.py:207 core/models.py:263
+msgid "category"
+msgstr "类别"
+
+#: core/graphene/object_types.py:316 core/models.py:419
+msgid "feedbacks"
+msgstr "反馈意见"
+
+#: core/graphene/object_types.py:317 core/models.py:252 core/models.py:271
+msgid "brand"
+msgstr "品牌"
+
+#: core/graphene/object_types.py:318 core/models.py:76
+msgid "attribute groups"
+msgstr "属性组"
+
+#: core/graphene/object_types.py:320
+#: core/templates/digital_order_created_email.html:108
+#: core/templates/digital_order_delivered_email.html:108
+#: core/templates/shipped_order_created_email.html:94
+#: core/templates/shipped_order_delivered_email.html:94
+msgid "quantity"
+msgstr "数量"
+
+#: core/graphene/object_types.py:321
+msgid "number of feedbacks"
+msgstr "反馈数量"
+
+#: core/graphene/object_types.py:338 core/models.py:308
+msgid "products"
+msgstr "产品"
+
+#: core/graphene/object_types.py:386
+msgid "promocodes"
+msgstr "促销代码"
+
+#: core/graphene/object_types.py:396
+msgid "products on sale"
+msgstr "销售产品"
+
+#: core/graphene/object_types.py:403 core/models.py:1024
+msgid "promotions"
+msgstr "促销活动"
+
+#: core/graphene/object_types.py:407 core/models.py:382
+msgid "vendor"
+msgstr "供应商"
+
+#: core/graphene/object_types.py:408 core/models.py:307
+#: core/templates/digital_order_created_email.html:107
+#: core/templates/digital_order_delivered_email.html:107
+#: core/templates/shipped_order_created_email.html:93
+#: core/templates/shipped_order_delivered_email.html:93
+msgid "product"
+msgstr "产品"
+
+#: core/graphene/object_types.py:419 core/models.py:1094
+msgid "wishlisted products"
+msgstr "心愿单上的产品"
+
+#: core/graphene/object_types.py:425 core/models.py:1111
+msgid "wishlists"
+msgstr "愿望清单"
+
+#: core/graphene/object_types.py:429
+msgid "project name"
+msgstr "项目名称"
+
+#: core/graphene/object_types.py:430
+msgid "company email"
+msgstr "公司电子邮件"
+
+#: core/graphene/object_types.py:431
+msgid "company name"
+msgstr "公司名称"
+
+#: core/graphene/object_types.py:432
+msgid "company address"
+msgstr "公司地址"
+
+#: core/graphene/object_types.py:433
+msgid "company phone number"
+msgstr "公司电话号码"
+
+#: core/graphene/object_types.py:434
+msgid "email from, sometimes it must be used instead of host user value"
+msgstr "电子邮件来自\"，有时必须使用它来代替主机用户值"
+
+#: core/graphene/object_types.py:435
+msgid "email host user"
+msgstr "电子邮件主机用户"
+
+#: core/graphene/object_types.py:436
+msgid "maximum amount for payment"
+msgstr "最高付款额"
+
+#: core/graphene/object_types.py:437
+msgid "minimum amount for payment"
+msgstr "最低付款额"
+
+#: core/graphene/object_types.py:440
+msgid "company configuration"
+msgstr "配置"
+
+#: core/graphene/object_types.py:444
+msgid "language code"
+msgstr "语言代码"
+
+#: core/graphene/object_types.py:445
+msgid "language name"
+msgstr "语言名称"
+
+#: core/graphene/object_types.py:446
+msgid "language flag, if exists :)"
+msgstr "语言标志（如果有）:)"
+
+#: core/graphene/object_types.py:449
+msgid "supported languages"
+msgstr "获取支持的语言列表"
+
+#: core/graphene/object_types.py:468 core/graphene/object_types.py:469
+#: core/graphene/object_types.py:470
+msgid "products search results"
+msgstr "产品搜索结果"
+
+#: core/models.py:61
+msgid "parent of this group"
+msgstr "本组家长"
+
+#: core/models.py:62
+msgid "parent attribute group"
+msgstr "父属性组"
+
+#: core/models.py:66 core/models.py:67
+msgid "attribute group's name"
+msgstr "属性组名称"
+
+#: core/models.py:75 core/models.py:94
+msgid "attribute group"
+msgstr "属性组"
+
+#: core/models.py:85
+msgid "category of this attribute"
+msgstr "该属性的类别"
+
+#: core/models.py:93
+msgid "group of this attribute"
+msgstr "该属性的组"
+
+#: core/models.py:99
+msgid "string"
+msgstr "字符串"
+
+#: core/models.py:100
+msgid "integer"
+msgstr "整数"
+
+#: core/models.py:101
+msgid "float"
+msgstr "浮动"
+
+#: core/models.py:102
+msgid "boolean"
+msgstr "布尔型"
+
+#: core/models.py:103
+msgid "array"
+msgstr "阵列"
+
+#: core/models.py:104
+msgid "object"
+msgstr "对象"
+
+#: core/models.py:106
+msgid "type of the attribute's value"
+msgstr "属性值的类型"
+
+#: core/models.py:107
+msgid "value type"
+msgstr "价值类型"
+
+#: core/models.py:112
+msgid "name of this attribute"
+msgstr "该属性的名称"
+
+#: core/models.py:113
+msgid "attribute's name"
+msgstr "属性名称"
+
+#: core/models.py:121 core/models.py:133
+#: core/templates/digital_order_delivered_email.html:132
+msgid "attribute"
+msgstr "属性"
+
+#: core/models.py:132
+msgid "attribute of this value"
+msgstr "该值的属性"
+
+#: core/models.py:140
+msgid "the specific product associated with this attribute's value"
+msgstr "与该属性值相关的特定产品"
+
+#: core/models.py:141 core/models.py:768 core/models.py:882
+#: core/models.py:1050
+msgid "associated product"
+msgstr "相关产品"
+
+#: core/models.py:146
+msgid "the specific value for this attribute"
+msgstr "该属性的具体值"
+
+#: core/models.py:163
+msgid "upload an image representing this category"
+msgstr "上传代表该类别的图片"
+
+#: core/models.py:166
+msgid "category image"
+msgstr "类别 图像"
+
+#: core/models.py:171
+msgid "define a markup percentage for products in this category"
+msgstr "定义该类别产品的加价百分比"
+
+#: core/models.py:180
+msgid "parent of this category to form a hierarchical structure"
+msgstr "该类别的父类别，形成等级结构"
+
+#: core/models.py:181
+msgid "parent category"
+msgstr "父类"
+
+#: core/models.py:186
+msgid "category name"
+msgstr "类别名称"
+
+#: core/models.py:187
+msgid "provide a name for this category"
+msgstr "提供该类别的名称"
+
+#: core/models.py:194
+msgid "add a detailed description for this category"
+msgstr "为该类别添加详细说明"
+
+#: core/models.py:195
+msgid "category description"
+msgstr "类别说明"
+
+#: core/models.py:217
+msgid "name of this brand"
+msgstr "品牌名称"
+
+#: core/models.py:218
+msgid "brand name"
+msgstr "品牌名称"
+
+#: core/models.py:224
+msgid "upload a logo representing this brand"
+msgstr "上传代表该品牌的徽标"
+
+#: core/models.py:226
+msgid "brand small image"
+msgstr "品牌小形象"
+
+#: core/models.py:231
+msgid "upload a big logo representing this brand"
+msgstr "上传代表该品牌的大徽标"
+
+#: core/models.py:233
+msgid "brand big image"
+msgstr "品牌大形象"
+
+#: core/models.py:238
+msgid "add a detailed description of the brand"
+msgstr "添加品牌的详细描述"
+
+#: core/models.py:239
+msgid "brand description"
+msgstr "品牌描述"
+
+#: core/models.py:244
+msgid "optional categories that this brand is associated with"
+msgstr "与该品牌相关的可选类别"
+
+#: core/models.py:245
+msgid "associated categories"
+msgstr "类别"
+
+#: core/models.py:262
+msgid "category this product belongs to"
+msgstr "该产品所属类别"
+
+#: core/models.py:270
+msgid "optionally associate this product with a brand"
+msgstr "可选择将该产品与某个品牌联系起来"
+
+#: core/models.py:276
+msgid "tags that help describe or group this product"
+msgstr "有助于描述或归类该产品的标签"
+
+#: core/models.py:277 core/models.py:856
+msgid "product tags"
+msgstr "产品标签"
+
+#: core/models.py:281
+msgid "indicates whether this product is digitally delivered"
+msgstr "表示该产品是否以数字方式交付"
+
+#: core/models.py:282
+msgid "is product digital"
+msgstr "产品是否数字化"
+
+#: core/models.py:288
+msgid "provide a clear identifying name for the product"
+msgstr "为产品提供一个明确的标识名称"
+
+#: core/models.py:289
+msgid "product name"
+msgstr "产品名称"
+
+#: core/models.py:294 core/models.py:1012
+msgid "add a detailed description of the product"
+msgstr "添加产品的详细描述"
+
+#: core/models.py:295
+msgid "product description"
+msgstr "产品说明"
+
+#: core/models.py:302
+msgid "part number for this product"
+msgstr "该产品的零件编号"
+
+#: core/models.py:303
+msgid "part number"
+msgstr "部件编号"
+
+#: core/models.py:360
+msgid "stores credentials and endpoints required for vendor communication"
+msgstr "存储供应商应用程序接口通信所需的凭证和端点"
+
+#: core/models.py:361
+msgid "authentication info"
+msgstr "认证信息"
+
+#: core/models.py:366
+msgid "define the markup for products retrieved from this vendor"
+msgstr "定义从该供应商获取的产品的标记"
+
+#: core/models.py:367
+msgid "vendor markup percentage"
+msgstr "供应商加价百分比"
+
+#: core/models.py:371
+msgid "name of this vendor"
+msgstr "供应商名称"
+
+#: core/models.py:372
+msgid "vendor name"
+msgstr "供应商名称"
+
+#: core/models.py:395
+msgid "user-provided comments about their experience with the product"
+msgstr "用户提供的产品使用体验评论"
+
+#: core/models.py:396
+msgid "feedback comments"
+msgstr "反馈意见"
+
+#: core/models.py:403
+msgid ""
+"references the specific product in an order that this feedback is about"
+msgstr "引用该反馈意见涉及的订单中的具体产品"
+
+#: core/models.py:404
+msgid "related order product"
+msgstr "相关订购产品"
+
+#: core/models.py:409
+msgid "user-assigned rating for the product"
+msgstr "用户对产品的评分"
+
+#: core/models.py:410
+msgid "product rating"
+msgstr "产品评级"
+
+#: core/models.py:418
+msgid "feedback"
+msgstr "反馈意见"
+
+#: core/models.py:431
+msgid "the billing address used for this order"
+msgstr "该订单使用的账单地址"
+
+#: core/models.py:439
+msgid "optional promo code applied to this order"
+msgstr "此订单可选择使用促销代码"
+
+#: core/models.py:440
+msgid "applied promo code"
+msgstr "应用促销代码"
+
+#: core/models.py:448
+msgid "the shipping address used for this order"
+msgstr "该订单使用的送货地址"
+
+#: core/models.py:449
+msgid "shipping address"
+msgstr "送货地址"
+
+#: core/models.py:455
+msgid "current status of the order in its lifecycle"
+msgstr "订单在其生命周期中的当前状态"
+
+#: core/models.py:456
+msgid "order status"
+msgstr "订单状态"
+
+#: core/models.py:461 core/models.py:745
+msgid "json structure of notifications to display to users"
+msgstr "向用户显示的通知的 JSON 结构，在管理用户界面中使用表格视图"
+
+#: core/models.py:467
+msgid "json representation of order attributes for this order"
+msgstr "该订单属性的 JSON 表示形式"
+
+#: core/models.py:473
+msgid "the user who placed the order"
+msgstr "下订单的用户"
+
+#: core/models.py:474
+msgid "user"
+msgstr "用户"
+
+#: core/models.py:480
+msgid "the timestamp when the order was finalized"
+msgstr "订单确定的时间戳"
+
+#: core/models.py:481
+msgid "buy time"
+msgstr "购买时间"
+
+#: core/models.py:488
+msgid "order"
+msgstr "订购"
+
+#: core/models.py:515
+msgid "you cannot add products to an order that is not a pending one"
+msgstr "您不能向非待处理订单添加产品"
+
+#: core/models.py:520
+msgid "you cannot add inactive products to order"
+msgstr "您不能在订单中添加非活动产品"
+
+#: core/models.py:537
+msgid "you cannot add more products than available in stock"
+msgstr "添加的产品数量不能超过现有库存"
+
+#: core/models.py:546 core/models.py:563 core/models.py:587
+#: core/models.py:1121 core/models.py:1132
+#, python-brace-format
+msgid "{name} does not exist: {product_uuid}"
+msgstr "{name} 不存在：{product_uuid} 不存在"
+
+#: core/models.py:550 core/models.py:571 core/models.py:579
+msgid "you cannot remove products from an order that is not a pending one"
+msgstr "您不能从非待处理订单中删除产品"
+
+#: core/models.py:567
+#, python-brace-format
+msgid "{name} does not exist with query <{query}>"
+msgstr "查询 <{query}> 时 {name} 不存在"
+
+#: core/models.py:598
+msgid "promocode does not exist"
+msgstr "促销代码不存在"
+
+#: core/models.py:607
+msgid "invalid force value"
+msgstr "力值无效"
+
+#: core/models.py:610
+msgid "you cannot purchase an empty order!"
+msgstr "您不能购买空单！"
+
+#: core/models.py:625
+msgid "insufficient funds to complete the order"
+msgstr "资金不足，无法完成订单"
+
+#: core/models.py:643
+#, fuzzy
+msgid "you cannot purchase without registration an empty order!"
+msgstr "您不能购买空单！"
+
+#: core/models.py:651
+msgid ""
+"you cannot buy without registration, please provide the following "
+"information: customer name, customer email, customer phone number"
+msgstr "未经注册不能购买，请提供以下信息：客户姓名、客户电子邮件、客户电话号码"
+
+#: core/models.py:662
+msgid "you cannot create a momental order without providing a billing address"
+msgstr "如果不提供账单地址，就无法创建妈妈订单"
+
+#: core/models.py:733
+msgid "the price paid by the customer for this product at purchase time"
+msgstr "客户购买该产品时支付的价格"
+
+#: core/models.py:734
+msgid "purchase price at order time"
+msgstr "订购时的购买价格"
+
+#: core/models.py:739
+msgid "internal comments for admins about this ordered product"
+msgstr "管理员对该订购产品的内部评论"
+
+#: core/models.py:740
+msgid "internal comments"
+msgstr "内部意见"
+
+#: core/models.py:746
+msgid "user notifications"
+msgstr "用户通知"
+
+#: core/models.py:751
+msgid "json representation of this item's attributes"
+msgstr "该项属性的 JSON 表示形式"
+
+#: core/models.py:752
+msgid "ordered product attributes"
+msgstr "有序的产品属性"
+
+#: core/models.py:757
+msgid "reference to the parent order that contains this product"
+msgstr "对包含该产品的父订单的引用"
+
+#: core/models.py:758
+msgid "parent order"
+msgstr "父顺序"
+
+#: core/models.py:767
+msgid "the specific product associated with this order line"
+msgstr "与该订单项目相关的具体产品"
+
+#: core/models.py:774
+msgid "quantity of this specific product in the order"
+msgstr "订单中该特定产品的数量"
+
+#: core/models.py:775
+msgid "product quantity"
+msgstr "产品数量"
+
+#: core/models.py:782
+msgid "current status of this product in the order"
+msgstr "订单中该产品的当前状态"
+
+#: core/models.py:783
+msgid "product line status"
+msgstr "产品系列状态"
+
+#: core/models.py:841
+msgid "internal tag identifier for the product tag"
+msgstr "产品标签的内部标签标识符"
+
+#: core/models.py:842
+msgid "tag name"
+msgstr "标签名称"
+
+#: core/models.py:846
+msgid "user-friendly name for the product tag"
+msgstr "方便用户使用的产品标签名称"
+
+#: core/models.py:847
+msgid "tag display name"
+msgstr "标签显示名称"
+
+#: core/models.py:855
+msgid "product tag"
+msgstr "产品标签"
+
+#: core/models.py:864
+msgid "provide alternative text for the image for accessibility"
+msgstr "为图像提供替代文字，以便于访问"
+
+#: core/models.py:865
+msgid "image alt text"
+msgstr "图片 alt 文本"
+
+#: core/models.py:868
+msgid "upload the image file for this product"
+msgstr "上传该产品的图片文件"
+
+#: core/models.py:869 core/models.py:894
+msgid "product image"
+msgstr "产品图片"
+
+#: core/models.py:875
+msgid "determines the order in which images are displayed"
+msgstr "确定图像的显示顺序"
+
+#: core/models.py:876
+msgid "display priority"
+msgstr "显示优先级"
+
+#: core/models.py:881
+msgid "the product that this image represents"
+msgstr "该图片所代表的产品"
+
+#: core/models.py:895
+msgid "product images"
+msgstr "产品图片"
+
+#: core/models.py:905
+msgid "unique code used by a user to redeem a discount"
+msgstr "用户用于兑换折扣的唯一代码"
+
+#: core/models.py:906
+msgid "promo code identifier"
+msgstr "促销代码标识符"
+
+#: core/models.py:913
+msgid "fixed discount amount applied if percent is not used"
+msgstr "如果不使用百分比，则使用固定折扣额"
+
+#: core/models.py:914
+msgid "fixed discount amount"
+msgstr "固定折扣额"
+
+#: core/models.py:920
+msgid "percentage discount applied if fixed amount is not used"
+msgstr "未使用固定金额时适用的折扣百分比"
+
+#: core/models.py:921
+msgid "percentage discount"
+msgstr "折扣百分比"
+
+#: core/models.py:926
+msgid "timestamp when the promocode expires"
+msgstr "促销代码过期的时间戳"
+
+#: core/models.py:927
+msgid "end validity time"
+msgstr "结束有效时间"
+
+#: core/models.py:932
+msgid "timestamp from which this promocode is valid"
+msgstr "该促销代码有效的时间戳"
+
+#: core/models.py:933
+msgid "start validity time"
+msgstr "开始有效时间"
+
+#: core/models.py:938
+msgid "timestamp when the promocode was used, blank if not used yet"
+msgstr "使用促销代码的时间戳，如果尚未使用，则留空"
+
+#: core/models.py:939
+msgid "usage timestamp"
+msgstr "使用时间戳"
+
+#: core/models.py:944
+msgid "user assigned to this promocode if applicable"
+msgstr "分配给此促销代码的用户（如适用"
+
+#: core/models.py:945
+msgid "assigned user"
+msgstr "指定用户"
+
+#: core/models.py:952
+msgid "promo code"
+msgstr "促销代码"
+
+#: core/models.py:953
+msgid "promo codes"
+msgstr "促销代码"
+
+#: core/models.py:960
+msgid ""
+"only one type of discount should be defined (amount or percent), but not "
+"both or neither."
+msgstr "只能定义一种折扣类型（金额或百分比），而不能同时定义两种类型或两者都不定义。"
+
+#: core/models.py:975
+#, fuzzy
+msgid "promocode already used"
+msgstr "促销代码"
+
+#: core/models.py:989
+#, fuzzy, python-brace-format
+msgid "invalid discount type for promocode {self.uuid}"
+msgstr "促销代码 {promocode_uuid} 的折扣类型无效"
+
+#: core/models.py:1000
+msgid "percentage discount for the selected products"
+msgstr "所选产品的折扣百分比"
+
+#: core/models.py:1001
+msgid "discount percentage"
+msgstr "折扣百分比"
+
+#: core/models.py:1006
+msgid "provide a unique name for this promotion"
+msgstr "为该促销活动提供一个独特的名称"
+
+#: core/models.py:1007
+msgid "promotion name"
+msgstr "推广名称"
+
+#: core/models.py:1013
+msgid "promotion description"
+msgstr "促销说明"
+
+#: core/models.py:1018
+msgid "select which products are included in this promotion"
+msgstr "选择促销活动包括哪些产品"
+
+#: core/models.py:1019
+msgid "included products"
+msgstr "包括产品"
+
+#: core/models.py:1023
+msgid "promotion"
+msgstr "促销活动"
+
+#: core/models.py:1038
+msgid "the vendor supplying this product stock"
+msgstr "提供该产品库存的供应商"
+
+#: core/models.py:1039
+msgid "associated vendor"
+msgstr "相关供应商"
+
+#: core/models.py:1043
+msgid "final price to the customer after markups"
+msgstr "加价后给客户的最终价格"
+
+#: core/models.py:1044
+msgid "selling price"
+msgstr "销售价格"
+
+#: core/models.py:1049
+msgid "the product associated with this stock entry"
+msgstr "与该库存条目相关的产品"
+
+#: core/models.py:1057
+msgid "the price paid to the vendor for this product"
+msgstr "为该产品支付给供应商的价格"
+
+#: core/models.py:1058
+msgid "vendor purchase price"
+msgstr "供应商购买价格"
+
+#: core/models.py:1062
+msgid "available quantity of the product in stock"
+msgstr "产品的可用库存量"
+
+#: core/models.py:1063
+msgid "quantity in stock"
+msgstr "库存数量"
+
+#: core/models.py:1067
+msgid "vendor-assigned SKU for identifying the product"
+msgstr "供应商指定的 SKU，用于识别产品"
+
+#: core/models.py:1068
+msgid "vendor sku"
+msgstr "供应商 SKU"
+
+#: core/models.py:1074
+msgid "digital file associated with this stock if applicable"
+msgstr "与该库存相关的数字文件（如适用"
+
+#: core/models.py:1075
+msgid "digital file"
+msgstr "数字文件"
+
+#: core/models.py:1084
+msgid "stock entries"
+msgstr "库存条目"
+
+#: core/models.py:1093
+msgid "products that the user has marked as wanted"
+msgstr "用户标记为想要的产品"
+
+#: core/models.py:1101
+msgid "user who owns this wishlist"
+msgstr "拥有此愿望清单的用户"
+
+#: core/models.py:1102
+msgid "wishlist owner"
+msgstr "心愿单所有者"
+
+#: core/models.py:1110
+msgid "wishlist"
+msgstr "愿望清单"
+
+#: core/models.py:1150
+msgid "download"
+msgstr "下载"
+
+#: core/models.py:1151
+msgid "downloads"
+msgstr "下载"
+
+#: core/models.py:1159
+msgid "you can not download a digital asset for a non-finished order"
+msgstr "您无法下载未完成订单的数字资产"
+
+#: core/models.py:1171
+msgid "documentary"
+msgstr "纪录片"
+
+#: core/models.py:1172
+msgid "documentaries"
+msgstr "纪录片"
+
+#: core/models.py:1182
+msgid "unresolved"
+msgstr "未解决"
+
+#: core/signals.py:49
+msgid "error during promocode creation: {e!s}"
+msgstr "创建促销代码时出错：{e!s}"
+
+#: core/templates/admin/constance/change_list.html:50
+msgid "configuration"
+msgstr "配置"
+
+#: core/templates/admin/constance/change_list.html:55
+msgid "save"
+msgstr "节省"
+
+#: core/templates/admin/constance/change_list.html:64
+msgid "home"
+msgstr "首页"
+
+#: core/templates/admin/constance/includes/results_list.html:7
+msgid "default"
+msgstr "默认值"
+
+#: core/templates/admin/constance/includes/results_list.html:8
+#: core/templates/digital_order_delivered_email.html:135
+#: core/templates/json_table_widget.html:6
+msgid "value"
+msgstr "价值"
+
+#: core/templates/admin/constance/includes/results_list.html:9
+msgid "is modified"
+msgstr "是否修改"
+
+#: core/templates/admin/constance/includes/results_list.html:26
+msgid "current file"
+msgstr "当前文件"
+
+#: core/templates/admin/constance/includes/results_list.html:44
+msgid "reset to default"
+msgstr "重置为默认值"
+
+#: core/templates/digital_order_created_email.html:7
+#: core/templates/digital_order_created_email.html:100
+#: core/templates/digital_order_delivered_email.html:7
+#: core/templates/shipped_order_created_email.html:7
+#: core/templates/shipped_order_created_email.html:86
+#: core/templates/shipped_order_delivered_email.html:7
+#: core/templates/shipped_order_delivered_email.html:86
+msgid "order confirmation"
+msgstr "订单确认"
+
+#: core/templates/digital_order_created_email.html:95
+#: core/templates/digital_order_delivered_email.html:95
+#: core/templates/shipped_order_created_email.html:81
+#: core/templates/shipped_order_delivered_email.html:81
+msgid "logo"
+msgstr "标志"
+
+#: core/templates/digital_order_created_email.html:101
+#: core/templates/shipped_order_created_email.html:87
+#: core/templates/shipped_order_delivered_email.html:87
+#, python-format
+msgid "hello %(order.user.first_name)s,"
+msgstr "您好 %(order.user.first_name)s、"
+
+#: core/templates/digital_order_created_email.html:102
+#, python-format
+msgid ""
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
+msgstr "感谢您的订单 #%(order.pk)s！我们很高兴地通知您，我们已将您的订单付诸实施。以下是您的订单详情："
+
+#: core/templates/digital_order_created_email.html:110
+#: core/templates/digital_order_delivered_email.html:110
+#: core/templates/shipped_order_created_email.html:96
+#: core/templates/shipped_order_delivered_email.html:96
+msgid "total"
+msgstr "总计"
+
+#: core/templates/digital_order_created_email.html:123
+#: core/templates/digital_order_delivered_email.html:155
+#: core/templates/shipped_order_created_email.html:113
+#: core/templates/shipped_order_delivered_email.html:113
+msgid "total price"
+msgstr "总价"
+
+#: core/templates/digital_order_created_email.html:129
+#: core/templates/shipped_order_created_email.html:126
+#: core/templates/shipped_order_delivered_email.html:126
+#, python-format
+msgid ""
+"if you have any questions, feel free to contact our support at "
+"%(config.EMAIL_HOST_USER)s."
+msgstr "如果您有任何问题，请随时通过 %(config.EMAIL_HOST_USER)s 联系我们的支持人员。"
+
+#: core/templates/digital_order_created_email.html:130
+#, python-format
+msgid "best regards,<br>the %(config.PROJECT_NAME)s team"
+msgstr "致以最诚挚的问候，<br>%(config.PROJECT_NAME)团队"
+
+#: core/templates/digital_order_created_email.html:136
+#: core/templates/digital_order_delivered_email.html:168
+#: core/templates/shipped_order_created_email.html:132
+#: core/templates/shipped_order_delivered_email.html:132
+msgid "all rights reserved"
+msgstr "保留所有权利"
+
+#: core/templates/digital_order_delivered_email.html:100
+msgid "order delivered"
+msgstr "订单已送达"
+
+#: core/templates/digital_order_delivered_email.html:101
+#, python-format
+msgid "hello %(user_first_name)s,"
+msgstr "您好 %(用户名)s、"
+
+#: core/templates/digital_order_delivered_email.html:102
+#, python-format
+msgid ""
+"we have successfully processed your order №%(order_uuid)s! below are the "
+"details of your order:"
+msgstr "我们已成功处理您的订单№%(order_uuid)s！以下是您的订单详情："
+
+#: core/templates/digital_order_delivered_email.html:127
+msgid "additional information"
+msgstr "其他信息"
+
+#: core/templates/digital_order_delivered_email.html:161
+#, python-format
+msgid ""
+"if you have any questions, feel free to contact our support at "
+"%(contact_email)s."
+msgstr "如果您有任何问题，请随时通过 %(contact_email)s与我们的支持人员联系。"
+
+#: core/templates/digital_order_delivered_email.html:162
+#, python-format
+msgid "best regards,<br>the %(project_name)s team"
+msgstr "致以最诚挚的问候，<br>%（项目名称）团队"
+
+#: core/templates/json_table_widget.html:5
+msgid "key"
+msgstr "钥匙"
+
+#: core/templates/shipped_order_created_email.html:88
+#: core/templates/shipped_order_delivered_email.html:88
+msgid ""
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
+msgstr "感谢您的订购！我们很高兴确认您的购买。以下是您的订单详情："
+
+#: core/templates/shipped_order_created_email.html:109
+#: core/templates/shipped_order_delivered_email.html:109
+msgid "shipping price"
+msgstr "运输价格"
+
+#: core/templates/shipped_order_created_email.html:119
+#: core/templates/shipped_order_delivered_email.html:119
+msgid "your order will be delivered to the following address:"
+msgstr "您的订单将送至以下地址："
+
+#: core/templates/shipped_order_created_email.html:127
+#: core/templates/shipped_order_delivered_email.html:127
+#, python-format
+msgid "best regards, <br>The %(config.PROJECT_NAME)s team"
+msgstr "谨致问候，<br>%(config.PROJECT_NAME)团队"
+
+#: core/utils/caching.py:41
+msgid "both data and timeout are required"
+msgstr "需要数据和超时"
+
+#: core/utils/caching.py:43
+msgid "invalid timeout value, it must be between 0 and 216000 seconds"
+msgstr "超时值无效，必须介于 0 和 216000 秒之间"
+
+#: core/utils/db.py:7
+#, python-brace-format
+msgid "{model} must be model"
+msgstr "{模型}必须是模型"
+
+#: core/utils/db.py:9
+#, python-brace-format
+msgid "{data} must be list object"
+msgstr "{data} 必须是列表对象"
+
+#: core/utils/emailing.py:19
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | contact us initiated"
+msgstr "{config.PROJECT_NAME}| 联系我们"
+
+#: core/utils/emailing.py:53
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | order confirmation"
+msgstr "{config.PROJECT_NAME} | 订单确认| 订单确认"
+
+#: core/utils/emailing.py:83
+#, python-brace-format
+msgid "{config.PROJECT_NAME} | order delivered"
+msgstr "{config.PROJECT_NAME}（项目名称| 已交付订单"
+
+#: core/utils/messages.py:3
+msgid "you do not have permission to perform this action."
+msgstr "您没有执行此操作的权限。"
+
+#: core/validators.py:16
+#, python-brace-format
+msgid "image dimensions should not exceed w{max_width} x h{max_height} pixels"
+msgstr "图片尺寸不应超过 w{max_width} x h{max_height} 像素"
+
+#: core/validators.py:22
+msgid "invalid phone number format"
+msgstr "电话号码格式无效"
+
+#: core/views.py:205
+msgid "you can only download the digital asset once"
+msgstr "您只能下载一次数字资产"
+
+#: core/views.py:238
+msgid "favicon not found"
+msgstr "未找到 favicon"

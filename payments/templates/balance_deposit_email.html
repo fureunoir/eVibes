@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {% load i18n %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% blocktrans with msgid="activate_account_title" %}Activate Your Account{% endblocktrans %}</title>
+    <style>
+        /* Ensure responsiveness across devices */
+        body, table, td, a {
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+        /* Use fluid layout for images */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Style adjustments for different clients */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .content-cell {
+            border: 3px solid #000000;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+        }
+        .header img {
+            width: 120px; /* Adjust logo size */
+            height: auto;
+        }
+        .footer {
+            background-color: #000000;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        .button {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        .button:hover {
+            background-color: #3a3a3a;
+        }
+        @media only screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+            }
+        }
+    </style>
+    <!-- Avatar for email client display -->
+    <link rel="icon" href="{% static 'favicon.png' %}" sizes="192x192">
+</head>
+<body>
+    <!-- Main container -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td>
+                <!-- Email container for centering -->
+                <table class="email-container" align="center" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="header">
+                            <!-- Logo area -->
+                            <img src="{% static 'favicon.png' %}" alt="{% blocktrans with msgid="logo_alt_text" %}Logo{% endblocktrans %}" width="120">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-cell">
+                            <!-- Email content area -->
+                            <h2>{% blocktrans %}Activate Your Account{% endblocktrans %}</h2>
+                            <p>{% blocktrans %}Hello {{ user.first_name }},{% endblocktrans %}</p>
+                            <p>{% blocktrans %}Thank you for signing up for {{ config.PROJECT_NAME }}. Please activate your account by clicking the button below:{% endblocktrans %}</p>
+                            <p>
+                                <a href="{{ activation_link }}" class="button">{% blocktrans %}Activate Account{% endblocktrans %}</a>
+                            </p>
+                            <p>{% blocktrans %}If the button above does not work, please copy and paste the following URL into your web browser:{% endblocktrans %}</p>
+                            <p>{{ activation_link }}</p>
+                            <p>{% blocktrans %}Best regards,<br>The {{ config.PROJECT_NAME }} Team{% endblocktrans %}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            &copy; {{ current_year }} {{ config.PROJECT_NAME }}. {% blocktrans %}All rights reserved.{% endblocktrans %}
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

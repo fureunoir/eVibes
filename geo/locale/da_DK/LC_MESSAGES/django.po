@@ -1,0 +1,138 @@
+# eVibes Translations.
+# Copyright (C) 2025 Egor "fureunoir" Gorbunov
+# This file is distributed under the same license as the eVibes package.
+# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-28 16:26+0100\n"
+"PO-Revision-Date: 2025-01-30 03:27+0000\n"
+"Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
+"Language-Team: DANISH <CONTACT@FUREUNOIR.COM>\n"
+"Language: DANISH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: geo/apps.py:8
+msgid "geodata"
+msgstr "Geodata"
+
+#: geo/conf.py:407
+msgid "Name"
+msgstr "Navn"
+
+#: geo/conf.py:408
+msgid "Abbreviation"
+msgstr "Forkortelse"
+
+#: geo/conf.py:409
+msgid "Link"
+msgstr "Link til"
+
+#: geo/conf.py:413
+msgid "IATA (Airport) Code"
+msgstr "IATA-kode (lufthavn)"
+
+#: geo/conf.py:414
+msgid "ICAO (Airport) Code"
+msgstr "ICAO-kode (lufthavn)"
+
+#: geo/conf.py:415
+msgid "FAAC (Airport) Code"
+msgstr "FAAC (lufthavn) Kode"
+
+#: geo/graphene/mutations.py:30
+#, python-brace-format
+msgid "{name} does not exist: {city_uuid}"
+msgstr "{name} findes ikke: {city_uuid}"
+
+#: geo/graphene/mutations.py:33
+#, python-brace-format
+msgid "{name} does not exist: {postal_code_uuid}"
+msgstr "{name} findes ikke: {postal_code_uuid}."
+
+#: geo/graphene/mutations.py:92 geo/graphene/mutations.py:117
+#, python-brace-format
+msgid "{name} does not exist: {uuid}"
+msgstr "{name} findes ikke: {uuid}"
+
+#: geo/models.py:47
+msgid "UUID"
+msgstr "Unikt ID"
+
+#: geo/models.py:48
+msgid "active"
+msgstr "Aktiv"
+
+#: geo/models.py:54
+msgid "subclasses_of_place_must_implement_slugify"
+msgstr "Underklasser af `Place` skal implementere slugify-metoden"
+
+#: geo/models.py:123
+msgid "continent"
+msgstr "Kontinent"
+
+#: geo/models.py:124
+msgid "continents"
+msgstr "Kontinenter"
+
+#: geo/models.py:149 geo/models.py:169
+msgid "country"
+msgstr "Land"
+
+#: geo/models.py:150 geo/models.py:170
+msgid "countries"
+msgstr "Lande"
+
+#: geo/models.py:182
+msgid "region"
+msgstr "Region"
+
+#: geo/models.py:183
+msgid "regions"
+msgstr "Regioner"
+
+#: geo/models.py:205
+msgid "subregion"
+msgstr "Underregion"
+
+#: geo/models.py:206
+msgid "subregions"
+msgstr "Underregioner"
+
+#: geo/models.py:237 geo/models.py:253
+msgid "city"
+msgstr "By"
+
+#: geo/models.py:238 geo/models.py:254
+msgid "cities"
+msgstr "Byer"
+
+#: geo/models.py:270
+msgid "district"
+msgstr "Distrikt"
+
+#: geo/models.py:271
+msgid "districts"
+msgstr "Distrikter"
+
+#: geo/models.py:344
+msgid "postal code"
+msgstr "Postnummer"
+
+#: geo/models.py:345
+msgid "postal codes"
+msgstr "Postnumre"
+
+#: geo/models.py:391
+msgid "address"
+msgstr "Adresse"
+
+#: geo/models.py:392
+msgid "addresses"
+msgstr "Adresser"

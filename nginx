@@ -1,0 +1,170 @@
+# ------------------------------------------------------------
+# Server block for api.evibes.com
+# ------------------------------------------------------------
+server {
+    server_name api.evibes.com b2b.evibes.com;
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/evibes.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/evibes.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    client_max_body_size 100M;
+
+
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Serve favicon (static file—CORS headers are inherited from the server block)
+    location /favicon.ico {
+        add_header Access-Control-Allow-Origin "*";
+        root /var/jenkins/workspace/evibes-backend-django/static;
+    }
+
+    location = /robots.txt {
+        add_header Access-Control-Allow-Origin "*";
+        alias /var/jenkins/workspace/evibes-backend-django/static/robots_backend.txt;
+        default_type text/plain;
+    }
+
+    # Media files (served with CORS via the server block add_header directives)
+    location /media/ {
+        add_header Access-Control-Allow-Origin "*";
+        root /var/jenkins/workspace/evibes-backend-django/;
+    }
+
+    # Static files (served with CORS via the server block add_header directives)
+    location /static/ {
+        add_header Access-Control-Allow-Origin "*";
+        root /var/jenkins/workspace/evibes-backend-django/;
+    }
+
+    error_page 500 502 503 504 /maintenance.html;
+    location = /maintenance.html {
+        add_header Access-Control-Allow-Origin "*";
+        root /var/jenkins/workspace/evibes-backend-django/static;
+        internal;
+    }
+}
+
+# ------------------------------------------------------------
+# Server block for evibes.com and www.evibes.com (Frontend)
+# ------------------------------------------------------------
+server {
+    server_name evibes.com www.evibes.com;
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/evibes.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/evibes.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    location /favicon.ico {
+        add_header Access-Control-Allow-Origin "*";
+        root /var/jenkins/workspace/evibes-backend-django/static;
+    }
+
+    location / {
+       root /var/jenkins/workspace/evibes-frontend-vue/dist;
+       try_files $uri $uri/ /index.html @maintenance;
+    }
+
+    location = /index.html {
+       root /var/jenkins/workspace/evibes-frontend-vue/dist;
+       try_files $uri @maintenance;
+    }
+
+    location = /robots.txt {
+        add_header Access-Control-Allow-Origin "*";
+        alias /var/jenkins/workspace/evibes-backend-django/static/robots_frontend.txt;
+        default_type text/plain;
+    }
+
+    location ~ ^/sitemap(?:-(?P<section>[a-z]+)(?:-(?P<page>\d+))?)?\.xml$ {
+        proxy_pass http://localhost:8000$request_uri;
+        proxy_set_header Host              $host;
+        proxy_set_header X-Real-IP         $remote_addr;
+        proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Accept            "application/xml";
+    }
+
+    location @maintenance {
+       return 503;
+    }
+
+    error_page 503 404 500 502 504 /maintenance.html;
+    location = /maintenance.html {
+        root /var/jenkins/workspace/evibes-backend-django/static;
+        add_header Access-Control-Allow-Origin "*";
+        internal;
+    }
+}
+
+# ------------------------------------------------------------
+# Server block for flower.evibes.com
+# ------------------------------------------------------------
+server {
+    server_name flower.evibes.com;
+    listen 443 ssl;
+    ssl_certificate /etc/letsencrypt/live/evibes.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/evibes.com/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+    client_max_body_size 100M;
+
+    location / {
+        proxy_pass http://localhost:5555;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    location = /robots.txt {
+        add_header Access-Control-Allow-Origin "*";
+        alias /var/jenkins/workspace/evibes-backend-django/static/robots_backend.txt;
+        default_type text/plain;
+    }
+
+    location /favicon.ico {
+        add_header Access-Control-Allow-Origin "*";
+        root /var/jenkins/workspace/evibes-backend-django/static;
+    }
+
+    error_page 500 502 503 504 /maintenance.html;
+    location = /maintenance.html {
+        root /var/jenkins/workspace/evibes-backend-django/static;
+        add_header Access-Control-Allow-Origin "*";
+        internal;
+    }
+}
+
+# ------------------------------------------------------------
+# HTTP → HTTPS Redirects
+# ------------------------------------------------------------
+server {
+    if ($host = www.evibes.com) {
+        return 301 https://$host$request_uri;
+    }
+    if ($host = evibes.com) {
+        return 301 https://$host$request_uri;
+    }
+    server_name evibes.com www.evibes.com;
+    listen 80;
+    return 404;
+}
+
+server {
+    if ($host = api.evibes.com) {
+        return 301 https://$host$request_uri;
+    }
+    server_name api.evibes.com;
+    listen 80;
+    return 404;
+}
