@@ -11,9 +11,8 @@ class PostType(DjangoObjectType):
 
     class Meta:
         model = Post
-        fields = "__all__"
+        fields = ["tags", "content", "title", "slug"]
         interfaces = (relay.Node,)
-        filter_fields = ["is_active"]
 
     def resolve_content(self, info):
         return self.content.html.replace("\n", "<br/>")
@@ -24,4 +23,3 @@ class PostTagType(DjangoObjectType):
         model = PostTag
         fields = "__all__"
         interfaces = (relay.Node,)
-        filter_fields = ["is_active"]
