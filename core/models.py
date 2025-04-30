@@ -307,7 +307,8 @@ class Product(NiceModel):
         populate_from=("category.name", "brand.name", "name"),
         allow_unicode=True,
         unique=True,
-        editable=False
+        editable=False,
+        null=True,
     )
 
     class Meta:
