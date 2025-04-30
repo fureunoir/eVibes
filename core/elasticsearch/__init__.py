@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.http import Http404
+from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django_elasticsearch_dsl import fields
 from elasticsearch import NotFoundError
@@ -63,16 +64,19 @@ def process_query(query: str = ""):
 
         response = search.execute()
 
-        results = {"products": [], "categories": [], "brands": []}
+        results = {"products": [], "categories": [], "brands": [], "posts": []}
         for hit in response.hits:
             obj_uuid = getattr(hit, "uuid", hit.meta.id)
             obj_name = getattr(hit, "name", "N/A")
+            obj_slug = getattr(hit, "slug", slugify(hit.name))
             if hit.meta.index == "products":
-                results["products"].append({"uuid": obj_uuid, "name": obj_name})
+                results["products"].append({"uuid": obj_uuid, "name": obj_name, "slug": obj_slug})
             elif hit.meta.index == "categories":
-                results["categories"].append({"uuid": obj_uuid, "name": obj_name})
+                results["categories"].append({"uuid": obj_uuid, "name": obj_name, "slug": obj_slug})
             elif hit.meta.index == "brands":
-                results["brands"].append({"uuid": obj_uuid, "name": obj_name})
+                results["brands"].append({"uuid": obj_uuid, "name": obj_name, "slug": obj_slug})
+            elif hit.meta.index == "posts":
+                results["posts"].append({"uuid": obj_uuid, "name": obj_name, "slug": obj_slug})
 
         return results
     except NotFoundError:
