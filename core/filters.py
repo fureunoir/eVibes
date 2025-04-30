@@ -34,12 +34,15 @@ class ProductFilter(FilterSet):
     brand = CharFilter(field_name="brand__name", lookup_expr="iexact", label="Brand")
     attributes = CharFilter(method="filter_attributes", label="Attributes")
     quantity = NumberFilter(field_name="stocks__quantity", lookup_expr="gt", label="Quantity")
+    slug = CharFilter(field_name="slug", lookup_expr="exact", label="Slug")
+    is_digital = BooleanFilter(field_name="is_digital", label="Is Digital")
 
     order_by = OrderingFilter(
         fields=(
             ("uuid", "uuid"),
             ("rating", "rating"),
             ("name", "name"),
+            ("slug", "slug"),
             ("created", "created"),
             ("modified", "modified"),
             ("stocks__price", "price"),
@@ -61,6 +64,7 @@ class ProductFilter(FilterSet):
             "is_digital",
             "is_active",
             "tags",
+            "slug",
             "min_price",
             "max_price",
             "brand",

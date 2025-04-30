@@ -306,6 +306,7 @@ class ProductDetailSerializer(ModelSerializer):
             "feedbacks_count",
             "quantity",
             "tags",
+            "slug",
             "images",
             "attributes",
             "rating",

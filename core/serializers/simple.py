@@ -168,6 +168,7 @@ class ProductSimpleSerializer(ModelSerializer):
             "uuid",
             "name",
             "is_digital",
+            "slug",
             "description",
             "partnumber",
             "brand",

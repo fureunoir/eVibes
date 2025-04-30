@@ -329,6 +329,7 @@ class ProductType(DjangoObjectType):
             "brand",
             "tags",
             "name",
+            "slug",
             "description",
             "feedbacks",
             "images",

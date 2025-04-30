@@ -16,14 +16,13 @@ class ProductSitemap(Sitemap):
             is_active=True,
             brand__is_active=True,
             category__is_active=True,
-        ).only("uuid", "name", "modified").order_by("-modified")
+        ).only("uuid", "name", "modified", "slug").order_by("-modified")
 
     def lastmod(self, obj):
         return obj.modified
 
     def location(self, obj):
-        slug = slugify(obj.name)
-        return f"/{LANGUAGE_CODE}/product/{obj.uuid}/{slug}"
+        return f"/{LANGUAGE_CODE}/product/{obj.uuid}/{obj.slug}"
 
 
 class CategorySitemap(Sitemap):
