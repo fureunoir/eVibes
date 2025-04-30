@@ -129,7 +129,7 @@ class Query(ObjectType):
         if info.context.user.is_authenticated and kwargs.get("uuid"):
             product = Product.objects.get(
                 uuid=kwargs["uuid"]
-            ).select_related("brand", "category").prefetch_related("images", "stocks")
+            )
             if product.is_active and product.brand.is_active and product.category.is_active:
                 info.context.user.add_to_recently_viewed(product.uuid)
         return (
