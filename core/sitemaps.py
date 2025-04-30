@@ -22,7 +22,7 @@ class ProductSitemap(Sitemap):
         return obj.modified
 
     def location(self, obj):
-        return f"/{LANGUAGE_CODE}/product/{obj.uuid}/{obj.slug}"
+        return f"/{LANGUAGE_CODE}/product/{obj.slug}"
 
 
 class CategorySitemap(Sitemap):
