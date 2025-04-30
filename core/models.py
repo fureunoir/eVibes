@@ -304,7 +304,7 @@ class Product(NiceModel):
         verbose_name=_("part number"),
     )
     slug = AutoSlugField(
-        populate_from=("category.name", "brand.name", "name"),
+        populate_from=("uuid", "category.name", "brand.name", "name"),
         allow_unicode=True,
         unique=True,
         editable=False,
