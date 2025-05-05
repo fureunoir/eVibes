@@ -1,5 +1,6 @@
 import logging
 import traceback
+from os import getenv
 
 from constance import config
 from django.contrib.auth.models import AnonymousUser
@@ -68,7 +69,7 @@ class BlockInvalidHostMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.META.get("HTTP_HOST") in ["0.0.0.0", None, ""]:
+        if request.META.get("HTTP_HOST") not in getenv("ALLOWED_HOSTS").split(" "):
             return HttpResponseForbidden("Invalid Host Header")
         return self.get_response(request)
 
@@ -79,6 +80,7 @@ class GrapheneLoggingErrorsDebugMiddleware:
             return next(root, info, **args)
         except Exception as e:
             logger.error("Error occurred in GraphQL execution:", exc_info=True)
-            logger.error(traceback.format_exc())
+            if bool(int(getenv("DEBUG"))):
+                logger.error(traceback.format_exc())
             capture_exception(e)
             raise e
