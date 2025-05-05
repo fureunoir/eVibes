@@ -43,7 +43,15 @@ services:
     container_name: worker
     build: .
     restart: always
-    command: sh -c "poetry run celery -A evibes worker --loglevel=info --autoscale=10,3"
+    command: >
+      sh -c "poetry run celery -A evibes worker
+        --loglevel=info
+        --concurrency=4
+        --autoscale=4,2
+        --max-tasks-per-child=100
+        --max-memory-per-child=512000
+        --soft-time-limit=1800
+        --time-limit=3600"
     volumes:
       - .:/app
     env_file:
@@ -57,6 +65,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+    mem_limit: 2g
 
   beat:
     container_name: beat

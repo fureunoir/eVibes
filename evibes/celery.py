@@ -15,8 +15,6 @@ app.conf.update(
     worker_log_format="[%(asctime)s: %(levelname)s/%(processName)s] %(name)s: %(message)s",
     worker_task_log_format="[%(asctime)s: %(levelname)s/%(processName)s] %(name)s: %(message)s",
     worker_autoscale=(10, 3),
-    worker_prefetch_multiplier=1,
-    worker_max_tasks_per_child=100,
     broker_connection_retry_on_startup=True,
     timezone=TIME_ZONE,
     task_serializer="json",
@@ -27,6 +25,12 @@ app.conf.update(
         "retry_policy": {"interval_start": 0.1, "interval_step": 0.2, "max_retries": 5},
         "visibility_timeout": 3600,
     },
+    task_acks_late=True,
+    task_reject_on_worker_lost=True,
+    worker_prefetch_multiplier=1,
+    worker_max_tasks_per_child=100,
+    task_soft_time_limit=1800,
+    task_time_limit=3600,
 )
 
 app.config_from_object("django.conf:settings", namespace="CELERY")
