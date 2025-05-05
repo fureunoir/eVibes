@@ -159,7 +159,7 @@ def process_promotions() -> tuple[bool, str]:
     if not config.ABSTRACT_API_KEY:
         return False, "Abstract features disabled."
 
-    Promotion.objects.all().delete()
+    Promotion.objects.all().update(is_active=False)
 
     holiday_data = None
 
