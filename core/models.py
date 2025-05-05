@@ -39,7 +39,7 @@ from mptt.models import MPTTModel
 
 from core.abstract import NiceModel
 from core.choices import ORDER_PRODUCT_STATUS_CHOICES, ORDER_STATUS_CHOICES
-from core.errors import NotEnoughMoneyError
+from core.errors import NotEnoughMoneyError, DisabledCommerceError
 from core.utils import get_product_uuid_as_path, get_random_code
 from core.utils.lists import FAILED_STATUSES
 from core.validators import validate_category_image_dimensions
@@ -219,20 +219,22 @@ class Brand(NiceModel):
         verbose_name=_("brand name"),
         unique=True,
     )
-    small_logo = ImageField(upload_to="brands/",
-                            blank=True,
-                            null=True,
-                            help_text=_("upload a logo representing this brand"),
-                            validators=[validate_category_image_dimensions],
-                            verbose_name=_("brand small image"),
-                            )
-    big_logo = ImageField(upload_to="brands/",
-                          blank=True,
-                          null=True,
-                          help_text=_("upload a big logo representing this brand"),
-                          validators=[validate_category_image_dimensions],
-                          verbose_name=_("brand big image"),
-                          )
+    small_logo = ImageField(
+        upload_to="brands/",
+        blank=True,
+        null=True,
+        help_text=_("upload a logo representing this brand"),
+        validators=[validate_category_image_dimensions],
+        verbose_name=_("brand small image"),
+    )
+    big_logo = ImageField(
+        upload_to="brands/",
+        blank=True,
+        null=True,
+        help_text=_("upload a big logo representing this brand"),
+        validators=[validate_category_image_dimensions],
+        verbose_name=_("brand big image"),
+    )
     description = TextField(  # noqa: DJ001
         blank=True,
         null=True,
@@ -330,7 +332,7 @@ class Product(NiceModel):
 
     @rating.setter
     def rating(self, value):
-        self.__dict__['rating'] = value
+        self.__dict__["rating"] = value
 
     @property
     def feedbacks_count(self):
@@ -502,16 +504,16 @@ class Order(NiceModel):
     @property
     def total_price(self) -> float:
         return (
-                round(
-                    sum(
-                        order_product.buy_price * order_product.quantity
-                        if order_product.status not in FAILED_STATUSES and order_product.buy_price is not None
-                        else 0.0
-                        for order_product in self.order_products.all()
-                    ),
-                    2,
-                )
-                or 0.0
+            round(
+                sum(
+                    order_product.buy_price * order_product.quantity
+                    if order_product.status not in FAILED_STATUSES and order_product.buy_price is not None
+                    else 0.0
+                    for order_product in self.order_products.all()
+                ),
+                2,
+            )
+            or 0.0
         )
 
     @property
@@ -606,10 +608,11 @@ class Order(NiceModel):
             raise Http404(_("promocode does not exist"))
         return promocode.use(self)
 
-    def buy(self,
-            force_balance: bool = False,
-            force_payment: bool = False,
-            promocode_uuid: str | None = None) -> Self | Transaction | None:
+    def buy(
+        self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None
+    ) -> Self | Transaction | None:
+        if config.DISABLED_COMMERCE:
+            raise DisabledCommerceError(_("you can not buy at this moment, please try again in a few minutes"))
 
         if (not force_balance and not force_payment) or (force_balance and force_payment):
             raise ValueError(_("invalid force value"))
@@ -647,8 +650,11 @@ class Order(NiceModel):
         return self
 
     def buy_without_registration(self, products: list, promocode_uuid: str, **kwargs) -> Transaction | None:
+        if config.DISABLED_COMMERCE:
+            raise DisabledCommerceError(_("you can not buy at this moment, please try again in a few minutes"))
+
         if len(products) < 1:
-            raise ValueError(_("you cannot purchase without registration an empty order!"))
+            raise ValueError(_("you cannot purchase an empty order!"))
 
         customer_name = kwargs.pop("customer_name")
         customer_email = kwargs.pop("customer_email")
@@ -656,8 +662,11 @@ class Order(NiceModel):
 
         if not all([customer_name, customer_email, customer_phone_number]):
             raise ValueError(
-                _("you cannot buy without registration, please provide the following information:"
-                  " customer name, customer email, customer phone number"))
+                _(
+                    "you cannot buy without registration, please provide the following information:"
+                    " customer name, customer email, customer phone number"
+                )
+            )
 
         payment_method = kwargs.get("payment_method")
 
@@ -670,17 +679,24 @@ class Order(NiceModel):
         billing_customer_postal_code = billing_customer_address.pop("customer_postal_code")
         billing_customer_address_line = billing_customer_address.pop("customer_address_line")
 
-        if not all([billing_customer_city, billing_customer_country, billing_customer_postal_code,
-                    billing_customer_address_line]):
+        if not all(
+            [
+                billing_customer_city,
+                billing_customer_country,
+                billing_customer_postal_code,
+                billing_customer_address_line,
+            ]
+        ):
             raise ValueError(_("you cannot create a momental order without providing a billing address"))
 
-        billing_address = Address.objects.get_or_create(user=None,
-                                                        country=Country.objects.get(code=billing_customer_country),
-                                                        region=Region.objects.get(code=billing_customer_city),
-                                                        city=City.objects.get(name=billing_customer_city),
-                                                        postal_code=PostalCode.objects.get(
-                                                            code=billing_customer_postal_code),
-                                                        street=billing_customer_address_line)
+        billing_address = Address.objects.get_or_create(
+            user=None,
+            country=Country.objects.get(code=billing_customer_country),
+            region=Region.objects.get(code=billing_customer_city),
+            city=City.objects.get(name=billing_customer_city),
+            postal_code=PostalCode.objects.get(code=billing_customer_postal_code),
+            street=billing_customer_address_line,
+        )
 
         shipping_customer_address = kwargs.pop("shipping_customer_address")
         shipping_customer_city = shipping_customer_address.pop("customer_city")
@@ -692,14 +708,14 @@ class Order(NiceModel):
             shipping_address = billing_address
 
         else:
-            shipping_address = Address.objects.get_or_create(user=None,
-                                                             country=Country.objects.get(
-                                                                 code=shipping_customer_country),
-                                                             region=Region.objects.get(code=shipping_customer_city),
-                                                             city=City.objects.get(name=billing_customer_city),
-                                                             postal_code=PostalCode.objects.get(
-                                                                 code=shipping_customer_postal_code),
-                                                             street=shipping_customer_address_line)
+            shipping_address = Address.objects.get_or_create(
+                user=None,
+                country=Country.objects.get(code=shipping_customer_country),
+                region=Region.objects.get(code=shipping_customer_city),
+                city=City.objects.get(name=billing_customer_city),
+                postal_code=PostalCode.objects.get(code=shipping_customer_postal_code),
+                street=shipping_customer_address_line,
+            )
 
         for product_uuid in products:
             self.add_product(product_uuid)
@@ -709,9 +725,13 @@ class Order(NiceModel):
         self.status = "CREATED"
         self.shipping_address = shipping_address
         self.billing_address = billing_address
-        self.attributes.update({"customer_name": customer_name,
-                                "customer_email": customer_email,
-                                "customer_phone_number": customer_phone_number})
+        self.attributes.update(
+            {
+                "customer_name": customer_name,
+                "customer_email": customer_email,
+                "customer_phone_number": customer_phone_number,
+            }
+        )
         self.save()
 
         return Transaction.objects.create(
@@ -723,16 +743,16 @@ class Order(NiceModel):
 
     def finalize(self):
         if (
-                self.order_products.filter(
-                    status__in=[
-                        "ACCEPTED",
-                        "FAILED",
-                        "RETURNED",
-                        "CANCELED",
-                        "FINISHED",
-                    ]
-                ).count()
-                == self.order_products.count()
+            self.order_products.filter(
+                status__in=[
+                    "ACCEPTED",
+                    "FAILED",
+                    "RETURNED",
+                    "CANCELED",
+                    "FINISHED",
+                ]
+            ).count()
+            == self.order_products.count()
         ):
             self.status = "FINISHED"
             self.save()
@@ -968,7 +988,7 @@ class PromoCode(NiceModel):
 
     def save(self, **kwargs):
         if (self.discount_amount is not None and self.discount_percent is not None) or (
-                self.discount_amount is None and self.discount_percent is None
+            self.discount_amount is None and self.discount_percent is None
         ):
             raise ValidationError(
                 _("only one type of discount should be defined (amount or percent), but not both or neither.")
@@ -991,13 +1011,11 @@ class PromoCode(NiceModel):
         match self.discount_type:
             case "percent":
                 amount -= round(amount * (self.discount_percent / 100), 2)
-                order.attributes.update({"promocode": str(self.uuid),
-                                         "final_price": amount})
+                order.attributes.update({"promocode": str(self.uuid), "final_price": amount})
                 order.save()
             case "amount":
                 amount -= round(float(self.discount_amount), 2)
-                order.attributes.update({"promocode": str(self.uuid),
-                                         "final_price": amount})
+                order.attributes.update({"promocode": str(self.uuid), "final_price": amount})
                 order.save()
             case _:
                 raise ValueError(_(f"invalid discount type for promocode {self.uuid}"))

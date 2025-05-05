@@ -28,6 +28,7 @@ CONSTANCE_CONFIG = {
         "Abstract API Key, if empty - no Abstract features provided",
     ),
     "HTTP_PROXY": (getenv("DJANGO_HTTP_PROXY", "http://username:password@proxy_address:port"), "HTTP Proxy"),
+    "DISABLED_COMMERCE": (getenv("DISABLED_COMMERCE", False), "Disable buy functionality"),
 }
 
 EXPOSABLE_KEYS = [
