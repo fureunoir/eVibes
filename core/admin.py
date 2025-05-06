@@ -384,6 +384,7 @@ class ConstanceConfig:
         verbose_name_plural = _("config")
         abstract = False
         swapped = False
+        is_composite_pk = False
 
         def get_ordered_objects(self):
             return False
