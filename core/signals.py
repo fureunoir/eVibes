@@ -1,6 +1,7 @@
 import logging
 from datetime import timedelta
 
+from django.db import IntegrityError
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.utils.crypto import get_random_string
@@ -10,7 +11,7 @@ from django.utils.translation import gettext_lazy as _
 from sentry_sdk import capture_exception
 
 from core.models import Category, Order, Product, PromoCode, Wishlist
-from core.utils import resolve_translations_for_elasticsearch
+from core.utils import generate_human_readable_id, resolve_translations_for_elasticsearch
 from core.utils.emailing import send_order_created_email, send_order_finished_email
 from evibes.utils.misc import create_object
 from vibes_auth.models import User
@@ -21,7 +22,16 @@ logger = logging.getLogger(__name__)
 @receiver(post_save, sender=User)
 def create_order_on_user_creation_signal(instance, created, **kwargs):
     if created:
-        Order.objects.create(user=instance, status="PENDING")
+        try:
+            Order.objects.create(user=instance, status="PENDING")
+        except IntegrityError:
+            human_readable_id = generate_human_readable_id()
+            while True:
+                if Order.objects.filter(human_readable_id=human_readable_id).exists():
+                    human_readable_id = generate_human_readable_id()
+                    continue
+                Order.objects.create(user=instance, status="PENDING", human_readable_id=human_readable_id)
+                break
 
 
 @receiver(post_save, sender=User)
@@ -56,7 +66,16 @@ def process_order_changes(instance, created, **kwargs):
             pending_orders = Order.objects.filter(user=instance.user, status="PENDING")
 
             if not pending_orders.exists():
-                Order.objects.create(user=instance.user, status="PENDING")
+                try:
+                    Order.objects.create(user=instance.user, status="PENDING")
+                except IntegrityError:
+                    human_readable_id = generate_human_readable_id()
+                    while True:
+                        if Order.objects.filter(human_readable_id=human_readable_id).exists():
+                            human_readable_id = generate_human_readable_id()
+                            continue
+                        Order.objects.create(user=instance, status="PENDING", human_readable_id=human_readable_id)
+                        break
 
         if instance.status == "CREATED":
             if not instance.is_whole_digital:
