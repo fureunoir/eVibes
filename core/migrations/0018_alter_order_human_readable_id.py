@@ -8,7 +8,7 @@ def fix_duplicates(apps, schema_editor):
     Order = apps.get_model("core", "Order")
     duplicates = (
         Order.objects.values("human_readable_id")
-        .annotate(count=Count("id"))
+        .annotate(count=Count("uuid"))
         .filter(count__gt=1)
     )
     for duplicate in duplicates:
