@@ -2,6 +2,7 @@ from datetime import datetime
 
 from celery.app import shared_task
 from constance import config
+from django.core import mail
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.translation import activate
@@ -14,6 +15,7 @@ from core.utils.constance import set_email_settings
 @shared_task
 def contact_us_email(contact_info):
     set_email_settings()
+    connection = mail.get_connection()
 
     email = EmailMessage(
         _(f"{config.PROJECT_NAME} | contact us initiated"),
@@ -30,6 +32,7 @@ def contact_us_email(contact_info):
         ),
         to=[config.EMAIL_HOST_USER],
         from_email=f"{config.PROJECT_NAME} <{config.EMAIL_FROM}>",
+        connection=connection,
     )
     email.content_subtype = "html"
     email.send()
@@ -47,6 +50,7 @@ def send_order_created_email(order_pk: str) -> tuple[bool, str]:
     activate(order.user.language)
 
     set_email_settings()
+    connection = mail.get_connection()
 
     if not order.is_whole_digital:
         email = EmailMessage(
@@ -62,6 +66,7 @@ def send_order_created_email(order_pk: str) -> tuple[bool, str]:
             ),
             to=[order.user.email],
             from_email=f"{config.PROJECT_NAME} <{config.EMAIL_FROM}>",
+            connection=connection,
         )
         email.content_subtype = "html"
         email.send()
@@ -78,13 +83,14 @@ def send_order_finished_email(order_pk: str) -> tuple[bool, str]:
         activate(order.user.language)
 
         set_email_settings()
+        connection = mail.get_connection()
 
         email = EmailMessage(
             _(f"{config.PROJECT_NAME} | order delivered"),
             render_to_string(
                 template_name="digital_order_delivered_email.html",
                 context={
-                    "order_uuid": order.uuid,
+                    "order_uuid": order.human_readable_id,
                     "user_first_name": order.user.first_name,
                     "order_products": ops,
                     "project_name": config.PROJECT_NAME,
@@ -96,6 +102,7 @@ def send_order_finished_email(order_pk: str) -> tuple[bool, str]:
             ),
             to=[order.user.email],
             from_email=f"{config.PROJECT_NAME} <{config.EMAIL_FROM}>",
+            connection=connection,
         )
         email.content_subtype = "html"
         email.send()

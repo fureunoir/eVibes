@@ -1,6 +1,7 @@
 from celery.app import shared_task
 from constance import config
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.core import mail
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
@@ -21,6 +22,7 @@ def send_verification_email_task(user_pk: str) -> tuple[bool, str]:
         activate(user.language)
 
         set_email_settings()
+        connection = mail.get_connection()
 
         email_subject = _(f"{config.PROJECT_NAME} | Activate Account")
         email_body = render_to_string(
@@ -38,6 +40,7 @@ def send_verification_email_task(user_pk: str) -> tuple[bool, str]:
             body=email_body,
             from_email=f"{config.PROJECT_NAME} <{config.EMAIL_FROM}>",
             to=[user.email],
+            connection=connection,
         )
         email.content_subtype = "html"
         email.send()
@@ -61,6 +64,7 @@ def send_reset_password_email_task(user_pk: str) -> tuple[bool, str]:
         activate(user.language)
 
         set_email_settings()
+        connection = mail.get_connection()
 
         email_subject = _(f"{config.PROJECT_NAME} | Reset Password")
         email_body = render_to_string(
@@ -79,6 +83,7 @@ def send_reset_password_email_task(user_pk: str) -> tuple[bool, str]:
             body=email_body,
             from_email=f"{config.PROJECT_NAME} <{config.EMAIL_FROM}>",
             to=[user.email],
+            connection=connection,
         )
         email.content_subtype = "html"
         email.send()
