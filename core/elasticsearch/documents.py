@@ -7,33 +7,24 @@ from core.models import Brand, Category, Product
 
 class _BaseDoc(ActiveOnlyMixin, Document):
     name = fields.TextField(
+        attr="name",
         analyzer="standard",
         fields={
-            "raw":       fields.KeywordField(ignore_above=256),
-            "ngram":     fields.TextField(analyzer="name_ngram",
-                                          search_analyzer="query_lc"),
-            "phonetic":  fields.TextField(analyzer="name_phonetic"),
-            "auto":      fields.TextField(
-                             analyzer="autocomplete",
-                             search_analyzer="autocomplete_search",
-                         ),
+            "raw": fields.KeywordField(ignore_above=256),
+            "ngram": fields.TextField(analyzer="name_ngram", search_analyzer="query_lc"),
+            "phonetic": fields.TextField(analyzer="name_phonetic"),
+            "auto": fields.TextField(analyzer="autocomplete", search_analyzer="autocomplete_search"),
         },
-        attr=None,
     )
-
     description = fields.TextField(
+        attr="description",
         analyzer="standard",
         fields={
-            "raw":       fields.KeywordField(ignore_above=256),
-            "ngram":     fields.TextField(analyzer="name_ngram",
-                                          search_analyzer="query_lc"),
-            "phonetic":  fields.TextField(analyzer="name_phonetic"),
-            "auto":      fields.TextField(
-                             analyzer="autocomplete",
-                             search_analyzer="autocomplete_search",
-                         ),
+            "raw": fields.KeywordField(ignore_above=256),
+            "ngram": fields.TextField(analyzer="name_ngram", search_analyzer="query_lc"),
+            "phonetic": fields.TextField(analyzer="name_phonetic"),
+            "auto": fields.TextField(analyzer="autocomplete", search_analyzer="autocomplete_search"),
         },
-        attr=None,
     )
 
     class Index:
@@ -41,10 +32,14 @@ class _BaseDoc(ActiveOnlyMixin, Document):
             "number_of_shards": 1,
             "number_of_replicas": 0,
             "analysis": COMMON_ANALYSIS,
-            "index": {
-                "max_ngram_diff": 20,
-            },
+            "index": {"max_ngram_diff": 20},
         }
+
+    def prepare_name(self, instance):
+        return getattr(instance, "name", "") or ""
+
+    def prepare_description(self, instance):
+        return getattr(instance, "description", "") or ""
 
 
 class ProductDocument(_BaseDoc):
@@ -81,25 +76,22 @@ class BrandDocument(ActiveOnlyMixin, Document):
         analyzer="standard",
         fields={
             "raw": fields.KeywordField(ignore_above=256),
-            "ngram": fields.TextField(
-                analyzer="name_ngram", search_analyzer="query_lc"
-            ),
+            "ngram": fields.TextField(analyzer="name_ngram", search_analyzer="query_lc"),
             "phonetic": fields.TextField(analyzer="name_phonetic"),
         },
     )
 
     class Index:
         name = "brands"
-        settings = {
-            "number_of_shards": 1,
-            "number_of_replicas": 0,
-            "analysis": COMMON_ANALYSIS,
-            "index": {"max_ngram_diff": 18},
-        }
+        settings = {"number_of_shards": 1, "number_of_replicas": 0,
+                    "analysis": COMMON_ANALYSIS, "index": {"max_ngram_diff": 18}}
 
     class Django:
         model = Brand
         fields = ["uuid"]
+
+    def prepare_name(self, instance):
+        return getattr(instance, "name", "") or ""
 
 
 registry.register_document(BrandDocument)
