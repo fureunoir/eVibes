@@ -156,7 +156,7 @@ def process_promotions() -> tuple[bool, str]:
         element is a message describing the operation's outcome.
     :rtype: tuple[bool, str]
     """
-    if not config.ABSTRACT_API_KEY:
+    if not config.ABSTRACT_API_KEY or config.ABSTRACT_API_KEY == "example key":
         return False, "Abstract features disabled."
 
     Promotion.objects.all().update(is_active=False)
