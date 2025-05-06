@@ -13,7 +13,7 @@ def fix_duplicates(apps, schema_editor):
     )
     for duplicate in duplicates:
         h_id = duplicate["human_readable_id"]
-        orders = Order.objects.filter(human_readable_id=h_id).order_by("id")
+        orders = Order.objects.filter(human_readable_id=h_id).order_by("uuid")
         for order in orders[1:]:
             new_id = order.human_readable_id
             while Order.objects.filter(human_readable_id=new_id).exists():
