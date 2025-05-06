@@ -741,6 +741,7 @@ class Order(NiceModel):
                 "customer_name": customer_name,
                 "customer_email": customer_email,
                 "customer_phone_number": customer_phone_number,
+                "is_business": kwargs.get("is_business", False),
             }
         )
         self.save()

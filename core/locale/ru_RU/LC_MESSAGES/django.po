@@ -1140,7 +1140,7 @@ msgstr "Временная метка, когда заказ был заверш
 
 #: core/models.py:491
 msgid "buy time"
-msgstr "Выиграть время"
+msgstr "Время покупки"
 
 #: core/models.py:498
 msgid "a human-readable identifier for the order"

@@ -217,6 +217,7 @@ class BuyAsBusinessView(APIView):
             customer_billing_address=serializer.validated_data.get("customer_billing_address"),
             customer_shipping_address=serializer.validated_data.get("customer_shipping_address"),
             payment_method=serializer.validated_data.get("payment_method"),
+            is_business=True,
         )
         return Response(status=status.HTTP_202_ACCEPTED, data=TransactionProcessSerializer(transaction).data)
 

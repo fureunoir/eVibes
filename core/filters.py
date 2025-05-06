@@ -212,10 +212,14 @@ class OrderFilter(FilterSet):
     user_email = CharFilter(field_name="user__email", lookup_expr="iexact")
     user = UUIDFilter(field_name="user__uuid", lookup_expr="exact")
     status = CharFilter(field_name="status", lookup_expr="icontains", label="Status")
+    human_readable_id = CharFilter(field_name="human_readable_id", lookup_expr="exact")
 
     order_by = OrderingFilter(
         fields=(
             ("uuid", "uuid"),
+            ("human_readable_id", "human_readable_id"),
+            ("user_email", "user_email"),
+            ("user", "user"),
             ("status", "status"),
             ("created", "created"),
             ("modified", "modified"),
@@ -226,7 +230,7 @@ class OrderFilter(FilterSet):
 
     class Meta:
         model = Order
-        fields = ["uuid", "user_email", "user", "status", "order_by"]
+        fields = ["uuid", "human_readable_id", "user_email", "user", "status", "order_by"]
 
 
 class WishlistFilter(FilterSet):
