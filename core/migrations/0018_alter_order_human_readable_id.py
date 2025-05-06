@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='order',
             name='human_readable_id',
-            field=models.CharField(default=core.utils.generate_human_readable_id, help_text='a human-readable identifier for the order', max_length=6, unique=True, verbose_name='human readable id'),
+            field=models.CharField(default=core.utils.generate_human_readable_id, help_text='a human-readable identifier for the order', max_length=8, unique=True, verbose_name='human readable id'),
         ),
     ]
