@@ -3,7 +3,7 @@ from contextlib import suppress
 from math import ceil
 
 from core.elasticsearch import process_query
-from core.models import AttributeValue, Category, Product, Stock, Vendor
+from core.models import AttributeValue, Category, Product, Stock, Vendor, Brand
 from payments.errors import RatesError
 from payments.utils import get_rates
 
@@ -103,6 +103,15 @@ class AbstractVendor:
                 if uuid:
                     return Category.objects.get(uuid=uuid)
         return Category.objects.get_or_create(name=category_name, is_active=False)[0]
+
+    @staticmethod
+    def auto_resolve_brand(brand_name: str):
+        if brand_name:
+            with suppress(KeyError):
+                uuid = process_query(brand_name)["brands"][0]["uuid"]
+                if uuid:
+                    return Brand.objects.get(uuid=uuid)
+        return Brand.objects.get_or_create(name=brand_name, is_active=False)[0]
 
     def resolve_price(self, original_price: int | float, vendor: Vendor = None, category: Category = None) -> float:
         if not vendor:
