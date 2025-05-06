@@ -62,7 +62,7 @@ The {CONSTANCE_CONFIG.get("PROJECT_NAME")[0]} B2B API is designed to provide sea
 - Apply an `Accept-Language` header to use non-default language. A list of all languages is available at `/app/languages/`.
 
 ## Version
-Current API version: 2.5.0
+Current API version: 2.6.0
 """  # noqa: E501
 
 SPECTACULAR_PLATFORM_DESCRIPTION = f"""
@@ -88,13 +88,13 @@ The {CONSTANCE_CONFIG.get("PROJECT_NAME")[0]} API is the central hub for managin
 - Apply an `Accept-Language` header to use non-default language. A list of all languages is available at `/app/languages/`.
 
 ## Version
-Current API version: 2.5.0
+Current API version: 2.6.0
 """  # noqa: E501, F405
 
 SPECTACULAR_PLATFORM_SETTINGS = {
     "TITLE": f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]} API",
     "DESCRIPTION": SPECTACULAR_PLATFORM_DESCRIPTION,
-    "VERSION": "2.5.0",
+    "VERSION": "2.6.0",
     "TOS": "https://wiseless.xyz/evibes/terms-of-service",
     "SWAGGER_UI_DIST": "SIDECAR",
     "CAMELIZE_NAMES": True,
@@ -106,7 +106,7 @@ SPECTACULAR_PLATFORM_SETTINGS = {
     "ENABLE_DJANGO_DEPLOY_CHECK": not DEBUG,  # noqa: F405
     "SWAGGER_UI_FAVICON_HREF": r"/static/favicon.png",
     "SWAGGER_UI_SETTINGS": {
-                    "requestInterceptor": """
+        "requestInterceptor": """
                         function(request) {
                             const fmt = new URL(request.url).searchParams.get('format');
                             if (fmt) {
@@ -127,7 +127,7 @@ SPECTACULAR_PLATFORM_SETTINGS = {
                             return request;
                         }
                     """,
-                },
+    },
     "SERVERS": [
         {
             "url": f"https://api.{CONSTANCE_CONFIG.get('BASE_DOMAIN')[0]}/",
@@ -145,7 +145,7 @@ SPECTACULAR_PLATFORM_SETTINGS = {
 SPECTACULAR_B2B_SETTINGS = {
     "TITLE": f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]} API",
     "DESCRIPTION": SPECTACULAR_B2B_DESCRIPTION,
-    "VERSION": "2.5.0",
+    "VERSION": "2.6.0",
     "TOS": "https://wiseless.xyz/evibes/terms-of-service",
     "SWAGGER_UI_DIST": "SIDECAR",
     "CAMELIZE_NAMES": True,
@@ -157,7 +157,7 @@ SPECTACULAR_B2B_SETTINGS = {
     "ENABLE_DJANGO_DEPLOY_CHECK": not DEBUG,  # noqa: F405
     "SWAGGER_UI_FAVICON_HREF": r"/static/favicon.png",
     "SWAGGER_UI_SETTINGS": {
-                    "requestInterceptor": """
+        "requestInterceptor": """
                         function(request) {
                             const fmt = new URL(request.url).searchParams.get('format');
                             if (fmt) {
@@ -178,7 +178,7 @@ SPECTACULAR_B2B_SETTINGS = {
                             return request;
                         }
                     """,
-                },
+    },
     "SERVERS": [
         {
             "url": f"https://b2b.{CONSTANCE_CONFIG.get('BASE_DOMAIN')[0]}/",

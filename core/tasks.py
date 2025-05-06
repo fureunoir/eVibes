@@ -11,7 +11,7 @@ from celery.utils.log import get_task_logger
 from constance import config
 from django.core.cache import cache
 
-from core.models import Product, ProductTag, Promotion
+from core.models import Product, Promotion
 from core.utils.caching import set_default_cache
 from core.vendors import delete_stale
 from evibes.settings import MEDIA_ROOT

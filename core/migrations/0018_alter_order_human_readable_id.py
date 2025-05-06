@@ -1,7 +1,7 @@
+from django.db import migrations, models
 from django.db.models import Count
 
 import core.utils
-from django.db import migrations, models
 
 
 def fix_duplicates(apps, schema_editor):
@@ -26,8 +26,8 @@ def fix_duplicates(apps, schema_editor):
 def reverse_func(apps, schema_editor):
     pass
 
-class Migration(migrations.Migration):
 
+class Migration(migrations.Migration):
     dependencies = [
         ('core', '0017_order_human_readable_id'),
     ]
@@ -37,6 +37,8 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='order',
             name='human_readable_id',
-            field=models.CharField(default=core.utils.generate_human_readable_id, help_text='a human-readable identifier for the order', max_length=8, unique=True, verbose_name='human readable id'),
+            field=models.CharField(default=core.utils.generate_human_readable_id,
+                                   help_text='a human-readable identifier for the order', max_length=8, unique=True,
+                                   verbose_name='human readable id'),
         ),
     ]
