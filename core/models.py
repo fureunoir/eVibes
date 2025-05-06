@@ -510,7 +510,7 @@ class Order(NiceModel):
 
     @property
     def is_business(self) -> bool:
-        return self.attributes.get("is_business", False)
+        return self.attributes.get("is_business", False) if self.attributes else False
 
     @property
     def total_price(self) -> float:
