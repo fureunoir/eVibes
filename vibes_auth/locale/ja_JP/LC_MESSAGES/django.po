@@ -72,7 +72,7 @@ msgstr "不正な電話番号：{phone_number}。"
 #: vibes_auth/graphene/mutations.py:134
 #, python-brace-format
 msgid "Invalid attribute format: {attribute_pair}"
-msgstr "無効な属性形式です：{属性ペア}。"
+msgstr "無効な属性形式です：{attribute_pair}。"
 
 #: vibes_auth/graphene/mutations.py:261
 msgid "activation link is invalid!"
@@ -84,7 +84,7 @@ msgstr "アカウントはすでに有効になっています..."
 
 #: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
 msgid "something went wrong: {e!s}"
-msgstr "何かが間違っていた：{e!｝"
+msgstr "何かが間違っていた：{e!s}"
 
 #: vibes_auth/graphene/mutations.py:305
 msgid "passwords do not match"
@@ -277,7 +277,7 @@ msgstr "このリクエストを送信していない場合は、このメール
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
 msgid "best regards,<br>The %(project_name)s team"
-msgstr "よろしくお願いします、<br>%(プロジェクト名)のチーム"
+msgstr "よろしくお願いします、<br>%(project_name)sのチーム"
 
 #: vibes_auth/templates/user_reset_password_email.html:95
 #: vibes_auth/templates/user_verification_email.html:107
@@ -295,7 +295,7 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"(project_name)sにご登録いただきありがとうございます。下のボタンをクリックして"
+"%(project_name)sにご登録いただきありがとうございます。下のボタンをクリックして"
 "アカウントを有効にしてください："
 
 #: vibes_auth/templates/user_verification_email.html:95
@@ -318,12 +318,12 @@ msgstr ""
 #: vibes_auth/templates/user_verification_email.html:101
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "よろしくお願いします、<br>%(プロジェクト名)のチーム。"
+msgstr "よろしくお願いします、<br>%(project_name)sのチーム。"
 
 #: vibes_auth/utils/emailing.py:25
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | Activate Account"
-msgstr "{コンフィグ.PROJECT_NAME}｜アカウントの有効化| アカウントの有効化"
+msgstr "{config.PROJECT_NAME}｜アカウントの有効化| アカウントの有効化"
 
 #: vibes_auth/utils/emailing.py:46 vibes_auth/utils/emailing.py:87
 #, python-brace-format
@@ -332,12 +332,12 @@ msgstr "指定されたUUIDを持つユーザーが見つかりません：{user
 
 #: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
 msgid "something went wrong while sending an email: {e!s}"
-msgstr "メール送信中に何か問題が発生しました：{e!｝"
+msgstr "メール送信中に何か問題が発生しました：{e!s}"
 
 #: vibes_auth/utils/emailing.py:65
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | Reset Password"
-msgstr "{コンフィグ.PROJECT_NAME}。| パスワードのリセット"
+msgstr "{config.PROJECT_NAME}。| パスワードのリセット"
 
 #: vibes_auth/validators.py:13
 msgid ""

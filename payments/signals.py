@@ -14,5 +14,8 @@ def create_balance_on_user_creation_signal(instance, created, **kwargs):
 @receiver(post_save, sender=Transaction)
 def process_transaction_changes(instance, created, **kwargs):
     if created:
-        gateway = object()
-        gateway.process_transaction(instance)
+        try:
+            gateway = object()
+            gateway.process_transaction(instance)
+        except Exception: # noqa:
+            instance.process = {"status": "NOGATEWAY"}

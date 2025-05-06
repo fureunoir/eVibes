@@ -73,6 +73,7 @@ from core.serializers import (
     VendorSimpleSerializer,
     WishlistDetailSerializer,
     WishlistSimpleSerializer,
+    BuyAsBusinessOrderSerializer,
 )
 from core.utils import format_attributes
 from core.utils.messages import permission_denied_message
@@ -228,16 +229,16 @@ class OrderViewSet(EvibesViewSet):
         serializer.is_valid(raise_exception=True)
         order = Order.objects.create(status="MOMENTAL")
         products = [product.get("product_uuid") for product in serializer.validated_data.get("products")]
-        transaction = order.buy_without_registration(products=products,
-                                                     promocode_uuid=serializer.validated_data.get("promocode_uuid"),
-                                                     customer_name=serializer.validated_data.get("customer_name"),
-                                                     customer_email=serializer.validated_data.get("customer_email"),
-                                                     customer_phone=serializer.validated_data.get("customer_phone"),
-                                                     customer_billing_address=serializer.validated_data.get(
-                                                         "customer_billing_address"),
-                                                     customer_shipping_address=serializer.validated_data.get(
-                                                         "customer_shipping_address"),
-                                                     payment_method=serializer.validated_data.get("payment_method"))
+        transaction = order.buy_without_registration(
+            products=products,
+            promocode_uuid=serializer.validated_data.get("promocode_uuid"),
+            customer_name=serializer.validated_data.get("customer_name"),
+            customer_email=serializer.validated_data.get("customer_email"),
+            customer_phone=serializer.validated_data.get("customer_phone"),
+            customer_billing_address=serializer.validated_data.get("customer_billing_address"),
+            customer_shipping_address=serializer.validated_data.get("customer_shipping_address"),
+            payment_method=serializer.validated_data.get("payment_method"),
+        )
         return Response(status=status.HTTP_202_ACCEPTED, data=TransactionProcessSerializer(transaction).data)
 
     @action(detail=True, methods=["post"], url_path="add_order_product")

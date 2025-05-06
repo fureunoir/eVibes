@@ -263,12 +263,17 @@ class OrderProductInline(admin.TabularInline):
 
 @admin.register(Order)
 class OrderAdmin(BasicModelAdmin):
-    list_display = ("uuid", "user", "status", "total_price", "buy_time", "modified")
+    list_display = ("human_readable_id", "user", "is_business", "status", "total_price", "buy_time", "modified")
     list_filter = ("status", "buy_time", "modified", "created")
-    search_fields = ("user__email", "status")
+    search_fields = ("user__email", "status", "uuid", "human_readable_id")
     inlines = [OrderProductInline]
     form = OrderForm
-    readonly_fields = ("total_price", "total_quantity", "buy_time")
+    readonly_fields = ("total_price", "total_quantity", "buy_time", "human_readable_id")
+
+    def is_business(self, obj):
+        return obj.is_business
+
+    is_business.short_description = _("is business")
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)

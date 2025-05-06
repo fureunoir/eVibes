@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 14:05+0100\n"
+"POT-Creation-Date: 2025-05-05 23:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -59,12 +59,12 @@ msgstr "Aktivér udvalgte %(verbose_name_plural)s"
 msgid "deactivate selected %(verbose_name_plural)s"
 msgstr "Deaktiver udvalgte %(verbose_name_plural)s"
 
-#: core/admin.py:61 core/graphene/object_types.py:361
-#: core/graphene/object_types.py:368 core/models.py:145 core/models.py:153
+#: core/admin.py:61 core/graphene/object_types.py:363
+#: core/graphene/object_types.py:370 core/models.py:146 core/models.py:154
 msgid "attribute value"
 msgstr "Attributværdi"
 
-#: core/admin.py:62 core/graphene/object_types.py:35 core/models.py:154
+#: core/admin.py:62 core/graphene/object_types.py:35 core/models.py:155
 msgid "attribute values"
 msgstr "Attributværdier"
 
@@ -77,19 +77,19 @@ msgstr "Navn"
 msgid "image"
 msgstr "Billede"
 
-#: core/admin.py:153 core/graphene/object_types.py:315
+#: core/admin.py:153 core/graphene/object_types.py:316
 msgid "images"
 msgstr "Billeder"
 
-#: core/admin.py:160 core/models.py:1083
+#: core/admin.py:160 core/models.py:1126
 msgid "stock"
 msgstr "Lager"
 
-#: core/admin.py:161 core/graphene/object_types.py:415
+#: core/admin.py:161 core/graphene/object_types.py:417
 msgid "stocks"
 msgstr "Aktier"
 
-#: core/admin.py:194 core/graphene/object_types.py:319
+#: core/admin.py:194 core/graphene/object_types.py:320
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -113,15 +113,19 @@ msgstr "Vigtige datoer"
 msgid "translations"
 msgstr "Oversættelser"
 
-#: core/admin.py:256 core/models.py:791
+#: core/admin.py:256 core/models.py:836
 msgid "order product"
 msgstr "Bestil produkt"
 
-#: core/admin.py:257 core/graphene/object_types.py:242 core/models.py:792
+#: core/admin.py:257 core/graphene/object_types.py:242 core/models.py:837
 msgid "order products"
 msgstr "Bestil produkter"
 
-#: core/admin.py:379
+#: core/admin.py:276
+msgid "is business"
+msgstr "Er forretning"
+
+#: core/admin.py:384
 msgid "config"
 msgstr "Konfig"
 
@@ -173,11 +177,11 @@ msgstr "Momental"
 msgid "successful"
 msgstr "Succesfuld"
 
-#: core/docs/drf/views.py:15 core/graphene/mutations.py:28
+#: core/docs/drf/views.py:17 core/graphene/mutations.py:28
 msgid "cache I/O"
 msgstr "Cache-I/O"
 
-#: core/docs/drf/views.py:17
+#: core/docs/drf/views.py:19
 msgid ""
 "apply only a key to read permitted data from cache.\n"
 "apply key, data and timeout with authentication to write data to cache."
@@ -185,25 +189,37 @@ msgstr ""
 "Anvend kun en nøgle til at læse tilladte data fra cachen.\n"
 "Anvend nøgle, data og timeout med autentificering for at skrive data til cachen."
 
-#: core/docs/drf/views.py:29
+#: core/docs/drf/views.py:31
 msgid "get a list of supported languages"
 msgstr "Få en liste over understøttede sprog"
 
-#: core/docs/drf/views.py:38
+#: core/docs/drf/views.py:40
 msgid "get application's exposable parameters"
 msgstr "Hent applikationens eksponerbare parametre"
 
-#: core/docs/drf/views.py:45
+#: core/docs/drf/views.py:47
 msgid "send a message to the support team"
 msgstr "Send en besked til supportteamet"
 
-#: core/docs/drf/views.py:56 core/graphene/mutations.py:47
+#: core/docs/drf/views.py:58 core/graphene/mutations.py:47
 msgid "request a CORSed URL"
 msgstr "Anmod om en CORSed URL. Kun https er tilladt."
 
-#: core/docs/drf/views.py:82
+#: core/docs/drf/views.py:84
 msgid "global search endpoint to query across project's tables"
 msgstr "Globalt søgepunkt til at søge på tværs af projektets tabeller"
+
+#: core/docs/drf/views.py:90
+msgid "purchase an order as a business"
+msgstr "Køb en ordre som virksomhed"
+
+#: core/docs/drf/views.py:97
+msgid ""
+"purchase an order as a business, using the provided `products` with "
+"`product_uuid` and `attributes`."
+msgstr ""
+"Køb en ordre som en virksomhed ved hjælp af de angivne `produkter` med "
+"`produkt_uuid` og `attributter`."
 
 #: core/docs/drf/viewsets.py:26
 msgid "list all attribute groups (simple view)"
@@ -363,7 +379,7 @@ msgstr ""
 "ved hjælp af brugerens saldo; hvis `force_payment` bruges, igangsættes en "
 "transaktion."
 
-#: core/docs/drf/viewsets.py:174
+#: core/docs/drf/viewsets.py:174 core/graphene/mutations.py:199
 msgid "purchase an order without account creation"
 msgstr "Køb en ordre uden at oprette en konto"
 
@@ -471,7 +487,7 @@ msgstr ""
 "Fjerner mange produkter fra en ønskeliste ved hjælp af de angivne "
 "`product_uuids`."
 
-#: core/elasticsearch/__init__.py:38
+#: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
 msgstr "Der er ikke angivet noget søgeord."
 
@@ -495,7 +511,7 @@ msgstr "Cachelagrede data"
 msgid "camelized JSON data from the requested URL"
 msgstr "Cameliserede JSON-data fra den ønskede URL"
 
-#: core/graphene/mutations.py:57 core/views.py:166
+#: core/graphene/mutations.py:57 core/views.py:169
 msgid "only URLs starting with http(s):// are allowed"
 msgstr "Kun URL'er, der starter med http(s)://, er tilladt."
 
@@ -521,43 +537,38 @@ msgstr "Fjern alle produkter fra ordren"
 msgid "buy an order"
 msgstr "Køb en ordre"
 
-#: core/graphene/mutations.py:192 core/graphene/mutations.py:344
-#: core/graphene/mutations.py:378 core/viewsets.py:220
+#: core/graphene/mutations.py:192 core/graphene/mutations.py:346
+#: core/graphene/mutations.py:380 core/viewsets.py:221
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
-msgstr "Forkert type kom fra metoden order.buy(): {str(type(instance))}"
+msgstr "Forkert type kom fra metoden order.buy(): {type(instance)!s}"
 
-#: core/graphene/mutations.py:199
-#, fuzzy
-msgid "buy an unregistered order"
-msgstr "Køb en ordre"
-
-#: core/graphene/mutations.py:228
+#: core/graphene/mutations.py:230
 msgid "add a product to the wishlist"
 msgstr "Tilføj et produkt til ordren"
 
-#: core/graphene/mutations.py:250 core/graphene/mutations.py:277
-#: core/graphene/mutations.py:304 core/graphene/mutations.py:347
+#: core/graphene/mutations.py:252 core/graphene/mutations.py:279
+#: core/graphene/mutations.py:306 core/graphene/mutations.py:349
 #, python-brace-format
 msgid "wishlist {wishlist_uuid} not found"
 msgstr "Ønskeliste {wishlist_uuid} ikke fundet"
 
-#: core/graphene/mutations.py:255
+#: core/graphene/mutations.py:257
 msgid "remove a product from the wishlist"
 msgstr "Fjern et produkt fra ordren"
 
-#: core/graphene/mutations.py:282
+#: core/graphene/mutations.py:284
 msgid "remove all products from the wishlist"
 msgstr "Fjern et produkt fra ordren"
 
-#: core/graphene/mutations.py:309
+#: core/graphene/mutations.py:311
 msgid "buy all products from the wishlist"
 msgstr "Fjern et produkt fra ordren"
 
-#: core/graphene/mutations.py:352
+#: core/graphene/mutations.py:354
 msgid "buy a product"
 msgstr "Køb en ordre"
 
-#: core/graphene/mutations.py:358
+#: core/graphene/mutations.py:360
 msgid ""
 "please send the attributes as the string formatted like "
 "attr1=value1,attr2=value2"
@@ -565,12 +576,12 @@ msgstr ""
 "Send venligst attributterne som en streng formateret som "
 "attr1=værdi1,attr2=værdi2"
 
-#: core/graphene/mutations.py:474
+#: core/graphene/mutations.py:476
 msgid "elasticsearch - works like a charm"
 msgstr "ElasticSearch - fungerer som en charme"
 
 #: core/graphene/object_types.py:42 core/graphene/object_types.py:225
-#: core/graphene/object_types.py:266 core/models.py:122 core/models.py:468
+#: core/graphene/object_types.py:266 core/models.py:123 core/models.py:478
 msgid "attributes"
 msgstr "Egenskaber"
 
@@ -583,11 +594,11 @@ msgid "groups of attributes"
 msgstr "Grupper af attributter"
 
 #: core/graphene/object_types.py:75 core/graphene/object_types.py:104
-#: core/graphene/object_types.py:131 core/models.py:86 core/models.py:208
+#: core/graphene/object_types.py:131 core/models.py:87 core/models.py:209
 msgid "categories"
 msgstr "Kategorier"
 
-#: core/graphene/object_types.py:82 core/models.py:253
+#: core/graphene/object_types.py:82 core/models.py:256
 msgid "brands"
 msgstr "Mærker"
 
@@ -596,7 +607,7 @@ msgid "category image url"
 msgstr "Kategorier"
 
 #: core/graphene/object_types.py:107 core/graphene/object_types.py:202
-#: core/models.py:172
+#: core/models.py:173
 msgid "markup percentage"
 msgstr "Markup-procentdel"
 
@@ -613,7 +624,7 @@ msgstr ""
 "Minimums- og maksimumspriser for produkter i denne kategori, hvis de er "
 "tilgængelige."
 
-#: core/graphene/object_types.py:209 core/models.py:383
+#: core/graphene/object_types.py:209 core/models.py:393
 msgid "vendors"
 msgstr "Leverandører"
 
@@ -632,7 +643,7 @@ msgid "represents feedback from a user."
 msgstr "Repræsenterer feedback fra en bruger."
 
 #: core/graphene/object_types.py:226 core/graphene/object_types.py:267
-#: core/models.py:462
+#: core/models.py:472
 msgid "notifications"
 msgstr "Meddelelser"
 
@@ -644,7 +655,7 @@ msgstr "Download url for dette ordreprodukt, hvis det er relevant"
 msgid "a list of order products in this order"
 msgstr "En liste over bestillingsprodukter i denne ordre"
 
-#: core/graphene/object_types.py:258 core/models.py:432
+#: core/graphene/object_types.py:258 core/models.py:442
 msgid "billing address"
 msgstr "Faktureringsadresse"
 
@@ -668,35 +679,35 @@ msgstr "Samlet antal produkter i ordren"
 msgid "are all products in the order digital"
 msgstr "Er alle produkterne i ordren digitale?"
 
-#: core/graphene/object_types.py:284 core/models.py:489
+#: core/graphene/object_types.py:285 core/models.py:506
 msgid "orders"
 msgstr "Bestillinger"
 
-#: core/graphene/object_types.py:300
+#: core/graphene/object_types.py:301
 msgid "image url"
 msgstr "Billed-URL"
 
-#: core/graphene/object_types.py:307
+#: core/graphene/object_types.py:308
 msgid "product's images"
 msgstr "Produktets billeder"
 
-#: core/graphene/object_types.py:314 core/models.py:207 core/models.py:263
+#: core/graphene/object_types.py:315 core/models.py:208 core/models.py:266
 msgid "category"
 msgstr "Kategori"
 
-#: core/graphene/object_types.py:316 core/models.py:419
+#: core/graphene/object_types.py:317 core/models.py:429
 msgid "feedbacks"
 msgstr "Tilbagemeldinger"
 
-#: core/graphene/object_types.py:317 core/models.py:252 core/models.py:271
+#: core/graphene/object_types.py:318 core/models.py:255 core/models.py:274
 msgid "brand"
 msgstr "Brand"
 
-#: core/graphene/object_types.py:318 core/models.py:76
+#: core/graphene/object_types.py:319 core/models.py:77
 msgid "attribute groups"
 msgstr "Attributgrupper"
 
-#: core/graphene/object_types.py:320
+#: core/graphene/object_types.py:321
 #: core/templates/digital_order_created_email.html:108
 #: core/templates/digital_order_delivered_email.html:108
 #: core/templates/shipped_order_created_email.html:94
@@ -704,31 +715,31 @@ msgstr "Attributgrupper"
 msgid "quantity"
 msgstr "Mængde"
 
-#: core/graphene/object_types.py:321
+#: core/graphene/object_types.py:322
 msgid "number of feedbacks"
 msgstr "Antal tilbagemeldinger"
 
-#: core/graphene/object_types.py:338 core/models.py:308
+#: core/graphene/object_types.py:340 core/models.py:318
 msgid "products"
 msgstr "Produkter"
 
-#: core/graphene/object_types.py:386
+#: core/graphene/object_types.py:388
 msgid "promocodes"
 msgstr "Promokoder"
 
-#: core/graphene/object_types.py:396
+#: core/graphene/object_types.py:398
 msgid "products on sale"
 msgstr "Produkter til salg"
 
-#: core/graphene/object_types.py:403 core/models.py:1024
+#: core/graphene/object_types.py:405 core/models.py:1067
 msgid "promotions"
 msgstr "Kampagner"
 
-#: core/graphene/object_types.py:407 core/models.py:382
+#: core/graphene/object_types.py:409 core/models.py:392
 msgid "vendor"
 msgstr "Leverandør"
 
-#: core/graphene/object_types.py:408 core/models.py:307
+#: core/graphene/object_types.py:410 core/models.py:317
 #: core/templates/digital_order_created_email.html:107
 #: core/templates/digital_order_delivered_email.html:107
 #: core/templates/shipped_order_created_email.html:93
@@ -736,452 +747,459 @@ msgstr "Leverandør"
 msgid "product"
 msgstr "Produkt"
 
-#: core/graphene/object_types.py:419 core/models.py:1094
+#: core/graphene/object_types.py:421 core/models.py:1137
 msgid "wishlisted products"
 msgstr "Produkter på ønskelisten"
 
-#: core/graphene/object_types.py:425 core/models.py:1111
+#: core/graphene/object_types.py:427 core/models.py:1154
 msgid "wishlists"
 msgstr "Ønskelister"
 
-#: core/graphene/object_types.py:429
+#: core/graphene/object_types.py:431
 msgid "project name"
 msgstr "Projektets navn"
 
-#: core/graphene/object_types.py:430
+#: core/graphene/object_types.py:432
 msgid "company email"
 msgstr "Virksomhedens e-mail"
 
-#: core/graphene/object_types.py:431
+#: core/graphene/object_types.py:433
 msgid "company name"
 msgstr "Virksomhedens navn"
 
-#: core/graphene/object_types.py:432
+#: core/graphene/object_types.py:434
 msgid "company address"
 msgstr "Virksomhedens adresse"
 
-#: core/graphene/object_types.py:433
+#: core/graphene/object_types.py:435
 msgid "company phone number"
 msgstr "Virksomhedens telefonnummer"
 
-#: core/graphene/object_types.py:434
+#: core/graphene/object_types.py:436
 msgid "email from, sometimes it must be used instead of host user value"
 msgstr ""
 "'e-mail fra', nogle gange skal den bruges i stedet for værtsbrugerværdien"
 
-#: core/graphene/object_types.py:435
+#: core/graphene/object_types.py:437
 msgid "email host user"
 msgstr "E-mail-værtsbruger"
 
-#: core/graphene/object_types.py:436
+#: core/graphene/object_types.py:438
 msgid "maximum amount for payment"
 msgstr "Maksimalt beløb til betaling"
 
-#: core/graphene/object_types.py:437
+#: core/graphene/object_types.py:439
 msgid "minimum amount for payment"
 msgstr "Minimumsbeløb for betaling"
 
-#: core/graphene/object_types.py:440
+#: core/graphene/object_types.py:442
 msgid "company configuration"
 msgstr "Konfiguration"
 
-#: core/graphene/object_types.py:444
+#: core/graphene/object_types.py:446
 msgid "language code"
 msgstr "Sprogkode"
 
-#: core/graphene/object_types.py:445
+#: core/graphene/object_types.py:447
 msgid "language name"
 msgstr "Sprogets navn"
 
-#: core/graphene/object_types.py:446
+#: core/graphene/object_types.py:448
 msgid "language flag, if exists :)"
 msgstr "Sprogflag, hvis det findes :)"
 
-#: core/graphene/object_types.py:449
+#: core/graphene/object_types.py:451
 msgid "supported languages"
 msgstr "Få en liste over understøttede sprog"
 
-#: core/graphene/object_types.py:468 core/graphene/object_types.py:469
-#: core/graphene/object_types.py:470
+#: core/graphene/object_types.py:470 core/graphene/object_types.py:471
+#: core/graphene/object_types.py:472
 msgid "products search results"
 msgstr "Søgeresultater for produkter"
 
-#: core/models.py:61
+#: core/models.py:62
 msgid "parent of this group"
 msgstr "Forælder til denne gruppe"
 
-#: core/models.py:62
+#: core/models.py:63
 msgid "parent attribute group"
 msgstr "Overordnet attributgruppe"
 
-#: core/models.py:66 core/models.py:67
+#: core/models.py:67 core/models.py:68
 msgid "attribute group's name"
 msgstr "Attributgruppens navn"
 
-#: core/models.py:75 core/models.py:94
+#: core/models.py:76 core/models.py:95
 msgid "attribute group"
 msgstr "Attributgruppe"
 
-#: core/models.py:85
+#: core/models.py:86
 msgid "category of this attribute"
 msgstr "Kategori for denne attribut"
 
-#: core/models.py:93
+#: core/models.py:94
 msgid "group of this attribute"
 msgstr "Gruppe af denne attribut"
 
-#: core/models.py:99
+#: core/models.py:100
 msgid "string"
 msgstr "Streng"
 
-#: core/models.py:100
+#: core/models.py:101
 msgid "integer"
 msgstr "Heltal"
 
-#: core/models.py:101
+#: core/models.py:102
 msgid "float"
 msgstr "Flyder"
 
-#: core/models.py:102
+#: core/models.py:103
 msgid "boolean"
 msgstr "Boolsk"
 
-#: core/models.py:103
+#: core/models.py:104
 msgid "array"
 msgstr "Array"
 
-#: core/models.py:104
+#: core/models.py:105
 msgid "object"
 msgstr "Objekt"
 
-#: core/models.py:106
+#: core/models.py:107
 msgid "type of the attribute's value"
 msgstr "Type af attributtens værdi"
 
-#: core/models.py:107
+#: core/models.py:108
 msgid "value type"
 msgstr "Værditype"
 
-#: core/models.py:112
+#: core/models.py:113
 msgid "name of this attribute"
 msgstr "Navn på denne attribut"
 
-#: core/models.py:113
+#: core/models.py:114
 msgid "attribute's name"
 msgstr "Attributtens navn"
 
-#: core/models.py:121 core/models.py:133
+#: core/models.py:122 core/models.py:134
 #: core/templates/digital_order_delivered_email.html:132
 msgid "attribute"
 msgstr "Attribut"
 
-#: core/models.py:132
+#: core/models.py:133
 msgid "attribute of this value"
 msgstr "Attribut for denne værdi"
 
-#: core/models.py:140
+#: core/models.py:141
 msgid "the specific product associated with this attribute's value"
 msgstr "Det specifikke produkt, der er knyttet til denne attributs værdi"
 
-#: core/models.py:141 core/models.py:768 core/models.py:882
-#: core/models.py:1050
+#: core/models.py:142 core/models.py:813 core/models.py:927
+#: core/models.py:1093
 msgid "associated product"
 msgstr "Tilknyttet produkt"
 
-#: core/models.py:146
+#: core/models.py:147
 msgid "the specific value for this attribute"
 msgstr "Den specifikke værdi for denne attribut"
 
-#: core/models.py:163
+#: core/models.py:164
 msgid "upload an image representing this category"
 msgstr "Upload et billede, der repræsenterer denne kategori"
 
-#: core/models.py:166
+#: core/models.py:167
 msgid "category image"
 msgstr "Kategori billede"
 
-#: core/models.py:171
+#: core/models.py:172
 msgid "define a markup percentage for products in this category"
 msgstr "Definer en markup-procentdel for produkter i denne kategori"
 
-#: core/models.py:180
+#: core/models.py:181
 msgid "parent of this category to form a hierarchical structure"
 msgstr "Forælder til denne kategori for at danne en hierarkisk struktur"
 
-#: core/models.py:181
+#: core/models.py:182
 msgid "parent category"
 msgstr "Overordnet kategori"
 
-#: core/models.py:186
+#: core/models.py:187
 msgid "category name"
 msgstr "Navn på kategori"
 
-#: core/models.py:187
+#: core/models.py:188
 msgid "provide a name for this category"
 msgstr "Giv et navn til denne kategori"
 
-#: core/models.py:194
+#: core/models.py:195
 msgid "add a detailed description for this category"
 msgstr "Tilføj en detaljeret beskrivelse af denne kategori"
 
-#: core/models.py:195
+#: core/models.py:196
 msgid "category description"
 msgstr "Beskrivelse af kategori"
 
-#: core/models.py:217
+#: core/models.py:218
 msgid "name of this brand"
 msgstr "Navnet på dette mærke"
 
-#: core/models.py:218
+#: core/models.py:219
 msgid "brand name"
 msgstr "Varemærke"
 
-#: core/models.py:224
+#: core/models.py:226
 msgid "upload a logo representing this brand"
 msgstr "Upload et logo, der repræsenterer dette brand"
 
-#: core/models.py:226
+#: core/models.py:228
 msgid "brand small image"
 msgstr "Brandets lille image"
 
-#: core/models.py:231
+#: core/models.py:234
 msgid "upload a big logo representing this brand"
 msgstr "Upload et stort logo, der repræsenterer dette brand"
 
-#: core/models.py:233
+#: core/models.py:236
 msgid "brand big image"
 msgstr "Brandets store image"
 
-#: core/models.py:238
+#: core/models.py:241
 msgid "add a detailed description of the brand"
 msgstr "Tilføj en detaljeret beskrivelse af brandet"
 
-#: core/models.py:239
+#: core/models.py:242
 msgid "brand description"
 msgstr "Varemærkebeskrivelse"
 
-#: core/models.py:244
+#: core/models.py:247
 msgid "optional categories that this brand is associated with"
 msgstr "Valgfrie kategorier, som dette brand er forbundet med"
 
-#: core/models.py:245
+#: core/models.py:248
 msgid "associated categories"
 msgstr "Kategorier"
 
-#: core/models.py:262
+#: core/models.py:265
 msgid "category this product belongs to"
 msgstr "Kategori, som dette produkt tilhører"
 
-#: core/models.py:270
+#: core/models.py:273
 msgid "optionally associate this product with a brand"
 msgstr "Tilknyt eventuelt dette produkt til et brand"
 
-#: core/models.py:276
+#: core/models.py:279
 msgid "tags that help describe or group this product"
 msgstr "Tags, der hjælper med at beskrive eller gruppere dette produkt"
 
-#: core/models.py:277 core/models.py:856
+#: core/models.py:280 core/models.py:901
 msgid "product tags"
 msgstr "Produktmærker"
 
-#: core/models.py:281
+#: core/models.py:284
 msgid "indicates whether this product is digitally delivered"
 msgstr "Angiver, om dette produkt leveres digitalt"
 
-#: core/models.py:282
+#: core/models.py:285
 msgid "is product digital"
 msgstr "Er produktet digitalt?"
 
-#: core/models.py:288
+#: core/models.py:291
 msgid "provide a clear identifying name for the product"
 msgstr "Giv produktet et klart identificerende navn"
 
-#: core/models.py:289
+#: core/models.py:292
 msgid "product name"
 msgstr "Produktets navn"
 
-#: core/models.py:294 core/models.py:1012
+#: core/models.py:297 core/models.py:1055
 msgid "add a detailed description of the product"
 msgstr "Tilføj en detaljeret beskrivelse af produktet"
 
-#: core/models.py:295
+#: core/models.py:298
 msgid "product description"
 msgstr "Produktbeskrivelse"
 
-#: core/models.py:302
+#: core/models.py:305
 msgid "part number for this product"
 msgstr "Reservedelsnummer for dette produkt"
 
-#: core/models.py:303
+#: core/models.py:306
 msgid "part number"
 msgstr "Varenummer"
 
-#: core/models.py:360
+#: core/models.py:370
 msgid "stores credentials and endpoints required for vendor communication"
 msgstr ""
 "Gemmer legitimationsoplysninger og slutpunkter, der er nødvendige for "
 "leverandørens API-kommunikation"
 
-#: core/models.py:361
+#: core/models.py:371
 msgid "authentication info"
 msgstr "Oplysninger om godkendelse"
 
-#: core/models.py:366
+#: core/models.py:376
 msgid "define the markup for products retrieved from this vendor"
 msgstr "Definer markeringen for produkter, der hentes fra denne leverandør"
 
-#: core/models.py:367
+#: core/models.py:377
 msgid "vendor markup percentage"
 msgstr "Sælgerens markup-procentdel"
 
-#: core/models.py:371
+#: core/models.py:381
 msgid "name of this vendor"
 msgstr "Navn på denne leverandør"
 
-#: core/models.py:372
+#: core/models.py:382
 msgid "vendor name"
 msgstr "Leverandørens navn"
 
-#: core/models.py:395
+#: core/models.py:405
 msgid "user-provided comments about their experience with the product"
 msgstr "Brugernes kommentarer om deres oplevelse med produktet"
 
-#: core/models.py:396
+#: core/models.py:406
 msgid "feedback comments"
 msgstr "Kommentarer til feedback"
 
-#: core/models.py:403
+#: core/models.py:413
 msgid ""
 "references the specific product in an order that this feedback is about"
 msgstr ""
 "Henviser til det specifikke produkt i en ordre, som denne feedback handler "
 "om"
 
-#: core/models.py:404
+#: core/models.py:414
 msgid "related order product"
 msgstr "Relateret ordreprodukt"
 
-#: core/models.py:409
+#: core/models.py:419
 msgid "user-assigned rating for the product"
 msgstr "Brugertildelt vurdering af produktet"
 
-#: core/models.py:410
+#: core/models.py:420
 msgid "product rating"
 msgstr "Produktvurdering"
 
-#: core/models.py:418
+#: core/models.py:428
 msgid "feedback"
 msgstr "Feedback"
 
-#: core/models.py:431
+#: core/models.py:441
 msgid "the billing address used for this order"
 msgstr "Den faktureringsadresse, der bruges til denne ordre"
 
-#: core/models.py:439
+#: core/models.py:449
 msgid "optional promo code applied to this order"
 msgstr "Valgfri kampagnekode anvendt på denne ordre"
 
-#: core/models.py:440
+#: core/models.py:450
 msgid "applied promo code"
 msgstr "Anvendt kampagnekode"
 
-#: core/models.py:448
+#: core/models.py:458
 msgid "the shipping address used for this order"
 msgstr "Den leveringsadresse, der er brugt til denne ordre"
 
-#: core/models.py:449
+#: core/models.py:459
 msgid "shipping address"
 msgstr "Leveringsadresse"
 
-#: core/models.py:455
+#: core/models.py:465
 msgid "current status of the order in its lifecycle"
 msgstr "Ordrens aktuelle status i dens livscyklus"
 
-#: core/models.py:456
+#: core/models.py:466
 msgid "order status"
 msgstr "Bestillingsstatus"
 
-#: core/models.py:461 core/models.py:745
+#: core/models.py:471 core/models.py:790
 msgid "json structure of notifications to display to users"
 msgstr ""
 "JSON-struktur af meddelelser, der skal vises til brugerne, i admin UI bruges"
 " tabelvisningen"
 
-#: core/models.py:467
+#: core/models.py:477
 msgid "json representation of order attributes for this order"
 msgstr "JSON-repræsentation af ordreattributter for denne ordre"
 
-#: core/models.py:473
+#: core/models.py:483
 msgid "the user who placed the order"
 msgstr "Den bruger, der har afgivet ordren"
 
-#: core/models.py:474
+#: core/models.py:484
 msgid "user"
 msgstr "Bruger"
 
-#: core/models.py:480
+#: core/models.py:490
 msgid "the timestamp when the order was finalized"
 msgstr "Tidsstemplet for, hvornår ordren blev afsluttet"
 
-#: core/models.py:481
+#: core/models.py:491
 msgid "buy time"
 msgstr "Køb tid"
 
-#: core/models.py:488
+#: core/models.py:498
+msgid "a human-readable identifier for the order"
+msgstr "En menneskeligt læsbar identifikator for ordren"
+
+#: core/models.py:499
+msgid "human readable id"
+msgstr "menneskeligt læsbart ID"
+
+#: core/models.py:505
 msgid "order"
 msgstr "Bestil"
 
-#: core/models.py:515
+#: core/models.py:536
 msgid "you cannot add products to an order that is not a pending one"
 msgstr "Du kan ikke tilføje produkter til en ordre, der ikke er i gang."
 
-#: core/models.py:520
+#: core/models.py:541
 msgid "you cannot add inactive products to order"
 msgstr "Du kan ikke tilføje inaktive produkter til en ordre"
 
-#: core/models.py:537
+#: core/models.py:558
 msgid "you cannot add more products than available in stock"
 msgstr "Du kan ikke tilføje flere produkter, end der er på lager"
 
-#: core/models.py:546 core/models.py:563 core/models.py:587
-#: core/models.py:1121 core/models.py:1132
+#: core/models.py:567 core/models.py:584 core/models.py:608
+#: core/models.py:1164 core/models.py:1175
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} findes ikke: {product_uuid}."
 
-#: core/models.py:550 core/models.py:571 core/models.py:579
+#: core/models.py:571 core/models.py:592 core/models.py:600
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr ""
 "Du kan ikke fjerne produkter fra en ordre, der ikke er en igangværende "
 "ordre."
 
-#: core/models.py:567
+#: core/models.py:588
 #, python-brace-format
 msgid "{name} does not exist with query <{query}>"
 msgstr "{name} findes ikke med forespørgsel <{query}>."
 
-#: core/models.py:598
+#: core/models.py:619
 msgid "promocode does not exist"
 msgstr "Promokode findes ikke"
 
-#: core/models.py:607
+#: core/models.py:626 core/models.py:665
+msgid "you can not buy at this moment, please try again in a few minutes"
+msgstr "Du kan ikke købe i øjeblikket, prøv venligst igen om et par minutter."
+
+#: core/models.py:629
 msgid "invalid force value"
 msgstr "Ugyldig kraftværdi"
 
-#: core/models.py:610
+#: core/models.py:632 core/models.py:668
 msgid "you cannot purchase an empty order!"
 msgstr "Du kan ikke købe en tom ordre!"
 
-#: core/models.py:625
+#: core/models.py:647
 msgid "insufficient funds to complete the order"
 msgstr "Utilstrækkelige midler til at gennemføre ordren"
 
-#: core/models.py:643
-#, fuzzy
-msgid "you cannot purchase without registration an empty order!"
-msgstr "Du kan ikke købe en tom ordre!"
-
-#: core/models.py:651
+#: core/models.py:677
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
@@ -1189,185 +1207,189 @@ msgstr ""
 "du kan ikke købe uden registrering, angiv venligst følgende oplysninger: "
 "kundens navn, kundens e-mail, kundens telefonnummer"
 
-#: core/models.py:662
+#: core/models.py:685
+msgid "invalid payment method"
+msgstr "Ugyldig betalingsmetode"
+
+#: core/models.py:701
 msgid "you cannot create a momental order without providing a billing address"
 msgstr ""
 "Du kan ikke oprette en momental-ordre uden at angive en faktureringsadresse."
 
-#: core/models.py:733
+#: core/models.py:778
 msgid "the price paid by the customer for this product at purchase time"
 msgstr "Den pris, som kunden har betalt for dette produkt på købstidspunktet"
 
-#: core/models.py:734
+#: core/models.py:779
 msgid "purchase price at order time"
 msgstr "Købspris på bestillingstidspunktet"
 
-#: core/models.py:739
+#: core/models.py:784
 msgid "internal comments for admins about this ordered product"
 msgstr "Interne kommentarer til administratorer om dette bestilte produkt"
 
-#: core/models.py:740
+#: core/models.py:785
 msgid "internal comments"
 msgstr "Interne kommentarer"
 
-#: core/models.py:746
+#: core/models.py:791
 msgid "user notifications"
 msgstr "Notifikationer til brugere"
 
-#: core/models.py:751
+#: core/models.py:796
 msgid "json representation of this item's attributes"
 msgstr "JSON-repræsentation af dette elements attributter"
 
-#: core/models.py:752
+#: core/models.py:797
 msgid "ordered product attributes"
 msgstr "Bestilte produktattributter"
 
-#: core/models.py:757
+#: core/models.py:802
 msgid "reference to the parent order that contains this product"
 msgstr "Henvisning til den overordnede ordre, der indeholder dette produkt"
 
-#: core/models.py:758
+#: core/models.py:803
 msgid "parent order"
 msgstr "Forældreordre"
 
-#: core/models.py:767
+#: core/models.py:812
 msgid "the specific product associated with this order line"
 msgstr "Det specifikke produkt, der er knyttet til denne ordrelinje"
 
-#: core/models.py:774
+#: core/models.py:819
 msgid "quantity of this specific product in the order"
 msgstr "Mængde af dette specifikke produkt i ordren"
 
-#: core/models.py:775
+#: core/models.py:820
 msgid "product quantity"
 msgstr "Produktmængde"
 
-#: core/models.py:782
+#: core/models.py:827
 msgid "current status of this product in the order"
 msgstr "Aktuel status for dette produkt i bestillingen"
 
-#: core/models.py:783
+#: core/models.py:828
 msgid "product line status"
 msgstr "Status for produktlinje"
 
-#: core/models.py:841
+#: core/models.py:886
 msgid "internal tag identifier for the product tag"
 msgstr "Intern tag-identifikator for produkttagget"
 
-#: core/models.py:842
+#: core/models.py:887
 msgid "tag name"
 msgstr "Tag-navn"
 
-#: core/models.py:846
+#: core/models.py:891
 msgid "user-friendly name for the product tag"
 msgstr "Brugervenligt navn til produktmærket"
 
-#: core/models.py:847
+#: core/models.py:892
 msgid "tag display name"
 msgstr "Navn på tag-visning"
 
-#: core/models.py:855
+#: core/models.py:900
 msgid "product tag"
 msgstr "Produktmærke"
 
-#: core/models.py:864
+#: core/models.py:909
 msgid "provide alternative text for the image for accessibility"
 msgstr "Giv alternativ tekst til billedet af hensyn til tilgængeligheden"
 
-#: core/models.py:865
+#: core/models.py:910
 msgid "image alt text"
 msgstr "Billedets alt-tekst"
 
-#: core/models.py:868
+#: core/models.py:913
 msgid "upload the image file for this product"
 msgstr "Upload billedfilen til dette produkt"
 
-#: core/models.py:869 core/models.py:894
+#: core/models.py:914 core/models.py:939
 msgid "product image"
 msgstr "Produktbillede"
 
-#: core/models.py:875
+#: core/models.py:920
 msgid "determines the order in which images are displayed"
 msgstr "Bestemmer den rækkefølge, billederne vises i"
 
-#: core/models.py:876
+#: core/models.py:921
 msgid "display priority"
 msgstr "Skærm-prioritet"
 
-#: core/models.py:881
+#: core/models.py:926
 msgid "the product that this image represents"
 msgstr "Det produkt, som dette billede repræsenterer"
 
-#: core/models.py:895
+#: core/models.py:940
 msgid "product images"
 msgstr "Produktbilleder"
 
-#: core/models.py:905
+#: core/models.py:950
 msgid "unique code used by a user to redeem a discount"
 msgstr "Unik kode, der bruges af en bruger til at indløse en rabat"
 
-#: core/models.py:906
+#: core/models.py:951
 msgid "promo code identifier"
 msgstr "Identifikator for kampagnekode"
 
-#: core/models.py:913
+#: core/models.py:958
 msgid "fixed discount amount applied if percent is not used"
 msgstr "Fast rabatbeløb anvendes, hvis procent ikke bruges"
 
-#: core/models.py:914
+#: core/models.py:959
 msgid "fixed discount amount"
 msgstr "Fast rabatbeløb"
 
-#: core/models.py:920
+#: core/models.py:965
 msgid "percentage discount applied if fixed amount is not used"
 msgstr "Procentvis rabat, hvis det faste beløb ikke bruges"
 
-#: core/models.py:921
+#: core/models.py:966
 msgid "percentage discount"
 msgstr "Procentvis rabat"
 
-#: core/models.py:926
+#: core/models.py:971
 msgid "timestamp when the promocode expires"
 msgstr "Tidsstempel, når promokoden udløber"
 
-#: core/models.py:927
+#: core/models.py:972
 msgid "end validity time"
 msgstr "Slut gyldighedstid"
 
-#: core/models.py:932
+#: core/models.py:977
 msgid "timestamp from which this promocode is valid"
 msgstr "Tidsstempel, hvorfra denne promokode er gyldig"
 
-#: core/models.py:933
+#: core/models.py:978
 msgid "start validity time"
 msgstr "Start gyldighedstid"
 
-#: core/models.py:938
+#: core/models.py:983
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr ""
 "Tidsstempel, hvor promokoden blev brugt, blank, hvis den ikke er brugt endnu"
 
-#: core/models.py:939
+#: core/models.py:984
 msgid "usage timestamp"
 msgstr "Tidsstempel for brug"
 
-#: core/models.py:944
+#: core/models.py:989
 msgid "user assigned to this promocode if applicable"
 msgstr "Bruger tildelt denne promokode, hvis relevant"
 
-#: core/models.py:945
+#: core/models.py:990
 msgid "assigned user"
 msgstr "Tildelt bruger"
 
-#: core/models.py:952
+#: core/models.py:997
 msgid "promo code"
 msgstr "Kampagnekode"
 
-#: core/models.py:953
+#: core/models.py:998
 msgid "promo codes"
 msgstr "Kampagnekoder"
 
-#: core/models.py:960
+#: core/models.py:1005
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
@@ -1375,141 +1397,140 @@ msgstr ""
 "Der skal kun defineres én type rabat (beløb eller procent), men ikke begge "
 "eller ingen af dem."
 
-#: core/models.py:975
-#, fuzzy
+#: core/models.py:1020
 msgid "promocode already used"
-msgstr "Promokoder"
+msgstr "Promokoden er allerede blevet brugt"
 
-#: core/models.py:989
-#, fuzzy, python-brace-format
+#: core/models.py:1032
+#, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
-msgstr "Ugyldig rabattype for promokode {promocode_uuid}."
+msgstr "Ugyldig rabattype for promokode {self.uuid}."
 
-#: core/models.py:1000
+#: core/models.py:1043
 msgid "percentage discount for the selected products"
 msgstr "Procentvis rabat for de valgte produkter"
 
-#: core/models.py:1001
+#: core/models.py:1044
 msgid "discount percentage"
 msgstr "Rabatprocent"
 
-#: core/models.py:1006
+#: core/models.py:1049
 msgid "provide a unique name for this promotion"
 msgstr "Giv et unikt navn til denne kampagne"
 
-#: core/models.py:1007
+#: core/models.py:1050
 msgid "promotion name"
 msgstr "Navn på kampagne"
 
-#: core/models.py:1013
+#: core/models.py:1056
 msgid "promotion description"
 msgstr "Beskrivelse af kampagnen"
 
-#: core/models.py:1018
+#: core/models.py:1061
 msgid "select which products are included in this promotion"
 msgstr "Vælg, hvilke produkter der er inkluderet i denne kampagne"
 
-#: core/models.py:1019
+#: core/models.py:1062
 msgid "included products"
 msgstr "Inkluderede produkter"
 
-#: core/models.py:1023
+#: core/models.py:1066
 msgid "promotion"
 msgstr "Forfremmelse"
 
-#: core/models.py:1038
+#: core/models.py:1081
 msgid "the vendor supplying this product stock"
 msgstr "Den leverandør, der leverer dette produkt, lagerfører"
 
-#: core/models.py:1039
+#: core/models.py:1082
 msgid "associated vendor"
 msgstr "Tilknyttet leverandør"
 
-#: core/models.py:1043
+#: core/models.py:1086
 msgid "final price to the customer after markups"
 msgstr "Endelig pris til kunden efter tillæg"
 
-#: core/models.py:1044
+#: core/models.py:1087
 msgid "selling price"
 msgstr "Salgspris"
 
-#: core/models.py:1049
+#: core/models.py:1092
 msgid "the product associated with this stock entry"
 msgstr "Det produkt, der er knyttet til denne lagerpost"
 
-#: core/models.py:1057
+#: core/models.py:1100
 msgid "the price paid to the vendor for this product"
 msgstr "Den pris, der er betalt til sælgeren for dette produkt"
 
-#: core/models.py:1058
+#: core/models.py:1101
 msgid "vendor purchase price"
 msgstr "Leverandørens købspris"
 
-#: core/models.py:1062
+#: core/models.py:1105
 msgid "available quantity of the product in stock"
 msgstr "Tilgængelig mængde af produktet på lager"
 
-#: core/models.py:1063
+#: core/models.py:1106
 msgid "quantity in stock"
 msgstr "Antal på lager"
 
-#: core/models.py:1067
+#: core/models.py:1110
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "Leverandørtildelt SKU til identifikation af produktet"
 
-#: core/models.py:1068
+#: core/models.py:1111
 msgid "vendor sku"
 msgstr "Leverandørens SKU"
 
-#: core/models.py:1074
+#: core/models.py:1117
 msgid "digital file associated with this stock if applicable"
 msgstr "Digital fil knyttet til dette lager, hvis relevant"
 
-#: core/models.py:1075
+#: core/models.py:1118
 msgid "digital file"
 msgstr "Digital fil"
 
-#: core/models.py:1084
+#: core/models.py:1127
 msgid "stock entries"
 msgstr "Lagerposteringer"
 
-#: core/models.py:1093
+#: core/models.py:1136
 msgid "products that the user has marked as wanted"
 msgstr "Produkter, som brugeren har markeret som ønskede"
 
-#: core/models.py:1101
+#: core/models.py:1144
 msgid "user who owns this wishlist"
 msgstr "Bruger, der ejer denne ønskeliste"
 
-#: core/models.py:1102
+#: core/models.py:1145
 msgid "wishlist owner"
 msgstr "Ønskelistens ejer"
 
-#: core/models.py:1110
+#: core/models.py:1153
 msgid "wishlist"
 msgstr "Ønskeliste"
 
-#: core/models.py:1150
+#: core/models.py:1193
 msgid "download"
 msgstr "Download"
 
-#: core/models.py:1151
+#: core/models.py:1194
 msgid "downloads"
 msgstr "Downloads"
 
-#: core/models.py:1159
+#: core/models.py:1202
 msgid "you can not download a digital asset for a non-finished order"
 msgstr "Du kan ikke downloade et digitalt aktiv for en ikke-færdiggjort ordre"
 
-#: core/models.py:1171
+#: core/models.py:1214
 msgid "documentary"
 msgstr "Dokumentarfilm"
 
-#: core/models.py:1172
+#: core/models.py:1215
 msgid "documentaries"
 msgstr "Dokumentarfilm"
 
-#: core/models.py:1182
+#: core/models.py:1225
 msgid "unresolved"
 msgstr "Uafklaret"
 
@@ -1734,10 +1755,10 @@ msgstr ""
 msgid "invalid phone number format"
 msgstr "Ugyldigt telefonnummerformat"
 
-#: core/views.py:205
+#: core/views.py:230
 msgid "you can only download the digital asset once"
 msgstr "Du kan kun downloade det digitale aktiv én gang"
 
-#: core/views.py:238
+#: core/views.py:263
 msgid "favicon not found"
 msgstr "Favicon ikke fundet"

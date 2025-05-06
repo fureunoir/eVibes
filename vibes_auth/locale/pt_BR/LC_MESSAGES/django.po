@@ -248,7 +248,7 @@ msgstr "Confirmação de redefinição de senha"
 #: vibes_auth/templates/user_verification_email.html:91
 #, python-format
 msgid "hello %(user_first_name)s,"
-msgstr "Olá %(nome_primeiro_do_usuário)s,"
+msgstr "Olá %(user_first_name)s,"
 
 #: vibes_auth/templates/user_reset_password_email.html:82
 msgid ""
@@ -277,7 +277,7 @@ msgstr "Se você não enviou essa solicitação, ignore este e-mail."
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
 msgid "best regards,<br>The %(project_name)s team"
-msgstr "Atenciosamente,<br>A equipe de %(nome_do_projeto)s"
+msgstr "Atenciosamente,<br>A equipe de %(project_name)s"
 
 #: vibes_auth/templates/user_reset_password_email.html:95
 #: vibes_auth/templates/user_verification_email.html:107
@@ -295,7 +295,7 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Obrigado por se inscrever no %(nome_do_projeto)s. Ative sua conta clicando "
+"Obrigado por se inscrever no %(project_name)s. Ative sua conta clicando "
 "no botão abaixo:"
 
 #: vibes_auth/templates/user_verification_email.html:95
@@ -317,7 +317,7 @@ msgstr ""
 #: vibes_auth/templates/user_verification_email.html:101
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "Atenciosamente,<br>a equipe de %(nome_do_projeto)s"
+msgstr "Atenciosamente,<br>a equipe de %(project_name)s"
 
 #: vibes_auth/utils/emailing.py:25
 #, python-brace-format

@@ -81,3 +81,13 @@ class BuyUnregisteredOrderSerializer(Serializer):
     billing_customer_address = UnregisteredCustomerAddressSerializer(required=True)
     shipping_customer_address = UnregisteredCustomerAddressSerializer(required=False)
     payment_method = CharField(required=True)
+
+
+class BuyAsBusinessOrderSerializer(Serializer):
+    products = ListField(child=AddOrderProductSerializer(), required=True)
+    business_inn = CharField(required=True)
+    business_email = CharField(required=True)
+    business_phone_number = CharField(required=True)
+    billing_business_address = UnregisteredCustomerAddressSerializer(required=True)
+    shipping_business_address = UnregisteredCustomerAddressSerializer(required=False)
+    payment_method = CharField(required=True)

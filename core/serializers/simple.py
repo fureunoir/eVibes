@@ -291,6 +291,7 @@ class OrderSimpleSerializer(ModelSerializer):
         model = Order
         fields = [
             "uuid",
+            "human_readable_id",
             "status",
             "user",
             "promo_code",

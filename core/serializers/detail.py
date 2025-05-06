@@ -411,6 +411,7 @@ class OrderDetailSerializer(ModelSerializer):
             "shipping_address",
             "buy_time",
             "order_products",
+            "human_readable_id",
             "created",
             "modified",
         ]

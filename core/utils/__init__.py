@@ -1,5 +1,6 @@
 import logging
 import re
+import secrets
 from contextlib import contextmanager
 
 from constance import config
@@ -126,3 +127,21 @@ def resolve_translations_for_elasticsearch(instance, field_name):
     filled_field = getattr(instance, field_name, "")
     if not field:
         setattr(instance, f"{field_name}_{LANGUAGE_CODE}", filled_field)
+
+CROCKFORD = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+
+def generate_human_readable_id(length: int = 6) -> str:
+    """
+    Generate a human-readable ID of `length` characters (from the Crockford set),
+    with a single hyphen inserted:
+      - 50% chance at the exact middle
+      - 50% chance at a random position between characters (1 to length-1)
+
+    The final string length will be `length + 1` (including the hyphen).
+    """
+    chars = [secrets.choice(CROCKFORD) for _ in range(length)]
+
+    pos = (secrets.randbelow(length - 1) + 1) if secrets.choice([True, False]) else (length // 2)
+
+    chars.insert(pos, "-")
+    return "".join(chars)

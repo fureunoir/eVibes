@@ -22,7 +22,7 @@ urlpatterns = [
     path(r"i18n/", include("django.conf.urls.i18n")),
     path(r"favicon.ico", favicon_view),
     path(r"", index),
-    path(r"", include("core.urls")),
+    path(r"", include("core.api_urls")),
     path(r"auth/", include("vibes_auth.urls")),
     path(r"geo/", include("geo.urls")),
     path(r"payments/", include("payments.urls")),

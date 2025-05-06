@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 14:05+0100\n"
+"POT-Creation-Date: 2025-05-05 23:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -51,19 +51,19 @@ msgstr "متى تم تحرير الكائن آخر مرة"
 #: core/admin.py:34 core/admin.py:47
 #, python-format
 msgid "activate selected %(verbose_name_plural)s"
-msgstr "تنشيط %(اسم_الجمع) المحدد %(verbose_play_plural)"
+msgstr "تنشيط المحدد %(verbose_name_plural)s"
 
 #: core/admin.py:38 core/admin.py:52
 #, python-format
 msgid "deactivate selected %(verbose_name_plural)s"
-msgstr "إلغاء تنشيط %(verbose_name_plural)%(verbose_name_plural) المحددة"
+msgstr "إلغاء تنشيط %(verbose_name_plural)s المحددة"
 
-#: core/admin.py:61 core/graphene/object_types.py:361
-#: core/graphene/object_types.py:368 core/models.py:145 core/models.py:153
+#: core/admin.py:61 core/graphene/object_types.py:363
+#: core/graphene/object_types.py:370 core/models.py:146 core/models.py:154
 msgid "attribute value"
 msgstr "قيمة السمة"
 
-#: core/admin.py:62 core/graphene/object_types.py:35 core/models.py:154
+#: core/admin.py:62 core/graphene/object_types.py:35 core/models.py:155
 msgid "attribute values"
 msgstr "قيم السمات"
 
@@ -76,19 +76,19 @@ msgstr "الاسم"
 msgid "image"
 msgstr "الصورة"
 
-#: core/admin.py:153 core/graphene/object_types.py:315
+#: core/admin.py:153 core/graphene/object_types.py:316
 msgid "images"
 msgstr "الصور"
 
-#: core/admin.py:160 core/models.py:1083
+#: core/admin.py:160 core/models.py:1126
 msgid "stock"
 msgstr "المخزون"
 
-#: core/admin.py:161 core/graphene/object_types.py:415
+#: core/admin.py:161 core/graphene/object_types.py:417
 msgid "stocks"
 msgstr "الأسهم"
 
-#: core/admin.py:194 core/graphene/object_types.py:319
+#: core/admin.py:194 core/graphene/object_types.py:320
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -112,15 +112,19 @@ msgstr "تواريخ مهمة"
 msgid "translations"
 msgstr "الترجمات"
 
-#: core/admin.py:256 core/models.py:791
+#: core/admin.py:256 core/models.py:836
 msgid "order product"
 msgstr "طلب المنتج"
 
-#: core/admin.py:257 core/graphene/object_types.py:242 core/models.py:792
+#: core/admin.py:257 core/graphene/object_types.py:242 core/models.py:837
 msgid "order products"
 msgstr "اطلب المنتجات"
 
-#: core/admin.py:379
+#: core/admin.py:276
+msgid "is business"
+msgstr "هل الأعمال"
+
+#: core/admin.py:384
 msgid "config"
 msgstr "التكوين"
 
@@ -172,11 +176,11 @@ msgstr "مومنتال"
 msgid "successful"
 msgstr "ناجح"
 
-#: core/docs/drf/views.py:15 core/graphene/mutations.py:28
+#: core/docs/drf/views.py:17 core/graphene/mutations.py:28
 msgid "cache I/O"
 msgstr "ذاكرة التخزين المؤقت للإدخال/الإخراج"
 
-#: core/docs/drf/views.py:17
+#: core/docs/drf/views.py:19
 msgid ""
 "apply only a key to read permitted data from cache.\n"
 "apply key, data and timeout with authentication to write data to cache."
@@ -184,25 +188,37 @@ msgstr ""
 "تطبيق مفتاح فقط لقراءة البيانات المسموح بها من ذاكرة التخزين المؤقت.\n"
 "تطبيق مفتاح وبيانات ومهلة مع المصادقة لكتابة البيانات إلى ذاكرة التخزين المؤقت."
 
-#: core/docs/drf/views.py:29
+#: core/docs/drf/views.py:31
 msgid "get a list of supported languages"
 msgstr "الحصول على قائمة باللغات المدعومة"
 
-#: core/docs/drf/views.py:38
+#: core/docs/drf/views.py:40
 msgid "get application's exposable parameters"
 msgstr "الحصول على معلمات التطبيق القابلة للكشف"
 
-#: core/docs/drf/views.py:45
+#: core/docs/drf/views.py:47
 msgid "send a message to the support team"
 msgstr "إرسال رسالة إلى فريق الدعم"
 
-#: core/docs/drf/views.py:56 core/graphene/mutations.py:47
+#: core/docs/drf/views.py:58 core/graphene/mutations.py:47
 msgid "request a CORSed URL"
 msgstr "طلب عنوان URL مرتبط بـ CORSed. مسموح بـ https فقط."
 
-#: core/docs/drf/views.py:82
+#: core/docs/drf/views.py:84
 msgid "global search endpoint to query across project's tables"
 msgstr "نقطة نهاية بحث عالمية للاستعلام عبر جداول المشروع"
+
+#: core/docs/drf/views.py:90
+msgid "purchase an order as a business"
+msgstr "شراء طلب شراء كشركة"
+
+#: core/docs/drf/views.py:97
+msgid ""
+"purchase an order as a business, using the provided `products` with "
+"`product_uuid` and `attributes`."
+msgstr ""
+"اشترِ طلبًا كعمل تجاري، باستخدام \"المنتجات\" المتوفرة مع \"معرّف_المنتج\" "
+"و\"السمات\"."
 
 #: core/docs/drf/viewsets.py:26
 msgid "list all attribute groups (simple view)"
@@ -347,7 +363,7 @@ msgstr ""
 "ينهي أمر الشراء. إذا تم استخدام \"فرض_الرصيد\"، يتم إكمال عملية الشراء "
 "باستخدام رصيد المستخدم؛ إذا تم استخدام \"فرض_الدفع\"، يتم بدء المعاملة."
 
-#: core/docs/drf/viewsets.py:174
+#: core/docs/drf/viewsets.py:174 core/graphene/mutations.py:199
 msgid "purchase an order without account creation"
 msgstr "شراء طلب شراء بدون إنشاء حساب"
 
@@ -443,7 +459,7 @@ msgid ""
 msgstr ""
 "يزيل العديد من المنتجات من قائمة الرغبات باستخدام 'product_uids' المتوفرة"
 
-#: core/elasticsearch/__init__.py:38
+#: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
 msgstr "لم يتم توفير مصطلح بحث."
 
@@ -468,7 +484,7 @@ msgstr "البيانات المخزنة مؤقتاً"
 msgid "camelized JSON data from the requested URL"
 msgstr "بيانات JSON مجمّلة من عنوان URL المطلوب"
 
-#: core/graphene/mutations.py:57 core/views.py:166
+#: core/graphene/mutations.py:57 core/views.py:169
 msgid "only URLs starting with http(s):// are allowed"
 msgstr "يُسمح فقط بعناوين URL التي تبدأ ب http(s)://"
 
@@ -494,54 +510,49 @@ msgstr "إزالة جميع المنتجات من الطلب"
 msgid "buy an order"
 msgstr "شراء طلبية"
 
-#: core/graphene/mutations.py:192 core/graphene/mutations.py:344
-#: core/graphene/mutations.py:378 core/viewsets.py:220
+#: core/graphene/mutations.py:192 core/graphene/mutations.py:346
+#: core/graphene/mutations.py:380 core/viewsets.py:221
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
-msgstr "جاء نوع خاطئ من طريقة order.buy(): {str (نوع (مثيل))}"
+msgstr "جاء نوع خاطئ من طريقة order.buy(): {type(instance)!s}"
 
-#: core/graphene/mutations.py:199
-#, fuzzy
-msgid "buy an unregistered order"
-msgstr "شراء طلبية"
-
-#: core/graphene/mutations.py:228
+#: core/graphene/mutations.py:230
 msgid "add a product to the wishlist"
 msgstr "إضافة منتج إلى الطلب"
 
-#: core/graphene/mutations.py:250 core/graphene/mutations.py:277
-#: core/graphene/mutations.py:304 core/graphene/mutations.py:347
+#: core/graphene/mutations.py:252 core/graphene/mutations.py:279
+#: core/graphene/mutations.py:306 core/graphene/mutations.py:349
 #, python-brace-format
 msgid "wishlist {wishlist_uuid} not found"
 msgstr "قائمة الأمنيات {wishlist_uuid} غير موجودة"
 
-#: core/graphene/mutations.py:255
+#: core/graphene/mutations.py:257
 msgid "remove a product from the wishlist"
 msgstr "إزالة منتج من الطلب"
 
-#: core/graphene/mutations.py:282
+#: core/graphene/mutations.py:284
 msgid "remove all products from the wishlist"
 msgstr "إزالة منتج من الطلب"
 
-#: core/graphene/mutations.py:309
+#: core/graphene/mutations.py:311
 msgid "buy all products from the wishlist"
 msgstr "إزالة منتج من الطلب"
 
-#: core/graphene/mutations.py:352
+#: core/graphene/mutations.py:354
 msgid "buy a product"
 msgstr "شراء طلبية"
 
-#: core/graphene/mutations.py:358
+#: core/graphene/mutations.py:360
 msgid ""
 "please send the attributes as the string formatted like "
 "attr1=value1,attr2=value2"
 msgstr "الرجاء إرسال السمات كسلسلة منسقة مثل attr1=قيمة1، attr2=قيمة2"
 
-#: core/graphene/mutations.py:474
+#: core/graphene/mutations.py:476
 msgid "elasticsearch - works like a charm"
 msgstr "ElasticSearch - يعمل مثل السحر"
 
 #: core/graphene/object_types.py:42 core/graphene/object_types.py:225
-#: core/graphene/object_types.py:266 core/models.py:122 core/models.py:468
+#: core/graphene/object_types.py:266 core/models.py:123 core/models.py:478
 msgid "attributes"
 msgstr "السمات"
 
@@ -554,11 +565,11 @@ msgid "groups of attributes"
 msgstr "مجموعات السمات"
 
 #: core/graphene/object_types.py:75 core/graphene/object_types.py:104
-#: core/graphene/object_types.py:131 core/models.py:86 core/models.py:208
+#: core/graphene/object_types.py:131 core/models.py:87 core/models.py:209
 msgid "categories"
 msgstr "الفئات"
 
-#: core/graphene/object_types.py:82 core/models.py:253
+#: core/graphene/object_types.py:82 core/models.py:256
 msgid "brands"
 msgstr "العلامات التجارية"
 
@@ -567,7 +578,7 @@ msgid "category image url"
 msgstr "الفئات"
 
 #: core/graphene/object_types.py:107 core/graphene/object_types.py:202
-#: core/models.py:172
+#: core/models.py:173
 msgid "markup percentage"
 msgstr "النسبة المئوية للترميز"
 
@@ -581,7 +592,7 @@ msgid ""
 msgstr ""
 "الحد الأدنى والحد الأقصى لأسعار المنتجات في هذه الفئة، إذا كانت متوفرة."
 
-#: core/graphene/object_types.py:209 core/models.py:383
+#: core/graphene/object_types.py:209 core/models.py:393
 msgid "vendors"
 msgstr "البائعون"
 
@@ -598,7 +609,7 @@ msgid "represents feedback from a user."
 msgstr "يمثل ملاحظات من المستخدم."
 
 #: core/graphene/object_types.py:226 core/graphene/object_types.py:267
-#: core/models.py:462
+#: core/models.py:472
 msgid "notifications"
 msgstr "الإشعارات"
 
@@ -610,7 +621,7 @@ msgstr "تحميل الرابط الخاص بمنتج الطلب هذا إن أ�
 msgid "a list of order products in this order"
 msgstr "قائمة بطلب المنتجات بهذا الترتيب"
 
-#: core/graphene/object_types.py:258 core/models.py:432
+#: core/graphene/object_types.py:258 core/models.py:442
 msgid "billing address"
 msgstr "عنوان إرسال الفواتير"
 
@@ -634,35 +645,35 @@ msgstr "إجمالي كمية المنتجات بالترتيب"
 msgid "are all products in the order digital"
 msgstr "هل جميع المنتجات في الطلب رقمي"
 
-#: core/graphene/object_types.py:284 core/models.py:489
+#: core/graphene/object_types.py:285 core/models.py:506
 msgid "orders"
 msgstr "الطلبات"
 
-#: core/graphene/object_types.py:300
+#: core/graphene/object_types.py:301
 msgid "image url"
 msgstr "رابط الصورة"
 
-#: core/graphene/object_types.py:307
+#: core/graphene/object_types.py:308
 msgid "product's images"
 msgstr "صور المنتج"
 
-#: core/graphene/object_types.py:314 core/models.py:207 core/models.py:263
+#: core/graphene/object_types.py:315 core/models.py:208 core/models.py:266
 msgid "category"
 msgstr "الفئة"
 
-#: core/graphene/object_types.py:316 core/models.py:419
+#: core/graphene/object_types.py:317 core/models.py:429
 msgid "feedbacks"
 msgstr "الملاحظات"
 
-#: core/graphene/object_types.py:317 core/models.py:252 core/models.py:271
+#: core/graphene/object_types.py:318 core/models.py:255 core/models.py:274
 msgid "brand"
 msgstr "العلامة التجارية"
 
-#: core/graphene/object_types.py:318 core/models.py:76
+#: core/graphene/object_types.py:319 core/models.py:77
 msgid "attribute groups"
 msgstr "مجموعات السمات"
 
-#: core/graphene/object_types.py:320
+#: core/graphene/object_types.py:321
 #: core/templates/digital_order_created_email.html:108
 #: core/templates/digital_order_delivered_email.html:108
 #: core/templates/shipped_order_created_email.html:94
@@ -670,31 +681,31 @@ msgstr "مجموعات السمات"
 msgid "quantity"
 msgstr "الكمية"
 
-#: core/graphene/object_types.py:321
+#: core/graphene/object_types.py:322
 msgid "number of feedbacks"
 msgstr "عدد الملاحظات"
 
-#: core/graphene/object_types.py:338 core/models.py:308
+#: core/graphene/object_types.py:340 core/models.py:318
 msgid "products"
 msgstr "المنتجات"
 
-#: core/graphene/object_types.py:386
+#: core/graphene/object_types.py:388
 msgid "promocodes"
 msgstr "الرموز الترويجية"
 
-#: core/graphene/object_types.py:396
+#: core/graphene/object_types.py:398
 msgid "products on sale"
 msgstr "المنتجات المعروضة للبيع"
 
-#: core/graphene/object_types.py:403 core/models.py:1024
+#: core/graphene/object_types.py:405 core/models.py:1067
 msgid "promotions"
 msgstr "العروض الترويجية"
 
-#: core/graphene/object_types.py:407 core/models.py:382
+#: core/graphene/object_types.py:409 core/models.py:392
 msgid "vendor"
 msgstr "البائع"
 
-#: core/graphene/object_types.py:408 core/models.py:307
+#: core/graphene/object_types.py:410 core/models.py:317
 #: core/templates/digital_order_created_email.html:107
 #: core/templates/digital_order_delivered_email.html:107
 #: core/templates/shipped_order_created_email.html:93
@@ -702,449 +713,456 @@ msgstr "البائع"
 msgid "product"
 msgstr "المنتج"
 
-#: core/graphene/object_types.py:419 core/models.py:1094
+#: core/graphene/object_types.py:421 core/models.py:1137
 msgid "wishlisted products"
 msgstr "المنتجات المفضلة"
 
-#: core/graphene/object_types.py:425 core/models.py:1111
+#: core/graphene/object_types.py:427 core/models.py:1154
 msgid "wishlists"
 msgstr "قوائم التمنيات"
 
-#: core/graphene/object_types.py:429
+#: core/graphene/object_types.py:431
 msgid "project name"
 msgstr "اسم المشروع"
 
-#: core/graphene/object_types.py:430
+#: core/graphene/object_types.py:432
 msgid "company email"
 msgstr "البريد الإلكتروني للشركة"
 
-#: core/graphene/object_types.py:431
+#: core/graphene/object_types.py:433
 msgid "company name"
 msgstr "اسم الشركة"
 
-#: core/graphene/object_types.py:432
+#: core/graphene/object_types.py:434
 msgid "company address"
 msgstr "عنوان الشركة"
 
-#: core/graphene/object_types.py:433
+#: core/graphene/object_types.py:435
 msgid "company phone number"
 msgstr "رقم هاتف الشركة"
 
-#: core/graphene/object_types.py:434
+#: core/graphene/object_types.py:436
 msgid "email from, sometimes it must be used instead of host user value"
 msgstr ""
 "\"البريد الإلكتروني من\"، في بعض الأحيان يجب استخدامه بدلاً من قيمة المستخدم"
 " المضيف"
 
-#: core/graphene/object_types.py:435
+#: core/graphene/object_types.py:437
 msgid "email host user"
 msgstr "مستخدم البريد الإلكتروني المضيف"
 
-#: core/graphene/object_types.py:436
+#: core/graphene/object_types.py:438
 msgid "maximum amount for payment"
 msgstr "الحد الأقصى لمبلغ السداد"
 
-#: core/graphene/object_types.py:437
+#: core/graphene/object_types.py:439
 msgid "minimum amount for payment"
 msgstr "الحد الأدنى لمبلغ السداد"
 
-#: core/graphene/object_types.py:440
+#: core/graphene/object_types.py:442
 msgid "company configuration"
 msgstr "التكوين"
 
-#: core/graphene/object_types.py:444
+#: core/graphene/object_types.py:446
 msgid "language code"
 msgstr "رمز اللغة"
 
-#: core/graphene/object_types.py:445
+#: core/graphene/object_types.py:447
 msgid "language name"
 msgstr "اسم اللغة"
 
-#: core/graphene/object_types.py:446
+#: core/graphene/object_types.py:448
 msgid "language flag, if exists :)"
 msgstr "علم اللغة، إذا كان موجوداً :)"
 
-#: core/graphene/object_types.py:449
+#: core/graphene/object_types.py:451
 msgid "supported languages"
 msgstr "الحصول على قائمة باللغات المدعومة"
 
-#: core/graphene/object_types.py:468 core/graphene/object_types.py:469
-#: core/graphene/object_types.py:470
+#: core/graphene/object_types.py:470 core/graphene/object_types.py:471
+#: core/graphene/object_types.py:472
 msgid "products search results"
 msgstr "نتائج البحث عن المنتجات"
 
-#: core/models.py:61
+#: core/models.py:62
 msgid "parent of this group"
 msgstr "والد هذه المجموعة"
 
-#: core/models.py:62
+#: core/models.py:63
 msgid "parent attribute group"
 msgstr "مجموعة السمات الرئيسية"
 
-#: core/models.py:66 core/models.py:67
+#: core/models.py:67 core/models.py:68
 msgid "attribute group's name"
 msgstr "اسم مجموعة السمات"
 
-#: core/models.py:75 core/models.py:94
+#: core/models.py:76 core/models.py:95
 msgid "attribute group"
 msgstr "مجموعة السمات"
 
-#: core/models.py:85
+#: core/models.py:86
 msgid "category of this attribute"
 msgstr "فئة هذه السمة"
 
-#: core/models.py:93
+#: core/models.py:94
 msgid "group of this attribute"
 msgstr "مجموعة هذه السمة"
 
-#: core/models.py:99
+#: core/models.py:100
 msgid "string"
 msgstr "الخيط"
 
-#: core/models.py:100
+#: core/models.py:101
 msgid "integer"
 msgstr "عدد صحيح"
 
-#: core/models.py:101
+#: core/models.py:102
 msgid "float"
 msgstr "تعويم"
 
-#: core/models.py:102
+#: core/models.py:103
 msgid "boolean"
 msgstr "منطقية"
 
-#: core/models.py:103
+#: core/models.py:104
 msgid "array"
 msgstr "المصفوفة"
 
-#: core/models.py:104
+#: core/models.py:105
 msgid "object"
 msgstr "الكائن"
 
-#: core/models.py:106
+#: core/models.py:107
 msgid "type of the attribute's value"
 msgstr "نوع قيمة السمة"
 
-#: core/models.py:107
+#: core/models.py:108
 msgid "value type"
 msgstr "نوع القيمة"
 
-#: core/models.py:112
+#: core/models.py:113
 msgid "name of this attribute"
 msgstr "اسم هذه السمة"
 
-#: core/models.py:113
+#: core/models.py:114
 msgid "attribute's name"
 msgstr "اسم السمة"
 
-#: core/models.py:121 core/models.py:133
+#: core/models.py:122 core/models.py:134
 #: core/templates/digital_order_delivered_email.html:132
 msgid "attribute"
 msgstr "السمة"
 
-#: core/models.py:132
+#: core/models.py:133
 msgid "attribute of this value"
 msgstr "سمة هذه القيمة"
 
-#: core/models.py:140
+#: core/models.py:141
 msgid "the specific product associated with this attribute's value"
 msgstr "المنتج المحدد المرتبط بقيمة هذه السمة"
 
-#: core/models.py:141 core/models.py:768 core/models.py:882
-#: core/models.py:1050
+#: core/models.py:142 core/models.py:813 core/models.py:927
+#: core/models.py:1093
 msgid "associated product"
 msgstr "المنتج المرتبط"
 
-#: core/models.py:146
+#: core/models.py:147
 msgid "the specific value for this attribute"
 msgstr "القيمة المحددة لهذه السمة"
 
-#: core/models.py:163
+#: core/models.py:164
 msgid "upload an image representing this category"
 msgstr "تحميل صورة تمثل هذه الفئة"
 
-#: core/models.py:166
+#: core/models.py:167
 msgid "category image"
 msgstr "صورة الفئة"
 
-#: core/models.py:171
+#: core/models.py:172
 msgid "define a markup percentage for products in this category"
 msgstr "تحديد نسبة ترميز للمنتجات في هذه الفئة"
 
-#: core/models.py:180
+#: core/models.py:181
 msgid "parent of this category to form a hierarchical structure"
 msgstr "أصل هذه الفئة لتكوين بنية هرمية"
 
-#: core/models.py:181
+#: core/models.py:182
 msgid "parent category"
 msgstr "الفئة الرئيسية"
 
-#: core/models.py:186
+#: core/models.py:187
 msgid "category name"
 msgstr "اسم الفئة"
 
-#: core/models.py:187
+#: core/models.py:188
 msgid "provide a name for this category"
 msgstr "تقديم اسم لهذه الفئة"
 
-#: core/models.py:194
+#: core/models.py:195
 msgid "add a detailed description for this category"
 msgstr "إضافة وصف تفصيلي لهذه الفئة"
 
-#: core/models.py:195
+#: core/models.py:196
 msgid "category description"
 msgstr "وصف الفئة"
 
-#: core/models.py:217
+#: core/models.py:218
 msgid "name of this brand"
 msgstr "اسم هذه العلامة التجارية"
 
-#: core/models.py:218
+#: core/models.py:219
 msgid "brand name"
 msgstr "اسم العلامة التجارية"
 
-#: core/models.py:224
+#: core/models.py:226
 msgid "upload a logo representing this brand"
 msgstr "تحميل شعار يمثل هذه العلامة التجارية"
 
-#: core/models.py:226
+#: core/models.py:228
 msgid "brand small image"
 msgstr "صورة العلامة التجارية الصغيرة"
 
-#: core/models.py:231
+#: core/models.py:234
 msgid "upload a big logo representing this brand"
 msgstr "رفع شعار كبير يمثل هذه العلامة التجارية"
 
-#: core/models.py:233
+#: core/models.py:236
 msgid "brand big image"
 msgstr "صورة كبيرة للعلامة التجارية"
 
-#: core/models.py:238
+#: core/models.py:241
 msgid "add a detailed description of the brand"
 msgstr "إضافة وصف تفصيلي للعلامة التجارية"
 
-#: core/models.py:239
+#: core/models.py:242
 msgid "brand description"
 msgstr "وصف العلامة التجارية"
 
-#: core/models.py:244
+#: core/models.py:247
 msgid "optional categories that this brand is associated with"
 msgstr "الفئات الاختيارية التي ترتبط بها هذه العلامة التجارية"
 
-#: core/models.py:245
+#: core/models.py:248
 msgid "associated categories"
 msgstr "الفئات"
 
-#: core/models.py:262
+#: core/models.py:265
 msgid "category this product belongs to"
 msgstr "الفئة التي ينتمي إليها هذا المنتج"
 
-#: core/models.py:270
+#: core/models.py:273
 msgid "optionally associate this product with a brand"
 msgstr "ربط هذا المنتج اختياريًا بعلامة تجارية"
 
-#: core/models.py:276
+#: core/models.py:279
 msgid "tags that help describe or group this product"
 msgstr "العلامات التي تساعد في وصف أو تجميع هذا المنتج"
 
-#: core/models.py:277 core/models.py:856
+#: core/models.py:280 core/models.py:901
 msgid "product tags"
 msgstr "علامات المنتج"
 
-#: core/models.py:281
+#: core/models.py:284
 msgid "indicates whether this product is digitally delivered"
 msgstr "يشير إلى ما إذا كان هذا المنتج يتم تسليمه رقميًا أم لا"
 
-#: core/models.py:282
+#: core/models.py:285
 msgid "is product digital"
 msgstr "هل المنتج رقمي"
 
-#: core/models.py:288
+#: core/models.py:291
 msgid "provide a clear identifying name for the product"
 msgstr "توفير اسم تعريفي واضح للمنتج"
 
-#: core/models.py:289
+#: core/models.py:292
 msgid "product name"
 msgstr "اسم المنتج"
 
-#: core/models.py:294 core/models.py:1012
+#: core/models.py:297 core/models.py:1055
 msgid "add a detailed description of the product"
 msgstr "إضافة وصف تفصيلي للمنتج"
 
-#: core/models.py:295
+#: core/models.py:298
 msgid "product description"
 msgstr "وصف المنتج"
 
-#: core/models.py:302
+#: core/models.py:305
 msgid "part number for this product"
 msgstr "رقم الجزء لهذا المنتج"
 
-#: core/models.py:303
+#: core/models.py:306
 msgid "part number"
 msgstr "رقم الجزء"
 
-#: core/models.py:360
+#: core/models.py:370
 msgid "stores credentials and endpoints required for vendor communication"
 msgstr ""
 "تخزين بيانات الاعتماد ونقاط النهاية المطلوبة لاتصالات واجهة برمجة التطبيقات "
 "الخاصة بالمورّد"
 
-#: core/models.py:361
+#: core/models.py:371
 msgid "authentication info"
 msgstr "معلومات المصادقة"
 
-#: core/models.py:366
+#: core/models.py:376
 msgid "define the markup for products retrieved from this vendor"
 msgstr "تحديد الترميز للمنتجات المسترجعة من هذا البائع"
 
-#: core/models.py:367
+#: core/models.py:377
 msgid "vendor markup percentage"
 msgstr "نسبة هامش الربح للبائع"
 
-#: core/models.py:371
+#: core/models.py:381
 msgid "name of this vendor"
 msgstr "اسم هذا البائع"
 
-#: core/models.py:372
+#: core/models.py:382
 msgid "vendor name"
 msgstr "اسم البائع"
 
-#: core/models.py:395
+#: core/models.py:405
 msgid "user-provided comments about their experience with the product"
 msgstr "التعليقات المقدمة من المستخدمين حول تجربتهم مع المنتج"
 
-#: core/models.py:396
+#: core/models.py:406
 msgid "feedback comments"
 msgstr "تعليقات على الملاحظات"
 
-#: core/models.py:403
+#: core/models.py:413
 msgid ""
 "references the specific product in an order that this feedback is about"
 msgstr "الإشارة إلى المنتج المحدد في الطلب الذي تدور حوله هذه الملاحظات"
 
-#: core/models.py:404
+#: core/models.py:414
 msgid "related order product"
 msgstr "منتجات الطلبات ذات الصلة"
 
-#: core/models.py:409
+#: core/models.py:419
 msgid "user-assigned rating for the product"
 msgstr "التصنيف المعين من قبل المستخدم للمنتج"
 
-#: core/models.py:410
+#: core/models.py:420
 msgid "product rating"
 msgstr "تصنيف المنتج"
 
-#: core/models.py:418
+#: core/models.py:428
 msgid "feedback"
 msgstr "الملاحظات"
 
-#: core/models.py:431
+#: core/models.py:441
 msgid "the billing address used for this order"
 msgstr "عنوان إرسال الفواتير المستخدم لهذا الطلب"
 
-#: core/models.py:439
+#: core/models.py:449
 msgid "optional promo code applied to this order"
 msgstr "الرمز الترويجي الاختياري المطبق على هذا الطلب"
 
-#: core/models.py:440
+#: core/models.py:450
 msgid "applied promo code"
 msgstr "الرمز الترويجي المطبق"
 
-#: core/models.py:448
+#: core/models.py:458
 msgid "the shipping address used for this order"
 msgstr "عنوان الشحن المستخدم لهذا الطلب"
 
-#: core/models.py:449
+#: core/models.py:459
 msgid "shipping address"
 msgstr "عنوان الشحن"
 
-#: core/models.py:455
+#: core/models.py:465
 msgid "current status of the order in its lifecycle"
 msgstr "الحالة الحالية للطلب في دورة حياته"
 
-#: core/models.py:456
+#: core/models.py:466
 msgid "order status"
 msgstr "حالة الطلب"
 
-#: core/models.py:461 core/models.py:745
+#: core/models.py:471 core/models.py:790
 msgid "json structure of notifications to display to users"
 msgstr ""
 "بنية JSON للإشعارات التي سيتم عرضها للمستخدمين، في واجهة مستخدم المشرف، يتم "
 "استخدام عرض الجدول"
 
-#: core/models.py:467
+#: core/models.py:477
 msgid "json representation of order attributes for this order"
 msgstr "تمثيل JSON لسمات الطلب لهذا الطلب"
 
-#: core/models.py:473
+#: core/models.py:483
 msgid "the user who placed the order"
 msgstr "المستخدم الذي قدم الطلب"
 
-#: core/models.py:474
+#: core/models.py:484
 msgid "user"
 msgstr "المستخدم"
 
-#: core/models.py:480
+#: core/models.py:490
 msgid "the timestamp when the order was finalized"
 msgstr "الطابع الزمني عند الانتهاء من الطلب"
 
-#: core/models.py:481
+#: core/models.py:491
 msgid "buy time"
 msgstr "وقت الشراء"
 
-#: core/models.py:488
+#: core/models.py:498
+msgid "a human-readable identifier for the order"
+msgstr "معرّف يمكن قراءته بواسطة البشر للطلب"
+
+#: core/models.py:499
+msgid "human readable id"
+msgstr "معرّف يمكن قراءته من قبل البشر"
+
+#: core/models.py:505
 msgid "order"
 msgstr "الطلب"
 
-#: core/models.py:515
+#: core/models.py:536
 msgid "you cannot add products to an order that is not a pending one"
 msgstr "لا يمكنك إضافة منتجات إلى طلب غير معلق إلى طلب غير معلق"
 
-#: core/models.py:520
+#: core/models.py:541
 msgid "you cannot add inactive products to order"
 msgstr "لا يمكنك إضافة منتجات غير نشطة للطلب"
 
-#: core/models.py:537
+#: core/models.py:558
 msgid "you cannot add more products than available in stock"
 msgstr "لا يمكنك إضافة منتجات أكثر من المتوفرة في المخزون"
 
-#: core/models.py:546 core/models.py:563 core/models.py:587
-#: core/models.py:1121 core/models.py:1132
+#: core/models.py:567 core/models.py:584 core/models.py:608
+#: core/models.py:1164 core/models.py:1175
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
-msgstr "{الاسم} غير موجود: {product_uuid}"
+msgstr "{name} غير موجود: {product_uuid}"
 
-#: core/models.py:550 core/models.py:571 core/models.py:579
+#: core/models.py:571 core/models.py:592 core/models.py:600
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr "لا يمكنك إزالة المنتجات من طلب غير معلق من طلب غير معلق"
 
-#: core/models.py:567
+#: core/models.py:588
 #, python-brace-format
 msgid "{name} does not exist with query <{query}>"
-msgstr "{الاسم} غير موجود مع الاستعلام <{الاستعلام}>>"
+msgstr "{name} غير موجود مع الاستعلام <{query}>"
 
-#: core/models.py:598
+#: core/models.py:619
 msgid "promocode does not exist"
 msgstr "الرمز الترويجي غير موجود"
 
-#: core/models.py:607
+#: core/models.py:626 core/models.py:665
+msgid "you can not buy at this moment, please try again in a few minutes"
+msgstr "لا يمكنك الشراء في هذه اللحظة، يرجى المحاولة مرة أخرى بعد بضع دقائق."
+
+#: core/models.py:629
 msgid "invalid force value"
 msgstr "قيمة القوة غير صالحة"
 
-#: core/models.py:610
+#: core/models.py:632 core/models.py:668
 msgid "you cannot purchase an empty order!"
 msgstr "لا يمكنك شراء طلبية فارغة!"
 
-#: core/models.py:625
+#: core/models.py:647
 msgid "insufficient funds to complete the order"
 msgstr "عدم كفاية الأموال لإكمال الطلب"
 
-#: core/models.py:643
-#, fuzzy
-msgid "you cannot purchase without registration an empty order!"
-msgstr "لا يمكنك شراء طلبية فارغة!"
-
-#: core/models.py:651
+#: core/models.py:677
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
@@ -1152,184 +1170,188 @@ msgstr ""
 "لا يمكنك الشراء بدون تسجيل، يرجى تقديم المعلومات التالية: اسم العميل، البريد"
 " الإلكتروني للعميل، رقم هاتف العميل"
 
-#: core/models.py:662
+#: core/models.py:685
+msgid "invalid payment method"
+msgstr "طريقة الدفع غير صالحة"
+
+#: core/models.py:701
 msgid "you cannot create a momental order without providing a billing address"
 msgstr "لا يمكنك إنشاء طلب مومنتال دون تقديم عنوان إرسال الفواتير"
 
-#: core/models.py:733
+#: core/models.py:778
 msgid "the price paid by the customer for this product at purchase time"
 msgstr "السعر الذي دفعه العميل لهذا المنتج وقت الشراء"
 
-#: core/models.py:734
+#: core/models.py:779
 msgid "purchase price at order time"
 msgstr "سعر الشراء وقت الطلب"
 
-#: core/models.py:739
+#: core/models.py:784
 msgid "internal comments for admins about this ordered product"
 msgstr "تعليقات داخلية للمسؤولين حول هذا المنتج المطلوب"
 
-#: core/models.py:740
+#: core/models.py:785
 msgid "internal comments"
 msgstr "التعليقات الداخلية"
 
-#: core/models.py:746
+#: core/models.py:791
 msgid "user notifications"
 msgstr "إشعارات المستخدم"
 
-#: core/models.py:751
+#: core/models.py:796
 msgid "json representation of this item's attributes"
 msgstr "تمثيل JSON لسمات هذا العنصر"
 
-#: core/models.py:752
+#: core/models.py:797
 msgid "ordered product attributes"
 msgstr "سمات المنتج المطلوبة"
 
-#: core/models.py:757
+#: core/models.py:802
 msgid "reference to the parent order that contains this product"
 msgstr "الإشارة إلى الطلب الأصلي الذي يحتوي على هذا المنتج"
 
-#: core/models.py:758
+#: core/models.py:803
 msgid "parent order"
 msgstr "ترتيب الوالدين"
 
-#: core/models.py:767
+#: core/models.py:812
 msgid "the specific product associated with this order line"
 msgstr "المنتج المحدد المرتبط بخط الطلب هذا"
 
-#: core/models.py:774
+#: core/models.py:819
 msgid "quantity of this specific product in the order"
 msgstr "كمية هذا المنتج المحدد في الطلب"
 
-#: core/models.py:775
+#: core/models.py:820
 msgid "product quantity"
 msgstr "كمية المنتج"
 
-#: core/models.py:782
+#: core/models.py:827
 msgid "current status of this product in the order"
 msgstr "الحالة الحالية لهذا المنتج بالترتيب"
 
-#: core/models.py:783
+#: core/models.py:828
 msgid "product line status"
 msgstr "حالة خط الإنتاج"
 
-#: core/models.py:841
+#: core/models.py:886
 msgid "internal tag identifier for the product tag"
 msgstr "معرّف العلامة الداخلي لعلامة المنتج"
 
-#: core/models.py:842
+#: core/models.py:887
 msgid "tag name"
 msgstr "اسم العلامة"
 
-#: core/models.py:846
+#: core/models.py:891
 msgid "user-friendly name for the product tag"
 msgstr "اسم سهل الاستخدام لعلامة المنتج"
 
-#: core/models.py:847
+#: core/models.py:892
 msgid "tag display name"
 msgstr "اسم عرض العلامة"
 
-#: core/models.py:855
+#: core/models.py:900
 msgid "product tag"
 msgstr "علامة المنتج"
 
-#: core/models.py:864
+#: core/models.py:909
 msgid "provide alternative text for the image for accessibility"
 msgstr "توفير نص بديل للصورة لإمكانية الوصول"
 
-#: core/models.py:865
+#: core/models.py:910
 msgid "image alt text"
 msgstr "النص البديل للصورة"
 
-#: core/models.py:868
+#: core/models.py:913
 msgid "upload the image file for this product"
 msgstr "تحميل ملف الصورة لهذا المنتج"
 
-#: core/models.py:869 core/models.py:894
+#: core/models.py:914 core/models.py:939
 msgid "product image"
 msgstr "صورة المنتج"
 
-#: core/models.py:875
+#: core/models.py:920
 msgid "determines the order in which images are displayed"
 msgstr "يحدد الترتيب الذي يتم عرض الصور به"
 
-#: core/models.py:876
+#: core/models.py:921
 msgid "display priority"
 msgstr "أولوية العرض"
 
-#: core/models.py:881
+#: core/models.py:926
 msgid "the product that this image represents"
 msgstr "المنتج الذي تمثله هذه الصورة"
 
-#: core/models.py:895
+#: core/models.py:940
 msgid "product images"
 msgstr "صور المنتج"
 
-#: core/models.py:905
+#: core/models.py:950
 msgid "unique code used by a user to redeem a discount"
 msgstr "الرمز الفريد الذي يستخدمه المستخدم لاسترداد قيمة الخصم"
 
-#: core/models.py:906
+#: core/models.py:951
 msgid "promo code identifier"
 msgstr "معرّف الرمز الترويجي"
 
-#: core/models.py:913
+#: core/models.py:958
 msgid "fixed discount amount applied if percent is not used"
 msgstr "مبلغ الخصم الثابت المطبق في حالة عدم استخدام النسبة المئوية"
 
-#: core/models.py:914
+#: core/models.py:959
 msgid "fixed discount amount"
 msgstr "مبلغ الخصم الثابت"
 
-#: core/models.py:920
+#: core/models.py:965
 msgid "percentage discount applied if fixed amount is not used"
 msgstr "النسبة المئوية للخصم المطبق في حالة عدم استخدام مبلغ ثابت"
 
-#: core/models.py:921
+#: core/models.py:966
 msgid "percentage discount"
 msgstr "النسبة المئوية للخصم"
 
-#: core/models.py:926
+#: core/models.py:971
 msgid "timestamp when the promocode expires"
 msgstr "الطابع الزمني عند انتهاء صلاحية الرمز الترويجي"
 
-#: core/models.py:927
+#: core/models.py:972
 msgid "end validity time"
 msgstr "وقت انتهاء الصلاحية"
 
-#: core/models.py:932
+#: core/models.py:977
 msgid "timestamp from which this promocode is valid"
 msgstr "الطابع الزمني الذي يكون هذا الرمز الترويجي صالحاً منه"
 
-#: core/models.py:933
+#: core/models.py:978
 msgid "start validity time"
 msgstr "وقت بدء الصلاحية"
 
-#: core/models.py:938
+#: core/models.py:983
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr ""
 "الطابع الزمني عند استخدام الرمز الترويجي، فارغ إذا لم يتم استخدامه بعد"
 
-#: core/models.py:939
+#: core/models.py:984
 msgid "usage timestamp"
 msgstr "الطابع الزمني للاستخدام"
 
-#: core/models.py:944
+#: core/models.py:989
 msgid "user assigned to this promocode if applicable"
 msgstr "المستخدم المعين لهذا الرمز الترويجي إن أمكن"
 
-#: core/models.py:945
+#: core/models.py:990
 msgid "assigned user"
 msgstr "المستخدم المعين"
 
-#: core/models.py:952
+#: core/models.py:997
 msgid "promo code"
 msgstr "الرمز الترويجي"
 
-#: core/models.py:953
+#: core/models.py:998
 msgid "promo codes"
 msgstr "الرموز الترويجية"
 
-#: core/models.py:960
+#: core/models.py:1005
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
@@ -1337,141 +1359,140 @@ msgstr ""
 "يجب تحديد نوع واحد فقط من الخصم (المبلغ أو النسبة المئوية)، وليس كلا النوعين"
 " أو لا هذا ولا ذاك."
 
-#: core/models.py:975
-#, fuzzy
+#: core/models.py:1020
 msgid "promocode already used"
-msgstr "الرموز الترويجية"
+msgstr "تم استخدام الرمز الترويجي بالفعل"
 
-#: core/models.py:989
-#, fuzzy, python-brace-format
+#: core/models.py:1032
+#, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
-msgstr "نوع الخصم غير صالح للرمز الترويجي {promocode_uuid}"
+msgstr "نوع الخصم غير صالح للرمز الترويجي {self.uuid}"
 
-#: core/models.py:1000
+#: core/models.py:1043
 msgid "percentage discount for the selected products"
 msgstr "النسبة المئوية للخصم على المنتجات المختارة"
 
-#: core/models.py:1001
+#: core/models.py:1044
 msgid "discount percentage"
 msgstr "نسبة الخصم"
 
-#: core/models.py:1006
+#: core/models.py:1049
 msgid "provide a unique name for this promotion"
 msgstr "تقديم اسم فريد لهذا العرض الترويجي"
 
-#: core/models.py:1007
+#: core/models.py:1050
 msgid "promotion name"
 msgstr "اسم الترقية"
 
-#: core/models.py:1013
+#: core/models.py:1056
 msgid "promotion description"
 msgstr "وصف الترقية"
 
-#: core/models.py:1018
+#: core/models.py:1061
 msgid "select which products are included in this promotion"
 msgstr "حدد المنتجات المشمولة في هذا العرض الترويجي"
 
-#: core/models.py:1019
+#: core/models.py:1062
 msgid "included products"
 msgstr "المنتجات المشمولة"
 
-#: core/models.py:1023
+#: core/models.py:1066
 msgid "promotion"
 msgstr "الترقية"
 
-#: core/models.py:1038
+#: core/models.py:1081
 msgid "the vendor supplying this product stock"
 msgstr "البائع الذي يورد هذا المنتج المخزون"
 
-#: core/models.py:1039
+#: core/models.py:1082
 msgid "associated vendor"
 msgstr "البائع المرتبط"
 
-#: core/models.py:1043
+#: core/models.py:1086
 msgid "final price to the customer after markups"
 msgstr "السعر النهائي للعميل بعد هوامش الربح"
 
-#: core/models.py:1044
+#: core/models.py:1087
 msgid "selling price"
 msgstr "سعر البيع"
 
-#: core/models.py:1049
+#: core/models.py:1092
 msgid "the product associated with this stock entry"
 msgstr "المنتج المرتبط بإدخال المخزون هذا"
 
-#: core/models.py:1057
+#: core/models.py:1100
 msgid "the price paid to the vendor for this product"
 msgstr "السعر المدفوع للبائع مقابل هذا المنتج"
 
-#: core/models.py:1058
+#: core/models.py:1101
 msgid "vendor purchase price"
 msgstr "سعر الشراء من البائع"
 
-#: core/models.py:1062
+#: core/models.py:1105
 msgid "available quantity of the product in stock"
 msgstr "الكمية المتوفرة من المنتج في المخزون"
 
-#: core/models.py:1063
+#: core/models.py:1106
 msgid "quantity in stock"
 msgstr "الكمية في المخزون"
 
-#: core/models.py:1067
+#: core/models.py:1110
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "SKU المعين من قبل البائع لتحديد المنتج"
 
-#: core/models.py:1068
+#: core/models.py:1111
 msgid "vendor sku"
 msgstr "وحدة تخزين البائع"
 
-#: core/models.py:1074
+#: core/models.py:1117
 msgid "digital file associated with this stock if applicable"
 msgstr "الملف الرقمي المرتبط بهذا المخزون إن أمكن"
 
-#: core/models.py:1075
+#: core/models.py:1118
 msgid "digital file"
 msgstr "ملف رقمي"
 
-#: core/models.py:1084
+#: core/models.py:1127
 msgid "stock entries"
 msgstr "إدخالات المخزون"
 
-#: core/models.py:1093
+#: core/models.py:1136
 msgid "products that the user has marked as wanted"
 msgstr "المنتجات التي حددها المستخدم على أنها مطلوبة"
 
-#: core/models.py:1101
+#: core/models.py:1144
 msgid "user who owns this wishlist"
 msgstr "المستخدم الذي يمتلك قائمة الرغبات هذه"
 
-#: core/models.py:1102
+#: core/models.py:1145
 msgid "wishlist owner"
 msgstr "مالك قائمة الرغبات"
 
-#: core/models.py:1110
+#: core/models.py:1153
 msgid "wishlist"
 msgstr "قائمة الرغبات"
 
-#: core/models.py:1150
+#: core/models.py:1193
 msgid "download"
 msgstr "تنزيل"
 
-#: core/models.py:1151
+#: core/models.py:1194
 msgid "downloads"
 msgstr "التنزيلات"
 
-#: core/models.py:1159
+#: core/models.py:1202
 msgid "you can not download a digital asset for a non-finished order"
 msgstr "لا يمكنك تنزيل أصل رقمي لطلب غير مكتمل"
 
-#: core/models.py:1171
+#: core/models.py:1214
 msgid "documentary"
 msgstr "فيلم وثائقي"
 
-#: core/models.py:1172
+#: core/models.py:1215
 msgid "documentaries"
 msgstr "الأفلام الوثائقية"
 
-#: core/models.py:1182
+#: core/models.py:1225
 msgid "unresolved"
 msgstr "لم يتم حلها"
 
@@ -1535,7 +1556,7 @@ msgstr "الشعار"
 #: core/templates/shipped_order_delivered_email.html:87
 #, python-format
 msgid "hello %(order.user.first_name)s,"
-msgstr "مرحبًا %(order.user.first_name),"
+msgstr "مرحبًا %(order.user.first_name)s,"
 
 #: core/templates/digital_order_created_email.html:102
 #, python-format
@@ -1543,7 +1564,7 @@ msgid ""
 "thank you for your order #%(order.pk)s! we are pleased to inform you that we"
 " have taken your order into work. below are the details of your order:"
 msgstr ""
-"شكرًا لك على طلبك #٪ (order.pk)! يسعدنا إبلاغك بأننا قد أخذنا طلبك في العمل."
+"شكرًا لك على طلبك #%(order.pk)s! يسعدنا إبلاغك بأننا قد أخذنا طلبك في العمل."
 " فيما يلي تفاصيل طلبك:"
 
 #: core/templates/digital_order_created_email.html:110
@@ -1569,7 +1590,7 @@ msgid ""
 "%(config.EMAIL_HOST_USER)s."
 msgstr ""
 "إذا كانت لديك أي أسئلة، فلا تتردد في الاتصال بدعمنا على "
-"%(config.EMAIL_HOST_USER)."
+"%(config.EMAIL_HOST_USER)s."
 
 #: core/templates/digital_order_created_email.html:130
 #, python-format
@@ -1590,14 +1611,14 @@ msgstr "تم تسليم الطلب"
 #: core/templates/digital_order_delivered_email.html:101
 #, python-format
 msgid "hello %(user_first_name)s,"
-msgstr "مرحباً %(اسم المستخدم_الأول),"
+msgstr "مرحباً %(user_first_name)s,"
 
 #: core/templates/digital_order_delivered_email.html:102
 #, python-format
 msgid ""
 "we have successfully processed your order №%(order_uuid)s! below are the "
 "details of your order:"
-msgstr "لقد قمنا بمعالجة طلبك بنجاح №%(order_uid)s! فيما يلي تفاصيل طلبك:"
+msgstr "لقد قمنا بمعالجة طلبك بنجاح №%(order_uuid)s! فيما يلي تفاصيل طلبك:"
 
 #: core/templates/digital_order_delivered_email.html:127
 msgid "additional information"
@@ -1609,13 +1630,12 @@ msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(contact_email)s."
 msgstr ""
-"إذا كانت لديك أي أسئلة، فلا تتردد في الاتصال بدعمنا على %(الاتصال_بالبريد "
-"الإلكتروني)."
+"إذا كانت لديك أي أسئلة، فلا تتردد في الاتصال بدعمنا على %(contact_email)s."
 
 #: core/templates/digital_order_delivered_email.html:162
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "مع أطيب التحيات، فريق عمل %(اسم المشروع) %(اسم المشروع)"
+msgstr "مع أطيب التحيات، فريق عمل %(project_name)s"
 
 #: core/templates/json_table_widget.html:5
 msgid "key"
@@ -1655,12 +1675,12 @@ msgstr "قيمة المهلة غير صالحة، يجب أن تكون بين 0 
 #: core/utils/db.py:7
 #, python-brace-format
 msgid "{model} must be model"
-msgstr "يجب أن يكون {النموذج} نموذجًا"
+msgstr "يجب أن يكون {model} نموذجًا"
 
 #: core/utils/db.py:9
 #, python-brace-format
 msgid "{data} must be list object"
-msgstr "يجب أن تكون {البيانات} كائن قائمة"
+msgstr "يجب أن تكون {data} كائن قائمة"
 
 #: core/utils/emailing.py:19
 #, python-brace-format
@@ -1690,10 +1710,10 @@ msgstr "يجب ألا تتجاوز أبعاد الصورة w{max_width} x h{max_
 msgid "invalid phone number format"
 msgstr "تنسيق رقم الهاتف غير صالح"
 
-#: core/views.py:205
+#: core/views.py:230
 msgid "you can only download the digital asset once"
 msgstr "يمكنك تنزيل الأصل الرقمي مرة واحدة فقط"
 
-#: core/views.py:238
+#: core/views.py:263
 msgid "favicon not found"
 msgstr "الرمز المفضل غير موجود"

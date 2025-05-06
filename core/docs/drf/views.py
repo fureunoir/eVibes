@@ -8,7 +8,9 @@ from core.serializers import (
     CacheOperatorSerializer,
     ContactUsSerializer,
     LanguageSerializer,
+    BuyAsBusinessOrderSerializer,
 )
+from payments.serializers import TransactionProcessSerializer
 
 CACHE_SCHEMA = {
     "post": extend_schema(
@@ -80,5 +82,19 @@ SEARCH_SCHEMA = {
             400: inline_serializer(name="GlobalSearchErrorResponse", fields={"error": CharField()}),
         },
         description=(_("global search endpoint to query across project's tables")),
+    )
+}
+
+BUY_AS_BUSINESS_SCHEMA = {
+    "post": extend_schema(
+        summary=_("purchase an order as a business"),
+        request=BuyAsBusinessOrderSerializer,
+        responses={
+            200: TransactionProcessSerializer,
+            400: error,
+        },
+        description=(
+            _("purchase an order as a business, using the provided `products` with `product_uuid` and `attributes`.")
+        ),
     )
 }

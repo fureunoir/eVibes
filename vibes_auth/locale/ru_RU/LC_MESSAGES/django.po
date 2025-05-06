@@ -250,7 +250,7 @@ msgstr "Подтверждение сброса пароля"
 #: vibes_auth/templates/user_verification_email.html:91
 #, python-format
 msgid "hello %(user_first_name)s,"
-msgstr "Здравствуйте, %(имя_пользователя_первое_имя)s,"
+msgstr "Здравствуйте, %(user_first_name)s,"
 
 #: vibes_auth/templates/user_reset_password_email.html:82
 msgid ""
@@ -280,7 +280,7 @@ msgstr ""
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
 msgid "best regards,<br>The %(project_name)s team"
-msgstr "С наилучшими пожеланиями,<br>Команда %(название_проекта)"
+msgstr "С наилучшими пожеланиями,<br>Команда %(project_name)s"
 
 #: vibes_auth/templates/user_reset_password_email.html:95
 #: vibes_auth/templates/user_verification_email.html:107
@@ -298,7 +298,7 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Спасибо, что зарегистрировались на сайте %(название_проекта)s. Пожалуйста, "
+"Спасибо, что зарегистрировались на сайте %(project_name)s. Пожалуйста, "
 "активируйте свой аккаунт, нажав на кнопку ниже:"
 
 #: vibes_auth/templates/user_verification_email.html:95
@@ -321,7 +321,7 @@ msgstr ""
 #: vibes_auth/templates/user_verification_email.html:101
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "С наилучшими пожеланиями, <br>команда %(название_проекта)"
+msgstr "С наилучшими пожеланиями, <br>команда %(project_name)s"
 
 #: vibes_auth/utils/emailing.py:25
 #, python-brace-format

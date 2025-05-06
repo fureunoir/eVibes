@@ -59,7 +59,7 @@ msgstr ""
 #: vibes_auth/graphene/mutations.py:103
 #, python-brace-format
 msgid "{name} does not exist: {uuid}"
-msgstr "{nombre} no existe: {uuid}"
+msgstr "{name} no existe: {uuid}"
 
 #: vibes_auth/graphene/mutations.py:111
 msgid "malformed email"
@@ -73,7 +73,7 @@ msgstr "Número de teléfono malformado: {phone_number}"
 #: vibes_auth/graphene/mutations.py:134
 #, python-brace-format
 msgid "Invalid attribute format: {attribute_pair}"
-msgstr "Formato de atributo no válido: {par_atributo}"
+msgstr "Formato de atributo no válido: {attribute_pair}"
 
 #: vibes_auth/graphene/mutations.py:261
 msgid "activation link is invalid!"
@@ -85,7 +85,7 @@ msgstr "La cuenta ya ha sido activada..."
 
 #: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
 msgid "something went wrong: {e!s}"
-msgstr "Algo salió mal."
+msgstr "Algo salió mal: {e!s}."
 
 #: vibes_auth/graphene/mutations.py:305
 msgid "passwords do not match"
@@ -249,7 +249,7 @@ msgstr "Confirmación de restablecimiento de contraseña"
 #: vibes_auth/templates/user_verification_email.html:91
 #, python-format
 msgid "hello %(user_first_name)s,"
-msgstr "Hola %(nombre_usuario)s,"
+msgstr "Hola %(user_first_name)s,"
 
 #: vibes_auth/templates/user_reset_password_email.html:82
 msgid ""
@@ -278,7 +278,7 @@ msgstr "Si no ha enviado esta solicitud, ignore este correo electrónico."
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
 msgid "best regards,<br>The %(project_name)s team"
-msgstr "Saludos cordiales,<br>El equipo de %(nombre_del_proyecto)s"
+msgstr "Saludos cordiales,<br>El equipo de %(project_name)s"
 
 #: vibes_auth/templates/user_reset_password_email.html:95
 #: vibes_auth/templates/user_verification_email.html:107
@@ -296,7 +296,7 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Gracias por registrarse en %(nombre_del_proyecto)s. Por favor, active su "
+"Gracias por registrarse en %(project_name)s. Por favor, active su "
 "cuenta haciendo clic en el botón de abajo:"
 
 #: vibes_auth/templates/user_verification_email.html:95
@@ -318,7 +318,7 @@ msgstr ""
 #: vibes_auth/templates/user_verification_email.html:101
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "Saludos cordiales,<br>el equipo de %(nombre_del_proyecto)s"
+msgstr "Saludos cordiales,<br>el equipo de %(project_name)s"
 
 #: vibes_auth/utils/emailing.py:25
 #, python-brace-format
@@ -332,7 +332,7 @@ msgstr "Usuario no encontrado con el UUID dado: {user_pk}"
 
 #: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
 msgid "something went wrong while sending an email: {e!s}"
-msgstr "Algo salió mal al enviar un correo electrónico: ."
+msgstr "Algo salió mal al enviar un correo electrónico: {e!s}."
 
 #: vibes_auth/utils/emailing.py:65
 #, python-brace-format

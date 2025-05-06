@@ -33,13 +33,15 @@ from core.docs.drf.views import (
     PARAMETERS_SCHEMA,
     REQUEST_CURSED_URL_SCHEMA,
     SEARCH_SCHEMA,
+    BUY_AS_BUSINESS_SCHEMA,
 )
 from core.elasticsearch import process_query
-from core.models import DigitalAssetDownload
+from core.models import DigitalAssetDownload, Order
 from core.serializers import (
     CacheOperatorSerializer,
     ContactUsSerializer,
     LanguageSerializer,
+    BuyAsBusinessOrderSerializer,
 )
 from core.utils import get_project_parameters, is_url_safe
 from core.utils.caching import web_cache
@@ -47,17 +49,18 @@ from core.utils.emailing import contact_us_email
 from core.utils.languages import get_flag_by_language
 from evibes import settings
 from evibes.settings import LANGUAGES
+from payments.serializers import TransactionProcessSerializer
 
 
 def sitemap_index(request, *args, **kwargs):
     response = _sitemap_index_view(request, *args, **kwargs)
-    response['Content-Type'] = 'application/xml; charset=utf-8'
+    response["Content-Type"] = "application/xml; charset=utf-8"
     return response
 
 
 def sitemap_detail(request, *args, **kwargs):
     response = _sitemap_detail_view(request, *args, **kwargs)
-    response['Content-Type'] = 'application/xml; charset=utf-8'
+    response["Content-Type"] = "application/xml; charset=utf-8"
     return response
 
 
@@ -190,10 +193,32 @@ class GlobalSearchView(APIView):
     A global search endpoint.
     It returns a response grouping matched items by index.
     """
+
     renderer_classes = [CamelCaseJSONRenderer, MultiPartRenderer, XMLRenderer, YAMLRenderer]
 
     def get(self, request, *args, **kwargs):
         return Response(camelize({"results": process_query(request.GET.get("q", "").strip())}))
+
+
+@extend_schema_view(**BUY_AS_BUSINESS_SCHEMA)
+class BuyAsBusinessView(APIView):
+    @ratelimit(key="ip", rate="2/h", block=True)
+    def post(self, request, *_args, **kwargs):
+        serializer = BuyAsBusinessOrderSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        order = Order.objects.create(status="MOMENTAL")
+        products = [product.get("product_uuid") for product in serializer.validated_data.get("products")]
+        transaction = order.buy_without_registration(
+            products=products,
+            promocode_uuid=serializer.validated_data.get("promocode_uuid"),
+            customer_name=serializer.validated_data.get("customer_name"),
+            customer_email=serializer.validated_data.get("customer_email"),
+            customer_phone=serializer.validated_data.get("customer_phone"),
+            customer_billing_address=serializer.validated_data.get("customer_billing_address"),
+            customer_shipping_address=serializer.validated_data.get("customer_shipping_address"),
+            payment_method=serializer.validated_data.get("payment_method"),
+        )
+        return Response(status=status.HTTP_202_ACCEPTED, data=TransactionProcessSerializer(transaction).data)
 
 
 def download_digital_asset_view(request, *args, **kwargs):

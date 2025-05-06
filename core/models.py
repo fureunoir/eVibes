@@ -40,7 +40,7 @@ from mptt.models import MPTTModel
 from core.abstract import NiceModel
 from core.choices import ORDER_PRODUCT_STATUS_CHOICES, ORDER_STATUS_CHOICES
 from core.errors import NotEnoughMoneyError, DisabledCommerceError
-from core.utils import get_product_uuid_as_path, get_random_code
+from core.utils import get_product_uuid_as_path, get_random_code, generate_human_readable_id
 from core.utils.lists import FAILED_STATUSES
 from core.validators import validate_category_image_dimensions
 from evibes.settings import CURRENCY_CODE
@@ -493,6 +493,13 @@ class Order(NiceModel):
         null=True,
         blank=True,
     )
+    human_readable_id = CharField(
+        max_length=6,
+        help_text=_("a human-readable identifier for the order"),
+        verbose_name=_("human readable id"),
+        unique=True,
+        default=generate_human_readable_id,
+    )
 
     class Meta:
         verbose_name = _("order")
@@ -500,6 +507,10 @@ class Order(NiceModel):
 
     def __str__(self) -> str:
         return f"{self.pk} Order for {self.user.email}"
+
+    @property
+    def is_business(self) -> bool:
+        return self.attributes.get("is_business", False)
 
     @property
     def total_price(self) -> float:

@@ -280,6 +280,7 @@ class OrderType(DjangoObjectType):
             "total_price",
             "total_quantity",
             "is_whole_digital",
+            "human_readable_id",
         )
         description = _("orders")
 

@@ -196,7 +196,7 @@ class BuyOrder(BaseMutation):
 
 class BuyUnregisteredOrder(BaseMutation):
     class Meta:
-        description = _("buy an unregistered order")
+        description = _("purchase an order without account creation")
 
     class Arguments:
         products = List(UUID, required=True)

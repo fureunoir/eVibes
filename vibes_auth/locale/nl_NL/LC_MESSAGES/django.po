@@ -60,7 +60,7 @@ msgstr ""
 #: vibes_auth/graphene/mutations.py:103
 #, python-brace-format
 msgid "{name} does not exist: {uuid}"
-msgstr "{naam} bestaat niet: {uuid}"
+msgstr "{name} bestaat niet: {uuid}"
 
 #: vibes_auth/graphene/mutations.py:111
 msgid "malformed email"
@@ -74,7 +74,7 @@ msgstr "Misvormd telefoonnummer: {phone_number}"
 #: vibes_auth/graphene/mutations.py:134
 #, python-brace-format
 msgid "Invalid attribute format: {attribute_pair}"
-msgstr "Ongeldig attribuutformaat: {attribuut_paar}"
+msgstr "Ongeldig attribuutformaat: {attribute_pair}"
 
 #: vibes_auth/graphene/mutations.py:261
 msgid "activation link is invalid!"
@@ -86,7 +86,7 @@ msgstr "Account is al geactiveerd..."
 
 #: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
 msgid "something went wrong: {e!s}"
-msgstr "Er ging iets mis."
+msgstr "Er ging iets mis: {e!s}"
 
 #: vibes_auth/graphene/mutations.py:305
 msgid "passwords do not match"
@@ -279,7 +279,7 @@ msgstr "Als je dit verzoek niet hebt verzonden, negeer deze e-mail dan."
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
 msgid "best regards,<br>The %(project_name)s team"
-msgstr "Vriendelijke groeten,<br>Het %(project_naam)-team"
+msgstr "Vriendelijke groeten,<br>Het %(project_name)s-team"
 
 #: vibes_auth/templates/user_reset_password_email.html:95
 #: vibes_auth/templates/user_verification_email.html:107
@@ -297,7 +297,7 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Bedankt voor het aanmelden bij %(project_naam)s. Activeer je account door op "
+"Bedankt voor het aanmelden bij %(project_name)s. Activeer je account door op "
 "de onderstaande knop te klikken:"
 
 #: vibes_auth/templates/user_verification_email.html:95
@@ -319,7 +319,7 @@ msgstr ""
 #: vibes_auth/templates/user_verification_email.html:101
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "Vriendelijke groeten,<br>het %(project_naam)-team"
+msgstr "Vriendelijke groeten,<br>het %(project_name)s-team"
 
 #: vibes_auth/utils/emailing.py:25
 #, python-brace-format
