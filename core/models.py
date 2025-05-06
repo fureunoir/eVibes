@@ -494,7 +494,7 @@ class Order(NiceModel):
         blank=True,
     )
     human_readable_id = CharField(
-        max_length=6,
+        max_length=8,
         help_text=_("a human-readable identifier for the order"),
         verbose_name=_("human readable id"),
         unique=True,
