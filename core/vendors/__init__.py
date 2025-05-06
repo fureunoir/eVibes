@@ -3,7 +3,7 @@ from contextlib import suppress
 from math import ceil
 
 from core.elasticsearch import process_query
-from core.models import AttributeValue, Category, Product, Stock, Vendor, Brand
+from core.models import AttributeValue, Brand, Category, Product, Stock, Vendor
 from payments.errors import RatesError
 from payments.utils import get_rates
 
