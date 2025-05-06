@@ -2,6 +2,7 @@ import json
 from contextlib import suppress
 from math import ceil
 
+from core.elasticsearch import process_query
 from core.models import AttributeValue, Category, Product, Stock, Vendor
 from payments.errors import RatesError
 from payments.utils import get_rates
@@ -93,6 +94,15 @@ class AbstractVendor:
 
         # Default case: treat as a plain string.
         return value, "string"
+
+    @staticmethod
+    def auto_resolve_category(category_name: str):
+        if category_name:
+            with suppress(KeyError):
+                uuid = process_query(category_name)["categories"][0]["uuid"]
+                if uuid:
+                    return Category.objects.get(uuid=uuid)
+        return Category.objects.get_or_create(name=category_name, is_active=False)[0]
 
     def resolve_price(self, original_price: int | float, vendor: Vendor = None, category: Category = None) -> float:
         if not vendor:
