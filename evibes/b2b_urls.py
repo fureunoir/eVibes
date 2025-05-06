@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView
 
 from core.views import CustomRedocView, CustomSwaggerView, favicon_view
@@ -16,6 +16,7 @@ urlpatterns = [
     path(r"docs/swagger/", CustomSwaggerView.as_view(url_name="schema-b2b"), name="swagger-ui-b2b"),
     path(r"docs/redoc/", CustomRedocView.as_view(url_name="schema-b2b"), name="redoc-ui-b2b"),
     path(r"favicon.ico", favicon_view),
+    path(r"", include("core.b2b_urls")),
 ]
 
 if settings.DEBUG:
