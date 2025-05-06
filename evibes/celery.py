@@ -29,8 +29,8 @@ app.conf.update(
     task_reject_on_worker_lost=True,
     worker_prefetch_multiplier=1,
     worker_max_tasks_per_child=100,
-    task_soft_time_limit=3600,
-    task_time_limit=7200,
+    task_soft_time_limit=7200,
+    task_time_limit=10800,
 )
 
 app.config_from_object("django.conf:settings", namespace="CELERY")

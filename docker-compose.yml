@@ -51,8 +51,8 @@ services:
         --autoscale=4,2
         --max-tasks-per-child=100
         --max-memory-per-child=512000
-        --soft-time-limit=3600
-        --time-limit=7200"
+        --soft-time-limit=7200
+        --time-limit=10800"
     volumes:
       - .:/app
     env_file:
