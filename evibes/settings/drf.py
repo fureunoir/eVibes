@@ -95,7 +95,7 @@ SPECTACULAR_PLATFORM_SETTINGS = {
     "TITLE": f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]} API",
     "DESCRIPTION": SPECTACULAR_PLATFORM_DESCRIPTION,
     "VERSION": "2.5.0",
-    "TOS": "https://wiseless.xyz/terms-of-service",
+    "TOS": "https://wiseless.xyz/evibes/terms-of-service",
     "SWAGGER_UI_DIST": "SIDECAR",
     "CAMELIZE_NAMES": True,
     "POSTPROCESSING_HOOKS": [
@@ -145,8 +145,8 @@ SPECTACULAR_PLATFORM_SETTINGS = {
 SPECTACULAR_B2B_SETTINGS = {
     "TITLE": f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]} API",
     "DESCRIPTION": SPECTACULAR_B2B_DESCRIPTION,
-    "VERSION": "1.0.0",
-    "TOS": "https://wiseless.xyz/terms-of-service",
+    "VERSION": "2.5.0",
+    "TOS": "https://wiseless.xyz/evibes/terms-of-service",
     "SWAGGER_UI_DIST": "SIDECAR",
     "CAMELIZE_NAMES": True,
     "POSTPROCESSING_HOOKS": [

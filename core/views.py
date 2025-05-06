@@ -27,21 +27,21 @@ from rest_framework_yaml.renderers import YAMLRenderer
 from sentry_sdk import capture_exception
 
 from core.docs.drf.views import (
+    BUY_AS_BUSINESS_SCHEMA,
     CACHE_SCHEMA,
     CONTACT_US_SCHEMA,
     LANGUAGE_SCHEMA,
     PARAMETERS_SCHEMA,
     REQUEST_CURSED_URL_SCHEMA,
     SEARCH_SCHEMA,
-    BUY_AS_BUSINESS_SCHEMA,
 )
 from core.elasticsearch import process_query
 from core.models import DigitalAssetDownload, Order
 from core.serializers import (
+    BuyAsBusinessOrderSerializer,
     CacheOperatorSerializer,
     ContactUsSerializer,
     LanguageSerializer,
-    BuyAsBusinessOrderSerializer,
 )
 from core.utils import get_project_parameters, is_url_safe
 from core.utils.caching import web_cache

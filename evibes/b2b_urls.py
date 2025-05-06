@@ -10,7 +10,7 @@ urlpatterns = [
     # path(r'graphql/', csrf_exempt(CustomGraphQLView.as_view(graphiql=True, schema=schema))),
     path(
         r"docs/",
-        SpectacularAPIView.as_view(urlconf="evibes.api_urls", custom_settings=SPECTACULAR_B2B_SETTINGS),
+        SpectacularAPIView.as_view(urlconf="evibes.b2b_urls", custom_settings=SPECTACULAR_B2B_SETTINGS),
         name="schema-b2b",
     ),
     path(r"docs/swagger/", CustomSwaggerView.as_view(url_name="schema-b2b"), name="swagger-ui-b2b"),
