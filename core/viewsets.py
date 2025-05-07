@@ -73,7 +73,6 @@ from core.serializers import (
     VendorSimpleSerializer,
     WishlistDetailSerializer,
     WishlistSimpleSerializer,
-    BuyAsBusinessOrderSerializer,
 )
 from core.utils import format_attributes
 from core.utils.messages import permission_denied_message

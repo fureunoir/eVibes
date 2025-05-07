@@ -297,6 +297,11 @@ if getenv("SENTRY_DSN"):
         ignore_errors=[
             "flower.views.error.NotFoundErrorHandler.get",
             "django.http.response.Http404",
+            "billiard.exceptions.SoftTimeLimitExceeded",
+            "core.models.Product.DoesNotExist",
+            "core.models.Category.DoesNotExist",
+            "core.models.Brand.DoesNotExist",
+            "blog.models.Post.DoesNotExist",
         ],
     )
 
