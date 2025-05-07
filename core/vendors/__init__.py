@@ -106,7 +106,15 @@ class AbstractVendor:
                 pass
             except IndexError:
                 pass
-        return Category.objects.get_or_create(name=category_name, is_active=False)[0]
+        categories = Category.objects.filter(name=category_name)
+        if not categories.exists():
+            return Category.objects.create(name=category_name, is_active=False)
+        elif categories.count() > 1:
+            categories = categories.filter(is_active=True)
+        chosen = categories.first()
+        categories.exlude(uuid=chosen.uuid)
+        categories.delete()
+        return chosen
 
     @staticmethod
     def auto_resolve_brand(brand_name: str):
@@ -119,7 +127,15 @@ class AbstractVendor:
                 pass
             except IndexError:
                 pass
-        return Brand.objects.get_or_create(name=brand_name, is_active=False)[0]
+        brands = Brand.objects.filter(name=brand_name)
+        if not brands.exists():
+            return Brand.objects.create(name=brand_name, is_active=False)
+        elif brands.count() > 1:
+            brands = brands.filter(is_active=True)
+        chosen = brands.first()
+        brands.exlude(uuid=chosen.uuid)
+        brands.delete()
+        return chosen
 
     def resolve_price(self, original_price: int | float, vendor: Vendor = None, category: Category = None) -> float:
         if not vendor:
