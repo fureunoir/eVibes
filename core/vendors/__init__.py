@@ -148,7 +148,10 @@ class AbstractVendor:
 
     def get_vendor_instance(self):
         try:
-            return Vendor.objects.get(name=self.vendor_name)
+            vendor = Vendor.objects.get(name=self.vendor_name)
+            if vendor.is_active:
+                return vendor
+            raise VendorError(f"Vendor {self.vendor_name!r} is inactive...")
         except Vendor.DoesNotExist:
             raise Exception(f"No matching vendor found with name {self.vendor_name!r}...")
 
