@@ -98,19 +98,27 @@ class AbstractVendor:
     @staticmethod
     def auto_resolve_category(category_name: str):
         if category_name:
-            with suppress(KeyError):
+            try:
                 uuid = process_query(category_name)["categories"][0]["uuid"]
                 if uuid:
                     return Category.objects.get(uuid=uuid)
+            except KeyError:
+                pass
+            except IndexError:
+                pass
         return Category.objects.get_or_create(name=category_name, is_active=False)[0]
 
     @staticmethod
     def auto_resolve_brand(brand_name: str):
         if brand_name:
-            with suppress(KeyError):
+            try:
                 uuid = process_query(brand_name)["brands"][0]["uuid"]
                 if uuid:
                     return Brand.objects.get(uuid=uuid)
+            except KeyError:
+                pass
+            except IndexError:
+                pass
         return Brand.objects.get_or_create(name=brand_name, is_active=False)[0]
 
     def resolve_price(self, original_price: int | float, vendor: Vendor = None, category: Category = None) -> float:
