@@ -78,10 +78,7 @@ class CategoryDetailSerializer(ModelSerializer):
         request = self.context.get("request")
         user = getattr(request, "user", None)
 
-        if user is not None and user.has_perm("view_attribute"):
-            attributes = obj.attributes.all()
-        else:
-            attributes = obj.attributes.filter(is_active=True)
+        attributes = obj.attributes.all() if user.has_perm("view_attribute") else obj.attributes.filter(is_active=True)
 
         for attr in attributes:
             distinct_vals = (
