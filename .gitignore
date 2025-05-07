@@ -75,6 +75,7 @@ dmypy.json
 .pyre/
 .pytype/
 cython_debug/
+db_backups
 services_data
 services_data/postgres/*
 services_data/redis/*
