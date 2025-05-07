@@ -11,8 +11,13 @@ WORKDIR /app
 
 RUN set -eux; \
     sed -i 's|https://deb.debian.org/debian|https://ftp.uk.debian.org/debian|g' /etc/apt/sources.list.d/debian.sources; \
-    apt update; \
-    apt install -y --no-install-recommends --fix-missing \
+    apt-get update; \
+    apt-get install -y --no-install-recommends wget gnupg; \
+    wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -; \
+    echo "deb http://apt.postgresql.org/pub/repos/apt bookworm-pgdg main" \
+         > /etc/apt/sources.list.d/pgdg.list; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends --fix-missing \
         build-essential \
         libpq-dev \
         gettext \
@@ -23,7 +28,7 @@ RUN set -eux; \
         graphviz \
         binutils \
         libproj-dev \
-        postgresql-client \
+        postgresql-client-17 \
         gdal-bin; \
     rm -rf /var/lib/apt/lists/*; \
     pip install --upgrade pip; \
