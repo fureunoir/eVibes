@@ -34,7 +34,7 @@ LOGGING = {
             "formatter": "color",
         },
         "console_production": {
-            "level": "INFO",
+            "level": "WARNING",
             "class": "logging.StreamHandler",
             "formatter": "color",
         },
