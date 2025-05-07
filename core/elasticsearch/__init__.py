@@ -69,7 +69,7 @@ def process_query(query: str = ""):
         results = {"products": [], "categories": [], "brands": [], "posts": []}
         for hit in response.hits:
             obj_uuid = getattr(hit, "uuid", None) or hit.meta.id
-            obj_name = getattr(hit, "name", None) or "N/A"
+            obj_name = getattr(hit, "name", None) or getattr(hit, "title", None) or "N/A"
             # Safely generate a slug
             obj_slug = getattr(hit, "slug", None) or slugify(obj_name)
 
@@ -160,9 +160,11 @@ def _add_multilang_fields(cls):
                 },
             ),
         )
+
         # prepare_name_{lc} to ensure no None values
         def make_prepare(attr):
             return lambda self, instance: getattr(instance, attr, "") or ""
+
         setattr(cls, f"prepare_{name_field}", make_prepare(name_field))
 
         # description_{lc}
