@@ -23,6 +23,7 @@ RUN set -eux; \
         graphviz \
         binutils \
         libproj-dev \
+        postgresql-client \
         gdal-bin; \
     rm -rf /var/lib/apt/lists/*; \
     pip install --upgrade pip; \
