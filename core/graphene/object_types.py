@@ -454,19 +454,29 @@ class LanguageType(ObjectType):
 class SearchProductsResultsType(ObjectType):
     uuid = UUID()
     name = String()
+    slug = String()
 
 
 class SearchCategoriesResultsType(ObjectType):
     uuid = UUID()
     name = String()
+    slug = String()
 
 
 class SearchBrandsResultsType(ObjectType):
     uuid = UUID()
     name = String()
+    slug = String()
+
+
+class SearchPostsResultsType(ObjectType):
+    uuid = UUID()
+    name = String()
+    slug = String()
 
 
 class SearchResultsType(ObjectType):
     products = List(description=_("products search results"), of_type=SearchProductsResultsType)
     categories = List(description=_("products search results"), of_type=SearchCategoriesResultsType)
     brands = List(description=_("products search results"), of_type=SearchBrandsResultsType)
+    posts = List(description=_("posts search results"), of_type=SearchPostsResultsType)

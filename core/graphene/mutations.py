@@ -493,5 +493,6 @@ class Search(BaseMutation):
                 products=data["products"],
                 categories=data["categories"],
                 brands=data["brands"],
+                posts=data["posts"],
             )
         )
