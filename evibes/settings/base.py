@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     "drf_spectacular_sidecar",
     "django_json_widget",
     "django_elasticsearch_dsl",
+    "dbbackup",
     "corsheaders",
     "constance.backends.database",
     "django_mailbox",
@@ -304,3 +305,17 @@ CSRF_COOKIE_HTTPONLY = True
 LANGUAGE_COOKIE_HTTPONLY = True
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 8888
+
+ADMINS = [('Egor Gorbunov', 'contact@fureunoir.com')]
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+    "dbbackup": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    }
+}

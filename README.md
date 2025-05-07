@@ -1,7 +1,9 @@
 # eVibes
+
 ![LOGO](core/docs/images/evibes-big.png)
 
-eVibes is an eCommerce backend service built with Django. It’s designed for flexibility, making it ideal for various use cases and learning Django skills. The project is easy to customize, allowing for straightforward editing and extension.
+eVibes is an eCommerce backend service built with Django. It’s designed for flexibility, making it ideal for various use
+cases and learning Django skills. The project is easy to customize, allowing for straightforward editing and extension.
 
 ## Table of Contents
 
@@ -54,7 +56,8 @@ eVibes is an eCommerce backend service built with Django. It’s designed for fl
 
 ### Dockerfile
 
-Don't forget to change the `RUN sed -i 's|https://deb.debian.org/debian|https://ftp.<locale>.debian.org/debian|g' /etc/apt/sources.list.d/debian.sources`
+Don't forget to change the
+`RUN sed -i 's|https://deb.debian.org/debian|https://ftp.<locale>.debian.org/debian|g' /etc/apt/sources.list.d/debian.sources`
 
 ### Environment Variables
 
@@ -77,6 +80,10 @@ CORS_ALLOWED_ORIGINS="http://api.localhost http://127.0.0.1 https://evibes.com h
 POSTGRES_DB="evibes"
 POSTGRES_USER="evibes_user"
 POSTGRES_PASSWORD="SUPERSECRETPOSTGRESPASSWORD"
+
+DBBACKUP_SFTP_HOST="Your SFTP backup host"
+DBBACKUP_SFTP_USER="The username to use to log in to that host"
+DBBACKUP_SFTP_PASS="The password to use to log in to that host"
 
 ELASTIC_PASSWORD="SUPERSECRETELASTICPASSWORD"
 
@@ -111,6 +118,7 @@ ABSTRACT_API_KEY="Haha, really? x2"
 ## Usage
 
 Add these lines to your hosts-file to use django-hosts functionality on localhost:
+
 ```hosts
 127.0.0.1 api.localhost
 127.0.0.1 b2b.localhost
