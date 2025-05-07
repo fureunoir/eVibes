@@ -51,6 +51,7 @@ class EvibesPermission(permissions.BasePermission):
 
         if action in [
             "buy",
+            "buy_unregistered",
             "current",
             "add_order_product",
             "remove_order_product",

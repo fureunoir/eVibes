@@ -136,7 +136,7 @@ class Query(ObjectType):
             Product.objects.all().select_related("brand", "category").prefetch_related("images", "stocks")
             if info.context.user.has_perm("core.view_product")
             else Product.objects.filter(
-                is_active=True, brand__is_active=True, category__is_active=True
+                is_active=True, brand__is_active=True, category__is_active=True, stocks__isnull=False
             ).select_related("brand", "category").prefetch_related("images", "stocks")
         )
 
