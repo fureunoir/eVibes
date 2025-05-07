@@ -167,9 +167,6 @@ class ProductAdmin(BasicModelAdmin):
 
     list_filter = (
         "is_active",
-        "category",
-        "attributes__attribute",
-        "brand",
         "tags__tag_name",
         "created",
         "modified",
