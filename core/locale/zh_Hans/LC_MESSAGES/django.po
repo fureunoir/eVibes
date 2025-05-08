@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-08 15:33+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -451,34 +451,111 @@ msgid ""
 "removes many products from an wishlist using the provided `product_uuids`"
 msgstr "使用提供的 `product_uuids` 从愿望清单中删除多个产品"
 
-#: core/docs/drf/viewsets.py:261
+#: core/docs/drf/viewsets.py:260
+msgid ""
+"Filter by one or more attribute name/value pairs.  \n"
+"• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
+"• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
+"Examples:  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+msgstr ""
+"根据一个或多个属性名/值对进行筛选。  \n"
+"- 语法**：`attr_name=method-value[;attr2=method2-value2]...`\n"
+"- 方法**（如果省略，默认为 `icontains`）：iexact`、`exact`、`icontains`、`contains`、`isnull`、`startswith`、`istartswith`、`endswith`、`iendswith`、`regex`、`iregex`、`lt`、`lte`、`gt`、`gte`、`in`。\n"
+"- 值键入**：首先尝试使用 JSON（因此可以传递列表/字段），布尔、整数、浮点数使用 `true`/`false`，否则视为字符串。  \n"
+"- **Base64**：以 `b64-` 作为前缀，对原始值进行 URL 安全的 base64 编码。  \n"
+"示例  \n"
+"color=exact-red`、`size=gt-10`、`features=in-[\"wifi\"、\"bluetooth\"]`、\n"
+"`b64-description=icontains-aGVhdC1jb2xk`."
+
+#: core/docs/drf/viewsets.py:276
 msgid "list all products (simple view)"
 msgstr "列出所有产品（简单视图）"
 
-#: core/docs/drf/viewsets.py:268
+#: core/docs/drf/viewsets.py:278
+msgid "(exact) Product UUID"
+msgstr "(产品 UUID"
+
+#: core/docs/drf/viewsets.py:279
+msgid "(icontains) Product name"
+msgstr "(图示） 产品名称"
+
+#: core/docs/drf/viewsets.py:280
+msgid "(list) Category names, case-insensitive"
+msgstr "(列表） 类别名称，不区分大小写"
+
+#: core/docs/drf/viewsets.py:282
+msgid "(exact) Category UUID"
+msgstr "(类别 UUID"
+
+#: core/docs/drf/viewsets.py:283
+msgid "(list) Tag names, case-insensitive"
+msgstr "(标签名称，不区分大小写"
+
+#: core/docs/drf/viewsets.py:284
+msgid "(gte) Minimum stock price"
+msgstr "(gte) 最低股价"
+
+#: core/docs/drf/viewsets.py:285
+msgid "(lte) Maximum stock price"
+msgstr "(lte) 最高股价"
+
+#: core/docs/drf/viewsets.py:286
+msgid "(exact) Only active products"
+msgstr "(准确）只有活性产品"
+
+#: core/docs/drf/viewsets.py:287
+msgid "(iexact) Brand name"
+msgstr "(iexact) 品牌名称"
+
+#: core/docs/drf/viewsets.py:289
+msgid "(gt) Minimum stock quantity"
+msgstr "(gt) 最低库存量"
+
+#: core/docs/drf/viewsets.py:290
+msgid "(exact) Product slug"
+msgstr "(准确） 产品标题"
+
+#: core/docs/drf/viewsets.py:291
+msgid "(exact) Digital vs. physical"
+msgstr "(准确）数字与实物"
+
+#: core/docs/drf/viewsets.py:295
+msgid ""
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
+"**Allowed:** uuid, rating, name, slug, created, modified, price, random"
+msgstr ""
+"用逗号分隔的要排序的字段列表。前缀为 `-` 表示降序。  \n"
+"**允许：** uuid、评分、名称、标签、创建、修改、价格、随机"
+
+#: core/docs/drf/viewsets.py:310
 msgid "retrieve a single product (detailed view)"
 msgstr "检索单个产品（详细视图）"
 
-#: core/docs/drf/viewsets.py:272
+#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
+#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
 msgid "Product UUID or slug"
 msgstr "产品 UUID 或 Slug"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:315
 msgid "create a product"
 msgstr "创建产品"
 
-#: core/docs/drf/viewsets.py:291
-msgid "delete a product"
-msgstr "删除产品"
-
-#: core/docs/drf/viewsets.py:298
+#: core/docs/drf/viewsets.py:319
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr "重写现有产品，保留不可编辑字段"
 
-#: core/docs/drf/viewsets.py:305
+#: core/docs/drf/viewsets.py:324
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr "更新现有产品的某些字段，保留不可编辑的字段"
+
+#: core/docs/drf/viewsets.py:329
+msgid "delete a product"
+msgstr "删除产品"
 
 #: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
@@ -535,7 +612,7 @@ msgid "please provide either order_uuid or order_hr_id - mutually exclusive"
 msgstr "请提供 order_uuid 或 order_hr_id（互斥）！"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:240
+#: core/graphene/mutations.py:389 core/viewsets.py:248
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "order.buy() 方法中的类型有误：{type(instance)!s}"
 

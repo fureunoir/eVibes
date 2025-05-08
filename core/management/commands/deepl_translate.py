@@ -31,9 +31,10 @@ DEEPL_TARGET_LANGUAGES_MAPPING = {
 
 # Patterns to identify placeholders
 PLACEHOLDER_REGEXES = [
-    re.compile(r"\{[^}]+"),         # {name}, {product_uuid}
-    re.compile(r"%\([^)]+\)[sd]"),    # %(name)s, %(count)d
+    re.compile(r"\{[^}]+"),  # {name}, {product_uuid}
+    re.compile(r"%\([^)]+\)[sd]"),  # %(name)s, %(count)d
 ]
+
 
 def placeholderize(text: str) -> tuple[str, list[str]]:
     """
@@ -41,10 +42,12 @@ def placeholderize(text: str) -> tuple[str, list[str]]:
     Returns (protected_text, placeholders_list).
     """
     placeholders: list[str] = []
+
     def _repl(match: re.Match) -> str:
         idx = len(placeholders)
         placeholders.append(match.group(0))
         return f"__PH_{idx}__"
+
     for rx in PLACEHOLDER_REGEXES:
         text = rx.sub(_repl, text)
     return text, placeholders
@@ -148,7 +151,11 @@ class Command(BaseCommand):
                 if missing:
                     self.stdout.write(self.style.NOTICE(f"⚠️ {len(missing)} missing in en_GB"))
                     for e in missing:
-                        e.msgstr = input(f"Enter translation for '{e.msgid}': ").strip()
+                        input_msgstr = input(f"Enter translation for '{e.msgid}': ").strip()
+                        if input_msgstr:
+                            e.msgstr = input_msgstr
+                        else:
+                            e.msgstr = e.msgid
                     en_po.save(en_path)
                     self.stdout.write(self.style.SUCCESS("Updated en_GB PO"))
 
@@ -197,9 +204,9 @@ class Command(BaseCommand):
                     maps.append(p_map)
 
                 data = [
-                    ('auth_key', auth_key),
-                    ('target_lang', api_code),
-                ] + [('text', t) for t in protected]
+                           ('auth_key', auth_key),
+                           ('target_lang', api_code),
+                       ] + [('text', t) for t in protected]
                 resp = requests.post('https://api-free.deepl.com/v2/translate', data=data)
                 try:
                     resp.raise_for_status()

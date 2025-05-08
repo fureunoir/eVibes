@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-08 15:33+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -491,37 +491,114 @@ msgstr ""
 "Îndepărtează mai multe produse dintr-o listă de dorințe folosind "
 "`product_uuids` furnizat"
 
-#: core/docs/drf/viewsets.py:261
+#: core/docs/drf/viewsets.py:260
+msgid ""
+"Filter by one or more attribute name/value pairs.  \n"
+"• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
+"• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
+"Examples:  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+msgstr ""
+"Filtrați după una sau mai multe perechi nume de atribut/valoare.  \n"
+"- **Sintaxa**: `attr_name=method-value[;attr2=method2-value2]...`\n"
+"- **Metode** (valoarea implicită este `icontains` dacă este omisă): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- **Value typing**: JSON este încercat în primul rând (astfel încât să puteți trece liste/dicte), `true`/`false` pentru booleeni, întregi, float; în caz contrar tratat ca string.  \n"
+"- **Base64**: prefix cu `b64-` pentru a codifica valoarea brută în baza64 în condiții de siguranță URL.  \n"
+"Exemple:  \n"
+"`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\",\"bluetooth\"]`,\n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+
+#: core/docs/drf/viewsets.py:276
 msgid "list all products (simple view)"
 msgstr "Listează toate produsele (vizualizare simplă)"
 
-#: core/docs/drf/viewsets.py:268
+#: core/docs/drf/viewsets.py:278
+msgid "(exact) Product UUID"
+msgstr "(exact) UUID al produsului"
+
+#: core/docs/drf/viewsets.py:279
+msgid "(icontains) Product name"
+msgstr "(icontains) Denumirea produsului"
+
+#: core/docs/drf/viewsets.py:280
+msgid "(list) Category names, case-insensitive"
+msgstr "(listă) Numele categoriilor, fără deosebire de majuscule"
+
+#: core/docs/drf/viewsets.py:282
+msgid "(exact) Category UUID"
+msgstr "(exact) UUID al categoriei"
+
+#: core/docs/drf/viewsets.py:283
+msgid "(list) Tag names, case-insensitive"
+msgstr "(listă) Nume de etichete, fără diferențiere de majuscule"
+
+#: core/docs/drf/viewsets.py:284
+msgid "(gte) Minimum stock price"
+msgstr "(gte) Prețul minim al acțiunilor"
+
+#: core/docs/drf/viewsets.py:285
+msgid "(lte) Maximum stock price"
+msgstr "(lte) Prețul maxim al acțiunilor"
+
+#: core/docs/drf/viewsets.py:286
+msgid "(exact) Only active products"
+msgstr "(exact) Numai produse active"
+
+#: core/docs/drf/viewsets.py:287
+msgid "(iexact) Brand name"
+msgstr "(iexact) Denumire comercială"
+
+#: core/docs/drf/viewsets.py:289
+msgid "(gt) Minimum stock quantity"
+msgstr "(gt) Cantitatea minimă de stoc"
+
+#: core/docs/drf/viewsets.py:290
+msgid "(exact) Product slug"
+msgstr "(exact) Limbajul produsului"
+
+#: core/docs/drf/viewsets.py:291
+msgid "(exact) Digital vs. physical"
+msgstr "(exact) Digital vs. fizic"
+
+#: core/docs/drf/viewsets.py:295
+msgid ""
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
+"**Allowed:** uuid, rating, name, slug, created, modified, price, random"
+msgstr ""
+"Lista de câmpuri separate prin virgulă după care se face sortarea. Prefixați cu `-` pentru descrescător.  \n"
+"**Autorizate:** uuid, rating, nume, slug, creat, modificat, preț, aleatoriu"
+
+#: core/docs/drf/viewsets.py:310
 msgid "retrieve a single product (detailed view)"
 msgstr "Recuperarea unui singur produs (vedere detaliată)"
 
-#: core/docs/drf/viewsets.py:272
+#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
+#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
 msgid "Product UUID or slug"
 msgstr "UUID sau Slug al produsului"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:315
 msgid "create a product"
 msgstr "Creați un produs"
 
-#: core/docs/drf/viewsets.py:291
-msgid "delete a product"
-msgstr "Ștergeți un produs"
-
-#: core/docs/drf/viewsets.py:298
+#: core/docs/drf/viewsets.py:319
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Rescrierea unui produs existent, păstrând câmpurile care nu pot fi editate"
 
-#: core/docs/drf/viewsets.py:305
+#: core/docs/drf/viewsets.py:324
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Actualizarea unor câmpuri ale unui produs existent, păstrând câmpurile "
 "needitabile"
+
+#: core/docs/drf/viewsets.py:329
+msgid "delete a product"
+msgstr "Ștergeți un produs"
 
 #: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
@@ -579,7 +656,7 @@ msgstr ""
 "Vă rugăm să furnizați fie order_uuid sau order_hr_id - se exclud reciproc!"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:240
+#: core/graphene/mutations.py:389 core/viewsets.py:248
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "Metoda order.buy() a generat un tip greșit: {type(instance)!s}"
 

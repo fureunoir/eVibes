@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-08 15:33+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -498,38 +498,117 @@ msgstr ""
 "Entfernt viele Produkte aus einer Wunschliste unter Verwendung der "
 "angegebenen `product_uuids`."
 
-#: core/docs/drf/viewsets.py:261
+#: core/docs/drf/viewsets.py:260
+msgid ""
+"Filter by one or more attribute name/value pairs.  \n"
+"• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
+"• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
+"Examples:  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+msgstr ""
+"Filtern Sie nach einem oder mehreren Attributnamen/Wertpaaren.  \n"
+"- **Syntax**: `attr_name=Methode-Wert[;attr2=Methode2-Wert2]...`\n"
+"- **Methoden** (Standardwert ist \"icontains\", wenn nicht angegeben): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- **Wert-Typisierung**: JSON wird zuerst versucht (damit man Listen/Dicts übergeben kann), `true`/`false` für Booleans, Integers, Floats; ansonsten als String behandelt.  \n"
+"- Base64**: Präfix \"b64-\" für URL-sichere Base64-Kodierung des Rohwertes.  \n"
+"Beispiele:  \n"
+"`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+
+#: core/docs/drf/viewsets.py:276
 msgid "list all products (simple view)"
 msgstr "Alle Produkte auflisten (einfache Ansicht)"
 
-#: core/docs/drf/viewsets.py:268
+#: core/docs/drf/viewsets.py:278
+msgid "(exact) Product UUID"
+msgstr "(genaue) Produkt-UUID"
+
+#: core/docs/drf/viewsets.py:279
+msgid "(icontains) Product name"
+msgstr "(icontains) Produktname"
+
+#: core/docs/drf/viewsets.py:280
+msgid "(list) Category names, case-insensitive"
+msgstr ""
+"(Liste) Kategorienamen, Groß- und Kleinschreibung wird nicht berücksichtigt"
+
+#: core/docs/drf/viewsets.py:282
+msgid "(exact) Category UUID"
+msgstr "(genau) Kategorie UUID"
+
+#: core/docs/drf/viewsets.py:283
+msgid "(list) Tag names, case-insensitive"
+msgstr ""
+"(Liste) Tag-Namen, Groß- und Kleinschreibung wird nicht berücksichtigt"
+
+#: core/docs/drf/viewsets.py:284
+msgid "(gte) Minimum stock price"
+msgstr "(gte) Mindestaktienkurs"
+
+#: core/docs/drf/viewsets.py:285
+msgid "(lte) Maximum stock price"
+msgstr "(lte) Maximaler Aktienkurs"
+
+#: core/docs/drf/viewsets.py:286
+msgid "(exact) Only active products"
+msgstr "(genau) Nur aktive Produkte"
+
+#: core/docs/drf/viewsets.py:287
+msgid "(iexact) Brand name"
+msgstr "(iexact) Markenname"
+
+#: core/docs/drf/viewsets.py:289
+msgid "(gt) Minimum stock quantity"
+msgstr "(gt) Mindestlagermenge"
+
+#: core/docs/drf/viewsets.py:290
+msgid "(exact) Product slug"
+msgstr "(genau) Produktausschnitt"
+
+#: core/docs/drf/viewsets.py:291
+msgid "(exact) Digital vs. physical"
+msgstr "(genau) Digital vs. physisch"
+
+#: core/docs/drf/viewsets.py:295
+msgid ""
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
+"**Allowed:** uuid, rating, name, slug, created, modified, price, random"
+msgstr ""
+"Durch Kommata getrennte Liste der Felder, nach denen sortiert werden soll. Präfix mit \"-\" für absteigend.  \n"
+"**Erlaubt:** uuid, rating, name, slug, created, modified, price, random"
+
+#: core/docs/drf/viewsets.py:310
 msgid "retrieve a single product (detailed view)"
 msgstr "Ein einzelnes Produkt abrufen (Detailansicht)"
 
-#: core/docs/drf/viewsets.py:272
+#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
+#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
 msgid "Product UUID or slug"
 msgstr "Produkt UUID oder Slug"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:315
 msgid "create a product"
 msgstr "Ein Produkt erstellen"
 
-#: core/docs/drf/viewsets.py:291
-msgid "delete a product"
-msgstr "Ein Produkt löschen"
-
-#: core/docs/drf/viewsets.py:298
+#: core/docs/drf/viewsets.py:319
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Umschreiben eines bestehenden Produkts unter Beibehaltung nicht editierbarer"
 " Felder"
 
-#: core/docs/drf/viewsets.py:305
+#: core/docs/drf/viewsets.py:324
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Einige Felder eines bestehenden Produkts aktualisieren, nicht editierbare "
 "Felder beibehalten"
+
+#: core/docs/drf/viewsets.py:329
+msgid "delete a product"
+msgstr "Ein Produkt löschen"
 
 #: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
@@ -588,7 +667,7 @@ msgstr ""
 "sich gegenseitig aus!"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:240
+#: core/graphene/mutations.py:389 core/viewsets.py:248
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "Von der Methode order.buy() kam der falsche Typ: {type(instance)!s}"
 

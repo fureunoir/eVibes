@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-08 15:33+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -479,37 +479,114 @@ msgid ""
 msgstr ""
 "Odebere mnoho produktů ze seznamu přání pomocí zadaných `product_uuids`."
 
-#: core/docs/drf/viewsets.py:261
+#: core/docs/drf/viewsets.py:260
+msgid ""
+"Filter by one or more attribute name/value pairs.  \n"
+"• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
+"• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
+"Examples:  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+msgstr ""
+"Filtrování podle jedné nebo více dvojic název/hodnota atributu.  \n"
+"- **Syntaxe**: `attr_name=method-value[;attr2=method2-value2]...`\n"
+"- **Metody** (pokud je vynecháno, výchozí hodnota je `obsahuje`): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- **Typování hodnot**: Pro booleany, celá čísla, floaty se nejprve zkouší JSON (takže můžete předávat seznamy/dicty), `true`/`false`; jinak se s nimi zachází jako s řetězci.  \n"
+"- **Base64**: předpona `b64-` pro bezpečné zakódování surové hodnoty do URL base64.  \n"
+"Příklady:  \n"
+"`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
+"`b64-description=icontains-aGVhdC1jb2xk`"
+
+#: core/docs/drf/viewsets.py:276
 msgid "list all products (simple view)"
 msgstr "Seznam všech produktů (jednoduché zobrazení)"
 
-#: core/docs/drf/viewsets.py:268
+#: core/docs/drf/viewsets.py:278
+msgid "(exact) Product UUID"
+msgstr "(přesně) UUID produktu"
+
+#: core/docs/drf/viewsets.py:279
+msgid "(icontains) Product name"
+msgstr "(icontains) Název produktu"
+
+#: core/docs/drf/viewsets.py:280
+msgid "(list) Category names, case-insensitive"
+msgstr "(seznam) Názvy kategorií, nerozlišuje velká a malá písmena"
+
+#: core/docs/drf/viewsets.py:282
+msgid "(exact) Category UUID"
+msgstr "(přesně) Kategorie UUID"
+
+#: core/docs/drf/viewsets.py:283
+msgid "(list) Tag names, case-insensitive"
+msgstr "(seznam) Názvy značek, nerozlišuje velká a malá písmena"
+
+#: core/docs/drf/viewsets.py:284
+msgid "(gte) Minimum stock price"
+msgstr "(gte) Minimální cena akcií"
+
+#: core/docs/drf/viewsets.py:285
+msgid "(lte) Maximum stock price"
+msgstr "(lte) Maximální cena akcií"
+
+#: core/docs/drf/viewsets.py:286
+msgid "(exact) Only active products"
+msgstr "(přesně) Pouze aktivní produkty"
+
+#: core/docs/drf/viewsets.py:287
+msgid "(iexact) Brand name"
+msgstr "(iexact) Obchodní značka"
+
+#: core/docs/drf/viewsets.py:289
+msgid "(gt) Minimum stock quantity"
+msgstr "(gt) Minimální skladové množství"
+
+#: core/docs/drf/viewsets.py:290
+msgid "(exact) Product slug"
+msgstr "(přesně) Product slug"
+
+#: core/docs/drf/viewsets.py:291
+msgid "(exact) Digital vs. physical"
+msgstr "(přesně) Digitální vs. fyzické"
+
+#: core/docs/drf/viewsets.py:295
+msgid ""
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
+"**Allowed:** uuid, rating, name, slug, created, modified, price, random"
+msgstr ""
+"Seznam polí oddělených čárkou, podle kterých se má třídit. Pro sestupné řazení použijte předponu `-`.  \n"
+"**Povolené:** uuid, rating, name, slug, created, modified, price, random"
+
+#: core/docs/drf/viewsets.py:310
 msgid "retrieve a single product (detailed view)"
 msgstr "Vyhledání jednoho produktu (podrobné zobrazení)"
 
-#: core/docs/drf/viewsets.py:272
+#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
+#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
 msgid "Product UUID or slug"
 msgstr "Identifikátor UUID produktu nebo Slug"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:315
 msgid "create a product"
 msgstr "Vytvoření produktu"
 
-#: core/docs/drf/viewsets.py:291
-msgid "delete a product"
-msgstr "Odstranění produktu"
-
-#: core/docs/drf/viewsets.py:298
+#: core/docs/drf/viewsets.py:319
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Přepsání existujícího produktu se zachováním polí, která nelze editovat"
 
-#: core/docs/drf/viewsets.py:305
+#: core/docs/drf/viewsets.py:324
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Aktualizace některých polí existujícího produktu se zachováním polí, která "
 "nelze upravovat."
+
+#: core/docs/drf/viewsets.py:329
+msgid "delete a product"
+msgstr "Odstranění produktu"
 
 #: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
@@ -566,7 +643,7 @@ msgid "please provide either order_uuid or order_hr_id - mutually exclusive"
 msgstr "Zadejte prosím order_uuid nebo order_hr_id - vzájemně se vylučují!"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:240
+#: core/graphene/mutations.py:389 core/viewsets.py:248
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "Z metody order.buy() pochází nesprávný typ: {type(instance)!s}"
 
