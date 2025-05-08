@@ -1,3 +1,5 @@
+from uuid import UUID
+
 from django.http import Http404
 from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
@@ -168,13 +170,17 @@ class ProductViewSet(EvibesViewSet):
         queryset = self.filter_queryset(self.get_queryset())
         lookup_value = self.kwargs[self.lookup_url_kwarg]
 
-        obj = (
-                queryset.filter(uuid=lookup_value)
-                .first()
-                or
-                queryset.filter(slug=lookup_value)
-                .first()
-        )
+        obj = None
+
+        try:
+            uuid_obj = UUID(lookup_value)
+            obj = queryset.filter(uuid=uuid_obj).first()
+        except (ValueError, TypeError):
+            pass
+
+        if not obj:
+            obj = queryset.filter(slug=lookup_value).first()
+
         if not obj:
             raise Http404(f"No Product found matching uuid or slug '{lookup_value}'")
 

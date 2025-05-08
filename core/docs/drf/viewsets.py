@@ -256,9 +256,51 @@ WISHLIST_SCHEMA = {
     ),
 }
 
+ATTRIBUTES_DESC = _(
+    "Filter by one or more attribute name/value pairs.  \n"
+    "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
+    "• **Methods** (defaults to `icontains` if omitted): "
+    "`iexact`, `exact`, `icontains`, `contains`, `isnull`, "
+    "`startswith`, `istartswith`, `endswith`, `iendswith`, "
+    "`regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+    "• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
+    "`true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
+    "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
+    "Examples:  \n"
+    "`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
+    "`b64-description=icontains-aGVhdC1jb2xk`"
+)
+
 PRODUCT_SCHEMA = {
     "list": extend_schema(
         summary=_("list all products (simple view)"),
+        parameters=[
+            OpenApiParameter("uuid", _("(exact) Product UUID"), OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("name", _("(icontains) Product name"), OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("categories", _("(list) Category names, case-insensitive"), OpenApiParameter.QUERY,
+                             type=str),
+            OpenApiParameter("category_uuid", _("(exact) Category UUID"), OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("tags", _("(list) Tag names, case-insensitive"), OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("min_price", _("(gte) Minimum stock price"), OpenApiParameter.QUERY, type=float),
+            OpenApiParameter("max_price", _("(lte) Maximum stock price"), OpenApiParameter.QUERY, type=float),
+            OpenApiParameter("is_active", _("(exact) Only active products"), OpenApiParameter.QUERY, type=bool),
+            OpenApiParameter("brand", _("(iexact) Brand name"), OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("attributes", ATTRIBUTES_DESC, OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("quantity", _("(gt) Minimum stock quantity"), OpenApiParameter.QUERY, type=int),
+            OpenApiParameter("slug", _("(exact) Product slug"), OpenApiParameter.QUERY, type=str),
+            OpenApiParameter("is_digital", _("(exact) Digital vs. physical"), OpenApiParameter.QUERY, type=bool),
+            OpenApiParameter(
+                name="order_by",
+                description=_(
+                    "Comma-separated list of fields to sort by. "
+                    "Prefix with `-` for descending.  \n"
+                    "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
+                ),
+                required=False,
+                type=str,
+                location=OpenApiParameter.QUERY,
+            ),
+        ],
         responses={
             status.HTTP_200_OK: ProductSimpleSerializer(many=True),
             **BASE_ERRORS,
@@ -266,46 +308,26 @@ PRODUCT_SCHEMA = {
     ),
     "retrieve": extend_schema(
         summary=_("retrieve a single product (detailed view)"),
-        parameters=[
-            OpenApiParameter(
-                name="lookup",
-                description=_("Product UUID or slug"),
-                required=True,
-                type=str,
-                location=OpenApiParameter.PATH,
-            ),
-        ],
-        responses={
-            status.HTTP_200_OK: ProductDetailSerializer,
-            **BASE_ERRORS,
-        },
+        parameters=[OpenApiParameter("lookup", _("Product UUID or slug"), OpenApiParameter.PATH, type=str)],
+        responses={status.HTTP_200_OK: ProductDetailSerializer, **BASE_ERRORS},
     ),
     "create": extend_schema(
         summary=_("create a product"),
-        responses={
-            status.HTTP_201_CREATED: ProductDetailSerializer,
-            **BASE_ERRORS,
-        },
-    ),
-    "destroy": extend_schema(
-        summary=_("delete a product"),
-        responses={
-            status.HTTP_204_NO_CONTENT: {},
-            **BASE_ERRORS,
-        },
+        responses={status.HTTP_201_CREATED: ProductDetailSerializer, **BASE_ERRORS},
     ),
     "update": extend_schema(
         summary=_("rewrite an existing product, preserving non-editable fields"),
-        responses={
-            status.HTTP_200_OK: ProductDetailSerializer,
-            **BASE_ERRORS,
-        },
+        parameters=[OpenApiParameter("lookup", _("Product UUID or slug"), OpenApiParameter.PATH, type=str)],
+        responses={status.HTTP_200_OK: ProductDetailSerializer, **BASE_ERRORS},
     ),
     "partial_update": extend_schema(
         summary=_("update some fields of an existing product, preserving non-editable fields"),
-        responses={
-            status.HTTP_200_OK: ProductDetailSerializer,
-            **BASE_ERRORS,
-        },
+        parameters=[OpenApiParameter("lookup", _("Product UUID or slug"), OpenApiParameter.PATH, type=str)],
+        responses={status.HTTP_200_OK: ProductDetailSerializer, **BASE_ERRORS},
+    ),
+    "destroy": extend_schema(
+        summary=_("delete a product"),
+        parameters=[OpenApiParameter("lookup", _("Product UUID or slug"), OpenApiParameter.PATH, type=str)],
+        responses={status.HTTP_204_NO_CONTENT: {}, **BASE_ERRORS},
     ),
 }
