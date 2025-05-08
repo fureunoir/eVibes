@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-28 16:26+0100\n"
+"POT-Creation-Date: 2025-05-08 14:48+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -316,21 +316,21 @@ msgstr ""
 msgid "best regards,<br>the %(project_name)s team"
 msgstr "Z wyrazami szacunku,<br>zespół %(project_name)s"
 
-#: vibes_auth/utils/emailing.py:25
+#: vibes_auth/utils/emailing.py:27
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | Activate Account"
 msgstr "{config.PROJECT_NAME} | Aktywuj konto"
 
-#: vibes_auth/utils/emailing.py:46 vibes_auth/utils/emailing.py:87
+#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:92
 #, python-brace-format
 msgid "user not found with the given pk: {user_pk}"
 msgstr "Nie znaleziono użytkownika o podanym identyfikatorze UUID: {user_pk}"
 
-#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
+#: vibes_auth/utils/emailing.py:52 vibes_auth/utils/emailing.py:95
 msgid "something went wrong while sending an email: {e!s}"
 msgstr "Coś poszło nie tak podczas wysyłania wiadomości e-mail: {e!s}"
 
-#: vibes_auth/utils/emailing.py:65
+#: vibes_auth/utils/emailing.py:69
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | Reset Password"
 msgstr "{config.PROJECT_NAME} | Resetuj hasło"
@@ -340,5 +340,5 @@ msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
 msgstr ""
-"Nieprawidłowy format numeru telefonu. Numer musi być wprowadzony w formacie:"
-" \"+999999999\". Dozwolone do 15 cyfr."
+"Nieprawidłowy format numeru telefonu. Numer musi być wprowadzony w formacie: "
+"\"+999999999\". Dozwolone do 15 cyfr."

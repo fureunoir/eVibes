@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-28 16:26+0100\n"
+"POT-Creation-Date: 2025-05-08 14:48+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -296,8 +296,8 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Gracias por registrarse en %(project_name)s. Por favor, active su "
-"cuenta haciendo clic en el botón de abajo:"
+"Gracias por registrarse en %(project_name)s. Por favor, active su cuenta "
+"haciendo clic en el botón de abajo:"
 
 #: vibes_auth/templates/user_verification_email.html:95
 msgid ""
@@ -320,21 +320,21 @@ msgstr ""
 msgid "best regards,<br>the %(project_name)s team"
 msgstr "Saludos cordiales,<br>el equipo de %(project_name)s"
 
-#: vibes_auth/utils/emailing.py:25
+#: vibes_auth/utils/emailing.py:27
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | Activate Account"
 msgstr "{config.PROJECT_NAME} | Activar cuenta"
 
-#: vibes_auth/utils/emailing.py:46 vibes_auth/utils/emailing.py:87
+#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:92
 #, python-brace-format
 msgid "user not found with the given pk: {user_pk}"
 msgstr "Usuario no encontrado con el UUID dado: {user_pk}"
 
-#: vibes_auth/utils/emailing.py:49 vibes_auth/utils/emailing.py:90
+#: vibes_auth/utils/emailing.py:52 vibes_auth/utils/emailing.py:95
 msgid "something went wrong while sending an email: {e!s}"
 msgstr "Algo salió mal al enviar un correo electrónico: {e!s}."
 
-#: vibes_auth/utils/emailing.py:65
+#: vibes_auth/utils/emailing.py:69
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | Reset Password"
 msgstr "{config.PROJECT_NAME} | Restablecer contraseña"

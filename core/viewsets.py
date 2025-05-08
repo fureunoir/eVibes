@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.utils.translation import gettext_lazy as _
 from django_filters.rest_framework import DjangoFilterBackend
 from django_ratelimit.decorators import ratelimit
@@ -158,6 +159,25 @@ class ProductViewSet(EvibesViewSet):
     action_serializer_classes = {
         "list": ProductSimpleSerializer,
     }
+    lookup_field = 'lookup'
+    lookup_url_kwarg = 'lookup'
+
+    def get_object(self):
+        queryset = self.filter_queryset(self.get_queryset())
+        lookup_value = self.kwargs[self.lookup_url_kwarg]
+
+        obj = (
+                queryset.filter(uuid=lookup_value)
+                .first()
+                or
+                queryset.filter(slug=lookup_value)
+                .first()
+        )
+        if not obj:
+            raise Http404(f"No Product found matching uuid or slug '{lookup_value}'")
+
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 
 class VendorViewSet(EvibesViewSet):

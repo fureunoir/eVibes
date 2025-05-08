@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the eVibes package.
 # EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
 #
-#,fuzzy
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"

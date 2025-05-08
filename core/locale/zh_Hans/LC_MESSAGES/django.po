@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-05 23:44+0100\n"
+"POT-Creation-Date: 2025-05-08 14:48+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -79,7 +79,7 @@ msgstr "图片"
 msgid "images"
 msgstr "图片"
 
-#: core/admin.py:160 core/models.py:1126
+#: core/admin.py:160 core/models.py:1127
 msgid "stock"
 msgstr "库存"
 
@@ -87,7 +87,7 @@ msgstr "库存"
 msgid "stocks"
 msgstr "股票"
 
-#: core/admin.py:194 core/graphene/object_types.py:320
+#: core/admin.py:191 core/graphene/object_types.py:320
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -95,35 +95,35 @@ msgstr "股票"
 msgid "price"
 msgstr "价格"
 
-#: core/admin.py:199
+#: core/admin.py:196
 msgid "rating"
 msgstr "产品评级"
 
-#: core/admin.py:203
+#: core/admin.py:200
 msgid "basic info"
 msgstr "基本信息"
 
-#: core/admin.py:217
+#: core/admin.py:214
 msgid "important dates"
 msgstr "重要日期"
 
-#: core/admin.py:218
+#: core/admin.py:215
 msgid "translations"
 msgstr "翻译"
 
-#: core/admin.py:256 core/models.py:836
+#: core/admin.py:253 core/models.py:837
 msgid "order product"
 msgstr "订购产品"
 
-#: core/admin.py:257 core/graphene/object_types.py:242 core/models.py:837
+#: core/admin.py:254 core/graphene/object_types.py:242 core/models.py:838
 msgid "order products"
 msgstr "订购产品"
 
-#: core/admin.py:276
+#: core/admin.py:273
 msgid "is business"
 msgstr "Is Business"
 
-#: core/admin.py:384
+#: core/admin.py:381
 msgid "config"
 msgstr "配置"
 
@@ -217,239 +217,268 @@ msgid ""
 "`product_uuid` and `attributes`."
 msgstr "使用提供的带有 `product_uuid` 和 `attributes` 的 `products` 作为企业购买订单。"
 
-#: core/docs/drf/viewsets.py:26
+#: core/docs/drf/viewsets.py:34
 msgid "list all attribute groups (simple view)"
 msgstr "列出所有属性组（简单视图）"
 
-#: core/docs/drf/viewsets.py:30
+#: core/docs/drf/viewsets.py:38
 msgid "retrieve a single attribute group (detailed view)"
 msgstr "检索单个属性组（详细视图）"
 
-#: core/docs/drf/viewsets.py:34
+#: core/docs/drf/viewsets.py:42
 msgid "create an attribute group"
 msgstr "创建属性组"
 
-#: core/docs/drf/viewsets.py:38
+#: core/docs/drf/viewsets.py:46
 msgid "delete an attribute group"
 msgstr "删除属性组"
 
-#: core/docs/drf/viewsets.py:42
+#: core/docs/drf/viewsets.py:50
 msgid "rewrite an existing attribute group saving non-editables"
 msgstr "重写保存不可编辑的现有属性组"
 
-#: core/docs/drf/viewsets.py:46
+#: core/docs/drf/viewsets.py:54
 msgid ""
 "rewrite some fields of an existing attribute group saving non-editables"
 msgstr "重写现有属性组的某些字段，保存不可编辑的内容"
 
-#: core/docs/drf/viewsets.py:53
+#: core/docs/drf/viewsets.py:61
 msgid "list all attributes (simple view)"
 msgstr "列出所有属性（简单视图）"
 
-#: core/docs/drf/viewsets.py:57
+#: core/docs/drf/viewsets.py:65
 msgid "retrieve a single attribute (detailed view)"
 msgstr "检索单个属性（详细视图）"
 
-#: core/docs/drf/viewsets.py:61
+#: core/docs/drf/viewsets.py:69
 msgid "create an attribute"
 msgstr "创建属性"
 
-#: core/docs/drf/viewsets.py:65
+#: core/docs/drf/viewsets.py:73
 msgid "delete an attribute"
 msgstr "删除属性"
 
-#: core/docs/drf/viewsets.py:69
+#: core/docs/drf/viewsets.py:77
 msgid "rewrite an existing attribute saving non-editables"
 msgstr "重写现有属性，保存不可编辑属性"
 
-#: core/docs/drf/viewsets.py:73
+#: core/docs/drf/viewsets.py:81
 msgid "rewrite some fields of an existing attribute saving non-editables"
 msgstr "重写现有属性的某些字段，保存不可编辑的内容"
 
-#: core/docs/drf/viewsets.py:80
+#: core/docs/drf/viewsets.py:88
 msgid "list all attribute values (simple view)"
 msgstr "列出所有属性值（简单视图）"
 
-#: core/docs/drf/viewsets.py:84
+#: core/docs/drf/viewsets.py:92
 msgid "retrieve a single attribute value (detailed view)"
 msgstr "读取单个属性值（详细视图）"
 
-#: core/docs/drf/viewsets.py:88
+#: core/docs/drf/viewsets.py:96
 msgid "create an attribute value"
 msgstr "创建属性值"
 
-#: core/docs/drf/viewsets.py:92
+#: core/docs/drf/viewsets.py:100
 msgid "delete an attribute value"
 msgstr "删除属性值"
 
-#: core/docs/drf/viewsets.py:96
+#: core/docs/drf/viewsets.py:104
 msgid "rewrite an existing attribute value saving non-editables"
 msgstr "重写现有属性值，保存不可编辑属性"
 
-#: core/docs/drf/viewsets.py:100
+#: core/docs/drf/viewsets.py:108
 msgid ""
 "rewrite some fields of an existing attribute value saving non-editables"
 msgstr "重写现有属性值的某些字段，保存不可编辑的属性值"
 
-#: core/docs/drf/viewsets.py:107
+#: core/docs/drf/viewsets.py:115
 msgid "list all categories (simple view)"
 msgstr "列出所有类别（简单视图）"
 
-#: core/docs/drf/viewsets.py:111
+#: core/docs/drf/viewsets.py:119
 msgid "retrieve a single category (detailed view)"
 msgstr "检索单个类别（详细视图）"
 
-#: core/docs/drf/viewsets.py:115
+#: core/docs/drf/viewsets.py:123
 msgid "create a category"
 msgstr "创建类别"
 
-#: core/docs/drf/viewsets.py:119
+#: core/docs/drf/viewsets.py:127
 msgid "delete a category"
 msgstr "删除类别"
 
-#: core/docs/drf/viewsets.py:123
+#: core/docs/drf/viewsets.py:131
 msgid "rewrite an existing category saving non-editables"
 msgstr "重写现有类别，保存不可编辑内容"
 
-#: core/docs/drf/viewsets.py:127
+#: core/docs/drf/viewsets.py:135
 msgid "rewrite some fields of an existing category saving non-editables"
 msgstr "重写现有类别的某些字段，保存不可编辑内容"
 
-#: core/docs/drf/viewsets.py:134
+#: core/docs/drf/viewsets.py:142
 msgid "list all orders (simple view)"
 msgstr "列出所有类别（简单视图）"
 
-#: core/docs/drf/viewsets.py:135
+#: core/docs/drf/viewsets.py:143
 msgid "for non-staff users, only their own orders are returned."
 msgstr "对于非工作人员用户，只有他们自己的订单才会被退回。"
 
-#: core/docs/drf/viewsets.py:139
+#: core/docs/drf/viewsets.py:147
 msgid "retrieve a single order (detailed view)"
 msgstr "检索单个类别（详细视图）"
 
-#: core/docs/drf/viewsets.py:143
+#: core/docs/drf/viewsets.py:151
 msgid "create an order"
 msgstr "创建属性"
 
-#: core/docs/drf/viewsets.py:144
+#: core/docs/drf/viewsets.py:152
 msgid "doesn't work for non-staff users."
 msgstr "不适用于非工作人员用户。"
 
-#: core/docs/drf/viewsets.py:148
+#: core/docs/drf/viewsets.py:156
 msgid "delete an order"
 msgstr "删除属性"
 
-#: core/docs/drf/viewsets.py:152
+#: core/docs/drf/viewsets.py:160
 msgid "rewrite an existing order saving non-editables"
 msgstr "重写现有类别，保存不可编辑内容"
 
-#: core/docs/drf/viewsets.py:156
+#: core/docs/drf/viewsets.py:164
 msgid "rewrite some fields of an existing order saving non-editables"
 msgstr "重写现有类别的某些字段，保存不可编辑内容"
 
-#: core/docs/drf/viewsets.py:160
+#: core/docs/drf/viewsets.py:168
 msgid "purchase an order"
 msgstr "订购时的购买价格"
 
-#: core/docs/drf/viewsets.py:162
+#: core/docs/drf/viewsets.py:170
 msgid ""
 "finalizes the order purchase. if `force_balance` is used, the purchase is "
 "completed using the user's balance; if `force_payment` is used, a "
 "transaction is initiated."
 msgstr "完成订单购买。如果使用 \"force_balance\"，则使用用户的余额完成购买；如果使用 \"force_payment\"，则启动交易。"
 
-#: core/docs/drf/viewsets.py:174 core/graphene/mutations.py:199
+#: core/docs/drf/viewsets.py:182 core/graphene/mutations.py:208
 msgid "purchase an order without account creation"
 msgstr "无需创建账户即可购买订单"
 
-#: core/docs/drf/viewsets.py:176
+#: core/docs/drf/viewsets.py:184
 msgid "finalizes the order purchase for a non-registered user."
 msgstr "完成非注册用户的订单购买。"
 
-#: core/docs/drf/viewsets.py:185
+#: core/docs/drf/viewsets.py:193
 msgid "add product to order"
 msgstr "在订单中添加产品"
 
-#: core/docs/drf/viewsets.py:186
+#: core/docs/drf/viewsets.py:194
 msgid ""
 "adds a product to an order using the provided `product_uuid` and "
 "`attributes`."
 msgstr "使用提供的 `product_uuid` 和 `attributes` 将产品添加到订单中。"
 
-#: core/docs/drf/viewsets.py:191
+#: core/docs/drf/viewsets.py:199
 msgid "remove product from order"
 msgstr "从订单中删除产品"
 
-#: core/docs/drf/viewsets.py:192
+#: core/docs/drf/viewsets.py:200
 msgid ""
 "removes a product from an order using the provided `product_uuid` and "
 "`attributes`."
 msgstr "使用提供的 `product_uuid` 和 `attributes` 从订单中删除产品。"
 
-#: core/docs/drf/viewsets.py:200
+#: core/docs/drf/viewsets.py:208
 msgid "list all wishlists (simple view)"
 msgstr "列出所有属性（简单视图）"
 
-#: core/docs/drf/viewsets.py:201
+#: core/docs/drf/viewsets.py:209
 msgid "for non-staff users, only their own wishlists are returned."
 msgstr "对于非工作人员用户，只返回他们自己的愿望清单。"
 
-#: core/docs/drf/viewsets.py:205
+#: core/docs/drf/viewsets.py:213
 msgid "retrieve a single wishlist (detailed view)"
 msgstr "检索单个属性（详细视图）"
 
-#: core/docs/drf/viewsets.py:209
+#: core/docs/drf/viewsets.py:217
 msgid "create an wishlist"
 msgstr "创建属性"
 
-#: core/docs/drf/viewsets.py:210
+#: core/docs/drf/viewsets.py:218
 msgid "Doesn't work for non-staff users."
 msgstr "不适用于非工作人员用户。"
 
-#: core/docs/drf/viewsets.py:214
+#: core/docs/drf/viewsets.py:222
 msgid "delete an wishlist"
 msgstr "删除属性"
 
-#: core/docs/drf/viewsets.py:218
+#: core/docs/drf/viewsets.py:226
 msgid "rewrite an existing wishlist saving non-editables"
 msgstr "重写现有属性，保存不可编辑属性"
 
-#: core/docs/drf/viewsets.py:222
+#: core/docs/drf/viewsets.py:230
 msgid "rewrite some fields of an existing wishlist saving non-editables"
 msgstr "重写现有属性的某些字段，保存不可编辑的内容"
 
-#: core/docs/drf/viewsets.py:226
+#: core/docs/drf/viewsets.py:234
 msgid "add product to wishlist"
 msgstr "在订单中添加产品"
 
-#: core/docs/drf/viewsets.py:227
+#: core/docs/drf/viewsets.py:235
 msgid "adds a product to an wishlist using the provided `product_uuid`"
 msgstr "使用提供的 `product_uuid` 将产品添加到愿望清单中"
 
-#: core/docs/drf/viewsets.py:232
+#: core/docs/drf/viewsets.py:240
 msgid "remove product from wishlist"
 msgstr "从愿望清单中删除产品"
 
-#: core/docs/drf/viewsets.py:233
+#: core/docs/drf/viewsets.py:241
 msgid "removes a product from an wishlist using the provided `product_uuid`"
 msgstr "使用提供的 `product_uuid` 从愿望清单中删除产品"
 
-#: core/docs/drf/viewsets.py:238
+#: core/docs/drf/viewsets.py:246
 msgid "add many products to wishlist"
 msgstr "将许多产品添加到愿望清单"
 
-#: core/docs/drf/viewsets.py:239
+#: core/docs/drf/viewsets.py:247
 msgid "adds many products to an wishlist using the provided `product_uuids`"
 msgstr "使用提供的 `product_uuids` 将许多产品添加到愿望清单中"
 
-#: core/docs/drf/viewsets.py:244
+#: core/docs/drf/viewsets.py:252
 msgid "remove many products from wishlist"
 msgstr "从订单中删除产品"
 
-#: core/docs/drf/viewsets.py:245
+#: core/docs/drf/viewsets.py:253
 msgid ""
 "removes many products from an wishlist using the provided `product_uuids`"
 msgstr "使用提供的 `product_uuids` 从愿望清单中删除多个产品"
+
+#: core/docs/drf/viewsets.py:261
+msgid "list all products (simple view)"
+msgstr "列出所有产品（简单视图）"
+
+#: core/docs/drf/viewsets.py:268
+msgid "retrieve a single product (detailed view)"
+msgstr "检索单个产品（详细视图）"
+
+#: core/docs/drf/viewsets.py:272
+msgid "Product UUID or slug"
+msgstr "产品 UUID 或 Slug"
+
+#: core/docs/drf/viewsets.py:284
+msgid "create a product"
+msgstr "创建产品"
+
+#: core/docs/drf/viewsets.py:291
+msgid "delete a product"
+msgstr "删除产品"
+
+#: core/docs/drf/viewsets.py:298
+msgid "rewrite an existing product, preserving non-editable fields"
+msgstr "重写现有产品，保留不可编辑字段"
+
+#: core/docs/drf/viewsets.py:305
+msgid ""
+"update some fields of an existing product, preserving non-editable fields"
+msgstr "更新现有产品的某些字段，保留不可编辑的字段"
 
 #: core/elasticsearch/__init__.py:39
 msgid "no search term provided."
@@ -484,7 +513,7 @@ msgid "add a product to the order"
 msgstr "在订单中添加产品"
 
 #: core/graphene/mutations.py:93 core/graphene/mutations.py:119
-#: core/graphene/mutations.py:194
+#: core/graphene/mutations.py:203
 #, python-brace-format
 msgid "order {order_uuid} not found"
 msgstr "未找到订单 {order_uuid}"
@@ -501,44 +530,48 @@ msgstr "从订单中删除所有产品"
 msgid "buy an order"
 msgstr "购买订单"
 
-#: core/graphene/mutations.py:192 core/graphene/mutations.py:346
-#: core/graphene/mutations.py:380 core/viewsets.py:221
+#: core/graphene/mutations.py:183
+msgid "please provide either order_uuid or order_hr_id - mutually exclusive"
+msgstr "请提供 order_uuid 或 order_hr_id（互斥）！"
+
+#: core/graphene/mutations.py:201 core/graphene/mutations.py:355
+#: core/graphene/mutations.py:389 core/viewsets.py:240
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "order.buy() 方法中的类型有误：{type(instance)!s}"
 
-#: core/graphene/mutations.py:230
+#: core/graphene/mutations.py:239
 msgid "add a product to the wishlist"
 msgstr "在订单中添加产品"
 
-#: core/graphene/mutations.py:252 core/graphene/mutations.py:279
-#: core/graphene/mutations.py:306 core/graphene/mutations.py:349
+#: core/graphene/mutations.py:261 core/graphene/mutations.py:288
+#: core/graphene/mutations.py:315 core/graphene/mutations.py:358
 #, python-brace-format
 msgid "wishlist {wishlist_uuid} not found"
 msgstr "未找到愿望清单 {wishlist_uuid}"
 
-#: core/graphene/mutations.py:257
+#: core/graphene/mutations.py:266
 msgid "remove a product from the wishlist"
 msgstr "从订单中删除产品"
 
-#: core/graphene/mutations.py:284
+#: core/graphene/mutations.py:293
 msgid "remove all products from the wishlist"
 msgstr "从订单中删除产品"
 
-#: core/graphene/mutations.py:311
+#: core/graphene/mutations.py:320
 msgid "buy all products from the wishlist"
 msgstr "从订单中删除产品"
 
-#: core/graphene/mutations.py:354
+#: core/graphene/mutations.py:363
 msgid "buy a product"
 msgstr "购买订单"
 
-#: core/graphene/mutations.py:360
+#: core/graphene/mutations.py:369
 msgid ""
 "please send the attributes as the string formatted like "
 "attr1=value1,attr2=value2"
 msgstr "请以字符串形式发送属性，格式如 attr1=value1,attr2=value2"
 
-#: core/graphene/mutations.py:476
+#: core/graphene/mutations.py:485
 msgid "elasticsearch - works like a charm"
 msgstr "ElasticSearch - 工作起来得心应手"
 
@@ -685,7 +718,7 @@ msgstr "促销代码"
 msgid "products on sale"
 msgstr "销售产品"
 
-#: core/graphene/object_types.py:405 core/models.py:1067
+#: core/graphene/object_types.py:405 core/models.py:1068
 msgid "promotions"
 msgstr "促销活动"
 
@@ -701,11 +734,11 @@ msgstr "供应商"
 msgid "product"
 msgstr "产品"
 
-#: core/graphene/object_types.py:421 core/models.py:1137
+#: core/graphene/object_types.py:421 core/models.py:1138
 msgid "wishlisted products"
 msgstr "心愿单上的产品"
 
-#: core/graphene/object_types.py:427 core/models.py:1154
+#: core/graphene/object_types.py:427 core/models.py:1155
 msgid "wishlists"
 msgstr "愿望清单"
 
@@ -765,9 +798,13 @@ msgstr "语言标志（如果有）:)"
 msgid "supported languages"
 msgstr "获取支持的语言列表"
 
-#: core/graphene/object_types.py:470 core/graphene/object_types.py:471
-#: core/graphene/object_types.py:472
+#: core/graphene/object_types.py:479 core/graphene/object_types.py:480
+#: core/graphene/object_types.py:481
 msgid "products search results"
+msgstr "产品搜索结果"
+
+#: core/graphene/object_types.py:482
+msgid "posts search results"
 msgstr "产品搜索结果"
 
 #: core/models.py:62
@@ -847,8 +884,8 @@ msgstr "该值的属性"
 msgid "the specific product associated with this attribute's value"
 msgstr "与该属性值相关的特定产品"
 
-#: core/models.py:142 core/models.py:813 core/models.py:927
-#: core/models.py:1093
+#: core/models.py:142 core/models.py:814 core/models.py:928
+#: core/models.py:1094
 msgid "associated product"
 msgstr "相关产品"
 
@@ -944,7 +981,7 @@ msgstr "可选择将该产品与某个品牌联系起来"
 msgid "tags that help describe or group this product"
 msgstr "有助于描述或归类该产品的标签"
 
-#: core/models.py:280 core/models.py:901
+#: core/models.py:280 core/models.py:902
 msgid "product tags"
 msgstr "产品标签"
 
@@ -964,7 +1001,7 @@ msgstr "为产品提供一个明确的标识名称"
 msgid "product name"
 msgstr "产品名称"
 
-#: core/models.py:297 core/models.py:1055
+#: core/models.py:297 core/models.py:1056
 msgid "add a detailed description of the product"
 msgstr "添加产品的详细描述"
 
@@ -1061,7 +1098,7 @@ msgstr "订单在其生命周期中的当前状态"
 msgid "order status"
 msgstr "订单状态"
 
-#: core/models.py:471 core/models.py:790
+#: core/models.py:471 core/models.py:791
 msgid "json structure of notifications to display to users"
 msgstr "向用户显示的通知的 JSON 结构，在管理用户界面中使用表格视图"
 
@@ -1110,7 +1147,7 @@ msgid "you cannot add more products than available in stock"
 msgstr "添加的产品数量不能超过现有库存"
 
 #: core/models.py:567 core/models.py:584 core/models.py:608
-#: core/models.py:1164 core/models.py:1175
+#: core/models.py:1165 core/models.py:1176
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} 不存在：{product_uuid} 不存在"
@@ -1158,322 +1195,322 @@ msgstr "付款方式无效"
 msgid "you cannot create a momental order without providing a billing address"
 msgstr "如果不提供账单地址，就无法创建妈妈订单"
 
-#: core/models.py:778
+#: core/models.py:779
 msgid "the price paid by the customer for this product at purchase time"
 msgstr "客户购买该产品时支付的价格"
 
-#: core/models.py:779
+#: core/models.py:780
 msgid "purchase price at order time"
 msgstr "订购时的购买价格"
 
-#: core/models.py:784
+#: core/models.py:785
 msgid "internal comments for admins about this ordered product"
 msgstr "管理员对该订购产品的内部评论"
 
-#: core/models.py:785
+#: core/models.py:786
 msgid "internal comments"
 msgstr "内部意见"
 
-#: core/models.py:791
+#: core/models.py:792
 msgid "user notifications"
 msgstr "用户通知"
 
-#: core/models.py:796
+#: core/models.py:797
 msgid "json representation of this item's attributes"
 msgstr "该项属性的 JSON 表示形式"
 
-#: core/models.py:797
+#: core/models.py:798
 msgid "ordered product attributes"
 msgstr "有序的产品属性"
 
-#: core/models.py:802
+#: core/models.py:803
 msgid "reference to the parent order that contains this product"
 msgstr "对包含该产品的父订单的引用"
 
-#: core/models.py:803
+#: core/models.py:804
 msgid "parent order"
 msgstr "父顺序"
 
-#: core/models.py:812
+#: core/models.py:813
 msgid "the specific product associated with this order line"
 msgstr "与该订单项目相关的具体产品"
 
-#: core/models.py:819
+#: core/models.py:820
 msgid "quantity of this specific product in the order"
 msgstr "订单中该特定产品的数量"
 
-#: core/models.py:820
+#: core/models.py:821
 msgid "product quantity"
 msgstr "产品数量"
 
-#: core/models.py:827
+#: core/models.py:828
 msgid "current status of this product in the order"
 msgstr "订单中该产品的当前状态"
 
-#: core/models.py:828
+#: core/models.py:829
 msgid "product line status"
 msgstr "产品系列状态"
 
-#: core/models.py:886
+#: core/models.py:887
 msgid "internal tag identifier for the product tag"
 msgstr "产品标签的内部标签标识符"
 
-#: core/models.py:887
+#: core/models.py:888
 msgid "tag name"
 msgstr "标签名称"
 
-#: core/models.py:891
+#: core/models.py:892
 msgid "user-friendly name for the product tag"
 msgstr "方便用户使用的产品标签名称"
 
-#: core/models.py:892
+#: core/models.py:893
 msgid "tag display name"
 msgstr "标签显示名称"
 
-#: core/models.py:900
+#: core/models.py:901
 msgid "product tag"
 msgstr "产品标签"
 
-#: core/models.py:909
+#: core/models.py:910
 msgid "provide alternative text for the image for accessibility"
 msgstr "为图像提供替代文字，以便于访问"
 
-#: core/models.py:910
+#: core/models.py:911
 msgid "image alt text"
 msgstr "图片 alt 文本"
 
-#: core/models.py:913
+#: core/models.py:914
 msgid "upload the image file for this product"
 msgstr "上传该产品的图片文件"
 
-#: core/models.py:914 core/models.py:939
+#: core/models.py:915 core/models.py:940
 msgid "product image"
 msgstr "产品图片"
 
-#: core/models.py:920
+#: core/models.py:921
 msgid "determines the order in which images are displayed"
 msgstr "确定图像的显示顺序"
 
-#: core/models.py:921
+#: core/models.py:922
 msgid "display priority"
 msgstr "显示优先级"
 
-#: core/models.py:926
+#: core/models.py:927
 msgid "the product that this image represents"
 msgstr "该图片所代表的产品"
 
-#: core/models.py:940
+#: core/models.py:941
 msgid "product images"
 msgstr "产品图片"
 
-#: core/models.py:950
+#: core/models.py:951
 msgid "unique code used by a user to redeem a discount"
 msgstr "用户用于兑换折扣的唯一代码"
 
-#: core/models.py:951
+#: core/models.py:952
 msgid "promo code identifier"
 msgstr "促销代码标识符"
 
-#: core/models.py:958
+#: core/models.py:959
 msgid "fixed discount amount applied if percent is not used"
 msgstr "如果不使用百分比，则使用固定折扣额"
 
-#: core/models.py:959
+#: core/models.py:960
 msgid "fixed discount amount"
 msgstr "固定折扣额"
 
-#: core/models.py:965
+#: core/models.py:966
 msgid "percentage discount applied if fixed amount is not used"
 msgstr "未使用固定金额时适用的折扣百分比"
 
-#: core/models.py:966
+#: core/models.py:967
 msgid "percentage discount"
 msgstr "折扣百分比"
 
-#: core/models.py:971
+#: core/models.py:972
 msgid "timestamp when the promocode expires"
 msgstr "促销代码过期的时间戳"
 
-#: core/models.py:972
+#: core/models.py:973
 msgid "end validity time"
 msgstr "结束有效时间"
 
-#: core/models.py:977
+#: core/models.py:978
 msgid "timestamp from which this promocode is valid"
 msgstr "该促销代码有效的时间戳"
 
-#: core/models.py:978
+#: core/models.py:979
 msgid "start validity time"
 msgstr "开始有效时间"
 
-#: core/models.py:983
+#: core/models.py:984
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr "使用促销代码的时间戳，如果尚未使用，则留空"
 
-#: core/models.py:984
+#: core/models.py:985
 msgid "usage timestamp"
 msgstr "使用时间戳"
 
-#: core/models.py:989
+#: core/models.py:990
 msgid "user assigned to this promocode if applicable"
 msgstr "分配给此促销代码的用户（如适用"
 
-#: core/models.py:990
+#: core/models.py:991
 msgid "assigned user"
 msgstr "指定用户"
 
-#: core/models.py:997
+#: core/models.py:998
 msgid "promo code"
 msgstr "促销代码"
 
-#: core/models.py:998
+#: core/models.py:999
 msgid "promo codes"
 msgstr "促销代码"
 
-#: core/models.py:1005
+#: core/models.py:1006
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
 msgstr "只能定义一种折扣类型（金额或百分比），而不能同时定义两种类型或两者都不定义。"
 
-#: core/models.py:1020
+#: core/models.py:1021
 msgid "promocode already used"
 msgstr "促销代码已被使用"
 
-#: core/models.py:1032
+#: core/models.py:1033
 #, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
 msgstr "促销代码 {self.uuid} 的折扣类型无效"
 
-#: core/models.py:1043
+#: core/models.py:1044
 msgid "percentage discount for the selected products"
 msgstr "所选产品的折扣百分比"
 
-#: core/models.py:1044
+#: core/models.py:1045
 msgid "discount percentage"
 msgstr "折扣百分比"
 
-#: core/models.py:1049
+#: core/models.py:1050
 msgid "provide a unique name for this promotion"
 msgstr "为该促销活动提供一个独特的名称"
 
-#: core/models.py:1050
+#: core/models.py:1051
 msgid "promotion name"
 msgstr "推广名称"
 
-#: core/models.py:1056
+#: core/models.py:1057
 msgid "promotion description"
 msgstr "促销说明"
 
-#: core/models.py:1061
+#: core/models.py:1062
 msgid "select which products are included in this promotion"
 msgstr "选择促销活动包括哪些产品"
 
-#: core/models.py:1062
+#: core/models.py:1063
 msgid "included products"
 msgstr "包括产品"
 
-#: core/models.py:1066
+#: core/models.py:1067
 msgid "promotion"
 msgstr "促销活动"
 
-#: core/models.py:1081
+#: core/models.py:1082
 msgid "the vendor supplying this product stock"
 msgstr "提供该产品库存的供应商"
 
-#: core/models.py:1082
+#: core/models.py:1083
 msgid "associated vendor"
 msgstr "相关供应商"
 
-#: core/models.py:1086
+#: core/models.py:1087
 msgid "final price to the customer after markups"
 msgstr "加价后给客户的最终价格"
 
-#: core/models.py:1087
+#: core/models.py:1088
 msgid "selling price"
 msgstr "销售价格"
 
-#: core/models.py:1092
+#: core/models.py:1093
 msgid "the product associated with this stock entry"
 msgstr "与该库存条目相关的产品"
 
-#: core/models.py:1100
+#: core/models.py:1101
 msgid "the price paid to the vendor for this product"
 msgstr "为该产品支付给供应商的价格"
 
-#: core/models.py:1101
+#: core/models.py:1102
 msgid "vendor purchase price"
 msgstr "供应商购买价格"
 
-#: core/models.py:1105
+#: core/models.py:1106
 msgid "available quantity of the product in stock"
 msgstr "产品的可用库存量"
 
-#: core/models.py:1106
+#: core/models.py:1107
 msgid "quantity in stock"
 msgstr "库存数量"
 
-#: core/models.py:1110
+#: core/models.py:1111
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "供应商指定的 SKU，用于识别产品"
 
-#: core/models.py:1111
+#: core/models.py:1112
 msgid "vendor sku"
 msgstr "供应商 SKU"
 
-#: core/models.py:1117
+#: core/models.py:1118
 msgid "digital file associated with this stock if applicable"
 msgstr "与该库存相关的数字文件（如适用"
 
-#: core/models.py:1118
+#: core/models.py:1119
 msgid "digital file"
 msgstr "数字文件"
 
-#: core/models.py:1127
+#: core/models.py:1128
 msgid "stock entries"
 msgstr "库存条目"
 
-#: core/models.py:1136
+#: core/models.py:1137
 msgid "products that the user has marked as wanted"
 msgstr "用户标记为想要的产品"
 
-#: core/models.py:1144
+#: core/models.py:1145
 msgid "user who owns this wishlist"
 msgstr "拥有此愿望清单的用户"
 
-#: core/models.py:1145
+#: core/models.py:1146
 msgid "wishlist owner"
 msgstr "心愿单所有者"
 
-#: core/models.py:1153
+#: core/models.py:1154
 msgid "wishlist"
 msgstr "愿望清单"
 
-#: core/models.py:1193
+#: core/models.py:1194
 msgid "download"
 msgstr "下载"
 
-#: core/models.py:1194
+#: core/models.py:1195
 msgid "downloads"
 msgstr "下载"
 
-#: core/models.py:1202
+#: core/models.py:1203
 msgid "you can not download a digital asset for a non-finished order"
 msgstr "您无法下载未完成订单的数字资产"
 
-#: core/models.py:1214
+#: core/models.py:1215
 msgid "documentary"
 msgstr "纪录片"
 
-#: core/models.py:1215
+#: core/models.py:1216
 msgid "documentaries"
 msgstr "纪录片"
 
-#: core/models.py:1225
+#: core/models.py:1226
 msgid "unresolved"
 msgstr "未解决"
 
-#: core/signals.py:49
+#: core/signals.py:59
 msgid "error during promocode creation: {e!s}"
 msgstr "创建促销代码时出错：{e!s}"
 
@@ -1654,17 +1691,17 @@ msgstr "{model}必须是模型"
 msgid "{data} must be list object"
 msgstr "{data} 必须是列表对象"
 
-#: core/utils/emailing.py:19
+#: core/utils/emailing.py:21
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | contact us initiated"
 msgstr "{config.PROJECT_NAME}| 联系我们"
 
-#: core/utils/emailing.py:53
+#: core/utils/emailing.py:57
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | order confirmation"
 msgstr "{config.PROJECT_NAME} | 订单确认| 订单确认"
 
-#: core/utils/emailing.py:83
+#: core/utils/emailing.py:89
 #, python-brace-format
 msgid "{config.PROJECT_NAME} | order delivered"
 msgstr "{config.PROJECT_NAME}（项目名称| 已交付订单"
@@ -1682,10 +1719,10 @@ msgstr "图片尺寸不应超过 w{max_width} x h{max_height} 像素"
 msgid "invalid phone number format"
 msgstr "电话号码格式无效"
 
-#: core/views.py:230
+#: core/views.py:231
 msgid "you can only download the digital asset once"
 msgstr "您只能下载一次数字资产"
 
-#: core/views.py:263
+#: core/views.py:264
 msgid "favicon not found"
 msgstr "未找到 favicon"
