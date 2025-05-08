@@ -19,6 +19,7 @@ from core.docs.drf.viewsets import (
     ATTRIBUTE_VALUE_SCHEMA,
     CATEGORY_SCHEMA,
     ORDER_SCHEMA,
+    PRODUCT_SCHEMA,
     WISHLIST_SCHEMA,
 )
 from core.filters import BrandFilter, CategoryFilter, OrderFilter, ProductFilter
@@ -151,6 +152,7 @@ class BrandViewSet(EvibesViewSet):
     }
 
 
+@extend_schema_view(**PRODUCT_SCHEMA)
 class ProductViewSet(EvibesViewSet):
     queryset = Product.objects.prefetch_related("tags", "attributes", "stocks", "images").all()
     filter_backends = [DjangoFilterBackend]
