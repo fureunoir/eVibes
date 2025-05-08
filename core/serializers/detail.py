@@ -149,6 +149,32 @@ class BrandDetailSerializer(ModelSerializer):
         return None
 
 
+class BrandProductDetailSerializer(ModelSerializer):
+    small_logo = SerializerMethodField()
+    big_logo = SerializerMethodField()
+
+    class Meta:
+        model = Brand
+        fields = [
+            "uuid",
+            "name",
+            "created",
+            "modified",
+            "big_logo",
+            "small_logo",
+        ]
+
+    def get_small_logo(self, obj: Brand) -> Optional[str]:
+        with suppress(ValueError):
+            return obj.small_logo.url
+        return None
+
+    def get_big_logo(self, obj: Brand) -> Optional[str]:
+        with suppress(ValueError):
+            return obj.big_logo.url
+        return None
+
+
 class ProductTagDetailSerializer(ModelSerializer):
     class Meta:
         model = ProductTag
@@ -273,7 +299,7 @@ class PromoCodeDetailSerializer(ModelSerializer):
 
 
 class ProductDetailSerializer(ModelSerializer):
-    brand = BrandDetailSerializer()
+    brand = BrandProductDetailSerializer()
     category = CategorySimpleSerializer()
     tags = ProductTagDetailSerializer(
         many=True,
