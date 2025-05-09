@@ -168,11 +168,15 @@ def process_promotions() -> tuple[bool, str]:
 
     for day_offset in range(4):
         checked_date = date.today() + timedelta(days=day_offset)
-        response = requests.get(
-            f"https://holidays.abstractapi.com/v1/?api_key={config.ABSTRACT_API_KEY}&country=GB&"
-            f"month={checked_date.month}&day={checked_date.day}"
-        )
-        response.raise_for_status()
+        try:
+            response = requests.get(
+                f"https://holidays.abstractapi.com/v1/?api_key={config.ABSTRACT_API_KEY}&country=GB&"
+                f"month={checked_date.month}&day={checked_date.day}"
+            )
+            response.raise_for_status()
+        except Exception as e:
+            logger.warning(f"Couldn't fetch holiday data for {checked_date}: {e!s}")
+            return False, f"Couldn't fetch holiday data for {checked_date}: {e!s}"
         holidays = response.json()
         if holidays:
             holiday_data = holidays[0]
