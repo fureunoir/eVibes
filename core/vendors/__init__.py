@@ -106,6 +106,8 @@ class AbstractVendor:
                 pass
             except IndexError:
                 pass
+            except Category.MultipleObjectsReturned:
+                pass
         categories = Category.objects.filter(name=category_name)
         if not categories.exists():
             return Category.objects.create(name=category_name, is_active=False)
@@ -126,6 +128,8 @@ class AbstractVendor:
             except KeyError:
                 pass
             except IndexError:
+                pass
+            except Brand.MultipleObjectsReturned:
                 pass
         brands = Brand.objects.filter(name=brand_name)
         if not brands.exists():
