@@ -114,7 +114,7 @@ class AbstractVendor:
         elif categories.count() > 1:
             categories = categories.filter(is_active=True)
         chosen = categories.first()
-        categories.exlude(uuid=chosen.uuid)
+        categories.exclude(uuid=chosen.uuid)
         categories.delete()
         return chosen
 
@@ -137,7 +137,7 @@ class AbstractVendor:
         elif brands.count() > 1:
             brands = brands.filter(is_active=True)
         chosen = brands.first()
-        brands.exlude(uuid=chosen.uuid)
+        brands.exclude(uuid=chosen.uuid)
         brands.delete()
         return chosen
 
