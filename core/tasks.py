@@ -43,7 +43,7 @@ def update_products_task():
         for vendor_class in vendors_classes:
             vendor = vendor_class()
             try:
-                vendor.update_stock()
+                vendor.update_stock.delay()
             except Exception as e:
                 logger.warning(f"Skipping {vendor_class} due to error: {e!s}")
 

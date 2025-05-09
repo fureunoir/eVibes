@@ -2,6 +2,8 @@ import json
 from contextlib import suppress
 from math import ceil
 
+from celery import shared_task
+
 from core.elasticsearch import process_query
 from core.models import AttributeValue, Brand, Category, Product, Stock, Vendor
 from payments.errors import RatesError
@@ -204,6 +206,7 @@ class AbstractVendor:
         self.get_stocks_queryset().delete()
         self.get_attribute_values_queryset().delete()
 
+    @shared_task
     def update_stock(self):
         pass
 
