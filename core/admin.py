@@ -100,7 +100,7 @@ class CategoryChildrenInline(admin.TabularInline):
 class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin):
     mptt_indent_field = "name"
     list_display = ("indented_title", "parent", "is_active", "modified")
-    list_filter = ("is_active", "parent", "level")
+    list_filter = ("is_active", "level", "created", "modified")
     list_display_links = ("indented_title",)
     search_fields = (
         "uuid",
