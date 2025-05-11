@@ -62,7 +62,7 @@ def create_promocode_on_user_referring(instance, created, **kwargs):
 @receiver(post_save, sender=Order)
 def process_order_changes(instance, created, **kwargs):
     if not created:
-        if instance.status != "PENDING":
+        if instance.status != "PENDING" and instance.user:
             pending_orders = Order.objects.filter(user=instance.user, status="PENDING")
 
             if not pending_orders.exists():
@@ -80,8 +80,6 @@ def process_order_changes(instance, created, **kwargs):
         if instance.status == "CREATED":
             if not instance.is_whole_digital:
                 send_order_created_email.delay(instance.uuid)
-            instance.status = "DELIVERING"
-            instance.save()
             for order_product in instance.order_products.filter(status="DELIVERING"):
                 if not order_product.product.is_digital:
                     continue
