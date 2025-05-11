@@ -80,9 +80,11 @@ def process_order_changes(instance, created, **kwargs):
         if instance.status == "CREATED":
             if not instance.is_whole_digital:
                 send_order_created_email.delay(instance.uuid)
+
             for order_product in instance.order_products.filter(status="DELIVERING"):
                 if not order_product.product.is_digital:
                     continue
+
                 try:
                     vendor_name = (
                         order_product.product.stocks.filter(price=order_product.buy_price).first().vendor.name.lower()
@@ -95,7 +97,8 @@ def process_order_changes(instance, created, **kwargs):
                 except Exception as e:
                     order_product.add_error(f"Failed to buy {order_product.uuid}. Reason: {e}...")
 
-            instance.finalize()
+            else:
+                instance.finalize()
 
             if instance.order_products.filter(status="FAILED").count() == instance.order_products.count():
                 instance.status = "FAILED"
