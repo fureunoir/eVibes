@@ -2,8 +2,10 @@ import json
 from contextlib import suppress
 from math import ceil
 
+from django.db import IntegrityError
+
 from core.elasticsearch import process_query
-from core.models import AttributeValue, Brand, Category, Product, Stock, Vendor
+from core.models import Attribute, AttributeGroup, AttributeValue, Brand, Category, Product, Stock, Vendor
 from payments.errors import RatesError
 from payments.utils import get_rates
 
@@ -27,6 +29,7 @@ class AbstractVendor:
     def __init__(self, vendor_name=None, currency="USD"):
         self.vendor_name = vendor_name
         self.currency = currency
+        self.blocked_attributes = []
 
     @staticmethod
     def chunk_data(data, num_chunks=20):
@@ -208,7 +211,53 @@ class AbstractVendor:
         self.get_stocks_queryset().delete()
         self.get_attribute_values_queryset().delete()
 
+    def process_attribute(self, key: str, value, product: Product, attr_group: AttributeGroup):
+
+        if not value:
+            return
+
+        if not attr_group:
+            return
+
+        if key in self.blocked_attributes:
+            return
+
+        value, attr_value_type = self.auto_convert_value(value)
+
+        is_created = False
+
+        try:
+            attribute, is_created = Attribute.objects.get_or_create(
+                name=key,
+                group=attr_group,
+                value_type=attr_value_type,
+                defaults={"is_active": True},
+            )
+        except Attribute.MultipleObjectsReturned:
+            attribute = Attribute.objects.filter(name=key, group=attr_group).order_by("uuid").first()
+            attribute.is_active = True
+            attribute.value_type = attr_value_type
+            attribute.save()
+        except IntegrityError:
+            return
+
+        attribute.categories.add(product.category)
+        attribute.save()
+
+        if not is_created:
+            return
+
+        AttributeValue.objects.get_or_create(
+            attribute=attribute,
+            value=value,
+            product=product,
+            defaults={"is_active": True},
+        )
+
     def update_stock(self):
+        pass
+
+    def update_order_products_statuses(self):
         pass
 
 
