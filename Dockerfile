@@ -37,6 +37,6 @@ RUN set -eux; \
 COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 
-RUN poetry install -E graph -E worker -E AI -E sentry
+RUN poetry install -E graph -E worker -E AI
 
 COPY . .
