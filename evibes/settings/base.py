@@ -316,7 +316,7 @@ if getenv("SENTRY_DSN"):
             level=logging.INFO,
             event_level=logging.ERROR
         ), CeleryIntegration(), RedisIntegration()],
-        environment="dev" if DEBUG else "prod",
+        environment="development" if DEBUG else "production",
         debug=DEBUG,
         release=f"evibes@{EVIBES_VERSION}",
         ignore_errors=ignore_errors,
