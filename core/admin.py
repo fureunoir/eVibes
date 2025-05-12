@@ -161,14 +161,48 @@ class StockInline(TabularInline):
     verbose_name_plural = _("stocks")
 
 
+class TagNameListFilter(admin.SimpleListFilter):
+    title = _("tag name")
+    parameter_name = "tags_tag_name"
+
+    def lookups(self, request, model_admin):
+        qs = model_admin.get_queryset(request)
+        tags = qs.values_list("tags__tag_name", flat=True).distinct()
+        return [(tag, tag) for tag in tags if tag]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            values = [v.strip() for v in self.value().split(",") if v.strip()]
+            if values:
+                return queryset.filter(tags__tag_name__in=values)
+        return queryset
+
+
+class VendorNameListFilter(admin.SimpleListFilter):
+    title = _("vendor")
+    parameter_name = "stocks_vendor_name"
+
+    def lookups(self, request, model_admin):
+        qs = model_admin.get_queryset(request)
+        tags = qs.values_list("stocks__vendor__name", flat=True).distinct()
+        return [(tag, tag) for tag in tags if tag]
+
+    def queryset(self, request, queryset):
+        if self.value():
+            values = [v.strip() for v in self.value().split(",") if v.strip()]
+            if values:
+                return queryset.filter(vendor__name__in=values)
+        return queryset
+
+
 @admin.register(Product)
 class ProductAdmin(BasicModelAdmin):
     list_display = ("name", "partnumber", "is_active", "category", "brand", "price", "rating", "modified")
 
     list_filter = (
-        "is_active__in",
-        "tags__tag_name__in",
-        "stocks__vendor__name__in",
+        "is_active",
+        TagNameListFilter,
+        VendorNameListFilter,
         "created",
         "modified",
     )
