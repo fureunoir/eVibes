@@ -168,6 +168,7 @@ class ProductAdmin(BasicModelAdmin):
     list_filter = (
         "is_active",
         "tags__tag_name",
+        "stocks__vendor__name",
         "created",
         "modified",
     )
