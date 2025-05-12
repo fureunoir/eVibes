@@ -166,9 +166,9 @@ class ProductAdmin(BasicModelAdmin):
     list_display = ("name", "partnumber", "is_active", "category", "brand", "price", "rating", "modified")
 
     list_filter = (
-        "is_active",
-        "tags__tag_name",
-        "stocks__vendor__name",
+        "is_active__in",
+        "tags__tag_name__in",
+        "stocks__vendor__name__in",
         "created",
         "modified",
     )
