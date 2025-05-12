@@ -3,6 +3,7 @@ from django.http import Http404
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django_elasticsearch_dsl import fields
+from django_elasticsearch_dsl.registries import registry
 from elasticsearch import NotFoundError
 from elasticsearch.dsl import Q, Search
 
@@ -184,3 +185,9 @@ def _add_multilang_fields(cls):
             ),
         )
         setattr(cls, f"prepare_{desc_field}", make_prepare(desc_field))
+
+
+def populate_index():
+    for doc in registry.get_documents(set(registry.get_models())):
+        qs = doc().get_indexing_queryset()
+        doc().update(qs, parallel=True, refresh=True)

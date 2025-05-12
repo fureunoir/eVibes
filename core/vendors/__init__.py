@@ -114,8 +114,10 @@ class AbstractVendor:
         categories = Category.objects.filter(name=category_name)
         if not categories.exists():
             return Category.objects.create(name=category_name, is_active=False)
-        elif categories.count() > 1:
+        elif categories.filter(is_active=True).count() > 1:
             categories = categories.filter(is_active=True)
+        elif categories.filter(is_active=False).count() > 1:
+            categories = categories.filter(is_active=False)
         chosen = categories.first()
         categories.exclude(uuid=chosen.uuid)
         categories.delete()
@@ -137,8 +139,10 @@ class AbstractVendor:
         brands = Brand.objects.filter(name=brand_name)
         if not brands.exists():
             return Brand.objects.create(name=brand_name, is_active=False)
-        elif brands.count() > 1:
+        elif brands.filter(is_active=True).count() > 1:
             brands = brands.filter(is_active=True)
+        elif brands.filter(is_active=False).count() > 1:
+            brands = brands.filter(is_active=False)
         chosen = brands.first()
         brands.exclude(uuid=chosen.uuid)
         brands.delete()

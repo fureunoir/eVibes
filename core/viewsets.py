@@ -127,7 +127,7 @@ class AttributeValueViewSet(EvibesViewSet):
 
 @extend_schema_view(**CATEGORY_SCHEMA)
 class CategoryViewSet(EvibesViewSet):
-    queryset = Category.objects.all().prefetch_related()
+    queryset = Category.objects.all().prefetch_related("parent", "children")
     filter_backends = [DjangoFilterBackend]
     filterset_class = CategoryFilter
     serializer_class = CategoryDetailSerializer

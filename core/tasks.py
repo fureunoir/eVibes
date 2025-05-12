@@ -11,6 +11,7 @@ from celery.utils.log import get_task_logger
 from constance import config
 from django.core.cache import cache
 
+from core.elasticsearch import populate_index
 from core.models import Product, Promotion
 from core.utils.caching import set_default_cache
 from core.vendors import delete_stale
@@ -38,6 +39,7 @@ def update_products_task():
 
     if not update_products_task_running:
         cache.set("update_products_task_running", True, 86400)
+        populate_index()
         vendors_classes = []
 
         for vendor_class in vendors_classes:
@@ -48,6 +50,7 @@ def update_products_task():
                 logger.warning(f"Skipping {vendor_class} due to error: {e!s}")
 
         delete_stale()
+        populate_index()
 
         cache.delete("update_products_task_running")
 
