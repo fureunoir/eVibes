@@ -298,12 +298,15 @@ if getenv("SENTRY_DSN"):
         "flower.views.error.NotFoundErrorHandler",
         "django.http.response.Http404",
         "billiard.exceptions.SoftTimeLimitExceeded",
-        "billiard.exceptions.WorkerLostError",
         "core.models.Product.DoesNotExist",
         "core.models.Category.DoesNotExist",
         "core.models.Brand.DoesNotExist",
         "blog.models.Post.DoesNotExist",
     ]
+
+    if DEBUG:
+        ignore_errors.extend(["billiard.exceptions.WorkerLostError",
+                              "billiard.exceptions.TimeLimitExceeded"])
 
     sentry_sdk.init(
         dsn=getenv("SENTRY_DSN"),
