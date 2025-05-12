@@ -8,6 +8,7 @@ from django.core.exceptions import DisallowedHost
 from django.http import HttpResponseForbidden
 from django.middleware.common import CommonMiddleware
 from django.shortcuts import redirect
+from django.utils import translation
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.exceptions import InvalidToken
 from sentry_sdk import capture_exception
@@ -28,6 +29,7 @@ class CustomCommonMiddleware(CommonMiddleware):
 class CustomLocaleCommonMiddleware(CommonMiddleware):
     def process_request(self, request):
         request.locale = get_language_from_header(request.headers.get("Accept-Language", ""))
+        translation.activate(request.locale)
 
 
 class GrapheneJWTAuthorizationMiddleware:
@@ -60,6 +62,8 @@ class GrapheneLocaleMiddleware:
         accept_language = request.headers.get("Accept-Language", "")
         selected_language = get_language_from_header(accept_language)
         request.locale = selected_language
+
+        translation.activate(request.locale)
 
         return next(root, info, **args)
 
