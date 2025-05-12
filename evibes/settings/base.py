@@ -1,5 +1,8 @@
+import logging
 from os import getenv
 from pathlib import Path
+
+EVIBES_VERSION = "2.6.0"
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -286,14 +289,22 @@ DAISY_SETTINGS = {
 
 if getenv("SENTRY_DSN"):
     import sentry_sdk
+    from sentry_sdk.integrations.celery import CeleryIntegration
     from sentry_sdk.integrations.django import DjangoIntegration
+    from sentry_sdk.integrations.logging import LoggingIntegration
+    from sentry_sdk.integrations.redis import RedisIntegration
 
     sentry_sdk.init(
         dsn=getenv("SENTRY_DSN"),
-        traces_sample_rate=1.0,
-        profiles_sample_rate=1.0,
-        integrations=[DjangoIntegration()],
-        debug=False,
+        traces_sample_rate=1.0 if DEBUG else 0.2,
+        profiles_sample_rate=1.0 if DEBUG else 0.1,
+        integrations=[DjangoIntegration(), LoggingIntegration(
+            level=logging.INFO,
+            event_level=logging.ERROR
+        ), CeleryIntegration(), RedisIntegration()],
+        environment="dev" if DEBUG else "prod",
+        debug=DEBUG,
+        release=f"evibes@{EVIBES_VERSION}",
         ignore_errors=[
             "flower.views.error.NotFoundErrorHandler.get",
             "flower.views.error.NotFoundErrorHandler.post",

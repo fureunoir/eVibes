@@ -62,8 +62,8 @@ The {CONSTANCE_CONFIG.get("PROJECT_NAME")[0]} B2B API is designed to provide sea
 - Apply an `Accept-Language` header to use non-default language. A list of all languages is available at `/app/languages/`.
 
 ## Version
-Current API version: 2.6.0
-"""  # noqa: E501
+Current API version: {EVIBES_VERSION}
+"""  # noqa: E501, F405
 
 SPECTACULAR_PLATFORM_DESCRIPTION = f"""
 Welcome to the {CONSTANCE_CONFIG.get("PROJECT_NAME")[0]} Platform API documentation.
@@ -88,13 +88,13 @@ The {CONSTANCE_CONFIG.get("PROJECT_NAME")[0]} API is the central hub for managin
 - Apply an `Accept-Language` header to use non-default language. A list of all languages is available at `/app/languages/`.
 
 ## Version
-Current API version: 2.6.0
+Current API version: {EVIBES_VERSION}
 """  # noqa: E501, F405
 
 SPECTACULAR_PLATFORM_SETTINGS = {
     "TITLE": f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]} API",
     "DESCRIPTION": SPECTACULAR_PLATFORM_DESCRIPTION,
-    "VERSION": "2.6.0",
+    "VERSION": EVIBES_VERSION,
     "TOS": "https://wiseless.xyz/evibes/terms-of-service",
     "SWAGGER_UI_DIST": "SIDECAR",
     "CAMELIZE_NAMES": True,
@@ -145,7 +145,7 @@ SPECTACULAR_PLATFORM_SETTINGS = {
 SPECTACULAR_B2B_SETTINGS = {
     "TITLE": f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]} API",
     "DESCRIPTION": SPECTACULAR_B2B_DESCRIPTION,
-    "VERSION": "2.6.0",
+    "VERSION": EVIBES_VERSION,
     "TOS": "https://wiseless.xyz/evibes/terms-of-service",
     "SWAGGER_UI_DIST": "SIDECAR",
     "CAMELIZE_NAMES": True,
