@@ -23,6 +23,7 @@ Dockerfile
 docker-compose.yml
 secrets/
 .env
+db_backups/
 services_data/
 static/
 media/
