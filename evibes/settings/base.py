@@ -294,6 +294,17 @@ if getenv("SENTRY_DSN"):
     from sentry_sdk.integrations.logging import LoggingIntegration
     from sentry_sdk.integrations.redis import RedisIntegration
 
+    ignore_errors = [
+        "flower.views.error.NotFoundErrorHandler",
+        "django.http.response.Http404",
+        "billiard.exceptions.SoftTimeLimitExceeded",
+        "billiard.exceptions.WorkerLostError",
+        "core.models.Product.DoesNotExist",
+        "core.models.Category.DoesNotExist",
+        "core.models.Brand.DoesNotExist",
+        "blog.models.Post.DoesNotExist",
+    ]
+
     sentry_sdk.init(
         dsn=getenv("SENTRY_DSN"),
         traces_sample_rate=1.0 if DEBUG else 0.2,
@@ -305,15 +316,7 @@ if getenv("SENTRY_DSN"):
         environment="dev" if DEBUG else "prod",
         debug=DEBUG,
         release=f"evibes@{EVIBES_VERSION}",
-        ignore_errors=[
-            "flower.views.error.NotFoundErrorHandler",
-            "django.http.response.Http404",
-            "billiard.exceptions.SoftTimeLimitExceeded",
-            "core.models.Product.DoesNotExist",
-            "core.models.Category.DoesNotExist",
-            "core.models.Brand.DoesNotExist",
-            "blog.models.Post.DoesNotExist",
-        ],
+        ignore_errors=ignore_errors,
     )
 
 SESSION_COOKIE_HTTPONLY = True
