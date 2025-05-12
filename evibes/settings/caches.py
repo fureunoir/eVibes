@@ -1,3 +1,5 @@
+import sys
+
 from evibes.settings.base import REDIS_PASSWORD, getenv
 
 CACHES = {
@@ -18,12 +20,17 @@ CACHES = {
     }
 }
 
-CACHEOPS_REDIS = f"redis://:{REDIS_PASSWORD}@redis:6379/0"
+if any(arg == "celery" for arg in sys.argv):
+    CACHEOPS_ENABLED = False
+else:
+    CACHEOPS_ENABLED = True
 
-CACHEOPS = {
-    "vibes_auth.user": {"ops": "get", "timeout": 60*15},
-    "vibes_auth.*": {"ops": {"fetch", "get"}, "timeout": 60*60},
-    "auth.permission": {"ops": "all", "timeout": 60*60},
-    "core.*": {"ops": "all", "timeout": 60*60},
-    "geo.*": {"ops": "all", "timeout": 60*60},
-}
+    CACHEOPS_REDIS = f"redis://:{REDIS_PASSWORD}@redis:6379/0"
+
+    CACHEOPS = {
+        "vibes_auth.user": {"ops": "get", "timeout": 60 * 15},
+        "vibes_auth.*": {"ops": {"fetch", "get"}, "timeout": 60 * 60},
+        "auth.permission": {"ops": "all", "timeout": 60 * 60},
+        "core.*": {"ops": "all", "timeout": 60 * 60},
+        "geo.*": {"ops": "all", "timeout": 60 * 60},
+    }

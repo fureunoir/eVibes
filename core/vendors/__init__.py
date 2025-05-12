@@ -99,7 +99,20 @@ class AbstractVendor:
         return value, "string"
 
     @staticmethod
-    def auto_resolve_category(category_name: str):
+    def auto_resolver_helper(model: type[Brand] | type[Category], resolving_name: str):
+        queryset = model.objects.filter(name=resolving_name)
+        if not queryset.exists():
+            return model.objects.create(name=resolving_name, is_active=False)
+        elif queryset.filter(is_active=True).count() > 1:
+            queryset = queryset.filter(is_active=True)
+        elif queryset.filter(is_active=False).count() > 1:
+            queryset = queryset.filter(is_active=False)
+        chosen = queryset.first()
+        queryset = queryset.exclude(uuid=chosen.uuid)
+        queryset.delete()
+        return chosen
+
+    def auto_resolve_category(self, category_name: str):
         if category_name:
             try:
                 uuid = process_query(category_name)["categories"][0]["uuid"]
@@ -111,20 +124,12 @@ class AbstractVendor:
                 pass
             except Category.MultipleObjectsReturned:
                 pass
-        categories = Category.objects.filter(name=category_name)
-        if not categories.exists():
-            return Category.objects.create(name=category_name, is_active=False)
-        elif categories.filter(is_active=True).count() > 1:
-            categories = categories.filter(is_active=True)
-        elif categories.filter(is_active=False).count() > 1:
-            categories = categories.filter(is_active=False)
-        chosen = categories.first()
-        categories.exclude(uuid=chosen.uuid)
-        categories.delete()
-        return chosen
+            except Category.DoesNotExist:
+                pass
 
-    @staticmethod
-    def auto_resolve_brand(brand_name: str):
+        return self.auto_resolver_helper(Category, category_name)
+
+    def auto_resolve_brand(self, brand_name: str):
         if brand_name:
             try:
                 uuid = process_query(brand_name)["brands"][0]["uuid"]
@@ -136,17 +141,10 @@ class AbstractVendor:
                 pass
             except Brand.MultipleObjectsReturned:
                 pass
-        brands = Brand.objects.filter(name=brand_name)
-        if not brands.exists():
-            return Brand.objects.create(name=brand_name, is_active=False)
-        elif brands.filter(is_active=True).count() > 1:
-            brands = brands.filter(is_active=True)
-        elif brands.filter(is_active=False).count() > 1:
-            brands = brands.filter(is_active=False)
-        chosen = brands.first()
-        brands.exclude(uuid=chosen.uuid)
-        brands.delete()
-        return chosen
+            except Brand.DoesNotExist:
+                pass
+
+        return self.auto_resolver_helper(Brand, brand_name)
 
     def resolve_price(self, original_price: int | float, vendor: Vendor = None, category: Category = None) -> float:
         if not vendor:
