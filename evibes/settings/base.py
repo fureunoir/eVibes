@@ -306,8 +306,7 @@ if getenv("SENTRY_DSN"):
         debug=DEBUG,
         release=f"evibes@{EVIBES_VERSION}",
         ignore_errors=[
-            "flower.views.error.NotFoundErrorHandler.get",
-            "flower.views.error.NotFoundErrorHandler.post",
+            "flower.views.error.NotFoundErrorHandler",
             "django.http.response.Http404",
             "billiard.exceptions.SoftTimeLimitExceeded",
             "core.models.Product.DoesNotExist",
