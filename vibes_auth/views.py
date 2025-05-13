@@ -4,161 +4,48 @@ from django.utils.decorators import method_decorator
 from django.utils.translation import gettext_lazy as _
 from django_ratelimit.decorators import ratelimit
 from drf_spectacular.utils import (
-    OpenApiExample,
-    OpenApiResponse,
-    extend_schema,
-    inline_serializer,
+    extend_schema_view,
 )
-from rest_framework import serializers, status
+from rest_framework import status
 from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.views import TokenViewBase
 
+from vibes_auth.docs.drf.views import TOKEN_OBTAIN_SCHEMA, TOKEN_REFRESH_SCHEMA, TOKEN_VERIFY_SCHEMA
 from vibes_auth.serializers import (
     TokenObtainPairSerializer,
     TokenRefreshSerializer,
     TokenVerifySerializer,
-    UserSerializer,
 )
 
 logger = logging.getLogger(__name__)
 
 
+@extend_schema_view(**TOKEN_OBTAIN_SCHEMA)
 class TokenObtainPairView(TokenViewBase):
     serializer_class = TokenObtainPairSerializer
     _serializer_class = TokenObtainPairSerializer
 
-    @extend_schema(
-        description="Obtain a token pair (refresh and access) for authentication.",
-        responses={
-            200: inline_serializer(
-                name="TokenObtain",
-                fields={
-                    "refresh": serializers.CharField(),
-                    "access": serializers.CharField(),
-                    "user": UserSerializer(),
-                },
-            ),
-            400: OpenApiResponse(
-                description="Bad Request",
-                examples=[
-                    OpenApiExample(
-                        name="InvalidCredentials",
-                        description="Example of an invalid credentials error",
-                        value={
-                            "code": 1001,
-                            "message": "Invalid credentials were provided.",
-                        },
-                        response_only=True,
-                    )
-                ],
-            ),
-            401: OpenApiResponse(
-                description="Unauthorized",
-                examples=[
-                    OpenApiExample(
-                        name="TokenExpired",
-                        description="Example of an expired token error",
-                        value={"code": 1002, "message": "Token is invalid or expired."},
-                        response_only=True,
-                    )
-                ],
-            ),
-        },
-    )
     @method_decorator(ratelimit(key="ip", rate="5/h"))
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
 
 
+@extend_schema_view(**TOKEN_REFRESH_SCHEMA)
 class TokenRefreshView(TokenViewBase):
     serializer_class = TokenRefreshSerializer
     _serializer_class = TokenRefreshSerializer
 
-    @extend_schema(
-        description="Refresh a token pair (refresh and access).",
-        responses={
-            200: inline_serializer(
-                name="TokenRefreshResponse",
-                fields={
-                    "refresh": serializers.CharField(),
-                    "access": serializers.CharField(),
-                    "user": UserSerializer(),
-                },
-            ),
-            400: OpenApiResponse(
-                description="Bad Request",
-                examples=[
-                    OpenApiExample(
-                        name="InvalidCredentials",
-                        description="Example of an invalid credentials error",
-                        value={
-                            "code": 1001,
-                            "message": "Invalid credentials were provided.",
-                        },
-                        response_only=True,
-                    )
-                ],
-            ),
-            401: OpenApiResponse(
-                description="Unauthorized",
-                examples=[
-                    OpenApiExample(
-                        name="TokenExpired",
-                        description="Example of an expired token error",
-                        value={"code": 1002, "message": "Token is invalid or expired."},
-                        response_only=True,
-                    )
-                ],
-            ),
-        },
-    )
     @method_decorator(ratelimit(key="ip", rate="5/h"))
     def post(self, request, *args, **kwargs):
         return super().post(request, *args, **kwargs)
 
 
+@extend_schema_view(**TOKEN_VERIFY_SCHEMA)
 class TokenVerifyView(TokenViewBase):
     serializer_class = TokenVerifySerializer
     _serializer_class = TokenVerifySerializer
 
-    @extend_schema(
-        description="Verify a token (refresh or access).",
-        responses={
-            200: inline_serializer(
-                name="TokenVerifyResponse",
-                fields={
-                    "token": serializers.CharField(choices=["valid", "no valid"]),
-                    "user": UserSerializer(),
-                },
-            ),
-            400: OpenApiResponse(
-                description="Bad Request",
-                examples=[
-                    OpenApiExample(
-                        name="InvalidCredentials",
-                        description="Example of an invalid credentials error",
-                        value={
-                            "code": 1001,
-                            "message": "Invalid credentials were provided.",
-                        },
-                        response_only=True,
-                    )
-                ],
-            ),
-            401: OpenApiResponse(
-                description="Unauthorized",
-                examples=[
-                    OpenApiExample(
-                        name="TokenExpired",
-                        description="Example of an expired token error",
-                        value={"code": 1002, "message": "Token is invalid or expired."},
-                        response_only=True,
-                    )
-                ],
-            ),
-        },
-    )
     @method_decorator(ratelimit(key="ip", rate="5/h"))
     def post(self, request, *args, **kwargs):
         try:
