@@ -2,7 +2,7 @@ from constance.admin import Config
 from constance.admin import ConstanceAdmin as BaseConstanceAdmin
 from django.apps import apps
 from django.contrib import admin
-from django.contrib.admin import ModelAdmin, TabularInline
+from django.contrib.admin import AllValuesFieldListFilter, ModelAdmin, TabularInline
 from django.urls import path
 from django.utils.translation import gettext_lazy as _
 from mptt.admin import DraggableMPTTAdmin
@@ -167,8 +167,8 @@ class ProductAdmin(BasicModelAdmin):
 
     list_filter = (
         "is_active",
-        ("tags__tag_name", admin.RelatedOnlyFieldListFilter),
-        ("stocks__vendor__name", admin.RelatedOnlyFieldListFilter),
+        ("tags__tag_name", AllValuesFieldListFilter),
+        ("stocks__vendor__name", AllValuesFieldListFilter),
         "created",
         "modified",
     )
