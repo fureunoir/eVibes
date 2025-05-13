@@ -2,7 +2,7 @@ import logging
 from os import getenv
 from pathlib import Path
 
-EVIBES_VERSION = "2.6.0"
+EVIBES_VERSION = "2.6.1"
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
