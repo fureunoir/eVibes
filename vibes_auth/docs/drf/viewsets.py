@@ -22,7 +22,7 @@ USER_SCHEMA = {
     "update": extend_schema(
         summary=_("update a user's details"),
         request=UserSerializer,
-        responses={status.HTTP_200_OK: UserSerializer}, **BASE_ERRORS,
+        responses={status.HTTP_200_OK: UserSerializer, **BASE_ERRORS},
     ),
     "destroy": extend_schema(
         summary=_("delete a user"),
