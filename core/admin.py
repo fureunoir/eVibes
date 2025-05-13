@@ -184,8 +184,8 @@ class VendorNameListFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         qs = model_admin.get_queryset(request)
-        tags = qs.values_list("stocks__vendor__name", flat=True).distinct()
-        return [(tag, tag) for tag in tags if tag]
+        vendors = qs.values_list("stocks__vendor__name", flat=True).distinct()
+        return [(vendor, vendor) for vendor in vendors if vendor]
 
     def queryset(self, request, queryset):
         if self.value():
