@@ -191,7 +191,7 @@ class VendorNameListFilter(admin.SimpleListFilter):
         if self.value():
             values = [v.strip() for v in self.value().split(",") if v.strip()]
             if values:
-                return queryset.filter(vendor__name__in=values)
+                return queryset.filter(stocks__vendor__name__in=values)
         return queryset
 
 
