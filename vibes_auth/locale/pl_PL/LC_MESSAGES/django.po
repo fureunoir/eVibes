@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-13 20:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -46,6 +46,74 @@ msgstr "Dodatkowe informacje"
 msgid "authentication"
 msgstr "Uwierzytelnianie"
 
+#: vibes_auth/docs/drf/views.py:15
+msgid "obtain a token pair"
+msgstr "Uzyskanie pary tokenów"
+
+#: vibes_auth/docs/drf/views.py:16
+msgid "obtain a token pair (refresh and access) for authentication."
+msgstr ""
+"Uzyskanie pary tokenów (odświeżenie i dostęp) w celu uwierzytelnienia."
+
+#: vibes_auth/docs/drf/views.py:35
+msgid "refresh a token pair"
+msgstr "Odśwież parę tokenów"
+
+#: vibes_auth/docs/drf/views.py:36
+msgid "refresh a token pair (refresh and access)."
+msgstr "Odświeżenie pary tokenów (odświeżenie i dostęp)."
+
+#: vibes_auth/docs/drf/views.py:55
+msgid "verify a token"
+msgstr "Weryfikacja tokena"
+
+#: vibes_auth/docs/drf/views.py:56
+msgid "Verify a token (refresh or access)."
+msgstr "Weryfikacja tokena (odświeżenie lub dostęp)."
+
+#: vibes_auth/docs/drf/viewsets.py:15
+msgid "create a new user"
+msgstr "Tworzenie nowego użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:19
+msgid "retrieve a user's details"
+msgstr "Pobieranie danych użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:23
+msgid "update a user's details"
+msgstr "Aktualizacja danych użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:28
+msgid "delete a user"
+msgstr "Usuwanie użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:32
+msgid "reset a user's password by sending a reset password email"
+msgstr ""
+"Zresetowanie hasła użytkownika poprzez wysłanie wiadomości e-mail "
+"resetującej hasło."
+
+#: vibes_auth/docs/drf/viewsets.py:40
+msgid "handle avatar upload for a user"
+msgstr "Obsługa przesyłania awatara dla użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:49
+msgid "confirm a user's password reset"
+msgstr "Potwierdzenie zresetowania hasła użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:53 vibes_auth/graphene/mutations.py:305
+#: vibes_auth/viewsets.py:72
+msgid "passwords do not match"
+msgstr "Hasła nie są zgodne"
+
+#: vibes_auth/docs/drf/viewsets.py:58
+msgid "activate a user's account"
+msgstr "Aktywacja konta użytkownika"
+
+#: vibes_auth/docs/drf/viewsets.py:62
+msgid "activation link is invalid or account already activated"
+msgstr "Link aktywacyjny jest nieprawidłowy lub konto zostało już aktywowane."
+
 #: vibes_auth/graphene/mutations.py:40
 msgid "the user's b64-encoded uuid who referred the new user to us."
 msgstr ""
@@ -71,7 +139,8 @@ msgstr "Zniekształcony numer telefonu: {phone_number}"
 msgid "Invalid attribute format: {attribute_pair}"
 msgstr "Nieprawidłowy format atrybutu: {attribute_pair}"
 
-#: vibes_auth/graphene/mutations.py:261
+#: vibes_auth/graphene/mutations.py:261 vibes_auth/viewsets.py:107
+#: vibes_auth/viewsets.py:123
 msgid "activation link is invalid!"
 msgstr "Link aktywacyjny jest nieprawidłowy!"
 
@@ -83,11 +152,7 @@ msgstr "Konto zostało już aktywowane..."
 msgid "something went wrong: {e!s}"
 msgstr "Coś poszło nie tak: {e!s}"
 
-#: vibes_auth/graphene/mutations.py:305
-msgid "passwords do not match"
-msgstr "Hasła nie są zgodne"
-
-#: vibes_auth/graphene/mutations.py:312
+#: vibes_auth/graphene/mutations.py:312 vibes_auth/viewsets.py:81
 msgid "token is invalid!"
 msgstr "Token jest nieprawidłowy!"
 
@@ -340,5 +405,21 @@ msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
 msgstr ""
-"Nieprawidłowy format numeru telefonu. Numer musi być wprowadzony w formacie: "
-"\"+999999999\". Dozwolone do 15 cyfr."
+"Nieprawidłowy format numeru telefonu. Numer musi być wprowadzony w formacie:"
+" \"+999999999\". Dozwolone do 15 cyfr."
+
+#: vibes_auth/views.py:168
+msgid "the token is valid"
+msgstr "Token jest ważny"
+
+#: vibes_auth/views.py:170
+msgid "the token is invalid"
+msgstr "Token jest nieprawidłowy"
+
+#: vibes_auth/viewsets.py:85
+msgid "password reset successfully"
+msgstr "Hasło zostało pomyślnie zresetowane!"
+
+#: vibes_auth/viewsets.py:112
+msgid "account already activated!"
+msgstr "Konto zostało już aktywowane..."

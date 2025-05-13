@@ -1,18 +1,13 @@
-# eVibes Translations.
-# Copyright (C) 2025 Egor "fureunoir" Gorbunov
-# This file is distributed under the same license as the eVibes package.
-# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-13 20:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: BRITISH ENGLISH\n"
+"Language: ja-JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,6 +46,71 @@ msgstr "追加情報"
 msgid "authentication"
 msgstr "認証"
 
+#: vibes_auth/docs/drf/views.py:15
+msgid "obtain a token pair"
+msgstr "トークン・ペアの取得"
+
+#: vibes_auth/docs/drf/views.py:16
+msgid "obtain a token pair (refresh and access) for authentication."
+msgstr "認証用のトークンペア（リフレッシュとアクセス）を取得する。"
+
+#: vibes_auth/docs/drf/views.py:35
+msgid "refresh a token pair"
+msgstr "トークン・ペアのリフレッシュ"
+
+#: vibes_auth/docs/drf/views.py:36
+msgid "refresh a token pair (refresh and access)."
+msgstr "トークン・ペアをリフレッシュする（リフレッシュとアクセス）。"
+
+#: vibes_auth/docs/drf/views.py:55
+msgid "verify a token"
+msgstr "トークンの検証"
+
+#: vibes_auth/docs/drf/views.py:56
+msgid "Verify a token (refresh or access)."
+msgstr "トークンを確認する（リフレッシュまたはアクセス）。"
+
+#: vibes_auth/docs/drf/viewsets.py:15
+msgid "create a new user"
+msgstr "新規ユーザーの作成"
+
+#: vibes_auth/docs/drf/viewsets.py:19
+msgid "retrieve a user's details"
+msgstr "ユーザーの詳細を取得する"
+
+#: vibes_auth/docs/drf/viewsets.py:23
+msgid "update a user's details"
+msgstr "ユーザー情報の更新"
+
+#: vibes_auth/docs/drf/viewsets.py:28
+msgid "delete a user"
+msgstr "ユーザーを削除する"
+
+#: vibes_auth/docs/drf/viewsets.py:32
+msgid "reset a user's password by sending a reset password email"
+msgstr "パスワード再設定メールを送信して、ユーザーのパスワードを再設定する。"
+
+#: vibes_auth/docs/drf/viewsets.py:40
+msgid "handle avatar upload for a user"
+msgstr "ユーザーのアバターアップロードを処理する"
+
+#: vibes_auth/docs/drf/viewsets.py:49
+msgid "confirm a user's password reset"
+msgstr "ユーザーのパスワード・リセットを確認する"
+
+#: vibes_auth/docs/drf/viewsets.py:53 vibes_auth/graphene/mutations.py:305
+#: vibes_auth/viewsets.py:72
+msgid "passwords do not match"
+msgstr "パスワードが一致しない"
+
+#: vibes_auth/docs/drf/viewsets.py:58
+msgid "activate a user's account"
+msgstr "ユーザーアカウントの有効化"
+
+#: vibes_auth/docs/drf/viewsets.py:62
+msgid "activation link is invalid or account already activated"
+msgstr "アクティベーションリンクが無効であるか、アカウントがすでにアクティベーションされています。"
+
 #: vibes_auth/graphene/mutations.py:40
 msgid "the user's b64-encoded uuid who referred the new user to us."
 msgstr "新規ユーザーを紹介したユーザーのb64エンコードされたuuid。"
@@ -74,7 +134,8 @@ msgstr "不正な電話番号：{phone_number}。"
 msgid "Invalid attribute format: {attribute_pair}"
 msgstr "無効な属性形式です：{attribute_pair}。"
 
-#: vibes_auth/graphene/mutations.py:261
+#: vibes_auth/graphene/mutations.py:261 vibes_auth/viewsets.py:107
+#: vibes_auth/viewsets.py:123
 msgid "activation link is invalid!"
 msgstr "アクティベーションリンクが無効です！"
 
@@ -86,11 +147,7 @@ msgstr "アカウントはすでに有効になっています..."
 msgid "something went wrong: {e!s}"
 msgstr "何かが間違っていた：{e!s}"
 
-#: vibes_auth/graphene/mutations.py:305
-msgid "passwords do not match"
-msgstr "パスワードが一致しない"
-
-#: vibes_auth/graphene/mutations.py:312
+#: vibes_auth/graphene/mutations.py:312 vibes_auth/viewsets.py:81
 msgid "token is invalid!"
 msgstr "トークンが無効です！"
 
@@ -254,9 +311,7 @@ msgstr "こんにちは、%(user_first_name)sです、"
 msgid ""
 "we have received a request to reset your password. please reset your "
 "password by clicking the button below:"
-msgstr ""
-"パスワードの再設定依頼が届いております。以下のボタンをクリックして、パスワー"
-"ドをリセットしてください："
+msgstr "パスワードの再設定依頼が届いております。以下のボタンをクリックして、パスワードをリセットしてください："
 
 #: vibes_auth/templates/user_reset_password_email.html:84
 msgid "reset password"
@@ -266,9 +321,7 @@ msgstr "パスワードのリセット"
 msgid ""
 "if the button above does not work, please copy and paste the following URL "
 "into your web browser:"
-msgstr ""
-"上記のボタンが機能しない場合は、以下のURLをコピーしてウェブブラウザに貼り付け"
-"てください："
+msgstr "上記のボタンが機能しない場合は、以下のURLをコピーしてウェブブラウザに貼り付けてください："
 
 #: vibes_auth/templates/user_reset_password_email.html:88
 msgid "if you did not send this request, please ignore this email."
@@ -294,9 +347,7 @@ msgstr "アカウントの有効化"
 msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
-msgstr ""
-"%(project_name)sにご登録いただきありがとうございます。下のボタンをクリックし"
-"てアカウントを有効にしてください："
+msgstr "%(project_name)sにご登録いただきありがとうございます。下のボタンをクリックしてアカウントを有効にしてください："
 
 #: vibes_auth/templates/user_verification_email.html:95
 msgid ""
@@ -311,8 +362,7 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"上記のボタンが機能しない場合は、次のURLをコピーしてウェブブラウザに貼り付けて"
-"ください。\n"
+"上記のボタンが機能しない場合は、次のURLをコピーしてウェブブラウザに貼り付けてください。\n"
 "                            をウェブブラウザに貼り付けてください："
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -343,6 +393,20 @@ msgstr "{config.PROJECT_NAME}。| パスワードのリセット"
 msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
-msgstr ""
-"電話番号の形式が無効です。電話番号は次の形式で入力してください："
-"\"+999999999\".15桁まで入力可能です。"
+msgstr "電話番号の形式が無効です。電話番号は次の形式で入力してください：\"+999999999\".15桁まで入力可能です。"
+
+#: vibes_auth/views.py:168
+msgid "the token is valid"
+msgstr "トークンは有効です"
+
+#: vibes_auth/views.py:170
+msgid "the token is invalid"
+msgstr "トークンが無効"
+
+#: vibes_auth/viewsets.py:85
+msgid "password reset successfully"
+msgstr "パスワードのリセットに成功しました！"
+
+#: vibes_auth/viewsets.py:112
+msgid "account already activated!"
+msgstr "あなたはすでにアカウントを有効にしています..."

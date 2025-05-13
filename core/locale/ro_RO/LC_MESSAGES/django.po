@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 15:33+0100\n"
+"POT-Creation-Date: 2025-05-13 20:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -83,7 +83,7 @@ msgstr "Imagine"
 msgid "images"
 msgstr "Imagini"
 
-#: core/admin.py:160 core/models.py:1127
+#: core/admin.py:160 core/models.py:1132
 msgid "stock"
 msgstr "Stoc"
 
@@ -91,7 +91,7 @@ msgstr "Stoc"
 msgid "stocks"
 msgstr "Stocuri"
 
-#: core/admin.py:191 core/graphene/object_types.py:320
+#: core/admin.py:192 core/graphene/object_types.py:320
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -99,35 +99,35 @@ msgstr "Stocuri"
 msgid "price"
 msgstr "Preț"
 
-#: core/admin.py:196
+#: core/admin.py:197
 msgid "rating"
 msgstr "Evaluarea produsului"
 
-#: core/admin.py:200
+#: core/admin.py:201
 msgid "basic info"
 msgstr "Informații de bază"
 
-#: core/admin.py:214
+#: core/admin.py:215
 msgid "important dates"
 msgstr "Date importante"
 
-#: core/admin.py:215
+#: core/admin.py:216
 msgid "translations"
 msgstr "Traduceri"
 
-#: core/admin.py:253 core/models.py:837
+#: core/admin.py:254 core/models.py:842
 msgid "order product"
 msgstr "Comanda Produs"
 
-#: core/admin.py:254 core/graphene/object_types.py:242 core/models.py:838
+#: core/admin.py:255 core/graphene/object_types.py:242 core/models.py:843
 msgid "order products"
 msgstr "Comandați produse"
 
-#: core/admin.py:273
+#: core/admin.py:274
 msgid "is business"
 msgstr "Este o afacere"
 
-#: core/admin.py:381
+#: core/admin.py:382
 msgid "config"
 msgstr "Configurare"
 
@@ -515,55 +515,55 @@ msgstr ""
 msgid "list all products (simple view)"
 msgstr "Listează toate produsele (vizualizare simplă)"
 
-#: core/docs/drf/viewsets.py:278
+#: core/docs/drf/viewsets.py:281
 msgid "(exact) Product UUID"
 msgstr "(exact) UUID al produsului"
 
-#: core/docs/drf/viewsets.py:279
+#: core/docs/drf/viewsets.py:287
 msgid "(icontains) Product name"
 msgstr "(icontains) Denumirea produsului"
 
-#: core/docs/drf/viewsets.py:280
+#: core/docs/drf/viewsets.py:293
 msgid "(list) Category names, case-insensitive"
 msgstr "(listă) Numele categoriilor, fără deosebire de majuscule"
 
-#: core/docs/drf/viewsets.py:282
+#: core/docs/drf/viewsets.py:299
 msgid "(exact) Category UUID"
 msgstr "(exact) UUID al categoriei"
 
-#: core/docs/drf/viewsets.py:283
+#: core/docs/drf/viewsets.py:305
 msgid "(list) Tag names, case-insensitive"
 msgstr "(listă) Nume de etichete, fără diferențiere de majuscule"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:311
 msgid "(gte) Minimum stock price"
 msgstr "(gte) Prețul minim al acțiunilor"
 
-#: core/docs/drf/viewsets.py:285
+#: core/docs/drf/viewsets.py:317
 msgid "(lte) Maximum stock price"
 msgstr "(lte) Prețul maxim al acțiunilor"
 
-#: core/docs/drf/viewsets.py:286
+#: core/docs/drf/viewsets.py:323
 msgid "(exact) Only active products"
 msgstr "(exact) Numai produse active"
 
-#: core/docs/drf/viewsets.py:287
+#: core/docs/drf/viewsets.py:329
 msgid "(iexact) Brand name"
 msgstr "(iexact) Denumire comercială"
 
-#: core/docs/drf/viewsets.py:289
+#: core/docs/drf/viewsets.py:341
 msgid "(gt) Minimum stock quantity"
 msgstr "(gt) Cantitatea minimă de stoc"
 
-#: core/docs/drf/viewsets.py:290
+#: core/docs/drf/viewsets.py:347
 msgid "(exact) Product slug"
 msgstr "(exact) Limbajul produsului"
 
-#: core/docs/drf/viewsets.py:291
+#: core/docs/drf/viewsets.py:353
 msgid "(exact) Digital vs. physical"
 msgstr "(exact) Digital vs. fizic"
 
-#: core/docs/drf/viewsets.py:295
+#: core/docs/drf/viewsets.py:360
 msgid ""
 "Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
@@ -571,36 +571,36 @@ msgstr ""
 "Lista de câmpuri separate prin virgulă după care se face sortarea. Prefixați cu `-` pentru descrescător.  \n"
 "**Autorizate:** uuid, rating, nume, slug, creat, modificat, preț, aleatoriu"
 
-#: core/docs/drf/viewsets.py:310
+#: core/docs/drf/viewsets.py:374
 msgid "retrieve a single product (detailed view)"
 msgstr "Recuperarea unui singur produs (vedere detaliată)"
 
-#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
-#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
+#: core/docs/drf/viewsets.py:379 core/docs/drf/viewsets.py:401
+#: core/docs/drf/viewsets.py:416 core/docs/drf/viewsets.py:431
 msgid "Product UUID or slug"
 msgstr "UUID sau Slug al produsului"
 
-#: core/docs/drf/viewsets.py:315
+#: core/docs/drf/viewsets.py:389
 msgid "create a product"
 msgstr "Creați un produs"
 
-#: core/docs/drf/viewsets.py:319
+#: core/docs/drf/viewsets.py:396
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Rescrierea unui produs existent, păstrând câmpurile care nu pot fi editate"
 
-#: core/docs/drf/viewsets.py:324
+#: core/docs/drf/viewsets.py:411
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Actualizarea unor câmpuri ale unui produs existent, păstrând câmpurile "
 "needitabile"
 
-#: core/docs/drf/viewsets.py:329
+#: core/docs/drf/viewsets.py:426
 msgid "delete a product"
 msgstr "Ștergeți un produs"
 
-#: core/elasticsearch/__init__.py:39
+#: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
 msgstr "Nu a fost furnizat niciun termen de căutare."
 
@@ -656,7 +656,7 @@ msgstr ""
 "Vă rugăm să furnizați fie order_uuid sau order_hr_id - se exclud reciproc!"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:248
+#: core/graphene/mutations.py:389 core/viewsets.py:253
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "Metoda order.buy() a generat un tip greșit: {type(instance)!s}"
 
@@ -847,7 +847,7 @@ msgstr "Coduri promoționale"
 msgid "products on sale"
 msgstr "Produse scoase la vânzare"
 
-#: core/graphene/object_types.py:405 core/models.py:1068
+#: core/graphene/object_types.py:405 core/models.py:1073
 msgid "promotions"
 msgstr "Promoții"
 
@@ -863,11 +863,11 @@ msgstr "Furnizor"
 msgid "product"
 msgstr "Produs"
 
-#: core/graphene/object_types.py:421 core/models.py:1138
+#: core/graphene/object_types.py:421 core/models.py:1143
 msgid "wishlisted products"
 msgstr "Produse dorite"
 
-#: core/graphene/object_types.py:427 core/models.py:1155
+#: core/graphene/object_types.py:427 core/models.py:1160
 msgid "wishlists"
 msgstr "Liste de dorințe"
 
@@ -1015,8 +1015,8 @@ msgstr "Atributul acestei valori"
 msgid "the specific product associated with this attribute's value"
 msgstr "Produsul specific asociat cu valoarea acestui atribut"
 
-#: core/models.py:142 core/models.py:814 core/models.py:928
-#: core/models.py:1094
+#: core/models.py:142 core/models.py:819 core/models.py:933
+#: core/models.py:1099
 msgid "associated product"
 msgstr "Produs asociat"
 
@@ -1113,7 +1113,7 @@ msgstr "Opțional, asociați acest produs cu un brand"
 msgid "tags that help describe or group this product"
 msgstr "Etichete care ajută la descrierea sau gruparea acestui produs"
 
-#: core/models.py:280 core/models.py:902
+#: core/models.py:280 core/models.py:907
 msgid "product tags"
 msgstr "Etichete de produs"
 
@@ -1133,7 +1133,7 @@ msgstr "Furnizați o denumire clară de identificare a produsului"
 msgid "product name"
 msgstr "Denumirea produsului"
 
-#: core/models.py:297 core/models.py:1056
+#: core/models.py:297 core/models.py:1061
 msgid "add a detailed description of the product"
 msgstr "Adăugați o descriere detaliată a produsului"
 
@@ -1236,7 +1236,7 @@ msgstr "Stadiul actual al comenzii în ciclul său de viață"
 msgid "order status"
 msgstr "Stadiul comenzii"
 
-#: core/models.py:471 core/models.py:791
+#: core/models.py:471 core/models.py:796
 msgid "json structure of notifications to display to users"
 msgstr ""
 "Structura JSON a notificărilor care urmează să fie afișate utilizatorilor, "
@@ -1274,57 +1274,62 @@ msgstr "ID lizibil de către om"
 msgid "order"
 msgstr "Comandă"
 
-#: core/models.py:536
+#: core/models.py:517
+msgid "a user must have only one pending order at a time"
+msgstr ""
+"Un utilizator trebuie să aibă un singur ordin în așteptare la un moment dat!"
+
+#: core/models.py:541
 msgid "you cannot add products to an order that is not a pending one"
 msgstr "Nu puteți adăuga produse la o comandă care nu este în așteptare"
 
-#: core/models.py:541
+#: core/models.py:546
 msgid "you cannot add inactive products to order"
 msgstr "Nu puteți adăuga produse inactive la comandă"
 
-#: core/models.py:558
+#: core/models.py:563
 msgid "you cannot add more products than available in stock"
 msgstr "Nu puteți adăuga mai multe produse decât cele disponibile în stoc"
 
-#: core/models.py:567 core/models.py:584 core/models.py:608
-#: core/models.py:1165 core/models.py:1176
+#: core/models.py:572 core/models.py:589 core/models.py:613
+#: core/models.py:1170 core/models.py:1181
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} nu există: {product_uuid}"
 
-#: core/models.py:571 core/models.py:592 core/models.py:600
+#: core/models.py:576 core/models.py:597 core/models.py:605
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr ""
 "Nu puteți elimina produse dintr-o comandă care nu este o comandă în curs"
 
-#: core/models.py:588
+#: core/models.py:593
 #, python-brace-format
 msgid "{name} does not exist with query <{query}>"
 msgstr "{name} nu există cu interogarea <{query}>"
 
-#: core/models.py:619
+#: core/models.py:624
 msgid "promocode does not exist"
 msgstr "Codul promoțional nu există"
 
-#: core/models.py:626 core/models.py:665
+#: core/models.py:631 core/models.py:670
 msgid "you can not buy at this moment, please try again in a few minutes"
 msgstr ""
 "Nu puteți achiziționa în acest moment, vă rugăm să încercați din nou în "
 "câteva minute."
 
-#: core/models.py:629
+#: core/models.py:634
 msgid "invalid force value"
 msgstr "Valoare forță invalidă"
 
-#: core/models.py:632 core/models.py:668
+#: core/models.py:637 core/models.py:673
 msgid "you cannot purchase an empty order!"
 msgstr "Nu puteți achiziționa o comandă goală!"
 
-#: core/models.py:647
+#: core/models.py:652
 msgid "insufficient funds to complete the order"
 msgstr "Insuficiența fondurilor pentru finalizarea comenzii"
 
-#: core/models.py:677
+#: core/models.py:682
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
@@ -1332,191 +1337,191 @@ msgstr ""
 "nu puteți cumpăra fără înregistrare, vă rugăm să furnizați următoarele "
 "informații: nume client, e-mail client, număr de telefon client"
 
-#: core/models.py:685
+#: core/models.py:690
 msgid "invalid payment method"
 msgstr "Metodă de plată invalidă"
 
-#: core/models.py:701
+#: core/models.py:706
 msgid "you cannot create a momental order without providing a billing address"
 msgstr ""
 "nu puteți crea o comandă momental fără a furniza o adresă de facturare"
 
-#: core/models.py:779
+#: core/models.py:784
 msgid "the price paid by the customer for this product at purchase time"
 msgstr "Prețul plătit de client pentru acest produs la momentul achiziției"
 
-#: core/models.py:780
+#: core/models.py:785
 msgid "purchase price at order time"
 msgstr "Prețul de achiziție la momentul comenzii"
 
-#: core/models.py:785
+#: core/models.py:790
 msgid "internal comments for admins about this ordered product"
 msgstr ""
 "Comentarii interne pentru administratori cu privire la acest produs comandat"
 
-#: core/models.py:786
+#: core/models.py:791
 msgid "internal comments"
 msgstr "Observații interne"
 
-#: core/models.py:792
+#: core/models.py:797
 msgid "user notifications"
 msgstr "Notificări pentru utilizatori"
 
-#: core/models.py:797
+#: core/models.py:802
 msgid "json representation of this item's attributes"
 msgstr "Reprezentarea JSON a atributelor acestui element"
 
-#: core/models.py:798
+#: core/models.py:803
 msgid "ordered product attributes"
 msgstr "Atribute de produs ordonate"
 
-#: core/models.py:803
+#: core/models.py:808
 msgid "reference to the parent order that contains this product"
 msgstr "Trimitere la comanda mamă care conține acest produs"
 
-#: core/models.py:804
+#: core/models.py:809
 msgid "parent order"
 msgstr "Ordinul părinților"
 
-#: core/models.py:813
+#: core/models.py:818
 msgid "the specific product associated with this order line"
 msgstr "Produsul specific asociat cu această linie de comandă"
 
-#: core/models.py:820
+#: core/models.py:825
 msgid "quantity of this specific product in the order"
 msgstr "Cantitatea acestui produs specific din comandă"
 
-#: core/models.py:821
+#: core/models.py:826
 msgid "product quantity"
 msgstr "Cantitatea produsului"
 
-#: core/models.py:828
+#: core/models.py:833
 msgid "current status of this product in the order"
 msgstr "Starea actuală a acestui produs în comandă"
 
-#: core/models.py:829
+#: core/models.py:834
 msgid "product line status"
 msgstr "Starea liniei de produse"
 
-#: core/models.py:887
+#: core/models.py:892
 msgid "internal tag identifier for the product tag"
 msgstr "Identificator intern de etichetă pentru eticheta produsului"
 
-#: core/models.py:888
+#: core/models.py:893
 msgid "tag name"
 msgstr "Nume etichetă"
 
-#: core/models.py:892
+#: core/models.py:897
 msgid "user-friendly name for the product tag"
 msgstr "Nume ușor de utilizat pentru eticheta produsului"
 
-#: core/models.py:893
+#: core/models.py:898
 msgid "tag display name"
 msgstr "Nume afișare etichetă"
 
-#: core/models.py:901
+#: core/models.py:906
 msgid "product tag"
 msgstr "Etichetă produs"
 
-#: core/models.py:910
+#: core/models.py:915
 msgid "provide alternative text for the image for accessibility"
 msgstr "Furnizați text alternativ pentru imagine pentru accesibilitate"
 
-#: core/models.py:911
+#: core/models.py:916
 msgid "image alt text"
 msgstr "Textul alt al imaginii"
 
-#: core/models.py:914
+#: core/models.py:919
 msgid "upload the image file for this product"
 msgstr "Încărcați fișierul de imagine pentru acest produs"
 
-#: core/models.py:915 core/models.py:940
+#: core/models.py:920 core/models.py:945
 msgid "product image"
 msgstr "Imaginea produsului"
 
-#: core/models.py:921
+#: core/models.py:926
 msgid "determines the order in which images are displayed"
 msgstr "Determină ordinea în care sunt afișate imaginile"
 
-#: core/models.py:922
+#: core/models.py:927
 msgid "display priority"
 msgstr "Prioritatea afișării"
 
-#: core/models.py:927
+#: core/models.py:932
 msgid "the product that this image represents"
 msgstr "Produsul pe care îl reprezintă această imagine"
 
-#: core/models.py:941
+#: core/models.py:946
 msgid "product images"
 msgstr "Imagini ale produsului"
 
-#: core/models.py:951
+#: core/models.py:956
 msgid "unique code used by a user to redeem a discount"
 msgstr "Cod unic utilizat de un utilizator pentru a răscumpăra o reducere"
 
-#: core/models.py:952
+#: core/models.py:957
 msgid "promo code identifier"
 msgstr "Cod promoțional de identificare"
 
-#: core/models.py:959
+#: core/models.py:964
 msgid "fixed discount amount applied if percent is not used"
 msgstr "Valoarea fixă a reducerii aplicate dacă procentul nu este utilizat"
 
-#: core/models.py:960
+#: core/models.py:965
 msgid "fixed discount amount"
 msgstr "Valoarea fixă a reducerii"
 
-#: core/models.py:966
+#: core/models.py:971
 msgid "percentage discount applied if fixed amount is not used"
 msgstr "Procentul de reducere aplicat dacă suma fixă nu este utilizată"
 
-#: core/models.py:967
+#: core/models.py:972
 msgid "percentage discount"
 msgstr "Reducere procentuală"
 
-#: core/models.py:972
+#: core/models.py:977
 msgid "timestamp when the promocode expires"
 msgstr "Data la care expiră codul promoțional"
 
-#: core/models.py:973
+#: core/models.py:978
 msgid "end validity time"
 msgstr "Timpul final de valabilitate"
 
-#: core/models.py:978
+#: core/models.py:983
 msgid "timestamp from which this promocode is valid"
 msgstr "Timestamp de la care acest cod promoțional este valabil"
 
-#: core/models.py:979
+#: core/models.py:984
 msgid "start validity time"
 msgstr "Ora de începere a valabilității"
 
-#: core/models.py:984
+#: core/models.py:989
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr ""
 "Momentul în care codul promoțional a fost utilizat, gol dacă nu a fost "
 "utilizat încă"
 
-#: core/models.py:985
+#: core/models.py:990
 msgid "usage timestamp"
 msgstr "Timestamp de utilizare"
 
-#: core/models.py:990
+#: core/models.py:995
 msgid "user assigned to this promocode if applicable"
 msgstr "Utilizatorul atribuit acestui cod promoțional, dacă este cazul"
 
-#: core/models.py:991
+#: core/models.py:996
 msgid "assigned user"
 msgstr "Utilizator atribuit"
 
-#: core/models.py:998
+#: core/models.py:1003
 msgid "promo code"
 msgstr "Cod promoțional"
 
-#: core/models.py:999
+#: core/models.py:1004
 msgid "promo codes"
 msgstr "Coduri promoționale"
 
-#: core/models.py:1006
+#: core/models.py:1011
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
@@ -1524,140 +1529,140 @@ msgstr ""
 "Trebuie definit un singur tip de reducere (sumă sau procent), dar nu ambele "
 "sau niciuna."
 
-#: core/models.py:1021
+#: core/models.py:1026
 msgid "promocode already used"
 msgstr "Codul promoțional a fost deja utilizat"
 
-#: core/models.py:1033
+#: core/models.py:1038
 #, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
 msgstr "Tip de reducere invalid pentru codul promoțional {self.uuid}"
 
-#: core/models.py:1044
+#: core/models.py:1049
 msgid "percentage discount for the selected products"
 msgstr "Procentul de reducere pentru produsele selectate"
 
-#: core/models.py:1045
+#: core/models.py:1050
 msgid "discount percentage"
 msgstr "Procent de reducere"
 
-#: core/models.py:1050
+#: core/models.py:1055
 msgid "provide a unique name for this promotion"
 msgstr "Furnizați un nume unic pentru această promoție"
 
-#: core/models.py:1051
+#: core/models.py:1056
 msgid "promotion name"
 msgstr "Numele promoției"
 
-#: core/models.py:1057
+#: core/models.py:1062
 msgid "promotion description"
 msgstr "Descrierea promoției"
 
-#: core/models.py:1062
+#: core/models.py:1067
 msgid "select which products are included in this promotion"
 msgstr "Selectați ce produse sunt incluse în această promoție"
 
-#: core/models.py:1063
+#: core/models.py:1068
 msgid "included products"
 msgstr "Produse incluse"
 
-#: core/models.py:1067
+#: core/models.py:1072
 msgid "promotion"
 msgstr "Promovare"
 
-#: core/models.py:1082
+#: core/models.py:1087
 msgid "the vendor supplying this product stock"
 msgstr "Furnizorul care furnizează acest stoc de produse"
 
-#: core/models.py:1083
+#: core/models.py:1088
 msgid "associated vendor"
 msgstr "Furnizor asociat"
 
-#: core/models.py:1087
+#: core/models.py:1092
 msgid "final price to the customer after markups"
 msgstr "Prețul final pentru client după majorări"
 
-#: core/models.py:1088
+#: core/models.py:1093
 msgid "selling price"
 msgstr "Prețul de vânzare"
 
-#: core/models.py:1093
+#: core/models.py:1098
 msgid "the product associated with this stock entry"
 msgstr "Produsul asociat cu această intrare în stoc"
 
-#: core/models.py:1101
+#: core/models.py:1106
 msgid "the price paid to the vendor for this product"
 msgstr "Prețul plătit vânzătorului pentru acest produs"
 
-#: core/models.py:1102
+#: core/models.py:1107
 msgid "vendor purchase price"
 msgstr "Prețul de achiziție al furnizorului"
 
-#: core/models.py:1106
+#: core/models.py:1111
 msgid "available quantity of the product in stock"
 msgstr "Cantitatea disponibilă a produsului în stoc"
 
-#: core/models.py:1107
+#: core/models.py:1112
 msgid "quantity in stock"
 msgstr "Cantitate în stoc"
 
-#: core/models.py:1111
+#: core/models.py:1116
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "SKU atribuit de furnizor pentru identificarea produsului"
 
-#: core/models.py:1112
+#: core/models.py:1117
 msgid "vendor sku"
 msgstr "SKU al furnizorului"
 
-#: core/models.py:1118
+#: core/models.py:1123
 msgid "digital file associated with this stock if applicable"
 msgstr "Fișier digital asociat cu acest stoc, dacă este cazul"
 
-#: core/models.py:1119
+#: core/models.py:1124
 msgid "digital file"
 msgstr "Fișier digital"
 
-#: core/models.py:1128
+#: core/models.py:1133
 msgid "stock entries"
 msgstr "Intrări pe stoc"
 
-#: core/models.py:1137
+#: core/models.py:1142
 msgid "products that the user has marked as wanted"
 msgstr "Produse pe care utilizatorul le-a marcat ca fiind dorite"
 
-#: core/models.py:1145
+#: core/models.py:1150
 msgid "user who owns this wishlist"
 msgstr "Utilizatorul care deține această listă de dorințe"
 
-#: core/models.py:1146
+#: core/models.py:1151
 msgid "wishlist owner"
 msgstr "Proprietarul listei de dorințe"
 
-#: core/models.py:1154
+#: core/models.py:1159
 msgid "wishlist"
 msgstr "Lista dorințelor"
 
-#: core/models.py:1194
+#: core/models.py:1199
 msgid "download"
 msgstr "Descărcare"
 
-#: core/models.py:1195
+#: core/models.py:1200
 msgid "downloads"
 msgstr "Descărcări"
 
-#: core/models.py:1203
+#: core/models.py:1208
 msgid "you can not download a digital asset for a non-finished order"
 msgstr "Nu puteți descărca un bun digital pentru o comandă nefinalizată"
 
-#: core/models.py:1215
+#: core/models.py:1220
 msgid "documentary"
 msgstr "Documentar"
 
-#: core/models.py:1216
+#: core/models.py:1221
 msgid "documentaries"
 msgstr "Documentare"
 
-#: core/models.py:1226
+#: core/models.py:1231
 msgid "unresolved"
 msgstr "Nerezolvat"
 

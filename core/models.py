@@ -39,8 +39,8 @@ from mptt.models import MPTTModel
 
 from core.abstract import NiceModel
 from core.choices import ORDER_PRODUCT_STATUS_CHOICES, ORDER_STATUS_CHOICES
-from core.errors import NotEnoughMoneyError, DisabledCommerceError
-from core.utils import get_product_uuid_as_path, get_random_code, generate_human_readable_id
+from core.errors import DisabledCommerceError, NotEnoughMoneyError
+from core.utils import generate_human_readable_id, get_product_uuid_as_path, get_random_code
 from core.utils.lists import FAILED_STATUSES
 from core.validators import validate_category_image_dimensions
 from evibes.settings import CURRENCY_CODE
@@ -512,19 +512,24 @@ class Order(NiceModel):
     def is_business(self) -> bool:
         return self.attributes.get("is_business", False) if self.attributes else False
 
+    def save(self, **kwargs):
+        if self.user.orders.filter(status="PENDING").count() > 1 and self.status == "PENDING":
+            raise ValueError(_("a user must have only one pending order at a time"))
+        return super().save(**kwargs)
+
     @property
     def total_price(self) -> float:
         return (
-            round(
-                sum(
-                    order_product.buy_price * order_product.quantity
-                    if order_product.status not in FAILED_STATUSES and order_product.buy_price is not None
-                    else 0.0
-                    for order_product in self.order_products.all()
-                ),
-                2,
-            )
-            or 0.0
+                round(
+                    sum(
+                        order_product.buy_price * order_product.quantity
+                        if order_product.status not in FAILED_STATUSES and order_product.buy_price is not None
+                        else 0.0
+                        for order_product in self.order_products.all()
+                    ),
+                    2,
+                )
+                or 0.0
         )
 
     @property
@@ -620,7 +625,7 @@ class Order(NiceModel):
         return promocode.use(self)
 
     def buy(
-        self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None
+            self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None
     ) -> Self | Transaction | None:
         if config.DISABLED_COMMERCE:
             raise DisabledCommerceError(_("you can not buy at this moment, please try again in a few minutes"))
@@ -691,12 +696,12 @@ class Order(NiceModel):
         billing_customer_address_line = billing_customer_address.pop("customer_address_line")
 
         if not all(
-            [
-                billing_customer_city,
-                billing_customer_country,
-                billing_customer_postal_code,
-                billing_customer_address_line,
-            ]
+                [
+                    billing_customer_city,
+                    billing_customer_country,
+                    billing_customer_postal_code,
+                    billing_customer_address_line,
+                ]
         ):
             raise ValueError(_("you cannot create a momental order without providing a billing address"))
 
@@ -755,16 +760,16 @@ class Order(NiceModel):
 
     def finalize(self):
         if (
-            self.order_products.filter(
-                status__in=[
-                    "ACCEPTED",
-                    "FAILED",
-                    "RETURNED",
-                    "CANCELED",
-                    "FINISHED",
-                ]
-            ).count()
-            == self.order_products.count()
+                self.order_products.filter(
+                    status__in=[
+                        "ACCEPTED",
+                        "FAILED",
+                        "RETURNED",
+                        "CANCELED",
+                        "FINISHED",
+                    ]
+                ).count()
+                == self.order_products.count()
         ):
             self.status = "FINISHED"
             self.save()
@@ -1000,7 +1005,7 @@ class PromoCode(NiceModel):
 
     def save(self, **kwargs):
         if (self.discount_amount is not None and self.discount_percent is not None) or (
-            self.discount_amount is None and self.discount_percent is None
+                self.discount_amount is None and self.discount_percent is None
         ):
             raise ValidationError(
                 _("only one type of discount should be defined (amount or percent), but not both or neither.")

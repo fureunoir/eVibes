@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eVibes"
-version = "2.6.1"
+version = "2.6.2"
 description = "eVibes is an open-source eCommerce backend service built with Django. It’s designed for flexibility, making it ideal for various use cases and learning Django skills. The project is easy to customize, allowing for straightforward editing and extension."
 authors = ["fureunoir <contact@fureunoir.com>"]
 readme = "README.md"

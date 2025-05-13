@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 15:33+0100\n"
+"POT-Creation-Date: 2025-05-13 20:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -81,7 +81,7 @@ msgstr "Afbeelding"
 msgid "images"
 msgstr "Afbeeldingen"
 
-#: core/admin.py:160 core/models.py:1127
+#: core/admin.py:160 core/models.py:1132
 msgid "stock"
 msgstr "Voorraad"
 
@@ -89,7 +89,7 @@ msgstr "Voorraad"
 msgid "stocks"
 msgstr "Aandelen"
 
-#: core/admin.py:191 core/graphene/object_types.py:320
+#: core/admin.py:192 core/graphene/object_types.py:320
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -97,35 +97,35 @@ msgstr "Aandelen"
 msgid "price"
 msgstr "Prijs"
 
-#: core/admin.py:196
+#: core/admin.py:197
 msgid "rating"
 msgstr "Productbeoordeling"
 
-#: core/admin.py:200
+#: core/admin.py:201
 msgid "basic info"
 msgstr "Basisinformatie"
 
-#: core/admin.py:214
+#: core/admin.py:215
 msgid "important dates"
 msgstr "Belangrijke data"
 
-#: core/admin.py:215
+#: core/admin.py:216
 msgid "translations"
 msgstr "Vertalingen"
 
-#: core/admin.py:253 core/models.py:837
+#: core/admin.py:254 core/models.py:842
 msgid "order product"
 msgstr "Product bestellen"
 
-#: core/admin.py:254 core/graphene/object_types.py:242 core/models.py:838
+#: core/admin.py:255 core/graphene/object_types.py:242 core/models.py:843
 msgid "order products"
 msgstr "Producten bestellen"
 
-#: core/admin.py:273
+#: core/admin.py:274
 msgid "is business"
 msgstr "Is zakelijk"
 
-#: core/admin.py:381
+#: core/admin.py:382
 msgid "config"
 msgstr "Config"
 
@@ -519,55 +519,55 @@ msgstr ""
 msgid "list all products (simple view)"
 msgstr "Alle producten weergeven (eenvoudige weergave)"
 
-#: core/docs/drf/viewsets.py:278
+#: core/docs/drf/viewsets.py:281
 msgid "(exact) Product UUID"
 msgstr "(exacte) UUID van product"
 
-#: core/docs/drf/viewsets.py:279
+#: core/docs/drf/viewsets.py:287
 msgid "(icontains) Product name"
 msgstr "(pictogrammen) Productnaam"
 
-#: core/docs/drf/viewsets.py:280
+#: core/docs/drf/viewsets.py:293
 msgid "(list) Category names, case-insensitive"
 msgstr "(lijst) Categorienamen, hoofdlettergevoelig"
 
-#: core/docs/drf/viewsets.py:282
+#: core/docs/drf/viewsets.py:299
 msgid "(exact) Category UUID"
 msgstr "(exacte) UUID van categorie"
 
-#: core/docs/drf/viewsets.py:283
+#: core/docs/drf/viewsets.py:305
 msgid "(list) Tag names, case-insensitive"
 msgstr "(lijst) Labelnamen, hoofdlettergevoelig"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:311
 msgid "(gte) Minimum stock price"
 msgstr "(gte) Minimale aandelenprijs"
 
-#: core/docs/drf/viewsets.py:285
+#: core/docs/drf/viewsets.py:317
 msgid "(lte) Maximum stock price"
 msgstr "(lte) Maximale aandelenprijs"
 
-#: core/docs/drf/viewsets.py:286
+#: core/docs/drf/viewsets.py:323
 msgid "(exact) Only active products"
 msgstr "(exact) Alleen actieve producten"
 
-#: core/docs/drf/viewsets.py:287
+#: core/docs/drf/viewsets.py:329
 msgid "(iexact) Brand name"
 msgstr "(iexact) Merknaam"
 
-#: core/docs/drf/viewsets.py:289
+#: core/docs/drf/viewsets.py:341
 msgid "(gt) Minimum stock quantity"
 msgstr "(gt) Minimumvoorraad"
 
-#: core/docs/drf/viewsets.py:290
+#: core/docs/drf/viewsets.py:347
 msgid "(exact) Product slug"
 msgstr "(exacte) productnaam"
 
-#: core/docs/drf/viewsets.py:291
+#: core/docs/drf/viewsets.py:353
 msgid "(exact) Digital vs. physical"
 msgstr "(exact) Digitaal vs. fysiek"
 
-#: core/docs/drf/viewsets.py:295
+#: core/docs/drf/viewsets.py:360
 msgid ""
 "Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
@@ -575,36 +575,36 @@ msgstr ""
 "Door komma's gescheiden lijst van velden om op te sorteren. Voorvoegsel met `-` voor aflopend.  \n"
 "**Toegestaan:** uuid, beoordeling, naam, slug, gemaakt, gewijzigd, prijs, willekeurig"
 
-#: core/docs/drf/viewsets.py:310
+#: core/docs/drf/viewsets.py:374
 msgid "retrieve a single product (detailed view)"
 msgstr "Een enkel product ophalen (gedetailleerde weergave)"
 
-#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
-#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
+#: core/docs/drf/viewsets.py:379 core/docs/drf/viewsets.py:401
+#: core/docs/drf/viewsets.py:416 core/docs/drf/viewsets.py:431
 msgid "Product UUID or slug"
 msgstr "Product UUID of Slug"
 
-#: core/docs/drf/viewsets.py:315
+#: core/docs/drf/viewsets.py:389
 msgid "create a product"
 msgstr "Een product maken"
 
-#: core/docs/drf/viewsets.py:319
+#: core/docs/drf/viewsets.py:396
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Een bestaand product herschrijven met behoud van niet-wijzigbare velden"
 
-#: core/docs/drf/viewsets.py:324
+#: core/docs/drf/viewsets.py:411
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Enkele velden van een bestaand product bijwerken, met behoud van niet-"
 "wijzigbare velden"
 
-#: core/docs/drf/viewsets.py:329
+#: core/docs/drf/viewsets.py:426
 msgid "delete a product"
 msgstr "Een product verwijderen"
 
-#: core/elasticsearch/__init__.py:39
+#: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
 msgstr "Geen zoekterm opgegeven."
 
@@ -659,7 +659,7 @@ msgid "please provide either order_uuid or order_hr_id - mutually exclusive"
 msgstr "Geef order_uuid of order_hr_id - wederzijds exclusief!"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:248
+#: core/graphene/mutations.py:389 core/viewsets.py:253
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "Verkeerd type kwam uit order.buy() methode: {type(instance)!s}"
 
@@ -849,7 +849,7 @@ msgstr "Promocodes"
 msgid "products on sale"
 msgstr "Producten te koop"
 
-#: core/graphene/object_types.py:405 core/models.py:1068
+#: core/graphene/object_types.py:405 core/models.py:1073
 msgid "promotions"
 msgstr "Promoties"
 
@@ -865,11 +865,11 @@ msgstr "Verkoper"
 msgid "product"
 msgstr "Product"
 
-#: core/graphene/object_types.py:421 core/models.py:1138
+#: core/graphene/object_types.py:421 core/models.py:1143
 msgid "wishlisted products"
 msgstr "Gewenste producten"
 
-#: core/graphene/object_types.py:427 core/models.py:1155
+#: core/graphene/object_types.py:427 core/models.py:1160
 msgid "wishlists"
 msgstr "Verlanglijst"
 
@@ -1017,8 +1017,8 @@ msgstr "Attribuut van deze waarde"
 msgid "the specific product associated with this attribute's value"
 msgstr "Het specifieke product geassocieerd met de waarde van dit kenmerk"
 
-#: core/models.py:142 core/models.py:814 core/models.py:928
-#: core/models.py:1094
+#: core/models.py:142 core/models.py:819 core/models.py:933
+#: core/models.py:1099
 msgid "associated product"
 msgstr "Bijbehorend product"
 
@@ -1114,7 +1114,7 @@ msgstr "Dit product optioneel koppelen aan een merk"
 msgid "tags that help describe or group this product"
 msgstr "Tags die dit product helpen beschrijven of groeperen"
 
-#: core/models.py:280 core/models.py:902
+#: core/models.py:280 core/models.py:907
 msgid "product tags"
 msgstr "Product tags"
 
@@ -1134,7 +1134,7 @@ msgstr "Zorg voor een duidelijke identificerende naam voor het product"
 msgid "product name"
 msgstr "Naam product"
 
-#: core/models.py:297 core/models.py:1056
+#: core/models.py:297 core/models.py:1061
 msgid "add a detailed description of the product"
 msgstr "Voeg een gedetailleerde beschrijving van het product toe"
 
@@ -1236,7 +1236,7 @@ msgstr "Huidige status van de order in zijn levenscyclus"
 msgid "order status"
 msgstr "Bestelstatus"
 
-#: core/models.py:471 core/models.py:791
+#: core/models.py:471 core/models.py:796
 msgid "json structure of notifications to display to users"
 msgstr ""
 "JSON-structuur van meldingen om weer te geven aan gebruikers, in admin UI "
@@ -1274,59 +1274,63 @@ msgstr "menselijk leesbare ID"
 msgid "order"
 msgstr "Bestel"
 
-#: core/models.py:536
+#: core/models.py:517
+msgid "a user must have only one pending order at a time"
+msgstr "Een gebruiker mag maar één lopende order tegelijk hebben!"
+
+#: core/models.py:541
 msgid "you cannot add products to an order that is not a pending one"
 msgstr ""
 "U kunt geen producten toevoegen aan een bestelling die niet in behandeling "
 "is."
 
-#: core/models.py:541
+#: core/models.py:546
 msgid "you cannot add inactive products to order"
 msgstr "U kunt geen inactieve producten toevoegen aan uw bestelling"
 
-#: core/models.py:558
+#: core/models.py:563
 msgid "you cannot add more products than available in stock"
 msgstr "Je kunt niet meer producten toevoegen dan er op voorraad zijn"
 
-#: core/models.py:567 core/models.py:584 core/models.py:608
-#: core/models.py:1165 core/models.py:1176
+#: core/models.py:572 core/models.py:589 core/models.py:613
+#: core/models.py:1170 core/models.py:1181
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} bestaat niet: {product_uuid}"
 
-#: core/models.py:571 core/models.py:592 core/models.py:600
+#: core/models.py:576 core/models.py:597 core/models.py:605
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr ""
 "U kunt geen producten verwijderen uit een bestelling die niet in behandeling"
 " is."
 
-#: core/models.py:588
+#: core/models.py:593
 #, python-brace-format
 msgid "{name} does not exist with query <{query}>"
 msgstr "{name} bestaat niet met query <{query}>"
 
-#: core/models.py:619
+#: core/models.py:624
 msgid "promocode does not exist"
 msgstr "Promocode bestaat niet"
 
-#: core/models.py:626 core/models.py:665
+#: core/models.py:631 core/models.py:670
 msgid "you can not buy at this moment, please try again in a few minutes"
 msgstr ""
 "U kunt op dit moment niet kopen. Probeer het over een paar minuten nog eens."
 
-#: core/models.py:629
+#: core/models.py:634
 msgid "invalid force value"
 msgstr "Ongeldige krachtwaarde"
 
-#: core/models.py:632 core/models.py:668
+#: core/models.py:637 core/models.py:673
 msgid "you cannot purchase an empty order!"
 msgstr "Je kunt geen lege bestelling kopen!"
 
-#: core/models.py:647
+#: core/models.py:652
 msgid "insufficient funds to complete the order"
 msgstr "Onvoldoende fondsen om de bestelling te voltooien"
 
-#: core/models.py:677
+#: core/models.py:682
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
@@ -1334,193 +1338,193 @@ msgstr ""
 "u niet kunt kopen zonder registratie, geef dan de volgende informatie: "
 "klantnaam, e-mail klant, telefoonnummer klant"
 
-#: core/models.py:685
+#: core/models.py:690
 msgid "invalid payment method"
 msgstr "Ongeldige betaalmethode"
 
-#: core/models.py:701
+#: core/models.py:706
 msgid "you cannot create a momental order without providing a billing address"
 msgstr ""
 "je kunt geen momentbestelling maken zonder een factuuradres op te geven"
 
-#: core/models.py:779
+#: core/models.py:784
 msgid "the price paid by the customer for this product at purchase time"
 msgstr "De prijs die de klant bij aankoop voor dit product heeft betaald"
 
-#: core/models.py:780
+#: core/models.py:785
 msgid "purchase price at order time"
 msgstr "Aankoopprijs bij bestelling"
 
-#: core/models.py:785
+#: core/models.py:790
 msgid "internal comments for admins about this ordered product"
 msgstr "Interne opmerkingen voor beheerders over dit bestelde product"
 
-#: core/models.py:786
+#: core/models.py:791
 msgid "internal comments"
 msgstr "Interne opmerkingen"
 
-#: core/models.py:792
+#: core/models.py:797
 msgid "user notifications"
 msgstr "Meldingen van gebruikers"
 
-#: core/models.py:797
+#: core/models.py:802
 msgid "json representation of this item's attributes"
 msgstr "JSON weergave van de attributen van dit item"
 
-#: core/models.py:798
+#: core/models.py:803
 msgid "ordered product attributes"
 msgstr "Geordende producteigenschappen"
 
-#: core/models.py:803
+#: core/models.py:808
 msgid "reference to the parent order that contains this product"
 msgstr "Verwijzing naar de bovenliggende bestelling die dit product bevat"
 
-#: core/models.py:804
+#: core/models.py:809
 msgid "parent order"
 msgstr "Ouderlijk bevel"
 
-#: core/models.py:813
+#: core/models.py:818
 msgid "the specific product associated with this order line"
 msgstr "Het specifieke product dat bij deze bestelregel hoort"
 
-#: core/models.py:820
+#: core/models.py:825
 msgid "quantity of this specific product in the order"
 msgstr "Hoeveelheid van dit specifieke product in de bestelling"
 
-#: core/models.py:821
+#: core/models.py:826
 msgid "product quantity"
 msgstr "Hoeveelheid product"
 
-#: core/models.py:828
+#: core/models.py:833
 msgid "current status of this product in the order"
 msgstr "Huidige status van dit product in de bestelling"
 
-#: core/models.py:829
+#: core/models.py:834
 msgid "product line status"
 msgstr "Status productlijn"
 
-#: core/models.py:887
+#: core/models.py:892
 msgid "internal tag identifier for the product tag"
 msgstr "Interne tagidentifier voor de producttag"
 
-#: core/models.py:888
+#: core/models.py:893
 msgid "tag name"
 msgstr "Tag naam"
 
-#: core/models.py:892
+#: core/models.py:897
 msgid "user-friendly name for the product tag"
 msgstr "Gebruiksvriendelijke naam voor de producttag"
 
-#: core/models.py:893
+#: core/models.py:898
 msgid "tag display name"
 msgstr "Tag weergavenaam"
 
-#: core/models.py:901
+#: core/models.py:906
 msgid "product tag"
 msgstr "Productlabel"
 
-#: core/models.py:910
+#: core/models.py:915
 msgid "provide alternative text for the image for accessibility"
 msgstr "Geef alternatieve tekst voor de afbeelding voor toegankelijkheid"
 
-#: core/models.py:911
+#: core/models.py:916
 msgid "image alt text"
 msgstr "Alt-tekst afbeelding"
 
-#: core/models.py:914
+#: core/models.py:919
 msgid "upload the image file for this product"
 msgstr "Upload het afbeeldingsbestand voor dit product"
 
-#: core/models.py:915 core/models.py:940
+#: core/models.py:920 core/models.py:945
 msgid "product image"
 msgstr "Product afbeelding"
 
-#: core/models.py:921
+#: core/models.py:926
 msgid "determines the order in which images are displayed"
 msgstr "Bepaalt de volgorde waarin afbeeldingen worden weergegeven"
 
-#: core/models.py:922
+#: core/models.py:927
 msgid "display priority"
 msgstr "Prioriteit weergeven"
 
-#: core/models.py:927
+#: core/models.py:932
 msgid "the product that this image represents"
 msgstr "Het product dat deze afbeelding vertegenwoordigt"
 
-#: core/models.py:941
+#: core/models.py:946
 msgid "product images"
 msgstr "Product afbeeldingen"
 
-#: core/models.py:951
+#: core/models.py:956
 msgid "unique code used by a user to redeem a discount"
 msgstr "Unieke code die een gebruiker gebruikt om een korting te verzilveren"
 
-#: core/models.py:952
+#: core/models.py:957
 msgid "promo code identifier"
 msgstr "Promo code identificatie"
 
-#: core/models.py:959
+#: core/models.py:964
 msgid "fixed discount amount applied if percent is not used"
 msgstr ""
 "Vast kortingsbedrag dat wordt toegepast als percentage niet wordt gebruikt"
 
-#: core/models.py:960
+#: core/models.py:965
 msgid "fixed discount amount"
 msgstr "Vast kortingsbedrag"
 
-#: core/models.py:966
+#: core/models.py:971
 msgid "percentage discount applied if fixed amount is not used"
 msgstr ""
 "Kortingspercentage dat wordt toegepast als het vaste bedrag niet wordt "
 "gebruikt"
 
-#: core/models.py:967
+#: core/models.py:972
 msgid "percentage discount"
 msgstr "Kortingspercentage"
 
-#: core/models.py:972
+#: core/models.py:977
 msgid "timestamp when the promocode expires"
 msgstr "Tijdstempel wanneer de promocode verloopt"
 
-#: core/models.py:973
+#: core/models.py:978
 msgid "end validity time"
 msgstr "Geldigheidsduur einde"
 
-#: core/models.py:978
+#: core/models.py:983
 msgid "timestamp from which this promocode is valid"
 msgstr "Tijdstempel vanaf wanneer deze promocode geldig is"
 
-#: core/models.py:979
+#: core/models.py:984
 msgid "start validity time"
 msgstr "Begin geldigheidsduur"
 
-#: core/models.py:984
+#: core/models.py:989
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr ""
 "Tijdstempel wanneer de promocode werd gebruikt, leeg indien nog niet "
 "gebruikt"
 
-#: core/models.py:985
+#: core/models.py:990
 msgid "usage timestamp"
 msgstr "Gebruik tijdstempel"
 
-#: core/models.py:990
+#: core/models.py:995
 msgid "user assigned to this promocode if applicable"
 msgstr "Gebruiker toegewezen aan deze promocode indien van toepassing"
 
-#: core/models.py:991
+#: core/models.py:996
 msgid "assigned user"
 msgstr "Toegewezen gebruiker"
 
-#: core/models.py:998
+#: core/models.py:1003
 msgid "promo code"
 msgstr "Kortingscode"
 
-#: core/models.py:999
+#: core/models.py:1004
 msgid "promo codes"
 msgstr "Actiecodes"
 
-#: core/models.py:1006
+#: core/models.py:1011
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
@@ -1528,141 +1532,141 @@ msgstr ""
 "Er moet slechts één type korting worden gedefinieerd (bedrag of percentage),"
 " maar niet beide of geen van beide."
 
-#: core/models.py:1021
+#: core/models.py:1026
 msgid "promocode already used"
 msgstr "Promocode is al gebruikt"
 
-#: core/models.py:1033
+#: core/models.py:1038
 #, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
 msgstr "Ongeldig kortingstype voor promocode {self.uuid}"
 
-#: core/models.py:1044
+#: core/models.py:1049
 msgid "percentage discount for the selected products"
 msgstr "Kortingspercentage voor de geselecteerde producten"
 
-#: core/models.py:1045
+#: core/models.py:1050
 msgid "discount percentage"
 msgstr "Kortingspercentage"
 
-#: core/models.py:1050
+#: core/models.py:1055
 msgid "provide a unique name for this promotion"
 msgstr "Geef deze promotie een unieke naam"
 
-#: core/models.py:1051
+#: core/models.py:1056
 msgid "promotion name"
 msgstr "Naam promotie"
 
-#: core/models.py:1057
+#: core/models.py:1062
 msgid "promotion description"
 msgstr "Promotie beschrijving"
 
-#: core/models.py:1062
+#: core/models.py:1067
 msgid "select which products are included in this promotion"
 msgstr "Selecteer welke producten onder deze promotie vallen"
 
-#: core/models.py:1063
+#: core/models.py:1068
 msgid "included products"
 msgstr "Meegeleverde producten"
 
-#: core/models.py:1067
+#: core/models.py:1072
 msgid "promotion"
 msgstr "Promotie"
 
-#: core/models.py:1082
+#: core/models.py:1087
 msgid "the vendor supplying this product stock"
 msgstr "De verkoper die dit product levert"
 
-#: core/models.py:1083
+#: core/models.py:1088
 msgid "associated vendor"
 msgstr "Geassocieerde verkoper"
 
-#: core/models.py:1087
+#: core/models.py:1092
 msgid "final price to the customer after markups"
 msgstr "Eindprijs voor de klant na winstmarges"
 
-#: core/models.py:1088
+#: core/models.py:1093
 msgid "selling price"
 msgstr "Verkoopprijs"
 
-#: core/models.py:1093
+#: core/models.py:1098
 msgid "the product associated with this stock entry"
 msgstr "Het product dat bij deze voorraadvermelding hoort"
 
-#: core/models.py:1101
+#: core/models.py:1106
 msgid "the price paid to the vendor for this product"
 msgstr "De prijs die voor dit product aan de verkoper is betaald"
 
-#: core/models.py:1102
+#: core/models.py:1107
 msgid "vendor purchase price"
 msgstr "Aankoopprijs verkoper"
 
-#: core/models.py:1106
+#: core/models.py:1111
 msgid "available quantity of the product in stock"
 msgstr "Beschikbare hoeveelheid van het product in voorraad"
 
-#: core/models.py:1107
+#: core/models.py:1112
 msgid "quantity in stock"
 msgstr "Hoeveelheid op voorraad"
 
-#: core/models.py:1111
+#: core/models.py:1116
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "Door de verkoper toegewezen SKU om het product te identificeren"
 
-#: core/models.py:1112
+#: core/models.py:1117
 msgid "vendor sku"
 msgstr "Verkoper SKU"
 
-#: core/models.py:1118
+#: core/models.py:1123
 msgid "digital file associated with this stock if applicable"
 msgstr "Digitaal bestand gekoppeld aan deze voorraad indien van toepassing"
 
-#: core/models.py:1119
+#: core/models.py:1124
 msgid "digital file"
 msgstr "Digitaal bestand"
 
-#: core/models.py:1128
+#: core/models.py:1133
 msgid "stock entries"
 msgstr "Voorraadboekingen"
 
-#: core/models.py:1137
+#: core/models.py:1142
 msgid "products that the user has marked as wanted"
 msgstr "Producten die de gebruiker als gewenst heeft gemarkeerd"
 
-#: core/models.py:1145
+#: core/models.py:1150
 msgid "user who owns this wishlist"
 msgstr "Gebruiker die eigenaar is van deze verlanglijst"
 
-#: core/models.py:1146
+#: core/models.py:1151
 msgid "wishlist owner"
 msgstr "Eigenaar verlanglijstje"
 
-#: core/models.py:1154
+#: core/models.py:1159
 msgid "wishlist"
 msgstr "Verlanglijst"
 
-#: core/models.py:1194
+#: core/models.py:1199
 msgid "download"
 msgstr "Downloaden"
 
-#: core/models.py:1195
+#: core/models.py:1200
 msgid "downloads"
 msgstr "Downloads"
 
-#: core/models.py:1203
+#: core/models.py:1208
 msgid "you can not download a digital asset for a non-finished order"
 msgstr ""
 "U kunt geen digitale activa downloaden voor een niet-afgeronde bestelling"
 
-#: core/models.py:1215
+#: core/models.py:1220
 msgid "documentary"
 msgstr "Documentaire"
 
-#: core/models.py:1216
+#: core/models.py:1221
 msgid "documentaries"
 msgstr "Documentaires"
 
-#: core/models.py:1226
+#: core/models.py:1231
 msgid "unresolved"
 msgstr "Onopgelost"
 

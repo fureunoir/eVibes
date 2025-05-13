@@ -1,18 +1,13 @@
-# eVibes Translations.
-# Copyright (C) 2025 Egor "fureunoir" Gorbunov
-# This file is distributed under the same license as the eVibes package.
-# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 14:48+0100\n"
+"POT-Creation-Date: 2025-05-13 20:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: BRITISH ENGLISH\n"
+"Language: it-IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,6 +46,74 @@ msgstr "Ulteriori informazioni"
 msgid "authentication"
 msgstr "Autenticazione"
 
+#: vibes_auth/docs/drf/views.py:15
+msgid "obtain a token pair"
+msgstr "Ottenere una coppia di token"
+
+#: vibes_auth/docs/drf/views.py:16
+msgid "obtain a token pair (refresh and access) for authentication."
+msgstr ""
+"Ottenere una coppia di token (aggiornamento e accesso) per l'autenticazione."
+
+#: vibes_auth/docs/drf/views.py:35
+msgid "refresh a token pair"
+msgstr "Aggiornare una coppia di token"
+
+#: vibes_auth/docs/drf/views.py:36
+msgid "refresh a token pair (refresh and access)."
+msgstr "Aggiorna una coppia di token (refresh e access)."
+
+#: vibes_auth/docs/drf/views.py:55
+msgid "verify a token"
+msgstr "Verifica di un token"
+
+#: vibes_auth/docs/drf/views.py:56
+msgid "Verify a token (refresh or access)."
+msgstr "Verifica di un token (aggiornamento o accesso)."
+
+#: vibes_auth/docs/drf/viewsets.py:15
+msgid "create a new user"
+msgstr "Creare un nuovo utente"
+
+#: vibes_auth/docs/drf/viewsets.py:19
+msgid "retrieve a user's details"
+msgstr "Recuperare i dettagli di un utente"
+
+#: vibes_auth/docs/drf/viewsets.py:23
+msgid "update a user's details"
+msgstr "Aggiornare i dettagli di un utente"
+
+#: vibes_auth/docs/drf/viewsets.py:28
+msgid "delete a user"
+msgstr "Eliminare un utente"
+
+#: vibes_auth/docs/drf/viewsets.py:32
+msgid "reset a user's password by sending a reset password email"
+msgstr ""
+"Reimpostare la password di un utente inviando un'e-mail di reimpostazione "
+"della password"
+
+#: vibes_auth/docs/drf/viewsets.py:40
+msgid "handle avatar upload for a user"
+msgstr "Gestire il caricamento dell'avatar per un utente"
+
+#: vibes_auth/docs/drf/viewsets.py:49
+msgid "confirm a user's password reset"
+msgstr "Confermare la reimpostazione della password di un utente"
+
+#: vibes_auth/docs/drf/viewsets.py:53 vibes_auth/graphene/mutations.py:305
+#: vibes_auth/viewsets.py:72
+msgid "passwords do not match"
+msgstr "Le password non corrispondono"
+
+#: vibes_auth/docs/drf/viewsets.py:58
+msgid "activate a user's account"
+msgstr "Attivare l'account di un utente"
+
+#: vibes_auth/docs/drf/viewsets.py:62
+msgid "activation link is invalid or account already activated"
+msgstr "Il link di attivazione non è valido o l'account è già stato attivato."
+
 #: vibes_auth/graphene/mutations.py:40
 msgid "the user's b64-encoded uuid who referred the new user to us."
 msgstr "L'uuid b64-encoded dell'utente che ci ha segnalato il nuovo utente."
@@ -74,7 +137,8 @@ msgstr "Numero di telefono malformato: {phone_number}"
 msgid "Invalid attribute format: {attribute_pair}"
 msgstr "Formato attributo non valido: {attribute_pair}"
 
-#: vibes_auth/graphene/mutations.py:261
+#: vibes_auth/graphene/mutations.py:261 vibes_auth/viewsets.py:107
+#: vibes_auth/viewsets.py:123
 msgid "activation link is invalid!"
 msgstr "Il link di attivazione non è valido!"
 
@@ -86,11 +150,7 @@ msgstr "L'account è già stato attivato..."
 msgid "something went wrong: {e!s}"
 msgstr "Qualcosa è andato storto: {e!s}"
 
-#: vibes_auth/graphene/mutations.py:305
-msgid "passwords do not match"
-msgstr "Le password non corrispondono"
-
-#: vibes_auth/graphene/mutations.py:312
+#: vibes_auth/graphene/mutations.py:312 vibes_auth/viewsets.py:81
 msgid "token is invalid!"
 msgstr "Il gettone non è valido!"
 
@@ -347,3 +407,19 @@ msgid ""
 msgstr ""
 "Formato del numero di telefono non valido. Il numero deve essere inserito "
 "nel formato: \"+999999999\". Sono consentite fino a 15 cifre."
+
+#: vibes_auth/views.py:168
+msgid "the token is valid"
+msgstr "Il token è valido"
+
+#: vibes_auth/views.py:170
+msgid "the token is invalid"
+msgstr "Il token non è valido"
+
+#: vibes_auth/viewsets.py:85
+msgid "password reset successfully"
+msgstr "La password è stata reimpostata con successo!"
+
+#: vibes_auth/viewsets.py:112
+msgid "account already activated!"
+msgstr "Avete già attivato l'account..."

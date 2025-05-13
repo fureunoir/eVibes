@@ -223,9 +223,14 @@ class OrderViewSet(EvibesViewSet):
 
     @action(detail=False, methods=["get"], url_path="current")
     def current(self, request, *_args, **kwargs):
+        if not request.user.is_authenticated:
+            raise PermissionDenied(permission_denied_message)
+        order = Order.objects.get(user=request.user, status="PENDING")
+        if not request.user == order.user:
+            raise PermissionDenied(permission_denied_message)
         return Response(
             status=status.HTTP_200_OK,
-            data=OrderDetailSerializer(Order.objects.filter(user=request.user)).data,
+            data=OrderDetailSerializer(order).data,
         )
 
     @action(detail=True, methods=["post"], url_path="buy")
@@ -377,9 +382,14 @@ class WishlistViewSet(EvibesViewSet):
 
     @action(detail=False, methods=["get"], url_path="current")
     def current(self, request, *_args, **kwargs):
+        if not request.user.is_authenticated:
+            raise PermissionDenied(permission_denied_message)
+        wishlist = Wishlist.objects.get(user=request.user)
+        if not request.user == wishlist.user:
+            raise PermissionDenied(permission_denied_message)
         return Response(
             status=status.HTTP_200_OK,
-            data=WishlistDetailSerializer(Wishlist.objects.get(user=request.user)).data,
+            data=WishlistDetailSerializer().data,
         )
 
     @action(detail=True, methods=["post"], url_path="add_wishlist_product")
@@ -396,7 +406,7 @@ class WishlistViewSet(EvibesViewSet):
             )
 
             return Response(status=status.HTTP_200_OK, data=WishlistDetailSerializer(wishlist).data)
-        except Order.DoesNotExist:
+        except Wishlist.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=True, methods=["post"], url_path="remove_wishlist_product")
@@ -413,7 +423,7 @@ class WishlistViewSet(EvibesViewSet):
             )
 
             return Response(status=status.HTTP_200_OK, data=WishlistDetailSerializer(wishlist).data)
-        except Order.DoesNotExist:
+        except Wishlist.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
     @action(detail=True, methods=["post"], url_path="bulk_add_wishlist_product")

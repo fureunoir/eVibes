@@ -1,6 +1,7 @@
 import logging
 
 from django.utils.decorators import method_decorator
+from django.utils.translation import gettext_lazy as _
 from django_ratelimit.decorators import ratelimit
 from drf_spectacular.utils import (
     OpenApiExample,
@@ -67,7 +68,6 @@ class TokenObtainPairView(TokenViewBase):
     )
     @method_decorator(ratelimit(key="ip", rate="5/h"))
     def post(self, request, *args, **kwargs):
-        logger.debug("Got to super post")
         return super().post(request, *args, **kwargs)
 
 
@@ -128,8 +128,7 @@ class TokenVerifyView(TokenViewBase):
             200: inline_serializer(
                 name="TokenVerifyResponse",
                 fields={
-                    "refresh": serializers.CharField(),
-                    "access": serializers.CharField(),
+                    "token": serializers.CharField(choices=["valid", "no valid"]),
                     "user": UserSerializer(),
                 },
             ),
@@ -166,6 +165,6 @@ class TokenVerifyView(TokenViewBase):
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             user_data = serializer.validated_data.pop("user", None)
-            return Response({"token": "The token is valid", "user": user_data})
+            return Response({"token": _("the token is valid"), "user": user_data})
         except TokenError:
-            return Response({"detail": "The token is invalid"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"detail": _("the token is invalid")}, status=status.HTTP_400_BAD_REQUEST)

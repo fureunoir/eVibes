@@ -2,7 +2,7 @@ import logging
 from os import getenv
 from pathlib import Path
 
-EVIBES_VERSION = "2.6.1"
+EVIBES_VERSION = "2.6.2"
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
@@ -297,6 +297,8 @@ if getenv("SENTRY_DSN"):
     ignore_errors = [
         "flower.views.error.NotFoundErrorHandler",
         "django.http.response.Http404",
+        "django.core.exceptions.PermissionDenied",
+        "django.core.exceptions.BadRequest",
         "billiard.exceptions.SoftTimeLimitExceeded",
         "core.models.Attribute.DoesNotExist",
         "core.models.AttributeGroup.DoesNotExist",

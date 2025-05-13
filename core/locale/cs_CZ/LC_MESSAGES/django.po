@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 15:33+0100\n"
+"POT-Creation-Date: 2025-05-13 20:44+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -82,7 +82,7 @@ msgstr "Obrázek"
 msgid "images"
 msgstr "Obrázky"
 
-#: core/admin.py:160 core/models.py:1127
+#: core/admin.py:160 core/models.py:1132
 msgid "stock"
 msgstr "Stock"
 
@@ -90,7 +90,7 @@ msgstr "Stock"
 msgid "stocks"
 msgstr "Zásoby"
 
-#: core/admin.py:191 core/graphene/object_types.py:320
+#: core/admin.py:192 core/graphene/object_types.py:320
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -98,35 +98,35 @@ msgstr "Zásoby"
 msgid "price"
 msgstr "Cena"
 
-#: core/admin.py:196
+#: core/admin.py:197
 msgid "rating"
 msgstr "Hodnocení produktu"
 
-#: core/admin.py:200
+#: core/admin.py:201
 msgid "basic info"
 msgstr "Základní informace"
 
-#: core/admin.py:214
+#: core/admin.py:215
 msgid "important dates"
 msgstr "Důležitá data"
 
-#: core/admin.py:215
+#: core/admin.py:216
 msgid "translations"
 msgstr "Překlady"
 
-#: core/admin.py:253 core/models.py:837
+#: core/admin.py:254 core/models.py:842
 msgid "order product"
 msgstr "Objednat produkt"
 
-#: core/admin.py:254 core/graphene/object_types.py:242 core/models.py:838
+#: core/admin.py:255 core/graphene/object_types.py:242 core/models.py:843
 msgid "order products"
 msgstr "Objednat produkty"
 
-#: core/admin.py:273
+#: core/admin.py:274
 msgid "is business"
 msgstr "Je podnikání"
 
-#: core/admin.py:381
+#: core/admin.py:382
 msgid "config"
 msgstr "Konfigurace"
 
@@ -503,55 +503,55 @@ msgstr ""
 msgid "list all products (simple view)"
 msgstr "Seznam všech produktů (jednoduché zobrazení)"
 
-#: core/docs/drf/viewsets.py:278
+#: core/docs/drf/viewsets.py:281
 msgid "(exact) Product UUID"
 msgstr "(přesně) UUID produktu"
 
-#: core/docs/drf/viewsets.py:279
+#: core/docs/drf/viewsets.py:287
 msgid "(icontains) Product name"
 msgstr "(icontains) Název produktu"
 
-#: core/docs/drf/viewsets.py:280
+#: core/docs/drf/viewsets.py:293
 msgid "(list) Category names, case-insensitive"
 msgstr "(seznam) Názvy kategorií, nerozlišuje velká a malá písmena"
 
-#: core/docs/drf/viewsets.py:282
+#: core/docs/drf/viewsets.py:299
 msgid "(exact) Category UUID"
 msgstr "(přesně) Kategorie UUID"
 
-#: core/docs/drf/viewsets.py:283
+#: core/docs/drf/viewsets.py:305
 msgid "(list) Tag names, case-insensitive"
 msgstr "(seznam) Názvy značek, nerozlišuje velká a malá písmena"
 
-#: core/docs/drf/viewsets.py:284
+#: core/docs/drf/viewsets.py:311
 msgid "(gte) Minimum stock price"
 msgstr "(gte) Minimální cena akcií"
 
-#: core/docs/drf/viewsets.py:285
+#: core/docs/drf/viewsets.py:317
 msgid "(lte) Maximum stock price"
 msgstr "(lte) Maximální cena akcií"
 
-#: core/docs/drf/viewsets.py:286
+#: core/docs/drf/viewsets.py:323
 msgid "(exact) Only active products"
 msgstr "(přesně) Pouze aktivní produkty"
 
-#: core/docs/drf/viewsets.py:287
+#: core/docs/drf/viewsets.py:329
 msgid "(iexact) Brand name"
 msgstr "(iexact) Obchodní značka"
 
-#: core/docs/drf/viewsets.py:289
+#: core/docs/drf/viewsets.py:341
 msgid "(gt) Minimum stock quantity"
 msgstr "(gt) Minimální skladové množství"
 
-#: core/docs/drf/viewsets.py:290
+#: core/docs/drf/viewsets.py:347
 msgid "(exact) Product slug"
 msgstr "(přesně) Product slug"
 
-#: core/docs/drf/viewsets.py:291
+#: core/docs/drf/viewsets.py:353
 msgid "(exact) Digital vs. physical"
 msgstr "(přesně) Digitální vs. fyzické"
 
-#: core/docs/drf/viewsets.py:295
+#: core/docs/drf/viewsets.py:360
 msgid ""
 "Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
@@ -559,36 +559,36 @@ msgstr ""
 "Seznam polí oddělených čárkou, podle kterých se má třídit. Pro sestupné řazení použijte předponu `-`.  \n"
 "**Povolené:** uuid, rating, name, slug, created, modified, price, random"
 
-#: core/docs/drf/viewsets.py:310
+#: core/docs/drf/viewsets.py:374
 msgid "retrieve a single product (detailed view)"
 msgstr "Vyhledání jednoho produktu (podrobné zobrazení)"
 
-#: core/docs/drf/viewsets.py:311 core/docs/drf/viewsets.py:320
-#: core/docs/drf/viewsets.py:325 core/docs/drf/viewsets.py:330
+#: core/docs/drf/viewsets.py:379 core/docs/drf/viewsets.py:401
+#: core/docs/drf/viewsets.py:416 core/docs/drf/viewsets.py:431
 msgid "Product UUID or slug"
 msgstr "Identifikátor UUID produktu nebo Slug"
 
-#: core/docs/drf/viewsets.py:315
+#: core/docs/drf/viewsets.py:389
 msgid "create a product"
 msgstr "Vytvoření produktu"
 
-#: core/docs/drf/viewsets.py:319
+#: core/docs/drf/viewsets.py:396
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Přepsání existujícího produktu se zachováním polí, která nelze editovat"
 
-#: core/docs/drf/viewsets.py:324
+#: core/docs/drf/viewsets.py:411
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Aktualizace některých polí existujícího produktu se zachováním polí, která "
 "nelze upravovat."
 
-#: core/docs/drf/viewsets.py:329
+#: core/docs/drf/viewsets.py:426
 msgid "delete a product"
 msgstr "Odstranění produktu"
 
-#: core/elasticsearch/__init__.py:39
+#: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
 msgstr "Nebyl zadán žádný vyhledávací termín."
 
@@ -643,7 +643,7 @@ msgid "please provide either order_uuid or order_hr_id - mutually exclusive"
 msgstr "Zadejte prosím order_uuid nebo order_hr_id - vzájemně se vylučují!"
 
 #: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:248
+#: core/graphene/mutations.py:389 core/viewsets.py:253
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr "Z metody order.buy() pochází nesprávný typ: {type(instance)!s}"
 
@@ -832,7 +832,7 @@ msgstr "Propagační kódy"
 msgid "products on sale"
 msgstr "Produkty v prodeji"
 
-#: core/graphene/object_types.py:405 core/models.py:1068
+#: core/graphene/object_types.py:405 core/models.py:1073
 msgid "promotions"
 msgstr "Propagační akce"
 
@@ -848,11 +848,11 @@ msgstr "Prodejce"
 msgid "product"
 msgstr "Produkt"
 
-#: core/graphene/object_types.py:421 core/models.py:1138
+#: core/graphene/object_types.py:421 core/models.py:1143
 msgid "wishlisted products"
 msgstr "Produkty uvedené na seznamu přání"
 
-#: core/graphene/object_types.py:427 core/models.py:1155
+#: core/graphene/object_types.py:427 core/models.py:1160
 msgid "wishlists"
 msgstr "Seznamy přání"
 
@@ -999,8 +999,8 @@ msgstr "Atribut této hodnoty"
 msgid "the specific product associated with this attribute's value"
 msgstr "Konkrétní produkt spojený s hodnotou tohoto atributu"
 
-#: core/models.py:142 core/models.py:814 core/models.py:928
-#: core/models.py:1094
+#: core/models.py:142 core/models.py:819 core/models.py:933
+#: core/models.py:1099
 msgid "associated product"
 msgstr "Související produkt"
 
@@ -1096,7 +1096,7 @@ msgstr "Volitelně přiřadit tento produkt ke značce"
 msgid "tags that help describe or group this product"
 msgstr "Značky, které pomáhají popsat nebo seskupit tento produkt"
 
-#: core/models.py:280 core/models.py:902
+#: core/models.py:280 core/models.py:907
 msgid "product tags"
 msgstr "Štítky produktu"
 
@@ -1116,7 +1116,7 @@ msgstr "Uveďte jasný identifikační název výrobku"
 msgid "product name"
 msgstr "Název produktu"
 
-#: core/models.py:297 core/models.py:1056
+#: core/models.py:297 core/models.py:1061
 msgid "add a detailed description of the product"
 msgstr "Přidejte podrobný popis produktu"
 
@@ -1217,7 +1217,7 @@ msgstr "Aktuální stav zakázky v jejím životním cyklu"
 msgid "order status"
 msgstr "Stav objednávky"
 
-#: core/models.py:471 core/models.py:791
+#: core/models.py:471 core/models.py:796
 msgid "json structure of notifications to display to users"
 msgstr ""
 "JSON struktura oznámení pro zobrazení uživatelům, v uživatelském rozhraní "
@@ -1255,56 +1255,60 @@ msgstr "lidsky čitelné ID"
 msgid "order"
 msgstr "Objednávka"
 
-#: core/models.py:536
+#: core/models.py:517
+msgid "a user must have only one pending order at a time"
+msgstr "Uživatel smí mít vždy pouze jednu čekající objednávku!"
+
+#: core/models.py:541
 msgid "you cannot add products to an order that is not a pending one"
 msgstr ""
 "Do objednávky, která není v procesu vyřizování, nelze přidat produkty."
 
-#: core/models.py:541
+#: core/models.py:546
 msgid "you cannot add inactive products to order"
 msgstr "Do objednávky nelze přidat neaktivní produkty"
 
-#: core/models.py:558
+#: core/models.py:563
 msgid "you cannot add more products than available in stock"
 msgstr "Nelze přidat více produktů, než je dostupné na skladě"
 
-#: core/models.py:567 core/models.py:584 core/models.py:608
-#: core/models.py:1165 core/models.py:1176
+#: core/models.py:572 core/models.py:589 core/models.py:613
+#: core/models.py:1170 core/models.py:1181
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} neexistuje: {product_uuid}"
 
-#: core/models.py:571 core/models.py:592 core/models.py:600
+#: core/models.py:576 core/models.py:597 core/models.py:605
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr "Nelze odebrat produkty z objednávky, která není nevyřízená."
 
-#: core/models.py:588
+#: core/models.py:593
 #, python-brace-format
 msgid "{name} does not exist with query <{query}>"
 msgstr "{name} neexistuje s dotazem <{query}>"
 
-#: core/models.py:619
+#: core/models.py:624
 msgid "promocode does not exist"
 msgstr "Promo kód neexistuje"
 
-#: core/models.py:626 core/models.py:665
+#: core/models.py:631 core/models.py:670
 msgid "you can not buy at this moment, please try again in a few minutes"
 msgstr ""
 "V tuto chvíli nemůžete nakupovat, zkuste to prosím znovu za několik minut."
 
-#: core/models.py:629
+#: core/models.py:634
 msgid "invalid force value"
 msgstr "Neplatná hodnota síly"
 
-#: core/models.py:632 core/models.py:668
+#: core/models.py:637 core/models.py:673
 msgid "you cannot purchase an empty order!"
 msgstr "Nelze zakoupit prázdnou objednávku!"
 
-#: core/models.py:647
+#: core/models.py:652
 msgid "insufficient funds to complete the order"
 msgstr "Nedostatek finančních prostředků na dokončení objednávky"
 
-#: core/models.py:677
+#: core/models.py:682
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
@@ -1312,187 +1316,187 @@ msgstr ""
 "bez registrace nelze nakupovat, uveďte prosím následující údaje: jméno "
 "zákazníka, e-mail zákazníka, telefonní číslo zákazníka."
 
-#: core/models.py:685
+#: core/models.py:690
 msgid "invalid payment method"
 msgstr "Neplatný způsob platby"
 
-#: core/models.py:701
+#: core/models.py:706
 msgid "you cannot create a momental order without providing a billing address"
 msgstr "nelze vytvořit momentální objednávku bez uvedení fakturační adresy."
 
-#: core/models.py:779
+#: core/models.py:784
 msgid "the price paid by the customer for this product at purchase time"
 msgstr "Cena, kterou zákazník zaplatil za tento produkt v době nákupu."
 
-#: core/models.py:780
+#: core/models.py:785
 msgid "purchase price at order time"
 msgstr "Nákupní cena v době objednávky"
 
-#: core/models.py:785
+#: core/models.py:790
 msgid "internal comments for admins about this ordered product"
 msgstr "Interní komentáře pro administrátory k tomuto objednanému produktu"
 
-#: core/models.py:786
+#: core/models.py:791
 msgid "internal comments"
 msgstr "Interní připomínky"
 
-#: core/models.py:792
+#: core/models.py:797
 msgid "user notifications"
 msgstr "Oznámení uživatele"
 
-#: core/models.py:797
+#: core/models.py:802
 msgid "json representation of this item's attributes"
 msgstr "JSON reprezentace atributů této položky"
 
-#: core/models.py:798
+#: core/models.py:803
 msgid "ordered product attributes"
 msgstr "Objednané atributy produktu"
 
-#: core/models.py:803
+#: core/models.py:808
 msgid "reference to the parent order that contains this product"
 msgstr "Odkaz na nadřazenou objednávku, která obsahuje tento produkt"
 
-#: core/models.py:804
+#: core/models.py:809
 msgid "parent order"
 msgstr "Objednávka rodičů"
 
-#: core/models.py:813
+#: core/models.py:818
 msgid "the specific product associated with this order line"
 msgstr "Konkrétní produkt spojený s touto objednávkou"
 
-#: core/models.py:820
+#: core/models.py:825
 msgid "quantity of this specific product in the order"
 msgstr "Množství tohoto konkrétního produktu v objednávce"
 
-#: core/models.py:821
+#: core/models.py:826
 msgid "product quantity"
 msgstr "Množství produktu"
 
-#: core/models.py:828
+#: core/models.py:833
 msgid "current status of this product in the order"
 msgstr "Aktuální stav tohoto produktu v objednávce"
 
-#: core/models.py:829
+#: core/models.py:834
 msgid "product line status"
 msgstr "Stav produktové řady"
 
-#: core/models.py:887
+#: core/models.py:892
 msgid "internal tag identifier for the product tag"
 msgstr "Interní identifikátor značky produktu"
 
-#: core/models.py:888
+#: core/models.py:893
 msgid "tag name"
 msgstr "Název štítku"
 
-#: core/models.py:892
+#: core/models.py:897
 msgid "user-friendly name for the product tag"
 msgstr "Uživatelsky přívětivý název pro značku produktu"
 
-#: core/models.py:893
+#: core/models.py:898
 msgid "tag display name"
 msgstr "Zobrazení názvu štítku"
 
-#: core/models.py:901
+#: core/models.py:906
 msgid "product tag"
 msgstr "Štítek produktu"
 
-#: core/models.py:910
+#: core/models.py:915
 msgid "provide alternative text for the image for accessibility"
 msgstr "Poskytněte alternativní text k obrázku kvůli přístupnosti."
 
-#: core/models.py:911
+#: core/models.py:916
 msgid "image alt text"
 msgstr "Text alt obrázku"
 
-#: core/models.py:914
+#: core/models.py:919
 msgid "upload the image file for this product"
 msgstr "Nahrát soubor s obrázkem tohoto produktu"
 
-#: core/models.py:915 core/models.py:940
+#: core/models.py:920 core/models.py:945
 msgid "product image"
 msgstr "Obrázek produktu"
 
-#: core/models.py:921
+#: core/models.py:926
 msgid "determines the order in which images are displayed"
 msgstr "Určuje pořadí, v jakém se obrázky zobrazují."
 
-#: core/models.py:922
+#: core/models.py:927
 msgid "display priority"
 msgstr "Priorita zobrazení"
 
-#: core/models.py:927
+#: core/models.py:932
 msgid "the product that this image represents"
 msgstr "Výrobek, který tento obrázek představuje"
 
-#: core/models.py:941
+#: core/models.py:946
 msgid "product images"
 msgstr "Obrázky produktů"
 
-#: core/models.py:951
+#: core/models.py:956
 msgid "unique code used by a user to redeem a discount"
 msgstr "Jedinečný kód, který uživatel použije k uplatnění slevy."
 
-#: core/models.py:952
+#: core/models.py:957
 msgid "promo code identifier"
 msgstr "Identifikátor propagačního kódu"
 
-#: core/models.py:959
+#: core/models.py:964
 msgid "fixed discount amount applied if percent is not used"
 msgstr "Pevná výše slevy, pokud není použito procento"
 
-#: core/models.py:960
+#: core/models.py:965
 msgid "fixed discount amount"
 msgstr "Pevná výše slevy"
 
-#: core/models.py:966
+#: core/models.py:971
 msgid "percentage discount applied if fixed amount is not used"
 msgstr "Procentuální sleva uplatněná v případě nevyužití pevné částky"
 
-#: core/models.py:967
+#: core/models.py:972
 msgid "percentage discount"
 msgstr "Procentuální sleva"
 
-#: core/models.py:972
+#: core/models.py:977
 msgid "timestamp when the promocode expires"
 msgstr "Časové razítko ukončení platnosti promokódu"
 
-#: core/models.py:973
+#: core/models.py:978
 msgid "end validity time"
 msgstr "Doba ukončení platnosti"
 
-#: core/models.py:978
+#: core/models.py:983
 msgid "timestamp from which this promocode is valid"
 msgstr "Časové razítko, od kterého je tento promokód platný"
 
-#: core/models.py:979
+#: core/models.py:984
 msgid "start validity time"
 msgstr "Čas zahájení platnosti"
 
-#: core/models.py:984
+#: core/models.py:989
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr "Časové razítko použití promokódu, prázdné, pokud ještě nebyl použit."
 
-#: core/models.py:985
+#: core/models.py:990
 msgid "usage timestamp"
 msgstr "Časové razítko použití"
 
-#: core/models.py:990
+#: core/models.py:995
 msgid "user assigned to this promocode if applicable"
 msgstr "Uživatel přiřazený k tomuto promokódu, je-li to relevantní"
 
-#: core/models.py:991
+#: core/models.py:996
 msgid "assigned user"
 msgstr "Přiřazený uživatel"
 
-#: core/models.py:998
+#: core/models.py:1003
 msgid "promo code"
 msgstr "Propagační kód"
 
-#: core/models.py:999
+#: core/models.py:1004
 msgid "promo codes"
 msgstr "Propagační kódy"
 
-#: core/models.py:1006
+#: core/models.py:1011
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
@@ -1500,140 +1504,140 @@ msgstr ""
 "Měl by být definován pouze jeden typ slevy (částka nebo procento), nikoli "
 "však oba typy slev nebo žádný z nich."
 
-#: core/models.py:1021
+#: core/models.py:1026
 msgid "promocode already used"
 msgstr "Promo kód byl již použit"
 
-#: core/models.py:1033
+#: core/models.py:1038
 #, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
 msgstr "Neplatný typ slevy pro promocode {self.uuid}"
 
-#: core/models.py:1044
+#: core/models.py:1049
 msgid "percentage discount for the selected products"
 msgstr "Procentuální sleva na vybrané produkty"
 
-#: core/models.py:1045
+#: core/models.py:1050
 msgid "discount percentage"
 msgstr "Procento slevy"
 
-#: core/models.py:1050
+#: core/models.py:1055
 msgid "provide a unique name for this promotion"
 msgstr "Uveďte jedinečný název této propagační akce"
 
-#: core/models.py:1051
+#: core/models.py:1056
 msgid "promotion name"
 msgstr "Název akce"
 
-#: core/models.py:1057
+#: core/models.py:1062
 msgid "promotion description"
 msgstr "Popis propagace"
 
-#: core/models.py:1062
+#: core/models.py:1067
 msgid "select which products are included in this promotion"
 msgstr "Vyberte, které produkty jsou zahrnuty do této akce"
 
-#: core/models.py:1063
+#: core/models.py:1068
 msgid "included products"
 msgstr "Zahrnuté produkty"
 
-#: core/models.py:1067
+#: core/models.py:1072
 msgid "promotion"
 msgstr "Propagace"
 
-#: core/models.py:1082
+#: core/models.py:1087
 msgid "the vendor supplying this product stock"
 msgstr "Prodejce dodávající tento výrobek na sklad"
 
-#: core/models.py:1083
+#: core/models.py:1088
 msgid "associated vendor"
 msgstr "Přidružený prodejce"
 
-#: core/models.py:1087
+#: core/models.py:1092
 msgid "final price to the customer after markups"
 msgstr "Konečná cena pro zákazníka po přirážkách"
 
-#: core/models.py:1088
+#: core/models.py:1093
 msgid "selling price"
 msgstr "Prodejní cena"
 
-#: core/models.py:1093
+#: core/models.py:1098
 msgid "the product associated with this stock entry"
 msgstr "Produkt spojený s touto skladovou položkou"
 
-#: core/models.py:1101
+#: core/models.py:1106
 msgid "the price paid to the vendor for this product"
 msgstr "Cena zaplacená prodejci za tento výrobek"
 
-#: core/models.py:1102
+#: core/models.py:1107
 msgid "vendor purchase price"
 msgstr "Kupní cena prodejce"
 
-#: core/models.py:1106
+#: core/models.py:1111
 msgid "available quantity of the product in stock"
 msgstr "Dostupné množství produktu na skladě"
 
-#: core/models.py:1107
+#: core/models.py:1112
 msgid "quantity in stock"
 msgstr "Množství na skladě"
 
-#: core/models.py:1111
+#: core/models.py:1116
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "SKU přidělený prodejcem pro identifikaci výrobku"
 
-#: core/models.py:1112
+#: core/models.py:1117
 msgid "vendor sku"
 msgstr "SKU prodejce"
 
-#: core/models.py:1118
+#: core/models.py:1123
 msgid "digital file associated with this stock if applicable"
 msgstr "Digitální soubor spojený s touto zásobou, je-li to vhodné"
 
-#: core/models.py:1119
+#: core/models.py:1124
 msgid "digital file"
 msgstr "Digitální soubor"
 
-#: core/models.py:1128
+#: core/models.py:1133
 msgid "stock entries"
 msgstr "Zápisy do zásob"
 
-#: core/models.py:1137
+#: core/models.py:1142
 msgid "products that the user has marked as wanted"
 msgstr "Výrobky, které uživatel označil jako požadované"
 
-#: core/models.py:1145
+#: core/models.py:1150
 msgid "user who owns this wishlist"
 msgstr "Uživatel, který vlastní tento seznam přání"
 
-#: core/models.py:1146
+#: core/models.py:1151
 msgid "wishlist owner"
 msgstr "Majitel seznamu přání"
 
-#: core/models.py:1154
+#: core/models.py:1159
 msgid "wishlist"
 msgstr "Seznam přání"
 
-#: core/models.py:1194
+#: core/models.py:1199
 msgid "download"
 msgstr "Stáhnout"
 
-#: core/models.py:1195
+#: core/models.py:1200
 msgid "downloads"
 msgstr "Ke stažení na"
 
-#: core/models.py:1203
+#: core/models.py:1208
 msgid "you can not download a digital asset for a non-finished order"
 msgstr "Digitální aktivum pro nedokončenou objednávku nelze stáhnout."
 
-#: core/models.py:1215
+#: core/models.py:1220
 msgid "documentary"
 msgstr "Dokumentární film"
 
-#: core/models.py:1216
+#: core/models.py:1221
 msgid "documentaries"
 msgstr "Dokumentární filmy"
 
-#: core/models.py:1226
+#: core/models.py:1231
 msgid "unresolved"
 msgstr "Nevyřešené"
 
