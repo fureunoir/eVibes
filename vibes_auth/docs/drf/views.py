@@ -59,7 +59,7 @@ TOKEN_VERIFY_SCHEMA = {
             status.HTTP_200_OK: inline_serializer(
                 "TokenVerifyResponse",
                 fields={
-                    "token": serializers.CharField(choices=["valid", "no valid"]),
+                    "token": serializers.CharField(default=_("the token is valid")),
                     "user": UserSerializer(),
                 },
             ),
