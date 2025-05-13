@@ -102,7 +102,7 @@ class AbstractVendor:
     def auto_resolver_helper(model: type[Brand] | type[Category], resolving_name: str):
         queryset = model.objects.filter(name=resolving_name)
         if not queryset.exists():
-            return model.objects.get_or_create(name=resolving_name, defaults={"is_active": False})
+            return model.objects.get_or_create(name=resolving_name, defaults={"is_active": False})[0]
         elif queryset.filter(is_active=True).count() > 1:
             queryset = queryset.filter(is_active=True)
         elif queryset.filter(is_active=False).count() > 1:

@@ -301,6 +301,8 @@ if getenv("SENTRY_DSN"):
         "core.models.Product.DoesNotExist",
         "core.models.Category.DoesNotExist",
         "core.models.Brand.DoesNotExist",
+        "core.models.Stock.DoesNotExist",
+        "core.models.ProductImage.DoesNotExist",
         "blog.models.Post.DoesNotExist",
     ]
 
