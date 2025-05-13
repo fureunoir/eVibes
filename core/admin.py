@@ -184,15 +184,20 @@ class VendorNameListFilter(admin.SimpleListFilter):
 
     def lookups(self, request, model_admin):
         qs = model_admin.get_queryset(request)
-        vendors = qs.values_list("stocks__vendor__name", flat=True).distinct()
-        return [(vendor, vendor) for vendor in vendors if vendor]
+        vendors = (
+            qs.values_list("stocks__vendor__name", flat=True)
+            .distinct()
+        )
+        return [(v, v) for v in vendors if v]
 
     def queryset(self, request, queryset):
-        if self.value():
-            values = [v.strip() for v in self.value().split(",") if v.strip()]
-            if values:
-                return queryset.filter(stocks__vendor__name__in=values)
-        return queryset
+        val = self.value()
+        if not val:
+            return queryset
+
+        values = [v.strip() for v in val.split(",") if v.strip()] if isinstance(val, str) else [v for v in val if v]
+
+        return queryset.filter(stocks__vendor__name__in=values)
 
 
 @admin.register(Product)
