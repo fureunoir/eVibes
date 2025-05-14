@@ -1185,8 +1185,12 @@ class Wishlist(NiceModel):
     def bulk_add_products(self, product_uuids):
         self.products.add(*Product.objects.filter(uuid__in=product_uuids))
 
+        return self
+
     def bulk_remove_products(self, product_uuids):
         self.products.remove(*Product.objects.filter(uuid__in=product_uuids))
+
+        return self
 
 
 class DigitalAssetDownload(NiceModel):
