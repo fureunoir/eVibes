@@ -73,7 +73,8 @@ class BlockInvalidHostMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if request.META.get("HTTP_HOST") not in getenv("ALLOWED_HOSTS").split(" "):
+        allowed_hosts = getenv("ALLOWED_HOSTS").split(" ")
+        if request.META.get("HTTP_HOST") not in allowed_hosts and "*" not in allowed_hosts:
             return HttpResponseForbidden("Invalid Host Header")
         return self.get_response(request)
 

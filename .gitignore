@@ -79,11 +79,11 @@ db_backups
 services_data
 services_data/postgres/*
 services_data/redis/*
-./static
-!core/static/*
-!geo/static/*
-!payments/static/*
-!vibes_auth/static/*
+static
+!core/static
+!geo/static
+!payments/static
+!vibes_auth/static
 media
 debug.log
 errors.log
