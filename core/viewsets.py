@@ -389,7 +389,7 @@ class WishlistViewSet(EvibesViewSet):
             raise PermissionDenied(permission_denied_message)
         return Response(
             status=status.HTTP_200_OK,
-            data=WishlistDetailSerializer().data,
+            data=WishlistDetailSerializer(wishlist).data,
         )
 
     @action(detail=True, methods=["post"], url_path="add_wishlist_product")
