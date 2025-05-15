@@ -37,22 +37,22 @@ class CreateUser(BaseMutation):
         phone_number = String()
         is_subscribed = Boolean()
         language = String()
-        referrer = UUID(required=False, description=_("the user's b64-encoded uuid who referred the new user to us."))
+        referrer = String(required=False, description=_("the user's b64-encoded uuid who referred the new user to us."))
 
     success = Boolean()
 
     def mutate(
-        self,
-        info,
-        email,
-        password,
-        confirm_password,
-        last_name=None,
-        first_name=None,
-        phone_number=None,
-        is_subscribed=None,
-        language=None,
-        **kwargs,
+            self,
+            info,
+            email,
+            password,
+            confirm_password,
+            last_name=None,
+            first_name=None,
+            phone_number=None,
+            is_subscribed=None,
+            language=None,
+            **kwargs,
     ):
         try:
             if compare_digest(password, confirm_password):
@@ -138,17 +138,17 @@ class UpdateUser(BaseMutation):
                 "password",
                 "confirm_password",
             ] and (
-                attr
-                not in [
-                    "groups",
-                    "user_permissions",
-                    "phone_number",
-                    "is_verified",
-                    "is_staff",
-                    "is_active",
-                    "is_superuser",
-                ]
-                or info.context.user.has_perm("vibes_auth.change_user")
+                    attr
+                    not in [
+                        "groups",
+                        "user_permissions",
+                        "phone_number",
+                        "is_verified",
+                        "is_staff",
+                        "is_active",
+                        "is_superuser",
+                    ]
+                    or info.context.user.has_perm("vibes_auth.change_user")
             ):
                 setattr(user, attr, value)
 
