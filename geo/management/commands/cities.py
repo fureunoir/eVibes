@@ -215,20 +215,31 @@ class Command(BaseCommand):
                 with zipfile.ZipFile(str(filepath)).open(name + ".txt", "r") as f:
                     zip_member = f
                 file_obj = io.TextIOWrapper(zip_member, encoding="utf-8")
+
+                for row in file_obj:
+                    if not row.startswith("#"):
+                        yield dict(
+                            list(
+                                zip(
+                                    settings.files[filekey]["fields"],
+                                    row.rstrip("\n").split("\t"),
+                                )
+                            )
+                        )
             else:
                 with open(os.path.join(self.data_dir, filename), encoding="utf-8") as f:
                     file_obj = f
 
-            for row in file_obj:
-                if not row.startswith("#"):
-                    yield dict(
-                        list(
-                            zip(
-                                settings.files[filekey]["fields"],
-                                row.rstrip("\n").split("\t"),
+                    for row in file_obj:
+                        if not row.startswith("#"):
+                            yield dict(
+                                list(
+                                    zip(
+                                        settings.files[filekey]["fields"],
+                                        row.rstrip("\n").split("\t"),
+                                    )
+                                )
                             )
-                        )
-                    )
 
     def parse(self, data):
         for line in data:
