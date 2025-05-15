@@ -243,6 +243,8 @@ class OrderViewSet(EvibesViewSet):
                 force_balance=serializer.validated_data.get("force_balance"),
                 force_payment=serializer.validated_data.get("force_payment"),
                 promocode_uuid=serializer.validated_data.get("promocode_uuid"),
+                shipping_address=serializer.validated_data.get("shipping_address"),
+                billing_address=serializer.validated_data.get("billing_address"),
             )
             match str(type(instance)):
                 case "<class 'payments.models.Transaction'>":

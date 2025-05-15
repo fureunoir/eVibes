@@ -47,7 +47,6 @@ class TokenVerifyView(TokenViewBase):
     serializer_class = TokenVerifySerializer
     _serializer_class = TokenVerifySerializer
 
-    @method_decorator(ratelimit(key="ip", rate="10/h" if not DEBUG else "888/h"))
     def post(self, request, *args, **kwargs):
         try:
             serializer = self.get_serializer(data=request.data)

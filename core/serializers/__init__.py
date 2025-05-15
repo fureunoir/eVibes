@@ -70,6 +70,8 @@ class BuyOrderSerializer(Serializer):
     force_balance = BooleanField(required=False, default=False)
     force_payment = BooleanField(required=False, default=False)
     promocode_uuid = CharField(required=False)
+    shipping_address_uuid = CharField(required=False)
+    billing_address_uuid = CharField(required=False)
 
 
 class BuyUnregisteredOrderSerializer(Serializer):

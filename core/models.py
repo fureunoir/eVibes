@@ -625,13 +625,33 @@ class Order(NiceModel):
         return promocode.use(self)
 
     def buy(
-            self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None
+            self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None,
+            billing_address: str | None = None, shipping_address: str | None = None, **kwargs
     ) -> Self | Transaction | None:
         if config.DISABLED_COMMERCE:
             raise DisabledCommerceError(_("you can not buy at this moment, please try again in a few minutes"))
 
         if (not force_balance and not force_payment) or (force_balance and force_payment):
             raise ValueError(_("invalid force value"))
+
+        if not self.is_whole_digital and not any([shipping_address, billing_address]):
+            raise ValueError(_("you can only buy physical products with shipping address specified"))
+
+        if shipping_address and not billing_address:
+            shipping_address = Address.objects.get(uuid=shipping_address)
+            billing_address = shipping_address
+
+        elif billing_address and not shipping_address:
+            billing_address = Address.objects.get(uuid=billing_address)
+            shipping_address = billing_address
+
+        else:
+            billing_address = Address.objects.get(uuid=billing_address)
+            shipping_address = Address.objects.get(uuid=shipping_address)
+
+        self.billing_address = billing_address
+        self.shipping_address = shipping_address
+        self.save()
 
         if self.total_quantity < 1:
             raise ValueError(_("you cannot purchase an empty order!"))

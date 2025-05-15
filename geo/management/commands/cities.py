@@ -67,7 +67,6 @@ Continent = load_model("geo", "Continent")
 Country = load_model("geo", "Country")
 City = load_model("geo", "City")
 
-
 # Only log errors during Travis tests
 LOGGER_NAME = os.environ.get("TRAVIS_LOGGER_NAME", "geo")
 
@@ -93,7 +92,7 @@ class Command(BaseCommand):
                 metavar="DATA_TYPES",
                 default="all",
                 help="Selectively import data. Comma separated list of data types: "
-                + str(import_opts).replace("'", ""),
+                     + str(import_opts).replace("'", ""),
             ),
             make_option(
                 "--flush",
@@ -198,9 +197,8 @@ class Command(BaseCommand):
                 if not os.path.exists(self.data_dir):
                     os.makedirs(self.data_dir)
                 with open(os.path.join(self.data_dir, filename), "wb") as f:
-                    file = f
-                file.write(web_file.read())
-                file.close()
+                    f.write(web_file.read())
+                    f.close()
             elif not os.path.exists(os.path.join(self.data_dir, filename)):
                 raise Exception(f"File not found and download failed: {filename} [{url}]")
 
@@ -258,10 +256,10 @@ class Command(BaseCommand):
         import_continents_as_fks = isinstance(Country._meta.get_field("continent"), ForeignKey)
 
         for item in tqdm(
-            [d for d in data if d["code"] not in NO_LONGER_EXISTENT_COUNTRY_CODES],
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing countries",
+                [d for d in data if d["code"] not in NO_LONGER_EXISTENT_COUNTRY_CODES],
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing countries",
         ):
             if not self.call_hook("country_pre", item):
                 continue
@@ -314,10 +312,10 @@ class Command(BaseCommand):
                 continue
 
         for country, neighbour_codes in tqdm(
-            list(neighbours.items()),
-            disable=self.options.get("quiet"),
-            total=len(neighbours),
-            desc="Importing country neighbours",
+                list(neighbours.items()),
+                disable=self.options.get("quiet"),
+                total=len(neighbours),
+                desc="Importing country neighbours",
         ):
             neighbours = [x for x in [countries.get(x) for x in neighbour_codes if x] if x]
             country.neighbours.add(*neighbours)
@@ -328,10 +326,10 @@ class Command(BaseCommand):
 
         self.country_index = {}
         for obj in tqdm(
-            Country.objects.all(),
-            disable=self.options.get("quiet"),
-            total=Country.objects.all().count(),
-            desc="Building country index",
+                Country.objects.all(),
+                disable=self.options.get("quiet"),
+                total=Country.objects.all().count(),
+                desc="Building country index",
         ):
             self.country_index[obj.code] = obj
 
@@ -347,10 +345,10 @@ class Command(BaseCommand):
 
         countries_not_found = {}
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing regions",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing regions",
         ):
             if not self.call_hook("region_pre", item):
                 continue
@@ -409,13 +407,13 @@ class Command(BaseCommand):
 
         self.region_index = {}
         for obj in tqdm(
-            chain(
-                Region.objects.all().prefetch_related("country"),
-                Subregion.objects.all().prefetch_related("region__country"),
-            ),
-            disable=self.options.get("quiet"),
-            total=Region.objects.all().count() + Subregion.objects.all().count(),
-            desc="Building region index",
+                chain(
+                    Region.objects.all().prefetch_related("country"),
+                    Subregion.objects.all().prefetch_related("region__country"),
+                ),
+                disable=self.options.get("quiet"),
+                total=Region.objects.all().count() + Subregion.objects.all().count(),
+                desc="Building region index",
         ):
             self.region_index[obj.full_code()] = obj
 
@@ -432,10 +430,10 @@ class Command(BaseCommand):
 
         regions_not_found = {}
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing subregions",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing subregions",
         ):
             if not self.call_hook("subregion_pre", item):
                 continue
@@ -503,10 +501,10 @@ class Command(BaseCommand):
         self.build_region_index()
 
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing cities",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing cities",
         ):
             if not self.call_hook("city_pre", item):
                 continue
@@ -616,10 +614,10 @@ class Command(BaseCommand):
 
         self.hierarchy = {}
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Building hierarchy index",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Building hierarchy index",
         ):
             parent_id = int(item["parent"])
             child_id = int(item["child"])
@@ -639,18 +637,18 @@ class Command(BaseCommand):
 
         city_index = {}
         for obj in tqdm(
-            City.objects.all(),
-            disable=self.options.get("quiet"),
-            total=City.objects.all().count(),
-            desc="Building city index",
+                City.objects.all(),
+                disable=self.options.get("quiet"),
+                total=City.objects.all().count(),
+                desc="Building city index",
         ):
             city_index[obj.id] = obj
 
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing districts",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing districts",
         ):
             if not self.call_hook("district_pre", item):
                 continue
@@ -766,10 +764,10 @@ class Command(BaseCommand):
         for type_ in (Country, Region, Subregion, City, District):
             plural_type_name = f"{type_.__name__}s" if type_.__name__[-1] != "y" else f"{type_.__name__[:-1]}ies"
             for obj in tqdm(
-                type_.objects.all(),
-                disable=self.options.get("quiet"),
-                total=type_.objects.all().count(),
-                desc=f"Building geo index for {plural_type_name.lower()}",
+                    type_.objects.all(),
+                    disable=self.options.get("quiet"),
+                    total=type_.objects.all().count(),
+                    desc=f"Building geo index for {plural_type_name.lower()}",
             ):
                 geo_index[obj.id] = {
                     "type": type_,
@@ -777,10 +775,10 @@ class Command(BaseCommand):
                 }
 
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing data for alternative names",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing data for alternative names",
         ):
             if not self.call_hook("alt_name_pre", item):
                 continue
@@ -897,10 +895,10 @@ class Command(BaseCommand):
 
         self.postal_code_regex_index = {}
         for code, country in tqdm(
-            self.country_index.items(),
-            disable=self.options.get("quiet"),
-            total=len(self.country_index),
-            desc="Building postal code regex index",
+                self.country_index.items(),
+                disable=self.options.get("quiet"),
+                total=len(self.country_index),
+                desc="Building postal code regex index",
         ):
             try:
                 self.postal_code_regex_index[code] = re.compile(country.postal_code_regex)
@@ -928,10 +926,10 @@ class Command(BaseCommand):
         if num_existing_postal_codes == 0:
             self.logger.debug("Zero postal codes found - using only-create postal code optimization")
         for item in tqdm(
-            data,
-            disable=self.options.get("quiet"),
-            total=total,
-            desc="Importing postal codes",
+                data,
+                disable=self.options.get("quiet"),
+                total=total,
+                desc="Importing postal codes",
         ):
             if not self.call_hook("postal_code_pre", item):
                 continue
@@ -1137,16 +1135,16 @@ class Command(BaseCommand):
                     )
                     # If they're both part of the same city
                     if (
-                        District.objects.filter(
-                            Q(city__region__name_std__iexact=pc.region_name)
-                            | Q(city__region__name__iexact=pc.region_name),
-                            Q(name_std__iexact=pc.district_name) | Q(name__iexact=pc.district_name),
-                            city__country=pc.country,
-                        )
-                        .values_list("city")
-                        .distinct()
-                        .count()
-                        == 1
+                            District.objects.filter(
+                                Q(city__region__name_std__iexact=pc.region_name)
+                                | Q(city__region__name__iexact=pc.region_name),
+                                Q(name_std__iexact=pc.district_name) | Q(name__iexact=pc.district_name),
+                                city__country=pc.country,
+                            )
+                                    .values_list("city")
+                                    .distinct()
+                                    .count()
+                            == 1
                     ):
                         # Use the one with the lower ID
                         pc.district = (
@@ -1244,9 +1242,9 @@ class Command(BaseCommand):
         for type_ in (Country, Region, Subregion, City, District, PostalCode):
             plural_type_name = type_.__name__ if type_.__name__[-1] != "y" else f"{type_.__name__[:-1]}ies"
             for obj in tqdm(
-                type_.objects.all(),
-                disable=self.options.get("quiet"),
-                total=type_.objects.count(),
-                desc=f"Flushing alternative names for {plural_type_name}",
+                    type_.objects.all(),
+                    disable=self.options.get("quiet"),
+                    total=type_.objects.count(),
+                    desc=f"Flushing alternative names for {plural_type_name}",
             ):
                 obj.alt_names.all().delete()

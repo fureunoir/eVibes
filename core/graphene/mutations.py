@@ -172,26 +172,32 @@ class BuyOrder(BaseMutation):
         force_balance = Boolean(required=False)
         force_payment = Boolean(required=False)
         promocode_uuid = UUID(required=False)
+        shipping_address = UUID(required=False)
+        billing_address = UUID(required=False)
 
     order = Field(OrderType, required=False)
     transaction = Field(TransactionType, required=False)
 
     @staticmethod
     def mutate(_parent, info, order_uuid=None, order_hr_id=None, force_balance=False, force_payment=False,
-               promocode_uuid=None):
+               promocode_uuid=None, shipping_address=None, billing_address=None):
         if not any([order_uuid, order_hr_id]) or all([order_uuid, order_hr_id]):
             raise BadRequest(_("please provide either order_uuid or order_hr_id - mutually exclusive"))
         user = info.context.user
         try:
 
+            order = None
+
             if order_uuid:
                 order = Order.objects.get(user=user, uuid=order_uuid)
-            if order_hr_id:
+            elif order_hr_id:
                 order = Order.objects.get(user=user, human_readable_id=order_hr_id)
 
             instance = order.buy(
-                force_balance=force_balance, force_payment=force_payment, promocode_uuid=promocode_uuid
+                force_balance=force_balance, force_payment=force_payment, promocode_uuid=promocode_uuid,
+                shipping_address=shipping_address, billing_address=billing_address
             )
+
             match str(type(instance)):
                 case "<class 'payments.models.Transaction'>":
                     return BuyOrder(transaction=instance)
@@ -199,6 +205,7 @@ class BuyOrder(BaseMutation):
                     return BuyOrder(order=instance)
                 case _:
                     raise TypeError(_(f"wrong type came from order.buy() method: {type(instance)!s}"))
+
         except Order.DoesNotExist:
             raise Http404(_(f"order {order_uuid} not found"))
 
