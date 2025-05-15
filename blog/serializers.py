@@ -1,5 +1,5 @@
 from rest_framework.fields import SerializerMethodField
-from rest_framework.serializers import ModelSerializer, Serializer
+from rest_framework.serializers import ModelSerializer
 
 from blog.models import Post, PostTag
 
@@ -10,7 +10,7 @@ class PostTagSerializer(ModelSerializer):
         fields = "__all__"
 
 
-class PostSerializer(Serializer):
+class PostSerializer(ModelSerializer):
     tags = PostTagSerializer(many=True)
     content = SerializerMethodField()
 
