@@ -69,7 +69,7 @@ class UserAdmin(BaseUserAdmin, BasicModelAdmin):
             },
         ),
         (_("important dates"), {"fields": ("last_login", "date_joined")}),
-        (_("additional info"), {"fields": ("recently_viewed", "language", "attributes")}),
+        (_("additional info"), {"fields": ("language", "attributes")}),
     )
     add_fieldsets = (
         (
@@ -90,7 +90,7 @@ class UserAdmin(BaseUserAdmin, BasicModelAdmin):
         "is_subscribed",
     )
     ordering = ("email",)
-    readonly_fields = ("recently_viewed", "password")
+    readonly_fields = ("password")
     form = UserForm
 
     def get_queryset(self, request):

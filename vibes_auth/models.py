@@ -2,13 +2,13 @@ from uuid import uuid4
 
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import Group as BaseGroup
+from django.core.cache import cache
 from django.db.models import (
     BooleanField,
     CharField,
     EmailField,
     ImageField,
     JSONField,
-    ManyToManyField,
     UUIDField,
 )
 from django.utils.translation import gettext_lazy as _
@@ -65,12 +65,6 @@ class User(AbstractUser, NiceModel):
     is_subscribed = BooleanField(
         verbose_name=_("is_subscribed"), help_text=_("user's newsletter subscription status"), default=False
     )
-    recently_viewed = ManyToManyField(
-        "core.Product",
-        verbose_name=_("recently viwed"),
-        blank=True,
-        help_text=_("recently viewed products"),
-    )
 
     activation_token = UUIDField(default=uuid4, verbose_name=_("activation token"))
     language = CharField(choices=LANGUAGES, default=LANGUAGE_CODE, null=False, blank=False, max_length=7)
@@ -81,12 +75,19 @@ class User(AbstractUser, NiceModel):
     objects = UserManager()
 
     def add_to_recently_viewed(self, product_uuid):
-        if not self.recently_viewed.filter(uuid=product_uuid).exists():
-            if not self.recently_viewed.count() >= 48:
-                self.recently_viewed.add(product_uuid)
+        recently_viewed = self.recently_viewed
+        if not product_uuid in recently_viewed:
+            if not len(recently_viewed) >= 48:
+                recently_viewed.append(product_uuid)
+                cache.set(f"user_{self.uuid}_rv", recently_viewed)
             else:
-                self.recently_viewed.remove(self.recently_viewed.first())
-                self.recently_viewed.add(product_uuid)
+                recently_viewed.pop(0)
+                recently_viewed.append(product_uuid)
+                cache.set(f"user_{self.uuid}_rv", recently_viewed)
+
+    @property
+    def recently_viewed(self):
+        return [] or cache.get(f"user_{self.uuid}_rv")
 
     def check_token(self, token):
         return str(token) == str(self.activation_token)
