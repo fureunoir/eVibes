@@ -90,7 +90,7 @@ class UserAdmin(BaseUserAdmin, BasicModelAdmin):
         "is_subscribed",
     )
     ordering = ("email",)
-    readonly_fields = ("password")
+    readonly_fields = ("password",)
     form = UserForm
 
     def get_queryset(self, request):
