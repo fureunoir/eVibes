@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('geo', '0001_initial'),
+        ('geo', '0002_alter_address_api_response_alter_address_location_and_more'),
     ]
 
     operations = [
