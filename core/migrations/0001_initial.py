@@ -16,6 +16,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
+        ('geo', '0001_initial'),
     ]
 
     operations = [
