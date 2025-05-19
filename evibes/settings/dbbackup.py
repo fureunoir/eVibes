@@ -1,4 +1,12 @@
-from evibes.settings.base import getenv
+from evibes.settings.base import getenv  # noqa: I001
+
+DBBACKUP_CONNECTORS = {
+    'default': {
+        'SINGLE_TRANSACTION': False,
+        'IF_EXISTS': True,
+        'RESTORE_SUFFIX': '--set ON_ERROR_STOP=off',
+    }
+}
 
 if getenv("DBBACKUP_SFTP_HOST") and getenv("DBBACKUP_SFTP_USER") and getenv("DBBACKUP_SFTP_PASS"):
     DBBACKUP_STORAGE = "storages.backends.sftpstorage.SFTPStorage"
