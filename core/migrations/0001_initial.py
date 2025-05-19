@@ -16,7 +16,6 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('geo', '0013_alter_city_options_alternativename_active_and_more'),
     ]
 
     operations = [

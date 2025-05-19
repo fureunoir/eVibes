@@ -11,6 +11,4 @@ ELASTICSEARCH_DSL = {
 
 ELASTICSEARCH_DSL_AUTOSYNC = True
 ELASTICSEARCH_DSL_PARALLEL = False
-ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = (
-    "django_elasticsearch_dsl.signals.CelerySignalProcessor"
-)
+ELASTICSEARCH_DSL_SIGNAL_PROCESSOR = "evibes.signal_processors.SelectiveSignalProcessor"

@@ -70,6 +70,7 @@ from core.utils import get_project_parameters
 from core.utils.languages import get_flag_by_language
 from core.utils.messages import permission_denied_message
 from evibes.settings import LANGUAGES
+from geo.graphene.mutations import AutocompleteAddress, CreateAddress, DeleteAddress
 from payments.graphene.mutations import Deposit
 from vibes_auth.filters import UserFilter
 from vibes_auth.graphene.mutations import (
@@ -304,6 +305,9 @@ class Mutation(ObjectType):
     create_product = CreateProduct.Field()
     update_product = UpdateProduct.Field()
     delete_product = DeleteProduct.Field()
+    create_address = CreateAddress.Field()
+    delete_address = DeleteAddress.Field()
+    autocomplete_address = AutocompleteAddress.Field()
 
 
 schema = Schema(query=Query, mutation=Mutation)

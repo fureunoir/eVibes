@@ -44,7 +44,7 @@ from core.utils import generate_human_readable_id, get_product_uuid_as_path, get
 from core.utils.lists import FAILED_STATUSES
 from core.validators import validate_category_image_dimensions
 from evibes.settings import CURRENCY_CODE
-from geo.models import Address, City, Country, PostalCode, Region
+from geo.models import Address
 from payments.models import Transaction
 
 logger = logging.getLogger(__name__)
@@ -624,6 +624,31 @@ class Order(NiceModel):
             raise Http404(_("promocode does not exist"))
         return promocode.use(self)
 
+    def apply_addresses(self, billing_address_uuid, shipping_address_uuid):
+
+        try:
+            if not self.is_whole_digital and not any([shipping_address_uuid, billing_address_uuid]):
+                raise ValueError(_("you can only buy physical products with shipping address specified"))
+
+            if billing_address_uuid and not shipping_address_uuid:
+                shipping_address = Address.objects.get(uuid=billing_address_uuid)
+                billing_address = shipping_address
+
+            elif shipping_address_uuid and not billing_address_uuid:
+                billing_address = Address.objects.get(uuid=shipping_address_uuid)
+                shipping_address = billing_address
+
+            else:
+                billing_address = Address.objects.get(uuid=billing_address_uuid)
+                shipping_address = Address.objects.get(uuid=shipping_address_uuid)
+
+            self.billing_address = billing_address
+            self.shipping_address = shipping_address
+            self.save()
+
+        except Address.DoesNotExist:
+            raise Http404(_("address does not exist"))
+
     def buy(
             self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None,
             billing_address: str | None = None, shipping_address: str | None = None, **kwargs
@@ -634,24 +659,7 @@ class Order(NiceModel):
         if (not force_balance and not force_payment) or (force_balance and force_payment):
             raise ValueError(_("invalid force value"))
 
-        if not self.is_whole_digital and not any([shipping_address, billing_address]):
-            raise ValueError(_("you can only buy physical products with shipping address specified"))
-
-        if shipping_address and not billing_address:
-            shipping_address = Address.objects.get(uuid=shipping_address)
-            billing_address = shipping_address
-
-        elif billing_address and not shipping_address:
-            billing_address = Address.objects.get(uuid=billing_address)
-            shipping_address = billing_address
-
-        else:
-            billing_address = Address.objects.get(uuid=billing_address)
-            shipping_address = Address.objects.get(uuid=shipping_address)
-
-        self.billing_address = billing_address
-        self.shipping_address = shipping_address
-        self.save()
+        self.apply_addresses(billing_address, shipping_address)
 
         if self.total_quantity < 1:
             raise ValueError(_("you cannot purchase an empty order!"))
@@ -709,49 +717,10 @@ class Order(NiceModel):
         if payment_method not in cache.get("payment_methods"):
             raise ValueError(_("invalid payment method"))
 
-        billing_customer_address = kwargs.pop("billing_customer_address")
-        billing_customer_city = billing_customer_address.pop("customer_city")
-        billing_customer_country = billing_customer_address.pop("customer_country")
-        billing_customer_postal_code = billing_customer_address.pop("customer_postal_code")
-        billing_customer_address_line = billing_customer_address.pop("customer_address_line")
+        billing_customer_address_uuid = kwargs.get("billing_customer_address")
+        shipping_customer_address_uuid = kwargs.get("shipping_customer_address")
 
-        if not all(
-                [
-                    billing_customer_city,
-                    billing_customer_country,
-                    billing_customer_postal_code,
-                    billing_customer_address_line,
-                ]
-        ):
-            raise ValueError(_("you cannot create a momental order without providing a billing address"))
-
-        billing_address = Address.objects.get_or_create(
-            user=None,
-            country=Country.objects.get(code=billing_customer_country),
-            region=Region.objects.get(code=billing_customer_city),
-            city=City.objects.get(name=billing_customer_city),
-            postal_code=PostalCode.objects.get(code=billing_customer_postal_code),
-            street=billing_customer_address_line,
-        )
-
-        shipping_customer_address = kwargs.pop("shipping_customer_address")
-        shipping_customer_city = shipping_customer_address.pop("customer_city")
-        shipping_customer_country = shipping_customer_address.pop("customer_country")
-        shipping_customer_postal_code = shipping_customer_address.pop("customer_postal_code")
-        shipping_customer_address_line = shipping_customer_address.pop("сustomer_address_line")
-
-        if not shipping_customer_address:
-            shipping_address = billing_address
-
-        else:
-            shipping_address = Address.objects.get_or_create(
-                user=None,
-                country=Country.objects.get(code=shipping_customer_country),
-                region=Region.objects.get(code=shipping_customer_city),
-                city=City.objects.get(name=billing_customer_city),
-                postal_code=PostalCode.objects.get(code=shipping_customer_postal_code),
-                street=shipping_customer_address_line,
-            )
+        self.apply_addresses(billing_customer_address_uuid, shipping_customer_address_uuid)
 
         for product_uuid in products:
             self.add_product(product_uuid)
@@ -759,8 +728,6 @@ class Order(NiceModel):
         amount = self.apply_promocode(promocode_uuid) if promocode_uuid else self.total_price
 
         self.status = "CREATED"
-        self.shipping_address = shipping_address
-        self.billing_address = billing_address
         self.attributes.update(
             {
                 "customer_name": customer_name,
@@ -1042,9 +1009,12 @@ class PromoCode(NiceModel):
         return "percent"
 
     def use(self, order: Order) -> float:
+
         if self.used_on:
             raise ValueError(_("promocode already used"))
+
         amount = order.total_price
+
         match self.discount_type:
             case "percent":
                 amount -= round(amount * (self.discount_percent / 100), 2)
@@ -1056,7 +1026,8 @@ class PromoCode(NiceModel):
                 order.save()
             case _:
                 raise ValueError(_(f"invalid discount type for promocode {self.uuid}"))
-        self.used_on = datetime.datetime(datetime.datetime(self.used_on).year, 1, 1)
+
+        self.used_on = datetime.datetime.now()
         self.save()
         return amount
 
@@ -1196,6 +1167,7 @@ class Wishlist(NiceModel):
             product = Product.objects.get(uuid=product_uuid)
             if product not in self.products.all():
                 return self
+            self.products.remove(product)
         except Product.DoesNotExist:
             name = "Product"
             raise Http404(_(f"{name} does not exist: {product_uuid}"))

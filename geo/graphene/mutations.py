@@ -1,95 +1,35 @@
 import graphene
+from django.core.exceptions import BadRequest
 from django.http import Http404
 from django.utils.translation import gettext_lazy as _
+from graphene.types.generic import GenericScalar
 from rest_framework.exceptions import PermissionDenied
 
 from core.graphene import BaseMutation
 from core.utils.messages import permission_denied_message
 from geo.graphene.object_types import AddressType
-from geo.models import Address, City, PostalCode
-from geo.utils import PointScalar
+from geo.models import Address
+from geo.utils.nominatim import fetch_address_suggestions
 
 
-class CreateAddress(BaseMutation):
+class CreateAddress(graphene.Mutation):
     class Arguments:
-        location = PointScalar()
-        street = graphene.String()
-        city_uuid = graphene.UUID()
-        postal_code_uuid = graphene.UUID()
+        raw_data = graphene.String(
+            required=True,
+            description=_("original address string provided by the user")
+        )
 
     address = graphene.Field(AddressType)
 
     @staticmethod
-    def mutate(_parent, info, street, city_uuid, postal_code_uuid):
-        if info.context.user.is_authenticated:
-            try:
-                city = City.objects.get(uuid=city_uuid)
-                postal_code = PostalCode.objects.get(uuid=postal_code_uuid)
-            except City.DoesNotExist:
-                name = "City"
-                raise Http404(_(f"{name} does not exist: {city_uuid}"))
-            except PostalCode.DoesNotExist:
-                name = "PostalCode"
-                raise Http404(_(f"{name} does not exist: {postal_code_uuid}"))
+    def mutate(_parent, info, raw_data):
+        user = info.context.user if info.context.user.is_authenticated else None
 
-            address = Address.objects.create(
-                street=street,
-                city=city,
-                postal_code=postal_code,
-                region=city.region,
-                country=city.country,
-                user=info.context.user,
-            )
-
-            return CreateAddress(address=address)
-
-        else:
-            raise PermissionDenied(permission_denied_message)
-
-
-class UpdateAddress(BaseMutation):
-    class Arguments:
-        uuid = graphene.UUID(required=True)
-        location = PointScalar()
-        street = graphene.String()
-        city_uuid = graphene.UUID()
-        postal_code_uuid = graphene.UUID()
-
-    address = graphene.Field(AddressType)
-
-    @staticmethod
-    def mutate(_parent, info, uuid, location=None, street=None, city_uuid=None, postal_code_uuid=None):
-        try:
-            address = Address.objects.get(uuid=uuid)
-
-            if (
-                info.context.user.is_superuser
-                or info.context.user.has_perm("geo.change_address")
-                or info.context.user == address.user
-            ):
-                address = Address.objects.get(uuid=uuid)
-
-                if location is not None:
-                    address.location = location
-
-                if street is not None:
-                    address.street = street
-
-                if city_uuid is not None:
-                    address.city = City.objects.get(uuid=city_uuid)
-
-                if postal_code_uuid is not None:
-                    address.postal_code = PostalCode.objects.get(uuid=postal_code_uuid)
-
-                address.save()
-
-                return UpdateAddress(address=address)
-
-            raise PermissionDenied(permission_denied_message)
-
-        except Address.DoesNotExist:
-            name = "Address"
-            raise Http404(_(f"{name} does not exist: {uuid}"))
+        address = Address.objects.create(
+            raw_data=raw_data,
+            user=user
+        )
+        return CreateAddress(address=address)
 
 
 class DeleteAddress(BaseMutation):
@@ -103,9 +43,9 @@ class DeleteAddress(BaseMutation):
         try:
             address = Address.objects.get(uuid=uuid)
             if (
-                info.context.user.is_superuser
-                or info.context.user.has_perm("geo.delete_address")
-                or info.context.user == address.user
+                    info.context.user.is_superuser
+                    or info.context.user.has_perm("geo.delete_address")
+                    or info.context.user == address.user
             ):
                 address.delete()
                 return DeleteAddress(success=True)
@@ -115,3 +55,22 @@ class DeleteAddress(BaseMutation):
         except Address.DoesNotExist:
             name = "Address"
             raise Http404(_(f"{name} does not exist: {uuid}"))
+
+
+class AutocompleteAddress(BaseMutation):
+    class Arguments:
+        q = graphene.String()
+        limit = graphene.Int()
+
+    suggestions = GenericScalar()
+
+    @staticmethod
+    def mutate(_parent, info, q, limit):
+        if 1 > limit > 10:
+            raise BadRequest(_("limit must be between 1 and 10"))
+        try:
+            suggestions = fetch_address_suggestions(query=q, limit=limit)
+        except Exception as e:
+            raise BadRequest(f"geocoding error: {e!s}") from e
+
+        return AutocompleteAddress(suggestions=suggestions)

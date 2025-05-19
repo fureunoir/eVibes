@@ -214,8 +214,8 @@ class BuyAsBusinessView(APIView):
             customer_name=serializer.validated_data.get("customer_name"),
             customer_email=serializer.validated_data.get("customer_email"),
             customer_phone=serializer.validated_data.get("customer_phone"),
-            customer_billing_address=serializer.validated_data.get("customer_billing_address"),
-            customer_shipping_address=serializer.validated_data.get("customer_shipping_address"),
+            customer_billing_address=serializer.validated_data.get("customer_billing_address_uuid"),
+            customer_shipping_address=serializer.validated_data.get("customer_shipping_address_uuid"),
             payment_method=serializer.validated_data.get("payment_method"),
             is_business=True,
         )

@@ -269,8 +269,8 @@ class OrderViewSet(EvibesViewSet):
             customer_name=serializer.validated_data.get("customer_name"),
             customer_email=serializer.validated_data.get("customer_email"),
             customer_phone=serializer.validated_data.get("customer_phone"),
-            customer_billing_address=serializer.validated_data.get("customer_billing_address"),
-            customer_shipping_address=serializer.validated_data.get("customer_shipping_address"),
+            billing_customer_address=serializer.validated_data.get("billing_customer_address_uuid"),
+            shipping_customer_address=serializer.validated_data.get("shipping_customer_address_uuid"),
             payment_method=serializer.validated_data.get("payment_method"),
         )
         return Response(status=status.HTTP_202_ACCEPTED, data=TransactionProcessSerializer(transaction).data)

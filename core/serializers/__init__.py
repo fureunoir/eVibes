@@ -1,8 +1,6 @@
 from rest_framework.fields import BooleanField, CharField, Field, IntegerField, JSONField, ListField, UUIDField
 from rest_framework.serializers import ListSerializer, Serializer
 
-from geo.serializers import UnregisteredCustomerAddressSerializer
-
 from .detail import *  # noqa: F403
 from .simple import *  # noqa: F403
 
@@ -80,8 +78,8 @@ class BuyUnregisteredOrderSerializer(Serializer):
     customer_name = CharField(required=True)
     customer_email = CharField(required=True)
     customer_phone_number = CharField(required=True)
-    billing_customer_address = UnregisteredCustomerAddressSerializer(required=True)
-    shipping_customer_address = UnregisteredCustomerAddressSerializer(required=False)
+    billing_customer_address_uuid = CharField(required=False)
+    shipping_customer_address_uuid = CharField(required=False)
     payment_method = CharField(required=True)
 
 
@@ -90,6 +88,6 @@ class BuyAsBusinessOrderSerializer(Serializer):
     business_inn = CharField(required=True)
     business_email = CharField(required=True)
     business_phone_number = CharField(required=True)
-    billing_business_address = UnregisteredCustomerAddressSerializer(required=True)
-    shipping_business_address = UnregisteredCustomerAddressSerializer(required=False)
+    billing_business_address_uuid = CharField(required=False)
+    shipping_business_address_uuid = CharField(required=False)
     payment_method = CharField(required=True)

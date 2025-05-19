@@ -22,6 +22,7 @@ CONSTANCE_CONFIG = {
     "PAYMENT_GATEWAY_MINIMUM": (getenv("PAYMENT_GATEWAY_MINIMUM", 5.0), "Payment gateway minimum amount"),
     "PAYMENT_GATEWAY_MAXIMUM": (getenv("PAYMENT_GATEWAY_MAXIMUM", 500.0), "Payment gateway maximum amount"),
     "EXCHANGE_RATE_API_KEY": (getenv("EXCHANGE_RATE_API_KEY", "example token"), "Exchange rate API key"),
+    "NOMINATIM_URL": (getenv("NOMINATIM_URL", ""), "OpenStreetMap Nominatim API URL"),
     "OPENAI_API_KEY": (getenv("OPENAI_API_KEY", "example key"), "OpenAI API Key"),
     "ABSTRACT_API_KEY": (
         getenv("ABSTRACT_API_KEY", "example key"),

@@ -17,7 +17,6 @@ from core.utils import format_attributes, is_url_safe
 from core.utils.caching import web_cache
 from core.utils.emailing import contact_us_email
 from core.utils.messages import permission_denied_message
-from geo.graphene.object_types import UnregisteredCustomerAddressInput
 from payments.graphene.object_types import TransactionType
 
 logger = logging.getLogger(__name__)
@@ -220,24 +219,26 @@ class BuyUnregisteredOrder(BaseMutation):
         customer_name = String(required=True)
         customer_email = String(required=True)
         customer_phone = String(required=True)
-        customer_billing_address = UnregisteredCustomerAddressInput(required=True)
-        customer_shipping_address = UnregisteredCustomerAddressInput(required=False)
+        customer_billing_address = String(required=False)
+        customer_shipping_address = String(required=False)
         payment_method = String(required=True)
+        is_business = Boolean(required=False)
 
     transaction = Field(TransactionType, required=False)
 
     @staticmethod
     def mutate(_parent, info, products, customer_name, customer_email, customer_phone, customer_billing_address,
-               payment_method, customer_shipping_address=None, promocode_uuid=None):
+               payment_method, customer_shipping_address=None, promocode_uuid=None, is_business=False):
         order = Order.objects.create(status="MOMENTAL")
         transaction = order.buy_without_registration(products=products,
                                                      promocode_uuid=promocode_uuid,
                                                      customer_name=customer_name,
                                                      customer_email=customer_email,
                                                      customer_phone=customer_phone,
-                                                     customer_billing_address=customer_billing_address,
-                                                     customer_shipping_address=customer_shipping_address,
-                                                     payment_method=payment_method)
+                                                     billing_customer_address=customer_billing_address,
+                                                     shipping_customer_address=customer_shipping_address,
+                                                     payment_method=payment_method,
+                                                     is_business=is_business)
         return BuyUnregisteredOrder(transaction=transaction)
 
 

@@ -1,70 +1,65 @@
 from rest_framework import serializers
 
-from geo.models import Address, City, Country, PostalCode, Region
+from geo.models import Address
 
 
-class AddressCountrySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Country
-        fields = ("name",)
+class AddressAutocompleteInputSerializer(serializers.Serializer):
+    q = serializers.CharField(
+        required=True
+    )
+    limit = serializers.IntegerField(
+        required=False,
+        min_value=1,
+        max_value=10,
+        default=5
+    )
 
 
-class AddressRegionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Region
-        fields = ("name",)
-
-
-class AddressCitySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        fields = ("name",)
-
-
-class AddressPostalCodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PostalCode
-        fields = ("code",)
+class AddressSuggestionSerializer(serializers.Serializer):
+    display_name = serializers.CharField()
+    lat = serializers.FloatField()
+    lon = serializers.FloatField()
+    address = serializers.DictField(child=serializers.CharField())
 
 
 class AddressSerializer(serializers.ModelSerializer):
-    country = AddressCountrySerializer()
-    city = AddressCitySerializer()
-    region = AddressRegionSerializer()
-    postal_code = AddressPostalCodeSerializer()
+    latitude = serializers.FloatField(source="location.y", read_only=True)
+    longitude = serializers.FloatField(source="location.x", read_only=True)
 
     class Meta:
         model = Address
-        fields = ("uuid", "street", "city", "region", "postal_code", "country")
+        fields = [
+            "uuid",
+            "street",
+            "district",
+            "city",
+            "region",
+            "postal_code",
+            "country",
+            "latitude",
+            "longitude",
+            "raw_data",
+            "api_response",
+            "user",
+        ]
+        read_only_fields = [
+            "latitude",
+            "longitude",
+            "raw_data",
+            "api_response",
+        ]
 
 
-class CountrySerializer(serializers.ModelSerializer):
+class AddressCreateSerializer(serializers.ModelSerializer):
+    raw_data = serializers.CharField(
+        write_only=True,
+        max_length=512,
+    )
+
     class Meta:
-        model = Country
-        fields = "__all__"
+        model = Address
+        fields = ["raw_data", "user"]
 
-
-class RegionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Region
-        fields = "__all__"
-
-
-class CitySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = City
-        exclude = ("location",)
-
-
-class PostalCodeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PostalCode
-        exclude = ("location",)
-
-
-class UnregisteredCustomerAddressSerializer(serializers.Serializer):
-    billing_customer_city = serializers.CharField(required=True)
-    billing_customer_region = serializers.CharField(required=True)
-    billing_customer_country = serializers.CharField(required=True)
-    billing_customer_postal_code = serializers.CharField(required=True)
-    billing_customer_address_line = serializers.CharField(required=True)
+    def create(self, validated_data):
+        raw = validated_data.pop("raw_data")
+        return Address.objects.create(raw_data=raw, **validated_data)
