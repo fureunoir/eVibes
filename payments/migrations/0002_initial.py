@@ -7,7 +7,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -20,7 +19,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='balance',
             name='user',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='payments_balance', to=settings.AUTH_USER_MODEL),
+            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='payments_balance',
+                                       to=settings.AUTH_USER_MODEL, blank=True, null=True),
         ),
         migrations.AddField(
             model_name='transaction',
@@ -30,7 +30,9 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='transaction',
             name='order',
-            field=models.ForeignKey(blank=True, help_text='order to process after paid', null=True, on_delete=django.db.models.deletion.CASCADE, related_name='payments_transactions', to='core.order'),
+            field=models.ForeignKey(blank=True, help_text='order to process after paid', null=True,
+                                    on_delete=django.db.models.deletion.CASCADE, related_name='payments_transactions',
+                                    to='core.order'),
         ),
         migrations.AddIndex(
             model_name='transaction',
