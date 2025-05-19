@@ -76,7 +76,7 @@ class User(AbstractUser, NiceModel):
 
     def add_to_recently_viewed(self, product_uuid):
         recently_viewed = self.recently_viewed
-        if not product_uuid in recently_viewed:
+        if product_uuid not in recently_viewed:
             if not len(recently_viewed) >= 48:
                 recently_viewed.append(product_uuid)
                 cache.set(f"user_{self.uuid}_rv", recently_viewed)
