@@ -6,9 +6,10 @@ from django.contrib.admin import ModelAdmin, TabularInline
 from django.contrib.gis.admin import GISModelAdmin
 from django.urls import path
 from django.utils.translation import gettext_lazy as _
+from modeltranslation.admin import TabbedTranslationAdmin
 from mptt.admin import DraggableMPTTAdmin
 
-from evibes.settings import CONSTANCE_CONFIG, LANGUAGES
+from evibes.settings import CONSTANCE_CONFIG
 
 from .forms import OrderForm, OrderProductForm, VendorForm
 from .models import (
@@ -66,7 +67,7 @@ class AttributeValueInline(TabularInline):
 
 
 @admin.register(AttributeGroup)
-class AttributeGroupAdmin(BasicModelAdmin):
+class AttributeGroupAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name", "modified")
     search_fields = (
         "uuid",
@@ -75,7 +76,7 @@ class AttributeGroupAdmin(BasicModelAdmin):
 
 
 @admin.register(Attribute)
-class AttributeAdmin(BasicModelAdmin):
+class AttributeAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name", "group", "value_type", "modified")
     list_filter = ("value_type", "group", "is_active")
     search_fields = ("uuid", "name", "group__name")
@@ -83,7 +84,7 @@ class AttributeAdmin(BasicModelAdmin):
 
 
 @admin.register(AttributeValue)
-class AttributeValueAdmin(BasicModelAdmin):
+class AttributeValueAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("attribute", "value", "modified")
     list_filter = ("attribute__group", "attribute", "is_active")
     search_fields = ("uuid", "value", "attribute__name")
@@ -99,7 +100,7 @@ class CategoryChildrenInline(admin.TabularInline):
 
 
 @admin.register(Category)
-class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin):
+class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin, TabbedTranslationAdmin):
     mptt_indent_field = "name"
     list_display = ("indented_title", "parent", "is_active", "modified")
     list_filter = ("is_active", "level", "created", "modified")
@@ -137,7 +138,7 @@ class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin):
 
 
 @admin.register(Brand)
-class BrandAdmin(BasicModelAdmin):
+class BrandAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name",)
     list_filter = ("categories", "is_active")
     search_fields = (
@@ -164,7 +165,7 @@ class StockInline(TabularInline):
 
 
 @admin.register(Product)
-class ProductAdmin(BasicModelAdmin):
+class ProductAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name", "partnumber", "is_active", "category", "brand", "price", "rating", "modified")
 
     list_filter = (
@@ -185,8 +186,6 @@ class ProductAdmin(BasicModelAdmin):
 
     readonly_fields = ("created", "modified", "uuid", "rating", "price")
     autocomplete_fields = ("category", "brand", "tags")
-    translatable_fields = [f"name_{code.replace('-', '_')}" for code, _lang in LANGUAGES]
-    translatable_fields += [f"description_{code.replace('-', '_')}" for code, _lang in LANGUAGES]
 
     def price(self, obj):
         return obj.price
@@ -215,7 +214,6 @@ class ProductAdmin(BasicModelAdmin):
             },
         ),
         (_("important dates"), {"fields": ("created", "modified")}),
-        (_("translations"), {"fields": translatable_fields})
     )
 
     inlines = [AttributeValueInline, ProductImageInline, StockInline]
@@ -227,7 +225,7 @@ class ProductAdmin(BasicModelAdmin):
 
 
 @admin.register(ProductTag)
-class ProductTagAdmin(BasicModelAdmin):
+class ProductTagAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name",)
     search_fields = ("name",)
 
@@ -331,7 +329,7 @@ class PromoCodeAdmin(BasicModelAdmin):
 
 
 @admin.register(Promotion)
-class PromotionAdmin(BasicModelAdmin):
+class PromotionAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name", "discount_percent", "modified")
     search_fields = ("name",)
 
