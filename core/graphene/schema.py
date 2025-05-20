@@ -84,6 +84,7 @@ from vibes_auth.graphene.mutations import (
     RefreshJSONWebToken,
     ResetPassword,
     UpdateUser,
+    UploadAvatar,
     VerifyJSONWebToken,
 )
 from vibes_auth.graphene.object_types import UserType
@@ -300,6 +301,7 @@ class Mutation(ObjectType):
     create_user = CreateUser.Field()
     update_user = UpdateUser.Field()
     delete_user = DeleteUser.Field()
+    upload_avatar = UploadAvatar.Field()
     activate_user = ActivateUser.Field()
     reset_password = ResetPassword.Field()
     confirm_reset_password = ConfirmResetPassword.Field()

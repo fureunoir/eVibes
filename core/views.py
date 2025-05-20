@@ -16,7 +16,7 @@ from djangorestframework_camel_case.render import CamelCaseJSONRenderer
 from djangorestframework_camel_case.util import camelize
 from drf_spectacular.utils import extend_schema_view
 from drf_spectacular.views import SpectacularRedocView, SpectacularSwaggerView
-from graphene_django.views import GraphQLView
+from graphene_file_upload.django import FileUploadGraphQLView
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from rest_framework.renderers import MultiPartRenderer
@@ -64,7 +64,7 @@ def sitemap_detail(request, *args, **kwargs):
     return response
 
 
-class CustomGraphQLView(GraphQLView):
+class CustomGraphQLView(FileUploadGraphQLView):
     def get_context(self, request):
         return request
 

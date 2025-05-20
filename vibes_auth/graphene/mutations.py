@@ -9,6 +9,7 @@ from django.utils.http import urlsafe_base64_decode
 from django.utils.translation import gettext_lazy as _
 from graphene import UUID, Boolean, Field, List, String
 from graphene.types.generic import GenericScalar
+from graphene_file_upload.scalars import Upload
 from rest_framework.exceptions import ValidationError
 
 from core.graphene import BaseMutation
@@ -319,3 +320,22 @@ class ConfirmResetPassword(BaseMutation):
 
         except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
             raise BadRequest(_(f"something went wrong: {e!s}"))
+
+
+class UploadAvatar(BaseMutation):
+    class Arguments:
+        avatar = Upload(required=True)
+
+    success = Boolean()
+
+    def mutate(self, info, avatar):
+        if not info.context.user.is_authenticated:
+            raise PermissionDenied(permission_denied_message)
+
+        try:
+            info.context.user.avatar = avatar
+            info.context.user.save()
+        except Exception as e:
+            raise BadRequest(str(e))
+
+        return UploadAvatar(success=True)
