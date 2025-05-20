@@ -1230,6 +1230,8 @@ class Documentary(NiceModel):
 
 
 class Address(NiceModel):
+    is_publicly_visible = False
+
     street = CharField(_("street"), max_length=255, null=True)  # noqa: DJ001
     district = CharField(_("district"), max_length=255, null=True)  # noqa: DJ001
     city = CharField(_("city"), max_length=100, null=True)  # noqa: DJ001

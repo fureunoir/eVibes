@@ -14,6 +14,7 @@ from core.views import (
     sitemap_index,
 )
 from core.viewsets import (
+    AddressViewSet,
     AttributeGroupViewSet,
     BrandViewSet,
     CategoryViewSet,
@@ -39,6 +40,7 @@ core_router.register(r"feedbacks", FeedbackViewSet, basename="feedbacks")
 core_router.register(r"stocks", StockViewSet, basename="stocks")
 core_router.register(r"promo_codes", PromoCodeViewSet, basename="promo_codes")
 core_router.register(r"promotions", PromotionViewSet, basename="promotions")
+core_router.register(r"addresses", AddressViewSet, basename="addresses")
 
 sitemaps = {
     'products': ProductSitemap,
