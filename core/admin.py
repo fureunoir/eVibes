@@ -34,25 +34,27 @@ from .models import (
 
 
 class BasicModelAdmin(ModelAdmin):
-    @admin.action(description=_("activate selected %(verbose_name_plural)s"))
-    def activate_selected(self, request, queryset):
+    @admin.action(description=str(_("activate selected %(verbose_name_plural)s")))
+    def activate_selected(self, request, queryset) -> str:
         queryset.update(is_active=True)
+        return ""
 
-    @admin.action(description=_("deactivate selected %(verbose_name_plural)s"))
-    def deactivate_selected(self, request, queryset):
+    @admin.action(description=str(_("deactivate selected %(verbose_name_plural)s")))
+    def deactivate_selected(self, request, queryset) -> str:
         queryset.update(is_active=False)
+        return ""
 
     def get_actions(self, request):
         actions = super().get_actions(request)
         actions["activate_selected"] = (
             self.activate_selected,
             "activate_selected",
-            _("activate selected %(verbose_name_plural)s"),
+            str(_("activate selected %(verbose_name_plural)s")),
         )
         actions["deactivate_selected"] = (
             self.deactivate_selected,
             "deactivate_selected",
-            _("deactivate selected %(verbose_name_plural)s"),
+            str(_("deactivate selected %(verbose_name_plural)s")),
         )
         return actions
 
