@@ -7,7 +7,9 @@ from django.contrib.auth.models import AnonymousUser
 from django.core.exceptions import DisallowedHost
 from django.http import HttpResponseForbidden
 from django.middleware.common import CommonMiddleware
+from django.middleware.locale import LocaleMiddleware
 from django.shortcuts import redirect
+from django.utils import translation
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.exceptions import InvalidToken
 from sentry_sdk import capture_exception
@@ -21,6 +23,21 @@ class CustomCommonMiddleware(CommonMiddleware):
             return super().process_request(request)
         except DisallowedHost:
             return redirect(f"https://api.{config.BASE_DOMAIN}")
+
+
+class CustomLocaleMiddleware(LocaleMiddleware):
+    def process_request(self, request):
+        lang = translation.get_language_from_request(request)
+        parts = lang.replace('_', '-').split('-')
+        if len(parts) == 2:
+            lang_code = parts[0].lower()
+            region = parts[1].upper()
+            normalized = f"{lang_code}-{region}"
+        else:
+            normalized = lang
+
+        translation.activate(normalized)
+        request.LANGUAGE_CODE = normalized
 
 
 class GrapheneJWTAuthorizationMiddleware:

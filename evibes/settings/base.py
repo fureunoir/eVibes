@@ -108,6 +108,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
+    "evibes.middleware.CustomLocaleMiddleware",
     "django_hosts.middleware.HostsResponseMiddleware",
     "djangorestframework_camel_case.middleware.CamelCaseMiddleWare",
 ]
