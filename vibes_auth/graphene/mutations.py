@@ -135,25 +135,19 @@ class UpdateUser(BaseMutation):
                     raise BadRequest(_(f"Invalid attribute format: {attribute_pair}"))
 
         for attr, value in kwargs.items():
+            if attr == "password" or attr == "confirm_password":
+                continue
             if attr not in [
-                "password",
-                "confirm_password",
-            ] and (
-                    attr
-                    not in [
-                        "groups",
-                        "user_permissions",
-                        "phone_number",
-                        "is_verified",
-                        "is_staff",
-                        "is_active",
-                        "is_superuser",
-                    ]
-                    or info.context.user.has_perm("vibes_auth.change_user")
-            ):
+                "groups",
+                "user_permissions",
+                "is_verified",
+                "is_staff",
+                "is_active",
+                "is_superuser",
+            ] or info.context.user.has_perm("vibes_auth.change_user"):
                 setattr(user, attr, value)
 
-        user.save()
+            user.save()
 
         return UpdateUser(user=user)
 
