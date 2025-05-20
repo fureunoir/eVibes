@@ -132,53 +132,55 @@ TEMPLATES = [
     },
 ]
 
+USE_I18N = True
+
 LANGUAGES = (
-    ("en-GB", "English (British)"),
-    ("ar-AR", "العربية"),
-    ("cs-CZ", "Česky"),
-    ("da-DK", "Dansk"),
-    ("de-DE", "Deutsch"),
-    ("en-US", "English (American)"),
-    ("es-ES", "Español"),
-    ("fr-FR", "Français"),
-    ("hi-IN", "हिंदी"),
-    ("it-IT", "Italiano"),
-    ("ja-JP", "日本語"),
-    ("kk-KZ", "Қазақ"),
-    ("nl-NL", "Nederlands"),
-    ("pl-PL", "Polska"),
-    ("pt-BR", "Português"),
-    ("ro-RO", "Română"),
-    ("ru-RU", "Русский"),
+    ("en-gb", "English (British)"),
+    ("ar-ar", "العربية"),
+    ("cs-cz", "Česky"),
+    ("da-dk", "Dansk"),
+    ("de-de", "Deutsch"),
+    ("en-us", "English (American)"),
+    ("es-es", "Español"),
+    ("fr-fr", "Français"),
+    ("hi-in", "हिंदी"),
+    ("it-it", "Italiano"),
+    ("ja-jp", "日本語"),
+    ("kk-kz", "Қазақ"),
+    ("nl-nl", "Nederlands"),
+    ("pl-pl", "Polska"),
+    ("pt-br", "Português"),
+    ("ro-ro", "Română"),
+    ("ru-ru", "Русский"),
     ("zh-hans", "简体中文"),
 )
 
-LANGUAGE_CODE = "en-GB"
+LANGUAGE_CODE = "en-gb"
 
 CURRENCIES = (
-    ("en-GB", "EUR"),
-    ("ar-AR", "AED"),
-    ("cs-CZ", "CZK"),
-    ("da-DK", "EUR"),
-    ("de-DE", "EUR"),
-    ("en-US", "USD"),
-    ("es-ES", "EUR"),
-    ("fr-FR", "EUR"),
-    ("hi-IN", "INR"),
-    ("it-IT", "EUR"),
-    ("ja-JP", "JPY"),
-    ("kk-KZ", "KZT"),
-    ("nl-NL", "EUR"),
-    ("pl-PL", "PLN"),
-    ("pt-BR", "EUR"),
-    ("ro-RO", "RON"),
-    ("ru-RU", "RUB"),
+    ("en-gb", "EUR"),
+    ("ar-ar", "AED"),
+    ("cs-cz", "CZK"),
+    ("da-dk", "EUR"),
+    ("de-de", "EUR"),
+    ("en-us", "USD"),
+    ("es-es", "EUR"),
+    ("fr-fr", "EUR"),
+    ("hi-in", "INR"),
+    ("it-it", "EUR"),
+    ("ja-jp", "JPY"),
+    ("kk-kz", "KZT"),
+    ("nl-nl", "EUR"),
+    ("pl-pl", "PLN"),
+    ("pt-br", "EUR"),
+    ("ro-ro", "RON"),
+    ("ru-ru", "RUB"),
     ("zh-hans", "CNY"),
 )
 
 CURRENCY_CODE = dict(CURRENCIES).get(LANGUAGE_CODE)
 
-MODELTRANSLATION_FALLBACK_LANGUAGES = (LANGUAGE_CODE, "en-US", "de-DE")
+MODELTRANSLATION_FALLBACK_LANGUAGES = (LANGUAGE_CODE, "en-us", "de-de")
 
 ROOT_URLCONF = "evibes.urls"
 
