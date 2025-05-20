@@ -16,6 +16,7 @@ from rest_framework_xml.renderers import XMLRenderer
 from rest_framework_yaml.renderers import YAMLRenderer
 
 from core.docs.drf.viewsets import (
+    ADDRESS_SCHEMA,
     ATTRIBUTE_GROUP_SCHEMA,
     ATTRIBUTE_SCHEMA,
     ATTRIBUTE_VALUE_SCHEMA,
@@ -26,6 +27,7 @@ from core.docs.drf.viewsets import (
 )
 from core.filters import BrandFilter, CategoryFilter, OrderFilter, ProductFilter
 from core.models import (
+    Address,
     Attribute,
     AttributeGroup,
     AttributeValue,
@@ -46,6 +48,9 @@ from core.models import (
 from core.permissions import EvibesPermission
 from core.serializers import (
     AddOrderProductSerializer,
+    AddressAutocompleteInputSerializer,
+    AddressCreateSerializer,
+    AddressSerializer,
     AddWishlistProductSerializer,
     AttributeDetailSerializer,
     AttributeGroupDetailSerializer,
@@ -80,6 +85,7 @@ from core.serializers import (
 )
 from core.utils import format_attributes
 from core.utils.messages import permission_denied_message
+from core.utils.nominatim import fetch_address_suggestions
 from payments.serializers import TransactionProcessSerializer
 
 
@@ -461,3 +467,34 @@ class WishlistViewSet(EvibesViewSet):
             return Response(status=status.HTTP_200_OK, data=WishlistDetailSerializer(wishlist).data)
         except Order.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+@extend_schema_view(**ADDRESS_SCHEMA)
+class AddressViewSet(EvibesViewSet):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+
+    def get_serializer_class(self):
+        if self.action == 'create':
+            return AddressCreateSerializer
+        if self.action == 'autocomplete':
+            return AddressAutocompleteInputSerializer
+        return AddressSerializer
+
+    @action(detail=False, methods=["get"], url_path="autocomplete")
+    def autocomplete(self, request):
+        serializer = AddressAutocompleteInputSerializer(data=request.query_params)
+        serializer.is_valid(raise_exception=True)
+
+        q = serializer.validated_data["q"]
+        limit = serializer.validated_data["limit"]
+
+        try:
+            suggestions = fetch_address_suggestions(query=q, limit=limit)
+        except Exception as e:
+            return Response(
+                {"detail": _(f"Geocoding error: {e}")},
+                status=status.HTTP_502_BAD_GATEWAY,
+            )
+
+        return Response(suggestions, status=status.HTTP_200_OK)

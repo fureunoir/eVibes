@@ -76,7 +76,7 @@ class Command(BaseCommand):
             action='append',
             required=True,
             metavar='APP',
-            help='App label(s) to scan, e.g. core, geo'
+            help='App label(s) to scan, e.g. core, payments'
         )
         parser.add_argument(
             '-p', '--path',

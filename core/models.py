@@ -4,6 +4,7 @@ import logging
 from typing import Self
 
 from constance import config
+from django.contrib.gis.db.models import PointField
 from django.contrib.postgres.indexes import GinIndex
 from django.core.cache import cache
 from django.core.exceptions import BadRequest, ValidationError
@@ -28,6 +29,7 @@ from django.db.models import (
     PositiveIntegerField,
     TextField,
 )
+from django.db.models.indexes import Index
 from django.http import Http404
 from django.utils import timezone
 from django.utils.encoding import force_bytes
@@ -40,11 +42,11 @@ from mptt.models import MPTTModel
 from core.abstract import NiceModel
 from core.choices import ORDER_PRODUCT_STATUS_CHOICES, ORDER_STATUS_CHOICES
 from core.errors import DisabledCommerceError, NotEnoughMoneyError
+from core.managers import AddressManager
 from core.utils import generate_human_readable_id, get_product_uuid_as_path, get_random_code
 from core.utils.lists import FAILED_STATUSES
 from core.validators import validate_category_image_dimensions
 from evibes.settings import CURRENCY_CODE
-from geo.models import Address
 from payments.models import Transaction
 
 logger = logging.getLogger(__name__)
@@ -433,7 +435,7 @@ class Order(NiceModel):
     is_publicly_visible = False
 
     billing_address = ForeignKey(
-        "geo.Address",
+        "core.Address",
         on_delete=CASCADE,
         blank=True,
         null=True,
@@ -450,7 +452,7 @@ class Order(NiceModel):
         verbose_name=_("applied promo code"),
     )
     shipping_address = ForeignKey(
-        "geo.Address",
+        "core.Address",
         on_delete=CASCADE,
         blank=True,
         null=True,
@@ -1225,3 +1227,52 @@ class Documentary(NiceModel):
     @property
     def file_type(self):
         return self.document.name.split(".")[-1] or _("unresolved")
+
+
+class Address(NiceModel):
+    street = CharField(_("street"), max_length=255, null=True)  # noqa: DJ001
+    district = CharField(_("district"), max_length=255, null=True)  # noqa: DJ001
+    city = CharField(_("city"), max_length=100, null=True)  # noqa: DJ001
+    region = CharField(_("region"), max_length=100, null=True)  # noqa: DJ001
+    postal_code = CharField(_("postal code"), max_length=20, null=True)  # noqa: DJ001
+    country = CharField(_("country"), max_length=40, null=True)  # noqa: DJ001
+
+    location = PointField(
+        geography=True,
+        srid=4326,
+        null=True,
+        blank=True,
+        help_text=_("geolocation point: (longitude, latitude)")
+    )
+
+    raw_data = JSONField(
+        blank=True,
+        null=True,
+        help_text=_("full JSON response from geocoder for this address")
+    )
+
+    api_response = JSONField(
+        blank=True,
+        null=True,
+        help_text=_("stored JSON response from the geocoding service")
+    )
+
+    user = ForeignKey(
+        to="vibes_auth.User",
+        on_delete=CASCADE,
+        blank=True,
+        null=True
+    )
+
+    objects = AddressManager()
+
+    class Meta:
+        verbose_name = _("address")
+        verbose_name_plural = _("addresses")
+        indexes = [
+            Index(fields=["location"]),
+        ]
+
+    def __str__(self):
+        base = f"{self.street}, {self.city}, {self.country}"
+        return f"{base} for {self.user.email}" if self.user else base

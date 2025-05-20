@@ -32,5 +32,4 @@ else:
         "vibes_auth.*": {"ops": {"fetch", "get"}, "timeout": 60 * 60},
         "auth.permission": {"ops": "all", "timeout": 60 * 60},
         "core.*": {"ops": "all", "timeout": 60 * 60},
-        "geo.*": {"ops": "all", "timeout": 60 * 60},
     }

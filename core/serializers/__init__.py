@@ -1,5 +1,17 @@
-from rest_framework.fields import BooleanField, CharField, Field, IntegerField, JSONField, ListField, UUIDField
+from rest_framework.fields import (
+    BooleanField,
+    CharField,
+    DictField,
+    Field,
+    FloatField,
+    IntegerField,
+    JSONField,
+    ListField,
+    UUIDField,
+)
 from rest_framework.serializers import ListSerializer, Serializer
+
+from core.models import Address
 
 from .detail import *  # noqa: F403
 from .simple import *  # noqa: F403
@@ -91,3 +103,65 @@ class BuyAsBusinessOrderSerializer(Serializer):
     billing_business_address_uuid = CharField(required=False)
     shipping_business_address_uuid = CharField(required=False)
     payment_method = CharField(required=True)
+
+
+class AddressAutocompleteInputSerializer(Serializer):
+    q = CharField(
+        required=True
+    )
+    limit = IntegerField(
+        required=False,
+        min_value=1,
+        max_value=10,
+        default=5
+    )
+
+
+class AddressSuggestionSerializer(Serializer):
+    display_name = CharField()
+    lat = FloatField()
+    lon = FloatField()
+    address = DictField(child=CharField())
+
+
+class AddressSerializer(ModelSerializer):  # noqa: F405
+    latitude = FloatField(source="location.y", read_only=True)
+    longitude = FloatField(source="location.x", read_only=True)
+
+    class Meta:
+        model = Address
+        fields = [
+            "uuid",
+            "street",
+            "district",
+            "city",
+            "region",
+            "postal_code",
+            "country",
+            "latitude",
+            "longitude",
+            "raw_data",
+            "api_response",
+            "user",
+        ]
+        read_only_fields = [
+            "latitude",
+            "longitude",
+            "raw_data",
+            "api_response",
+        ]
+
+
+class AddressCreateSerializer(ModelSerializer):  # noqa: F405
+    raw_data = CharField(
+        write_only=True,
+        max_length=512,
+    )
+
+    class Meta:
+        model = Address
+        fields = ["raw_data", "user"]
+
+    def create(self, validated_data):
+        raw = validated_data.pop("raw_data")
+        return Address.objects.create(raw_data=raw, **validated_data)

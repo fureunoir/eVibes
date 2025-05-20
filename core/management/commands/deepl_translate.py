@@ -114,7 +114,7 @@ class Command(BaseCommand):
             action="append",
             required=True,
             metavar="APP",
-            help="App label for translation, e.g. core, geo."
+            help="App label for translation, e.g. core, payments."
         )
 
     def handle(self, *args, **options) -> None:

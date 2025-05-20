@@ -9,7 +9,7 @@ from core.abstract import NiceModel
 class Balance(NiceModel):
     amount = FloatField(null=False, blank=False, default=0)
     user = OneToOneField(
-        to="vibes_auth.User", on_delete=CASCADE, blank=False, null=False, related_name="payments_balance"
+        to="vibes_auth.User", on_delete=CASCADE, blank=True, null=True, related_name="payments_balance"
     )
 
     def __str__(self):
@@ -45,8 +45,8 @@ class Transaction(NiceModel):
 
     def save(self, **kwargs):
         if self.amount != 0.0 and (
-            (config.PAYMENT_GATEWAY_MINIMUM <= self.amount <= config.PAYMENT_GATEWAY_MAXIMUM)
-            or (config.PAYMENT_GATEWAY_MINIMUM == 0 and config.PAYMENT_GATEWAY_MAXIMUM == 0)
+                (config.PAYMENT_GATEWAY_MINIMUM <= self.amount <= config.PAYMENT_GATEWAY_MAXIMUM)
+                or (config.PAYMENT_GATEWAY_MINIMUM == 0 and config.PAYMENT_GATEWAY_MAXIMUM == 0)
         ):
             if len(str(self.amount).split(".")[1]) > 2:
                 self.amount = round(self.amount, 2)

@@ -3,6 +3,7 @@ from constance.admin import ConstanceAdmin as BaseConstanceAdmin
 from django.apps import apps
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin, TabularInline
+from django.contrib.gis.admin import GISModelAdmin
 from django.urls import path
 from django.utils.translation import gettext_lazy as _
 from mptt.admin import DraggableMPTTAdmin
@@ -11,6 +12,7 @@ from evibes.settings import CONSTANCE_CONFIG, LANGUAGES
 
 from .forms import OrderForm, OrderProductForm, VendorForm
 from .models import (
+    Address,
     Attribute,
     AttributeGroup,
     AttributeValue,
@@ -358,6 +360,21 @@ class ProductImageAdmin(BasicModelAdmin):
     list_filter = ("priority",)
     search_fields = ("alt", "product__name")
     autocomplete_fields = ("product",)
+
+
+@admin.register(Address)
+class AddressAdmin(GISModelAdmin):
+    list_display = ("street", "city", "region", "country", "user")
+    list_filter = ("country", "region")
+    search_fields = ("raw_data", "street", "city", "postal_code", "user__email")
+
+    gis_widget_kwargs = {
+        "attrs": {
+            "default_lon": 37.61556,
+            "default_lat": 55.75222,
+            "default_zoom": 6,
+        }
+    }
 
 
 class ConstanceAdmin(BaseConstanceAdmin):

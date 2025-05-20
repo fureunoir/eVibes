@@ -18,12 +18,15 @@ from core.filters import (
 from core.graphene.mutations import (
     AddOrderProduct,
     AddWishlistProduct,
+    AutocompleteAddress,
     BuyOrder,
     BuyProduct,
     BuyWishlist,
     CacheOperator,
     ContactUs,
+    CreateAddress,
     CreateProduct,
+    DeleteAddress,
     DeleteProduct,
     RemoveAllOrderProducts,
     RemoveAllWishlistProducts,
@@ -70,7 +73,6 @@ from core.utils import get_project_parameters
 from core.utils.languages import get_flag_by_language
 from core.utils.messages import permission_denied_message
 from evibes.settings import LANGUAGES
-from geo.graphene.mutations import AutocompleteAddress, CreateAddress, DeleteAddress
 from payments.graphene.mutations import Deposit
 from vibes_auth.filters import UserFilter
 from vibes_auth.graphene.mutations import (

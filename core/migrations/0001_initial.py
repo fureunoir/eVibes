@@ -15,10 +15,6 @@ import core.validators
 class Migration(migrations.Migration):
     initial = True
 
-    dependencies = [
-        ('geo', '0001_initial'),
-    ]
-
     operations = [
         migrations.CreateModel(
             name='Feedback',
@@ -991,14 +987,6 @@ class Migration(migrations.Migration):
                 ('buy_time',
                  models.DateTimeField(blank=True, default=None, help_text='the timestamp when the order was finalized',
                                       null=True, verbose_name='buy time')),
-                ('billing_address',
-                 models.ForeignKey(blank=True, help_text='the billing address used for this order', null=True,
-                                   on_delete=django.db.models.deletion.CASCADE, related_name='billing_address_order',
-                                   to='geo.address', verbose_name='billing address')),
-                ('shipping_address',
-                 models.ForeignKey(blank=True, help_text='the shipping address used for this order', null=True,
-                                   on_delete=django.db.models.deletion.CASCADE, related_name='shipping_address_order',
-                                   to='geo.address', verbose_name='shipping address')),
             ],
             options={
                 'verbose_name': 'order',
