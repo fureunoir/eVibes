@@ -10,6 +10,7 @@ from graphene_django.utils import camelize
 from mptt.querysets import TreeQuerySet
 
 from core.models import (
+    Address,
     Attribute,
     AttributeGroup,
     AttributeValue,
@@ -24,7 +25,7 @@ from core.models import (
     Promotion,
     Stock,
     Vendor,
-    Wishlist, Address,
+    Wishlist,
 )
 
 logger = __import__("logging").getLogger(__name__)
