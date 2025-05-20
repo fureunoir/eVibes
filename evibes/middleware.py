@@ -8,12 +8,9 @@ from django.core.exceptions import DisallowedHost
 from django.http import HttpResponseForbidden
 from django.middleware.common import CommonMiddleware
 from django.shortcuts import redirect
-from django.utils import translation
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.exceptions import InvalidToken
 from sentry_sdk import capture_exception
-
-from evibes.utils import get_language_from_header
 
 logger = logging.getLogger(__name__)
 
@@ -24,12 +21,6 @@ class CustomCommonMiddleware(CommonMiddleware):
             return super().process_request(request)
         except DisallowedHost:
             return redirect(f"https://api.{config.BASE_DOMAIN}")
-
-
-class CustomLocaleCommonMiddleware(CommonMiddleware):
-    def process_request(self, request):
-        request.locale = get_language_from_header(request.headers.get("Accept-Language", ""))
-        translation.activate(request.locale)
 
 
 class GrapheneJWTAuthorizationMiddleware:
@@ -52,20 +43,6 @@ class GrapheneJWTAuthorizationMiddleware:
         except TypeError:
             user = AnonymousUser()
         return user
-
-
-class GrapheneLocaleMiddleware:
-    def resolve(self, next, root, info, **args):
-        context = info.context
-        request = context
-
-        accept_language = request.headers.get("Accept-Language", "")
-        selected_language = get_language_from_header(accept_language)
-        request.locale = selected_language
-
-        translation.activate(request.locale)
-
-        return next(root, info, **args)
 
 
 class BlockInvalidHostMiddleware:
