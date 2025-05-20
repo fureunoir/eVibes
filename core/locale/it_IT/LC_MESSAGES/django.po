@@ -1,9 +1,14 @@
+# eVibes Translations.
+# Copyright (C) 2025 Egor "fureunoir" Gorbunov
+# This file is distributed under the same license as the eVibes package.
+# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -51,47 +56,47 @@ msgstr "Modificato"
 msgid "when the object was last modified"
 msgstr "Quando l'oggetto è stato modificato per l'ultima volta"
 
-#: core/admin.py:34 core/admin.py:47
+#: core/admin.py:36 core/admin.py:49
 #, python-format
 msgid "activate selected %(verbose_name_plural)s"
-msgstr "Attivare i %(verbose_name_plural)s selezionati"
+msgstr "Attivare il %(verbose_name_plural)s selezionato"
 
-#: core/admin.py:38 core/admin.py:52
+#: core/admin.py:40 core/admin.py:54
 #, python-format
 msgid "deactivate selected %(verbose_name_plural)s"
-msgstr "Disattivare i %(verbose_name_plural)s selezionati"
+msgstr "Disattivare il %(verbose_name_plural)s selezionato"
 
-#: core/admin.py:61 core/graphene/object_types.py:363
-#: core/graphene/object_types.py:370 core/models.py:146 core/models.py:154
+#: core/admin.py:63 core/graphene/object_types.py:390
+#: core/graphene/object_types.py:397 core/models.py:148 core/models.py:156
 msgid "attribute value"
 msgstr "Valore dell'attributo"
 
-#: core/admin.py:62 core/graphene/object_types.py:35 core/models.py:155
+#: core/admin.py:64 core/graphene/object_types.py:35 core/models.py:157
 msgid "attribute values"
 msgstr "Valori degli attributi"
 
-#: core/admin.py:133
+#: core/admin.py:135
 #: core/templates/admin/constance/includes/results_list.html:6
 msgid "name"
 msgstr "Nome"
 
-#: core/admin.py:152
+#: core/admin.py:154
 msgid "image"
 msgstr "Immagine"
 
-#: core/admin.py:153 core/graphene/object_types.py:316
+#: core/admin.py:155 core/graphene/object_types.py:343
 msgid "images"
 msgstr "Immagini"
 
-#: core/admin.py:160 core/models.py:1132
+#: core/admin.py:162 core/models.py:1125
 msgid "stock"
 msgstr "Stock"
 
-#: core/admin.py:161 core/graphene/object_types.py:417
+#: core/admin.py:163 core/graphene/object_types.py:444
 msgid "stocks"
 msgstr "Le scorte"
 
-#: core/admin.py:192 core/graphene/object_types.py:320
+#: core/admin.py:194 core/graphene/object_types.py:347
 #: core/templates/digital_order_created_email.html:109
 #: core/templates/digital_order_delivered_email.html:109
 #: core/templates/shipped_order_created_email.html:95
@@ -99,35 +104,35 @@ msgstr "Le scorte"
 msgid "price"
 msgstr "Prezzo"
 
-#: core/admin.py:197
+#: core/admin.py:199
 msgid "rating"
-msgstr "Valutazione del prodotto"
+msgstr "Valutazione"
 
-#: core/admin.py:201
+#: core/admin.py:203
 msgid "basic info"
 msgstr "Informazioni di base"
 
-#: core/admin.py:215
+#: core/admin.py:217
 msgid "important dates"
 msgstr "Date importanti"
 
-#: core/admin.py:216
+#: core/admin.py:218
 msgid "translations"
 msgstr "Traduzioni"
 
-#: core/admin.py:254 core/models.py:842
+#: core/admin.py:256 core/models.py:831
 msgid "order product"
 msgstr "Ordina il prodotto"
 
-#: core/admin.py:255 core/graphene/object_types.py:242 core/models.py:843
+#: core/admin.py:257 core/graphene/object_types.py:269 core/models.py:832
 msgid "order products"
 msgstr "Ordinare i prodotti"
 
-#: core/admin.py:274
+#: core/admin.py:276
 msgid "is business"
 msgstr "È Business"
 
-#: core/admin.py:382
+#: core/admin.py:399
 msgid "config"
 msgstr "Configurazione"
 
@@ -224,159 +229,159 @@ msgstr ""
 "Acquistare un ordine come azienda, utilizzando i `prodotti` forniti con "
 "`product_uuid` e `attributi`."
 
-#: core/docs/drf/viewsets.py:34
+#: core/docs/drf/viewsets.py:37
 msgid "list all attribute groups (simple view)"
 msgstr "Elenco di tutti i gruppi di attributi (vista semplice)"
 
-#: core/docs/drf/viewsets.py:38
+#: core/docs/drf/viewsets.py:41
 msgid "retrieve a single attribute group (detailed view)"
 msgstr "Recuperare un singolo gruppo di attributi (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:42
+#: core/docs/drf/viewsets.py:45
 msgid "create an attribute group"
 msgstr "Creare un gruppo di attributi"
 
-#: core/docs/drf/viewsets.py:46
+#: core/docs/drf/viewsets.py:49
 msgid "delete an attribute group"
 msgstr "Cancellare un gruppo di attributi"
 
-#: core/docs/drf/viewsets.py:50
+#: core/docs/drf/viewsets.py:53
 msgid "rewrite an existing attribute group saving non-editables"
 msgstr ""
-"Riscrivere un gruppo di attributi esistente salvando quelli non modificabili"
+"Riscrivere un gruppo di attributi esistente salvando i non modificabili"
 
-#: core/docs/drf/viewsets.py:54
+#: core/docs/drf/viewsets.py:57
 msgid ""
 "rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di un gruppo di attributi esistente salvando quelli "
 "non modificabili"
 
-#: core/docs/drf/viewsets.py:61
+#: core/docs/drf/viewsets.py:64
 msgid "list all attributes (simple view)"
 msgstr "Elenco di tutti gli attributi (vista semplice)"
 
-#: core/docs/drf/viewsets.py:65
+#: core/docs/drf/viewsets.py:68
 msgid "retrieve a single attribute (detailed view)"
 msgstr "Recuperare un singolo attributo (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:69
+#: core/docs/drf/viewsets.py:72
 msgid "create an attribute"
 msgstr "Creare un attributo"
 
-#: core/docs/drf/viewsets.py:73
+#: core/docs/drf/viewsets.py:76
 msgid "delete an attribute"
 msgstr "Cancellare un attributo"
 
-#: core/docs/drf/viewsets.py:77
+#: core/docs/drf/viewsets.py:80
 msgid "rewrite an existing attribute saving non-editables"
 msgstr ""
 "Riscrivere un attributo esistente salvando gli elementi non modificabili"
 
-#: core/docs/drf/viewsets.py:81
+#: core/docs/drf/viewsets.py:84
 msgid "rewrite some fields of an existing attribute saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di un attributo esistente salvando i campi non "
 "modificabili"
 
-#: core/docs/drf/viewsets.py:88
+#: core/docs/drf/viewsets.py:91
 msgid "list all attribute values (simple view)"
 msgstr "Elenco di tutti i valori degli attributi (vista semplice)"
 
-#: core/docs/drf/viewsets.py:92
+#: core/docs/drf/viewsets.py:95
 msgid "retrieve a single attribute value (detailed view)"
 msgstr "Recuperare il valore di un singolo attributo (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:96
+#: core/docs/drf/viewsets.py:99
 msgid "create an attribute value"
 msgstr "Creare un valore di attributo"
 
-#: core/docs/drf/viewsets.py:100
+#: core/docs/drf/viewsets.py:103
 msgid "delete an attribute value"
 msgstr "Cancellare il valore di un attributo"
 
-#: core/docs/drf/viewsets.py:104
+#: core/docs/drf/viewsets.py:107
 msgid "rewrite an existing attribute value saving non-editables"
 msgstr ""
 "Riscrivere il valore di un attributo esistente salvando gli elementi non "
 "modificabili"
 
-#: core/docs/drf/viewsets.py:108
+#: core/docs/drf/viewsets.py:111
 msgid ""
 "rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di un valore di attributo esistente salvando i "
 "valori non modificabili"
 
-#: core/docs/drf/viewsets.py:115
+#: core/docs/drf/viewsets.py:118
 msgid "list all categories (simple view)"
 msgstr "Elenco di tutte le categorie (visualizzazione semplice)"
 
-#: core/docs/drf/viewsets.py:119
+#: core/docs/drf/viewsets.py:122
 msgid "retrieve a single category (detailed view)"
 msgstr "Recuperare una singola categoria (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:123
+#: core/docs/drf/viewsets.py:126
 msgid "create a category"
 msgstr "Creare una categoria"
 
-#: core/docs/drf/viewsets.py:127
+#: core/docs/drf/viewsets.py:130
 msgid "delete a category"
 msgstr "Eliminare una categoria"
 
-#: core/docs/drf/viewsets.py:131
+#: core/docs/drf/viewsets.py:134
 msgid "rewrite an existing category saving non-editables"
 msgstr ""
 "Riscrivere una categoria esistente salvando gli elementi non modificabili"
 
-#: core/docs/drf/viewsets.py:135
+#: core/docs/drf/viewsets.py:138
 msgid "rewrite some fields of an existing category saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di una categoria esistente salvando gli elementi non"
 " modificabili"
 
-#: core/docs/drf/viewsets.py:142
+#: core/docs/drf/viewsets.py:145
 msgid "list all orders (simple view)"
 msgstr "Elenco di tutte le categorie (visualizzazione semplice)"
 
-#: core/docs/drf/viewsets.py:143
+#: core/docs/drf/viewsets.py:146
 msgid "for non-staff users, only their own orders are returned."
 msgstr ""
 "Per gli utenti che non fanno parte del personale, vengono restituiti solo i "
 "loro ordini."
 
-#: core/docs/drf/viewsets.py:147
+#: core/docs/drf/viewsets.py:150
 msgid "retrieve a single order (detailed view)"
 msgstr "Recuperare una singola categoria (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:151
+#: core/docs/drf/viewsets.py:154
 msgid "create an order"
 msgstr "Creare un attributo"
 
-#: core/docs/drf/viewsets.py:152
+#: core/docs/drf/viewsets.py:155
 msgid "doesn't work for non-staff users."
 msgstr "Non funziona per gli utenti che non fanno parte del personale."
 
-#: core/docs/drf/viewsets.py:156
+#: core/docs/drf/viewsets.py:159
 msgid "delete an order"
 msgstr "Cancellare un attributo"
 
-#: core/docs/drf/viewsets.py:160
+#: core/docs/drf/viewsets.py:163
 msgid "rewrite an existing order saving non-editables"
 msgstr ""
 "Riscrivere una categoria esistente salvando gli elementi non modificabili"
 
-#: core/docs/drf/viewsets.py:164
+#: core/docs/drf/viewsets.py:167
 msgid "rewrite some fields of an existing order saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di una categoria esistente salvando gli elementi non"
 " modificabili"
 
-#: core/docs/drf/viewsets.py:168
+#: core/docs/drf/viewsets.py:171
 msgid "purchase an order"
 msgstr "Prezzo di acquisto al momento dell'ordine"
 
-#: core/docs/drf/viewsets.py:170
+#: core/docs/drf/viewsets.py:173
 msgid ""
 "finalizes the order purchase. if `force_balance` is used, the purchase is "
 "completed using the user's balance; if `force_payment` is used, a "
@@ -386,19 +391,19 @@ msgstr ""
 "l'acquisto viene completato utilizzando il saldo dell'utente; se si utilizza"
 " `forza_pagamento`, viene avviata una transazione."
 
-#: core/docs/drf/viewsets.py:182 core/graphene/mutations.py:208
+#: core/docs/drf/viewsets.py:185 core/graphene/mutations.py:215
 msgid "purchase an order without account creation"
 msgstr "acquistare un ordine senza creare un account"
 
-#: core/docs/drf/viewsets.py:184
+#: core/docs/drf/viewsets.py:187
 msgid "finalizes the order purchase for a non-registered user."
 msgstr "finalizza l'acquisto dell'ordine per un utente non registrato."
 
-#: core/docs/drf/viewsets.py:193
+#: core/docs/drf/viewsets.py:196
 msgid "add product to order"
 msgstr "Aggiungere un prodotto all'ordine"
 
-#: core/docs/drf/viewsets.py:194
+#: core/docs/drf/viewsets.py:197
 msgid ""
 "adds a product to an order using the provided `product_uuid` and "
 "`attributes`."
@@ -406,11 +411,11 @@ msgstr ""
 "Aggiunge un prodotto a un ordine utilizzando il `product_uuid` e gli "
 "`attributi` forniti."
 
-#: core/docs/drf/viewsets.py:199
+#: core/docs/drf/viewsets.py:202
 msgid "remove product from order"
 msgstr "Rimuovere un prodotto dall'ordine"
 
-#: core/docs/drf/viewsets.py:200
+#: core/docs/drf/viewsets.py:203
 msgid ""
 "removes a product from an order using the provided `product_uuid` and "
 "`attributes`."
@@ -418,84 +423,84 @@ msgstr ""
 "Rimuove un prodotto da un ordine utilizzando il `product_uuid` e gli "
 "`attributi` forniti."
 
-#: core/docs/drf/viewsets.py:208
+#: core/docs/drf/viewsets.py:211
 msgid "list all wishlists (simple view)"
 msgstr "Elenco di tutti gli attributi (vista semplice)"
 
-#: core/docs/drf/viewsets.py:209
+#: core/docs/drf/viewsets.py:212
 msgid "for non-staff users, only their own wishlists are returned."
 msgstr ""
 "Per gli utenti che non fanno parte del personale, vengono restituite solo le"
 " loro liste dei desideri."
 
-#: core/docs/drf/viewsets.py:213
+#: core/docs/drf/viewsets.py:216
 msgid "retrieve a single wishlist (detailed view)"
 msgstr "Recuperare un singolo attributo (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:217
+#: core/docs/drf/viewsets.py:220
 msgid "create an wishlist"
 msgstr "Creare un attributo"
 
-#: core/docs/drf/viewsets.py:218
+#: core/docs/drf/viewsets.py:221
 msgid "Doesn't work for non-staff users."
 msgstr "Non funziona per gli utenti che non fanno parte del personale."
 
-#: core/docs/drf/viewsets.py:222
+#: core/docs/drf/viewsets.py:225
 msgid "delete an wishlist"
 msgstr "Cancellare un attributo"
 
-#: core/docs/drf/viewsets.py:226
+#: core/docs/drf/viewsets.py:229
 msgid "rewrite an existing wishlist saving non-editables"
 msgstr ""
 "Riscrivere un attributo esistente salvando gli elementi non modificabili"
 
-#: core/docs/drf/viewsets.py:230
+#: core/docs/drf/viewsets.py:233
 msgid "rewrite some fields of an existing wishlist saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di un attributo esistente salvando i campi non "
 "modificabili"
 
-#: core/docs/drf/viewsets.py:234
+#: core/docs/drf/viewsets.py:237
 msgid "add product to wishlist"
 msgstr "Aggiungere un prodotto all'ordine"
 
-#: core/docs/drf/viewsets.py:235
+#: core/docs/drf/viewsets.py:238
 msgid "adds a product to an wishlist using the provided `product_uuid`"
 msgstr ""
 "Aggiunge un prodotto a una lista dei desideri utilizzando il `product_uuid` "
 "fornito."
 
-#: core/docs/drf/viewsets.py:240
+#: core/docs/drf/viewsets.py:243
 msgid "remove product from wishlist"
 msgstr "Rimuovere un prodotto dalla lista dei desideri"
 
-#: core/docs/drf/viewsets.py:241
+#: core/docs/drf/viewsets.py:244
 msgid "removes a product from an wishlist using the provided `product_uuid`"
 msgstr ""
 "Rimuove un prodotto da una wishlist utilizzando il `product_uuid` fornito."
 
-#: core/docs/drf/viewsets.py:246
+#: core/docs/drf/viewsets.py:249
 msgid "add many products to wishlist"
 msgstr "Aggiungere molti prodotti alla lista dei desideri"
 
-#: core/docs/drf/viewsets.py:247
+#: core/docs/drf/viewsets.py:250
 msgid "adds many products to an wishlist using the provided `product_uuids`"
 msgstr ""
 "Aggiunge molti prodotti a una lista dei desideri utilizzando i "
 "`product_uuids` forniti."
 
-#: core/docs/drf/viewsets.py:252
+#: core/docs/drf/viewsets.py:255
 msgid "remove many products from wishlist"
 msgstr "Rimuovere un prodotto dall'ordine"
 
-#: core/docs/drf/viewsets.py:253
+#: core/docs/drf/viewsets.py:256
 msgid ""
 "removes many products from an wishlist using the provided `product_uuids`"
 msgstr ""
 "Rimuove molti prodotti da una lista di desideri utilizzando i "
 "`product_uuids` forniti."
 
-#: core/docs/drf/viewsets.py:260
+#: core/docs/drf/viewsets.py:263
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
@@ -515,60 +520,60 @@ msgstr ""
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 
-#: core/docs/drf/viewsets.py:276
+#: core/docs/drf/viewsets.py:279
 msgid "list all products (simple view)"
 msgstr "Elenco di tutti i prodotti (visualizzazione semplice)"
 
-#: core/docs/drf/viewsets.py:281
+#: core/docs/drf/viewsets.py:284
 msgid "(exact) Product UUID"
 msgstr "(esatto) UUID del prodotto"
 
-#: core/docs/drf/viewsets.py:287
+#: core/docs/drf/viewsets.py:290
 msgid "(icontains) Product name"
 msgstr "(icontains) Nome del prodotto"
 
-#: core/docs/drf/viewsets.py:293
+#: core/docs/drf/viewsets.py:296
 msgid "(list) Category names, case-insensitive"
 msgstr ""
 "(elenco) Nomi di categoria, senza distinzione tra maiuscole e minuscole"
 
-#: core/docs/drf/viewsets.py:299
+#: core/docs/drf/viewsets.py:302
 msgid "(exact) Category UUID"
 msgstr "(esatto) UUID della categoria"
 
-#: core/docs/drf/viewsets.py:305
+#: core/docs/drf/viewsets.py:308
 msgid "(list) Tag names, case-insensitive"
 msgstr "(elenco) Nomi di tag, senza distinzione tra maiuscole e minuscole"
 
-#: core/docs/drf/viewsets.py:311
+#: core/docs/drf/viewsets.py:314
 msgid "(gte) Minimum stock price"
 msgstr "(gte) Prezzo minimo delle azioni"
 
-#: core/docs/drf/viewsets.py:317
+#: core/docs/drf/viewsets.py:320
 msgid "(lte) Maximum stock price"
 msgstr "(lte) Prezzo massimo del titolo"
 
-#: core/docs/drf/viewsets.py:323
+#: core/docs/drf/viewsets.py:326
 msgid "(exact) Only active products"
 msgstr "(esatto) Solo prodotti attivi"
 
-#: core/docs/drf/viewsets.py:329
+#: core/docs/drf/viewsets.py:332
 msgid "(iexact) Brand name"
 msgstr "(iexact) Nome del marchio"
 
-#: core/docs/drf/viewsets.py:341
+#: core/docs/drf/viewsets.py:344
 msgid "(gt) Minimum stock quantity"
 msgstr "(gt) Quantità minima di scorte"
 
-#: core/docs/drf/viewsets.py:347
+#: core/docs/drf/viewsets.py:350
 msgid "(exact) Product slug"
 msgstr "(esatto) Prodotto slug"
 
-#: core/docs/drf/viewsets.py:353
+#: core/docs/drf/viewsets.py:356
 msgid "(exact) Digital vs. physical"
 msgstr "(esatto) Digitale e fisico"
 
-#: core/docs/drf/viewsets.py:360
+#: core/docs/drf/viewsets.py:363
 msgid ""
 "Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
@@ -576,34 +581,62 @@ msgstr ""
 "Elenco separato da virgole dei campi da ordinare. Prefisso con `-` per l'ordinamento discendente.  \n"
 "**Consentito:** uuid, rating, nome, slug, creato, modificato, prezzo, casuale"
 
-#: core/docs/drf/viewsets.py:374
+#: core/docs/drf/viewsets.py:377
 msgid "retrieve a single product (detailed view)"
 msgstr "Recuperare un singolo prodotto (vista dettagliata)"
 
-#: core/docs/drf/viewsets.py:379 core/docs/drf/viewsets.py:401
-#: core/docs/drf/viewsets.py:416 core/docs/drf/viewsets.py:431
+#: core/docs/drf/viewsets.py:382 core/docs/drf/viewsets.py:404
+#: core/docs/drf/viewsets.py:419 core/docs/drf/viewsets.py:434
 msgid "Product UUID or slug"
 msgstr "UUID o Slug del prodotto"
 
-#: core/docs/drf/viewsets.py:389
+#: core/docs/drf/viewsets.py:392
 msgid "create a product"
 msgstr "Creare un prodotto"
 
-#: core/docs/drf/viewsets.py:396
+#: core/docs/drf/viewsets.py:399
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
 "Riscrivere un prodotto esistente, preservando i campi non modificabili"
 
-#: core/docs/drf/viewsets.py:411
+#: core/docs/drf/viewsets.py:414
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
 msgstr ""
 "Aggiornare alcuni campi di un prodotto esistente, preservando i campi non "
 "modificabili"
 
-#: core/docs/drf/viewsets.py:426
+#: core/docs/drf/viewsets.py:429
 msgid "delete a product"
 msgstr "Eliminare un prodotto"
+
+#: core/docs/drf/viewsets.py:447
+msgid "list all addresses"
+msgstr "Elenco di tutti gli indirizzi"
+
+#: core/docs/drf/viewsets.py:454
+msgid "retrieve a single address"
+msgstr "Recuperare un singolo indirizzo"
+
+#: core/docs/drf/viewsets.py:461
+msgid "create a new address"
+msgstr "Creare un nuovo indirizzo"
+
+#: core/docs/drf/viewsets.py:469
+msgid "delete an address"
+msgstr "Cancellare un indirizzo"
+
+#: core/docs/drf/viewsets.py:476
+msgid "update an entire address"
+msgstr "Aggiornare un intero indirizzo"
+
+#: core/docs/drf/viewsets.py:484
+msgid "partially update an address"
+msgstr "Aggiornare parzialmente un indirizzo"
+
+#: core/docs/drf/viewsets.py:492
+msgid "autocomplete address suggestions"
+msgstr "Inserimento automatico dell'indirizzo"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -619,7 +652,7 @@ msgstr "Data to store in cache"
 
 #: core/graphene/mutations.py:35
 msgid "timeout in seconds to set the data for into the cache"
-msgstr "Timeout in secondi per impostare i dati nella cache"
+msgstr "Timeout in secondi per l'inserimento dei dati nella cache"
 
 #: core/graphene/mutations.py:38
 msgid "cached data"
@@ -631,14 +664,14 @@ msgstr "Dati JSON camelizzati dall'URL richiesto"
 
 #: core/graphene/mutations.py:57 core/views.py:169
 msgid "only URLs starting with http(s):// are allowed"
-msgstr "Sono ammessi solo gli URL che iniziano con http(s)://"
+msgstr "Sono consentiti solo gli URL che iniziano con http(s)://"
 
 #: core/graphene/mutations.py:72
 msgid "add a product to the order"
 msgstr "Aggiungere un prodotto all'ordine"
 
 #: core/graphene/mutations.py:93 core/graphene/mutations.py:119
-#: core/graphene/mutations.py:203
+#: core/graphene/mutations.py:210
 #, python-brace-format
 msgid "order {order_uuid} not found"
 msgstr "Ordine {order_uuid} non trovato"
@@ -655,44 +688,44 @@ msgstr "Rimuovere tutti i prodotti dall'ordine"
 msgid "buy an order"
 msgstr "Acquistare un ordine"
 
-#: core/graphene/mutations.py:183
+#: core/graphene/mutations.py:185
 msgid "please provide either order_uuid or order_hr_id - mutually exclusive"
 msgstr ""
 "Si prega di fornire order_uuid o order_hr_id, che si escludono a vicenda!"
 
-#: core/graphene/mutations.py:201 core/graphene/mutations.py:355
-#: core/graphene/mutations.py:389 core/viewsets.py:253
+#: core/graphene/mutations.py:207 core/graphene/mutations.py:364
+#: core/graphene/mutations.py:398 core/viewsets.py:261
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
 msgstr ""
 "Il metodo order.buy() ha fornito un tipo sbagliato: {type(instance)!s}"
 
-#: core/graphene/mutations.py:239
+#: core/graphene/mutations.py:248
 msgid "add a product to the wishlist"
 msgstr "Aggiungere un prodotto all'ordine"
 
-#: core/graphene/mutations.py:261 core/graphene/mutations.py:288
-#: core/graphene/mutations.py:315 core/graphene/mutations.py:358
+#: core/graphene/mutations.py:270 core/graphene/mutations.py:297
+#: core/graphene/mutations.py:324 core/graphene/mutations.py:367
 #, python-brace-format
 msgid "wishlist {wishlist_uuid} not found"
 msgstr "Lista dei desideri {wishlist_uuid} non trovata"
 
-#: core/graphene/mutations.py:266
+#: core/graphene/mutations.py:275
 msgid "remove a product from the wishlist"
 msgstr "Rimuovere un prodotto dall'ordine"
 
-#: core/graphene/mutations.py:293
+#: core/graphene/mutations.py:302
 msgid "remove all products from the wishlist"
 msgstr "Rimuovere un prodotto dall'ordine"
 
-#: core/graphene/mutations.py:320
+#: core/graphene/mutations.py:329
 msgid "buy all products from the wishlist"
 msgstr "Rimuovere un prodotto dall'ordine"
 
-#: core/graphene/mutations.py:363
+#: core/graphene/mutations.py:372
 msgid "buy a product"
 msgstr "Acquistare un ordine"
 
-#: core/graphene/mutations.py:369
+#: core/graphene/mutations.py:378
 msgid ""
 "please send the attributes as the string formatted like "
 "attr1=value1,attr2=value2"
@@ -700,12 +733,24 @@ msgstr ""
 "Inviare gli attributi come stringa formattata come "
 "attr1=valore1,attr2=valore2"
 
-#: core/graphene/mutations.py:485
+#: core/graphene/mutations.py:463
+msgid "original address string provided by the user"
+msgstr "Stringa di indirizzo originale fornita dall'utente"
+
+#: core/graphene/mutations.py:501
+msgid "{name} does not exist: {uuid}"
+msgstr "{name} non esiste: {uuid}"
+
+#: core/graphene/mutations.py:514
+msgid "limit must be between 1 and 10"
+msgstr "Il limite deve essere compreso tra 1 e 10"
+
+#: core/graphene/mutations.py:558
 msgid "elasticsearch - works like a charm"
 msgstr "ElasticSearch: funziona a meraviglia"
 
-#: core/graphene/object_types.py:42 core/graphene/object_types.py:225
-#: core/graphene/object_types.py:266 core/models.py:123 core/models.py:478
+#: core/graphene/object_types.py:42 core/graphene/object_types.py:252
+#: core/graphene/object_types.py:293 core/models.py:125 core/models.py:480
 msgid "attributes"
 msgstr "Attributi"
 
@@ -718,11 +763,11 @@ msgid "groups of attributes"
 msgstr "Gruppi di attributi"
 
 #: core/graphene/object_types.py:75 core/graphene/object_types.py:104
-#: core/graphene/object_types.py:131 core/models.py:87 core/models.py:209
+#: core/graphene/object_types.py:131 core/models.py:89 core/models.py:211
 msgid "categories"
 msgstr "Categorie"
 
-#: core/graphene/object_types.py:82 core/models.py:256
+#: core/graphene/object_types.py:82 core/models.py:258
 msgid "brands"
 msgstr "Marche"
 
@@ -731,7 +776,7 @@ msgid "category image url"
 msgstr "Categorie"
 
 #: core/graphene/object_types.py:107 core/graphene/object_types.py:202
-#: core/models.py:173
+#: core/models.py:175
 msgid "markup percentage"
 msgstr "Percentuale di markup"
 
@@ -747,40 +792,48 @@ msgid ""
 msgstr ""
 "Prezzi minimi e massimi per i prodotti di questa categoria, se disponibili."
 
-#: core/graphene/object_types.py:209 core/models.py:393
+#: core/graphene/object_types.py:209 core/models.py:395
 msgid "vendors"
 msgstr "Venditori"
 
 #: core/graphene/object_types.py:213
+msgid "Latitude (Y coordinate)"
+msgstr "Latitudine (coordinata Y)"
+
+#: core/graphene/object_types.py:214
+msgid "Longitude (X coordinate)"
+msgstr "Longitudine (coordinata X)"
+
+#: core/graphene/object_types.py:240
 msgid "comment"
 msgstr "Come"
 
-#: core/graphene/object_types.py:214
+#: core/graphene/object_types.py:241
 msgid "rating value from 1 to 10, inclusive, or 0 if not set."
 msgstr "Valore di valutazione da 1 a 10, incluso, o 0 se non impostato."
 
-#: core/graphene/object_types.py:221
+#: core/graphene/object_types.py:248
 msgid "represents feedback from a user."
 msgstr "Rappresenta il feedback di un utente."
 
-#: core/graphene/object_types.py:226 core/graphene/object_types.py:267
-#: core/models.py:472
+#: core/graphene/object_types.py:253 core/graphene/object_types.py:294
+#: core/models.py:474
 msgid "notifications"
 msgstr "Notifiche"
 
-#: core/graphene/object_types.py:227
+#: core/graphene/object_types.py:254
 msgid "download url for this order product if applicable"
 msgstr "URL di download per il prodotto dell'ordine, se applicabile"
 
-#: core/graphene/object_types.py:256
+#: core/graphene/object_types.py:283
 msgid "a list of order products in this order"
 msgstr "Un elenco di prodotti ordinati in questo ordine"
 
-#: core/graphene/object_types.py:258 core/models.py:442
+#: core/graphene/object_types.py:285 core/models.py:444
 msgid "billing address"
 msgstr "Indirizzo di fatturazione"
 
-#: core/graphene/object_types.py:261
+#: core/graphene/object_types.py:288
 msgid ""
 "shipping address for this order, leave blank if same as billing address or "
 "if not applicable"
@@ -788,47 +841,47 @@ msgstr ""
 "Indirizzo di spedizione per questo ordine, lasciare in bianco se è uguale "
 "all'indirizzo di fatturazione o se non è applicabile"
 
-#: core/graphene/object_types.py:263
+#: core/graphene/object_types.py:290
 msgid "total price of this order"
 msgstr "Prezzo totale dell'ordine"
 
-#: core/graphene/object_types.py:264
+#: core/graphene/object_types.py:291
 msgid "total quantity of products in order"
 msgstr "Quantità totale di prodotti in ordine"
 
-#: core/graphene/object_types.py:265
+#: core/graphene/object_types.py:292
 msgid "are all products in the order digital"
 msgstr "Tutti i prodotti sono presenti nell'ordine digitale"
 
-#: core/graphene/object_types.py:285 core/models.py:506
+#: core/graphene/object_types.py:312 core/models.py:508
 msgid "orders"
 msgstr "Ordini"
 
-#: core/graphene/object_types.py:301
+#: core/graphene/object_types.py:328
 msgid "image url"
 msgstr "URL immagine"
 
-#: core/graphene/object_types.py:308
+#: core/graphene/object_types.py:335
 msgid "product's images"
 msgstr "Immagini del prodotto"
 
-#: core/graphene/object_types.py:315 core/models.py:208 core/models.py:266
+#: core/graphene/object_types.py:342 core/models.py:210 core/models.py:268
 msgid "category"
 msgstr "Categoria"
 
-#: core/graphene/object_types.py:317 core/models.py:429
+#: core/graphene/object_types.py:344 core/models.py:431
 msgid "feedbacks"
 msgstr "Feedback"
 
-#: core/graphene/object_types.py:318 core/models.py:255 core/models.py:274
+#: core/graphene/object_types.py:345 core/models.py:257 core/models.py:276
 msgid "brand"
 msgstr "Marchio"
 
-#: core/graphene/object_types.py:319 core/models.py:77
+#: core/graphene/object_types.py:346 core/models.py:79
 msgid "attribute groups"
 msgstr "Gruppi di attributi"
 
-#: core/graphene/object_types.py:321
+#: core/graphene/object_types.py:348
 #: core/templates/digital_order_created_email.html:108
 #: core/templates/digital_order_delivered_email.html:108
 #: core/templates/shipped_order_created_email.html:94
@@ -836,31 +889,31 @@ msgstr "Gruppi di attributi"
 msgid "quantity"
 msgstr "Quantità"
 
-#: core/graphene/object_types.py:322
+#: core/graphene/object_types.py:349
 msgid "number of feedbacks"
 msgstr "Numero di feedback"
 
-#: core/graphene/object_types.py:340 core/models.py:318
+#: core/graphene/object_types.py:367 core/models.py:320
 msgid "products"
 msgstr "Prodotti"
 
-#: core/graphene/object_types.py:388
+#: core/graphene/object_types.py:415
 msgid "promocodes"
 msgstr "Codici promozionali"
 
-#: core/graphene/object_types.py:398
+#: core/graphene/object_types.py:425
 msgid "products on sale"
 msgstr "Prodotti in vendita"
 
-#: core/graphene/object_types.py:405 core/models.py:1073
+#: core/graphene/object_types.py:432 core/models.py:1066
 msgid "promotions"
 msgstr "Promozioni"
 
-#: core/graphene/object_types.py:409 core/models.py:392
+#: core/graphene/object_types.py:436 core/models.py:394
 msgid "vendor"
 msgstr "Venditore"
 
-#: core/graphene/object_types.py:410 core/models.py:317
+#: core/graphene/object_types.py:437 core/models.py:319
 #: core/templates/digital_order_created_email.html:107
 #: core/templates/digital_order_delivered_email.html:107
 #: core/templates/shipped_order_created_email.html:93
@@ -868,806 +921,855 @@ msgstr "Venditore"
 msgid "product"
 msgstr "Prodotto"
 
-#: core/graphene/object_types.py:421 core/models.py:1143
+#: core/graphene/object_types.py:448 core/models.py:1136
 msgid "wishlisted products"
 msgstr "Prodotti desiderati"
 
-#: core/graphene/object_types.py:427 core/models.py:1160
+#: core/graphene/object_types.py:454 core/models.py:1153
 msgid "wishlists"
 msgstr "Liste dei desideri"
 
-#: core/graphene/object_types.py:431
+#: core/graphene/object_types.py:458
 msgid "project name"
 msgstr "Nome del progetto"
 
-#: core/graphene/object_types.py:432
+#: core/graphene/object_types.py:459
 msgid "company email"
 msgstr "Email aziendale"
 
-#: core/graphene/object_types.py:433
+#: core/graphene/object_types.py:460
 msgid "company name"
 msgstr "Nome della società"
 
-#: core/graphene/object_types.py:434
+#: core/graphene/object_types.py:461
 msgid "company address"
 msgstr "Indirizzo dell'azienda"
 
-#: core/graphene/object_types.py:435
+#: core/graphene/object_types.py:462
 msgid "company phone number"
 msgstr "Numero di telefono dell'azienda"
 
-#: core/graphene/object_types.py:436
+#: core/graphene/object_types.py:463
 msgid "email from, sometimes it must be used instead of host user value"
 msgstr ""
 "'email from', a volte deve essere usato al posto del valore dell'utente host"
 
-#: core/graphene/object_types.py:437
+#: core/graphene/object_types.py:464
 msgid "email host user"
 msgstr "Utente host dell'e-mail"
 
-#: core/graphene/object_types.py:438
+#: core/graphene/object_types.py:465
 msgid "maximum amount for payment"
 msgstr "Importo massimo per il pagamento"
 
-#: core/graphene/object_types.py:439
+#: core/graphene/object_types.py:466
 msgid "minimum amount for payment"
 msgstr "Importo minimo per il pagamento"
 
-#: core/graphene/object_types.py:442
+#: core/graphene/object_types.py:469
 msgid "company configuration"
 msgstr "Configurazione"
 
-#: core/graphene/object_types.py:446
+#: core/graphene/object_types.py:473
 msgid "language code"
 msgstr "Codice lingua"
 
-#: core/graphene/object_types.py:447
+#: core/graphene/object_types.py:474
 msgid "language name"
 msgstr "Nome della lingua"
 
-#: core/graphene/object_types.py:448
+#: core/graphene/object_types.py:475
 msgid "language flag, if exists :)"
 msgstr "Bandiera della lingua, se esiste :)"
 
-#: core/graphene/object_types.py:451
+#: core/graphene/object_types.py:478
 msgid "supported languages"
 msgstr "Ottenere un elenco delle lingue supportate"
 
-#: core/graphene/object_types.py:479 core/graphene/object_types.py:480
-#: core/graphene/object_types.py:481
+#: core/graphene/object_types.py:506 core/graphene/object_types.py:507
+#: core/graphene/object_types.py:508
 msgid "products search results"
 msgstr "Risultati della ricerca dei prodotti"
 
-#: core/graphene/object_types.py:482
+#: core/graphene/object_types.py:509
 msgid "posts search results"
 msgstr "Risultati della ricerca dei prodotti"
 
-#: core/models.py:62
+#: core/models.py:64
 msgid "parent of this group"
 msgstr "Genitore di questo gruppo"
 
-#: core/models.py:63
+#: core/models.py:65
 msgid "parent attribute group"
 msgstr "Gruppo di attributi padre"
 
-#: core/models.py:67 core/models.py:68
+#: core/models.py:69 core/models.py:70
 msgid "attribute group's name"
 msgstr "Nome del gruppo di attributi"
 
-#: core/models.py:76 core/models.py:95
+#: core/models.py:78 core/models.py:97
 msgid "attribute group"
 msgstr "Gruppo di attributi"
 
-#: core/models.py:86
+#: core/models.py:88
 msgid "category of this attribute"
 msgstr "Categoria di questo attributo"
 
-#: core/models.py:94
+#: core/models.py:96
 msgid "group of this attribute"
 msgstr "Gruppo di questo attributo"
 
-#: core/models.py:100
+#: core/models.py:102
 msgid "string"
 msgstr "Stringa"
 
-#: core/models.py:101
+#: core/models.py:103
 msgid "integer"
 msgstr "Intero"
 
-#: core/models.py:102
+#: core/models.py:104
 msgid "float"
 msgstr "Galleggiante"
 
-#: core/models.py:103
+#: core/models.py:105
 msgid "boolean"
 msgstr "Booleano"
 
-#: core/models.py:104
+#: core/models.py:106
 msgid "array"
 msgstr "Array"
 
-#: core/models.py:105
+#: core/models.py:107
 msgid "object"
 msgstr "Oggetto"
 
-#: core/models.py:107
+#: core/models.py:109
 msgid "type of the attribute's value"
 msgstr "Tipo di valore dell'attributo"
 
-#: core/models.py:108
+#: core/models.py:110
 msgid "value type"
 msgstr "Tipo di valore"
 
-#: core/models.py:113
+#: core/models.py:115
 msgid "name of this attribute"
 msgstr "Nome dell'attributo"
 
-#: core/models.py:114
+#: core/models.py:116
 msgid "attribute's name"
 msgstr "Nome dell'attributo"
 
-#: core/models.py:122 core/models.py:134
+#: core/models.py:124 core/models.py:136
 #: core/templates/digital_order_delivered_email.html:132
 msgid "attribute"
 msgstr "Attributo"
 
-#: core/models.py:133
+#: core/models.py:135
 msgid "attribute of this value"
 msgstr "Attributo di questo valore"
 
-#: core/models.py:141
+#: core/models.py:143
 msgid "the specific product associated with this attribute's value"
 msgstr "Il prodotto specifico associato al valore di questo attributo"
 
-#: core/models.py:142 core/models.py:819 core/models.py:933
-#: core/models.py:1099
+#: core/models.py:144 core/models.py:808 core/models.py:922
+#: core/models.py:1092
 msgid "associated product"
 msgstr "Prodotto associato"
 
-#: core/models.py:147
+#: core/models.py:149
 msgid "the specific value for this attribute"
 msgstr "Il valore specifico per questo attributo"
 
-#: core/models.py:164
+#: core/models.py:166
 msgid "upload an image representing this category"
 msgstr "Caricare un'immagine che rappresenti questa categoria"
 
-#: core/models.py:167
+#: core/models.py:169
 msgid "category image"
 msgstr "Categoria immagine"
 
-#: core/models.py:172
+#: core/models.py:174
 msgid "define a markup percentage for products in this category"
 msgstr ""
 "Definire una percentuale di ricarico per i prodotti di questa categoria"
 
-#: core/models.py:181
+#: core/models.py:183
 msgid "parent of this category to form a hierarchical structure"
-msgstr "Genitore di questa categoria, per formare una struttura gerarchica."
+msgstr "Genitore di questa categoria per formare una struttura gerarchica"
 
-#: core/models.py:182
+#: core/models.py:184
 msgid "parent category"
 msgstr "Categoria di genitori"
 
-#: core/models.py:187
+#: core/models.py:189
 msgid "category name"
 msgstr "Nome della categoria"
 
-#: core/models.py:188
+#: core/models.py:190
 msgid "provide a name for this category"
 msgstr "Indicare un nome per questa categoria"
 
-#: core/models.py:195
+#: core/models.py:197
 msgid "add a detailed description for this category"
 msgstr "Aggiungere una descrizione dettagliata per questa categoria"
 
-#: core/models.py:196
+#: core/models.py:198
 msgid "category description"
 msgstr "Descrizione della categoria"
 
-#: core/models.py:218
+#: core/models.py:220
 msgid "name of this brand"
 msgstr "Nome del marchio"
 
-#: core/models.py:219
+#: core/models.py:221
 msgid "brand name"
 msgstr "Nome del marchio"
 
-#: core/models.py:226
+#: core/models.py:228
 msgid "upload a logo representing this brand"
 msgstr "Caricare un logo che rappresenti questo marchio"
 
-#: core/models.py:228
+#: core/models.py:230
 msgid "brand small image"
 msgstr "Immagine piccola del marchio"
 
-#: core/models.py:234
+#: core/models.py:236
 msgid "upload a big logo representing this brand"
 msgstr "Caricare un grande logo che rappresenti questo marchio"
 
-#: core/models.py:236
+#: core/models.py:238
 msgid "brand big image"
 msgstr "Grande immagine del marchio"
 
-#: core/models.py:241
+#: core/models.py:243
 msgid "add a detailed description of the brand"
 msgstr "Aggiungere una descrizione dettagliata del marchio"
 
-#: core/models.py:242
+#: core/models.py:244
 msgid "brand description"
 msgstr "Descrizione del marchio"
 
-#: core/models.py:247
+#: core/models.py:249
 msgid "optional categories that this brand is associated with"
 msgstr "Categorie opzionali a cui questo marchio è associato"
 
-#: core/models.py:248
+#: core/models.py:250
 msgid "associated categories"
 msgstr "Categorie"
 
-#: core/models.py:265
+#: core/models.py:267
 msgid "category this product belongs to"
 msgstr "Categoria a cui appartiene questo prodotto"
 
-#: core/models.py:273
+#: core/models.py:275
 msgid "optionally associate this product with a brand"
 msgstr "Associare facoltativamente questo prodotto a un marchio"
 
-#: core/models.py:279
+#: core/models.py:281
 msgid "tags that help describe or group this product"
 msgstr "Tag che aiutano a descrivere o raggruppare questo prodotto"
 
-#: core/models.py:280 core/models.py:907
+#: core/models.py:282 core/models.py:896
 msgid "product tags"
 msgstr "Tag del prodotto"
 
-#: core/models.py:284
+#: core/models.py:286
 msgid "indicates whether this product is digitally delivered"
 msgstr "Indica se il prodotto è consegnato in formato digitale"
 
-#: core/models.py:285
+#: core/models.py:287
 msgid "is product digital"
 msgstr "Il prodotto è digitale"
 
-#: core/models.py:291
+#: core/models.py:293
 msgid "provide a clear identifying name for the product"
 msgstr "Fornire un nome identificativo chiaro per il prodotto"
 
-#: core/models.py:292
+#: core/models.py:294
 msgid "product name"
 msgstr "Nome del prodotto"
 
-#: core/models.py:297 core/models.py:1061
+#: core/models.py:299 core/models.py:1054
 msgid "add a detailed description of the product"
 msgstr "Aggiungere una descrizione dettagliata del prodotto"
 
-#: core/models.py:298
+#: core/models.py:300
 msgid "product description"
 msgstr "Descrizione del prodotto"
 
-#: core/models.py:305
+#: core/models.py:307
 msgid "part number for this product"
 msgstr "Numero di parte per questo prodotto"
 
-#: core/models.py:306
+#: core/models.py:308
 msgid "part number"
 msgstr "Numero di parte"
 
-#: core/models.py:370
+#: core/models.py:372
 msgid "stores credentials and endpoints required for vendor communication"
 msgstr ""
 "Memorizza le credenziali e gli endpoint necessari per la comunicazione API "
 "del fornitore."
 
-#: core/models.py:371
+#: core/models.py:373
 msgid "authentication info"
 msgstr "Informazioni sull'autenticazione"
 
-#: core/models.py:376
+#: core/models.py:378
 msgid "define the markup for products retrieved from this vendor"
 msgstr "Definire il markup per i prodotti recuperati da questo fornitore"
 
-#: core/models.py:377
+#: core/models.py:379
 msgid "vendor markup percentage"
 msgstr "Percentuale di ricarico del fornitore"
 
-#: core/models.py:381
+#: core/models.py:383
 msgid "name of this vendor"
 msgstr "Nome del fornitore"
 
-#: core/models.py:382
+#: core/models.py:384
 msgid "vendor name"
 msgstr "Nome del fornitore"
 
-#: core/models.py:405
+#: core/models.py:407
 msgid "user-provided comments about their experience with the product"
 msgstr "Commenti degli utenti sulla loro esperienza con il prodotto"
 
-#: core/models.py:406
+#: core/models.py:408
 msgid "feedback comments"
 msgstr "Commenti di feedback"
 
-#: core/models.py:413
+#: core/models.py:415
 msgid ""
 "references the specific product in an order that this feedback is about"
 msgstr ""
 "Riferisce il prodotto specifico in un ordine di cui si tratta il feedback."
 
-#: core/models.py:414
+#: core/models.py:416
 msgid "related order product"
 msgstr "Prodotto correlato all'ordine"
 
-#: core/models.py:419
+#: core/models.py:421
 msgid "user-assigned rating for the product"
 msgstr "Valutazione del prodotto assegnata dall'utente"
 
-#: core/models.py:420
+#: core/models.py:422
 msgid "product rating"
 msgstr "Valutazione del prodotto"
 
-#: core/models.py:428
+#: core/models.py:430
 msgid "feedback"
 msgstr "Feedback"
 
-#: core/models.py:441
+#: core/models.py:443
 msgid "the billing address used for this order"
 msgstr "L'indirizzo di fatturazione utilizzato per questo ordine"
 
-#: core/models.py:449
+#: core/models.py:451
 msgid "optional promo code applied to this order"
 msgstr "Codice promozionale opzionale applicato a questo ordine"
 
-#: core/models.py:450
+#: core/models.py:452
 msgid "applied promo code"
 msgstr "Codice promozionale applicato"
 
-#: core/models.py:458
+#: core/models.py:460
 msgid "the shipping address used for this order"
 msgstr "L'indirizzo di spedizione utilizzato per questo ordine"
 
-#: core/models.py:459
+#: core/models.py:461
 msgid "shipping address"
 msgstr "Indirizzo di spedizione"
 
-#: core/models.py:465
+#: core/models.py:467
 msgid "current status of the order in its lifecycle"
 msgstr "Stato attuale dell'ordine nel suo ciclo di vita"
 
-#: core/models.py:466
+#: core/models.py:468
 msgid "order status"
 msgstr "Stato dell'ordine"
 
-#: core/models.py:471 core/models.py:796
+#: core/models.py:473 core/models.py:785
 msgid "json structure of notifications to display to users"
 msgstr ""
 "Struttura JSON delle notifiche da mostrare agli utenti; nell'interfaccia "
 "utente dell'amministratore viene utilizzata la visualizzazione a tabella."
 
-#: core/models.py:477
+#: core/models.py:479
 msgid "json representation of order attributes for this order"
 msgstr "Rappresentazione JSON degli attributi dell'ordine per questo ordine"
 
-#: core/models.py:483
+#: core/models.py:485
 msgid "the user who placed the order"
 msgstr "L'utente che ha effettuato l'ordine"
 
-#: core/models.py:484
+#: core/models.py:486
 msgid "user"
 msgstr "Utente"
 
-#: core/models.py:490
+#: core/models.py:492
 msgid "the timestamp when the order was finalized"
 msgstr "Il timestamp del momento in cui l'ordine è stato finalizzato"
 
-#: core/models.py:491
+#: core/models.py:493
 msgid "buy time"
 msgstr "Acquista tempo"
 
-#: core/models.py:498
+#: core/models.py:500
 msgid "a human-readable identifier for the order"
 msgstr "Un identificatore leggibile dall'uomo per l'ordine"
 
-#: core/models.py:499
+#: core/models.py:501
 msgid "human readable id"
 msgstr "ID leggibile dall'uomo"
 
-#: core/models.py:505
+#: core/models.py:507
 msgid "order"
 msgstr "Ordine"
 
-#: core/models.py:517
+#: core/models.py:519
 msgid "a user must have only one pending order at a time"
 msgstr "Un utente può avere un solo ordine pendente alla volta!"
 
-#: core/models.py:541
+#: core/models.py:543
 msgid "you cannot add products to an order that is not a pending one"
-msgstr "Non è possibile aggiungere prodotti a un ordine che non sia in corso."
+msgstr ""
+"Non è possibile aggiungere prodotti a un ordine che non sia in sospeso."
 
-#: core/models.py:546
+#: core/models.py:548
 msgid "you cannot add inactive products to order"
 msgstr "Non è possibile aggiungere all'ordine prodotti inattivi"
 
-#: core/models.py:563
+#: core/models.py:565
 msgid "you cannot add more products than available in stock"
 msgstr ""
 "Non è possibile aggiungere più prodotti di quelli disponibili in magazzino"
 
-#: core/models.py:572 core/models.py:589 core/models.py:613
-#: core/models.py:1170 core/models.py:1181
+#: core/models.py:574 core/models.py:591 core/models.py:615
+#: core/models.py:1163 core/models.py:1175
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} non esiste: {product_uuid}"
 
-#: core/models.py:576 core/models.py:597 core/models.py:605
+#: core/models.py:578 core/models.py:599 core/models.py:607
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr "Non è possibile rimuovere i prodotti da un ordine che non è in corso."
 
-#: core/models.py:593
+#: core/models.py:595
 #, python-brace-format
 msgid "{name} does not exist with query <{query}>"
 msgstr "{name} non esiste con la query <{query}>."
 
-#: core/models.py:624
+#: core/models.py:626
 msgid "promocode does not exist"
 msgstr "Il codice promozionale non esiste"
 
-#: core/models.py:631 core/models.py:670
+#: core/models.py:633
+msgid "you can only buy physical products with shipping address specified"
+msgstr ""
+"È possibile acquistare solo prodotti fisici con indirizzo di spedizione "
+"specificato!"
+
+#: core/models.py:652
+msgid "address does not exist"
+msgstr "L'indirizzo non esiste"
+
+#: core/models.py:659 core/models.py:700
 msgid "you can not buy at this moment, please try again in a few minutes"
 msgstr ""
 "In questo momento non è possibile acquistare, riprovare tra qualche minuto."
 
-#: core/models.py:634
+#: core/models.py:662
 msgid "invalid force value"
 msgstr "Valore di forza non valido"
 
-#: core/models.py:637 core/models.py:673
+#: core/models.py:667 core/models.py:703
 msgid "you cannot purchase an empty order!"
 msgstr "Non è possibile acquistare un ordine vuoto!"
 
-#: core/models.py:652
+#: core/models.py:682
 msgid "insufficient funds to complete the order"
 msgstr "Fondi insufficienti per completare l'ordine"
 
-#: core/models.py:682
+#: core/models.py:712
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
 msgstr ""
 "non è possibile acquistare senza registrazione, si prega di fornire le "
-"seguenti informazioni: nome del cliente, email del cliente, numero di "
+"seguenti informazioni: nome del cliente, e-mail del cliente, numero di "
 "telefono del cliente"
 
-#: core/models.py:690
+#: core/models.py:720
 msgid "invalid payment method"
 msgstr "Metodo di pagamento non valido"
 
-#: core/models.py:706
-msgid "you cannot create a momental order without providing a billing address"
-msgstr ""
-"non è possibile creare un ordine momentaneo senza fornire un indirizzo di "
-"fatturazione"
-
-#: core/models.py:784
+#: core/models.py:773
 msgid "the price paid by the customer for this product at purchase time"
 msgstr ""
 "Il prezzo pagato dal cliente per questo prodotto al momento dell'acquisto."
 
-#: core/models.py:785
+#: core/models.py:774
 msgid "purchase price at order time"
 msgstr "Prezzo di acquisto al momento dell'ordine"
 
-#: core/models.py:790
+#: core/models.py:779
 msgid "internal comments for admins about this ordered product"
 msgstr "Commenti interni per gli amministratori su questo prodotto ordinato"
 
-#: core/models.py:791
+#: core/models.py:780
 msgid "internal comments"
 msgstr "Commenti interni"
 
-#: core/models.py:797
+#: core/models.py:786
 msgid "user notifications"
 msgstr "Notifiche degli utenti"
 
-#: core/models.py:802
+#: core/models.py:791
 msgid "json representation of this item's attributes"
 msgstr "Rappresentazione JSON degli attributi di questo elemento"
 
-#: core/models.py:803
+#: core/models.py:792
 msgid "ordered product attributes"
 msgstr "Attributi del prodotto ordinati"
 
-#: core/models.py:808
+#: core/models.py:797
 msgid "reference to the parent order that contains this product"
 msgstr "Riferimento all'ordine padre che contiene questo prodotto"
 
-#: core/models.py:809
+#: core/models.py:798
 msgid "parent order"
 msgstr "Ordine dei genitori"
 
-#: core/models.py:818
+#: core/models.py:807
 msgid "the specific product associated with this order line"
 msgstr "Il prodotto specifico associato a questa riga d'ordine"
 
-#: core/models.py:825
+#: core/models.py:814
 msgid "quantity of this specific product in the order"
 msgstr "Quantità di questo prodotto specifico nell'ordine"
 
-#: core/models.py:826
+#: core/models.py:815
 msgid "product quantity"
 msgstr "Quantità di prodotto"
 
-#: core/models.py:833
+#: core/models.py:822
 msgid "current status of this product in the order"
 msgstr "Stato attuale di questo prodotto nell'ordine"
 
-#: core/models.py:834
+#: core/models.py:823
 msgid "product line status"
 msgstr "Stato della linea di prodotti"
 
-#: core/models.py:892
+#: core/models.py:881
 msgid "internal tag identifier for the product tag"
 msgstr "Identificatore interno dell'etichetta del prodotto"
 
-#: core/models.py:893
+#: core/models.py:882
 msgid "tag name"
 msgstr "Nome del tag"
 
-#: core/models.py:897
+#: core/models.py:886
 msgid "user-friendly name for the product tag"
 msgstr "Nome intuitivo per l'etichetta del prodotto"
 
-#: core/models.py:898
+#: core/models.py:887
 msgid "tag display name"
 msgstr "Nome del tag"
 
-#: core/models.py:906
+#: core/models.py:895
 msgid "product tag"
 msgstr "Etichetta del prodotto"
 
-#: core/models.py:915
+#: core/models.py:904
 msgid "provide alternative text for the image for accessibility"
 msgstr ""
 "Fornire un testo alternativo per l'immagine ai fini dell'accessibilità."
 
-#: core/models.py:916
+#: core/models.py:905
 msgid "image alt text"
 msgstr "Testo alt dell'immagine"
 
-#: core/models.py:919
+#: core/models.py:908
 msgid "upload the image file for this product"
 msgstr "Caricare il file immagine per questo prodotto"
 
-#: core/models.py:920 core/models.py:945
+#: core/models.py:909 core/models.py:934
 msgid "product image"
 msgstr "Immagine del prodotto"
 
-#: core/models.py:926
+#: core/models.py:915
 msgid "determines the order in which images are displayed"
 msgstr "Determina l'ordine di visualizzazione delle immagini"
 
-#: core/models.py:927
+#: core/models.py:916
 msgid "display priority"
 msgstr "Priorità del display"
 
-#: core/models.py:932
+#: core/models.py:921
 msgid "the product that this image represents"
 msgstr "Il prodotto che questa immagine rappresenta"
 
-#: core/models.py:946
+#: core/models.py:935
 msgid "product images"
 msgstr "Immagini del prodotto"
 
-#: core/models.py:956
+#: core/models.py:945
 msgid "unique code used by a user to redeem a discount"
 msgstr "Codice univoco utilizzato da un utente per riscattare uno sconto"
 
-#: core/models.py:957
+#: core/models.py:946
 msgid "promo code identifier"
 msgstr "Identificatore del codice promozionale"
 
-#: core/models.py:964
+#: core/models.py:953
 msgid "fixed discount amount applied if percent is not used"
 msgstr ""
 "Importo fisso dello sconto applicato se non si utilizza la percentuale"
 
-#: core/models.py:965
+#: core/models.py:954
 msgid "fixed discount amount"
 msgstr "Importo fisso dello sconto"
 
-#: core/models.py:971
+#: core/models.py:960
 msgid "percentage discount applied if fixed amount is not used"
 msgstr "Sconto percentuale applicato se l'importo fisso non viene utilizzato"
 
-#: core/models.py:972
+#: core/models.py:961
 msgid "percentage discount"
 msgstr "Sconto percentuale"
 
-#: core/models.py:977
+#: core/models.py:966
 msgid "timestamp when the promocode expires"
 msgstr "Data di scadenza del codice promozionale"
 
-#: core/models.py:978
+#: core/models.py:967
 msgid "end validity time"
 msgstr "Tempo di validità finale"
 
-#: core/models.py:983
+#: core/models.py:972
 msgid "timestamp from which this promocode is valid"
 msgstr "Data a partire dalla quale il codice promozionale è valido"
 
-#: core/models.py:984
+#: core/models.py:973
 msgid "start validity time"
-msgstr "Tempo di validità iniziale"
+msgstr "Ora di inizio validità"
 
-#: core/models.py:989
+#: core/models.py:978
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr ""
 "Timestamp in cui è stato utilizzato il codice promozionale, vuoto se non "
 "ancora utilizzato"
 
-#: core/models.py:990
+#: core/models.py:979
 msgid "usage timestamp"
 msgstr "Timestamp d'uso"
 
-#: core/models.py:995
+#: core/models.py:984
 msgid "user assigned to this promocode if applicable"
 msgstr "Utente assegnato a questo codice promozionale, se applicabile"
 
-#: core/models.py:996
+#: core/models.py:985
 msgid "assigned user"
 msgstr "Utente assegnato"
 
-#: core/models.py:1003
+#: core/models.py:992
 msgid "promo code"
 msgstr "Codice promozionale"
 
-#: core/models.py:1004
+#: core/models.py:993
 msgid "promo codes"
 msgstr "Codici promozionali"
 
-#: core/models.py:1011
+#: core/models.py:1000
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
 msgstr ""
 "È necessario definire un solo tipo di sconto (importo o percentuale), ma non"
-" entrambi o nessuno dei due."
+" entrambi o nessuno."
 
-#: core/models.py:1026
+#: core/models.py:1016
 msgid "promocode already used"
 msgstr "Il codice promozionale è già stato utilizzato"
 
-#: core/models.py:1038
+#: core/models.py:1030
 #, python-brace-format
 msgid "invalid discount type for promocode {self.uuid}"
 msgstr "Tipo di sconto non valido per il codice promozionale {self.uuid}"
 
-#: core/models.py:1049
+#: core/models.py:1042
 msgid "percentage discount for the selected products"
 msgstr "Percentuale di sconto per i prodotti selezionati"
 
-#: core/models.py:1050
+#: core/models.py:1043
 msgid "discount percentage"
 msgstr "Percentuale di sconto"
 
-#: core/models.py:1055
+#: core/models.py:1048
 msgid "provide a unique name for this promotion"
 msgstr "Fornite un nome unico per questa promozione"
 
-#: core/models.py:1056
+#: core/models.py:1049
 msgid "promotion name"
 msgstr "Nome della promozione"
 
-#: core/models.py:1062
+#: core/models.py:1055
 msgid "promotion description"
 msgstr "Descrizione della promozione"
 
-#: core/models.py:1067
+#: core/models.py:1060
 msgid "select which products are included in this promotion"
 msgstr "Selezionare i prodotti inclusi in questa promozione"
 
-#: core/models.py:1068
+#: core/models.py:1061
 msgid "included products"
 msgstr "Prodotti inclusi"
 
-#: core/models.py:1072
+#: core/models.py:1065
 msgid "promotion"
 msgstr "Promozione"
 
-#: core/models.py:1087
+#: core/models.py:1080
 msgid "the vendor supplying this product stock"
 msgstr "Il venditore che fornisce questo stock di prodotti"
 
-#: core/models.py:1088
+#: core/models.py:1081
 msgid "associated vendor"
 msgstr "Venditore associato"
 
-#: core/models.py:1092
+#: core/models.py:1085
 msgid "final price to the customer after markups"
 msgstr "Prezzo finale al cliente dopo i ricarichi"
 
-#: core/models.py:1093
+#: core/models.py:1086
 msgid "selling price"
 msgstr "Prezzo di vendita"
 
-#: core/models.py:1098
+#: core/models.py:1091
 msgid "the product associated with this stock entry"
 msgstr "Il prodotto associato a questa voce di magazzino"
 
-#: core/models.py:1106
+#: core/models.py:1099
 msgid "the price paid to the vendor for this product"
 msgstr "Il prezzo pagato al venditore per questo prodotto"
 
-#: core/models.py:1107
+#: core/models.py:1100
 msgid "vendor purchase price"
 msgstr "Prezzo di acquisto del fornitore"
 
-#: core/models.py:1111
+#: core/models.py:1104
 msgid "available quantity of the product in stock"
 msgstr "Quantità disponibile del prodotto in magazzino"
 
-#: core/models.py:1112
+#: core/models.py:1105
 msgid "quantity in stock"
 msgstr "Quantità in magazzino"
 
-#: core/models.py:1116
+#: core/models.py:1109
 msgid "vendor-assigned SKU for identifying the product"
 msgstr "SKU assegnato dal fornitore per identificare il prodotto"
 
-#: core/models.py:1117
+#: core/models.py:1110
 msgid "vendor sku"
 msgstr "SKU del venditore"
 
-#: core/models.py:1123
+#: core/models.py:1116
 msgid "digital file associated with this stock if applicable"
 msgstr "File digitale associato a questo stock, se applicabile"
 
-#: core/models.py:1124
+#: core/models.py:1117
 msgid "digital file"
 msgstr "File digitale"
 
-#: core/models.py:1133
+#: core/models.py:1126
 msgid "stock entries"
 msgstr "Voci di magazzino"
 
-#: core/models.py:1142
+#: core/models.py:1135
 msgid "products that the user has marked as wanted"
 msgstr "Prodotti che l'utente ha contrassegnato come desiderati"
 
-#: core/models.py:1150
+#: core/models.py:1143
 msgid "user who owns this wishlist"
 msgstr "Utente che possiede questa wishlist"
 
-#: core/models.py:1151
+#: core/models.py:1144
 msgid "wishlist owner"
 msgstr "Proprietario della lista dei desideri"
 
-#: core/models.py:1159
+#: core/models.py:1152
 msgid "wishlist"
 msgstr "Lista dei desideri"
 
-#: core/models.py:1199
+#: core/models.py:1197
 msgid "download"
 msgstr "Scaricare"
 
-#: core/models.py:1200
+#: core/models.py:1198
 msgid "downloads"
 msgstr "Scaricamento"
 
-#: core/models.py:1208
+#: core/models.py:1206
 msgid "you can not download a digital asset for a non-finished order"
 msgstr "Non è possibile scaricare un bene digitale per un ordine non finito."
 
-#: core/models.py:1220
+#: core/models.py:1218
 msgid "documentary"
 msgstr "Documentario"
 
-#: core/models.py:1221
+#: core/models.py:1219
 msgid "documentaries"
 msgstr "Documentari"
 
-#: core/models.py:1231
+#: core/models.py:1229
 msgid "unresolved"
 msgstr "Non risolto"
+
+#: core/models.py:1233
+msgid "street"
+msgstr "Via"
+
+#: core/models.py:1234
+msgid "district"
+msgstr "Distretto"
+
+#: core/models.py:1235
+msgid "city"
+msgstr "Città"
+
+#: core/models.py:1236
+msgid "region"
+msgstr "Regione"
+
+#: core/models.py:1237
+msgid "postal code"
+msgstr "Codice postale"
+
+#: core/models.py:1238
+msgid "country"
+msgstr "Paese"
+
+#: core/models.py:1245
+msgid "geolocation point: (longitude, latitude)"
+msgstr "Punto di geolocalizzazione(Longitudine, Latitudine)"
+
+#: core/models.py:1251
+msgid "full JSON response from geocoder for this address"
+msgstr "Risposta JSON completa di geocoder per questo indirizzo"
+
+#: core/models.py:1257
+msgid "stored JSON response from the geocoding service"
+msgstr "Risposta JSON memorizzata dal servizio di geocodifica"
+
+#: core/models.py:1270
+msgid "address"
+msgstr "Indirizzo"
+
+#: core/models.py:1271
+msgid "addresses"
+msgstr "Indirizzi"
 
 #: core/signals.py:59
 msgid "error during promocode creation: {e!s}"
@@ -1729,7 +1831,7 @@ msgstr "Logo"
 #: core/templates/shipped_order_delivered_email.html:87
 #, python-format
 msgid "hello %(order.user.first_name)s,"
-msgstr "Ciao %(order.user.first_name)s,"
+msgstr "Hello %(order.user.first_name)s,"
 
 #: core/templates/digital_order_created_email.html:102
 #, python-format
@@ -1763,13 +1865,13 @@ msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(config.EMAIL_HOST_USER)s."
 msgstr ""
-"Per qualsiasi domanda, potete contattare il nostro supporto all'indirizzo "
-"%(config.EMAIL_HOST_USER)s."
+"Per qualsiasi domanda, non esitate a contattare il nostro supporto al numero"
+" %(config.EMAIL_HOST_USER)s."
 
 #: core/templates/digital_order_created_email.html:130
 #, python-format
 msgid "best regards,<br>the %(config.PROJECT_NAME)s team"
-msgstr "Cordiali saluti,<br>il team di %(config.PROJECT_NAME)s"
+msgstr "Cordiali saluti,<br>il team %(config.PROJECT_NAME)s"
 
 #: core/templates/digital_order_created_email.html:136
 #: core/templates/digital_order_delivered_email.html:168
@@ -1785,7 +1887,7 @@ msgstr "Ordine consegnato"
 #: core/templates/digital_order_delivered_email.html:101
 #, python-format
 msgid "hello %(user_first_name)s,"
-msgstr "Ciao %(user_first_name)s,"
+msgstr "Hello %(user_first_name)s,"
 
 #: core/templates/digital_order_delivered_email.html:102
 #, python-format
@@ -1806,13 +1908,13 @@ msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(contact_email)s."
 msgstr ""
-"In caso di domande, non esitate a contattare il nostro supporto "
-"all'indirizzo %(contact_email)s."
+"Per qualsiasi domanda, non esitate a contattare il nostro supporto al numero"
+" %(contact_email)s."
 
 #: core/templates/digital_order_delivered_email.html:162
 #, python-format
 msgid "best regards,<br>the %(project_name)s team"
-msgstr "Cordiali saluti,<br>il team di %(project_name)s"
+msgstr "Cordiali saluti,<br>il team %(project_name)s"
 
 #: core/templates/json_table_widget.html:5
 msgid "key"
@@ -1841,7 +1943,7 @@ msgstr "Il vostro ordine sarà consegnato al seguente indirizzo:"
 #: core/templates/shipped_order_delivered_email.html:127
 #, python-format
 msgid "best regards, <br>The %(config.PROJECT_NAME)s team"
-msgstr "Cordiali saluti, <br>il team di %(config.PROJECT_NAME)s"
+msgstr "Cordiali saluti, <br>il team %(config.PROJECT_NAME)s"
 
 #: core/utils/caching.py:41
 msgid "both data and timeout are required"
@@ -1855,7 +1957,7 @@ msgstr ""
 #: core/utils/db.py:7
 #, python-brace-format
 msgid "{model} must be model"
-msgstr "{model} deve essere il modello"
+msgstr "{model} deve essere un modello"
 
 #: core/utils/db.py:9
 #, python-brace-format
@@ -1881,12 +1983,16 @@ msgstr "{config.PROJECT_NAME} | Ordine consegnato"
 msgid "you do not have permission to perform this action."
 msgstr "Non si ha il permesso di eseguire questa azione."
 
+#: core/utils/nominatim.py:13
+msgid "NOMINATIM_URL must be configured."
+msgstr "Il parametro NOMINATIM_URL deve essere configurato!"
+
 #: core/validators.py:16
 #, python-brace-format
 msgid "image dimensions should not exceed w{max_width} x h{max_height} pixels"
 msgstr ""
 "Le dimensioni dell'immagine non devono superare w{max_width} x h{max_height}"
-" pixel."
+" pixel"
 
 #: core/validators.py:22
 msgid "invalid phone number format"
@@ -1899,3 +2005,8 @@ msgstr "È possibile scaricare l'asset digitale una sola volta"
 #: core/views.py:264
 msgid "favicon not found"
 msgstr "favicon non trovata"
+
+#: core/viewsets.py:496
+#, python-brace-format
+msgid "Geocoding error: {e}"
+msgstr "Errore di geocodifica: {e}"

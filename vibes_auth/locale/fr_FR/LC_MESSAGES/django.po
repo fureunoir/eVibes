@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -71,6 +71,10 @@ msgstr "Vérifier un jeton"
 #: vibes_auth/docs/drf/views.py:56
 msgid "Verify a token (refresh or access)."
 msgstr "Vérifier un jeton (rafraîchissement ou accès)."
+
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "Le jeton est valide"
 
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
@@ -157,11 +161,11 @@ msgstr "Quelque chose a mal tourné : {e!s}"
 msgid "token is invalid!"
 msgstr "Le jeton n'est pas valide !"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "Produits récemment consultés"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Groupes"
 
@@ -237,43 +241,39 @@ msgstr "Est abonné"
 msgid "user's newsletter subscription status"
 msgstr "Statut de l'abonnement à la lettre d'information de l'utilisateur"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "Récemment consultés"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "Jeton d'activation"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "Attributs"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "Utilisateur"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "Utilisateurs"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "Groupe"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "Jeton exceptionnel"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "Jetons en circulation"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "Jeton sur liste noire"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "Jetons sur liste noire"
 
@@ -291,8 +291,7 @@ msgstr "Jeton non valide"
 
 #: vibes_auth/serializers.py:196
 msgid "no user uuid claim present in token"
-msgstr ""
-"Aucune revendication d'uuid d'utilisateur n'est présente dans le jeton"
+msgstr "Aucune revendication d'uuid d'utilisateur n'est présente dans le jeton"
 
 #: vibes_auth/serializers.py:198
 msgid "user does not exist"
@@ -340,8 +339,7 @@ msgstr ""
 
 #: vibes_auth/templates/user_reset_password_email.html:88
 msgid "if you did not send this request, please ignore this email."
-msgstr ""
-"Si vous n'avez pas envoyé cette demande, veuillez ignorer ce courriel."
+msgstr "Si vous n'avez pas envoyé cette demande, veuillez ignorer ce courriel."
 
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
@@ -364,8 +362,8 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Merci de vous être inscrit à %(project_name)s. Veuillez activer votre compte"
-" en cliquant sur le bouton ci-dessous :"
+"Merci de vous être inscrit à %(project_name)s. Veuillez activer votre compte "
+"en cliquant sur le bouton ci-dessous :"
 
 #: vibes_auth/templates/user_verification_email.html:95
 msgid ""
@@ -380,7 +378,8 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Si le bouton ci-dessus ne fonctionne pas, veuillez copier et coller l'URL suivante\n"
+"Si le bouton ci-dessus ne fonctionne pas, veuillez copier et coller l'URL "
+"suivante\n"
 "                            suivante dans votre navigateur web :"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -415,11 +414,7 @@ msgstr ""
 "Format de numéro de téléphone non valide. Le numéro doit être saisi au "
 "format : \"+999999999\". Un maximum de 15 chiffres est autorisé."
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "Le jeton est valide"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "Le jeton n'est pas valide"
 
@@ -430,3 +425,6 @@ msgstr "Le mot de passe a été réinitialisé avec succès !"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Vous avez déjà activé le compte..."
+
+#~ msgid "recently viwed"
+#~ msgstr "Récemment consultés"

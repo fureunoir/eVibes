@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -69,6 +69,10 @@ msgstr "Verificar um token"
 #: vibes_auth/docs/drf/views.py:56
 msgid "Verify a token (refresh or access)."
 msgstr "Verificar um token (atualização ou acesso)."
+
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "O token é válido"
 
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
@@ -152,11 +156,11 @@ msgstr "Algo deu errado: {e!s}"
 msgid "token is invalid!"
 msgstr "O token é inválido!"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "Produtos visualizados recentemente"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Grupos"
 
@@ -229,43 +233,39 @@ msgstr "Está inscrito"
 msgid "user's newsletter subscription status"
 msgstr "Status da assinatura do boletim informativo do usuário"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "Visualizado recentemente"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "Token de ativação"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "Atributos"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "Usuário"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "Usuários"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "Grupo"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "Token excepcional"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "Tokens pendentes"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "Token na lista negra"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "Tokens na lista negra"
 
@@ -325,8 +325,8 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL "
 "into your web browser:"
 msgstr ""
-"Se o botão acima não funcionar, copie e cole o seguinte URL em seu navegador"
-" da Web:"
+"Se o botão acima não funcionar, copie e cole o seguinte URL em seu navegador "
+"da Web:"
 
 #: vibes_auth/templates/user_reset_password_email.html:88
 msgid "if you did not send this request, please ignore this email."
@@ -404,11 +404,7 @@ msgstr ""
 "Formato de número telefônico inválido. O número deve ser inserido no "
 "formato: \"+999999999\". São permitidos até 15 dígitos."
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "O token é válido"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "O token é inválido"
 
@@ -419,3 +415,6 @@ msgstr "A senha foi redefinida com sucesso!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Você já ativou a conta..."
+
+#~ msgid "recently viwed"
+#~ msgstr "Visualizado recentemente"

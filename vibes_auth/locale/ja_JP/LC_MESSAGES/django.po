@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -70,6 +70,10 @@ msgstr "トークンの検証"
 msgid "Verify a token (refresh or access)."
 msgstr "トークンを確認する（リフレッシュまたはアクセス）。"
 
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "トークンは有効です"
+
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
 msgstr "新規ユーザーの作成"
@@ -109,7 +113,9 @@ msgstr "ユーザーアカウントの有効化"
 
 #: vibes_auth/docs/drf/viewsets.py:62
 msgid "activation link is invalid or account already activated"
-msgstr "アクティベーションリンクが無効であるか、アカウントがすでにアクティベーションされています。"
+msgstr ""
+"アクティベーションリンクが無効であるか、アカウントがすでにアクティベーション"
+"されています。"
 
 #: vibes_auth/graphene/mutations.py:40
 msgid "the user's b64-encoded uuid who referred the new user to us."
@@ -151,11 +157,11 @@ msgstr "何かが間違っていた：{e!s}"
 msgid "token is invalid!"
 msgstr "トークンが無効です！"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "最近見た製品"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "グループ"
 
@@ -228,43 +234,39 @@ msgstr "購読中"
 msgid "user's newsletter subscription status"
 msgstr "ユーザーのニュースレター購読状況"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "最近閲覧した記事"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "アクティベーション・トークン"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "属性"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "ユーザー"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "ユーザー"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "グループ"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "卓越したトークン"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "トークン残高"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "ブラックリストトークン"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "ブラックリストに載ったトークン"
 
@@ -311,7 +313,9 @@ msgstr "こんにちは、%(user_first_name)sです、"
 msgid ""
 "we have received a request to reset your password. please reset your "
 "password by clicking the button below:"
-msgstr "パスワードの再設定依頼が届いております。以下のボタンをクリックして、パスワードをリセットしてください："
+msgstr ""
+"パスワードの再設定依頼が届いております。以下のボタンをクリックして、パスワー"
+"ドをリセットしてください："
 
 #: vibes_auth/templates/user_reset_password_email.html:84
 msgid "reset password"
@@ -321,7 +325,9 @@ msgstr "パスワードのリセット"
 msgid ""
 "if the button above does not work, please copy and paste the following URL "
 "into your web browser:"
-msgstr "上記のボタンが機能しない場合は、以下のURLをコピーしてウェブブラウザに貼り付けてください："
+msgstr ""
+"上記のボタンが機能しない場合は、以下のURLをコピーしてウェブブラウザに貼り付け"
+"てください："
 
 #: vibes_auth/templates/user_reset_password_email.html:88
 msgid "if you did not send this request, please ignore this email."
@@ -347,7 +353,9 @@ msgstr "アカウントの有効化"
 msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
-msgstr "%(project_name)sにご登録いただきありがとうございます。下のボタンをクリックしてアカウントを有効にしてください："
+msgstr ""
+"%(project_name)sにご登録いただきありがとうございます。下のボタンをクリックし"
+"てアカウントを有効にしてください："
 
 #: vibes_auth/templates/user_verification_email.html:95
 msgid ""
@@ -362,7 +370,8 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"上記のボタンが機能しない場合は、次のURLをコピーしてウェブブラウザに貼り付けてください。\n"
+"上記のボタンが機能しない場合は、次のURLをコピーしてウェブブラウザに貼り付けて"
+"ください。\n"
 "                            をウェブブラウザに貼り付けてください："
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -393,13 +402,11 @@ msgstr "{config.PROJECT_NAME}。| パスワードのリセット"
 msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
-msgstr "電話番号の形式が無効です。電話番号は次の形式で入力してください：\"+999999999\".15桁まで入力可能です。"
+msgstr ""
+"電話番号の形式が無効です。電話番号は次の形式で入力してください："
+"\"+999999999\".15桁まで入力可能です。"
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "トークンは有効です"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "トークンが無効"
 
@@ -410,3 +417,6 @@ msgstr "パスワードのリセットに成功しました！"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "あなたはすでにアカウントを有効にしています..."
+
+#~ msgid "recently viwed"
+#~ msgstr "最近閲覧した記事"

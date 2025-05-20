@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -69,6 +69,10 @@ msgstr "Ověření tokenu"
 #: vibes_auth/docs/drf/views.py:56
 msgid "Verify a token (refresh or access)."
 msgstr "Ověření tokenu (obnovení nebo přístup)."
+
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "Token je platný"
 
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
@@ -151,11 +155,11 @@ msgstr "Něco se pokazilo: {e!s}"
 msgid "token is invalid!"
 msgstr "Token je neplatný!"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "Nedávno zobrazené produkty"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Skupiny"
 
@@ -228,43 +232,39 @@ msgstr "Je přihlášena k odběru"
 msgid "user's newsletter subscription status"
 msgstr "Stav odběru newsletteru uživatele"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "Nedávno zobrazené"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "Aktivační token"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "Atributy"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "Uživatel"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "Uživatelé"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "Skupina"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "Vynikající žeton"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "Nevyplacené žetony"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "Token na černé listině"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "Tokeny na černé listině"
 
@@ -368,7 +368,8 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Pokud výše uvedené tlačítko nefunguje, zkopírujte a vložte následující adresu URL\n"
+"Pokud výše uvedené tlačítko nefunguje, zkopírujte a vložte následující "
+"adresu URL\n"
 "                            do webového prohlížeče:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -403,11 +404,7 @@ msgstr ""
 "Nesprávný formát telefonního čísla. Číslo musí být zadáno ve formátu: "
 "\"+999999999\". Povoleno je až 15 číslic."
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "Token je platný"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "Token je neplatný"
 
@@ -418,3 +415,6 @@ msgstr "Heslo bylo úspěšně resetováno!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Účet jste již aktivovali..."
+
+#~ msgid "recently viwed"
+#~ msgstr "Nedávno zobrazené"

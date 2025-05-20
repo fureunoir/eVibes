@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -69,6 +69,10 @@ msgstr "Een token verifiëren"
 #: vibes_auth/docs/drf/views.py:56
 msgid "Verify a token (refresh or access)."
 msgstr "Een token verifiëren (verversen of toegang)."
+
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "The token is valid"
 
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
@@ -155,11 +159,11 @@ msgstr "Er ging iets mis: {e!s}"
 msgid "token is invalid!"
 msgstr "Token is invalid!"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "Recent bekeken producten"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Groepen"
 
@@ -232,43 +236,39 @@ msgstr "Is geabonneerd"
 msgid "user's newsletter subscription status"
 msgstr "Inschrijvingsstatus nieuwsbrief gebruiker"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "Onlangs bekeken"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "Activeringstoken"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "Attributen"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "Gebruiker"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "Gebruikers"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "Groep"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "Uitstekende penning"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "Uitstaande tokens"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "Token op zwarte lijst"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "Tokens op de zwarte lijst"
 
@@ -316,8 +316,8 @@ msgid ""
 "we have received a request to reset your password. please reset your "
 "password by clicking the button below:"
 msgstr ""
-"We hebben een verzoek ontvangen om je wachtwoord opnieuw in te stellen. Klik"
-" op de knop hieronder om je wachtwoord opnieuw in te stellen:"
+"We hebben een verzoek ontvangen om je wachtwoord opnieuw in te stellen. Klik "
+"op de knop hieronder om je wachtwoord opnieuw in te stellen:"
 
 #: vibes_auth/templates/user_reset_password_email.html:84
 msgid "reset password"
@@ -356,8 +356,8 @@ msgid ""
 "thank you for signing up for %(project_name)s. please activate your account "
 "by clicking the button below:"
 msgstr ""
-"Bedankt voor het aanmelden bij %(project_name)s. Activeer je account door op"
-" de onderstaande knop te klikken:"
+"Bedankt voor het aanmelden bij %(project_name)s. Activeer je account door op "
+"de onderstaande knop te klikken:"
 
 #: vibes_auth/templates/user_verification_email.html:95
 msgid ""
@@ -407,11 +407,7 @@ msgstr ""
 "Ongeldig formaat telefoonnummer. Het nummer moet worden ingevoerd in de "
 "indeling: \"+999999999\". Maximaal 15 cijfers toegestaan."
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "The token is valid"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "Het token is ongeldig"
 
@@ -422,3 +418,6 @@ msgstr "Wachtwoord is succesvol gereset!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Je hebt de account al geactiveerd..."
+
+#~ msgid "recently viwed"
+#~ msgstr "Onlangs bekeken"

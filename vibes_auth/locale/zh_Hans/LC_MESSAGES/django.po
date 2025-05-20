@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -69,6 +69,10 @@ msgstr "验证令牌"
 #: vibes_auth/docs/drf/views.py:56
 msgid "Verify a token (refresh or access)."
 msgstr "验证令牌（刷新或访问）。"
+
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "令牌有效"
 
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
@@ -151,11 +155,11 @@ msgstr "出了问题：{e!s}"
 msgid "token is invalid!"
 msgstr "令牌无效！"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "最近浏览过的产品"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "组别"
 
@@ -228,43 +232,39 @@ msgstr "已订阅"
 msgid "user's newsletter subscription status"
 msgstr "用户的通讯订阅状态"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "最近浏览"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "激活令牌"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "属性"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "用户"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "用户"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "组别"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "出色的代币"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "未兑代币"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "黑名单令牌"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "黑名单令牌"
 
@@ -393,13 +393,10 @@ msgstr "{config.PROJECT_NAME} 重置密码| 重置密码"
 msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
-msgstr "电话号码格式无效。电话号码必须按格式输入：\"+999999999\".最多允许 15 位数字。"
+msgstr ""
+"电话号码格式无效。电话号码必须按格式输入：\"+999999999\".最多允许 15 位数字。"
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "令牌有效"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "令牌无效"
 
@@ -410,3 +407,6 @@ msgstr "密码已重置成功！"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "您已经激活了账户..."
+
+#~ msgid "recently viwed"
+#~ msgstr "最近浏览"

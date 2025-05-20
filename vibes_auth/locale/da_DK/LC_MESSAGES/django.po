@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 20:44+0100\n"
+"POT-Creation-Date: 2025-05-20 06:26+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -69,6 +69,10 @@ msgstr "Bekræft et token"
 #: vibes_auth/docs/drf/views.py:56
 msgid "Verify a token (refresh or access)."
 msgstr "Bekræft et token (opdatering eller adgang)."
+
+#: vibes_auth/docs/drf/views.py:62 vibes_auth/views.py:55
+msgid "the token is valid"
+msgstr "Tokenet er gyldigt"
 
 #: vibes_auth/docs/drf/viewsets.py:15
 msgid "create a new user"
@@ -153,11 +157,11 @@ msgstr "Noget gik galt: {e!s}"
 msgid "token is invalid!"
 msgstr "Token er ugyldig!"
 
-#: vibes_auth/graphene/object_types.py:30 vibes_auth/models.py:72
+#: vibes_auth/graphene/object_types.py:30
 msgid "recently viewed products"
 msgstr "Nyligt viste produkter"
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:107
+#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Grupper"
 
@@ -230,43 +234,39 @@ msgstr "Er tilmeldt"
 msgid "user's newsletter subscription status"
 msgstr "Status for brugerens abonnement på nyhedsbrev"
 
-#: vibes_auth/models.py:70
-msgid "recently viwed"
-msgstr "Set for nylig"
-
-#: vibes_auth/models.py:75
+#: vibes_auth/models.py:69
 msgid "activation token"
 msgstr "Aktiveringstoken"
 
-#: vibes_auth/models.py:77
+#: vibes_auth/models.py:71
 msgid "attributes"
 msgstr "Egenskaber"
 
-#: vibes_auth/models.py:99
+#: vibes_auth/models.py:100
 msgid "user"
 msgstr "Bruger"
 
-#: vibes_auth/models.py:100
+#: vibes_auth/models.py:101
 msgid "users"
 msgstr "Brugere"
 
-#: vibes_auth/models.py:106
+#: vibes_auth/models.py:107
 msgid "group"
 msgstr "Gruppe"
 
-#: vibes_auth/models.py:113
+#: vibes_auth/models.py:114
 msgid "outstanding token"
 msgstr "Enestående token"
 
-#: vibes_auth/models.py:114
+#: vibes_auth/models.py:115
 msgid "outstanding tokens"
 msgstr "Udestående tokens"
 
-#: vibes_auth/models.py:120
+#: vibes_auth/models.py:121
 msgid "blacklisted token"
 msgstr "Sortlistet token"
 
-#: vibes_auth/models.py:121
+#: vibes_auth/models.py:122
 msgid "blacklisted tokens"
 msgstr "Sortlistede tokens"
 
@@ -371,7 +371,8 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Hvis ovenstående knap ikke virker, bedes du kopiere og indsætte følgende URL\n"
+"Hvis ovenstående knap ikke virker, bedes du kopiere og indsætte følgende "
+"URL\n"
 "                            i din webbrowser:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -406,11 +407,7 @@ msgstr ""
 "Ugyldigt telefonnummerformat. Nummeret skal indtastes i formatet: "
 "\"+999999999\". Op til 15 cifre er tilladt."
 
-#: vibes_auth/views.py:168
-msgid "the token is valid"
-msgstr "Tokenet er gyldigt"
-
-#: vibes_auth/views.py:170
+#: vibes_auth/views.py:57
 msgid "the token is invalid"
 msgstr "Tokenet er ugyldigt"
 
@@ -421,3 +418,6 @@ msgstr "Adgangskoden er blevet nulstillet med succes!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Du har allerede aktiveret kontoen..."
+
+#~ msgid "recently viwed"
+#~ msgstr "Set for nylig"
