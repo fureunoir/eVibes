@@ -326,7 +326,7 @@ class UploadAvatar(BaseMutation):
     class Arguments:
         avatar = Upload(required=True)
 
-    success = Boolean()
+    user = Field(UserType)
 
     def mutate(self, info, avatar):
         if not info.context.user.is_authenticated:
@@ -338,4 +338,4 @@ class UploadAvatar(BaseMutation):
         except Exception as e:
             raise BadRequest(str(e))
 
-        return UploadAvatar(success=True)
+        return UploadAvatar(user=info.context.user)
