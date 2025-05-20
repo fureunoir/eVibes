@@ -422,8 +422,8 @@ class ConstanceConfig:
     _meta = Meta()
 
 
-admin.site.unregister([Config])
-admin.site.register([ConstanceConfig], ConstanceAdmin)
+admin.site.unregister([Config])  # type: ignore
+admin.site.register([ConstanceConfig], ConstanceAdmin)  # type: ignore
 
 admin.site.site_title = f"{CONSTANCE_CONFIG.get('PROJECT_NAME')[0]}"
 admin.site.site_header = "eVibes"
