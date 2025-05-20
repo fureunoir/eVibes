@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TabbedTranslationAdmin
 from mptt.admin import DraggableMPTTAdmin
 
-from evibes.settings import CONSTANCE_CONFIG
+from evibes.settings import CONSTANCE_CONFIG, LANGUAGE_CODE
 
 from .forms import OrderForm, OrderProductForm, VendorForm
 from .models import (
@@ -117,7 +117,7 @@ class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin, TabbedTranslationAdmin)
             None,
             {
                 "fields": (
-                    "name",
+                    "name_" + LANGUAGE_CODE.replace("-", "_"),
                     "description",
                     "parent",
                     "is_active",
