@@ -9,7 +9,7 @@ from django.utils.translation import gettext_lazy as _
 from modeltranslation.admin import TabbedTranslationAdmin
 from mptt.admin import DraggableMPTTAdmin
 
-from evibes.settings import CONSTANCE_CONFIG, LANGUAGE_CODE
+from evibes.settings import CONSTANCE_CONFIG
 
 from .forms import OrderForm, OrderProductForm, VendorForm
 from .models import (
@@ -117,7 +117,7 @@ class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin, TabbedTranslationAdmin)
             None,
             {
                 "fields": (
-                    "name_" + LANGUAGE_CODE.replace("-", "_"),
+                    "name",
                     "description",
                     "parent",
                     "is_active",
@@ -128,9 +128,6 @@ class CategoryAdmin(DraggableMPTTAdmin, BasicModelAdmin, TabbedTranslationAdmin)
         )
     ]
     autocomplete_fields = ["parent"]
-
-    def get_prepopulated_fields(self, request, obj=None):
-        return {"name": ("description",)}
 
     def indented_title(self, instance):
         return instance.name
