@@ -209,6 +209,33 @@ class VendorType(DjangoObjectType):
         description = _("vendors")
 
 
+class AddressType(DjangoObjectType):
+    latitude = Float(description=_("Latitude (Y coordinate)"))
+    longitude = Float(description=_("Longitude (X coordinate)"))
+
+    class Meta:
+        model = Address
+        fields = (
+            "uuid",
+            "street",
+            "district",
+            "city",
+            "region",
+            "postal_code",
+            "country",
+            "raw_data",
+            "api_response",
+            "user",
+        )
+        read_only_fields = ("api_response",)
+
+    def resolve_latitude(self, info):
+        return self.location.y if self.location else None
+
+    def resolve_longitude(self, info):
+        return self.location.x if self.location else None
+
+
 class FeedbackType(DjangoObjectType):
     comment = String(description=_("comment"))
     rating = Int(description=_("rating value from 1 to 10, inclusive, or 0 if not set."))
@@ -357,33 +384,6 @@ class ProductType(DjangoObjectType):
 
     def resolve_quantity(self, _info) -> int:
         return self.quantity or 0
-
-
-class AddressType(DjangoObjectType):
-    latitude = Float(description=_("Latitude (Y coordinate)"))
-    longitude = Float(description=_("Longitude (X coordinate)"))
-
-    class Meta:
-        model = Address
-        fields = (
-            "uuid",
-            "street",
-            "district",
-            "city",
-            "region",
-            "postal_code",
-            "country",
-            "raw_data",
-            "api_response",
-            "user",
-        )
-        read_only_fields = ("api_response",)
-
-    def resolve_latitude(self, info):
-        return self.location.y if self.location else None
-
-    def resolve_longitude(self, info):
-        return self.location.x if self.location else None
 
 
 class AttributeValueType(DjangoObjectType):
