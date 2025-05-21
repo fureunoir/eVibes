@@ -60,6 +60,7 @@ class CategoryDetailSerializer(ModelSerializer):
             "markup_percent",
             "filterable_attributes",
             "children",
+            "slug",
             "created",
             "modified",
         ]

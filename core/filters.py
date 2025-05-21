@@ -251,6 +251,7 @@ class CategoryFilter(FilterSet):
     uuid = UUIDFilter(field_name="uuid", lookup_expr="exact")
     name = CharFilter(field_name="name", lookup_expr="icontains")
     parent_uuid = UUIDFilter(field_name="parent__uuid", lookup_expr="exact")
+    slug = CharFilter(field_name="slug", lookup_expr="exact")
 
     order_by = OrderingFilter(
         fields=(

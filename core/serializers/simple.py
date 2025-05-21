@@ -49,6 +49,7 @@ class CategorySimpleSerializer(ModelSerializer):
             "uuid",
             "name",
             "image",
+            "slug",
             "children",
         ]
 

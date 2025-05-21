@@ -123,6 +123,7 @@ class CategoryType(DjangoObjectType):
             "attributes",
             "children",
             "name",
+            "slug",
             "description",
             "image",
             "min_max_prices",

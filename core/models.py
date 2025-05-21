@@ -198,6 +198,14 @@ class Category(NiceModel, MPTTModel):
         verbose_name=_("category description"),
     )
 
+    slug = AutoSlugField(
+        populate_from=("uuid", "name"),
+        allow_unicode=True,
+        unique=True,
+        editable=False,
+        null=True,
+    )
+
     def __str__(self):
         return self.name
 
