@@ -121,6 +121,7 @@ class UpdateUser(BaseMutation):
 
         if not compare_digest(password, "") and compare_digest(password, confirm_password):
             user.set_password(password)
+            user.save()
 
         attribute_pairs = kwargs.pop("attributes", "")
 
