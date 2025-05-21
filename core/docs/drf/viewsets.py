@@ -5,7 +5,7 @@ from rest_framework import status
 from core.docs.drf import BASE_ERRORS
 from core.serializers import (
     AddOrderProductSerializer,
-    AddressAutocompleteInputSerializer,
+    AddressCreateSerializer,
     AddressSerializer,
     AddressSuggestionSerializer,
     AddWishlistProductSerializer,
@@ -459,7 +459,7 @@ ADDRESS_SCHEMA = {
     ),
     "create": extend_schema(
         summary=_("create a new address"),
-        request=AddressSerializer,
+        request=AddressCreateSerializer,
         responses={
             status.HTTP_201_CREATED: AddressSerializer,
             **BASE_ERRORS,
@@ -490,7 +490,18 @@ ADDRESS_SCHEMA = {
     ),
     "autocomplete": extend_schema(
         summary=_("autocomplete address suggestions"),
-        request=AddressAutocompleteInputSerializer,
+        parameters=[OpenApiParameter(
+            name="q",
+            location=OpenApiParameter.QUERY,
+            description=_("raw data query string, please append with data from geo-IP endpoint"),
+            type=str,
+        ),
+            OpenApiParameter(
+                name="limit",
+                location=OpenApiParameter.QUERY,
+                description=_("limit the results amount, 1 < limit < 10, default: 5"),
+                type=int,
+            )],
         responses={
             status.HTTP_200_OK: AddressSuggestionSerializer(many=True),
             **BASE_ERRORS,
