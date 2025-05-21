@@ -207,7 +207,7 @@ class Command(BaseCommand):
                            ('auth_key', auth_key),
                            ('target_lang', api_code),
                        ] + [('text', t) for t in protected]
-                resp = requests.post('https://api-free.deepl.com/v2/translate', data=data)
+                resp = requests.post('https://api.deepl.com/v2/translate', data=data)
                 try:
                     resp.raise_for_status()
                     result = resp.json()
