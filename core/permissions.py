@@ -42,6 +42,7 @@ class EvibesPermission(permissions.BasePermission):
             "remove_wishlist_product",
             "bulk_add_wishlist_products",
             "bulk_remove_wishlist_products",
+            "autocomplete",
         ]:
             return queryset.filter(user=request.user)
         return queryset.filter(is_active=True)
@@ -59,6 +60,7 @@ class EvibesPermission(permissions.BasePermission):
             "remove_wishlist_product",
             "bulk_add_wishlist_products",
             "bulk_remove_wishlist_products",
+            "autocomplete",
         ]:
             return True
 
