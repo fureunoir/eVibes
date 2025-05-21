@@ -4,12 +4,20 @@ import django_extensions.db.fields
 from django.db import migrations
 
 
+def populate_slugs(apps, schema_editor):
+    Category = apps.get_model('core', 'Category')
+    for category in Category.objects.all():
+        if not category.slug:
+            category.save()
+
+
 class Migration(migrations.Migration):
     dependencies = [
         ('core', '0021_rename_name_ar_ar_attribute_name_ar_ar_and_more'),
     ]
 
     operations = [
+        migrations.RunPython(populate_slugs, reverse_code=migrations.RunPython.noop),
         migrations.AddField(
             model_name='category',
             name='slug',
