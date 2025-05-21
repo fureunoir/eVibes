@@ -5,7 +5,7 @@ import requests
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-DEEPL_API_URL = "https://api.deepl.com"
+DEEPL_API_URL = "https://api.deepl.com/v2/translate"
 
 DEEPL_TARGET_LANGUAGES_MAPPING = {
     "en-gb": "EN-GB",
