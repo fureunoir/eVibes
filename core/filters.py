@@ -27,6 +27,7 @@ class ProductFilter(FilterSet):
     name = CharFilter(field_name="name", lookup_expr="icontains", label="Name")
     categories = CaseInsensitiveListFilter(field_name="category__name", label="Categories")
     category_uuid = CharFilter(field_name="category__uuid", lookup_expr="exact", label="Category")
+    category_slugs = CaseInsensitiveListFilter(field_name="category__slug", label="Categories Slug")
     tags = CaseInsensitiveListFilter(field_name="tags__tag_name", label="Tags")
     min_price = NumberFilter(field_name="stocks__price", lookup_expr="gte", label="Min Price")
     max_price = NumberFilter(field_name="stocks__price", lookup_expr="lte", label="Max Price")
