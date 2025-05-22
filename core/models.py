@@ -637,8 +637,11 @@ class Order(NiceModel):
     def apply_addresses(self, billing_address_uuid, shipping_address_uuid):
 
         try:
-            if not self.is_whole_digital and not any([shipping_address_uuid, billing_address_uuid]):
-                raise ValueError(_("you can only buy physical products with shipping address specified"))
+            if not any([shipping_address_uuid, billing_address_uuid]):
+                if self.is_whole_digital:
+                    return
+                else:
+                    raise ValueError(_("you can only buy physical products with shipping address specified"))
 
             if billing_address_uuid and not shipping_address_uuid:
                 shipping_address = Address.objects.get(uuid=billing_address_uuid)
