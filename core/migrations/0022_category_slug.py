@@ -7,8 +7,11 @@ from django.db import migrations
 def populate_slugs(apps, schema_editor):
     Category = apps.get_model('core', 'Category')
     for category in Category.objects.all():
-        if not category.slug:
-            category.save()
+        try:
+            if not category.slug:
+                category.save()
+        except AttributeError:
+            pass
 
 
 class Migration(migrations.Migration):
@@ -17,11 +20,11 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(populate_slugs, reverse_code=migrations.RunPython.noop),
         migrations.AddField(
             model_name='category',
             name='slug',
             field=django_extensions.db.fields.AutoSlugField(allow_unicode=True, blank=True, editable=False, null=True,
                                                             populate_from=('uuid', 'name'), unique=True),
         ),
+        migrations.RunPython(populate_slugs, reverse_code=migrations.RunPython.noop),
     ]
