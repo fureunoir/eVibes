@@ -4,7 +4,7 @@ from graphene import Field, List, String, relay
 from graphene.types.generic import GenericScalar
 from graphene_django import DjangoObjectType
 
-from core.graphene.object_types import OrderType, ProductType, WishlistType
+from core.graphene.object_types import OrderType, WishlistType
 from evibes.settings import LANGUAGE_CODE, LANGUAGES
 from payments.graphene.object_types import BalanceType
 from vibes_auth.models import User
@@ -27,7 +27,7 @@ class PermissionType(DjangoObjectType):
 
 
 class UserType(DjangoObjectType):
-    recently_viewed = List(lambda: ProductType, description=_("recently viewed products"))
+    recently_viewed = GenericScalar(description=_("recently viewed products' UUIDs"))
     groups = List(lambda: GroupType, description=_("groups"))
     user_permissions = List(lambda: PermissionType, description=_("permissions"))
     orders = List(lambda: OrderType, description=_("orders"))
@@ -90,7 +90,7 @@ class UserType(DjangoObjectType):
         return self.orders.all() if self.orders.count() >= 1 else []
 
     def resolve_recently_viewed(self, info):
-        return self.recently_viewed.all() if self.recently_viewed.count() >= 1 else []
+        return [] or self.recently_viewed
 
     def resolve_groups(self, info):
         return self.groups.all() if self.groups.count() >= 1 else []
