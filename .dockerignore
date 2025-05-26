@@ -1,29 +1,77 @@
+# ──────────────────────────────────────────────────────────────────────────
+# Logs and reports
+# ──────────────────────────────────────────────────────────────────────────
+.logs/
 *.log
-*.sqlite3
-*.pyo
+debug.log
+errors.log
+test.json
+coverage.xml
+coverage.*
+*.cover
+*.py,cover
+nosetests.xml
+
+# Cache directories
+__pycache__/
+.pytest_cache/
+.hypothesis/
+.pyre/
+.pytype/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+cython_debug/
+
+# Python environments
 .Python
 env/
-venv/
-ENV/
 env.bak/
+venv/
 venv.bak/
-ENV.bak/
-*.egg-info/
+ENV/
+.venv/
+__pypackages__/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Packaging and distribution
+# ──────────────────────────────────────────────────────────────────────────
+build/
+dist/
+dist-ssr/
 *.egg
-*.eggs
-*.db
+*.egg-info/
+.installed.cfg
+MANIFEST
+*.manifest
+*.spec
+sdist/
+wheels/
+share/python-wheels/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Git
 .git/
-htmlcov/
-.coverage
-.tox/
+
+# macOS
 .DS_Store
+
+# JetBrains
 .idea/
+
+# VisualStudio
 .vscode/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Docker & service data
+# ──────────────────────────────────────────────────────────────────────────
 Dockerfile
 docker-compose.yml
-secrets/
-.env
 db_backups/
 services_data/
 static/
 media/
+
+# Environment file
+.env

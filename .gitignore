@@ -21,6 +21,7 @@ cython_debug/
 .Python
 env/
 env.bak/
+ENV.bak/
 venv/
 venv.bak/
 ENV/
