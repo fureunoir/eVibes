@@ -1,0 +1,31 @@
+* @default-owner
+
+README.md @fureunoir contact@fureunoir.com
+
+LICENSE @fureunoir contact@fureunoir.com
+
+Dockerfile* @fureunoir contact@fureunoir.com
+docker-compose.yml @fureunoir contact@fureunoir.com
+.gitignore @fureunoir contact@fureunoir.com
+.dockerignore @fureunoir contact@fureunoir.com
+nginx @fureunoir contact@fureunoir.com
+pyproject.toml @fureunoir contact@fureunoir.com
+poetry.lock @fureunoir contact@fureunoir.com
+
+/blog/ @fureunoir contact@fureunoir.com
+/core/ @fureunoir contact@fureunoir.com
+/evibes/ @fureunoir contact@fureunoir.com
+/payments/ @fureunoir contact@fureunoir.com
+/scripts/ @fureunoir contact@fureunoir.com
+/vibes_auth/ @fureunoir contact@fureunoir.com
+/storefront/ @SaVBaD savbad@wiseless.xyz
+
+*.py @fureunoir contact@fureunoir.com
+*.bat @fureunoir contact@fureunoir.com
+*.sh @fureunoir contact@fureunoir.com
+*.po @fureunoir contact@fureunoir.com
+*.mo @fureunoir contact@fureunoir.com
+*.html @savbad savbad@wiseless.xyz
+*.js @savbad savbad@wiseless.xyz
+*.vue @savbad savbad@wiseless.xyz
+*.scss @savbad savbad@wiseless.xyz
