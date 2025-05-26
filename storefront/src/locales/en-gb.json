@@ -1,0 +1,58 @@
+{
+  "buttons": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "addToCart": "Add To Cart",
+    "send": "Send",
+    "goEmail": "Take me to my inbox",
+    "logout": "Log Out",
+    "buy": "Buy Now",
+    "save": "Save"
+  },
+  "errors": {
+    "required": "This field is required!",
+    "mail": "Email must be valid!",
+    "compare": "Passwords don't match!",
+    "needLower": "Please include lowercase letter.",
+    "needUpper": "Please include uppercase letter.",
+    "needNumber": "Please include number.",
+    "needMin": "Min. 8 characters",
+    "needSpecial": "Please include a special character: #.?!$%^&*'()_+=:;\"'/>.<,|\\-",
+    "pageNotFound": "Page not found"
+  },
+  "fields": {
+    "search": "Search Cards",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "phone": "Phone number",
+    "email": "Email",
+    "message": "Your message",
+    "password": "Password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm password",
+    "confirmNewPassword": "Confirm new password"
+  },
+  "popup": {
+    "error": "Error!",
+    "login": {
+      "title": "Wellcome back!",
+      "text": "Sign in successes"
+    },
+    "register": {
+      "title": "Welcome!",
+      "text": "Account successfully created. Please confirm your Email before Sign In!"
+    },
+    "addToCart": "{product} has been added to the cart!",
+    "addToCartLimit": "Total quantity limit is {quantity}!",
+    "failAdd": "Please log in to make a purchase",
+    "contactSuccess": "Your message was sent successfully!",
+    "activationSuccess": "E-mail successfully verified. Please Sign In!",
+    "successUpdate": "Profile successfully updated!",
+    "confirmEmail": "Verification E-mail link successfully sent!",
+    "payment": "Your purchase is being processed! Please stand by",
+    "reset": "If specified email exists in our system, we will send a password recovery email!",
+    "successNewPassword": "You have successfully changed your password!",
+    "successCheckout": "Order purchase successful!",
+    "addToWishlist": "{product} has been added to the wishlist!"
+  }
+}

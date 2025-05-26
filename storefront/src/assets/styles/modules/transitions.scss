@@ -1,0 +1,28 @@
+.opacity-enter-active,
+.opacity-leave-active {
+  transition: 0.3s ease all;
+}
+.opacity-enter-from,
+.opacity-leave-to {
+  opacity: 0;
+}
+
+.fromTop-enter-active,
+.fromTop-leave-active {
+  transition: all 0.3s ease;
+}
+.fromTop-enter-from,
+.fromTop-leave-to {
+  transform: translateY(-3rem);
+  opacity: 0;
+}
+
+.fromLeft-enter-active,
+.fromLeft-leave-active {
+  transition: all 0.3s ease;
+}
+.fromLeft-enter-from,
+.fromLeft-leave-to {
+  transform: translateX(-3rem);
+  opacity: 0;
+}
