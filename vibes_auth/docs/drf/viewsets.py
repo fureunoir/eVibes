@@ -31,10 +31,7 @@ USER_SCHEMA = {
     "reset_password": extend_schema(
         summary=_("reset a user's password by sending a reset password email"),
         request=ResetPasswordSerializer,
-        responses={
-            status.HTTP_200_OK: {},
-            **BASE_ERRORS
-        },
+        responses={status.HTTP_200_OK: {}, **BASE_ERRORS},
     ),
     "upload_avatar": extend_schema(
         summary=_("handle avatar upload for a user"),
@@ -42,7 +39,7 @@ USER_SCHEMA = {
             status.HTTP_200_OK: UserSerializer,
             status.HTTP_400_BAD_REQUEST: {"description": "Invalid Request"},
             status.HTTP_403_FORBIDDEN: {"description": "Bad credentials"},
-            **BASE_ERRORS
+            **BASE_ERRORS,
         },
     ),
     "confirm_password_reset": extend_schema(
@@ -51,7 +48,7 @@ USER_SCHEMA = {
         responses={
             status.HTTP_200_OK: {"description": "Password reset successfully"},
             status.HTTP_400_BAD_REQUEST: {"description": _("passwords do not match")},
-            **BASE_ERRORS
+            **BASE_ERRORS,
         },
     ),
     "activate": extend_schema(
@@ -60,7 +57,7 @@ USER_SCHEMA = {
         responses={
             status.HTTP_200_OK: UserSerializer,
             status.HTTP_400_BAD_REQUEST: {"description": _("activation link is invalid or account already activated")},
-            **BASE_ERRORS
+            **BASE_ERRORS,
         },
     ),
 }

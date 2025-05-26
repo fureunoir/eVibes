@@ -17,5 +17,5 @@ def process_transaction_changes(instance, created, **kwargs):
         try:
             gateway = object()
             gateway.process_transaction(instance)
-        except Exception: # noqa:
+        except Exception:  # noqa:
             instance.process = {"status": "NOGATEWAY"}

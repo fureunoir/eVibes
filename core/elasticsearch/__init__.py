@@ -55,7 +55,7 @@ def process_query(query: str = ""):
                 Q(
                     "multi_match",
                     query=query,
-                    fields=[f for f in SMART_FIELDS if f.endswith('.auto')],
+                    fields=[f for f in SMART_FIELDS if f.endswith(".auto")],
                     type="bool_prefix",
                 ),
             ],
@@ -76,11 +76,13 @@ def process_query(query: str = ""):
 
             idx = hit.meta.index
             if idx in results:
-                results[idx].append({
-                    "uuid": str(obj_uuid),
-                    "name": obj_name,
-                    "slug": obj_slug,
-                })
+                results[idx].append(
+                    {
+                        "uuid": str(obj_uuid),
+                        "name": obj_name,
+                        "slug": obj_slug,
+                    }
+                )
         return results
     except NotFoundError:
         raise Http404

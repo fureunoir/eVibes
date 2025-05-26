@@ -183,9 +183,7 @@ ORDER_SCHEMA = {
     ),
     "buy_unregistered": extend_schema(
         summary=_("purchase an order without account creation"),
-        description=_(
-            "finalizes the order purchase for a non-registered user."
-        ),
+        description=_("finalizes the order purchase for a non-registered user."),
         request=BuyUnregisteredOrderSerializer,
         responses={
             status.HTTP_202_ACCEPTED: TransactionProcessSerializer,
@@ -270,7 +268,7 @@ ATTRIBUTES_DESC = _(
     "`true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
     "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
     "Examples:  \n"
-    "`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
+    '`color=exact-red`,  `size=gt-10`,  `features=in-["wifi","bluetooth"]`,  \n'
     "`b64-description=icontains-aGVhdC1jb2xk`"
 )
 
@@ -490,18 +488,20 @@ ADDRESS_SCHEMA = {
     ),
     "autocomplete": extend_schema(
         summary=_("autocomplete address suggestions"),
-        parameters=[OpenApiParameter(
-            name="q",
-            location=OpenApiParameter.QUERY,
-            description=_("raw data query string, please append with data from geo-IP endpoint"),
-            type=str,
-        ),
+        parameters=[
+            OpenApiParameter(
+                name="q",
+                location=OpenApiParameter.QUERY,
+                description=_("raw data query string, please append with data from geo-IP endpoint"),
+                type=str,
+            ),
             OpenApiParameter(
                 name="limit",
                 location=OpenApiParameter.QUERY,
                 description=_("limit the results amount, 1 < limit < 10, default: 5"),
                 type=int,
-            )],
+            ),
+        ],
         responses={
             status.HTTP_200_OK: AddressSuggestionSerializer(many=True),
             **BASE_ERRORS,

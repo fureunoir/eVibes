@@ -10,51 +10,49 @@ from core.abstract import NiceModel
 class Post(NiceModel):
     is_publicly_visible = True
 
-    author = ForeignKey(
-        to="vibes_auth.User", on_delete=CASCADE, blank=False, null=False, related_name="posts"
+    author = ForeignKey(to="vibes_auth.User", on_delete=CASCADE, blank=False, null=False, related_name="posts")
+    title = CharField(
+        unique=True, max_length=128, blank=False, null=False, help_text=_("post title"), verbose_name=_("title")
     )
-    title = CharField(unique=True, max_length=128, blank=False, null=False, help_text=_("post title"),
-                      verbose_name=_("title"))
-    content = MarkdownField("content",
-                            extensions=[
-                                TocExtension(toc_depth=3),
-                                "pymdownx.arithmatex",
-                                "pymdownx.b64",
-                                "pymdownx.betterem",
-                                "pymdownx.blocks.admonition",
-                                "pymdownx.blocks.caption",
-                                "pymdownx.blocks.definition",
-                                "pymdownx.blocks.details",
-                                "pymdownx.blocks.html",
-                                "pymdownx.blocks.tab",
-                                "pymdownx.caret",
-                                "pymdownx.critic",
-                                "pymdownx.emoji",
-                                "pymdownx.escapeall",
-                                "pymdownx.extra",
-                                "pymdownx.fancylists",
-                                "pymdownx.highlight",
-                                "pymdownx.inlinehilite",
-                                "pymdownx.keys",
-                                "pymdownx.magiclink",
-                                "pymdownx.mark",
-                                "pymdownx.pathconverter",
-                                "pymdownx.progressbar",
-                                "pymdownx.saneheaders",
-                                "pymdownx.smartsymbols",
-                                "pymdownx.snippets",
-                                "pymdownx.striphtml",
-                                "pymdownx.superfences",
-                                "pymdownx.tasklist",
-                                "pymdownx.tilde"
-                            ], blank=True, null=True)
+    content = MarkdownField(
+        "content",
+        extensions=[
+            TocExtension(toc_depth=3),
+            "pymdownx.arithmatex",
+            "pymdownx.b64",
+            "pymdownx.betterem",
+            "pymdownx.blocks.admonition",
+            "pymdownx.blocks.caption",
+            "pymdownx.blocks.definition",
+            "pymdownx.blocks.details",
+            "pymdownx.blocks.html",
+            "pymdownx.blocks.tab",
+            "pymdownx.caret",
+            "pymdownx.critic",
+            "pymdownx.emoji",
+            "pymdownx.escapeall",
+            "pymdownx.extra",
+            "pymdownx.fancylists",
+            "pymdownx.highlight",
+            "pymdownx.inlinehilite",
+            "pymdownx.keys",
+            "pymdownx.magiclink",
+            "pymdownx.mark",
+            "pymdownx.pathconverter",
+            "pymdownx.progressbar",
+            "pymdownx.saneheaders",
+            "pymdownx.smartsymbols",
+            "pymdownx.snippets",
+            "pymdownx.striphtml",
+            "pymdownx.superfences",
+            "pymdownx.tasklist",
+            "pymdownx.tilde",
+        ],
+        blank=True,
+        null=True,
+    )
     file = FileField(upload_to="posts/", blank=True, null=True)
-    slug = AutoSlugField(
-        populate_from='title',
-        allow_unicode=True,
-        unique=True,
-        editable=False
-    )
+    slug = AutoSlugField(populate_from="title", allow_unicode=True, unique=True, editable=False)
     tags = ManyToManyField(to="blog.PostTag", blank=True, related_name="posts")
 
     def __str__(self):

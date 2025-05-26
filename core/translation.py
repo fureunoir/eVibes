@@ -21,7 +21,7 @@ class AttributeValueOptions(TranslationOptions):
 
 @register(Brand)
 class BrandTranslationOptions(TranslationOptions):
-    fields = ("description", )
+    fields = ("description",)
 
 
 @register(Category)

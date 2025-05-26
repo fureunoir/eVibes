@@ -176,7 +176,7 @@ class AbstractVendor:
     def round_price_marketologically(price: float) -> float:
         up_int = ceil(price)
         s = str(up_int)
-        s = (s[:-1] if len(s) > 1 else '0') + '9'
+        s = (s[:-1] if len(s) > 1 else "0") + "9"
         return float(f"{int(s):.2f}")
 
     def get_vendor_instance(self):
@@ -214,7 +214,6 @@ class AbstractVendor:
         self.get_attribute_values_queryset().delete()
 
     def process_attribute(self, key: str, value, product: Product, attr_group: AttributeGroup):
-
         if not value:
             return
 

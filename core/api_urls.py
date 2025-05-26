@@ -43,15 +43,16 @@ core_router.register(r"promotions", PromotionViewSet, basename="promotions")
 core_router.register(r"addresses", AddressViewSet, basename="addresses")
 
 sitemaps = {
-    'products': ProductSitemap,
-    'categories': CategorySitemap,
-    'brands': BrandSitemap,
+    "products": ProductSitemap,
+    "categories": CategorySitemap,
+    "brands": BrandSitemap,
 }
 
 urlpatterns = [
     path("core/", include(core_router.urls)),
-    path("sitemap.xml", sitemap_index, {"sitemaps": sitemaps, "sitemap_url_name": "sitemap-detail"},
-         name="sitemap-index"),
+    path(
+        "sitemap.xml", sitemap_index, {"sitemaps": sitemaps, "sitemap_url_name": "sitemap-detail"}, name="sitemap-index"
+    ),
     path("sitemap-<section>.xml", sitemap_detail, {"sitemaps": sitemaps}, name="sitemap-detail"),
     path("sitemap-<section>-<int:page>.xml", sitemap_detail, {"sitemaps": sitemaps}, name="sitemap-detail"),
     path("download/<str:order_product_uuid>/", download_digital_asset_view, name="download_digital_asset"),

@@ -179,13 +179,21 @@ class BuyOrder(BaseMutation):
     transaction = Field(TransactionType, required=False)
 
     @staticmethod
-    def mutate(_parent, info, order_uuid=None, order_hr_id=None, force_balance=False, force_payment=False,
-               promocode_uuid=None, shipping_address=None, billing_address=None):
+    def mutate(
+            _parent,
+            info,
+            order_uuid=None,
+            order_hr_id=None,
+            force_balance=False,
+            force_payment=False,
+            promocode_uuid=None,
+            shipping_address=None,
+            billing_address=None,
+    ):
         if not any([order_uuid, order_hr_id]) or all([order_uuid, order_hr_id]):
             raise BadRequest(_("please provide either order_uuid or order_hr_id - mutually exclusive"))
         user = info.context.user
         try:
-
             order = None
 
             if order_uuid:
@@ -194,8 +202,11 @@ class BuyOrder(BaseMutation):
                 order = Order.objects.get(user=user, human_readable_id=order_hr_id)
 
             instance = order.buy(
-                force_balance=force_balance, force_payment=force_payment, promocode_uuid=promocode_uuid,
-                shipping_address=shipping_address, billing_address=billing_address
+                force_balance=force_balance,
+                force_payment=force_payment,
+                promocode_uuid=promocode_uuid,
+                shipping_address=shipping_address,
+                billing_address=billing_address,
             )
 
             match str(type(instance)):
@@ -228,18 +239,31 @@ class BuyUnregisteredOrder(BaseMutation):
     transaction = Field(TransactionType, required=False)
 
     @staticmethod
-    def mutate(_parent, info, products, customer_name, customer_email, customer_phone, customer_billing_address,
-               payment_method, customer_shipping_address=None, promocode_uuid=None, is_business=False):
+    def mutate(
+            _parent,
+            info,
+            products,
+            customer_name,
+            customer_email,
+            customer_phone,
+            customer_billing_address,
+            payment_method,
+            customer_shipping_address=None,
+            promocode_uuid=None,
+            is_business=False,
+    ):
         order = Order.objects.create(status="MOMENTAL")
-        transaction = order.buy_without_registration(products=products,
-                                                     promocode_uuid=promocode_uuid,
-                                                     customer_name=customer_name,
-                                                     customer_email=customer_email,
-                                                     customer_phone=customer_phone,
-                                                     billing_customer_address=customer_billing_address,
-                                                     shipping_customer_address=customer_shipping_address,
-                                                     payment_method=payment_method,
-                                                     is_business=is_business)
+        transaction = order.buy_without_registration(
+            products=products,
+            promocode_uuid=promocode_uuid,
+            customer_name=customer_name,
+            customer_email=customer_email,
+            customer_phone=customer_phone,
+            billing_customer_address=customer_billing_address,
+            shipping_customer_address=customer_shipping_address,
+            payment_method=payment_method,
+            is_business=is_business,
+        )
         return BuyUnregisteredOrder(transaction=transaction)
 
 
@@ -458,10 +482,7 @@ class DeleteProduct(BaseMutation):
 
 class CreateAddress(BaseMutation):
     class Arguments:
-        raw_data = String(
-            required=True,
-            description=_("original address string provided by the user")
-        )
+        raw_data = String(required=True, description=_("original address string provided by the user"))
 
     address = Field(AddressType)
 
@@ -469,10 +490,7 @@ class CreateAddress(BaseMutation):
     def mutate(_parent, info, raw_data):
         user = info.context.user if info.context.user.is_authenticated else None
 
-        address = Address.objects.create(
-            raw_data=raw_data,
-            user=user
-        )
+        address = Address.objects.create(raw_data=raw_data, user=user)
         return CreateAddress(address=address)
 
 

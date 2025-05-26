@@ -2,6 +2,7 @@ import logging
 
 from django.core.management.base import BaseCommand
 from django.db import transaction
+
 from core.models import Product
 
 logger = logging.getLogger(__name__)

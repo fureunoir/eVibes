@@ -18,15 +18,19 @@ class PostAdmin(admin.ModelAdmin):
 
     readonly_fields = ("preview_html",)
     fieldsets = (
-        (None, {
-            "fields": (
-                "author", "title",
-                "content",
-                "preview_html",
-                "file",
-                "tags",
-            )
-        }),
+        (
+            None,
+            {
+                "fields": (
+                    "author",
+                    "title",
+                    "content",
+                    "preview_html",
+                    "file",
+                    "tags",
+                )
+            },
+        ),
     )
 
     def preview_html(self, obj):

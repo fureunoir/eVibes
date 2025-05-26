@@ -12,11 +12,15 @@ class ProductSitemap(Sitemap):
     limit = 40000
 
     def items(self):
-        return Product.objects.filter(
-            is_active=True,
-            brand__is_active=True,
-            category__is_active=True,
-        ).only("uuid", "name", "modified", "slug").order_by("-modified")
+        return (
+            Product.objects.filter(
+                is_active=True,
+                brand__is_active=True,
+                category__is_active=True,
+            )
+            .only("uuid", "name", "modified", "slug")
+            .order_by("-modified")
+        )
 
     def lastmod(self, obj):
         return obj.modified

@@ -131,9 +131,7 @@ class Query(ObjectType):
     @staticmethod
     def resolve_products(_parent, info, **kwargs):
         if info.context.user.is_authenticated and kwargs.get("uuid"):
-            product = Product.objects.get(
-                uuid=kwargs["uuid"]
-            )
+            product = Product.objects.get(uuid=kwargs["uuid"])
             if product.is_active and product.brand.is_active and product.category.is_active:
                 info.context.user.add_to_recently_viewed(product.uuid)
         return (
@@ -141,7 +139,9 @@ class Query(ObjectType):
             if info.context.user.has_perm("core.view_product")
             else Product.objects.filter(
                 is_active=True, brand__is_active=True, category__is_active=True, stocks__isnull=False
-            ).select_related("brand", "category").prefetch_related("images", "stocks")
+            )
+            .select_related("brand", "category")
+            .prefetch_related("images", "stocks")
         )
 
     @staticmethod

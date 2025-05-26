@@ -65,7 +65,7 @@ class AttributeValueInline(TabularInline):
     is_navtab = True
     verbose_name = _("attribute value")
     verbose_name_plural = _("attribute values")
-    autocomplete_fields = ['attribute']
+    autocomplete_fields = ["attribute"]
 
 
 @admin.register(AttributeGroup)

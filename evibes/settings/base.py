@@ -304,17 +304,18 @@ if getenv("SENTRY_DSN"):
     ]
 
     if DEBUG:
-        ignore_errors.extend(["billiard.exceptions.WorkerLostError",
-                              "billiard.exceptions.TimeLimitExceeded"])
+        ignore_errors.extend(["billiard.exceptions.WorkerLostError", "billiard.exceptions.TimeLimitExceeded"])
 
     sentry_sdk.init(
         dsn=getenv("SENTRY_DSN"),
         traces_sample_rate=1.0 if DEBUG else 0.2,
         profiles_sample_rate=1.0 if DEBUG else 0.1,
-        integrations=[DjangoIntegration(), LoggingIntegration(
-            level=logging.INFO,
-            event_level=logging.ERROR
-        ), CeleryIntegration(), RedisIntegration()],
+        integrations=[
+            DjangoIntegration(),
+            LoggingIntegration(level=logging.INFO, event_level=logging.ERROR),
+            CeleryIntegration(),
+            RedisIntegration(),
+        ],
         environment="development" if DEBUG else "production",
         debug=DEBUG,
         release=f"evibes@{EVIBES_VERSION}",
@@ -327,7 +328,7 @@ LANGUAGE_COOKIE_HTTPONLY = True
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 8888
 
-ADMINS = [('Egor Gorbunov', 'contact@fureunoir.com')]
+ADMINS = [("Egor Gorbunov", "contact@fureunoir.com")]
 
 STORAGES = {
     "default": {
@@ -338,5 +339,5 @@ STORAGES = {
     },
     "dbbackup": {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
-    }
+    },
 }

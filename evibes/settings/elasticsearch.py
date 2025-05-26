@@ -1,11 +1,11 @@
 from evibes.settings.base import *  # noqa: F403
 
 ELASTICSEARCH_DSL = {
-    'default': {
-        'hosts': ['http://elasticsearch:9200'],
-        'basic_auth': ('elastic', getenv("ELASTIC_PASSWORD")),  # noqa: F405
-        'verify_certs': False,
-        'ssl_show_warn': False,
+    "default": {
+        "hosts": ["http://elasticsearch:9200"],
+        "basic_auth": ("elastic", getenv("ELASTIC_PASSWORD")),  # noqa: F405
+        "verify_certs": False,
+        "ssl_show_warn": False,
     },
 }
 

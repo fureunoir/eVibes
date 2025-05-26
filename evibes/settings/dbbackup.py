@@ -1,10 +1,10 @@
-from evibes.settings.base import getenv  # noqa: I001
+from evibes.settings.base import getenv
 
 DBBACKUP_CONNECTORS = {
-    'default': {
-        'SINGLE_TRANSACTION': False,
-        'IF_EXISTS': True,
-        'RESTORE_SUFFIX': '--set ON_ERROR_STOP=off',
+    "default": {
+        "SINGLE_TRANSACTION": False,
+        "IF_EXISTS": True,
+        "RESTORE_SUFFIX": "--set ON_ERROR_STOP=off",
     }
 }
 

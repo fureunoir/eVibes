@@ -12,7 +12,7 @@ class Command(BaseCommand):
         # 1. Clean up duplicate Stock entries per product and vendor:
         # Group stocks by (product, vendor)
         stocks_by_group = defaultdict(list)
-        for stock in Stock.objects.all().order_by('modified'):
+        for stock in Stock.objects.all().order_by("modified"):
             key = (stock.product_id, stock.vendor)
             stocks_by_group[key].append(stock)
 
@@ -37,13 +37,11 @@ class Command(BaseCommand):
 
         if stock_deletions:
             Stock.objects.filter(id__in=stock_deletions).delete()
-            self.stdout.write(
-                self.style.SUCCESS(f"Deleted {len(stock_deletions)} duplicate stock entries.")
-            )
+            self.stdout.write(self.style.SUCCESS(f"Deleted {len(stock_deletions)} duplicate stock entries."))
 
         # 2. Clean up duplicate Category entries based on name (case-insensitive)
         category_groups = defaultdict(list)
-        for cat in Category.objects.all().order_by('modified'):
+        for cat in Category.objects.all().order_by("modified"):
             key = cat.name.lower()
             category_groups[key].append(cat)
 
@@ -80,19 +78,13 @@ class Command(BaseCommand):
         count_inactive = inactive_products.count()
         if count_inactive:
             inactive_products.update(is_active=False)
-            self.stdout.write(self.style.SUCCESS(
-                f"Set {count_inactive} product(s) as inactive due to missing stocks."
-            ))
+            self.stdout.write(self.style.SUCCESS(f"Set {count_inactive} product(s) as inactive due to missing stocks."))
 
         # 4. Delete stocks without an associated product.
         orphan_stocks = Stock.objects.filter(product__isnull=True)
         orphan_count = orphan_stocks.count()
         if orphan_count:
             orphan_stocks.delete()
-            self.stdout.write(
-                self.style.SUCCESS(f"Deleted {orphan_count} stock(s) without an associated product.")
-            )
+            self.stdout.write(self.style.SUCCESS(f"Deleted {orphan_count} stock(s) without an associated product."))
 
-        self.stdout.write(self.style.SUCCESS(
-            "Started fetching products task in worker container without errors!"
-        ))
+        self.stdout.write(self.style.SUCCESS("Started fetching products task in worker container without errors!"))

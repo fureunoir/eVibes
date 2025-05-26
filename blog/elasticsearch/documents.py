@@ -18,8 +18,12 @@ class PostDocument(ActiveOnlyMixin, Document):
 
     class Index:
         name = "posts"
-        settings = {"number_of_shards": 1, "number_of_replicas": 0,
-                    "analysis": COMMON_ANALYSIS, "index": {"max_ngram_diff": 18}}
+        settings = {
+            "number_of_shards": 1,
+            "number_of_replicas": 0,
+            "analysis": COMMON_ANALYSIS,
+            "index": {"max_ngram_diff": 18},
+        }
 
     class Django:
         model = Post
@@ -27,5 +31,6 @@ class PostDocument(ActiveOnlyMixin, Document):
 
     def prepare_title(self, instance):
         return getattr(instance, "title", "") or ""
+
 
 registry.register_document(PostDocument)

@@ -209,8 +209,9 @@ def process_promotions() -> tuple[bool, str]:
         product = eligible_products.order_by("?").first()
         selected_products.append(product)
 
-    promotion = Promotion.objects.update_or_create(name=promotion_name,
-                                                   defaults={"discount_percent": discount_percent, "is_active": True})
+    promotion = Promotion.objects.update_or_create(
+        name=promotion_name, defaults={"discount_percent": discount_percent, "is_active": True}
+    )
 
     promotion.products.set(selected_products)
 

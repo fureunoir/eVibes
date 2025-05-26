@@ -18,9 +18,9 @@ class AddressManager(models.Manager):
 
         # Query Nominatim
         params = {
-            'format': 'json',
-            'addressdetails': 1,
-            'q': raw_data,
+            "format": "json",
+            "addressdetails": 1,
+            "q": raw_data,
         }
         resp = requests.get(config.NOMINATIM_URL, params=params)
         resp.raise_for_status()
@@ -30,18 +30,18 @@ class AddressManager(models.Manager):
         data = results[0]
 
         # Parse address components
-        addr = data.get('address', {})
-        street = addr.get('road') or addr.get('pedestrian') or ''
-        district = addr.get('city_district') or addr.get('suburb') or ''
-        city = addr.get('city') or addr.get('town') or addr.get('village') or ''
-        region = addr.get('state') or addr.get('region') or ''
-        postal_code = addr.get('postcode') or ''
-        country = addr.get('country') or ''
+        addr = data.get("address", {})
+        street = addr.get("road") or addr.get("pedestrian") or ""
+        district = addr.get("city_district") or addr.get("suburb") or ""
+        city = addr.get("city") or addr.get("town") or addr.get("village") or ""
+        region = addr.get("state") or addr.get("region") or ""
+        postal_code = addr.get("postcode") or ""
+        country = addr.get("country") or ""
 
         # Parse location
         try:
-            lat = float(data.get('lat'))
-            lon = float(data.get('lon'))
+            lat = float(data.get("lat"))
+            lon = float(data.get("lon"))
             location = Point(lon, lat, srid=4326)
         except (TypeError, ValueError):
             location = None
@@ -57,5 +57,5 @@ class AddressManager(models.Manager):
             country=country,
             location=location,
             api_response=data,
-            **kwargs
+            **kwargs,
         )

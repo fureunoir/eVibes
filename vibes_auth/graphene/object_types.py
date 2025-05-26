@@ -109,11 +109,7 @@ class UserType(DjangoObjectType):
 
         products_by_uuid = {str(p.uuid): p for p in qs}
 
-        ordered_products = [
-            products_by_uuid[u]
-            for u in uuid_list
-            if u in products_by_uuid
-        ]
+        ordered_products = [products_by_uuid[u] for u in uuid_list if u in products_by_uuid]
 
         return connection_from_array(ordered_products, kwargs)
 

@@ -28,7 +28,7 @@ class CustomCommonMiddleware(CommonMiddleware):
 class CustomLocaleMiddleware(LocaleMiddleware):
     def process_request(self, request):
         lang = translation.get_language_from_request(request)
-        parts = lang.replace('_', '-').split('-')
+        parts = lang.replace("_", "-").split("-")
         if len(parts) == 2:
             lang_code = parts[0].lower()
             region = parts[1].upper()

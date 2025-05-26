@@ -106,15 +106,8 @@ class BuyAsBusinessOrderSerializer(Serializer):
 
 
 class AddressAutocompleteInputSerializer(Serializer):
-    q = CharField(
-        required=True
-    )
-    limit = IntegerField(
-        required=False,
-        min_value=1,
-        max_value=10,
-        default=5
-    )
+    q = CharField(required=True)
+    limit = IntegerField(required=False, min_value=1, max_value=10, default=5)
 
 
 class AddressSuggestionSerializer(Serializer):

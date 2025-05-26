@@ -5,10 +5,10 @@ from rest_framework.fields import CharField, DictField, JSONField, ListField
 
 from core.docs.drf import error
 from core.serializers import (
+    BuyAsBusinessOrderSerializer,
     CacheOperatorSerializer,
     ContactUsSerializer,
     LanguageSerializer,
-    BuyAsBusinessOrderSerializer,
 )
 from payments.serializers import TransactionProcessSerializer
 
@@ -16,7 +16,8 @@ CACHE_SCHEMA = {
     "post": extend_schema(
         summary=_("cache I/O"),
         description=_(
-            "apply only a key to read permitted data from cache.\napply key, data and timeout with authentication to write data to cache."  # noqa: E501
+            "apply only a key to read permitted data from cache.\n"
+            "apply key, data and timeout with authentication to write data to cache."
         ),
         request=CacheOperatorSerializer,
         responses={

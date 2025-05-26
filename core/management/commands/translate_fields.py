@@ -37,18 +37,16 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            "-t", "--target", required=True,
-            help=(
-                "Dotted path to the field to translate, "
-                "e.g. core.models.Product.description"
-            ),
+            "-t",
+            "--target",
+            required=True,
+            help=("Dotted path to the field to translate, e.g. core.models.Product.description"),
         )
         parser.add_argument(
-            "-l", "--language", required=True,
-            help=(
-                "Modeltranslation language code to translate into, "
-                "e.g. de-de, fr-fr, zh-hans"
-            ),
+            "-l",
+            "--language",
+            required=True,
+            help=("Modeltranslation language code to translate into, e.g. de-de, fr-fr, zh-hans"),
         )
 
     def handle(self, *args, **options):
@@ -87,8 +85,7 @@ class Command(BaseCommand):
         if not auth_key:
             raise CommandError("Environment variable DEEPL_AUTH_KEY is not set.")
 
-        qs = model.objects.exclude(**{f"{field_name}__isnull": True}) \
-            .exclude(**{f"{field_name}": ""})
+        qs = model.objects.exclude(**{f"{field_name}__isnull": True}).exclude(**{f"{field_name}": ""})
         total = qs.count()
         if total == 0:
             self.stdout.write("No instances with non-empty source field found.")
@@ -113,9 +110,7 @@ class Command(BaseCommand):
                 timeout=30,
             )
             if resp.status_code != 200:
-                self.stderr.write(
-                    f"DeepL API error for {obj.pk}: {resp.status_code} {resp.text}"
-                )
+                self.stderr.write(f"DeepL API error for {obj.pk}: {resp.status_code} {resp.text}")
                 continue
 
             data = resp.json()

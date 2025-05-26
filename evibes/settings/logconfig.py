@@ -73,12 +73,12 @@ LOGGING = {
         },
         "celery.app.trace": {
             "handlers": ["console_debug" if DEBUG else "console_production"],  # noqa: F405
-            "level": "DEBUG" if DEBUG else "INFO",
+            "level": "DEBUG" if DEBUG else "INFO",  # noqa: F405
             "propagate": False,
         },
         "celery.worker.strategy": {
             "handlers": ["console_debug" if DEBUG else "console_production"],  # noqa: F405
-            "level": "DEBUG" if DEBUG else "INFO",
+            "level": "DEBUG" if DEBUG else "INFO",  # noqa: F405
             "propagate": False,
         },
         "elastic_transport.transport": {

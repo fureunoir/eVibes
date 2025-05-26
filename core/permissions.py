@@ -25,29 +25,34 @@ class EvibesPermission(permissions.BasePermission):
     """
 
     ACTION_PERM_MAP = {
-        'retrieve': 'view',
-        'list': 'view',
-        'create': 'add',
-        'update': 'change',
-        'partial_update': 'change',
-        'destroy': 'delete',
+        "retrieve": "view",
+        "list": "view",
+        "create": "add",
+        "update": "change",
+        "partial_update": "change",
+        "destroy": "delete",
     }
 
     USER_SCOPED_ACTIONS = {
-        'buy', 'buy_unregistered', 'current',
-        'add_order_product', 'remove_order_product',
-        'add_wishlist_product', 'remove_wishlist_product',
-        'bulk_add_wishlist_products', 'bulk_remove_wishlist_products',
-        'autocomplete',
+        "buy",
+        "buy_unregistered",
+        "current",
+        "add_order_product",
+        "remove_order_product",
+        "add_wishlist_product",
+        "remove_wishlist_product",
+        "bulk_add_wishlist_products",
+        "bulk_remove_wishlist_products",
+        "autocomplete",
     }
 
     def has_permission(self, request, view):
-        action = getattr(view, 'action', None)
+        action = getattr(view, "action", None)
         model = view.queryset.model
         app_label = model._meta.app_label
         model_name = model._meta.model_name
 
-        if action == 'create' and view.additional.get('create') == 'ALLOW':
+        if action == "create" and view.additional.get("create") == "ALLOW":
             return True
 
         if action in self.USER_SCOPED_ACTIONS:
@@ -59,7 +64,7 @@ class EvibesPermission(permissions.BasePermission):
             if request.user.has_perm(f"{app_label}.{codename}"):
                 return True
 
-        return bool(action in ('list', 'retrieve') and getattr(model, 'is_publicly_visible', False))
+        return bool(action in ("list", "retrieve") and getattr(model, "is_publicly_visible", False))
 
     def has_queryset_permission(self, request, view, queryset):
         """
@@ -73,7 +78,7 @@ class EvibesPermission(permissions.BasePermission):
         if view.action in self.USER_SCOPED_ACTIONS:
             return queryset.filter(user=request.user)
 
-        if view.action in ('list', 'retrieve'):
+        if view.action in ("list", "retrieve"):
             if request.user.has_perm(f"{app_label}.view_{model_name}"):
                 if request.user.is_staff:
                     return queryset
@@ -81,10 +86,15 @@ class EvibesPermission(permissions.BasePermission):
             return queryset.none()
 
         base = queryset.filter(is_active=True)
-        if view.action in ('update', 'partial_update'):
-            if request.user.has_perm(f"{app_label}.change_{model_name}"):
-                return base
-        if view.action == 'destroy':
-            if request.user.has_perm(f"{app_label}.delete_{model_name}"):
-                return base
+        match view.action:
+            case "update":
+                if request.user.has_perm(f"{app_label}.change_{model_name}"):
+                    return base
+            case "partial_update":
+                if request.user.has_perm(f"{app_label}.change_{model_name}"):
+                    return base
+            case "destroy":
+                if request.user.has_perm(f"{app_label}.delete_{model_name}"):
+                    return base
+
         return queryset.none()

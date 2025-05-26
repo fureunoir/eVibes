@@ -635,7 +635,6 @@ class Order(NiceModel):
         return promocode.use(self)
 
     def apply_addresses(self, billing_address_uuid, shipping_address_uuid):
-
         try:
             if not any([shipping_address_uuid, billing_address_uuid]):
                 if self.is_whole_digital:
@@ -663,8 +662,13 @@ class Order(NiceModel):
             raise Http404(_("address does not exist"))
 
     def buy(
-            self, force_balance: bool = False, force_payment: bool = False, promocode_uuid: str | None = None,
-            billing_address: str | None = None, shipping_address: str | None = None, **kwargs
+            self,
+            force_balance: bool = False,
+            force_payment: bool = False,
+            promocode_uuid: str | None = None,
+            billing_address: str | None = None,
+            shipping_address: str | None = None,
+            **kwargs,
     ) -> Self | Transaction | None:
         if config.DISABLED_COMMERCE:
             raise DisabledCommerceError(_("you can not buy at this moment, please try again in a few minutes"))
@@ -1022,7 +1026,6 @@ class PromoCode(NiceModel):
         return "percent"
 
     def use(self, order: Order) -> float:
-
         if self.used_on:
             raise ValueError(_("promocode already used"))
 
@@ -1251,31 +1254,14 @@ class Address(NiceModel):
     country = CharField(_("country"), max_length=40, null=True)  # noqa: DJ001
 
     location = PointField(
-        geography=True,
-        srid=4326,
-        null=True,
-        blank=True,
-        help_text=_("geolocation point: (longitude, latitude)")
+        geography=True, srid=4326, null=True, blank=True, help_text=_("geolocation point: (longitude, latitude)")
     )
 
-    raw_data = JSONField(
-        blank=True,
-        null=True,
-        help_text=_("full JSON response from geocoder for this address")
-    )
+    raw_data = JSONField(blank=True, null=True, help_text=_("full JSON response from geocoder for this address"))
 
-    api_response = JSONField(
-        blank=True,
-        null=True,
-        help_text=_("stored JSON response from the geocoding service")
-    )
+    api_response = JSONField(blank=True, null=True, help_text=_("stored JSON response from the geocoding service"))
 
-    user = ForeignKey(
-        to="vibes_auth.User",
-        on_delete=CASCADE,
-        blank=True,
-        null=True
-    )
+    user = ForeignKey(to="vibes_auth.User", on_delete=CASCADE, blank=True, null=True)
 
     objects = AddressManager()
 

@@ -7,7 +7,7 @@ register = template.Library()
 def attributes_length(value, arg):
     """Returns True if the value length is more than the argument."""
     if isinstance(value, dict):
-        count = int()
+        count = 0
         for attribute, _value in value.items():
             if attribute.endswith("_system"):
                 continue

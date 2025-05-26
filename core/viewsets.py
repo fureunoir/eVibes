@@ -169,8 +169,8 @@ class ProductViewSet(EvibesViewSet):
     action_serializer_classes = {
         "list": ProductSimpleSerializer,
     }
-    lookup_field = 'lookup'
-    lookup_url_kwarg = 'lookup'
+    lookup_field = "lookup"
+    lookup_url_kwarg = "lookup"
 
     def get_object(self):
         queryset = self.filter_queryset(self.get_queryset())
@@ -476,9 +476,9 @@ class AddressViewSet(EvibesViewSet):
     additional = {"create": "ALLOW"}
 
     def get_serializer_class(self):
-        if self.action == 'create':
+        if self.action == "create":
             return AddressCreateSerializer
-        if self.action == 'autocomplete':
+        if self.action == "autocomplete":
             return AddressAutocompleteInputSerializer
         return AddressSerializer
 

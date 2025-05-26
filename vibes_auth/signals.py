@@ -26,6 +26,4 @@ def send_user_verification_email(instance, **kwargs):
 
     if old.email != instance.email:
         instance.is_active = False
-        transaction.on_commit(
-            lambda: send_verification_email_task.delay(instance.pk)
-        )
+        transaction.on_commit(lambda: send_verification_email_task.delay(instance.pk))

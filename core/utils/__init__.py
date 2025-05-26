@@ -128,7 +128,9 @@ def resolve_translations_for_elasticsearch(instance, field_name):
     if not field:
         setattr(instance, f"{field_name}_{LANGUAGE_CODE}", filled_field)
 
+
 CROCKFORD = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+
 
 def generate_human_readable_id(length: int = 6) -> str:
     """
