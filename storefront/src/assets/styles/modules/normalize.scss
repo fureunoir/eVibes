@@ -1,0 +1,49 @@
+@use "../global/variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-family: $font_default;
+}
+
+#app {
+  overflow-x: hidden;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input, textarea, button {
+  font-family: $font_default;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: none;
+}
+
+.container {
+  max-width: 1500px;
+  margin-inline: auto;
+}
+
+@media (max-width: 1680px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    width: 90%;
+  }
+}
