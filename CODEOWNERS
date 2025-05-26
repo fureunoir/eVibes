@@ -13,13 +13,13 @@ nginx @@maintainer
 pyproject.toml @fureunoir contact@fureunoir.com
 poetry.lock @fureunoir contact@fureunoir.com
 
-/blog/ @fureunoir contact@fureunoir.com
-/core/ @fureunoir contact@fureunoir.com
-/evibes/ @fureunoir contact@fureunoir.com
-/payments/ @fureunoir contact@fureunoir.com
-/scripts/ @fureunoir contact@fureunoir.com
-/vibes_auth/ @fureunoir contact@fureunoir.com
-/storefront/ @SaVBaD savbad@wiseless.xyz
+blog/ @fureunoir contact@fureunoir.com
+core/ @fureunoir contact@fureunoir.com
+evibes/ @fureunoir contact@fureunoir.com
+payments/ @fureunoir contact@fureunoir.com
+scripts/ @fureunoir contact@fureunoir.com
+vibes_auth/ @fureunoir contact@fureunoir.com
+storefront/ @SaVBaD savbad@wiseless.xyz
 
 *.py @fureunoir contact@fureunoir.com
 *.bat @fureunoir contact@fureunoir.com
