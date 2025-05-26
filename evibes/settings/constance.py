@@ -3,9 +3,9 @@ from evibes.settings.base import getenv
 CONSTANCE_BACKEND = "constance.backends.database.DatabaseBackend"  # Or 'constance.backends.redis.RedisBackend'
 
 CONSTANCE_CONFIG = {
-    "PROJECT_NAME": (getenv("PROJECT_NAME"), "Name of the project"),
-    "FRONTEND_DOMAIN": (getenv("FRONTEND_DOMAIN"), "Frontend domain name"),
-    "BASE_DOMAIN": (getenv("BASE_DOMAIN"), "Base domain name"),
+    "PROJECT_NAME": (getenv("EVIBES_PROJECT_NAME"), "Name of the project"),
+    "FRONTEND_DOMAIN": (getenv("EVIBES_FRONTEND_DOMAIN"), "Frontend domain name"),
+    "BASE_DOMAIN": (getenv("EVIBES_BASE_DOMAIN"), "Base domain name"),
     "COMPANY_NAME": (getenv("COMPANY_NAME"), "Name of the company"),
     "COMPANY_ADDRESS": (getenv("COMPANY_ADDRESS"), "Address of the company"),
     "COMPANY_PHONE_NUMBER": (getenv("COMPANY_PHONE_NUMBER"), "Phone number of the company"),
