@@ -1,12 +1,13 @@
 import logging
 from contextlib import suppress
-from typing import Any, Dict, Optional, Type
+from typing import Any, Dict, List, Optional, Type
 
 from constance import config
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import update_last_login
 from django.contrib.auth.password_validation import validate_password
 from django.utils.translation import gettext_lazy as _
+from drf_spectacular.utils import extend_schema_field
 from rest_framework.exceptions import AuthenticationFailed, ValidationError
 from rest_framework.fields import (
     BooleanField,
@@ -87,8 +88,15 @@ class UserSerializer(ModelSerializer):
             validate_password(attrs["password"])
         return attrs
 
-    def get_recently_viewed(self, obj) -> ProductSimpleSerializer.data:
-        return ProductSimpleSerializer(Product.objects.filter(uuid__in=([] or obj.recently_viewed)), many=True).data
+    @extend_schema_field(ProductSimpleSerializer(many=True))
+    def get_recently_viewed(self, obj) -> List[Dict[str, Any]]:
+        """
+        Returns a list of serialized ProductSimpleSerializer representations
+        for the UUIDs in obj.recently_viewed.
+        """
+        queryset = Product.objects.filter(uuid__in=obj.recently_viewed)
+        serializer = ProductSimpleSerializer(queryset, many=True)
+        return serializer.data
 
 
 class TokenObtainSerializer(Serializer):
