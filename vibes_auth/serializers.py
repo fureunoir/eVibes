@@ -21,6 +21,8 @@ from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken
 from rest_framework_simplejwt.tokens import RefreshToken, Token, UntypedToken
 
+from core.models import Product
+from core.serializers import ProductSimpleSerializer
 from core.utils.security import is_safe_key
 from evibes import settings
 from vibes_auth.models import User
@@ -32,6 +34,7 @@ class UserSerializer(ModelSerializer):
     avatar_url = SerializerMethodField(required=False, read_only=True)
     password = CharField(write_only=True, required=False)
     is_staff = BooleanField(read_only=True)
+    recently_viewed = SerializerMethodField(required=False, read_only=True)
 
     @staticmethod
     def get_avatar_url(obj) -> str:
@@ -83,6 +86,9 @@ class UserSerializer(ModelSerializer):
         if "password" in attrs:
             validate_password(attrs["password"])
         return attrs
+
+    def get_recently_viewed(self, obj) -> ProductSimpleSerializer.data:
+        return ProductSimpleSerializer(Product.objects.filter(uuid__in=([] or obj.recently_viewed)), many=True).data
 
 
 class TokenObtainSerializer(Serializer):
@@ -177,8 +183,8 @@ class TokenVerifySerializer(Serializer):
         token = UntypedToken(attrs["token"])
 
         if (
-            api_settings.BLACKLIST_AFTER_ROTATION
-            and "rest_framework_simplejwt.token_blacklist" in settings.INSTALLED_APPS
+                api_settings.BLACKLIST_AFTER_ROTATION
+                and "rest_framework_simplejwt.token_blacklist" in settings.INSTALLED_APPS
         ):
             jti = token.get(api_settings.JTI_CLAIM)
             if BlacklistedToken.objects.filter(token__jti=jti).exists():

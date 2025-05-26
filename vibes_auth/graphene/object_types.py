@@ -3,8 +3,10 @@ from django.utils.translation import gettext_lazy as _
 from graphene import Field, List, String, relay
 from graphene.types.generic import GenericScalar
 from graphene_django import DjangoObjectType
+from graphql_relay.connection.array_connection import connection_from_array
 
-from core.graphene.object_types import OrderType, WishlistType
+from core.graphene.object_types import OrderType, ProductType, WishlistType
+from core.models import Product
 from evibes.settings import LANGUAGE_CODE, LANGUAGES
 from payments.graphene.object_types import BalanceType
 from vibes_auth.models import User
@@ -26,8 +28,16 @@ class PermissionType(DjangoObjectType):
         filter_fields = ["name", "id"]
 
 
+class RecentProductConnection(relay.Connection):
+    class Meta:
+        node = ProductType
+
+
 class UserType(DjangoObjectType):
-    recently_viewed = GenericScalar(description=_("recently viewed products' UUIDs"))
+    recently_viewed = relay.ConnectionField(
+        RecentProductConnection,
+        description=_("the products this user has viewed most recently (max 48), in reverse‐chronological order"),
+    )
     groups = List(lambda: GroupType, description=_("groups"))
     user_permissions = List(lambda: PermissionType, description=_("permissions"))
     orders = List(lambda: OrderType, description=_("orders"))
@@ -89,8 +99,23 @@ class UserType(DjangoObjectType):
     def resolve_orders(self, info):
         return self.orders.all() if self.orders.count() >= 1 else []
 
-    def resolve_recently_viewed(self, info):
-        return [] or self.recently_viewed
+    def resolve_recently_viewed(self, info, **kwargs):
+        uuid_list = self.recently_viewed or []
+
+        if not uuid_list:
+            return connection_from_array([], kwargs)
+
+        qs = Product.objects.filter(uuid__in=uuid_list)
+
+        products_by_uuid = {str(p.uuid): p for p in qs}
+
+        ordered_products = [
+            products_by_uuid[u]
+            for u in uuid_list
+            if u in products_by_uuid
+        ]
+
+        return connection_from_array(ordered_products, kwargs)
 
     def resolve_groups(self, info):
         return self.groups.all() if self.groups.count() >= 1 else []
