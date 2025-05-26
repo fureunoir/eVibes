@@ -8,8 +8,8 @@ services:
   app:
     container_name: app
     build:
-      - dockerfile: Dockerfile.app
-      - context: .
+      context: .
+      dockerfile: Dockerfile.app
     restart: always
     command: >
       sh -c "poetry run python manage.py await_services &&
@@ -45,8 +45,8 @@ services:
   worker:
     container_name: worker
     build:
-      - dockerfile: Dockerfile.app
-      - context: .
+      context: .
+      dockerfile: Dockerfile.app
     restart: always
     command: >
       sh -c "poetry run celery -A evibes worker --loglevel=info --concurrency=4 --autoscale=4,2 --max-tasks-per-child=100 --max-memory-per-child=512000 --soft-time-limit=10800 --time-limit=21600"
@@ -69,8 +69,8 @@ services:
   beat:
     container_name: beat
     build:
-      - dockerfile: Dockerfile.app
-      - context: .
+      context: .
+      dockerfile: Dockerfile.app
     restart: always
     command: sh -c "poetry run celery -A evibes beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler"
     volumes:
@@ -113,8 +113,8 @@ services:
   flower:
     container_name: flower
     build:
-      - dockerfile: Dockerfile.app
-      - context: .
+      context: .
+      dockerfile: Dockerfile.app
     restart: always
     command: sh -c "poetry run celery -A evibes --broker=$CELERY_BROKER_URL flower --address=0.0.0.0 --port=5555 --basic_auth=$FLOWER_USER:$FLOWER_PASSWORD"
     depends_on:
