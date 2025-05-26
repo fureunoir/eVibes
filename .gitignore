@@ -1,89 +1,159 @@
-*.log
-*.pot
-*.pyc
-__pycache__/
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-.idea
-.env
+# ──────────────────────────────────────────────────────────────────────────
+# Python bytecode, caches, and compiled artifacts
+# ──────────────────────────────────────────────────────────────────────────
+# Byte-compiled / optimized / DLL files
 *.py[cod]
 *$py.class
 *.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-*.manifest
-*.spec
-pip-log.txt
-pip-delete-this-directory.txt
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
+
+# Cache directories
+__pycache__/
 .pytest_cache/
-cover/
-instance/
-.webassets-cache
-.scrapy
-docs/_build/
-.pybuilder/
-target/
-.ipynb_checkpoints
-profile_default/
-ipython_config.py
-.pdm.toml
-__pypackages__/
-celerybeat-schedule
-celerybeat.pid
-*.sage.py
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-.spyderproject
-.spyproject
-.ropeproject
-/site
+.hypothesis/
+.pyre/
+.pytype/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-.pyre/
-.pytype/
 cython_debug/
-db_backups
-services_data
-services_data/postgres/*
-services_data/redis/*
-static
-!core/static
-!payments/static
-!vibes_auth/static
-media
+
+# Python environments
+.Python
+env/
+env.bak/
+venv/
+venv.bak/
+ENV/
+.venv/
+__pypackages__/
+
+# Local Django settings and database
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Django backups and metadata
+instance/
+db_backups/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Logs and reports
+# ──────────────────────────────────────────────────────────────────────────
+logs/
+*.log
 debug.log
 errors.log
 test.json
+coverage.xml
+coverage.*
+*.cover
+*.py,cover
+nosetests.xml
+
+# Coverage / test reports
+htmlcov/
+.coverage
+.coverage.*
+
+# CI / tox / nox
+.tox/
+.nox/
+.scrapy
+.coverage.*
+.cover
+.pybuilder/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# ──────────────────────────────────────────────────────────────────────────
+# Packaging and distribution
+# ──────────────────────────────────────────────────────────────────────────
+build/
+dist/
+dist-ssr/
+*.egg
+*.egg-info/
+.installed.cfg
+MANIFEST
+*.manifest
+*.spec
+sdist/
+wheels/
+share/python-wheels/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Node build artifacts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+site/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Static, media, and uploads
+# ──────────────────────────────────────────────────────────────────────────
+static/
+media/
+
+# Allow checked-in static from apps
+!core/static/
+!payments/static/
+!vibes_auth/static/
+!blog/static/
+
+# Webassets
+.webassets-cache/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Docker & service data
+# ──────────────────────────────────────────────────────────────────────────
+# Local volume mounts
+services_data/
+services_data/postgres/
+services_data/redis/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Node dependencies
+# ──────────────────────────────────────────────────────────────────────────
+node_modules/
+
+# ──────────────────────────────────────────────────────────────────────────
+# Cypress test artifacts
+# ──────────────────────────────────────────────────────────────────────────
+cypress/videos/
+cypress/screenshots/
+
+# ──────────────────────────────────────────────────────────────────────────
+# IDEs and editors
+# ──────────────────────────────────────────────────────────────────────────
+# VSCode
+.vscode/
+!.vscode/extensions.json
+
+# JetBrains
+.idea/
+
+# Microsoft
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Spyder / Rope
+.spyderproject
+.spyproject
+.ropeproject
+
+# macOS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment file
+.env

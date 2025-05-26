@@ -117,9 +117,18 @@ services:
       - .env
     logging: *default-logging
 
-#  storefront:
+#  nginx:  # TODO complete the service after storefront is present
+#    container_name: nginx
+#    image: nginx
+#    restart: always
+#    ports:
+#      - "80:80"
+#    logging: *default-logging
+
+#  storefront:  # TODO complete the service for future "storefront" Vite-Vue3 base storefront app
 #    container_name: storefront
 #    build: Dockerfile.storefront
+#    logging: *default-logging
 
 volumes:
   es-data:
