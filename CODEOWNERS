@@ -25,7 +25,7 @@ poetry.lock @fureunoir contact@fureunoir.com
 *.sh @fureunoir contact@fureunoir.com
 *.po @fureunoir contact@fureunoir.com
 *.mo @fureunoir contact@fureunoir.com
-*.html @savbad savbad@wiseless.xyz
-*.js @savbad savbad@wiseless.xyz
-*.vue @savbad savbad@wiseless.xyz
-*.scss @savbad savbad@wiseless.xyz
+*.html @SaVBaD savbad@wiseless.xyz
+*.js @SaVBaD savbad@wiseless.xyz
+*.vue @SaVBaD savbad@wiseless.xyz
+*.scss @SaVBaD savbad@wiseless.xyz
