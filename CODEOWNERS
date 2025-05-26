@@ -1,14 +1,15 @@
-* @default-owner
+* @@owner
 
 README.md @fureunoir contact@fureunoir.com
 
 LICENSE @fureunoir contact@fureunoir.com
 
-Dockerfile* @fureunoir contact@fureunoir.com
-docker-compose.yml @fureunoir contact@fureunoir.com
-.gitignore @fureunoir contact@fureunoir.com
-.dockerignore @fureunoir contact@fureunoir.com
-nginx @fureunoir contact@fureunoir.com
+Dockerfile.app @fureunoir contact@fureunoir.com
+Dockerfile.storefront @SaVBaD savbad@wiseless.xyz
+docker-compose.yml @@maintainer
+.gitignore @@maintainer
+.dockerignore @@maintainer
+nginx @@maintainer
 pyproject.toml @fureunoir contact@fureunoir.com
 poetry.lock @fureunoir contact@fureunoir.com
 
