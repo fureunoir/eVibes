@@ -64,9 +64,9 @@ Don't forget to change the
 The project uses environment variables for configuration. Below is an example of the `.env` file:
 
 ```plaintext
-PROJECT_NAME="eVibes"
-FRONTEND_DOMAIN="evibes.com"
-BASE_DOMAIN="evibes.com"
+EVIBES_PROJECT_NAME="eVibes"
+EVIBES_FRONTEND_DOMAIN="evibes.com"
+EVIBES_BASE_DOMAIN="evibes.com"
 SENTRY_DSN=""
 DEBUG=1
 
