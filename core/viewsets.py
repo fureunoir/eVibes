@@ -473,6 +473,7 @@ class WishlistViewSet(EvibesViewSet):
 class AddressViewSet(EvibesViewSet):
     queryset = Address.objects.all()
     serializer_class = AddressSerializer
+    additional = {"create": "ALLOW"}
 
     def get_serializer_class(self):
         if self.action == 'create':

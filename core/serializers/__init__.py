@@ -160,8 +160,11 @@ class AddressCreateSerializer(ModelSerializer):  # noqa: F405
 
     class Meta:
         model = Address
-        fields = ["raw_data", "user"]
+        fields = ["raw_data"]
 
     def create(self, validated_data):
         raw = validated_data.pop("raw_data")
-        return Address.objects.create(raw_data=raw, **validated_data)
+        user = None
+        if self.context["request"].user.is_authenticated:
+            user = self.context["request"].user
+        return Address.objects.create(raw_data=raw, user=user, **validated_data)

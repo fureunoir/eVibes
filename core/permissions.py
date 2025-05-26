@@ -14,59 +14,77 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
 
 
 class EvibesPermission(permissions.BasePermission):
-    def _get_permission_codename(self, action, view):
-        action_permission_map = {
-            "retrieve": "view",
-            "list": "view",
-            "create": "add",
-            "update": "change",
-            "partial_update": "change",
-            "destroy": "delete",
-        }
-        model_name = view.queryset.model._meta.model_name  # Get the model name
-        permission_type = action_permission_map.get(action)
+    """
+    Custom permission class for EvibesViewSet endpoints.
 
-        if permission_type:
-            return f"core.{permission_type}_{model_name}"
-        return None
+    - 'create' may be explicitly allowed via view.additional['create'] == 'ALLOW'.
+    - Certain actions are scoped to the request.user’s own objects.
+    - Standard model perms ('add', 'view', 'change', 'delete') are enforced for all other actions,
+      including for staff users.
+    - Publicly visible models allow anonymous list/retrieve.
+    """
 
-    def has_queryset_permission(self, request, view, queryset):
-        if request.user.is_staff:
-            return queryset
-        if view.action in [
-            "buy",
-            "current",
-            "add_order_product",
-            "remove_order_product",
-            "add_wishlist_product",
-            "remove_wishlist_product",
-            "bulk_add_wishlist_products",
-            "bulk_remove_wishlist_products",
-            "autocomplete",
-        ]:
-            return queryset.filter(user=request.user)
-        return queryset.filter(is_active=True)
+    ACTION_PERM_MAP = {
+        'retrieve': 'view',
+        'list': 'view',
+        'create': 'add',
+        'update': 'change',
+        'partial_update': 'change',
+        'destroy': 'delete',
+    }
+
+    USER_SCOPED_ACTIONS = {
+        'buy', 'buy_unregistered', 'current',
+        'add_order_product', 'remove_order_product',
+        'add_wishlist_product', 'remove_wishlist_product',
+        'bulk_add_wishlist_products', 'bulk_remove_wishlist_products',
+        'autocomplete',
+    }
 
     def has_permission(self, request, view):
-        action = getattr(view, "action", None)
+        action = getattr(view, 'action', None)
+        model = view.queryset.model
+        app_label = model._meta.app_label
+        model_name = model._meta.model_name
 
-        if action in [
-            "buy",
-            "buy_unregistered",
-            "current",
-            "add_order_product",
-            "remove_order_product",
-            "add_wishlist_product",
-            "remove_wishlist_product",
-            "bulk_add_wishlist_products",
-            "bulk_remove_wishlist_products",
-            "autocomplete",
-        ]:
+        if action == 'create' and view.additional.get('create') == 'ALLOW':
             return True
 
-        required_permission = self._get_permission_codename(action, view)
-
-        if required_permission and request.user.has_perm(required_permission):
+        if action in self.USER_SCOPED_ACTIONS:
             return True
 
-        return view.queryset.model.is_publicly_visible and action in ["retrieve", "list"]
+        perm_prefix = self.ACTION_PERM_MAP.get(action)
+        if perm_prefix:
+            codename = f"{perm_prefix}_{model_name}"
+            if request.user.has_perm(f"{app_label}.{codename}"):
+                return True
+
+        return bool(action in ('list', 'retrieve') and getattr(model, 'is_publicly_visible', False))
+
+    def has_queryset_permission(self, request, view, queryset):
+        """
+        Filter the base queryset according to the action and user.
+        Staff users still require view permissions to see records.
+        """
+        model = view.queryset.model
+        app_label = model._meta.app_label
+        model_name = model._meta.model_name
+
+        if view.action in self.USER_SCOPED_ACTIONS:
+            return queryset.filter(user=request.user)
+
+        if view.action in ('list', 'retrieve'):
+            if request.user.has_perm(f"{app_label}.view_{model_name}"):
+                if request.user.is_staff:
+                    return queryset
+                return queryset.filter(is_active=True)
+            return queryset.none()
+
+        base = queryset.filter(is_active=True)
+        if view.action in ('update', 'partial_update'):
+            if request.user.has_perm(f"{app_label}.change_{model_name}"):
+                return base
+        if view.action == 'destroy':
+            if request.user.has_perm(f"{app_label}.delete_{model_name}"):
+                return base
+        return queryset.none()
