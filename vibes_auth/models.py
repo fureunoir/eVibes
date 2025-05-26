@@ -87,7 +87,7 @@ class User(AbstractUser, NiceModel):
 
     @property
     def recently_viewed(self):
-        return [] or cache.get(f"user_{self.uuid}_rv")
+        return cache.get(f"user_{self.uuid}_rv", [])
 
     def check_token(self, token):
         return str(token) == str(self.activation_token)

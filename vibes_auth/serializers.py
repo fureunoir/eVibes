@@ -94,9 +94,8 @@ class UserSerializer(ModelSerializer):
         Returns a list of serialized ProductSimpleSerializer representations
         for the UUIDs in obj.recently_viewed.
         """
-        queryset = Product.objects.filter(uuid__in=obj.recently_viewed)
-        serializer = ProductSimpleSerializer(queryset, many=True)
-        return serializer.data
+        return ProductSimpleSerializer(Product.objects.filter(uuid__in=obj.recently_viewed, is_active=True),
+                                       many=True).data
 
 
 class TokenObtainSerializer(Serializer):
