@@ -50,7 +50,6 @@ class UserSerializer(ModelSerializer):
             "avatar_url",
             "is_staff",
             "recently_viewed",
-            "created",
             "first_name",
             "last_name",
             "password",
