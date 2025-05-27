@@ -192,10 +192,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 TIME_ZONE = getenv("TIME_ZONE", "Europe/London")
 
-STATIC_URL = f"https://api.{getenv('BASE_DOMAIN')}/static/"
+STATIC_URL = f"https://api.{getenv('EVIBES_BASE_DOMAIN')}/static/"
 STATIC_ROOT = BASE_DIR / "static"
 
-MEDIA_URL = f"https://api.{getenv('BASE_DOMAIN')}/media/"
+MEDIA_URL = f"https://api.{getenv('EVIBES_BASE_DOMAIN')}/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 AUTH_USER_MODEL = "vibes_auth.User"
