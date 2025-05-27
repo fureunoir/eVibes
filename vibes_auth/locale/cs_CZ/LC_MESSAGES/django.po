@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: cs-CZ\n"
+"Language: cs-cz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -121,7 +121,7 @@ msgstr "Uuid uživatele s kódem b64, který nám nového uživatele doporučil.
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "Heslo je příliš slabé"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -161,9 +161,11 @@ msgstr "Token je neplatný!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"Produkty, které si tento uživatel prohlížel naposledy (max. 48), seřazené v "
+"opačném pořadí."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -374,8 +376,7 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Pokud výše uvedené tlačítko nefunguje, zkopírujte a vložte následující "
-"adresu URL\n"
+"Pokud výše uvedené tlačítko nefunguje, zkopírujte a vložte následující adresu URL\n"
 "                            do webového prohlížeče:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -421,9 +422,3 @@ msgstr "Heslo bylo úspěšně resetováno!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Účet jste již aktivovali..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Nedávno zobrazené produkty"
-
-#~ msgid "recently viwed"
-#~ msgstr "Nedávno zobrazené"

@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: pl-PL\n"
+"Language: pl-pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,8 @@ msgstr "Jest aktywny"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "Jeśli ustawione na false, obiekt ten nie może być widoczny dla użytkowników "
 "bez wymaganych uprawnień."
@@ -184,8 +185,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "Zastosuj tylko klucz, aby odczytać dozwolone dane z pamięci podręcznej.\n"
-"Zastosuj klucz, dane i limit czasu z uwierzytelnianiem, aby zapisać dane w "
-"pamięci podręcznej."
+"Zastosuj klucz, dane i limit czasu z uwierzytelnianiem, aby zapisać dane w pamięci podręcznej."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -242,7 +242,8 @@ msgstr ""
 "nieedytowalnych"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Przepisanie niektórych pól istniejącej grupy atrybutów z zachowaniem "
 "atrybutów nieedytowalnych"
@@ -297,7 +298,8 @@ msgstr ""
 "nieedytowalnych"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Przepisz niektóre pola istniejącej wartości atrybutu, zapisując wartości "
 "nieedytowalne"
@@ -488,28 +490,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filtrowanie według jednej lub więcej par atrybut/wartość.  \n"
 "- Składnia**: `attr_name=method-value[;attr2=method2-value2]...`\n"
-"- **Metody** (domyślnie `icontains` jeśli pominięte): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
-"- Wpisywanie wartości**: JSON jest próbowany jako pierwszy (więc można "
-"przekazywać listy/dykty), `true`/`false` dla booleans, integers, floats; w "
-"przeciwnym razie traktowane jako string.  \n"
-"- Base64**: prefiks z `b64-` do bezpiecznego dla adresów URL kodowania "
-"base64 surowej wartości.  \n"
+"- **Metody** (domyślnie `icontains` jeśli pominięte): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- Wpisywanie wartości**: JSON jest próbowany jako pierwszy (więc można przekazywać listy/dykty), `true`/`false` dla booleans, integers, floats; w przeciwnym razie traktowane jako string.  \n"
+"- Base64**: prefiks z `b64-` do bezpiecznego dla adresów URL kodowania base64 surowej wartości.  \n"
 "Przykłady:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
@@ -568,12 +560,10 @@ msgstr "(dokładnie) Cyfrowe vs. fizyczne"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Rozdzielana przecinkami lista pól do posortowania. Prefiks z `-` dla "
-"sortowania malejącego.  \n"
+"Rozdzielana przecinkami lista pól do posortowania. Prefiks z `-` dla sortowania malejącego.  \n"
 "**Dozwolone:** uuid, rating, name, slug, created, modified, price, random"
 
 #: core/docs/drf/viewsets.py:375
@@ -635,10 +625,14 @@ msgstr "Wprowadzanie adresu w trybie autouzupełniania"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "ogranicza ilość wyników, 1 < limit < 10, domyślnie: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -727,8 +721,8 @@ msgstr "Kup zamówienie"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
 "Prześlij atrybuty jako ciąg znaków sformatowany w następujący sposób: "
 "attr1=value1,attr2=value2"
@@ -787,7 +781,8 @@ msgstr ""
 "Które atrybuty i wartości mogą być używane do filtrowania tej kategorii."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
 "Minimalne i maksymalne ceny produktów w tej kategorii, jeśli są dostępne."
 
@@ -950,8 +945,7 @@ msgstr "Numer telefonu firmy"
 
 #: core/graphene/object_types.py:464
 msgid "email from, sometimes it must be used instead of host user value"
-msgstr ""
-"\"email from\", czasami musi być użyty zamiast wartości użytkownika hosta"
+msgstr "\"email from\", czasami musi być użyty zamiast wartości użytkownika hosta"
 
 #: core/graphene/object_types.py:465
 msgid "email host user"
@@ -1071,7 +1065,8 @@ msgstr "Atrybut tej wartości"
 msgid "the specific product associated with this attribute's value"
 msgstr "Konkretny produkt powiązany z wartością tego atrybutu"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Produkt powiązany"
 
@@ -1238,7 +1233,8 @@ msgid "feedback comments"
 msgstr "Komentarze zwrotne"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
 "Odnosi się do konkretnego produktu w zamówieniu, którego dotyczy ta "
 "informacja zwrotna."
@@ -1327,7 +1323,8 @@ msgstr "Zamówienie"
 
 #: core/models.py:527
 msgid "a user must have only one pending order at a time"
-msgstr "Użytkownik może mieć tylko jedno oczekujące zlecenie w danym momencie!"
+msgstr ""
+"Użytkownik może mieć tylko jedno oczekujące zlecenie w danym momencie!"
 
 #: core/models.py:551
 msgid "you cannot add products to an order that is not a pending one"
@@ -1343,8 +1340,8 @@ msgstr "Nie można dodać nieaktywnych produktów do zamówienia"
 msgid "you cannot add more products than available in stock"
 msgstr "Nie można dodać więcej produktów niż jest dostępnych w magazynie"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} nie istnieje: {product_uuid}"
@@ -1413,7 +1410,8 @@ msgstr "Cena zakupu w momencie zamówienia"
 #: core/models.py:794
 msgid "internal comments for admins about this ordered product"
 msgstr ""
-"Wewnętrzne komentarze dla administratorów dotyczące tego zamówionego produktu"
+"Wewnętrzne komentarze dla administratorów dotyczące tego zamówionego "
+"produktu"
 
 #: core/models.py:795
 msgid "internal comments"
@@ -1481,7 +1479,8 @@ msgstr "Etykieta produktu"
 
 #: core/models.py:919
 msgid "provide alternative text for the image for accessibility"
-msgstr "Zapewnienie alternatywnego tekstu dla obrazu w celu ułatwienia dostępu"
+msgstr ""
+"Zapewnienie alternatywnego tekstu dla obrazu w celu ułatwienia dostępu"
 
 #: core/models.py:920
 msgid "image alt text"
@@ -1831,8 +1830,8 @@ msgstr "Witam %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Dziękujemy za zamówienie #%(order.pk)s! Z przyjemnością informujemy, że "
 "przyjęliśmy Twoje zamówienie do realizacji. Poniżej znajdują się szczegóły "
@@ -1890,8 +1889,8 @@ msgid ""
 "we have successfully processed your order №%(order_uuid)s! below are the "
 "details of your order:"
 msgstr ""
-"Pomyślnie przetworzyliśmy Twoje zamówienie №%(order_uuid)s! Poniżej znajdują "
-"się szczegóły zamówienia:"
+"Pomyślnie przetworzyliśmy Twoje zamówienie №%(order_uuid)s! Poniżej znajdują"
+" się szczegóły zamówienia:"
 
 #: core/templates/digital_order_delivered_email.html:127
 msgid "additional information"
@@ -1918,8 +1917,8 @@ msgstr "Klucz"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Dziękujemy za zamówienie! Z przyjemnością potwierdzamy zakup. Poniżej "
 "znajdują się szczegóły zamówienia:"
@@ -2005,6 +2004,3 @@ msgstr "nie znaleziono favicon"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Błąd geokodowania: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Tłumaczenia"

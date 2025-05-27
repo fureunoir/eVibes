@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ro-RO\n"
+"Language: ro-ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "Parola este prea slabă"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -165,9 +165,11 @@ msgstr "Token-ul nu este valabil!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"Produsele pe care acest utilizator le-a vizualizat cel mai recent (max 48), "
+"în ordine cronologică inversă."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -378,8 +380,7 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Dacă butonul de mai sus nu funcționează, vă rugăm să copiați și să lipiți "
-"următoarea adresă URL\n"
+"Dacă butonul de mai sus nu funcționează, vă rugăm să copiați și să lipiți următoarea adresă URL\n"
 "                            în browserul dvs. web:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -425,9 +426,3 @@ msgstr "Parola a fost resetată cu succes!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Ați activat deja contul..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Produse vizualizate recent"
-
-#~ msgid "recently viwed"
-#~ msgstr "Văzut recent"

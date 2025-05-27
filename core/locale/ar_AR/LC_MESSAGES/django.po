@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ar-AR\n"
+"Language: ar-ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,8 @@ msgstr "نشط"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "إذا تم تعيينه على خطأ، لا يمكن للمستخدمين رؤية هذا الكائن دون الحاجة إلى إذن"
 
@@ -181,8 +182,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "تطبيق مفتاح فقط لقراءة البيانات المسموح بها من ذاكرة التخزين المؤقت.\n"
-"تطبيق مفتاح وبيانات ومهلة مع المصادقة لكتابة البيانات إلى ذاكرة التخزين "
-"المؤقت."
+"تطبيق مفتاح وبيانات ومهلة مع المصادقة لكتابة البيانات إلى ذاكرة التخزين المؤقت."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -237,7 +237,8 @@ msgid "rewrite an existing attribute group saving non-editables"
 msgstr "إعادة كتابة مجموعة سمات موجودة تحفظ غير القابلة للتعديل"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr "إعادة كتابة بعض حقول مجموعة سمات موجودة تحفظ غير القابلة للتعديل"
 
 #: core/docs/drf/viewsets.py:64
@@ -285,7 +286,8 @@ msgid "rewrite an existing attribute value saving non-editables"
 msgstr "إعادة كتابة قيمة سمة موجودة تحفظ غير القابلة للتعديل"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr "إعادة كتابة بعض حقول قيمة سمة موجودة حفظ غير قابل للتعديل"
 
 #: core/docs/drf/viewsets.py:118
@@ -383,8 +385,7 @@ msgstr "إزالة منتج من الطلب"
 msgid ""
 "removes a product from an order using the provided `product_uuid` and "
 "`attributes`."
-msgstr ""
-"يزيل منتجًا من أحد الطلبات باستخدام \"معرّف_المنتج\" و\"السمات\" المتوفرة."
+msgstr "يزيل منتجًا من أحد الطلبات باستخدام \"معرّف_المنتج\" و\"السمات\" المتوفرة."
 
 #: core/docs/drf/viewsets.py:209
 msgid "list all wishlists (simple view)"
@@ -458,32 +459,20 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "تصفية حسب زوج واحد أو أكثر من أسماء/قيم السمات.  \n"
 "- **صيغة**: `attr_name=الطريقة-القيمة[ ؛ attr2=الطريقة2-القيمة2]...`\n"
-"- **الأساليب** (افتراضيًا إلى \"يحتوي على\" إذا تم حذفها): \"بالضبط\"، "
-"\"بالضبط\"، \"بالضبط\"، \"يحتوي\"، \"يحتوي\"، \"لاغية\"، \"يبدأ ب\"، \"يبدأ "
-"ب\"، \"يبدأ ب\"، \"ينتهي ب\"، \"ينتهي ب\"، \"regex\"، \"iregex\"، \"lt\"، "
-"\"lte\"، \"gt\"، \"gte\"، \"in\n"
-"- **كتابة القيمة**: تتم تجربة JSON أولًا (حتى تتمكن من تمرير القوائم/"
-"المجادلات)، \"صحيح\"/\"خطأ\" للمنطقيين والأعداد الصحيحة والعوامات؛ وإلا يتم "
-"التعامل معها كسلسلة.  \n"
-"- **القاعدة 64**: البادئة ب \"b64-\" لتشفير القيمة الخام بأمان لقاعدة 64- "
-"لتشفير القيمة الخام.  \n"
+"- **الأساليب** (افتراضيًا إلى \"يحتوي على\" إذا تم حذفها): \"بالضبط\"، \"بالضبط\"، \"بالضبط\"، \"يحتوي\"، \"يحتوي\"، \"لاغية\"، \"يبدأ ب\"، \"يبدأ ب\"، \"يبدأ ب\"، \"ينتهي ب\"، \"ينتهي ب\"، \"regex\"، \"iregex\"، \"lt\"، \"lte\"، \"gt\"، \"gte\"، \"in\n"
+"- **كتابة القيمة**: تتم تجربة JSON أولًا (حتى تتمكن من تمرير القوائم/المجادلات)، \"صحيح\"/\"خطأ\" للمنطقيين والأعداد الصحيحة والعوامات؛ وإلا يتم التعامل معها كسلسلة.  \n"
+"- **القاعدة 64**: البادئة ب \"b64-\" لتشفير القيمة الخام بأمان لقاعدة 64- لتشفير القيمة الخام.  \n"
 "أمثلة:  \n"
-"'color=exact-red'، 'size=gt-10'، 'features=in-[\"wifi\"،\"bluetooth\"]، "
-"'fatures=in-[\"wifi\",\"bluetooth\"],\n"
+"'color=exact-red'، 'size=gt-10'، 'features=in-[\"wifi\"،\"bluetooth\"]، 'fatures=in-[\"wifi\",\"bluetooth\"],\n"
 "\"b64-description=icontains-aGVhdC1jb2xk"
 
 #: core/docs/drf/viewsets.py:277
@@ -540,8 +529,7 @@ msgstr "(بالضبط) الرقمية مقابل المادية"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
 "قائمة مفصولة بفواصل من الحقول للفرز حسب. البادئة بـ \"-\" للفرز التنازلي.  \n"
@@ -604,10 +592,15 @@ msgstr "إدخال عنوان الإكمال التلقائي"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"تطبيق docker compose exec تطبيق docker exec الشعر تشغيل إدارة python.py "
+"deepl_translate -l en-gb -l ar-ar -l cs-cz -l da-dk -l de-de-de -l en-us -l "
+"es-es -l fr-fr -l hi-in -l it-it -l ja-jp -l kk-kz -l nl-nl -l nl-nl -l pl-"
+"pl -l pt-br -l ro-ro -l ru-ru -l zh-hans -l zh-ans -a core -a geo -a geo -a "
+"payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "تحديد كمية النتائج، 1 < الحد < 10، الافتراضي: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -697,8 +690,8 @@ msgstr "شراء طلبية"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr "الرجاء إرسال السمات كسلسلة منسقة مثل attr1=قيمة1، attr2=قيمة2"
 
 #: core/graphene/mutations.py:485
@@ -754,7 +747,8 @@ msgid "which attributes and values can be used for filtering this category."
 msgstr "ما هي السمات والقيم التي يمكن استخدامها لتصفية هذه الفئة."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
 "الحد الأدنى والحد الأقصى لأسعار المنتجات في هذه الفئة، إذا كانت متوفرة."
 
@@ -918,8 +912,8 @@ msgstr "رقم هاتف الشركة"
 #: core/graphene/object_types.py:464
 msgid "email from, sometimes it must be used instead of host user value"
 msgstr ""
-"\"البريد الإلكتروني من\"، في بعض الأحيان يجب استخدامه بدلاً من قيمة المستخدم "
-"المضيف"
+"\"البريد الإلكتروني من\"، في بعض الأحيان يجب استخدامه بدلاً من قيمة المستخدم"
+" المضيف"
 
 #: core/graphene/object_types.py:465
 msgid "email host user"
@@ -1039,7 +1033,8 @@ msgstr "سمة هذه القيمة"
 msgid "the specific product associated with this attribute's value"
 msgstr "المنتج المحدد المرتبط بقيمة هذه السمة"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "المنتج المرتبط"
 
@@ -1206,7 +1201,8 @@ msgid "feedback comments"
 msgstr "تعليقات على الملاحظات"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr "الإشارة إلى المنتج المحدد في الطلب الذي تدور حوله هذه الملاحظات"
 
 #: core/models.py:424
@@ -1307,8 +1303,8 @@ msgstr "لا يمكنك إضافة منتجات غير نشطة للطلب"
 msgid "you cannot add more products than available in stock"
 msgstr "لا يمكنك إضافة منتجات أكثر من المتوفرة في المخزون"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} غير موجود: {product_uuid}"
@@ -1355,8 +1351,8 @@ msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
 msgstr ""
-"لا يمكنك الشراء بدون تسجيل، يرجى تقديم المعلومات التالية: اسم العميل، البريد "
-"الإلكتروني للعميل، رقم هاتف العميل"
+"لا يمكنك الشراء بدون تسجيل، يرجى تقديم المعلومات التالية: اسم العميل، البريد"
+" الإلكتروني للعميل، رقم هاتف العميل"
 
 #: core/models.py:735
 msgid "invalid payment method"
@@ -1512,7 +1508,8 @@ msgstr "وقت بدء الصلاحية"
 
 #: core/models.py:993
 msgid "timestamp when the promocode was used, blank if not used yet"
-msgstr "الطابع الزمني عند استخدام الرمز الترويجي، فارغ إذا لم يتم استخدامه بعد"
+msgstr ""
+"الطابع الزمني عند استخدام الرمز الترويجي، فارغ إذا لم يتم استخدامه بعد"
 
 #: core/models.py:994
 msgid "usage timestamp"
@@ -1539,8 +1536,8 @@ msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
 msgstr ""
-"يجب تحديد نوع واحد فقط من الخصم (المبلغ أو النسبة المئوية)، وليس كلا النوعين "
-"أو لا هذا ولا ذاك."
+"يجب تحديد نوع واحد فقط من الخصم (المبلغ أو النسبة المئوية)، وليس كلا النوعين"
+" أو لا هذا ولا ذاك."
 
 #: core/models.py:1030
 msgid "promocode already used"
@@ -1788,11 +1785,11 @@ msgstr "مرحبًا %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
-"شكرًا لك على طلبك #%(order.pk)s! يسعدنا إبلاغك بأننا قد أخذنا طلبك في العمل. "
-"فيما يلي تفاصيل طلبك:"
+"شكرًا لك على طلبك #%(order.pk)s! يسعدنا إبلاغك بأننا قد أخذنا طلبك في العمل."
+" فيما يلي تفاصيل طلبك:"
 
 #: core/templates/digital_order_created_email.html:110
 #: core/templates/digital_order_delivered_email.html:110
@@ -1871,8 +1868,8 @@ msgstr "المفتاح"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr "شكراً على طلبك! يسعدنا تأكيد طلبك. فيما يلي تفاصيل طلبك:"
 
 #: core/templates/shipped_order_created_email.html:109
@@ -1953,6 +1950,3 @@ msgstr "الرمز المفضل غير موجود"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "خطأ في الترميز الجغرافي: {e}"
-
-#~ msgid "translations"
-#~ msgstr "الترجمات"

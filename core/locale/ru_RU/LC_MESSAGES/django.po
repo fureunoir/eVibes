@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ru-RU\n"
+"Language: ru-ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,8 @@ msgstr "Активен"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "Если установлено значение false, этот объект не может быть виден "
 "пользователям без необходимого разрешения"
@@ -242,7 +243,8 @@ msgstr ""
 "элементов"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Переписывание некоторых полей существующей группы атрибутов с сохранением "
 "нередактируемых полей"
@@ -296,7 +298,8 @@ msgstr ""
 "значений"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Переписывание некоторых полей существующего значения атрибута с сохранением "
 "нередактируемых значений"
@@ -490,29 +493,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Фильтр по одной или нескольким парам имя/значение атрибута.  \n"
 "- **Синтаксис**: `attr_name=method-value[;attr2=method2-value2]...`.\n"
-"- **Методы** (по умолчанию используется `icontains`, если опущено): "
-"`iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, "
-"`istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, "
-"`gt`, `gte`, `in`.\n"
-"- **Типизация значений**: JSON сначала пытается принять значение (так что вы "
-"можете передавать списки/дискреты), `true`/`false` для булевых, целых чисел, "
-"плавающих; в противном случае обрабатывается как строка.  \n"
-"- **Base64**: префикс `b64-` для безопасного для URL base64-кодирования "
-"исходного значения.  \n"
+"- **Методы** (по умолчанию используется `icontains`, если опущено): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
+"- **Типизация значений**: JSON сначала пытается принять значение (так что вы можете передавать списки/дискреты), `true`/`false` для булевых, целых чисел, плавающих; в противном случае обрабатывается как строка.  \n"
+"- **Base64**: префикс `b64-` для безопасного для URL base64-кодирования исходного значения.  \n"
 "Примеры:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`."
@@ -571,14 +563,11 @@ msgstr "(точно) Цифровые и физические"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Список полей для сортировки, разделенных запятыми. Для сортировки по "
-"убыванию используйте префикс `-`.  \n"
-"**Разрешенные:** uuid, рейтинг, название, slug, created, modified, price, "
-"random"
+"Список полей для сортировки, разделенных запятыми. Для сортировки по убыванию используйте префикс `-`.  \n"
+"**Разрешенные:** uuid, рейтинг, название, slug, created, modified, price, random"
 
 #: core/docs/drf/viewsets.py:375
 msgid "retrieve a single product (detailed view)"
@@ -639,10 +628,14 @@ msgstr "Автозаполнение ввода адреса"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "ограничивает количество результатов, 1 < limit < 10, по умолчанию: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -733,8 +726,8 @@ msgstr "Купить заказ"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
 "Пожалуйста, отправьте атрибуты в виде строки, отформатированной как "
 "attr1=value1,attr2=value2"
@@ -793,7 +786,8 @@ msgstr ""
 "Какие атрибуты и значения можно использовать для фильтрации этой категории."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
 "Минимальные и максимальные цены на товары в этой категории, если они "
 "доступны."
@@ -1080,7 +1074,8 @@ msgstr "Атрибут этого значения"
 msgid "the specific product associated with this attribute's value"
 msgstr "Конкретный продукт, связанный со значением этого атрибута"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Сопутствующий товар"
 
@@ -1215,8 +1210,8 @@ msgstr "Парт. номер"
 #: core/models.py:380
 msgid "stores credentials and endpoints required for vendor communication"
 msgstr ""
-"Хранит учетные данные и конечные точки, необходимые для взаимодействия с API "
-"поставщика."
+"Хранит учетные данные и конечные точки, необходимые для взаимодействия с API"
+" поставщика."
 
 #: core/models.py:381
 msgid "authentication info"
@@ -1247,7 +1242,8 @@ msgid "feedback comments"
 msgstr "Комментарии к отзывам"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
 "Ссылка на конкретный продукт в заказе, о котором идет речь в этом отзыве"
 
@@ -1298,8 +1294,8 @@ msgstr "Статус заказа"
 #: core/models.py:481 core/models.py:800
 msgid "json structure of notifications to display to users"
 msgstr ""
-"JSON-структура уведомлений для отображения пользователям, в административном "
-"интерфейсе используется табличный вид"
+"JSON-структура уведомлений для отображения пользователям, в административном"
+" интерфейсе используется табличный вид"
 
 #: core/models.py:487
 msgid "json representation of order attributes for this order"
@@ -1349,15 +1345,16 @@ msgstr "Вы не можете добавить неактивные товар�
 msgid "you cannot add more products than available in stock"
 msgstr "Вы не можете добавить больше товаров, чем есть на складе"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} не существует: {product_uuid}"
 
 #: core/models.py:586 core/models.py:607 core/models.py:615
 msgid "you cannot remove products from an order that is not a pending one"
-msgstr "Вы не можете удалить товары из заказа, который не является отложенным."
+msgstr ""
+"Вы не можете удалить товары из заказа, который не является отложенным."
 
 #: core/models.py:603
 #, python-brace-format
@@ -1417,7 +1414,8 @@ msgstr "Покупная цена на момент заказа"
 
 #: core/models.py:794
 msgid "internal comments for admins about this ordered product"
-msgstr "Внутренние комментарии для администраторов об этом заказанном продукте"
+msgstr ""
+"Внутренние комментарии для администраторов об этом заказанном продукте"
 
 #: core/models.py:795
 msgid "internal comments"
@@ -1589,8 +1587,8 @@ msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
 msgstr ""
-"Следует определить только один тип скидки (сумма или процент), но не оба или "
-"ни один из них."
+"Следует определить только один тип скидки (сумма или процент), но не оба или"
+" ни один из них."
 
 #: core/models.py:1030
 msgid "promocode already used"
@@ -1838,11 +1836,11 @@ msgstr "Здравствуйте %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
-"Благодарим вас за заказ #%(order.pk)s! Мы рады сообщить Вам, что приняли Ваш "
-"заказ в работу. Ниже приведены детали вашего заказа:"
+"Благодарим вас за заказ #%(order.pk)s! Мы рады сообщить Вам, что приняли Ваш"
+" заказ в работу. Ниже приведены детали вашего заказа:"
 
 #: core/templates/digital_order_created_email.html:110
 #: core/templates/digital_order_delivered_email.html:110
@@ -1924,8 +1922,8 @@ msgstr "Ключ"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Спасибо за ваш заказ! Мы рады подтвердить вашу покупку. Ниже приведены "
 "детали вашего заказа:"
@@ -1993,7 +1991,8 @@ msgstr "Параметр NOMINATIM_URL должен быть настроен!"
 #, python-brace-format
 msgid "image dimensions should not exceed w{max_width} x h{max_height} pixels"
 msgstr ""
-"Размеры изображения не должны превышать w{max_width} x h{max_height} пикселей"
+"Размеры изображения не должны превышать w{max_width} x h{max_height} "
+"пикселей"
 
 #: core/validators.py:22
 msgid "invalid phone number format"
@@ -2011,6 +2010,3 @@ msgstr "favicon не найден"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Ошибка геокодирования: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Переводы"

@@ -27,7 +27,8 @@ msgstr "处于活动状态"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr "如果设置为 false，则没有必要权限的用户无法查看此对象"
 
 #: core/abstract.py:22 core/choices.py:18
@@ -210,9 +211,7 @@ msgstr "以企业身份购买订单"
 msgid ""
 "purchase an order as a business, using the provided `products` with "
 "`product_uuid` and `attributes`."
-msgstr ""
-"使用提供的带有 `product_uuid` 和 `attributes` 的 `products` 作为企业购买订"
-"单。"
+msgstr "使用提供的带有 `product_uuid` 和 `attributes` 的 `products` 作为企业购买订单。"
 
 #: core/docs/drf/viewsets.py:37
 msgid "list all attribute groups (simple view)"
@@ -235,7 +234,8 @@ msgid "rewrite an existing attribute group saving non-editables"
 msgstr "重写保存不可编辑的现有属性组"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr "重写现有属性组的某些字段，保存不可编辑的内容"
 
 #: core/docs/drf/viewsets.py:64
@@ -283,7 +283,8 @@ msgid "rewrite an existing attribute value saving non-editables"
 msgstr "重写现有属性值，保存不可编辑属性"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr "重写现有属性值的某些字段，保存不可编辑的属性值"
 
 #: core/docs/drf/viewsets.py:118
@@ -351,9 +352,7 @@ msgid ""
 "finalizes the order purchase. if `force_balance` is used, the purchase is "
 "completed using the user's balance; if `force_payment` is used, a "
 "transaction is initiated."
-msgstr ""
-"完成订单购买。如果使用 \"force_balance\"，则使用用户的余额完成购买；如果使用 "
-"\"force_payment\"，则启动交易。"
+msgstr "完成订单购买。如果使用 \"force_balance\"，则使用用户的余额完成购买；如果使用 \"force_payment\"，则启动交易。"
 
 #: core/docs/drf/viewsets.py:185 core/graphene/mutations.py:226
 msgid "purchase an order without account creation"
@@ -452,25 +451,17 @@ msgstr "使用提供的 `product_uuids` 从愿望清单中删除多个产品"
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "根据一个或多个属性名/值对进行筛选。  \n"
 "- 语法**：`attr_name=method-value[;attr2=method2-value2]...`\n"
-"- 方法**（如果省略，默认为 `icontains`）：iexact`、`exact`、`icontains`、"
-"`contains`、`isnull`、`startswith`、`istartswith`、`endswith`、`iendswith`、"
-"`regex`、`iregex`、`lt`、`lte`、`gt`、`gte`、`in`。\n"
-"- 值键入**：首先尝试使用 JSON（因此可以传递列表/字段），布尔、整数、浮点数使"
-"用 `true`/`false`，否则视为字符串。  \n"
+"- 方法**（如果省略，默认为 `icontains`）：iexact`、`exact`、`icontains`、`contains`、`isnull`、`startswith`、`istartswith`、`endswith`、`iendswith`、`regex`、`iregex`、`lt`、`lte`、`gt`、`gte`、`in`。\n"
+"- 值键入**：首先尝试使用 JSON（因此可以传递列表/字段），布尔、整数、浮点数使用 `true`/`false`，否则视为字符串。  \n"
 "- **Base64**：以 `b64-` 作为前缀，对原始值进行 URL 安全的 base64 编码。  \n"
 "示例  \n"
 "color=exact-red`、`size=gt-10`、`features=in-[\"wifi\"、\"bluetooth\"]`、\n"
@@ -530,8 +521,7 @@ msgstr "(准确）数字与实物"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
 "用逗号分隔的要排序的字段列表。前缀为 `-` 表示降序。  \n"
@@ -594,10 +584,14 @@ msgstr "自动完成地址输入"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "限制结果数量，1 < limit < 10，默认：5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -686,8 +680,8 @@ msgstr "购买订单"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr "请以字符串形式发送属性，格式如 attr1=value1,attr2=value2"
 
 #: core/graphene/mutations.py:485
@@ -743,7 +737,8 @@ msgid "which attributes and values can be used for filtering this category."
 msgstr "哪些属性和值可用于筛选该类别。"
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr "该类别产品的最低和最高价格（如有）。"
 
 #: core/graphene/object_types.py:210 core/models.py:403
@@ -1023,7 +1018,8 @@ msgstr "该值的属性"
 msgid "the specific product associated with this attribute's value"
 msgstr "与该属性值相关的特定产品"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "相关产品"
 
@@ -1188,7 +1184,8 @@ msgid "feedback comments"
 msgstr "反馈意见"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr "引用该反馈意见涉及的订单中的具体产品"
 
 #: core/models.py:424
@@ -1287,8 +1284,8 @@ msgstr "您不能在订单中添加非活动产品"
 msgid "you cannot add more products than available in stock"
 msgstr "添加的产品数量不能超过现有库存"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} 不存在：{product_uuid} 不存在"
@@ -1516,8 +1513,7 @@ msgstr "促销代码"
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
-msgstr ""
-"只能定义一种折扣类型（金额或百分比），而不能同时定义两种类型或两者都不定义。"
+msgstr "只能定义一种折扣类型（金额或百分比），而不能同时定义两种类型或两者都不定义。"
 
 #: core/models.py:1030
 msgid "promocode already used"
@@ -1765,11 +1761,9 @@ msgstr "您好 %(order.user.first_name)s、"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
-msgstr ""
-"感谢您的订单 #%(order.pk)s！我们很高兴地通知您，我们已将您的订单付诸实施。以"
-"下是您的订单详情："
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
+msgstr "感谢您的订单 #%(order.pk)s！我们很高兴地通知您，我们已将您的订单付诸实施。以下是您的订单详情："
 
 #: core/templates/digital_order_created_email.html:110
 #: core/templates/digital_order_delivered_email.html:110
@@ -1792,8 +1786,7 @@ msgstr "总价"
 msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(config.EMAIL_HOST_USER)s."
-msgstr ""
-"如果您有任何问题，请随时通过 %(config.EMAIL_HOST_USER)s 联系我们的支持人员。"
+msgstr "如果您有任何问题，请随时通过 %(config.EMAIL_HOST_USER)s 联系我们的支持人员。"
 
 #: core/templates/digital_order_created_email.html:130
 #, python-format
@@ -1846,8 +1839,8 @@ msgstr "钥匙"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr "感谢您的订购！我们很高兴确认您的购买。以下是您的订单详情："
 
 #: core/templates/shipped_order_created_email.html:109
@@ -1928,6 +1921,3 @@ msgstr "未找到 favicon"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "地理编码错误：{e}"
-
-#~ msgid "translations"
-#~ msgstr "翻译"

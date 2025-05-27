@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: da-DK\n"
+"Language: da-dk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,8 @@ msgstr "Er aktiv"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "Hvis det er sat til false, kan dette objekt ikke ses af brugere uden den "
 "nødvendige tilladelse."
@@ -182,8 +183,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "Anvend kun en nøgle til at læse tilladte data fra cachen.\n"
-"Anvend nøgle, data og timeout med autentificering for at skrive data til "
-"cachen."
+"Anvend nøgle, data og timeout med autentificering for at skrive data til cachen."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -240,7 +240,8 @@ msgstr ""
 "attributter"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Omskriv nogle felter i en eksisterende attributgruppe og gem ikke-"
 "redigerbare felter"
@@ -293,10 +294,11 @@ msgstr ""
 "Omskriv en eksisterende attributværdi, der gemmer ikke-redigerbare filer"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
-"Omskriv nogle felter i en eksisterende attributværdi og gem ikke-redigerbare "
-"felter"
+"Omskriv nogle felter i en eksisterende attributværdi og gem ikke-redigerbare"
+" felter"
 
 #: core/docs/drf/viewsets.py:118
 msgid "list all categories (simple view)"
@@ -330,7 +332,8 @@ msgstr "Liste over alle kategorier (enkel visning)"
 
 #: core/docs/drf/viewsets.py:146
 msgid "for non-staff users, only their own orders are returned."
-msgstr "For ikke-ansatte brugere er det kun deres egne ordrer, der returneres."
+msgstr ""
+"For ikke-ansatte brugere er det kun deres egne ordrer, der returneres."
 
 #: core/docs/drf/viewsets.py:150
 msgid "retrieve a single order (detailed view)"
@@ -456,7 +459,8 @@ msgstr "Fjern et produkt fra ønskelisten"
 #: core/docs/drf/viewsets.py:242
 msgid "removes a product from an wishlist using the provided `product_uuid`"
 msgstr ""
-"Fjerner et produkt fra en ønskeliste ved hjælp af den angivne `product_uuid`."
+"Fjerner et produkt fra en ønskeliste ved hjælp af den angivne "
+"`product_uuid`."
 
 #: core/docs/drf/viewsets.py:247
 msgid "add many products to wishlist"
@@ -483,28 +487,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filtrer efter et eller flere attributnavn/værdipar.  \n"
 "- **Syntaks**: `attr_name=method-value[;attr2=method2-value2]...`.\n"
-"- **Metoder** (standard er `icontains`, hvis udeladt): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
-"- Værdiindtastning**: JSON forsøges først (så du kan sende lister/dikter), "
-"`true`/`false` for booleans, heltal, floats; ellers behandles de som "
-"strenge.  \n"
-"- **Base64**: præfiks med `b64-` for URL-sikker base64-kodning af den rå "
-"værdi.  \n"
+"- **Metoder** (standard er `icontains`, hvis udeladt): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
+"- Værdiindtastning**: JSON forsøges først (så du kan sende lister/dikter), `true`/`false` for booleans, heltal, floats; ellers behandles de som strenge.  \n"
+"- **Base64**: præfiks med `b64-` for URL-sikker base64-kodning af den rå værdi.  \n"
 "Eksempler på dette:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\",\"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`."
@@ -563,12 +557,10 @@ msgstr "(præcis) Digital vs. fysisk"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Kommasepareret liste over felter, der skal sorteres efter. Præfiks med `-` "
-"for faldende.  \n"
+"Kommasepareret liste over felter, der skal sorteres efter. Præfiks med `-` for faldende.  \n"
 "**Tilladt:** uuid, vurdering, navn, slug, oprettet, ændret, pris, tilfældig"
 
 #: core/docs/drf/viewsets.py:375
@@ -630,10 +622,14 @@ msgstr "Automatisk udfyldning af adresseinput"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "begrænser mængden af resultater, 1 < grænse < 10, standard: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -722,11 +718,11 @@ msgstr "Køb en ordre"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
-"Send venligst attributterne som en streng formateret som attr1=værdi1,"
-"attr2=værdi2"
+"Send venligst attributterne som en streng formateret som "
+"attr1=værdi1,attr2=værdi2"
 
 #: core/graphene/mutations.py:485
 msgid "original address string provided by the user"
@@ -779,10 +775,12 @@ msgstr "Markup-procentdel"
 #: core/graphene/object_types.py:110
 msgid "which attributes and values can be used for filtering this category."
 msgstr ""
-"Hvilke attributter og værdier, der kan bruges til at filtrere denne kategori."
+"Hvilke attributter og værdier, der kan bruges til at filtrere denne "
+"kategori."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
 "Minimums- og maksimumspriser for produkter i denne kategori, hvis de er "
 "tilgængelige."
@@ -1069,7 +1067,8 @@ msgstr "Attribut for denne værdi"
 msgid "the specific product associated with this attribute's value"
 msgstr "Det specifikke produkt, der er knyttet til denne attributs værdi"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Tilknyttet produkt"
 
@@ -1236,9 +1235,11 @@ msgid "feedback comments"
 msgstr "Kommentarer til feedback"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
-"Henviser til det specifikke produkt i en ordre, som denne feedback handler om"
+"Henviser til det specifikke produkt i en ordre, som denne feedback handler "
+"om"
 
 #: core/models.py:424
 msgid "related order product"
@@ -1287,8 +1288,8 @@ msgstr "Bestillingsstatus"
 #: core/models.py:481 core/models.py:800
 msgid "json structure of notifications to display to users"
 msgstr ""
-"JSON-struktur af meddelelser, der skal vises til brugerne, i admin UI bruges "
-"tabelvisningen"
+"JSON-struktur af meddelelser, der skal vises til brugerne, i admin UI bruges"
+" tabelvisningen"
 
 #: core/models.py:487
 msgid "json representation of order attributes for this order"
@@ -1338,8 +1339,8 @@ msgstr "Du kan ikke tilføje inaktive produkter til en ordre"
 msgid "you cannot add more products than available in stock"
 msgstr "Du kan ikke tilføje flere produkter, end der er på lager"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} findes ikke: {product_uuid}."
@@ -1347,7 +1348,8 @@ msgstr "{name} findes ikke: {product_uuid}."
 #: core/models.py:586 core/models.py:607 core/models.py:615
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr ""
-"Du kan ikke fjerne produkter fra en ordre, der ikke er en igangværende ordre."
+"Du kan ikke fjerne produkter fra en ordre, der ikke er en igangværende "
+"ordre."
 
 #: core/models.py:603
 #, python-brace-format
@@ -1821,8 +1823,8 @@ msgstr "Hej %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Tak for din ordre #%(order.pk)s! Vi er glade for at kunne informere dig om, "
 "at vi har taget din ordre i brug. Nedenfor er detaljerne om din ordre:"
@@ -1907,8 +1909,8 @@ msgstr "Nøgle"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Tak for din bestilling! Vi er glade for at kunne bekræfte dit køb. Nedenfor "
 "er detaljerne om din ordre:"
@@ -1974,7 +1976,8 @@ msgstr "Parameteren NOMINATIM_URL skal være konfigureret!"
 #, python-brace-format
 msgid "image dimensions should not exceed w{max_width} x h{max_height} pixels"
 msgstr ""
-"Billedets dimensioner bør ikke overstige w{max_width} x h{max_height} pixels."
+"Billedets dimensioner bør ikke overstige w{max_width} x h{max_height} "
+"pixels."
 
 #: core/validators.py:22
 msgid "invalid phone number format"
@@ -1992,6 +1995,3 @@ msgstr "Favicon ikke fundet"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Fejl i geokodning: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Oversættelser"

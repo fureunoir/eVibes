@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ar-AR\n"
+"Language: ar-ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -93,8 +93,8 @@ msgstr "حذف مستخدم"
 #: vibes_auth/docs/drf/viewsets.py:32
 msgid "reset a user's password by sending a reset password email"
 msgstr ""
-"إعادة تعيين كلمة مرور المستخدم عن طريق إرسال بريد إلكتروني لإعادة تعيين كلمة "
-"المرور"
+"إعادة تعيين كلمة مرور المستخدم عن طريق إرسال بريد إلكتروني لإعادة تعيين كلمة"
+" المرور"
 
 #: vibes_auth/docs/drf/viewsets.py:37
 msgid "handle avatar upload for a user"
@@ -123,7 +123,7 @@ msgstr "معرّف المستخدم الذي تم ترميزه بـ b64 الذي
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "كلمة المرور ضعيفة جداً"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -163,9 +163,10 @@ msgstr "الرمز غير صالح!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"المنتجات التي شاهدها هذا المستخدم مؤخرًا (بحد أقصى 48)، بترتيب زمني عكسي."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -422,9 +423,3 @@ msgstr "تمت إعادة تعيين كلمة المرور بنجاح!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "لقد قمت بتفعيل الحساب بالفعل..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "المنتجات التي تم عرضها مؤخراً"
-
-#~ msgid "recently viwed"
-#~ msgstr "تمت مشاهدته مؤخراً"

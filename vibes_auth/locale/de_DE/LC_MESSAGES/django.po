@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: de-DE\n"
+"Language: de-de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -121,12 +121,12 @@ msgstr "Aktivierungslink ist ungültig oder Konto bereits aktiviert"
 #: vibes_auth/graphene/mutations.py:41
 msgid "the user's b64-encoded uuid who referred the new user to us."
 msgstr ""
-"Die b64-kodierte uuid des Benutzers, der den neuen Benutzer an uns verwiesen "
-"hat."
+"Die b64-kodierte uuid des Benutzers, der den neuen Benutzer an uns verwiesen"
+" hat."
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "Das Passwort ist zu schwach"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -166,9 +166,11 @@ msgstr "Token ist ungültig!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"Die Produkte, die dieser Benutzer zuletzt angesehen hat (maximal 48), in "
+"umgekehrter chronologischer Reihenfolge."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -342,8 +344,8 @@ msgstr ""
 #: vibes_auth/templates/user_reset_password_email.html:88
 msgid "if you did not send this request, please ignore this email."
 msgstr ""
-"Wenn Sie diese Anfrage nicht gesendet haben, ignorieren Sie bitte diese E-"
-"Mail."
+"Wenn Sie diese Anfrage nicht gesendet haben, ignorieren Sie bitte diese "
+"E-Mail."
 
 #: vibes_auth/templates/user_reset_password_email.html:89
 #, python-format
@@ -382,8 +384,7 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Wenn die obige Schaltfläche nicht funktioniert, kopieren Sie bitte die "
-"folgende URL und fügen Sie sie in Ihren Browser ein\n"
+"Wenn die obige Schaltfläche nicht funktioniert, kopieren Sie bitte die folgende URL und fügen Sie sie in Ihren Browser ein\n"
 "                            in Ihren Webbrowser ein:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -429,9 +430,3 @@ msgstr "Das Passwort wurde erfolgreich zurückgesetzt!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Sie haben das Konto bereits aktiviert..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Zuletzt angesehene Produkte"
-
-#~ msgid "recently viwed"
-#~ msgstr "Kürzlich gesehen"

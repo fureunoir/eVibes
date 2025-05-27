@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: it-IT\n"
+"Language: it-it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -124,7 +124,7 @@ msgstr "L'uuid b64-encoded dell'utente che ci ha segnalato il nuovo utente."
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "La password è troppo debole"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -164,9 +164,11 @@ msgstr "Il gettone non è valido!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"I prodotti che questo utente ha visualizzato più di recente (max 48), in "
+"ordine cronologico inverso."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -425,9 +427,3 @@ msgstr "La password è stata reimpostata con successo!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Avete già attivato l'account..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Prodotti visti di recente"
-
-#~ msgid "recently viwed"
-#~ msgstr "Visti di recente"

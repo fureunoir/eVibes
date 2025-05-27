@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: cs-CZ\n"
+"Language: cs-cz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,7 +28,8 @@ msgstr "Je aktivní"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "Pokud je nastaveno na false, nemohou tento objekt vidět uživatelé bez "
 "potřebného oprávnění."
@@ -240,7 +241,8 @@ msgstr ""
 "Přepsání existující skupiny atributů s uložením neupravitelných položek"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Přepsání některých polí existující skupiny atributů s uložením "
 "neupravitelných položek"
@@ -292,7 +294,8 @@ msgid "rewrite an existing attribute value saving non-editables"
 msgstr "Přepsání existující hodnoty atributu uložením neupravitelných položek"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Přepsání některých polí existující hodnoty atributu s uložením "
 "neupravitelných položek"
@@ -367,8 +370,8 @@ msgid ""
 "completed using the user's balance; if `force_payment` is used, a "
 "transaction is initiated."
 msgstr ""
-"Dokončí nákup objednávky. Pokud je použito `force_balance`, nákup se dokončí "
-"s použitím zůstatku uživatele; pokud je použito `force_payment`, zahájí se "
+"Dokončí nákup objednávky. Pokud je použito `force_balance`, nákup se dokončí"
+" s použitím zůstatku uživatele; pokud je použito `force_payment`, zahájí se "
 "transakce."
 
 #: core/docs/drf/viewsets.py:185 core/graphene/mutations.py:226
@@ -459,7 +462,8 @@ msgstr "Přidání mnoha produktů do seznamu přání"
 
 #: core/docs/drf/viewsets.py:248
 msgid "adds many products to an wishlist using the provided `product_uuids`"
-msgstr "Přidá mnoho produktů do seznamu přání pomocí zadaných `product_uuids`."
+msgstr ""
+"Přidá mnoho produktů do seznamu přání pomocí zadaných `product_uuids`."
 
 #: core/docs/drf/viewsets.py:253
 msgid "remove many products from wishlist"
@@ -475,28 +479,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filtrování podle jedné nebo více dvojic název/hodnota atributu.  \n"
 "- **Syntaxe**: `attr_name=method-value[;attr2=method2-value2]...`\n"
-"- **Metody** (pokud je vynecháno, výchozí hodnota je `obsahuje`): `iexact`, "
-"`exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, "
-"`endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
-"- **Typování hodnot**: Pro booleany, celá čísla, floaty se nejprve zkouší "
-"JSON (takže můžete předávat seznamy/dicty), `true`/`false`; jinak se s nimi "
-"zachází jako s řetězci.  \n"
-"- **Base64**: předpona `b64-` pro bezpečné zakódování surové hodnoty do URL "
-"base64.  \n"
+"- **Metody** (pokud je vynecháno, výchozí hodnota je `obsahuje`): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- **Typování hodnot**: Pro booleany, celá čísla, floaty se nejprve zkouší JSON (takže můžete předávat seznamy/dicty), `true`/`false`; jinak se s nimi zachází jako s řetězci.  \n"
+"- **Base64**: předpona `b64-` pro bezpečné zakódování surové hodnoty do URL base64.  \n"
 "Příklady:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
@@ -555,12 +549,10 @@ msgstr "(přesně) Digitální vs. fyzické"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Seznam polí oddělených čárkou, podle kterých se má třídit. Pro sestupné "
-"řazení použijte předponu `-`.  \n"
+"Seznam polí oddělených čárkou, podle kterých se má třídit. Pro sestupné řazení použijte předponu `-`.  \n"
 "**Povolené:** uuid, rating, name, slug, created, modified, price, random"
 
 #: core/docs/drf/viewsets.py:375
@@ -623,10 +615,14 @@ msgstr "Automatické dokončování zadávání adresy"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "omezuje množství výsledků, 1 < limit < 10, výchozí: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -715,11 +711,11 @@ msgstr "Koupit objednávku"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
-"Prosím, pošlete atributy jako řetězec ve formátu attr1=hodnota1,"
-"attr2=hodnota2."
+"Prosím, pošlete atributy jako řetězec ve formátu "
+"attr1=hodnota1,attr2=hodnota2."
 
 #: core/graphene/mutations.py:485
 msgid "original address string provided by the user"
@@ -774,9 +770,11 @@ msgid "which attributes and values can be used for filtering this category."
 msgstr "Které atributy a hodnoty lze použít pro filtrování této kategorie."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
-"Minimální a maximální ceny produktů v této kategorii, pokud jsou k dispozici."
+"Minimální a maximální ceny produktů v této kategorii, pokud jsou k "
+"dispozici."
 
 #: core/graphene/object_types.py:210 core/models.py:403
 msgid "vendors"
@@ -1058,7 +1056,8 @@ msgstr "Atribut této hodnoty"
 msgid "the specific product associated with this attribute's value"
 msgstr "Konkrétní produkt spojený s hodnotou tohoto atributu"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Související produkt"
 
@@ -1225,7 +1224,8 @@ msgid "feedback comments"
 msgstr "Zpětná vazba"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
 "Odkazuje na konkrétní produkt v objednávce, kterého se tato zpětná vazba "
 "týká."
@@ -1318,7 +1318,8 @@ msgstr "Uživatel smí mít vždy pouze jednu čekající objednávku!"
 
 #: core/models.py:551
 msgid "you cannot add products to an order that is not a pending one"
-msgstr "Do objednávky, která není v procesu vyřizování, nelze přidat produkty."
+msgstr ""
+"Do objednávky, která není v procesu vyřizování, nelze přidat produkty."
 
 #: core/models.py:556
 msgid "you cannot add inactive products to order"
@@ -1328,8 +1329,8 @@ msgstr "Do objednávky nelze přidat neaktivní produkty"
 msgid "you cannot add more products than available in stock"
 msgstr "Nelze přidat více produktů, než je dostupné na skladě"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} neexistuje: {product_uuid}"
@@ -1810,8 +1811,8 @@ msgstr "Hello %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Děkujeme vám za vaši objednávku #%(order.pk)s! S potěšením Vám oznamujeme, "
 "že jsme Vaši objednávku převzali do práce. Níže jsou uvedeny údaje o vaší "
@@ -1897,8 +1898,8 @@ msgstr "Klíč"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Děkujeme vám za vaši objednávku! S potěšením potvrzujeme váš nákup. Níže "
 "jsou uvedeny údaje o vaší objednávce:"
@@ -1982,6 +1983,3 @@ msgstr "favicon nebyl nalezen"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Chyba v zeměpisném kódování: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Překlady"

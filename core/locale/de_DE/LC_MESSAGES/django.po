@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: de-DE\n"
+"Language: de-de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,8 @@ msgstr "Ist aktiv"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "Wenn auf false gesetzt, kann dieses Objekt von Benutzern ohne die "
 "erforderliche Berechtigung nicht gesehen werden."
@@ -183,10 +184,8 @@ msgid ""
 "apply only a key to read permitted data from cache.\n"
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
-"Wenden Sie nur einen Schlüssel an, um erlaubte Daten aus dem Cache zu "
-"lesen.\n"
-"Schlüssel, Daten und Timeout mit Authentifizierung anwenden, um Daten in den "
-"Cache zu schreiben."
+"Wenden Sie nur einen Schlüssel an, um erlaubte Daten aus dem Cache zu lesen.\n"
+"Schlüssel, Daten und Timeout mit Authentifizierung anwenden, um Daten in den Cache zu schreiben."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -243,7 +242,8 @@ msgstr ""
 "Editierbarkeit"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Umschreiben einiger Felder einer bestehenden Attributgruppe, wobei nicht "
 "editierbare Felder gespeichert werden"
@@ -273,8 +273,8 @@ msgstr ""
 #: core/docs/drf/viewsets.py:84
 msgid "rewrite some fields of an existing attribute saving non-editables"
 msgstr ""
-"Umschreiben einiger Felder eines vorhandenen Attributs, um nicht editierbare "
-"Daten zu speichern"
+"Umschreiben einiger Felder eines vorhandenen Attributs, um nicht editierbare"
+" Daten zu speichern"
 
 #: core/docs/drf/viewsets.py:91
 msgid "list all attribute values (simple view)"
@@ -299,7 +299,8 @@ msgstr ""
 "Editierbarkeit"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Umschreiben einiger Felder eines vorhandenen Attributwerts, wobei nicht "
 "bearbeitbare Daten gespeichert werden"
@@ -328,8 +329,8 @@ msgstr ""
 #: core/docs/drf/viewsets.py:138
 msgid "rewrite some fields of an existing category saving non-editables"
 msgstr ""
-"Umschreiben einiger Felder einer bestehenden Kategorie, um nicht editierbare "
-"Daten zu speichern"
+"Umschreiben einiger Felder einer bestehenden Kategorie, um nicht editierbare"
+" Daten zu speichern"
 
 #: core/docs/drf/viewsets.py:145
 msgid "list all orders (simple view)"
@@ -364,8 +365,8 @@ msgstr ""
 #: core/docs/drf/viewsets.py:167
 msgid "rewrite some fields of an existing order saving non-editables"
 msgstr ""
-"Umschreiben einiger Felder einer bestehenden Kategorie, um nicht editierbare "
-"Daten zu speichern"
+"Umschreiben einiger Felder einer bestehenden Kategorie, um nicht editierbare"
+" Daten zu speichern"
 
 #: core/docs/drf/viewsets.py:171
 msgid "purchase an order"
@@ -388,7 +389,8 @@ msgstr "eine Bestellung kaufen, ohne ein Konto anzulegen"
 #: core/docs/drf/viewsets.py:186
 msgid "finalizes the order purchase for a non-registered user."
 msgstr ""
-"schließt den Kauf einer Bestellung für einen nicht registrierten Benutzer ab."
+"schließt den Kauf einer Bestellung für einen nicht registrierten Benutzer "
+"ab."
 
 #: core/docs/drf/viewsets.py:194
 msgid "add product to order"
@@ -448,8 +450,8 @@ msgstr ""
 #: core/docs/drf/viewsets.py:231
 msgid "rewrite some fields of an existing wishlist saving non-editables"
 msgstr ""
-"Umschreiben einiger Felder eines vorhandenen Attributs, um nicht editierbare "
-"Daten zu speichern"
+"Umschreiben einiger Felder eines vorhandenen Attributs, um nicht editierbare"
+" Daten zu speichern"
 
 #: core/docs/drf/viewsets.py:235
 msgid "add product to wishlist"
@@ -496,29 +498,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filtern Sie nach einem oder mehreren Attributnamen/Wertpaaren.  \n"
 "- **Syntax**: `attr_name=Methode-Wert[;attr2=Methode2-Wert2]...`\n"
-"- **Methoden** (Standardwert ist \"icontains\", wenn nicht angegeben): "
-"`iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, "
-"`istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, "
-"`gt`, `gte`, `in`\n"
-"- **Wert-Typisierung**: JSON wird zuerst versucht (damit man Listen/Dicts "
-"übergeben kann), `true`/`false` für Booleans, Integers, Floats; ansonsten "
-"als String behandelt.  \n"
-"- Base64**: Präfix \"b64-\" für URL-sichere Base64-Kodierung des "
-"Rohwertes.  \n"
+"- **Methoden** (Standardwert ist \"icontains\", wenn nicht angegeben): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- **Wert-Typisierung**: JSON wird zuerst versucht (damit man Listen/Dicts übergeben kann), `true`/`false` für Booleans, Integers, Floats; ansonsten als String behandelt.  \n"
+"- Base64**: Präfix \"b64-\" für URL-sichere Base64-Kodierung des Rohwertes.  \n"
 "Beispiele:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
@@ -546,7 +537,8 @@ msgstr "(genau) Kategorie UUID"
 
 #: core/docs/drf/viewsets.py:306
 msgid "(list) Tag names, case-insensitive"
-msgstr "(Liste) Tag-Namen, Groß- und Kleinschreibung wird nicht berücksichtigt"
+msgstr ""
+"(Liste) Tag-Namen, Groß- und Kleinschreibung wird nicht berücksichtigt"
 
 #: core/docs/drf/viewsets.py:312
 msgid "(gte) Minimum stock price"
@@ -578,12 +570,10 @@ msgstr "(genau) Digital vs. physisch"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Durch Kommata getrennte Liste der Felder, nach denen sortiert werden soll. "
-"Präfix mit \"-\" für absteigend.  \n"
+"Durch Kommata getrennte Liste der Felder, nach denen sortiert werden soll. Präfix mit \"-\" für absteigend.  \n"
 "**Erlaubt:** uuid, rating, name, slug, created, modified, price, random"
 
 #: core/docs/drf/viewsets.py:375
@@ -602,8 +592,8 @@ msgstr "Ein Produkt erstellen"
 #: core/docs/drf/viewsets.py:397
 msgid "rewrite an existing product, preserving non-editable fields"
 msgstr ""
-"Umschreiben eines bestehenden Produkts unter Beibehaltung nicht editierbarer "
-"Felder"
+"Umschreiben eines bestehenden Produkts unter Beibehaltung nicht editierbarer"
+" Felder"
 
 #: core/docs/drf/viewsets.py:412
 msgid ""
@@ -647,10 +637,14 @@ msgstr "Autovervollständigung der Adresseingabe"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl -l pt-br -l ro-ro -l ru-ru -l zh-hans"
+" -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "begrenzt die Anzahl der Ergebnisse, 1 < Limit < 10, Standard: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -741,8 +735,8 @@ msgstr "Eine Bestellung kaufen"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
 "Bitte senden Sie die Attribute als String im Format attr1=wert1,attr2=wert2"
 
@@ -801,9 +795,11 @@ msgstr ""
 "verwendet werden."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
-"Mindest- und Höchstpreise für Produkte in dieser Kategorie, sofern verfügbar."
+"Mindest- und Höchstpreise für Produkte in dieser Kategorie, sofern "
+"verfügbar."
 
 #: core/graphene/object_types.py:210 core/models.py:403
 msgid "vendors"
@@ -1087,7 +1083,8 @@ msgid "the specific product associated with this attribute's value"
 msgstr ""
 "Das spezifische Produkt, das mit dem Wert dieses Attributs verbunden ist"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Zugehöriges Produkt"
 
@@ -1200,7 +1197,8 @@ msgstr "Ist das Produkt digital"
 
 #: core/models.py:301
 msgid "provide a clear identifying name for the product"
-msgstr "Geben Sie einen eindeutigen Namen zur Identifizierung des Produkts an."
+msgstr ""
+"Geben Sie einen eindeutigen Namen zur Identifizierung des Produkts an."
 
 #: core/models.py:302
 msgid "product name"
@@ -1259,10 +1257,11 @@ msgid "feedback comments"
 msgstr "Kommentare zum Feedback"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
-"Verweist auf das spezifische Produkt in einer Bestellung, auf das sich diese "
-"Rückmeldung bezieht"
+"Verweist auf das spezifische Produkt in einer Bestellung, auf das sich diese"
+" Rückmeldung bezieht"
 
 #: core/models.py:424
 msgid "related order product"
@@ -1364,8 +1363,8 @@ msgstr "Sie können keine inaktiven Produkte zur Bestellung hinzufügen"
 msgid "you cannot add more products than available in stock"
 msgstr "Sie können nicht mehr Produkte hinzufügen, als auf Lager sind"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} existiert nicht: {product_uuid}"
@@ -1548,7 +1547,8 @@ msgstr "Kennung des Promo-Codes"
 #: core/models.py:968
 msgid "fixed discount amount applied if percent is not used"
 msgstr ""
-"Fester Rabattbetrag, der angewandt wird, wenn kein Prozentsatz verwendet wird"
+"Fester Rabattbetrag, der angewandt wird, wenn kein Prozentsatz verwendet "
+"wird"
 
 #: core/models.py:969
 msgid "fixed discount amount"
@@ -1699,7 +1699,8 @@ msgstr "SKU des Verkäufers"
 
 #: core/models.py:1130
 msgid "digital file associated with this stock if applicable"
-msgstr "Digitale Datei, die mit diesem Bestand verbunden ist, falls zutreffend"
+msgstr ""
+"Digitale Datei, die mit diesem Bestand verbunden ist, falls zutreffend"
 
 #: core/models.py:1131
 msgid "digital file"
@@ -1860,8 +1861,8 @@ msgstr "Hallo %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Vielen Dank für Ihre Bestellung #%(order.pk)s! Wir freuen uns, Ihnen "
 "mitteilen zu können, dass wir Ihre Bestellung in Arbeit genommen haben. "
@@ -1947,8 +1948,8 @@ msgstr "Schlüssel"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Vielen Dank für Ihre Bestellung! Wir freuen uns, Ihren Kauf zu bestätigen. "
 "Nachstehend finden Sie die Details Ihrer Bestellung:"
@@ -1975,7 +1976,8 @@ msgstr "Sowohl Daten als auch Timeout sind erforderlich"
 
 #: core/utils/caching.py:43
 msgid "invalid timeout value, it must be between 0 and 216000 seconds"
-msgstr "Ungültiger Timeout-Wert, er muss zwischen 0 und 216000 Sekunden liegen"
+msgstr ""
+"Ungültiger Timeout-Wert, er muss zwischen 0 und 216000 Sekunden liegen"
 
 #: core/utils/db.py:7
 #, python-brace-format
@@ -2033,6 +2035,3 @@ msgstr "Favicon nicht gefunden"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Geokodierungsfehler: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Übersetzungen"

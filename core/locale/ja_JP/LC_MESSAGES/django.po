@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ja-JP\n"
+"Language: ja-jp\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,8 +19,7 @@ msgstr "ユニークID"
 
 #: core/abstract.py:12
 msgid "unique id is used to surely identify any database object"
-msgstr ""
-"ユニークIDは、データベースオブジェクトを確実に識別するために使用されます。"
+msgstr "ユニークIDは、データベースオブジェクトを確実に識別するために使用されます。"
 
 #: core/abstract.py:19
 msgid "is active"
@@ -28,10 +27,9 @@ msgstr "アクティブ"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
-msgstr ""
-"falseに設定された場合、このオブジェクトは必要なパーミッションのないユーザーに"
-"は見えない。"
+"if set to false, this object can't be seen by users without needed "
+"permission"
+msgstr "falseに設定された場合、このオブジェクトは必要なパーミッションのないユーザーには見えない。"
 
 #: core/abstract.py:22 core/choices.py:18
 msgid "created"
@@ -183,8 +181,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "許可されたデータをキャッシュから読み出すには、キーのみを適用する。\n"
-"キャッシュにデータを書き込むには、認証付きのキー、データ、タイムアウトを適用"
-"する。"
+"キャッシュにデータを書き込むには、認証付きのキー、データ、タイムアウトを適用する。"
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -214,9 +211,7 @@ msgstr "ビジネスとして注文を購入する"
 msgid ""
 "purchase an order as a business, using the provided `products` with "
 "`product_uuid` and `attributes`."
-msgstr ""
-"提供された `product` と `product_uuid` と `attributes` を使用して、ビジネスと"
-"して注文を購入する。"
+msgstr "提供された `product` と `product_uuid` と `attributes` を使用して、ビジネスとして注文を購入する。"
 
 #: core/docs/drf/viewsets.py:37
 msgid "list all attribute groups (simple view)"
@@ -239,10 +234,9 @@ msgid "rewrite an existing attribute group saving non-editables"
 msgstr "既存の属性グループを書き換えて、編集不可能なものを保存する。"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
-msgstr ""
-"既存の属性グループのいくつかのフィールドを書き換え、編集不可能なものを保存す"
-"る。"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
+msgstr "既存の属性グループのいくつかのフィールドを書き換え、編集不可能なものを保存する。"
 
 #: core/docs/drf/viewsets.py:64
 msgid "list all attributes (simple view)"
@@ -266,8 +260,7 @@ msgstr "既存の属性を書き換える。"
 
 #: core/docs/drf/viewsets.py:84
 msgid "rewrite some fields of an existing attribute saving non-editables"
-msgstr ""
-"既存の属性のいくつかのフィールドを書き換え、編集不可能なものを保存する。"
+msgstr "既存の属性のいくつかのフィールドを書き換え、編集不可能なものを保存する。"
 
 #: core/docs/drf/viewsets.py:91
 msgid "list all attribute values (simple view)"
@@ -290,9 +283,9 @@ msgid "rewrite an existing attribute value saving non-editables"
 msgstr "既存の属性値を書き換える。"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
-msgstr ""
-"既存の属性値のいくつかのフィールドを書き換え、編集不可能な値を保存する。"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
+msgstr "既存の属性値のいくつかのフィールドを書き換え、編集不可能な値を保存する。"
 
 #: core/docs/drf/viewsets.py:118
 msgid "list all categories (simple view)"
@@ -360,9 +353,8 @@ msgid ""
 "completed using the user's balance; if `force_payment` is used, a "
 "transaction is initiated."
 msgstr ""
-"注文の購入を確定する。force_balance` が使用された場合、ユーザーの残高を使用し"
-"て購入が完了します。 `force_payment` が使用された場合、トランザクションが開始"
-"されます。"
+"注文の購入を確定する。force_balance` が使用された場合、ユーザーの残高を使用して購入が完了します。 `force_payment` "
+"が使用された場合、トランザクションが開始されます。"
 
 #: core/docs/drf/viewsets.py:185 core/graphene/mutations.py:226
 msgid "purchase an order without account creation"
@@ -380,8 +372,7 @@ msgstr "注文に商品を追加する"
 msgid ""
 "adds a product to an order using the provided `product_uuid` and "
 "`attributes`."
-msgstr ""
-"指定した `product_uuid` と `attributes` を使用して、商品を注文に追加する。"
+msgstr "指定した `product_uuid` と `attributes` を使用して、商品を注文に追加する。"
 
 #: core/docs/drf/viewsets.py:200
 msgid "remove product from order"
@@ -391,9 +382,7 @@ msgstr "注文から商品を削除する"
 msgid ""
 "removes a product from an order using the provided `product_uuid` and "
 "`attributes`."
-msgstr ""
-"指定された `product_uuid` と `attributes` を使用して、注文から商品を削除す"
-"る。"
+msgstr "指定された `product_uuid` と `attributes` を使用して、注文から商品を削除する。"
 
 #: core/docs/drf/viewsets.py:209
 msgid "list all wishlists (simple view)"
@@ -425,8 +414,7 @@ msgstr "既存の属性を書き換える。"
 
 #: core/docs/drf/viewsets.py:231
 msgid "rewrite some fields of an existing wishlist saving non-editables"
-msgstr ""
-"既存の属性のいくつかのフィールドを書き換え、編集不可能なものを保存する。"
+msgstr "既存の属性のいくつかのフィールドを書き換え、編集不可能なものを保存する。"
 
 #: core/docs/drf/viewsets.py:235
 msgid "add product to wishlist"
@@ -442,8 +430,7 @@ msgstr "ウィッシュリストから商品を削除する"
 
 #: core/docs/drf/viewsets.py:242
 msgid "removes a product from an wishlist using the provided `product_uuid`"
-msgstr ""
-"指定された `product_uuid` を使ってウィッシュリストから商品を削除します。"
+msgstr "指定された `product_uuid` を使ってウィッシュリストから商品を削除します。"
 
 #: core/docs/drf/viewsets.py:247
 msgid "add many products to wishlist"
@@ -451,8 +438,7 @@ msgstr "ウィッシュリストに多くの商品を追加する"
 
 #: core/docs/drf/viewsets.py:248
 msgid "adds many products to an wishlist using the provided `product_uuids`"
-msgstr ""
-"指定された `product_uuids` を使ってウィッシュリストに多くの商品を追加する。"
+msgstr "指定された `product_uuids` を使ってウィッシュリストに多くの商品を追加する。"
 
 #: core/docs/drf/viewsets.py:253
 msgid "remove many products from wishlist"
@@ -461,34 +447,24 @@ msgstr "注文から商品を削除する"
 #: core/docs/drf/viewsets.py:254
 msgid ""
 "removes many products from an wishlist using the provided `product_uuids`"
-msgstr ""
-"指定された `product_uuids` を使ってウィッシュリストから多くの商品を削除する。"
+msgstr "指定された `product_uuids` を使ってウィッシュリストから多くの商品を削除する。"
 
 #: core/docs/drf/viewsets.py:261
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "1つまたは複数の属性名/値のペアでフィルタリングします。  \n"
 "- シンタックス**：attr_name=method-value[;attr2=method2-value2]...`。\n"
-"- メソッド** (省略された場合のデフォルトは `icontains`)：`iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
-"- 値の型付け**：boolean, integer, float の場合は `true`/`false`; それ以外の場"
-"合は文字列として扱う。  \n"
-"- それ以外は文字列として扱われる。 **Base64**: `b64-` をプレフィックスとして"
-"つけると、生の値を URL-safe base64-encode することができる。  \n"
+"- メソッド** (省略された場合のデフォルトは `icontains`)：`iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
+"- 値の型付け**：boolean, integer, float の場合は `true`/`false`; それ以外の場合は文字列として扱う。  \n"
+"- それ以外は文字列として扱われる。 **Base64**: `b64-` をプレフィックスとしてつけると、生の値を URL-safe base64-encode することができる。  \n"
 "例  \n"
 "color=exact-red`、`size=gt-10`、`features=in-[\"wifi\", \"bluetooth\"]`、\n"
 "b64-description=icontains-aGVhdC1jb2xk`。"
@@ -547,12 +523,10 @@ msgstr "(正確には）デジタルとフィジカル"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"カンマ区切りの並べ替えフィールドのリスト。降順の場合は `-` をプレフィックスと"
-"してつける。  \n"
+"カンマ区切りの並べ替えフィールドのリスト。降順の場合は `-` をプレフィックスとしてつける。  \n"
 "**許可:** uuid, rating, name, slug, created, modified, price, random"
 
 #: core/docs/drf/viewsets.py:375
@@ -575,9 +549,7 @@ msgstr "編集不可能なフィールドを保持したまま、既存の製品
 #: core/docs/drf/viewsets.py:412
 msgid ""
 "update some fields of an existing product, preserving non-editable fields"
-msgstr ""
-"編集不可能なフィールドを保持したまま、既存の製品の一部のフィールドを更新す"
-"る。"
+msgstr "編集不可能なフィールドを保持したまま、既存の製品の一部のフィールドを更新する。"
 
 #: core/docs/drf/viewsets.py:427
 msgid "delete a product"
@@ -614,10 +586,14 @@ msgstr "オートコンプリート住所入力"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l n-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "結果を制限する, 1 < limit < 10, デフォルト: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -706,10 +682,9 @@ msgstr "注文する"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
-msgstr ""
-"属性は、attr1=value1,attr2=value2のような形式の文字列として送信してください。"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
+msgstr "属性は、attr1=value1,attr2=value2のような形式の文字列として送信してください。"
 
 #: core/graphene/mutations.py:485
 msgid "original address string provided by the user"
@@ -764,7 +739,8 @@ msgid "which attributes and values can be used for filtering this category."
 msgstr "このカテゴリのフィルタリングに使用できる属性と値。"
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr "このカテゴリーの商品の最低価格と最高価格がある場合。"
 
 #: core/graphene/object_types.py:210 core/models.py:403
@@ -1044,7 +1020,8 @@ msgstr "この値の属性"
 msgid "the specific product associated with this attribute's value"
 msgstr "この属性の値に関連する特定の製品"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "関連製品"
 
@@ -1209,7 +1186,8 @@ msgid "feedback comments"
 msgstr "フィードバック・コメント"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr "このフィードバックが対象としている注文の特定の製品を参照する。"
 
 #: core/models.py:424
@@ -1258,8 +1236,7 @@ msgstr "注文状況"
 
 #: core/models.py:481 core/models.py:800
 msgid "json structure of notifications to display to users"
-msgstr ""
-"ユーザーに表示する通知のJSON構造、管理UIではテーブルビューが使用されます。"
+msgstr "ユーザーに表示する通知のJSON構造、管理UIではテーブルビューが使用されます。"
 
 #: core/models.py:487
 msgid "json representation of order attributes for this order"
@@ -1309,8 +1286,8 @@ msgstr "アクティブでない商品を注文に追加することはできま
 msgid "you cannot add more products than available in stock"
 msgstr "在庫以上の商品を追加することはできません。"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name}が存在しません：{product_uuid}が存在しません。"
@@ -1356,9 +1333,7 @@ msgstr "注文を完了するための資金不足"
 msgid ""
 "you cannot buy without registration, please provide the following "
 "information: customer name, customer email, customer phone number"
-msgstr ""
-"ご登録がない場合はご購入いただけませんので、以下の情報をお知らせください：お"
-"客様のお名前、お客様のEメール、お客様の電話番号"
+msgstr "ご登録がない場合はご購入いただけませんので、以下の情報をお知らせください：お客様のお名前、お客様のEメール、お客様の電話番号"
 
 #: core/models.py:735
 msgid "invalid payment method"
@@ -1540,9 +1515,7 @@ msgstr "プロモコード"
 msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
-msgstr ""
-"割引の種類は1つだけ（金額またはパーセント）定義されるべきで、両方またはどちら"
-"も定義してはならない。"
+msgstr "割引の種類は1つだけ（金額またはパーセント）定義されるべきで、両方またはどちらも定義してはならない。"
 
 #: core/models.py:1030
 msgid "promocode already used"
@@ -1790,11 +1763,9 @@ msgstr "こんにちは、%(order.user.first_name)sです、"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
-msgstr ""
-"ご注文ありがとうございます#%(order.pk)s！ご注文を承りましたことをお知らせいた"
-"します。以下、ご注文の詳細です："
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
+msgstr "ご注文ありがとうございます#%(order.pk)s！ご注文を承りましたことをお知らせいたします。以下、ご注文の詳細です："
 
 #: core/templates/digital_order_created_email.html:110
 #: core/templates/digital_order_delivered_email.html:110
@@ -1817,9 +1788,7 @@ msgstr "合計価格"
 msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(config.EMAIL_HOST_USER)s."
-msgstr ""
-"ご不明な点がございましたら、%(config.EMAIL_HOST_USER)sまでお気軽にお問い合わ"
-"せください。"
+msgstr "ご不明な点がございましたら、%(config.EMAIL_HOST_USER)sまでお気軽にお問い合わせください。"
 
 #: core/templates/digital_order_created_email.html:130
 #, python-format
@@ -1847,8 +1816,7 @@ msgstr "こんにちは、%(user_first_name)sです、"
 msgid ""
 "we have successfully processed your order №%(order_uuid)s! below are the "
 "details of your order:"
-msgstr ""
-"ご注文の№%(order_uuid)sが正常に処理されました！以下はご注文の詳細です："
+msgstr "ご注文の№%(order_uuid)sが正常に処理されました！以下はご注文の詳細です："
 
 #: core/templates/digital_order_delivered_email.html:127
 msgid "additional information"
@@ -1859,9 +1827,7 @@ msgstr "追加情報"
 msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(contact_email)s."
-msgstr ""
-"ご不明な点がございましたら、%(contact_email)sまでお気軽にお問い合わせくださ"
-"い。"
+msgstr "ご不明な点がございましたら、%(contact_email)sまでお気軽にお問い合わせください。"
 
 #: core/templates/digital_order_delivered_email.html:162
 #, python-format
@@ -1875,11 +1841,9 @@ msgstr "キー"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
-msgstr ""
-"ご注文ありがとうございます！ご購入を確認させていただきました。以下、ご注文の"
-"詳細です："
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
+msgstr "ご注文ありがとうございます！ご購入を確認させていただきました。以下、ご注文の詳細です："
 
 #: core/templates/shipped_order_created_email.html:109
 #: core/templates/shipped_order_delivered_email.html:109
@@ -1959,6 +1923,3 @@ msgstr "ファビコンが見つかりません"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "ジオコーディングエラー：{e}"
-
-#~ msgid "translations"
-#~ msgstr "翻訳"

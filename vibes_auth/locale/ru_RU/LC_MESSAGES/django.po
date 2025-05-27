@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ru-RU\n"
+"Language: ru-ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "Пароль слишком слабый"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -165,9 +165,11 @@ msgstr "Токен недействителен!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"Продукты, которые этот пользователь просматривал в последнее время (не более"
+" 48), в обратном хронологическом порядке."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -379,8 +381,7 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Если кнопка выше не работает, пожалуйста, скопируйте и вставьте следующий "
-"URL-адрес\n"
+"Если кнопка выше не работает, пожалуйста, скопируйте и вставьте следующий URL-адрес\n"
 "                            в свой веб-браузер:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -426,9 +427,3 @@ msgstr "Пароль был успешно сброшен!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Вы уже активировали учетную запись..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Недавно просмотренные товары"
-
-#~ msgid "recently viwed"
-#~ msgstr "Недавно просмотренные"

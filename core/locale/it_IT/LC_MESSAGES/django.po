@@ -1,9 +1,4 @@
-# eVibes Translations.
-# Copyright (C) 2025 Egor "fureunoir" Gorbunov
-# This file is distributed under the same license as the eVibes package.
-# EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
@@ -12,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: it-IT\n"
+"Language: it-it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,10 +29,11 @@ msgstr "È attivo"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
-"Se impostato a false, questo oggetto non può essere visto dagli utenti senza "
-"i necessari permessi."
+"Se impostato a false, questo oggetto non può essere visto dagli utenti senza"
+" i necessari permessi."
 
 #: core/abstract.py:22 core/choices.py:18
 msgid "created"
@@ -189,8 +185,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "Applicare solo una chiave per leggere i dati consentiti dalla cache.\n"
-"Applicare chiave, dati e timeout con autenticazione per scrivere dati nella "
-"cache."
+"Applicare chiave, dati e timeout con autenticazione per scrivere dati nella cache."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -247,7 +242,8 @@ msgstr ""
 "Riscrivere un gruppo di attributi esistente salvando i non modificabili"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di un gruppo di attributi esistente salvando quelli "
 "non modificabili"
@@ -302,7 +298,8 @@ msgstr ""
 "modificabili"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Riscrivere alcuni campi di un valore di attributo esistente salvando i "
 "valori non modificabili"
@@ -331,8 +328,8 @@ msgstr ""
 #: core/docs/drf/viewsets.py:138
 msgid "rewrite some fields of an existing category saving non-editables"
 msgstr ""
-"Riscrivere alcuni campi di una categoria esistente salvando gli elementi non "
-"modificabili"
+"Riscrivere alcuni campi di una categoria esistente salvando gli elementi non"
+" modificabili"
 
 #: core/docs/drf/viewsets.py:145
 msgid "list all orders (simple view)"
@@ -368,8 +365,8 @@ msgstr ""
 #: core/docs/drf/viewsets.py:167
 msgid "rewrite some fields of an existing order saving non-editables"
 msgstr ""
-"Riscrivere alcuni campi di una categoria esistente salvando gli elementi non "
-"modificabili"
+"Riscrivere alcuni campi di una categoria esistente salvando gli elementi non"
+" modificabili"
 
 #: core/docs/drf/viewsets.py:171
 msgid "purchase an order"
@@ -382,8 +379,8 @@ msgid ""
 "transaction is initiated."
 msgstr ""
 "Finalizza l'acquisto dell'ordine. Se si utilizza `forza_bilancio`, "
-"l'acquisto viene completato utilizzando il saldo dell'utente; se si utilizza "
-"`forza_pagamento`, viene avviata una transazione."
+"l'acquisto viene completato utilizzando il saldo dell'utente; se si utilizza"
+" `forza_pagamento`, viene avviata una transazione."
 
 #: core/docs/drf/viewsets.py:185 core/graphene/mutations.py:226
 msgid "purchase an order without account creation"
@@ -424,8 +421,8 @@ msgstr "Elenco di tutti gli attributi (vista semplice)"
 #: core/docs/drf/viewsets.py:210
 msgid "for non-staff users, only their own wishlists are returned."
 msgstr ""
-"Per gli utenti che non fanno parte del personale, vengono restituite solo le "
-"loro liste dei desideri."
+"Per gli utenti che non fanno parte del personale, vengono restituite solo le"
+" loro liste dei desideri."
 
 #: core/docs/drf/viewsets.py:214
 msgid "retrieve a single wishlist (detailed view)"
@@ -498,28 +495,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filtrare in base a una o più coppie nome/valore dell'attributo.  \n"
 "- **Sintassi**: `nome_attraverso=metodo-valore[;attr2=metodo2-valore2]...`\n"
-"- **Metodi** (predefiniti a `icontains` se omessi): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
-"- **Tipo di valore**: JSON viene tentato per primo (in modo da poter passare "
-"liste/dict), `true`/`false` per booleani, interi, float; altrimenti viene "
-"trattato come stringa.  \n"
-"- **Base64**: prefisso con `b64-` per codificare in base64 il valore "
-"grezzo.  \n"
+"- **Metodi** (predefiniti a `icontains` se omessi): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
+"- **Tipo di valore**: JSON viene tentato per primo (in modo da poter passare liste/dict), `true`/`false` per booleani, interi, float; altrimenti viene trattato come stringa.  \n"
+"- **Base64**: prefisso con `b64-` per codificare in base64 il valore grezzo.  \n"
 "Esempi:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\", \"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
@@ -579,12 +566,10 @@ msgstr "(esatto) Digitale e fisico"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Elenco separato da virgole dei campi da ordinare. Prefisso con `-` per "
-"l'ordinamento discendente.  \n"
+"Elenco separato da virgole dei campi da ordinare. Prefisso con `-` per l'ordinamento discendente.  \n"
 "**Consentito:** uuid, rating, nome, slug, creato, modificato, prezzo, casuale"
 
 #: core/docs/drf/viewsets.py:375
@@ -602,7 +587,8 @@ msgstr "Creare un prodotto"
 
 #: core/docs/drf/viewsets.py:397
 msgid "rewrite an existing product, preserving non-editable fields"
-msgstr "Riscrivere un prodotto esistente, preservando i campi non modificabili"
+msgstr ""
+"Riscrivere un prodotto esistente, preservando i campi non modificabili"
 
 #: core/docs/drf/viewsets.py:412
 msgid ""
@@ -646,10 +632,14 @@ msgstr "Inserimento automatico dell'indirizzo"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "limita la quantità di risultati, 1 < limite < 10, default: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -709,7 +699,8 @@ msgstr ""
 #: core/graphene/mutations.py:218 core/graphene/mutations.py:388
 #: core/graphene/mutations.py:422 core/viewsets.py:261
 msgid "wrong type came from order.buy() method: {type(instance)!s}"
-msgstr "Il metodo order.buy() ha fornito un tipo sbagliato: {type(instance)!s}"
+msgstr ""
+"Il metodo order.buy() ha fornito un tipo sbagliato: {type(instance)!s}"
 
 #: core/graphene/mutations.py:272
 msgid "add a product to the wishlist"
@@ -739,11 +730,11 @@ msgstr "Acquistare un ordine"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
-"Inviare gli attributi come stringa formattata come attr1=valore1,"
-"attr2=valore2"
+"Inviare gli attributi come stringa formattata come "
+"attr1=valore1,attr2=valore2"
 
 #: core/graphene/mutations.py:485
 msgid "original address string provided by the user"
@@ -800,7 +791,8 @@ msgstr ""
 "categoria."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
 "Prezzi minimi e massimi per i prodotti di questa categoria, se disponibili."
 
@@ -1084,7 +1076,8 @@ msgstr "Attributo di questo valore"
 msgid "the specific product associated with this attribute's value"
 msgstr "Il prodotto specifico associato al valore di questo attributo"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Prodotto associato"
 
@@ -1252,7 +1245,8 @@ msgid "feedback comments"
 msgstr "Commenti di feedback"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
 "Riferisce il prodotto specifico in un ordine di cui si tratta il feedback."
 
@@ -1356,8 +1350,8 @@ msgid "you cannot add more products than available in stock"
 msgstr ""
 "Non è possibile aggiungere più prodotti di quelli disponibili in magazzino"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} non esiste: {product_uuid}"
@@ -1535,7 +1529,8 @@ msgstr "Identificatore del codice promozionale"
 
 #: core/models.py:968
 msgid "fixed discount amount applied if percent is not used"
-msgstr "Importo fisso dello sconto applicato se non si utilizza la percentuale"
+msgstr ""
+"Importo fisso dello sconto applicato se non si utilizza la percentuale"
 
 #: core/models.py:969
 msgid "fixed discount amount"
@@ -1596,8 +1591,8 @@ msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
 msgstr ""
-"È necessario definire un solo tipo di sconto (importo o percentuale), ma non "
-"entrambi o nessuno."
+"È necessario definire un solo tipo di sconto (importo o percentuale), ma non"
+" entrambi o nessuno."
 
 #: core/models.py:1030
 msgid "promocode already used"
@@ -1845,8 +1840,8 @@ msgstr "Hello %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Grazie per il vostro ordine #%(order.pk)s! Siamo lieti di informarla che "
 "abbiamo preso in carico il suo ordine. Di seguito sono riportati i dettagli "
@@ -1874,8 +1869,8 @@ msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(config.EMAIL_HOST_USER)s."
 msgstr ""
-"Per qualsiasi domanda, non esitate a contattare il nostro supporto al numero "
-"%(config.EMAIL_HOST_USER)s."
+"Per qualsiasi domanda, non esitate a contattare il nostro supporto al numero"
+" %(config.EMAIL_HOST_USER)s."
 
 #: core/templates/digital_order_created_email.html:130
 #, python-format
@@ -1917,8 +1912,8 @@ msgid ""
 "if you have any questions, feel free to contact our support at "
 "%(contact_email)s."
 msgstr ""
-"Per qualsiasi domanda, non esitate a contattare il nostro supporto al numero "
-"%(contact_email)s."
+"Per qualsiasi domanda, non esitate a contattare il nostro supporto al numero"
+" %(contact_email)s."
 
 #: core/templates/digital_order_delivered_email.html:162
 #, python-format
@@ -1932,8 +1927,8 @@ msgstr "Chiave"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Grazie per il vostro ordine! Siamo lieti di confermare il suo acquisto. Di "
 "seguito sono riportati i dettagli dell'ordine:"
@@ -2000,8 +1995,8 @@ msgstr "Il parametro NOMINATIM_URL deve essere configurato!"
 #, python-brace-format
 msgid "image dimensions should not exceed w{max_width} x h{max_height} pixels"
 msgstr ""
-"Le dimensioni dell'immagine non devono superare w{max_width} x h{max_height} "
-"pixel"
+"Le dimensioni dell'immagine non devono superare w{max_width} x h{max_height}"
+" pixel"
 
 #: core/validators.py:22
 msgid "invalid phone number format"
@@ -2019,6 +2014,3 @@ msgstr "favicon non trovata"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Errore di geocodifica: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Traduzioni"

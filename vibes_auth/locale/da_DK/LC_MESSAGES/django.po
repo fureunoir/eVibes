@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: da-DK\n"
+"Language: da-dk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,7 +123,7 @@ msgstr "Brugerens b64-kodede uuid, som henviste den nye bruger til os."
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "Adgangskoden er for svag"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -163,9 +163,11 @@ msgstr "Token er ugyldig!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"De produkter, som denne bruger har set for nylig (maks. 48), i omvendt "
+"kronologisk rækkefølge."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -377,8 +379,7 @@ msgid ""
 "if the button above does not work, please copy and paste the following URL\n"
 "                            into your web browser:"
 msgstr ""
-"Hvis ovenstående knap ikke virker, bedes du kopiere og indsætte følgende "
-"URL\n"
+"Hvis ovenstående knap ikke virker, bedes du kopiere og indsætte følgende URL\n"
 "                            i din webbrowser:"
 
 #: vibes_auth/templates/user_verification_email.html:101
@@ -424,9 +425,3 @@ msgstr "Adgangskoden er blevet nulstillet med succes!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Du har allerede aktiveret kontoen..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Nyligt viste produkter"
-
-#~ msgid "recently viwed"
-#~ msgstr "Set for nylig"

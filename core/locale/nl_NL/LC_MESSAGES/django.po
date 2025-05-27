@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: nl-NL\n"
+"Language: nl-nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,7 +27,8 @@ msgstr "Is actief"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
 "Als false is ingesteld, kan dit object niet worden gezien door gebruikers "
 "zonder de benodigde toestemming"
@@ -182,8 +183,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "Alleen een sleutel gebruiken om toegestane gegevens uit de cache te lezen.\n"
-"Sleutel, gegevens en time-out met verificatie toepassen om gegevens naar de "
-"cache te schrijven."
+"Sleutel, gegevens en time-out met verificatie toepassen om gegevens naar de cache te schrijven."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -241,7 +241,8 @@ msgstr ""
 "opslaan"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Enkele velden van een bestaande attribuutgroep herschrijven door niet-"
 "wijzigbare velden op te slaan"
@@ -296,7 +297,8 @@ msgstr ""
 "attributen worden opgeslagen"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Herschrijf sommige velden van een bestaande attribuutwaarde door niet-"
 "wijzigbare velden op te slaan"
@@ -334,7 +336,8 @@ msgstr "Alle categorieën weergeven (eenvoudige weergave)"
 #: core/docs/drf/viewsets.py:146
 msgid "for non-staff users, only their own orders are returned."
 msgstr ""
-"Voor niet-personeelsleden worden alleen hun eigen bestellingen geretourneerd."
+"Voor niet-personeelsleden worden alleen hun eigen bestellingen "
+"geretourneerd."
 
 #: core/docs/drf/viewsets.py:150
 msgid "retrieve a single order (detailed view)"
@@ -383,7 +386,8 @@ msgstr "een bestelling kopen zonder een account aan te maken"
 #: core/docs/drf/viewsets.py:186
 msgid "finalizes the order purchase for a non-registered user."
 msgstr ""
-"Rondt de aankoop van de bestelling af voor een niet-geregistreerde gebruiker."
+"Rondt de aankoop van de bestelling af voor een niet-geregistreerde "
+"gebruiker."
 
 #: core/docs/drf/viewsets.py:194
 msgid "add product to order"
@@ -491,28 +495,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filter op een of meer attribuutnaam-/waardeparen.  \n"
 "- **Syntaxis**: `attr_name=methode-waarde[;attr2=methode2-waarde2]...`\n"
-"- **Methodes** (standaard op `icontains` indien weggelaten): `iexact`, "
-"`exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, "
-"`endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
-"- Waarde typen**: JSON wordt eerst geprobeerd (zodat je lijsten/dicten kunt "
-"doorgeven), `true`/`false` voor booleans, integers, floats; anders behandeld "
-"als string.  \n"
-"- **Base64**: prefix met `b64-` om URL-veilige base64-encodering van de ruwe "
-"waarde.  \n"
+"- **Methodes** (standaard op `icontains` indien weggelaten): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`.\n"
+"- Waarde typen**: JSON wordt eerst geprobeerd (zodat je lijsten/dicten kunt doorgeven), `true`/`false` voor booleans, integers, floats; anders behandeld als string.  \n"
+"- **Base64**: prefix met `b64-` om URL-veilige base64-encodering van de ruwe waarde.  \n"
 "Voorbeelden:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\",\"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`."
@@ -571,14 +565,11 @@ msgstr "(exact) Digitaal vs. fysiek"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Door komma's gescheiden lijst van velden om op te sorteren. Voorvoegsel met "
-"`-` voor aflopend.  \n"
-"**Toegestaan:** uuid, beoordeling, naam, slug, gemaakt, gewijzigd, prijs, "
-"willekeurig"
+"Door komma's gescheiden lijst van velden om op te sorteren. Voorvoegsel met `-` voor aflopend.  \n"
+"**Toegestaan:** uuid, beoordeling, naam, slug, gemaakt, gewijzigd, prijs, willekeurig"
 
 #: core/docs/drf/viewsets.py:375
 msgid "retrieve a single product (detailed view)"
@@ -640,10 +631,14 @@ msgstr "Automatische adresinvoer"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a payments -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "beperkt de hoeveelheid resultaten, 1 < limiet < 10, standaard: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -732,8 +727,8 @@ msgstr "Een bestelling kopen"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
 "Stuur de attributen als de string opgemaakt als attr1=waarde1,attr2=waarde2"
 
@@ -792,7 +787,8 @@ msgstr ""
 "filteren."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
 "Minimale en maximale prijzen voor producten in deze categorie, indien "
 "beschikbaar."
@@ -1078,7 +1074,8 @@ msgstr "Attribuut van deze waarde"
 msgid "the specific product associated with this attribute's value"
 msgstr "Het specifieke product geassocieerd met de waarde van dit kenmerk"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Bijbehorend product"
 
@@ -1246,7 +1243,8 @@ msgid "feedback comments"
 msgstr "Reacties"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
 "Verwijst naar het specifieke product in een bestelling waar deze feedback "
 "over gaat"
@@ -1351,8 +1349,8 @@ msgstr "U kunt geen inactieve producten toevoegen aan uw bestelling"
 msgid "you cannot add more products than available in stock"
 msgstr "Je kunt niet meer producten toevoegen dan er op voorraad zijn"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} bestaat niet: {product_uuid}"
@@ -1360,8 +1358,8 @@ msgstr "{name} bestaat niet: {product_uuid}"
 #: core/models.py:586 core/models.py:607 core/models.py:615
 msgid "you cannot remove products from an order that is not a pending one"
 msgstr ""
-"U kunt geen producten verwijderen uit een bestelling die niet in behandeling "
-"is."
+"U kunt geen producten verwijderen uit een bestelling die niet in behandeling"
+" is."
 
 #: core/models.py:603
 #, python-brace-format
@@ -1563,7 +1561,8 @@ msgstr "Begin geldigheidsduur"
 #: core/models.py:993
 msgid "timestamp when the promocode was used, blank if not used yet"
 msgstr ""
-"Tijdstempel wanneer de promocode werd gebruikt, leeg indien nog niet gebruikt"
+"Tijdstempel wanneer de promocode werd gebruikt, leeg indien nog niet "
+"gebruikt"
 
 #: core/models.py:994
 msgid "usage timestamp"
@@ -1590,8 +1589,8 @@ msgid ""
 "only one type of discount should be defined (amount or percent), but not "
 "both or neither."
 msgstr ""
-"Er moet slechts één type korting worden gedefinieerd (bedrag of percentage), "
-"maar niet beide of geen van beide."
+"Er moet slechts één type korting worden gedefinieerd (bedrag of percentage),"
+" maar niet beide of geen van beide."
 
 #: core/models.py:1030
 msgid "promocode already used"
@@ -1840,8 +1839,8 @@ msgstr "Hallo %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Hartelijk dank voor uw bestelling #%(order.pk)s! We zijn blij om u te "
 "informeren dat we uw bestelling in behandeling hebben genomen. Hieronder "
@@ -1927,8 +1926,8 @@ msgstr "Sleutel"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
 "Bedankt voor uw bestelling! We zijn blij om uw aankoop te bevestigen. "
 "Hieronder vindt u de gegevens van uw bestelling:"
@@ -1955,7 +1954,8 @@ msgstr "Zowel gegevens als time-out zijn vereist"
 
 #: core/utils/caching.py:43
 msgid "invalid timeout value, it must be between 0 and 216000 seconds"
-msgstr "Ongeldige time-outwaarde, deze moet tussen 0 en 216000 seconden liggen"
+msgstr ""
+"Ongeldige time-outwaarde, deze moet tussen 0 en 216000 seconden liggen"
 
 #: core/utils/db.py:7
 #, python-brace-format
@@ -2013,6 +2013,3 @@ msgstr "favicon niet gevonden"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Fout bij geocodering: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Vertalingen"

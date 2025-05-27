@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: pl-PL\n"
+"Language: pl-pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +52,8 @@ msgstr "Uzyskanie pary tokenów"
 
 #: vibes_auth/docs/drf/views.py:16
 msgid "obtain a token pair (refresh and access) for authentication."
-msgstr "Uzyskanie pary tokenów (odświeżenie i dostęp) w celu uwierzytelnienia."
+msgstr ""
+"Uzyskanie pary tokenów (odświeżenie i dostęp) w celu uwierzytelnienia."
 
 #: vibes_auth/docs/drf/views.py:35
 msgid "refresh a token pair"
@@ -125,7 +126,7 @@ msgstr ""
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "Hasło jest zbyt słabe"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -165,9 +166,11 @@ msgstr "Token jest nieprawidłowy!"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
 msgstr ""
+"Produkty ostatnio przeglądane przez tego użytkownika (maks. 48), w "
+"kolejności odwrotnej do chronologicznej."
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -410,8 +413,8 @@ msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
 msgstr ""
-"Nieprawidłowy format numeru telefonu. Numer musi być wprowadzony w formacie: "
-"\"+999999999\". Dozwolone do 15 cyfr."
+"Nieprawidłowy format numeru telefonu. Numer musi być wprowadzony w formacie:"
+" \"+999999999\". Dozwolone do 15 cyfr."
 
 #: vibes_auth/views.py:57
 msgid "the token is invalid"
@@ -424,9 +427,3 @@ msgstr "Hasło zostało pomyślnie zresetowane!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Konto zostało już aktywowane..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "Ostatnio oglądane produkty"
-
-#~ msgid "recently viwed"
-#~ msgstr "Ostatnio oglądane"

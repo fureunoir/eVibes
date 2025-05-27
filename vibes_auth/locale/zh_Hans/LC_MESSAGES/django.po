@@ -121,7 +121,7 @@ msgstr "将新用户推荐给我们的用户的 b64-encoded uuid。"
 
 #: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
 msgid "password too weak"
-msgstr ""
+msgstr "密码太弱"
 
 #: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
@@ -161,9 +161,9 @@ msgstr "令牌无效！"
 
 #: vibes_auth/graphene/object_types.py:39
 msgid ""
-"the products this user has viewed most recently (max 48), in reverse‐"
-"chronological order"
-msgstr ""
+"the products this user has viewed most recently (max 48), in "
+"reverse‐chronological order"
+msgstr "该用户最近查看过的产品（最多 48 个），按倒序排列。"
 
 #: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
@@ -399,8 +399,7 @@ msgstr "{config.PROJECT_NAME} 重置密码| 重置密码"
 msgid ""
 "invalid phone number format. the number must be entered in the format: "
 "\"+999999999\". up to 15 digits allowed."
-msgstr ""
-"电话号码格式无效。电话号码必须按格式输入：\"+999999999\".最多允许 15 位数字。"
+msgstr "电话号码格式无效。电话号码必须按格式输入：\"+999999999\".最多允许 15 位数字。"
 
 #: vibes_auth/views.py:57
 msgid "the token is invalid"
@@ -413,9 +412,3 @@ msgstr "密码已重置成功！"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "您已经激活了账户..."
-
-#~ msgid "recently viewed products"
-#~ msgstr "最近浏览过的产品"
-
-#~ msgid "recently viwed"
-#~ msgstr "最近浏览"

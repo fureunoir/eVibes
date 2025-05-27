@@ -7,7 +7,7 @@ msgstr ""
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
-"Language: ro-RO\n"
+"Language: ro-ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,10 +29,11 @@ msgstr "Este activ"
 
 #: core/abstract.py:20
 msgid ""
-"if set to false, this object can't be seen by users without needed permission"
+"if set to false, this object can't be seen by users without needed "
+"permission"
 msgstr ""
-"Dacă este setat la false, acest obiect nu poate fi văzut de utilizatori fără "
-"permisiunea necesară"
+"Dacă este setat la false, acest obiect nu poate fi văzut de utilizatori fără"
+" permisiunea necesară"
 
 #: core/abstract.py:22 core/choices.py:18
 msgid "created"
@@ -184,8 +185,7 @@ msgid ""
 "apply key, data and timeout with authentication to write data to cache."
 msgstr ""
 "Aplicați doar o cheie pentru a citi datele permise din cache.\n"
-"Aplicați o cheie, date și timeout cu autentificare pentru a scrie date în "
-"cache."
+"Aplicați o cheie, date și timeout cu autentificare pentru a scrie date în cache."
 
 #: core/docs/drf/views.py:32
 msgid "get a list of supported languages"
@@ -206,8 +206,8 @@ msgstr "Solicitați un URL CORSed. Numai https este permis."
 #: core/docs/drf/views.py:85
 msgid "global search endpoint to query across project's tables"
 msgstr ""
-"Punct final de căutare globală pentru a efectua interogări în toate tabelele "
-"proiectului"
+"Punct final de căutare globală pentru a efectua interogări în toate tabelele"
+" proiectului"
 
 #: core/docs/drf/views.py:91
 msgid "purchase an order as a business"
@@ -218,8 +218,8 @@ msgid ""
 "purchase an order as a business, using the provided `products` with "
 "`product_uuid` and `attributes`."
 msgstr ""
-"Achiziționați o comandă ca o afacere, utilizând `products` cu `product_uuid` "
-"și `attributes` furnizate."
+"Achiziționați o comandă ca o afacere, utilizând `products` cu `product_uuid`"
+" și `attributes` furnizate."
 
 #: core/docs/drf/viewsets.py:37
 msgid "list all attribute groups (simple view)"
@@ -240,10 +240,12 @@ msgstr "Ștergerea unui grup de atribute"
 #: core/docs/drf/viewsets.py:53
 msgid "rewrite an existing attribute group saving non-editables"
 msgstr ""
-"Rescrierea unui grup de atribute existent cu salvarea elementelor needitabile"
+"Rescrierea unui grup de atribute existent cu salvarea elementelor "
+"needitabile"
 
 #: core/docs/drf/viewsets.py:57
-msgid "rewrite some fields of an existing attribute group saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute group saving non-editables"
 msgstr ""
 "Rescrierea unor câmpuri ale unui grup de atribute existent, cu salvarea "
 "elementelor needitabile"
@@ -296,7 +298,8 @@ msgstr ""
 "Rescrierea unei valori de atribut existente care salvează non-editabile"
 
 #: core/docs/drf/viewsets.py:111
-msgid "rewrite some fields of an existing attribute value saving non-editables"
+msgid ""
+"rewrite some fields of an existing attribute value saving non-editables"
 msgstr ""
 "Rescrierea unor câmpuri ale unei valori de atribut existente salvând "
 "elementele needitabile"
@@ -488,29 +491,18 @@ msgstr ""
 msgid ""
 "Filter by one or more attribute name/value pairs.  \n"
 "• **Syntax**: `attr_name=method-value[;attr2=method2-value2]…`  \n"
-"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, "
-"`icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, "
-"`iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
-"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), "
-"`true`/`false` for booleans, integers, floats; otherwise treated as "
-"string.  \n"
+"• **Methods** (defaults to `icontains` if omitted): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`  \n"
+"• **Value typing**: JSON is attempted first (so you can pass lists/dicts), `true`/`false` for booleans, integers, floats; otherwise treated as string.  \n"
 "• **Base64**: prefix with `b64-` to URL-safe base64-encode the raw value.  \n"
 "Examples:  \n"
-"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\","
-"\"bluetooth\"]`,  \n"
+"`color=exact-red`,  `size=gt-10`,  `features=in-[\"wifi\",\"bluetooth\"]`,  \n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
 msgstr ""
 "Filtrați după una sau mai multe perechi nume de atribut/valoare.  \n"
 "- **Sintaxa**: `attr_name=method-value[;attr2=method2-value2]...`\n"
-"- **Metode** (valoarea implicită este `icontains` dacă este omisă): "
-"`iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, "
-"`istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, "
-"`gt`, `gte`, `in`\n"
-"- **Value typing**: JSON este încercat în primul rând (astfel încât să "
-"puteți trece liste/dicte), `true`/`false` pentru booleeni, întregi, float; "
-"în caz contrar tratat ca string.  \n"
-"- **Base64**: prefix cu `b64-` pentru a codifica valoarea brută în baza64 în "
-"condiții de siguranță URL.  \n"
+"- **Metode** (valoarea implicită este `icontains` dacă este omisă): `iexact`, `exact`, `icontains`, `contains`, `isnull`, `startswith`, `istartswith`, `endswith`, `iendswith`, `regex`, `iregex`, `lt`, `lte`, `gt`, `gte`, `in`\n"
+"- **Value typing**: JSON este încercat în primul rând (astfel încât să puteți trece liste/dicte), `true`/`false` pentru booleeni, întregi, float; în caz contrar tratat ca string.  \n"
+"- **Base64**: prefix cu `b64-` pentru a codifica valoarea brută în baza64 în condiții de siguranță URL.  \n"
 "Exemple:  \n"
 "`color=exact-red`, `size=gt-10`, `features=in-[\"wifi\",\"bluetooth\"]`,\n"
 "`b64-description=icontains-aGVhdC1jb2xk`"
@@ -569,12 +561,10 @@ msgstr "(exact) Digital vs. fizic"
 
 #: core/docs/drf/viewsets.py:361
 msgid ""
-"Comma-separated list of fields to sort by. Prefix with `-` for "
-"descending.  \n"
+"Comma-separated list of fields to sort by. Prefix with `-` for descending.  \n"
 "**Allowed:** uuid, rating, name, slug, created, modified, price, random"
 msgstr ""
-"Lista de câmpuri separate prin virgulă după care se face sortarea. Prefixați "
-"cu `-` pentru descrescător.  \n"
+"Lista de câmpuri separate prin virgulă după care se face sortarea. Prefixați cu `-` pentru descrescător.  \n"
 "**Autorizate:** uuid, rating, nume, slug, creat, modificat, preț, aleatoriu"
 
 #: core/docs/drf/viewsets.py:375
@@ -637,10 +627,14 @@ msgstr "Autocompletare adresă de intrare"
 #: core/docs/drf/viewsets.py:495
 msgid "raw data query string, please append with data from geo-IP endpoint"
 msgstr ""
+"docker compose exec app poetry run python manage.py deepl_translate -l en-gb"
+" -l ar-ar -l cs-cz -l da-dk -l de-de -l en-us -l es-es -l fr-fr -l hi-in -l "
+"it-it -l ja-jp -l kk-kz -l nl-nl -l pl-pl -l pt-br -l ro-ro -l ru-ru -l zh-"
+"hans -a core -a geo -a plăți -a vibes_auth -a blog"
 
 #: core/docs/drf/viewsets.py:501
 msgid "limit the results amount, 1 < limit < 10, default: 5"
-msgstr ""
+msgstr "limitează cantitatea de rezultate, 1 < limit < 10, implicit: 5"
 
 #: core/elasticsearch/__init__.py:40
 msgid "no search term provided."
@@ -730,8 +724,8 @@ msgstr "Cumpărați o comandă"
 
 #: core/graphene/mutations.py:402
 msgid ""
-"please send the attributes as the string formatted like attr1=value1,"
-"attr2=value2"
+"please send the attributes as the string formatted like "
+"attr1=value1,attr2=value2"
 msgstr ""
 "Vă rugăm să trimiteți atributele sub formă de șir format ca attr1=valoare1, "
 "attr2=valoare2"
@@ -791,10 +785,11 @@ msgstr ""
 "categorii."
 
 #: core/graphene/object_types.py:114
-msgid "minimum and maximum prices for products in this category, if available."
+msgid ""
+"minimum and maximum prices for products in this category, if available."
 msgstr ""
-"Prețurile minime și maxime pentru produsele din această categorie, dacă sunt "
-"disponibile."
+"Prețurile minime și maxime pentru produsele din această categorie, dacă sunt"
+" disponibile."
 
 #: core/graphene/object_types.py:210 core/models.py:403
 msgid "vendors"
@@ -1077,7 +1072,8 @@ msgstr "Atributul acestei valori"
 msgid "the specific product associated with this attribute's value"
 msgstr "Produsul specific asociat cu valoarea acestui atribut"
 
-#: core/models.py:144 core/models.py:823 core/models.py:937 core/models.py:1106
+#: core/models.py:144 core/models.py:823 core/models.py:937
+#: core/models.py:1106
 msgid "associated product"
 msgstr "Produs asociat"
 
@@ -1095,7 +1091,8 @@ msgstr "Categorie imagine"
 
 #: core/models.py:174
 msgid "define a markup percentage for products in this category"
-msgstr "Definiți un procent de majorare pentru produsele din această categorie"
+msgstr ""
+"Definiți un procent de majorare pentru produsele din această categorie"
 
 #: core/models.py:183
 msgid "parent of this category to form a hierarchical structure"
@@ -1246,10 +1243,11 @@ msgid "feedback comments"
 msgstr "Comentarii de feedback"
 
 #: core/models.py:423
-msgid "references the specific product in an order that this feedback is about"
+msgid ""
+"references the specific product in an order that this feedback is about"
 msgstr ""
-"Face referire la produsul specific dintr-o comandă despre care este vorba în "
-"acest feedback"
+"Face referire la produsul specific dintr-o comandă despre care este vorba în"
+" acest feedback"
 
 #: core/models.py:424
 msgid "related order product"
@@ -1350,8 +1348,8 @@ msgstr "Nu puteți adăuga produse inactive la comandă"
 msgid "you cannot add more products than available in stock"
 msgstr "Nu puteți adăuga mai multe produse decât cele disponibile în stoc"
 
-#: core/models.py:582 core/models.py:599 core/models.py:623 core/models.py:1177
-#: core/models.py:1189
+#: core/models.py:582 core/models.py:599 core/models.py:623
+#: core/models.py:1177 core/models.py:1189
 #, python-brace-format
 msgid "{name} does not exist: {product_uuid}"
 msgstr "{name} nu există: {product_uuid}"
@@ -1838,8 +1836,8 @@ msgstr "Bună ziua %(order.user.first_name)s,"
 #: core/templates/digital_order_created_email.html:102
 #, python-format
 msgid ""
-"thank you for your order #%(order.pk)s! we are pleased to inform you that we "
-"have taken your order into work. below are the details of your order:"
+"thank you for your order #%(order.pk)s! we are pleased to inform you that we"
+" have taken your order into work. below are the details of your order:"
 msgstr ""
 "Vă mulțumim pentru comanda dvs. #%(order.pk)s! Suntem încântați să vă "
 "informăm că am preluat comanda dvs. în lucru. Mai jos sunt detaliile "
@@ -1925,11 +1923,11 @@ msgstr "Cheie"
 #: core/templates/shipped_order_created_email.html:88
 #: core/templates/shipped_order_delivered_email.html:88
 msgid ""
-"thank you for your order! we are pleased to confirm your purchase. below are "
-"the details of your order:"
+"thank you for your order! we are pleased to confirm your purchase. below are"
+" the details of your order:"
 msgstr ""
-"Vă mulțumim pentru comanda dvs.! Suntem încântați să vă confirmăm achiziția. "
-"Mai jos sunt detaliile comenzii dvs:"
+"Vă mulțumim pentru comanda dvs.! Suntem încântați să vă confirmăm achiziția."
+" Mai jos sunt detaliile comenzii dvs:"
 
 #: core/templates/shipped_order_created_email.html:109
 #: core/templates/shipped_order_delivered_email.html:109
@@ -2011,6 +2009,3 @@ msgstr "favicon nu a fost găsit"
 #, python-brace-format
 msgid "Geocoding error: {e}"
 msgstr "Eroare de geocodare: {e}"
-
-#~ msgid "translations"
-#~ msgstr "Traduceri"
