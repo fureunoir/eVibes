@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-20 06:26+0100\n"
+"POT-Creation-Date: 2025-05-27 13:42+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: vibes_auth/admin.py:36 vibes_auth/admin.py:37
-#: vibes_auth/graphene/object_types.py:35
+#: vibes_auth/graphene/object_types.py:45
 msgid "balance"
 msgstr "Bilance"
 
@@ -22,7 +22,7 @@ msgstr "Bilance"
 msgid "order"
 msgstr "Objednávka"
 
-#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:33
+#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:43
 msgid "orders"
 msgstr "Objednávky"
 
@@ -30,7 +30,7 @@ msgstr "Objednávky"
 msgid "personal info"
 msgstr "Osobní informace"
 
-#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:32
+#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:42
 msgid "permissions"
 msgstr "Oprávnění"
 
@@ -94,88 +94,94 @@ msgstr "Odstranění uživatele"
 msgid "reset a user's password by sending a reset password email"
 msgstr "Obnovení hesla uživatele odesláním e-mailu s obnovením hesla."
 
-#: vibes_auth/docs/drf/viewsets.py:40
+#: vibes_auth/docs/drf/viewsets.py:37
 msgid "handle avatar upload for a user"
 msgstr "Zpracování nahrávání avataru pro uživatele"
 
-#: vibes_auth/docs/drf/viewsets.py:49
+#: vibes_auth/docs/drf/viewsets.py:46
 msgid "confirm a user's password reset"
 msgstr "Potvrzení obnovení hesla uživatele"
 
-#: vibes_auth/docs/drf/viewsets.py:53 vibes_auth/graphene/mutations.py:305
+#: vibes_auth/docs/drf/viewsets.py:50 vibes_auth/graphene/mutations.py:306
 #: vibes_auth/viewsets.py:72
 msgid "passwords do not match"
 msgstr "Hesla se neshodují"
 
-#: vibes_auth/docs/drf/viewsets.py:58
+#: vibes_auth/docs/drf/viewsets.py:55
 msgid "activate a user's account"
 msgstr "Aktivace účtu uživatele"
 
-#: vibes_auth/docs/drf/viewsets.py:62
+#: vibes_auth/docs/drf/viewsets.py:59
 msgid "activation link is invalid or account already activated"
 msgstr "Aktivační odkaz je neplatný nebo je účet již aktivován"
 
-#: vibes_auth/graphene/mutations.py:40
+#: vibes_auth/graphene/mutations.py:41
 msgid "the user's b64-encoded uuid who referred the new user to us."
 msgstr "Uuid uživatele s kódem b64, který nám nového uživatele doporučil."
 
-#: vibes_auth/graphene/mutations.py:103
+#: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
+msgid "password too weak"
+msgstr ""
+
+#: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
 msgid "{name} does not exist: {uuid}"
 msgstr "{name} neexistuje: {uuid}"
 
-#: vibes_auth/graphene/mutations.py:111
+#: vibes_auth/graphene/mutations.py:114
 msgid "malformed email"
 msgstr "Špatně formulovaný e-mail"
 
-#: vibes_auth/graphene/mutations.py:116
+#: vibes_auth/graphene/mutations.py:119
 #, python-brace-format
 msgid "malformed phone number: {phone_number}"
 msgstr "Chybně zadané telefonní číslo: {phone_number}"
 
-#: vibes_auth/graphene/mutations.py:134
+#: vibes_auth/graphene/mutations.py:141
 #, python-brace-format
 msgid "Invalid attribute format: {attribute_pair}"
 msgstr "Nesprávný formát atributu: {attribute_pair}"
 
-#: vibes_auth/graphene/mutations.py:261 vibes_auth/viewsets.py:107
+#: vibes_auth/graphene/mutations.py:262 vibes_auth/viewsets.py:107
 #: vibes_auth/viewsets.py:123
 msgid "activation link is invalid!"
 msgstr "Aktivační odkaz je neplatný!"
 
-#: vibes_auth/graphene/mutations.py:264
+#: vibes_auth/graphene/mutations.py:265
 msgid "account already activated..."
 msgstr "Účet byl již aktivován..."
 
-#: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
+#: vibes_auth/graphene/mutations.py:272 vibes_auth/graphene/mutations.py:322
 msgid "something went wrong: {e!s}"
 msgstr "Něco se pokazilo: {e!s}"
 
-#: vibes_auth/graphene/mutations.py:312 vibes_auth/viewsets.py:81
+#: vibes_auth/graphene/mutations.py:313 vibes_auth/viewsets.py:81
 msgid "token is invalid!"
 msgstr "Token je neplatný!"
 
-#: vibes_auth/graphene/object_types.py:30
-msgid "recently viewed products"
-msgstr "Nedávno zobrazené produkty"
+#: vibes_auth/graphene/object_types.py:39
+msgid ""
+"the products this user has viewed most recently (max 48), in reverse‐"
+"chronological order"
+msgstr ""
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
+#: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Skupiny"
 
-#: vibes_auth/graphene/object_types.py:34
+#: vibes_auth/graphene/object_types.py:44
 msgid "wishlist"
 msgstr "Seznam přání"
 
-#: vibes_auth/graphene/object_types.py:36 vibes_auth/models.py:49
+#: vibes_auth/graphene/object_types.py:46 vibes_auth/models.py:49
 msgid "avatar"
 msgstr "Avatar"
 
-#: vibes_auth/graphene/object_types.py:37
+#: vibes_auth/graphene/object_types.py:47
 msgid "attributes may be used to store custom data"
 msgstr "Atributy lze použít k uložení vlastních dat."
 
-#: vibes_auth/graphene/object_types.py:38
+#: vibes_auth/graphene/object_types.py:48
 #, python-brace-format
 msgid "language is one of the {LANGUAGES} with default {LANGUAGE_CODE}"
 msgstr "Jazyk je jeden z {LANGUAGES} s výchozím {LANGUAGE_CODE}."
@@ -268,23 +274,23 @@ msgstr "Token na černé listině"
 msgid "blacklisted tokens"
 msgstr "Tokeny na černé listině"
 
-#: vibes_auth/serializers.py:92 vibes_auth/serializers.py:114
+#: vibes_auth/serializers.py:105 vibes_auth/serializers.py:127
 msgid "no active account"
 msgstr "Nebyl nalezen žádný aktivní účet"
 
-#: vibes_auth/serializers.py:185
+#: vibes_auth/serializers.py:198
 msgid "token_blacklisted"
 msgstr "Token na černé listině"
 
-#: vibes_auth/serializers.py:190
+#: vibes_auth/serializers.py:203
 msgid "invalid token"
 msgstr "Neplatný token"
 
-#: vibes_auth/serializers.py:196
+#: vibes_auth/serializers.py:209
 msgid "no user uuid claim present in token"
 msgstr "V tokenu není deklarace uuid uživatele"
 
-#: vibes_auth/serializers.py:198
+#: vibes_auth/serializers.py:211
 msgid "user does not exist"
 msgstr "Uživatel neexistuje"
 
@@ -415,6 +421,9 @@ msgstr "Heslo bylo úspěšně resetováno!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Účet jste již aktivovali..."
+
+#~ msgid "recently viewed products"
+#~ msgstr "Nedávno zobrazené produkty"
 
 #~ msgid "recently viwed"
 #~ msgstr "Nedávno zobrazené"

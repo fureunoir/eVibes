@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 12:32+0100\n"
+"POT-Creation-Date: 2025-05-27 13:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: blog/admin.py:33
+#: blog/admin.py:37
 msgid "(no content yet)"
 msgstr "(zatím bez obsahu)"
 
-#: blog/admin.py:36
+#: blog/admin.py:40
 msgid "rendered HTML"
 msgstr "Vykreslené HTML"
 
@@ -25,49 +25,49 @@ msgstr "Vykreslené HTML"
 msgid "blog"
 msgstr "Blog"
 
-#: blog/models.py:16
+#: blog/models.py:15
 msgid "post title"
 msgstr "Název příspěvku"
 
-#: blog/models.py:17
+#: blog/models.py:15
 msgid "title"
 msgstr "Název"
 
-#: blog/models.py:64
+#: blog/models.py:62
 msgid "post"
 msgstr "Příspěvek"
 
-#: blog/models.py:65
+#: blog/models.py:63
 msgid "posts"
 msgstr "Příspěvky"
 
-#: blog/models.py:69
+#: blog/models.py:67
 msgid ""
 "a markdown file or markdown content must be provided - mutually exclusive"
 msgstr ""
 "musí být poskytnut soubor markdown nebo obsah markdown - vzájemně se "
 "vylučují."
 
-#: blog/models.py:80
+#: blog/models.py:78
 msgid "internal tag identifier for the post tag"
 msgstr "interní identifikátor tagu pro tag příspěvku"
 
-#: blog/models.py:81
+#: blog/models.py:79
 msgid "tag name"
 msgstr "Název štítku"
 
-#: blog/models.py:85
+#: blog/models.py:83
 msgid "user-friendly name for the post tag"
 msgstr "Uživatelsky přívětivý název pro značku příspěvku"
 
-#: blog/models.py:86
+#: blog/models.py:84
 msgid "tag display name"
 msgstr "Zobrazení názvu štítku"
 
-#: blog/models.py:94
+#: blog/models.py:92
 msgid "post tag"
 msgstr "Označení příspěvku"
 
-#: blog/models.py:95
+#: blog/models.py:93
 msgid "post tags"
 msgstr "Štítky příspěvků"

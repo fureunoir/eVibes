@@ -1,6 +1,7 @@
 import logging
 from hmac import compare_digest
 
+from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.core.exceptions import BadRequest, PermissionDenied
 from django.db import IntegrityError
@@ -56,6 +57,9 @@ class CreateUser(BaseMutation):
             **kwargs,
     ):
         try:
+            validate_password(password)
+            if compare_digest(password.lower(), email.lower()):
+                raise BadRequest(_("password too weak"))
             if compare_digest(password, confirm_password):
                 User.objects.create_user(
                     email=email,
@@ -73,7 +77,7 @@ class CreateUser(BaseMutation):
         except IntegrityError:
             return CreateUser(success=True)
         except Exception as e:
-            raise BadRequest(str(e))
+            raise BadRequest(str(e)) from e
 
 
 class UpdateUser(BaseMutation):
@@ -118,6 +122,9 @@ class UpdateUser(BaseMutation):
 
         password = kwargs.get("password", "")
         confirm_password = kwargs.get("confirm_password", "")
+
+        if compare_digest(password.lower(), email.lower()):
+            raise BadRequest(_("password too weak"))
 
         if not compare_digest(password, "") and compare_digest(password, confirm_password):
             user.set_password(password)

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 12:32+0100\n"
+"POT-Creation-Date: 2025-05-27 13:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: blog/admin.py:33
+#: blog/admin.py:37
 msgid "(no content yet)"
 msgstr "(brak treści)"
 
-#: blog/admin.py:36
+#: blog/admin.py:40
 msgid "rendered HTML"
 msgstr "Renderowany HTML"
 
@@ -25,49 +25,49 @@ msgstr "Renderowany HTML"
 msgid "blog"
 msgstr "Blog"
 
-#: blog/models.py:16
+#: blog/models.py:15
 msgid "post title"
 msgstr "Tytuł postu"
 
-#: blog/models.py:17
+#: blog/models.py:15
 msgid "title"
 msgstr "Tytuł"
 
-#: blog/models.py:64
+#: blog/models.py:62
 msgid "post"
 msgstr "Post"
 
-#: blog/models.py:65
+#: blog/models.py:63
 msgid "posts"
 msgstr "Posty"
 
-#: blog/models.py:69
+#: blog/models.py:67
 msgid ""
 "a markdown file or markdown content must be provided - mutually exclusive"
 msgstr ""
 "należy dostarczyć plik markdown lub zawartość markdown - wzajemnie się "
 "wykluczające"
 
-#: blog/models.py:80
+#: blog/models.py:78
 msgid "internal tag identifier for the post tag"
 msgstr "wewnętrzny identyfikator tagu posta"
 
-#: blog/models.py:81
+#: blog/models.py:79
 msgid "tag name"
 msgstr "Nazwa tagu"
 
-#: blog/models.py:85
+#: blog/models.py:83
 msgid "user-friendly name for the post tag"
 msgstr "Przyjazna dla użytkownika nazwa tagu posta"
 
-#: blog/models.py:86
+#: blog/models.py:84
 msgid "tag display name"
 msgstr "Wyświetlana nazwa znacznika"
 
-#: blog/models.py:94
+#: blog/models.py:92
 msgid "post tag"
 msgstr "Tag posta"
 
-#: blog/models.py:95
+#: blog/models.py:93
 msgid "post tags"
 msgstr "Tagi postów"

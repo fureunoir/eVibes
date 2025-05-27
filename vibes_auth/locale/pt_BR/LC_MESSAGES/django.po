@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-20 06:26+0100\n"
+"POT-Creation-Date: 2025-05-27 13:42+0100\n"
 "PO-Revision-Date: 2025-01-30 03:27+0000\n"
 "Last-Translator: EGOR GORBUNOV <CONTACT@FUREUNOIR.COM>\n"
 "Language-Team: BRITISH ENGLISH <CONTACT@FUREUNOIR.COM>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: vibes_auth/admin.py:36 vibes_auth/admin.py:37
-#: vibes_auth/graphene/object_types.py:35
+#: vibes_auth/graphene/object_types.py:45
 msgid "balance"
 msgstr "Equilíbrio"
 
@@ -22,7 +22,7 @@ msgstr "Equilíbrio"
 msgid "order"
 msgstr "Pedido"
 
-#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:33
+#: vibes_auth/admin.py:45 vibes_auth/graphene/object_types.py:43
 msgid "orders"
 msgstr "Pedidos"
 
@@ -30,7 +30,7 @@ msgstr "Pedidos"
 msgid "personal info"
 msgstr "Informações pessoais"
 
-#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:32
+#: vibes_auth/admin.py:58 vibes_auth/graphene/object_types.py:42
 msgid "permissions"
 msgstr "Permissões"
 
@@ -95,88 +95,94 @@ msgid "reset a user's password by sending a reset password email"
 msgstr ""
 "Redefinir a senha de um usuário enviando um e-mail de redefinição de senha"
 
-#: vibes_auth/docs/drf/viewsets.py:40
+#: vibes_auth/docs/drf/viewsets.py:37
 msgid "handle avatar upload for a user"
 msgstr "Manipular o upload do avatar de um usuário"
 
-#: vibes_auth/docs/drf/viewsets.py:49
+#: vibes_auth/docs/drf/viewsets.py:46
 msgid "confirm a user's password reset"
 msgstr "Confirmar a redefinição de senha de um usuário"
 
-#: vibes_auth/docs/drf/viewsets.py:53 vibes_auth/graphene/mutations.py:305
+#: vibes_auth/docs/drf/viewsets.py:50 vibes_auth/graphene/mutations.py:306
 #: vibes_auth/viewsets.py:72
 msgid "passwords do not match"
 msgstr "As senhas não correspondem"
 
-#: vibes_auth/docs/drf/viewsets.py:58
+#: vibes_auth/docs/drf/viewsets.py:55
 msgid "activate a user's account"
 msgstr "Ativar a conta de um usuário"
 
-#: vibes_auth/docs/drf/viewsets.py:62
+#: vibes_auth/docs/drf/viewsets.py:59
 msgid "activation link is invalid or account already activated"
 msgstr "O link de ativação é inválido ou a conta já está ativada"
 
-#: vibes_auth/graphene/mutations.py:40
+#: vibes_auth/graphene/mutations.py:41
 msgid "the user's b64-encoded uuid who referred the new user to us."
 msgstr "O uuid codificado em b64 do usuário que nos indicou o novo usuário."
 
-#: vibes_auth/graphene/mutations.py:103
+#: vibes_auth/graphene/mutations.py:60 vibes_auth/graphene/mutations.py:125
+msgid "password too weak"
+msgstr ""
+
+#: vibes_auth/graphene/mutations.py:106
 #, python-brace-format
 msgid "{name} does not exist: {uuid}"
 msgstr "{name} não existe: {uuid}"
 
-#: vibes_auth/graphene/mutations.py:111
+#: vibes_auth/graphene/mutations.py:114
 msgid "malformed email"
 msgstr "E-mail malformado"
 
-#: vibes_auth/graphene/mutations.py:116
+#: vibes_auth/graphene/mutations.py:119
 #, python-brace-format
 msgid "malformed phone number: {phone_number}"
 msgstr "Número de telefone malformado: {phone_number}"
 
-#: vibes_auth/graphene/mutations.py:134
+#: vibes_auth/graphene/mutations.py:141
 #, python-brace-format
 msgid "Invalid attribute format: {attribute_pair}"
 msgstr "Formato de atributo inválido: {attribute_pair}"
 
-#: vibes_auth/graphene/mutations.py:261 vibes_auth/viewsets.py:107
+#: vibes_auth/graphene/mutations.py:262 vibes_auth/viewsets.py:107
 #: vibes_auth/viewsets.py:123
 msgid "activation link is invalid!"
 msgstr "O link de ativação é inválido!"
 
-#: vibes_auth/graphene/mutations.py:264
+#: vibes_auth/graphene/mutations.py:265
 msgid "account already activated..."
 msgstr "A conta já foi ativada..."
 
-#: vibes_auth/graphene/mutations.py:271 vibes_auth/graphene/mutations.py:321
+#: vibes_auth/graphene/mutations.py:272 vibes_auth/graphene/mutations.py:322
 msgid "something went wrong: {e!s}"
 msgstr "Algo deu errado: {e!s}"
 
-#: vibes_auth/graphene/mutations.py:312 vibes_auth/viewsets.py:81
+#: vibes_auth/graphene/mutations.py:313 vibes_auth/viewsets.py:81
 msgid "token is invalid!"
 msgstr "O token é inválido!"
 
-#: vibes_auth/graphene/object_types.py:30
-msgid "recently viewed products"
-msgstr "Produtos visualizados recentemente"
+#: vibes_auth/graphene/object_types.py:39
+msgid ""
+"the products this user has viewed most recently (max 48), in reverse‐"
+"chronological order"
+msgstr ""
 
-#: vibes_auth/graphene/object_types.py:31 vibes_auth/models.py:108
+#: vibes_auth/graphene/object_types.py:41 vibes_auth/models.py:108
 msgid "groups"
 msgstr "Grupos"
 
-#: vibes_auth/graphene/object_types.py:34
+#: vibes_auth/graphene/object_types.py:44
 msgid "wishlist"
 msgstr "Lista de desejos"
 
-#: vibes_auth/graphene/object_types.py:36 vibes_auth/models.py:49
+#: vibes_auth/graphene/object_types.py:46 vibes_auth/models.py:49
 msgid "avatar"
 msgstr "Avatar"
 
-#: vibes_auth/graphene/object_types.py:37
+#: vibes_auth/graphene/object_types.py:47
 msgid "attributes may be used to store custom data"
 msgstr "Os atributos podem ser usados para armazenar dados personalizados"
 
-#: vibes_auth/graphene/object_types.py:38
+#: vibes_auth/graphene/object_types.py:48
 #, python-brace-format
 msgid "language is one of the {LANGUAGES} with default {LANGUAGE_CODE}"
 msgstr "O idioma é um dos {LANGUAGES} com o padrão {LANGUAGE_CODE}"
@@ -269,23 +275,23 @@ msgstr "Token na lista negra"
 msgid "blacklisted tokens"
 msgstr "Tokens na lista negra"
 
-#: vibes_auth/serializers.py:92 vibes_auth/serializers.py:114
+#: vibes_auth/serializers.py:105 vibes_auth/serializers.py:127
 msgid "no active account"
 msgstr "Nenhuma conta ativa encontrada"
 
-#: vibes_auth/serializers.py:185
+#: vibes_auth/serializers.py:198
 msgid "token_blacklisted"
 msgstr "Token na lista negra"
 
-#: vibes_auth/serializers.py:190
+#: vibes_auth/serializers.py:203
 msgid "invalid token"
 msgstr "Token inválido"
 
-#: vibes_auth/serializers.py:196
+#: vibes_auth/serializers.py:209
 msgid "no user uuid claim present in token"
 msgstr "Nenhuma reivindicação de uuid de usuário presente no token"
 
-#: vibes_auth/serializers.py:198
+#: vibes_auth/serializers.py:211
 msgid "user does not exist"
 msgstr "O usuário não existe"
 
@@ -415,6 +421,9 @@ msgstr "A senha foi redefinida com sucesso!"
 #: vibes_auth/viewsets.py:112
 msgid "account already activated!"
 msgstr "Você já ativou a conta..."
+
+#~ msgid "recently viewed products"
+#~ msgstr "Produtos visualizados recentemente"
 
 #~ msgid "recently viwed"
 #~ msgstr "Visualizado recentemente"
