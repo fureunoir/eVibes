@@ -101,6 +101,7 @@ class UserViewSet(
     @method_decorator(ratelimit(key="ip", rate="2/h" if not DEBUG else "888/h"))
     def activate(self, request):
         detail = ""
+        activation_error = None
         try:
             uuid = urlsafe_base64_decode(request.data.get("uidb64")).decode()
             user = User.objects.nocache().get(pk=uuid)
@@ -117,10 +118,13 @@ class UserViewSet(
             user.is_active = True
             user.is_verified = True
             user.save()
-        except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
+        except (TypeError, ValueError, OverflowError, User.DoesNotExist) as activation_error:
             user = None
+            activation_error = activation_error
             detail = str(traceback.format_exc())
         if user is None:
+            if DEBUG:
+                raise Exception from activation_error
             return Response(
                 {"error": _("activation link is invalid!"), "detail": detail},
                 status=status.HTTP_400_BAD_REQUEST,
