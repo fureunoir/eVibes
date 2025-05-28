@@ -1,19 +1,17 @@
 import gql from 'graphql-tag'
+import {CATEGORY_FRAGMENT} from "@/graphql/fragments/categories.fragment.js";
 
 export const GET_CATEGORIES = gql`
   query getCategories {
     categories {
       edges {
         node {
-          name
-          uuid
-          image
-          description
-          slug
+          ...Category
         }
       }
     }
   }
+  ${CATEGORY_FRAGMENT}
 `
 
 export const GET_CATEGORY_BY_SLUG = gql`
@@ -25,11 +23,7 @@ export const GET_CATEGORY_BY_SLUG = gql`
     ) {
       edges {
         node {
-          name
-          uuid
-          image
-          description
-          slug
+          ...Category
           filterableAttributes {
             possibleValues
             attributeName
@@ -42,4 +36,5 @@ export const GET_CATEGORY_BY_SLUG = gql`
       }
     }
   }
+  ${CATEGORY_FRAGMENT}
 `

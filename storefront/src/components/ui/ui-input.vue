@@ -6,6 +6,7 @@
           :type="isPasswordVisible"
           :value="modelValue"
           @input="onInput"
+          @keydown="numberOnly ? onlyNumbersKeydown($event) : null"
           class="block__input"
       >
       <button
@@ -31,7 +32,8 @@ const props = defineProps({
   isError: Boolean,
   error: String,
   modelValue: [String, Number],
-  rules: Array
+  rules: Array,
+  numberOnly: Boolean
 })
 
 const isPasswordVisible = ref(props.type)
@@ -43,9 +45,26 @@ const setPasswordVisible = () => {
   isPasswordVisible.value = 'password'
 }
 
+const onlyNumbersKeydown = (event) => {
+  if (!/^\d$/.test(event.key) &&
+      !['ArrowLeft', 'ArrowRight', 'Backspace', 'Delete', 'Tab', 'Home', 'End'].includes(event.key)) {
+    event.preventDefault();
+  }
+}
+
 const validate = ref(true)
 const errorMessage = ref('')
 const onInput = (e) => {
+  let value = e.target.value;
+
+  if (props.numberOnly) {
+    const newValue = value.replace(/\D/g, '');
+    if (newValue !== value) {
+      e.target.value = newValue;
+      value = newValue;
+    }
+  }
+
   let result = true
 
   props.rules?.forEach((rule) => {
@@ -87,7 +106,6 @@ const onInput = (e) => {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    letter-spacing: 0.14px;
 
     &::placeholder {
       color: #2B2B2B;

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag'
+import {USER_FRAGMENT} from "@/graphql/fragments/user.fragment.js";
 
 export const REGISTER = gql`
   mutation register(
@@ -34,20 +35,11 @@ export const LOGIN = gql`
       accessToken
       refreshToken
       user {
-        avatar
-        uuid
-        attributes
-        language
-        email
-        firstName
-        lastName
-        phoneNumber
-        balance {
-          amount
-        }
+        ...User
       }
     }
   }
+  ${USER_FRAGMENT}
 `
 
 export const REFRESH = gql`
@@ -60,68 +52,11 @@ export const REFRESH = gql`
       accessToken
       refreshToken
       user {
-        avatar
-        uuid
-        attributes
-        language
-        email
-        firstName
-        lastName
-        phoneNumber
-        balance {
-          amount
-        }
+        ...User
       }
     }
   }
-`
-
-export const ACTIVATE_USER = gql`
-  mutation activateUser(
-      $token: String!,
-      $uid: String!
-  ) {
-    activateUser(
-        token: $token,
-        uid: $uid
-    ) {
-      success
-    }
-  }
-`
-
-export const UPDATE_USER = gql`
-  mutation updateUser(
-      $firstName: String,
-      $lastName: String,
-      $email: String,
-      $phoneNumber: String,
-      $password: String,
-      $confirmPassword: String,
-  ) {
-    updateUser(
-        firstName: $firstName,
-        lastName: $lastName,
-        email: $email,
-        phoneNumber: $phoneNumber,
-        password: $password,
-        confirmPassword: $confirmPassword,
-    ) {
-      user {
-        avatar
-        uuid
-        attributes
-        language
-        email
-        firstName
-        lastName
-        phoneNumber
-        balance {
-          amount
-        }
-      }
-    }
-  }
+  ${USER_FRAGMENT}
 `
 
 export const RESET_PASSWORD = gql`
@@ -136,7 +71,7 @@ export const RESET_PASSWORD = gql`
   }
 `
 
-export const CONFIRM_RESET_PASSWORD = gql`
+export const NEW_PASSWORD = gql`
   mutation confirmResetPassword(
       $password: String!,
       $confirmPassword: String!,

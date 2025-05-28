@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <form @submit.prevent="handleRegister()" class="form">
     <ui-input
         :type="'text'"
         :placeholder="t('fields.firstName')"
@@ -14,7 +14,7 @@
     />
     <ui-input
         :type="'text'"
-        :placeholder="t('fields.phone')"
+        :placeholder="t('fields.phoneNumber')"
         :rules="[required]"
         v-model="phoneNumber"
     />
@@ -40,11 +40,10 @@
         class="form__button"
         :isDisabled="!isFormValid"
         :isLoading="loading"
-        @click="handleRegister()"
     >
       {{ t('buttons.signUp') }}
     </ui-button>
-  </div>
+  </form>
 </template>
 
 <script setup>
@@ -53,7 +52,7 @@ import {isEmail, isPasswordValid, required} from "@/core/rules/textFieldRules.js
 import {computed, ref} from "vue";
 import UiInput from "@/components/ui/ui-input.vue";
 import UiButton from "@/components/ui/ui-button.vue";
-import {useRegister} from "@/composables/auth/useRegister.js";
+import {useRegister} from "@/composables/auth/index.js";
 
 const {t} = useI18n()
 

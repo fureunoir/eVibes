@@ -1,11 +1,11 @@
 import gql from 'graphql-tag'
+import {LANGUAGES_FRAGMENT} from "@/graphql/fragments/languages.fragment.js";
 
 export const GET_LANGUAGES = gql`
   query getLanguages {
     languages {
-      code
-      flag
-      name
+      ...Languages
     }
   }
+  ${LANGUAGES_FRAGMENT}
 `

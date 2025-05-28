@@ -1,13 +1,14 @@
 import gql from 'graphql-tag'
+import {PRODUCT_FRAGMENT} from "@/graphql/fragments/products.fragment.js";
 
 export const GET_PRODUCTS = gql`
   query getProducts(
     $after: String,
-    $first: Number,
+    $first: Int,
     $categorySlugs: String,
     $orderBy: String,
-    $minPrice: String,
-    $maxPrice: String,
+    $minPrice: Decimal,
+    $maxPrice: Decimal,
     $name: String
   ) {
     products(
@@ -22,34 +23,7 @@ export const GET_PRODUCTS = gql`
       edges {
         cursor
         node {
-          uuid
-          name
-          price
-          quantity
-          slug
-          images {
-            edges {
-              node {
-                image
-              }
-            }
-          }
-          attributeGroups {
-            edges {
-              node {
-                name
-                uuid
-                attributes {
-                  name
-                  uuid
-                  values {
-                    value
-                    uuid
-                  }
-                }
-              }
-            }
-          }
+          ...Product
         }
       }
       pageInfo {
@@ -58,6 +32,7 @@ export const GET_PRODUCTS = gql`
       }
     }
   }
+  ${PRODUCT_FRAGMENT}
 `
 
 export const GET_PRODUCT_BY_SLUG = gql`
@@ -69,48 +44,10 @@ export const GET_PRODUCT_BY_SLUG = gql`
     ) {
       edges {
         node {
-          uuid
-          name
-          price
-          quantity
-          description
-          slug
-          category {
-            name
-            slug
-          }
-          images {
-            edges {
-              node {
-                image
-              }
-            }
-          }
-          attributeGroups {
-            edges {
-              node {
-                name
-                uuid
-                attributes {
-                  name
-                  uuid
-                  values {
-                    value
-                    uuid
-                  }
-                }
-              }
-            }
-          }
-          feedbacks {
-            edges {
-              node {
-                rating
-              }
-            }
-          }
+          ...Product
         }
       }
     }
   }
+  ${PRODUCT_FRAGMENT}
 `
