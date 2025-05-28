@@ -6,8 +6,12 @@ export function useMailClient() {
   const mailClients = {
     'gmail.com': 'https://mail.google.com/',
     'outlook.com': 'https://outlook.live.com/',
-    'icloud.com': 'https://www.icloud.com/',
-    'yahoo.com': 'https://mail.yahoo.com/'
+    'icloud.com': 'https://www.icloud.com/mail/',
+    'yahoo.com': 'https://mail.yahoo.com/',
+    'mail.ru': 'https://e.mail.ru/inbox/',
+    'yandex.ru': 'https://mail.yandex.ru/',
+    'proton.me': 'https://account.proton.me/mail',
+    'fastmail.com': 'https://fastmail.com/'
   };
 
   function detectMailClient(email) {

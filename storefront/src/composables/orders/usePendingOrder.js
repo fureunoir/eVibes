@@ -2,7 +2,7 @@ import {useMutation} from "@vue/apollo-composable";
 import {GET_ORDERS} from "@/graphql/queries/orders.js";
 import {useCartStore} from "@/stores/cart.js";
 
-export function useAuthOrder() {
+export function usePendingOrder() {
   const cartStore = useCartStore()
 
   const { mutate: pendingOrderMutation } = useMutation(GET_ORDERS);

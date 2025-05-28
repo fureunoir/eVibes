@@ -2,7 +2,7 @@ import {useMutation} from "@vue/apollo-composable";
 import {GET_WISHLIST} from "@/graphql/queries/wishlist.js";
 import {useWishlistStore} from "@/stores/wishlist.js";
 
-export function useAuthWishlist() {
+export function useWishlist() {
   const wishlistStore = useWishlistStore()
 
   const { mutate: wishlistMutation } = useMutation(GET_WISHLIST);
