@@ -88,7 +88,7 @@ class AttributeAdmin(BasicModelAdmin, TabbedTranslationAdmin):
 @admin.register(AttributeValue)
 class AttributeValueAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("attribute", "value", "modified")
-    list_filter = ("attribute__group", "attribute", "is_active")
+    list_filter = ("attribute__group", "is_active")
     search_fields = ("uuid", "value", "attribute__name")
 
     autocomplete_fields = ["attribute"]
