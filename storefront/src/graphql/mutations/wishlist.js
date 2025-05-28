@@ -1,4 +1,5 @@
 import gql from 'graphql-tag'
+import {WISHLIST_FRAGMENT} from "@/graphql/fragments/wishlist.fragment.js";
 
 export const ADD_TO_WISHLIST = gql`
   mutation addToWishlist(
@@ -10,30 +11,11 @@ export const ADD_TO_WISHLIST = gql`
         productUuid: $productUuid
     ) {
       wishlist {
-        uuid
-        products {
-          edges {
-            node {
-              uuid
-              price
-              name
-              description
-              quantity
-              slug
-              images {
-                edges {
-                  node {
-                    uuid
-                    image
-                  }
-                }
-              }
-            }
-          }
-        }
+        ...Wishlist
       }
     }
   }
+  ${WISHLIST_FRAGMENT}
 `
 
 export const REMOVE_FROM_WISHLIST = gql`
@@ -46,93 +28,24 @@ export const REMOVE_FROM_WISHLIST = gql`
         productUuid: $productUuid
     ) {
       wishlist {
-        uuid
-        products {
-          edges {
-            node {
-              uuid
-              price
-              name
-              description
-              quantity
-              slug
-              images {
-                edges {
-                  node {
-                    uuid
-                    image
-                  }
-                }
-              }
-            }
-          }
-        }
+        ...Wishlist
       }
     }
   }
+  ${WISHLIST_FRAGMENT}
 `
 
 export const REMOVE_ALL_FROM_WISHLIST = gql`
-  mutation removeAllFromCart(
+  mutation removeAllFromWishlist(
       $wishlistUuid: String!
   ) {
     removeAllWishlistProducts(
         wishlistUuid: $wishlistUuid
     ) {
-      order {
-        status
-        uuid
-        totalPrice
-        orderProducts {
-          edges {
-            node {
-              uuid
-              notifications
-              attributes
-              quantity
-              status
-              product {
-                uuid
-                price
-                name
-                description
-                quantity
-                slug
-                category {
-                  name
-                }
-                images {
-                  edges {
-                    node {
-                      uuid
-                      image
-                    }
-                  }
-                }
-                category {
-                  name
-                }
-                attributeGroups {
-                  edges {
-                    node {
-                      name
-                      uuid
-                      attributes {
-                        name
-                        uuid
-                        values {
-                          value
-                          uuid
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+      wishlist {
+        ...Wishlist
       }
     }
   }
+  ${WISHLIST_FRAGMENT}
 `

@@ -1,4 +1,5 @@
 import gql from 'graphql-tag'
+import {ORDER_FRAGMENT} from "@/graphql/fragments/orders.fragment.js";
 
 export const ADD_TO_CART = gql`
   mutation addToCart(
@@ -10,61 +11,11 @@ export const ADD_TO_CART = gql`
         productUuid: $productUuid
     ) {
       order {
-        status
-        uuid
-        totalPrice
-        orderProducts {
-          edges {
-            node {
-              uuid
-              notifications
-              attributes
-              quantity
-              status
-              product {
-                uuid
-                price
-                name
-                description
-                quantity
-                slug
-                category {
-                  name
-                }
-                images {
-                  edges {
-                    node {
-                      uuid
-                      image
-                    }
-                  }
-                }
-                category {
-                  name
-                }
-                attributeGroups {
-                  edges {
-                    node {
-                      name
-                      uuid
-                      attributes {
-                        name
-                        uuid
-                        values {
-                          value
-                          uuid
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        ...Order
       }
     }
   }
+  ${ORDER_FRAGMENT}
 `
 
 export const REMOVE_FROM_CART = gql`
@@ -77,61 +28,11 @@ export const REMOVE_FROM_CART = gql`
         productUuid: $productUuid
     ) {
       order {
-        status
-        uuid
-        totalPrice
-        orderProducts {
-          edges {
-            node {
-              uuid
-              notifications
-              attributes
-              quantity
-              status
-              product {
-                uuid
-                price
-                name
-                description
-                quantity
-                slug
-                category {
-                  name
-                }
-                images {
-                  edges {
-                    node {
-                      uuid
-                      image
-                    }
-                  }
-                }
-                category {
-                  name
-                }
-                attributeGroups {
-                  edges {
-                    node {
-                      name
-                      uuid
-                      attributes {
-                        name
-                        uuid
-                        values {
-                          value
-                          uuid
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        ...Order
       }
     }
   }
+  ${ORDER_FRAGMENT}
 `
 
 export const REMOVE_KIND_FROM_CART = gql`
@@ -144,61 +45,11 @@ export const REMOVE_KIND_FROM_CART = gql`
         productUuid: $productUuid
     ) {
       order {
-        status
-        uuid
-        totalPrice
-        orderProducts {
-          edges {
-            node {
-              uuid
-              notifications
-              attributes
-              quantity
-              status
-              product {
-                uuid
-                price
-                name
-                description
-                quantity
-                slug
-                category {
-                  name
-                }
-                images {
-                  edges {
-                    node {
-                      uuid
-                      image
-                    }
-                  }
-                }
-                category {
-                  name
-                }
-                attributeGroups {
-                  edges {
-                    node {
-                      name
-                      uuid
-                      attributes {
-                        name
-                        uuid
-                        values {
-                          value
-                          uuid
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        ...Order
       }
     }
   }
+  ${ORDER_FRAGMENT}
 `
 
 export const REMOVE_ALL_FROM_CART = gql`
@@ -209,59 +60,9 @@ export const REMOVE_ALL_FROM_CART = gql`
         orderUuid: $orderUuid
     ) {
       order {
-        status
-        uuid
-        totalPrice
-        orderProducts {
-          edges {
-            node {
-              uuid
-              notifications
-              attributes
-              quantity
-              status
-              product {
-                uuid
-                price
-                name
-                description
-                quantity
-                slug
-                category {
-                  name
-                }
-                images {
-                  edges {
-                    node {
-                      uuid
-                      image
-                    }
-                  }
-                }
-                category {
-                  name
-                }
-                attributeGroups {
-                  edges {
-                    node {
-                      name
-                      uuid
-                      attributes {
-                        name
-                        uuid
-                        values {
-                          value
-                          uuid
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        ...Order
       }
     }
   }
+  ${ORDER_FRAGMENT}
 `

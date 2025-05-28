@@ -3,17 +3,16 @@ import {REGISTER} from "@/graphql/mutations/auth.js";
 import {h, ref} from "vue";
 import {ElNotification} from "element-plus";
 import {useI18n} from "vue-i18n";
-import {useMailClient} from "@/composables/auth/useMainClient.js";
+import {useMailClient} from "@/composables/utils";
 
 export function useRegister() {
-  const loading = ref(false);
-  const mailClient = ref(null)
-
   const {t} = useI18n();
 
   const { mutate: registerMutation } = useMutation(REGISTER);
 
   const { mailClientUrl, detectMailClient, openMailClient } = useMailClient();
+
+  const loading = ref(false);
 
   async function register(
       firstName,
@@ -39,9 +38,8 @@ export function useRegister() {
         detectMailClient(email);
 
         ElNotification({
-          title: t('popup.register.title'),
           message: h('div', [
-            h('p', t('popup.register.text')),
+            h('p', t('popup.success.register')),
             mailClientUrl.value ? h(
               'button',
               {
@@ -64,14 +62,14 @@ export function useRegister() {
         })
       }
     } catch (error) {
-      console.error("Register error:", error);
+      console.error("useRegister error:", error);
 
       const errorMessage = error.graphQLErrors?.[0]?.message ||
           error.message ||
-          t('popup.genericError');
+          t('popup.errors.defaultError');
 
       ElNotification({
-        title: t('popup.error'),
+        title: t('popup.errors.main'),
         message: errorMessage,
         type: 'error'
       });

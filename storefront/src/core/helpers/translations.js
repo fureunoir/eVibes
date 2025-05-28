@@ -1,7 +1,7 @@
 import i18n from '@/core/plugins/i18n.config';
 import {DEFAULT_LOCALE, LOCALE_STORAGE_LOCALE_KEY, SUPPORTED_LOCALES} from "@/config/index.js";
 
-const translation = {
+const translations = {
   get currentLocale() {
     return i18n.global.locale.value
   },
@@ -10,12 +10,28 @@ const translation = {
     i18n.global.locale.value = newLocale
   },
 
-  switchLanguage(newLocale) {
-    translation.currentLocale = newLocale
+  switchLanguage(newLocale, router = null, route = null) {
+    translations.currentLocale = newLocale
 
     document.querySelector('html').setAttribute('lang', newLocale)
 
     localStorage.setItem(LOCALE_STORAGE_LOCALE_KEY, newLocale)
+
+    if (router && route) {
+      const newRoute = {
+        ...route,
+        params: {
+          ...route.params,
+          locale: newLocale
+        }
+      };
+
+      router.push(newRoute).catch(err => {
+        if (err.name !== 'NavigationDuplicated') {
+          console.error('Navigation error:', err);
+        }
+      });
+    }
   },
 
   isLocaleSupported(locale) {
@@ -39,7 +55,7 @@ const translation = {
   getPersistedLocale() {
     const persistedLocale = localStorage.getItem(LOCALE_STORAGE_LOCALE_KEY)
 
-    if (translation.isLocaleSupported(persistedLocale)) {
+    if (translations.isLocaleSupported(persistedLocale)) {
       return persistedLocale
     } else {
       return null
@@ -47,18 +63,18 @@ const translation = {
   },
 
   guessDefaultLocale() {
-    const userPersistedLocale = translation.getPersistedLocale()
+    const userPersistedLocale = translations.getPersistedLocale()
     if (userPersistedLocale) {
       return userPersistedLocale
     }
 
-    const userPreferredLocale = translation.getUserLocale()
+    const userPreferredLocale = translations.getUserLocale()
 
-    if (translation.isLocaleSupported(userPreferredLocale.locale)) {
+    if (translations.isLocaleSupported(userPreferredLocale.locale)) {
       return userPreferredLocale.locale
     }
 
-    if (translation.isLocaleSupported(userPreferredLocale.localeNoRegion)) {
+    if (translations.isLocaleSupported(userPreferredLocale.localeNoRegion)) {
       return userPreferredLocale.localeNoRegion
     }
 
@@ -68,11 +84,11 @@ const translation = {
   async routeMiddleware(to, _from, next) {
     const paramLocale = to.params.locale
 
-    if (!translation.isLocaleSupported(paramLocale)) {
-      return next(translation.guessDefaultLocale())
+    if (!translations.isLocaleSupported(paramLocale)) {
+      return next(translations.guessDefaultLocale())
     }
 
-    await translation.switchLanguage(paramLocale)
+    await translations.switchLanguage(paramLocale)
 
     return next()
   },
@@ -81,11 +97,11 @@ const translation = {
     return {
       ...to,
       params: {
-        locale: translation.currentLocale,
+        locale: translations.currentLocale,
         ...to.params
       }
     }
   }
 }
 
-export default translation
+export default translations
