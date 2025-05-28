@@ -4,16 +4,13 @@ import {computed, ref} from "vue";
 import {ElNotification} from "element-plus";
 import {useI18n} from "vue-i18n";
 import {useAuthStore} from "@/stores/auth.js";
-import { useAuthOrder } from './useAuthOrder';
-import { useAuthWishlist } from './useAuthWishlist';
-import {DEFAULT_LOCALE, LOCALE_STORAGE_LOCALE_KEY, LOCALE_STORAGE_REFRESH_KEY} from "@/config/index.js";
+import {LOCALE_STORAGE_REFRESH_KEY} from "@/config/index.js";
 import {useRoute, useRouter} from "vue-router";
 import translations from "@/core/helpers/translations.js";
+import {usePendingOrder} from "@/composables/orders";
+import {useWishlist} from "@/composables/wishlist";
 
 export function useRefresh() {
-  const loading = ref(false);
-  const userData = ref(null);
-
   const router = useRouter()
   const route = useRoute()
   const authStore = useAuthStore()
@@ -21,15 +18,15 @@ export function useRefresh() {
 
   const { mutate: refreshMutation } = useMutation(REFRESH);
 
-  const { getPendingOrder } = useAuthOrder();
-  const { getWishlist } = useAuthWishlist();
+  const { getPendingOrder } = usePendingOrder();
+  const { getWishlist } = useWishlist();
+
+  const loading = ref(false);
 
   async function refresh() {
     loading.value = true;
 
-    const refreshToken = computed(() => {
-      return localStorage.getItem(LOCALE_STORAGE_REFRESH_KEY)
-    })
+    const refreshToken = computed(() => localStorage.getItem(LOCALE_STORAGE_REFRESH_KEY))
 
     if (!refreshToken.value) return
 
@@ -45,13 +42,7 @@ export function useRefresh() {
         })
 
         if (response.data.refreshJwtToken.user.language !== translations.currentLocale) {
-          translations.switchLanguage(response.data.refreshJwtToken.user.language)
-          await router.push({
-            name: route.name,
-            params: {
-              locale: localStorage.getItem(LOCALE_STORAGE_LOCALE_KEY) || DEFAULT_LOCALE
-            }
-          })
+          translations.switchLanguage(response.data.refreshJwtToken.user.language, router, route)
         }
 
         localStorage.setItem(LOCALE_STORAGE_REFRESH_KEY, response.data.refreshJwtToken.refreshToken)
@@ -60,14 +51,14 @@ export function useRefresh() {
         await getWishlist();
       }
     } catch (error) {
-      console.error("Refresh error:", error);
+      console.error("useRefresh error:", error);
 
       const errorMessage = error.graphQLErrors?.[0]?.message ||
           error.message ||
-          t('popup.genericError');
+          t('popup.errors.defaultError');
 
       ElNotification({
-        title: t('popup.error'),
+        title: t('popup.errors.main'),
         message: errorMessage,
         type: 'error'
       });
@@ -78,7 +69,6 @@ export function useRefresh() {
 
   return {
     refresh,
-    loading,
-    userData
+    loading
   };
 }

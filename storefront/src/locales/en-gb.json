@@ -7,7 +7,9 @@
     "goEmail": "Take me to my inbox",
     "logout": "Log Out",
     "buy": "Buy Now",
-    "save": "Save"
+    "save": "Save",
+    "sendLink": "Send link",
+    "topUp": "Top up"
   },
   "errors": {
     "required": "This field is required!",
@@ -22,36 +24,42 @@
   },
   "fields": {
     "search": "Search Cards",
+    "name": "Name",
     "firstName": "First name",
     "lastName": "Last name",
-    "phone": "Phone number",
+    "phoneNumber": "Phone number",
     "email": "Email",
+    "subject": "Subject",
     "message": "Your message",
     "password": "Password",
     "newPassword": "New password",
     "confirmPassword": "Confirm password",
     "confirmNewPassword": "Confirm new password"
   },
+  "checkboxes": {
+    "remember": "Remember me"
+  },
   "popup": {
-    "error": "Error!",
-    "login": {
-      "title": "Wellcome back!",
-      "text": "Sign in successes"
+    "errors": {
+      "main": "Error!",
+      "defaultError": "Something went wrong..",
+      "noDataToUpdate": "There is no data to update."
     },
-    "register": {
-      "title": "Welcome!",
-      "text": "Account successfully created. Please confirm your Email before Sign In!"
+    "success": {
+      "login": "Sign in successes",
+      "register": "Account successfully created. Please confirm your Email before Sign In!",
+      "confirmEmail": "Verification E-mail link successfully sent!",
+      "reset": "If specified email exists in our system, we will send a password recovery email!",
+      "newPassword": "You have successfully changed your password!",
+      "contactUs": "Your message was sent successfully!"
     },
     "addToCart": "{product} has been added to the cart!",
     "addToCartLimit": "Total quantity limit is {quantity}!",
     "failAdd": "Please log in to make a purchase",
-    "contactSuccess": "Your message was sent successfully!",
     "activationSuccess": "E-mail successfully verified. Please Sign In!",
     "successUpdate": "Profile successfully updated!",
-    "confirmEmail": "Verification E-mail link successfully sent!",
+
     "payment": "Your purchase is being processed! Please stand by",
-    "reset": "If specified email exists in our system, we will send a password recovery email!",
-    "successNewPassword": "You have successfully changed your password!",
     "successCheckout": "Order purchase successful!",
     "addToWishlist": "{product} has been added to the wishlist!"
   }

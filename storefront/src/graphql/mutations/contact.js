@@ -2,14 +2,16 @@ import gql from 'graphql-tag'
 
 export const CONTACT_US = gql`
   mutation contactUs(
-      $email: String!, 
       $name: String!,
+      $email: String!,
+      $phoneNumber: String,
       $subject: String!,
       $message: String!,
   ) {
     contactUs(
-        email: $email, 
         name: $name,
+        email: $email, 
+        phoneNumber: $phoneNumber,
         subject: $subject,
         message: $message
     ) {

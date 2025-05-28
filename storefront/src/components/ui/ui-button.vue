@@ -1,5 +1,10 @@
 <template>
-  <button class="button" :disabled="isDisabled" :class="[{active: isLoading}]">
+  <button
+      class="button"
+      :disabled="isDisabled"
+      :class="[{active: isLoading}]"
+      type="submit"
+  >
     <ui-loader class="button__loader" v-if="isLoading" />
     <slot v-else />
   </button>
@@ -24,6 +29,8 @@ const props = defineProps({
   border: 1px solid $black;
   background-color: $white;
   padding-block: 5px;
+  display: grid;
+  place-items: center;
   z-index: 1;
 
   color: $black;
@@ -33,15 +40,18 @@ const props = defineProps({
 
   &:hover, &.active {
     background-color: $black;
+    color: $white;
   }
 
   &:disabled {
     cursor: not-allowed;
     background-color: rgba($black, 0.5);
+    color: $black;
   }
 
   &:disabled:hover, &.active {
     background-color: rgba($black, 0.5);
+    color: $black;
   }
 
   &__loader {

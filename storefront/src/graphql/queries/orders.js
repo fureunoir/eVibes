@@ -1,4 +1,5 @@
 import gql from 'graphql-tag'
+import {ORDER_FRAGMENT} from "@/graphql/fragments/orders.fragment.js";
 
 export const GET_ORDERS = gql`
   query getOrders(
@@ -12,63 +13,10 @@ export const GET_ORDERS = gql`
     ) {
       edges {
         node {
-          totalPrice
-          uuid
-          status
-          buyTime
-          totalPrice
-          humanReadableId
-          orderProducts {
-            edges {
-              node {
-                uuid
-                notifications
-                attributes
-                quantity
-                status
-                product {
-                  uuid
-                  price
-                  name
-                  description
-                  quantity
-                  slug
-                  category {
-                    name
-                  }
-                  images {
-                    edges {
-                      node {
-                        uuid
-                        image
-                      }
-                    }
-                  }
-                  category {
-                    name
-                  }
-                  attributeGroups {
-                    edges {
-                      node {
-                        name
-                        uuid
-                        attributes {
-                          name
-                          uuid
-                          values {
-                            value
-                            uuid
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+          ...Order
         }
       }
     }
   }
+  ${ORDER_FRAGMENT}
 `
