@@ -1,4 +1,5 @@
 import logging
+import traceback
 from contextlib import suppress
 from secrets import compare_digest
 
@@ -99,6 +100,7 @@ class UserViewSet(
     @action(detail=False, methods=["post"])
     @method_decorator(ratelimit(key="ip", rate="2/h" if not DEBUG else "888/h"))
     def activate(self, request):
+        detail = ""
         try:
             uuid = urlsafe_base64_decode(request.data.get("uidb64")).decode()
             user = User.objects.get(pk=uuid)
@@ -117,10 +119,10 @@ class UserViewSet(
             user.save()
         except (TypeError, ValueError, OverflowError, User.DoesNotExist) as e:
             user = None
-            logger.error(str(e))
+            detail = str(traceback.format_exc())
         if user is None:
             return Response(
-                {"error": _("activation link is invalid!")},
+                {"error": _("activation link is invalid!"), "detail": detail},
                 status=status.HTTP_400_BAD_REQUEST,
             )
         else:
