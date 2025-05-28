@@ -22,7 +22,7 @@ class AddressManager(models.Manager):
             "addressdetails": 1,
             "q": raw_data,
         }
-        resp = requests.get(config.NOMINATIM_URL, params=params)
+        resp = requests.get(config.NOMINATIM_URL.rstrip("/") + "/search", params=params)
         resp.raise_for_status()
         results = resp.json()
         if not results:
