@@ -55,9 +55,17 @@ class AddOrderProductSerializer(Serializer):
     attributes = JSONField(required=False, default=dict)
 
 
+class BulkAddOrderProductsSerializer(Serializer):
+    products = ListField(child=AddOrderProductSerializer(), required=True)
+
+
 class RemoveOrderProductSerializer(Serializer):
     product_uuid = CharField(required=True)
     attributes = JSONField(required=False, default=dict)
+
+
+class BulkRemoveOrderProductsSerializer(Serializer):
+    products = ListField(child=RemoveOrderProductSerializer(), required=True)
 
 
 class AddWishlistProductSerializer(Serializer):

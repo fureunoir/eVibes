@@ -546,7 +546,7 @@ class Order(NiceModel):
     def total_quantity(self) -> int:
         return sum([op.quantity for op in self.order_products.all()])
 
-    def add_product(self, product_uuid: str | None = None, attributes: list = list):
+    def add_product(self, product_uuid: str | None = None, attributes: list = list, update_quantity: bool = True):
         if self.status not in ["PENDING", "MOMENTAL"]:
             raise ValueError(_("you cannot add products to an order that is not a pending one"))
         try:
@@ -568,7 +568,7 @@ class Order(NiceModel):
                 attributes=json.dumps(attributes),
                 defaults={"quantity": 1, "buy_price": product.price},
             )
-            if not is_created:
+            if not is_created and update_quantity:
                 if product.quantity < order_product.quantity + 1:
                     raise BadRequest(_("you cannot add more products than available in stock"))
                 order_product.quantity += 1
@@ -581,12 +581,15 @@ class Order(NiceModel):
             name = "Product"
             raise Http404(_(f"{name} does not exist: {product_uuid}"))
 
-    def remove_product(self, product_uuid: str | None = None, attributes: dict = dict):
+    def remove_product(self, product_uuid: str | None = None, attributes: dict = dict, zero_quantity: bool = False):
         if self.status != "PENDING":
             raise ValueError(_("you cannot remove products from an order that is not a pending one"))
         try:
             product = Product.objects.get(uuid=product_uuid)
             order_product = self.order_products.get(product=product, order=self)
+            if zero_quantity:
+                order_product.delete()
+                return self
             if order_product.quantity == 1:
                 self.order_products.remove(order_product)
                 order_product.delete()
@@ -777,6 +780,16 @@ class Order(NiceModel):
         ):
             self.status = "FINISHED"
             self.save()
+
+    def bulk_add_products(self, products: list):
+        for product in products:
+            self.add_product(product.get("uuid"), attributes=product.get("attributes"), update_quantity=False)
+        return self
+
+    def bulk_remove_products(self, products: list):
+        for product in products:
+            self.remove_product(product.get("uuid"), attributes=product.get("attributes"), zero_quantity=True)
+        return self
 
 
 class OrderProduct(NiceModel):

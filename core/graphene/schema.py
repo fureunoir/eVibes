@@ -19,6 +19,7 @@ from core.graphene.mutations import (
     AddOrderProduct,
     AddWishlistProduct,
     AutocompleteAddress,
+    BulkOrderAction,
     BuyOrder,
     BuyProduct,
     BuyWishlist,
@@ -294,6 +295,7 @@ class Mutation(ObjectType):
     remove_all_order_products = RemoveAllOrderProducts.Field()
     remove_order_products_of_a_kind = RemoveOrderProductsOfAKind.Field()
     buy_order = BuyOrder.Field()
+    bulk_order_action = BulkOrderAction.Field()
     deposit = Deposit.Field()
     obtain_jwt_token = ObtainJSONWebToken.Field()
     refresh_jwt_token = RefreshJSONWebToken.Field()

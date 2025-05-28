@@ -331,6 +331,7 @@ class PromoCodeAdmin(BasicModelAdmin):
 class PromotionAdmin(BasicModelAdmin, TabbedTranslationAdmin):
     list_display = ("name", "discount_percent", "modified")
     search_fields = ("name",)
+    autocomplete_fields = ("products",)
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)

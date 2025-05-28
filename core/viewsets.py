@@ -60,7 +60,9 @@ from core.serializers import (
     AttributeValueSimpleSerializer,
     BrandDetailSerializer,
     BrandSimpleSerializer,
+    BulkAddOrderProductsSerializer,
     BulkAddWishlistProductSerializer,
+    BulkRemoveOrderProductsSerializer,
     BulkRemoveWishlistProductSerializer,
     BuyOrderSerializer,
     BuyUnregisteredOrderSerializer,
@@ -305,12 +307,46 @@ class OrderViewSet(EvibesViewSet):
         serializer.is_valid(raise_exception=True)
         try:
             order = Order.objects.get(uuid=kwargs.get("pk"))
-            if not (request.user.has_perm("core.add_orderproduct") or request.user == order.user):
+            if not (request.user.has_perm("core.delete_orderproduct") or request.user == order.user):
                 raise PermissionDenied(permission_denied_message)
 
             order = order.remove_product(
                 product_uuid=serializer.validated_data.get("product_uuid"),
                 attributes=format_attributes(serializer.validated_data.get("attributes")),
+            )
+
+            return Response(status=status.HTTP_200_OK, data=OrderDetailSerializer(order).data)
+        except Order.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    @action(detail=True, methods=["post"], url_path="bulk_add_order_products")
+    def bulk_add_order_products(self, request, *_args, **kwargs):
+        serializer = BulkAddOrderProductsSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        try:
+            order = Order.objects.get(uuid=kwargs.get("pk"))
+            if not (request.user.has_perm("core.add_orderproduct") or request.user == order.user):
+                raise PermissionDenied(permission_denied_message)
+
+            order = order.bulk_add_products(
+                products=serializer.validated_data.get("products"),
+            )
+
+            return Response(status=status.HTTP_200_OK, data=OrderDetailSerializer(order).data)
+        except Order.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    @action(detail=True, methods=["post"], url_path="bulk_remove_order_products")
+    def bulk_remove_order_products(self, request, *_args, **kwargs):
+        serializer = BulkRemoveOrderProductsSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        try:
+            order = Order.objects.get(uuid=kwargs.get("pk"))
+            if not (request.user.has_perm("core.delete_orderproduct") or request.user == order.user):
+                raise PermissionDenied(permission_denied_message)
+
+            order = order.bulk_remove_products(
+                products=serializer.validated_data.get("products"),
             )
 
             return Response(status=status.HTTP_200_OK, data=OrderDetailSerializer(order).data)

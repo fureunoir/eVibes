@@ -2,7 +2,7 @@ from django.core.cache import cache
 from django.db.models import Max, Min, QuerySet
 from django.db.models.functions import Length
 from django.utils.translation import gettext_lazy as _
-from graphene import UUID, Field, Float, Int, List, NonNull, ObjectType, String, relay
+from graphene import UUID, Field, Float, InputObjectType, Int, List, NonNull, ObjectType, String, relay
 from graphene.types.generic import GenericScalar
 from graphene_django import DjangoObjectType
 from graphene_django.filter import DjangoFilterConnectionField
@@ -508,3 +508,8 @@ class SearchResultsType(ObjectType):
     categories = List(description=_("products search results"), of_type=SearchCategoriesResultsType)
     brands = List(description=_("products search results"), of_type=SearchBrandsResultsType)
     posts = List(description=_("posts search results"), of_type=SearchPostsResultsType)
+
+
+class BulkActionOrderProductInput(InputObjectType):
+    id = UUID(required=True)
+    attributes = GenericScalar(required=False)

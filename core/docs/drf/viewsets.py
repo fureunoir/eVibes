@@ -15,7 +15,9 @@ from core.serializers import (
     AttributeSimpleSerializer,
     AttributeValueDetailSerializer,
     AttributeValueSimpleSerializer,
+    BulkAddOrderProductsSerializer,
     BulkAddWishlistProductSerializer,
+    BulkRemoveOrderProductsSerializer,
     BulkRemoveWishlistProductSerializer,
     BuyOrderSerializer,
     BuyUnregisteredOrderSerializer,
@@ -196,10 +198,22 @@ ORDER_SCHEMA = {
         request=AddOrderProductSerializer,
         responses={status.HTTP_200_OK: OrderDetailSerializer, **BASE_ERRORS},
     ),
+    "bulk_add_order_products": extend_schema(
+        summary=_("add a list of products to order, quantities will not count"),
+        description=_("adds a list of products to an order using the provided `product_uuid` and `attributes`."),
+        request=BulkAddOrderProductsSerializer,
+        responses={status.HTTP_200_OK: OrderDetailSerializer, **BASE_ERRORS},
+    ),
     "remove_order_product": extend_schema(
         summary=_("remove product from order"),
         description=_("removes a product from an order using the provided `product_uuid` and `attributes`."),
         request=RemoveOrderProductSerializer,
+        responses={status.HTTP_200_OK: OrderDetailSerializer, **BASE_ERRORS},
+    ),
+    "bulk_remove_order_products": extend_schema(
+        summary=_("remove product from order, quantities will not count"),
+        description=_("removes a list of products from an order using the provided `product_uuid` and `attributes`"),
+        request=BulkRemoveOrderProductsSerializer,
         responses={status.HTTP_200_OK: OrderDetailSerializer, **BASE_ERRORS},
     ),
 }

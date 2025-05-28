@@ -11,7 +11,14 @@ from graphene_django.utils import camelize
 
 from core.elasticsearch import process_query
 from core.graphene import BaseMutation
-from core.graphene.object_types import AddressType, OrderType, ProductType, SearchResultsType, WishlistType
+from core.graphene.object_types import (
+    AddressType,
+    BulkActionOrderProductInput,
+    OrderType,
+    ProductType,
+    SearchResultsType,
+    WishlistType,
+)
 from core.models import Address, Category, Order, Product, Wishlist
 from core.utils import format_attributes, is_url_safe
 from core.utils.caching import web_cache
@@ -216,6 +223,52 @@ class BuyOrder(BaseMutation):
                     return BuyOrder(order=instance)
                 case _:
                     raise TypeError(_(f"wrong type came from order.buy() method: {type(instance)!s}"))
+
+        except Order.DoesNotExist:
+            raise Http404(_(f"order {order_uuid} not found"))
+
+
+class BulkOrderAction(BaseMutation):
+    class Meta:
+        description = _("perform an action on a list of products in the order")
+
+    class Arguments:
+        order_uuid = UUID(required=False)
+        order_hr_id = String(required=False)
+        action = String(required=True, description=_("remove/add"))
+        products = List(BulkActionOrderProductInput, required=True)
+
+    order = Field(OrderType, required=False)
+
+    @staticmethod
+    def mutate(
+            _parent,
+            info,
+            action,
+            products,
+            order_uuid=None,
+            order_hr_id=None,
+    ):
+        if not any([order_uuid, order_hr_id]) or all([order_uuid, order_hr_id]):
+            raise BadRequest(_("please provide either order_uuid or order_hr_id - mutually exclusive"))
+        user = info.context.user
+        try:
+            order = None
+
+            if order_uuid:
+                order = Order.objects.get(user=user, uuid=order_uuid)
+            elif order_hr_id:
+                order = Order.objects.get(user=user, human_readable_id=order_hr_id)
+
+            match action:
+                case "add":
+                    order = order.bulk_add_products(products)
+                case "remove":
+                    order = order.bulk_remove_products(products)
+                case _:
+                    raise BadRequest(_("action must be either add or remove"))
+
+            return BulkOrderAction(order=order)
 
         except Order.DoesNotExist:
             raise Http404(_(f"order {order_uuid} not found"))
