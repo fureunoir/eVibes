@@ -103,7 +103,7 @@ class UserViewSet(
         detail = ""
         try:
             uuid = urlsafe_base64_decode(request.data.get("uidb64")).decode()
-            user = User.objects.get(pk=uuid).nocache()
+            user = User.objects.nocache().get(pk=uuid)
             if not user.check_token(request.data.get("token")):
                 return Response(
                     {"error": _("activation link is invalid!")},
