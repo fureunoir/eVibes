@@ -158,6 +158,16 @@ class AddressCreateSerializer(ModelSerializer):  # noqa: F405
         write_only=True,
         max_length=512,
     )
+    address_line_1 = CharField(
+        write_only=True,
+        max_length=128,
+        required=False
+    )
+    address_line_2 = CharField(
+        write_only=True,
+        max_length=128,
+        required=False
+    )
 
     class Meta:
         model = Address

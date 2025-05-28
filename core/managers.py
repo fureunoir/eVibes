@@ -31,7 +31,7 @@ class AddressManager(models.Manager):
 
         # Parse address components
         addr = data.get("address", {})
-        street = addr.get("road") or addr.get("pedestrian") or ""
+        street = f"{addr.get('road', '') or addr.get('pedestrian', '')}, {addr.get('house_number', '')}"
         district = addr.get("city_district") or addr.get("suburb") or ""
         city = addr.get("city") or addr.get("town") or addr.get("village") or ""
         region = addr.get("state") or addr.get("region") or ""
@@ -49,6 +49,7 @@ class AddressManager(models.Manager):
         # Create the model instance, storing both the input string and full API response
         return super().create(
             raw_data=raw_data,
+            address_line=f"{kwargs.get('address_line_1')}, {kwargs.get('address_line_2')}",
             street=street,
             district=district,
             city=city,

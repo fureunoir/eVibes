@@ -1259,6 +1259,12 @@ class Documentary(NiceModel):
 class Address(NiceModel):
     is_publicly_visible = False
 
+    address_line = TextField(  # noqa: DJ001
+        blank=True,
+        null=True,
+        help_text=_("address line for the customer"),
+        verbose_name=_("address line"),
+    )
     street = CharField(_("street"), max_length=255, null=True)  # noqa: DJ001
     district = CharField(_("district"), max_length=255, null=True)  # noqa: DJ001
     city = CharField(_("city"), max_length=100, null=True)  # noqa: DJ001
