@@ -22,6 +22,8 @@ class EvibesPermission(permissions.BasePermission):
     - Standard model perms ('add', 'view', 'change', 'delete') are enforced for all other actions,
       including for staff users.
     - Publicly visible models allow anonymous list/retrieve.
+    - If an instance or queryset has a "user" attribute, ensure that the request.user is the same,
+      unless the user is an admin with the required django permission.
     """
 
     ACTION_PERM_MAP = {
@@ -64,19 +66,58 @@ class EvibesPermission(permissions.BasePermission):
             if request.user.has_perm(f"{app_label}.{codename}"):
                 return True
 
-        return bool(action in ("list", "retrieve") and getattr(model, "is_publicly_visible", False))
+        return bool(
+            action in ("list", "retrieve")
+            and getattr(model, "is_publicly_visible", False)
+        )
+
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        if hasattr(obj, "user"):
+            if obj.user == request.user:
+                return True
+            # Allow admins who hold the required model permission
+            app_label = obj._meta.app_label
+            model_name = obj._meta.model_name
+            action = getattr(view, "action", None)
+            perm_prefix = self.ACTION_PERM_MAP.get(action)
+            return bool(perm_prefix and request.user.has_perm(f"{app_label}.{perm_prefix}_{model_name}"))
+
+        model = view.queryset.model
+        app_label = model._meta.app_label
+        model_name = model._meta.model_name
+        action = getattr(view, "action", None)
+        perm_prefix = self.ACTION_PERM_MAP.get(action)
+        return bool(perm_prefix and request.user.has_perm(f"{app_label}.{perm_prefix}_{model_name}"))
 
     def has_queryset_permission(self, request, view, queryset):
         """
         Filter the base queryset according to the action and user.
-        Staff users still require view permissions to see records.
+        For models with a "user" field, restrict access to records belonging to the request user
+        unless the admin holds the needed permissions.
         """
         model = view.queryset.model
         app_label = model._meta.app_label
         model_name = model._meta.model_name
 
-        if view.action in self.USER_SCOPED_ACTIONS:
-            return queryset.filter(user=request.user)
+        if hasattr(model, "user"):
+            if view.action in self.USER_SCOPED_ACTIONS:
+                return queryset.filter(user=request.user)
+            if view.action in ("list", "retrieve"):
+                if request.user.has_perm(f"{app_label}.view_{model_name}"):
+                    if request.user.is_staff:
+                        return queryset
+                    return queryset.filter(user=request.user, is_active=True)
+                return queryset.none()
+
+            base = queryset.filter(is_active=True, user=request.user)
+            if request.user.is_staff and request.user.has_perm(
+                    f"{app_label}.{self.ACTION_PERM_MAP.get(view.action)}_{model_name}"
+            ):
+                return queryset.filter(is_active=True)
+            return base
 
         if view.action in ("list", "retrieve"):
             if request.user.has_perm(f"{app_label}.view_{model_name}"):
@@ -87,10 +128,7 @@ class EvibesPermission(permissions.BasePermission):
 
         base = queryset.filter(is_active=True)
         match view.action:
-            case "update":
-                if request.user.has_perm(f"{app_label}.change_{model_name}"):
-                    return base
-            case "partial_update":
+            case "update" | "partial_update":
                 if request.user.has_perm(f"{app_label}.change_{model_name}"):
                     return base
             case "destroy":
